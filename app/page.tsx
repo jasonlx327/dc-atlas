@@ -21,6 +21,7 @@ const companies: Company[] = [
   { name: "Arista Networks", ticker: "ANET", market: "美股", segment: "高速网络", cap: "$132.4B", change: 2.1, tone: "cyan", initials: "AN" },
   { name: "Applied Digital", ticker: "APLD", market: "美股", segment: "算力园区", cap: "$3.4B", change: 4.7, tone: "amber", initials: "AD" },
   { name: "润泽科技", ticker: "300442", market: "A股", segment: "IDC 运营", cap: "¥84.2B", change: 2.6, tone: "red", initials: "润" },
+  { name: "东阳光", ticker: "600673", market: "A股", segment: "AIDC / IDC 运营", cap: "¥—", change: 0, tone: "blue", initials: "东" },
   { name: "宝信软件", ticker: "600845", market: "A股", segment: "IDC 运营", cap: "¥71.8B", change: 0.6, tone: "blue", initials: "宝" },
   { name: "数据港", ticker: "603881", market: "A股", segment: "IDC 运营", cap: "¥19.3B", change: 3.1, tone: "violet", initials: "数" },
   { name: "奥飞数据", ticker: "300738", market: "A股", segment: "IDC 运营", cap: "¥18.6B", change: -0.8, tone: "cyan", initials: "奥" },
@@ -31,7 +32,7 @@ const companies: Company[] = [
 ];
 
 const sectors = [
-  { name: "IDC 运营", count: 18, value: 86 },
+  { name: "IDC 运营", count: 19, value: 88 },
   { name: "电力与温控", count: 14, value: 72 },
   { name: "高速网络", count: 11, value: 62 },
   { name: "AI 云算力", count: 9, value: 54 },
@@ -98,7 +99,7 @@ export default function Home() {
 
         <div className="hero-dashboard" aria-label="双市场总览">
           <div className="dash-top">
-            <div><small>覆盖公司</small><strong>68</strong><span>家上市公司</span></div>
+            <div><small>覆盖公司</small><strong>69</strong><span>家上市公司</span></div>
             <div className="live-pill"><i /> SNAPSHOT · 2026.07.17</div>
           </div>
           <div className="market-cards">
@@ -109,7 +110,7 @@ export default function Home() {
             </article>
             <article>
               <div className="flag cn">CN</div>
-              <div><small>中国 A 股</small><strong>37</strong></div>
+              <div><small>中国 A 股</small><strong>38</strong></div>
               <span className="positive">+1.7%</span>
             </article>
           </div>
@@ -152,7 +153,7 @@ export default function Home() {
           </article>
 
           <aside className="sector-panel">
-            <div className="panel-head"><div><small>产业链分布</small><h3>重点赛道覆盖</h3></div><span className="count-badge">60 / 68</span></div>
+            <div className="panel-head"><div><small>产业链分布</small><h3>重点赛道覆盖</h3></div><span className="count-badge">61 / 69</span></div>
             <div className="sector-list">{sectors.map((sector, index) => (
               <div className="sector-row" key={sector.name}>
                 <span className="rank">0{index + 1}</span>
@@ -171,7 +172,7 @@ export default function Home() {
         </div>
 
         <div className="company-toolbar">
-          <div className="market-tabs">{["全部", "美股", "A股"].map(item => <button key={item} className={market === item ? "active" : ""} onClick={() => setMarket(item)}>{item}<span>{item === "全部" ? 68 : item === "美股" ? 31 : 37}</span></button>)}</div>
+          <div className="market-tabs">{["全部", "美股", "A股"].map(item => <button key={item} className={market === item ? "active" : ""} onClick={() => setMarket(item)}>{item}<span>{item === "全部" ? 69 : item === "美股" ? 31 : 38}</span></button>)}</div>
           <label className="search-box" htmlFor="company-search"><span>⌕</span><input id="company-search" value={query} onChange={event => setQuery(event.target.value)} placeholder="搜索公司、代码或赛道" /></label>
         </div>
 
