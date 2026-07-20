@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">IDC Atlas 分享二维码</title>
+  <desc id="desc">扫码访问 IDC Atlas 全球数据中心产业情报站</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071019"/><stop offset=".55" stop-color="#0B1423"/><stop offset="1" stop-color="#08171B"/></linearGradient>
+    <radialGradient id="glow" cx="1" cy="0" r=".8"><stop stop-color="#1D9B9B" stop-opacity=".35"/><stop offset="1" stop-color="#1D9B9B" stop-opacity="0"/></radialGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#4DE8DF" stop-opacity=".8"/><stop offset="1" stop-color="#6A8DFF" stop-opacity=".2"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="20" stdDeviation="20" flood-color="#000" flood-opacity=".38"/></filter>
+    <pattern id="grid" width="62" height="62" patternUnits="userSpaceOnUse"><path d="M62 0H0V62" fill="none" stroke="#9EB6D0" stroke-opacity=".075" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#grid)"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+  <circle cx="1360" cy="140" r="230" fill="none" stroke="#4DE8DF" stroke-opacity=".12" stroke-width="2"/>
+  <circle cx="1360" cy="140" r="156" fill="none" stroke="#6A8DFF" stroke-opacity=".13" stroke-width="2" stroke-dasharray="5 11"/>
+  <path d="M100 154H286" stroke="url(#edge)" stroke-width="3"/>
+  <g transform="translate(100 94)">
+    <rect width="58" height="58" rx="14" fill="#10242A" stroke="#4DE8DF" stroke-opacity=".65" stroke-width="2"/>
+    <rect x="14" y="14" width="12" height="12" rx="3" fill="#4DE8DF"/>
+    <rect x="32" y="14" width="12" height="12" rx="3" fill="#4DE8DF" fill-opacity=".52"/>
+    <rect x="14" y="32" width="12" height="12" rx="3" fill="#4DE8DF" fill-opacity=".52"/>
+    <rect x="32" y="32" width="12" height="12" rx="3" fill="#4DE8DF"/>
+  </g>
+  <text x="178" y="128" fill="#F1F6FB" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="30" font-weight="800" letter-spacing="-1">IDC</text>
+  <text x="245" y="128" fill="#8997A9" font-family="monospace" font-size="18" font-weight="700" letter-spacing="5">ATLAS</text>
+  <text x="100" y="245" fill="#4DE8DF" font-family="monospace" font-size="16" font-weight="700" letter-spacing="4">GLOBAL DATA CENTER INTELLIGENCE</text>
+  <text x="100" y="390" fill="#F1F6FB" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="86" font-weight="800" letter-spacing="-5">看见算力基础设施的脉冲。</text>
+  <text x="100" y="472" fill="#95A3B4" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="400">每日追踪全球数据中心的新项目、投运进展、液冷部署、</text>
+  <text x="100" y="516" fill="#95A3B4" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="400">算力硬件与模型需求动态，并为每条信息保留原始出处。</text>
+  <g transform="translate(100 622)">
+    <circle cx="10" cy="10" r="7" fill="#BDF06D"/><text x="32" y="16" fill="#D5E1EC" font-family="monospace" font-size="16" font-weight="700" letter-spacing="2">DAILY SOURCE REFRESH</text>
+    <path d="M0 58H572" stroke="#B6C5D8" stroke-opacity=".18"/>
+    <text x="0" y="105" fill="#748295" font-family="monospace" font-size="14" letter-spacing="2">IDC PROJECTS · LIQUID COOLING · AI SILICON · MODEL DEMAND</text>
+  </g>
+  <g transform="translate(1132 536)" filter="url(#shadow)">
+    <rect x="0" y="0" width="360" height="364" rx="26" fill="#F3FBFA"/>
+    <rect x="18" y="18" width="324" height="324" rx="16" fill="#E4F4F2"/>
+    <image x="35" y="35" width="290" height="290" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNyAyNyIgc2hhcGUtcmVuZGVyaW5nPSJjcmlzcEVkZ2VzIj48cGF0aCBmaWxsPSIjRjNGQkZBIiBkPSJNMCAwaDI3djI3SDB6Ii8+PHBhdGggc3Ryb2tlPSIjMDcxMDE5IiBkPSJNMSAxLjVoN20yIDBoMm0yIDBoMW00IDBoN00xIDIuNWgxbTUgMGgxbTIgMGgxbTEgMGgxbTEgMGgzbTIgMGgxbTUgMGgxTTEgMy41aDFtMSAwaDNtMSAwaDFtMSAwaDFtMiAwaDJtMiAwaDFtMiAwaDFtMSAwaDNtMSAwaDFNMSA0LjVoMW0xIDBoM20xIDBoMW0xIDBoMm0xIDBoNG0xIDBoMW0xIDBoMW0xIDBoM20xIDBoMU0xIDUuNWgxbTEgMGgzbTEgMGgxbTEgMGgxbTIgMGgxbTQgMGgxbTEgMGgxbTEgMGgzbTEgMGgxTTEgNi41aDFtNSAwaDFtMSAwaDNtMiAwaDFtMSAwaDJtMSAwaDFtNSAwaDFNMSA3LjVoN20xIDBoMW0xIDBoMW0xIDBoMW0xIDBoMW0xIDBoMW0xIDBoN005IDguNWgzbTEgMGgxbTEgMGgzTTEgOS41aDFtMSAwaDVtMiAwaDFtMyAwaDNtMiAwaDVNMSAxMC41aDRtNyAwaDNtMiAwaDFtMiAwaDFtMyAwaDFNMiAxMS41aDJtMSAwaDFtMSAwaDFtNSAwaDRtMSAwaDNtMSAwaDFtMSAwaDJNMSAxMi41aDFtMyAwaDJtMSAwaDFtMiAwaDJtMiAwaDNtMSAwaDFtMSAwaDFtMyAwaDFNMSAxMy41aDFtMiAwaDJtMSAwaDFtMyAwaDZtMSAwaDJtMSAwaDFtMSAwaDNNMSAxNC41aDFtMiAwaDFtMSAwaDFtMyAwaDFtMyAwaDFtMiAwaDFtMiAwaDFtMSAwaDFtMSAwaDFNMSAxNS41aDFtMiAwaDRtMSAwaDVtMSAwaDJtMiAwaDRtMSAwaDJNMSAxNi41aDFtMyAwaDJtMSAwaDFtMyAwaDFtMiAwaDFtMSAwaDJtMSAwaDJtMyAwaDFNMSAxNy41aDFtMSAwaDFtMSAwaDVtMSAwaDJtNCAwaDVtMSAwaDFNOSAxOC41aDFtMSAwaDFtMSAwaDJtMSAwaDJtMyAwaDJNMSAxOS41aDdtMyAwaDFtMiAwaDJtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDNNMSAyMC41aDFtNSAwaDFtMSAwaDNtMSAwaDJtMiAwaDFtMyAwaDJtMSAwaDJNMSAyMS41aDFtMSAwaDNtMSAwaDFtMSAwaDFtMyAwaDFtMSAwaDdtMSAwaDNNMSAyMi41aDFtMSAwaDNtMSAwaDFtMSAwaDJtOCAwaDFtMSAwaDVNMSAyMy41aDFtMSAwaDNtMSAwaDFtMSAwaDFtMSAwaDNtMiAwaDJtNCAwaDJtMSAwaDFNMSAyNC41aDFtNSAwaDFtMiAwaDNtMiAwaDRtMSAwaDNtMiAwaDFNMSAyNS41aDdtMSAwaDFtMiAwaDFtNSAwaDgiLz48L3N2Zz4K"/>
+  </g>
+  <text x="1312" y="940" fill="#4DE8DF" text-anchor="middle" font-family="monospace" font-size="17" font-weight="700" letter-spacing="3">SCAN TO EXPLORE</text>
+  <text x="1312" y="971" fill="#A9BACB" text-anchor="middle" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="19">idc-index.com</text>
+  <path d="M100 868H1030" stroke="#B6C5D8" stroke-opacity=".13"/>
+  <text x="100" y="920" fill="#667589" font-family="monospace" font-size="13" letter-spacing="2">IDC ATLAS · SOURCE-FIRST INTELLIGENCE · RESEARCH ONLY</text>
+</svg>

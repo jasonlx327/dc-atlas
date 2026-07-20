@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render() {
@@ -13,20 +14,78 @@ async function render() {
   );
 }
 
-test("server-renders the finished DC Atlas homepage", async () => {
+test("server-renders the finished IDC Atlas homepage", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>DC Atlas｜中美数据中心上市公司情报站<\/title>/i);
-  assert.match(html, /看懂全球算力/);
-  assert.match(html, /上市公司全景库/);
-  assert.match(html, /东阳光/);
-  assert.match(html, /600673/);
-  assert.match(html, /演示快照/);
-  assert.match(html, /数据有边界，结论才可信/);
+  assert.match(html, /<title>IDC Atlas｜全球数据中心产业地图与实时情报站<\/title>/i);
+  assert.match(html, /Track the/);
+  assert.match(html, /class="pulse-trace"/);
+  assert.match(html, /aria-controls="site-menu"/);
+  assert.match(html, /github\.com\/jasonlx327/);
+  assert.match(html, /扫码访问网站/);
+  assert.match(html, /SHARE IDC ATLAS/);
+  assert.match(html, /href="\/privacy"/);
+  assert.match(html, /googletagmanager\.com\/gtag\/js\?id=G-XRKL96W42Q/);
+  assert.match(html, /gtag\('config', 'G-XRKL96W42Q'\)/);
+  assert.match(html, /IDC 最新脉冲/);
+  assert.match(html, /近 45 天中国与美国/);
+  assert.match(html, /WEEKLY HIGHLIGHT/);
+  assert.match(html, /TODAY&#x27;S 3 SIGNALS/);
+  assert.match(html, /今日 AI 日报/);
+  assert.match(html, /产业链情况/);
+  assert.match(html, /只显示最近 30 天/);
+  assert.match(html, /SUPPLY CHAIN · 6 NODES/);
+  assert.match(html, /chain-node-icon/);
+  assert.doesNotMatch(html, /chain-mobile-focus|idc-index-chain-aurora\.png/);
+  assert.match(html, /产品、形态与发布节奏/);
+  assert.match(html, /真实形态、关键能力/);
+  assert.match(html, /中国 GPU \/ 芯片进展/);
+  assert.match(html, /CHINA GPU &amp; AI SILICON/);
+  assert.match(html, /id="china-chips"/);
+  assert.match(html, /国产超节点路线/);
+  assert.match(html, /SUPERNODE RADAR/);
+  assert.match(html, /OFFICIAL \+ AI HOT \+ 36KR/);
+  assert.match(html, /大模型发布与评测/);
+  assert.match(html, /OPENROUTER · WEEKLY USAGE/);
+  assert.match(html, /真实调用热度/);
+  assert.match(html, /GLOBAL AI DIFFUSION/);
+  assert.match(html, /17.8%/);
+  assert.match(html, /季度追踪/);
+  assert.match(html, /前端开发公开评测/);
+  assert.match(html, /Source: Arena/);
+  assert.match(html, /大型园区进度/);
+  assert.match(html, /全球重大并购/);
+  assert.match(html, /液冷部署进度/);
+  assert.match(html, /每条信息，都能回到出处/);
+  assert.doesNotMatch(html, /不再罗列公司和小工程|默认只把公开披露容量|百 MW，不看小工程/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
+});
+
+test("groups the menu into four themes without changing section links", async () => {
+  const source = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+
+  for (const label of ["今日情报", "基础设施", "算力需求", "资本与市场"]) assert.match(source, new RegExp(label));
+  for (const href of ["#pulse", "#daily", "#chain", "#nvidia", "#china-chips", "#models", "#projects", "#mna", "#cooling", "#benchmark"]) assert.match(source, new RegExp(href));
+  assert.match(source, /site-menu-groups/);
+  assert.doesNotMatch(source, /idc-index-chain-aurora\.png/);
+});
+
+test("keeps the large-campus radar current and source-backed", async () => {
+  const workerSource = await readFile(new URL("../worker/index.ts", import.meta.url), "utf8");
+  const pageSource = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+
+  for (const marker of ["5 GW 计算容量目标", "175 MW 关键 IT 负载", "133 MW IT 已交付", "332 MW IT 在运", "中国联通长三角（吴江）智算中心一期 EPC"]) assert.match(workerSource, new RegExp(marker));
+  assert.match(workerSource, /\/api\/atlas\?schema=v22/);
+  assert.match(pageSource, /\/api\/atlas\?schema=v22/);
+  assert.match(workerSource, /口罩哥研报60秒/);
+  assert.match(pageSource, /TRACKED SOURCES/);
+  assert.match(workerSource, /IDC_DAILY_SNAPSHOTS/);
+  assert.match(workerSource, /\/api\/daily-snapshot/);
+  assert.match(workerSource, /createScheduledSnapshot/);
+  assert.match(pageSource, /晨间快照/);
 });
 
 test("includes social sharing metadata for the request host", async () => {
