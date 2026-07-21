@@ -1343,7 +1343,7 @@ async function dailySnapshotApi(request: Request, env: Env): Promise<Response> {
 async function atlasApi(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
   if (request.method !== "GET") return Response.json({ error: "Method not allowed" }, { status: 405 });
 
-  const cacheKey = new Request(new URL("/api/atlas?schema=v22", request.url), { method: "GET" });
+  const cacheKey = new Request(new URL("/api/atlas?schema=v23", request.url), { method: "GET" });
   const edgeCache = (caches as unknown as { default: Cache }).default;
   const cached = await edgeCache.match(cacheKey);
   if (cached) return cached;
@@ -1424,6 +1424,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext): Prom
   };
 
   const latestSnapshot = await env.IDC_DAILY_SNAPSHOTS.get<DailySnapshotMeta>("latest-meta", "json");
+  const coreSourcesHealthy = newsResult.status === "fulfilled" && benchmarkResult.status === "fulfilled";
   const response = Response.json({
     generatedAt: new Date().toISOString(),
     windowLabel: "近45天",
@@ -1475,15 +1476,15 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext): Prom
     mnaDeals: mnaDeals(),
   }, {
     headers: {
-      "Cache-Control": "public, max-age=300, s-maxage=900, stale-while-revalidate=86400",
+      "Cache-Control": coreSourcesHealthy ? "public, max-age=60, s-maxage=300, stale-while-revalidate=300" : "no-store",
       "Content-Language": "zh-CN",
       "X-Content-Type-Options": "nosniff",
     },
   });
 
-  ctx.waitUntil(edgeCache.put(cacheKey, response.clone()));
+  if (coreSourcesHealthy) ctx.waitUntil(edgeCache.put(cacheKey, response.clone()));
   const today = beijingDate(new Date());
-  if (!latestSnapshot || latestSnapshot.date !== today) {
+  if (coreSourcesHealthy && (!latestSnapshot || latestSnapshot.date !== today)) {
     const meta: DailySnapshotMeta = { date: today, generatedAt: new Date().toISOString(), source: "bootstrap" };
     ctx.waitUntil(response.clone().text().then((body) => persistDailySnapshot(env, meta, body)));
   }
@@ -1491,7 +1492,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext): Prom
 }
 
 async function createScheduledSnapshot(env: Env, scheduledTime: number, ctx: ExecutionContext): Promise<void> {
-  const response = await atlasApi(new Request("https://idc-index.com/api/atlas?schema=v22"), env, ctx);
+  const response = await atlasApi(new Request("https://idc-index.com/api/atlas?schema=v23"), env, ctx);
   if (!response.ok) throw new Error(`Snapshot request failed: HTTP ${response.status}`);
   const meta: DailySnapshotMeta = { date: beijingDate(scheduledTime), generatedAt: new Date(scheduledTime).toISOString(), source: "scheduled" };
   await persistDailySnapshot(env, meta, await response.text());

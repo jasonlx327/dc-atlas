@@ -270,9 +270,21 @@ export default function Home() {
     const controller = new AbortController();
     void (async () => {
       try {
-        const response = await fetch("/api/atlas?schema=v22", { signal: controller.signal });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        setPayload(await response.json() as AtlasPayload);
+        let lastError: unknown = null;
+        for (let attempt = 0; attempt < 3; attempt += 1) {
+          try {
+            const response = await fetch("/api/atlas?schema=v23", { signal: controller.signal, cache: "no-store" });
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            setPayload(await response.json() as AtlasPayload);
+            setLoadError(false);
+            return;
+          } catch (error) {
+            lastError = error;
+            if (error instanceof DOMException && error.name === "AbortError") throw error;
+            if (attempt < 2) await new Promise((resolve) => window.setTimeout(resolve, 900 * (attempt + 1)));
+          }
+        }
+        throw lastError ?? new Error("Data source unavailable");
       } catch (error) {
         if (!(error instanceof DOMException && error.name === "AbortError")) setLoadError(true);
       }

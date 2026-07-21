@@ -78,14 +78,20 @@ test("keeps the large-campus radar current and source-backed", async () => {
   const pageSource = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");
 
   for (const marker of ["5 GW 计算容量目标", "175 MW 关键 IT 负载", "133 MW IT 已交付", "332 MW IT 在运", "中国联通长三角（吴江）智算中心一期 EPC"]) assert.match(workerSource, new RegExp(marker));
-  assert.match(workerSource, /\/api\/atlas\?schema=v22/);
-  assert.match(pageSource, /\/api\/atlas\?schema=v22/);
+  assert.match(workerSource, /\/api\/atlas\?schema=v23/);
+  assert.match(pageSource, /\/api\/atlas\?schema=v23/);
   assert.match(workerSource, /口罩哥研报60秒/);
   assert.match(pageSource, /TRACKED SOURCES/);
   assert.match(workerSource, /IDC_DAILY_SNAPSHOTS/);
   assert.match(workerSource, /\/api\/daily-snapshot/);
   assert.match(workerSource, /createScheduledSnapshot/);
   assert.match(pageSource, /晨间快照/);
+});
+
+test("keeps live-data validation in the deployment path", async () => {
+  const packageJson = JSON.parse(await readFile(new URL("../package.json", import.meta.url), "utf8"));
+  assert.match(packageJson.scripts.deploy, /check:live/);
+  assert.match(await readFile(new URL("../scripts/check-live-data.mjs", import.meta.url), "utf8"), /newsStatus !== \"ok\"/);
 });
 
 test("includes social sharing metadata for the request host", async () => {
