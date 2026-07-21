@@ -2,13 +2,13 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render(pathname = "/") {
+async function render(pathname = "/", host = "dc-atlas.example") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request(`https://dc-atlas.example${pathname}`, { headers: { accept: "text/html", host: "dc-atlas.example" } }),
+    new Request(`https://${host}${pathname}`, { headers: { accept: "text/html", host } }),
     { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
     { waitUntil() {}, passThroughOnException() {} },
   );
@@ -92,6 +92,12 @@ test("keeps live-data validation in the deployment path", async () => {
   const packageJson = JSON.parse(await readFile(new URL("../package.json", import.meta.url), "utf8"));
   assert.match(packageJson.scripts.deploy, /check:live/);
   assert.match(await readFile(new URL("../scripts/check-live-data.mjs", import.meta.url), "utf8"), /newsStatus !== \"ok\"/);
+});
+
+test("redirects the Sites fallback host to the canonical production domain", async () => {
+  const response = await render("/?source=sites", "dc-atlas-cn-us.catknowspray.chatgpt.site");
+  assert.equal(response.status, 308);
+  assert.equal(response.headers.get("location"), "https://idc-index.com/?source=sites");
 });
 
 test("includes social sharing metadata for the request host", async () => {

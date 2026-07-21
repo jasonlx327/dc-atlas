@@ -1529,6 +1529,11 @@ const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     try {
+      if (url.hostname === "dc-atlas-cn-us.catknowspray.chatgpt.site") {
+        url.protocol = "https:";
+        url.hostname = "idc-index.com";
+        return Response.redirect(url, 308);
+      }
       if (url.pathname === "/api/daily-snapshot") return await dailySnapshotApi(request, env);
       if (url.pathname === "/api/atlas") return await atlasApi(request, env, ctx);
       const productImageSource = PRODUCT_IMAGE_SOURCES[url.pathname];
