@@ -81,7 +81,7 @@ test("keeps the large-campus radar current and source-backed", async () => {
   assert.match(workerSource, /\/api\/atlas\?schema=v23/);
   assert.match(pageSource, /\/api\/atlas\?schema=v23/);
   assert.match(workerSource, /口罩哥研报60秒/);
-  assert.match(pageSource, /TRACKED SOURCES/);
+  assert.doesNotMatch(pageSource, /TRACKED SOURCES|source-watchlist/);
   assert.match(workerSource, /IDC_DAILY_SNAPSHOTS/);
   assert.match(workerSource, /\/api\/daily-snapshot/);
   assert.match(workerSource, /createScheduledSnapshot/);

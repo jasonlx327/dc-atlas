@@ -366,8 +366,6 @@ button { color: inherit; }
 .source-legend { margin-top: 32px; padding-top: 22px; display: flex; flex-wrap: wrap; gap: 12px 28px; border-top: 1px solid rgba(17,23,34,.24); }
 .source-legend span { display: grid; gap: 5px; font: 600 7px var(--font-geist-mono); letter-spacing: .08em; }
 .source-legend b { font: 670 11px var(--font-geist-sans); letter-spacing: 0; }
-.source-watchlist { margin-top: 22px; display: grid; gap: 10px; }.source-watchlist > span { color: #6d7b8d; font: 650 7px var(--font-geist-mono); letter-spacing: .12em; }.source-watchlist a { width: fit-content; max-width: 100%; padding: 10px 12px; display: grid; grid-template-columns: auto minmax(0, 1fr) 14px; align-items: center; gap: 10px; border: 1px solid rgba(54,118,115,.35); border-radius: 8px; color: #244f4c; background: rgba(61,169,160,.06); }.source-watchlist a:hover { border-color: #2d8a82; }.source-watchlist strong { font-size: 10px; }.source-watchlist small { min-width: 0; color: #697b80; font-size: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
 footer { min-height: 118px; padding: 28px clamp(20px, 4.5vw, 72px); display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; gap: 26px; border-top: 1px solid var(--line); background: #05070b; }
 footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
 .footer-contact { display: grid; justify-items: end; gap: 9px; }
