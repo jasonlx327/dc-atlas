@@ -6,6 +6,7 @@ import QRCode from "qrcode";
 type SignalKey = "capacity" | "power" | "cooling" | "network" | "policy" | "hardware";
 type ChainKey = "compute" | "rack" | "cooling" | "power" | "campus" | "model";
 type NavGroupKey = "today" | "infrastructure" | "demand" | "capital";
+type PulseRegion = "all" | "中国" | "美国";
 type LifecycleStage = { label: string; state: "done" | "current" | "next" };
 
 type NewsItem = {
@@ -254,6 +255,7 @@ export default function Home() {
   const [payload, setPayload] = useState<AtlasPayload | null>(null);
   const [loadError, setLoadError] = useState(false);
   const [activeStage, setActiveStage] = useState<ChainKey>("compute");
+  const [pulseRegion, setPulseRegion] = useState<PulseRegion>("all");
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenuGroup, setActiveMenuGroup] = useState<NavGroupKey>("today");
 
@@ -295,6 +297,12 @@ export default function Home() {
   const news = payload?.idcPulse ?? payload?.positiveNews ?? [];
   const listedNews = news.filter((item) => item.listedTicker);
   const industryNews = news.filter((item) => !item.listedTicker);
+  const pulseRegionCounts = {
+    all: listedNews.length,
+    中国: listedNews.filter((item) => item.region === "中国").length,
+    美国: listedNews.filter((item) => item.region === "美国").length,
+  };
+  const visibleListedNews = pulseRegion === "all" ? listedNews : listedNews.filter((item) => item.region === pulseRegion);
   const topSignals = listedNews.slice(0, 3);
   const currentStage = chainStages.find((stage) => stage.key === activeStage) ?? chainStages[0];
   const activeNews = useMemo(() => payload?.chainNews?.[activeStage] ?? [], [activeStage, payload]);
@@ -339,7 +347,7 @@ export default function Home() {
       <div className="hero-metrics"><div><small>PUBLIC COMPANY PULSE</small><strong>{listedNews.length || "—"}</strong><span>近 45 天中美上市公司进展</span></div><div><small>WEEKLY HIGHLIGHT</small><strong>{payload?.weeklyHighlightCount ?? "—"}</strong><span>最近 7 天重点项目</span></div><div><small>LIQUID COOLING</small><strong>{coolingRecords.length || "—"}</strong><span>标准、产品、工程</span></div><div><small>AI HOT DAILY</small><strong>{dailyItems.length || "—"}</strong><span>{daily?.date ?? "今日内容连接中"}</span></div></div>
     </section>
 
-    <section className="section pulse-section" id="pulse"><div className="section-title"><div><span className="section-no">01</span><p>45-DAY PUBLIC COMPANY PULSE</p><h2>IDC 最新脉冲</h2></div><p>优先追踪近 45 天中国与美国上市公司的大型园区建设、扩建、租赁、交付和投运；最近 7 天的重要进展会自动高亮。</p></div>{news.length ? <><div className="pulse-window"><span><i /> LISTED COMPANIES · LAST 45 DAYS</span><strong>{listedNews.length} 条上市公司进展</strong><small>更新至 {payload ? formatDateTime(payload.generatedAt) : "—"}</small></div><div className="news-grid">{listedNews.map((item) => <NewsCard key={item.id} item={item} />)}</div>{industryNews.length > 0 && <div className="industry-pulse"><div><span>INDUSTRY WATCH</span><h3>其他重要大型项目</h3><p>补充观察会影响区域容量和产业链节奏的非上市项目公司进展。</p></div><div className="news-grid">{industryNews.map((item) => <NewsCard key={item.id} item={item} compact />)}</div></div>}</> : <div className="data-empty"><i /><p>{loadError ? "实时资讯暂时不可用，请稍后刷新。" : "正在读取最新项目动态…"}</p></div>}</section>
+    <section className="section pulse-section" id="pulse"><div className="section-title"><div><span className="section-no">01</span><p>45-DAY PUBLIC COMPANY PULSE</p><h2>IDC 最新脉冲</h2></div><p>优先追踪近 45 天中国与美国上市公司的大型园区建设、扩建、租赁、交付和投运；最近 7 天的重要进展会自动高亮。</p></div>{news.length ? <><div className="pulse-window"><div className="pulse-window-meta"><span><i /> LISTED COMPANIES · LAST 45 DAYS</span><strong>{visibleListedNews.length} 条上市公司进展</strong></div><div className="pulse-region-tabs" aria-label="IDC 脉冲地区筛选">{(["all", "中国", "美国"] as const).map((region) => <button key={region} type="button" data-region={region} className={pulseRegion === region ? "active" : ""} aria-pressed={pulseRegion === region} onClick={() => setPulseRegion(region)}><span>{region === "all" ? "全部" : region}</span><b>{pulseRegionCounts[region]}</b></button>)}</div><small>更新至 {payload ? formatDateTime(payload.generatedAt) : "—"}</small></div><div className="news-grid">{visibleListedNews.map((item) => <NewsCard key={item.id} item={item} />)}</div>{industryNews.length > 0 && <div className="industry-pulse"><div><span>INDUSTRY WATCH</span><h3>其他重要大型项目</h3><p>补充观察会影响区域容量和产业链节奏的非上市项目公司进展。</p></div><div className="news-grid">{industryNews.map((item) => <NewsCard key={item.id} item={item} compact />)}</div></div>}</> : <div className="data-empty"><i /><p>{loadError ? "实时资讯暂时不可用，请稍后刷新。" : "正在读取最新项目动态…"}</p></div>}</section>
 
     <section className="section daily-section" id="daily"><div className="section-title inverse"><div><span className="section-no">02</span><p>AI HOT · DAILY EDITION</p><h2>今日 AI 日报</h2></div><p>每天同步 AI HOT 日报，快速浏览模型、产品、行业与研究进展，并保留每条内容的原始出处。</p></div>{daily ? <><div className="daily-head"><div><span>BEIJING DATE</span><strong>{daily.date}</strong><small>{payload?.dailySnapshot ? `晨间快照 · ${formatDateTime(payload.dailySnapshot.generatedAt)}` : "晨间快照准备中"}</small></div><a href={daily.canonical} target="_blank" rel="noreferrer">查看 AI HOT 完整日报<ExternalIcon /></a></div>{daily.lead && <article className="daily-lead"><span>LEAD STORY</span><h3><a href={daily.lead.permalink} target="_blank" rel="noreferrer">{daily.lead.title}</a></h3><p>{daily.lead.summary}</p><SourceRow item={daily.lead} /></article>}<div className="daily-grid">{dailyItems.map((item) => <article className="daily-card" key={`${item.dailySection}-${item.id}`}><span>{item.dailySection}</span><h3><a href={item.permalink} target="_blank" rel="noreferrer">{item.title}</a></h3><p>{item.summary}</p><SourceRow item={item} /></article>)}</div>{daily.flashes.length > 0 && <div className="daily-flashes"><span>FLASH</span>{daily.flashes.map((item) => <a key={item.id} href={item.permalink} target="_blank" rel="noreferrer">{item.title}<ExternalIcon /></a>)}</div>}</> : <div className="data-empty dark"><i /><p>正在读取 AI HOT 今日 AI 日报…</p></div>}</section>
 

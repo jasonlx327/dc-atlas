@@ -70,6 +70,8 @@ test("groups the menu into four themes without changing section links", async ()
   for (const label of ["今日情报", "基础设施", "算力需求", "资本与市场"]) assert.match(source, new RegExp(label));
   for (const href of ["#pulse", "#daily", "#chain", "#nvidia", "#china-chips", "#models", "#projects", "#mna", "#cooling", "#benchmark"]) assert.match(source, new RegExp(href));
   assert.match(source, /site-menu-groups/);
+  assert.match(source, /aria-label="IDC 脉冲地区筛选"/);
+  assert.match(source, /pulseRegionCounts/);
   assert.doesNotMatch(source, /idc-index-chain-aurora\.png/);
 });
 
