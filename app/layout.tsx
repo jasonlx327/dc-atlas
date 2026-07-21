@@ -21,6 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(origin),
     title,
     description,
+    robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
     openGraph: { title, description, type: "website", images: [{ url: `${origin}/og.png`, width: 1731, height: 909, alt: "IDC Atlas 全球数据中心产业地图与实时情报站" }] },
     twitter: { card: "summary_large_image", title, description, images: [`${origin}/og.png`] },

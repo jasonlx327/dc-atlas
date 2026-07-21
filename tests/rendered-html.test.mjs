@@ -2,13 +2,13 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
+async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("https://dc-atlas.example/", { headers: { accept: "text/html", host: "dc-atlas.example" } }),
+    new Request(`https://dc-atlas.example${pathname}`, { headers: { accept: "text/html", host: "dc-atlas.example" } }),
     { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
     { waitUntil() {}, passThroughOnException() {} },
   );
@@ -65,7 +65,7 @@ test("server-renders the finished IDC Atlas homepage", async () => {
 });
 
 test("groups the menu into four themes without changing section links", async () => {
-  const source = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+  const source = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");
 
   for (const label of ["今日情报", "基础设施", "算力需求", "资本与市场"]) assert.match(source, new RegExp(label));
   for (const href of ["#pulse", "#daily", "#chain", "#nvidia", "#china-chips", "#models", "#projects", "#mna", "#cooling", "#benchmark"]) assert.match(source, new RegExp(href));
@@ -75,7 +75,7 @@ test("groups the menu into four themes without changing section links", async ()
 
 test("keeps the large-campus radar current and source-backed", async () => {
   const workerSource = await readFile(new URL("../worker/index.ts", import.meta.url), "utf8");
-  const pageSource = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+  const pageSource = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");
 
   for (const marker of ["5 GW 计算容量目标", "175 MW 关键 IT 负载", "133 MW IT 已交付", "332 MW IT 在运", "中国联通长三角（吴江）智算中心一期 EPC"]) assert.match(workerSource, new RegExp(marker));
   assert.match(workerSource, /\/api\/atlas\?schema=v22/);
@@ -95,4 +95,17 @@ test("includes social sharing metadata for the request host", async () => {
   assert.match(html, /property="og:image" content="https:\/\/dc-atlas\.example\/og\.png"/i);
   assert.match(html, /name="twitter:card" content="summary_large_image"/i);
   assert.match(html, /lang="zh-CN"/i);
+});
+
+test("serves crawl directives and bilingual topic pages", async () => {
+  const robots = await render("/robots.txt");
+  assert.equal(robots.status, 200);
+  assert.match(await robots.text(), /Sitemap: https:\/\/idc-index\.com\/sitemap\.xml/i);
+
+  const topic = await render("/topics/china-ai-silicon");
+  assert.equal(topic.status, 200);
+  const html = await topic.text();
+  assert.match(html, /中国 GPU 与 AI 芯片进展/);
+  assert.match(html, /China GPU &amp; AI Silicon/);
+  assert.match(html, /rel="canonical" href="https:\/\/idc-index\.com\/topics\/china-ai-silicon"/i);
 });

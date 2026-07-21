@@ -12,5 +12,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.2,
     },
+    {
+      url: "https://idc-index.com/topics/data-center-intelligence",
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: "https://idc-index.com/topics/china-ai-silicon",
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
   ];
 }

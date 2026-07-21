@@ -1,0 +1,353 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import QRCode from "qrcode";
+
+type SignalKey = "capacity" | "power" | "cooling" | "network" | "policy" | "hardware";
+type ChainKey = "compute" | "rack" | "cooling" | "power" | "campus" | "model";
+type NavGroupKey = "today" | "infrastructure" | "demand" | "capital";
+type LifecycleStage = { label: string; state: "done" | "current" | "next" };
+
+type NewsItem = {
+  id: string;
+  title: string;
+  summary: string;
+  publishedAt: string | null;
+  category: string | null;
+  score: number | null;
+  permalink: string;
+  sourceUrl: string | null;
+  sourceName: string | null;
+  signal: SignalKey;
+  curator: "AI HOT" | "官方来源" | "公开来源";
+  region?: "中国" | "美国" | "全球";
+  milestone?: string;
+  scale?: string;
+  weeklyHighlight?: boolean;
+  listedTicker?: string;
+  whyItMatters?: string;
+  verifiedAt?: string;
+  lifecycle?: LifecycleStage[];
+  imageSrc?: string;
+  imageAlt?: string;
+  imageCredit?: string;
+};
+
+type DailySection = { label: string; items: NewsItem[] };
+type AihotDaily = { date: string; canonical: string; source: string; lead: NewsItem | null; sections: DailySection[]; flashes: NewsItem[] };
+
+type Benchmark = { code: "CWW" | "CWWCN"; name: string; level: number; dayPct: number; ytdPct: number; count: number };
+type SourceRecord = { id: string; title: string; subject: string; metric: string; status: string; publishedAt: string; sourceName: string; sourceUrl: string; note: string };
+type NvidiaProduct = { id: string; model: string; form: string; spec: string; release: string; price: string; imageSrc: string; imageAlt: string; sourceUrl: string };
+type OpenRouterUsage = { status: "live" | "unavailable"; period: string; asOf: string; metric: "weekly-rank"; sourceUrl: string; note: string; models: Array<{ id: string; name: string; rank: number; heat: number; url: string }> };
+type ArenaCodeLeaderboard = { status: "live" | "unavailable"; asOf: string; category: "webdev"; sourceUrl: string; note: string; models: Array<{ rank: number; name: string; organization: string; score: number; votes: number; chinaLab: boolean }> };
+type AiAdoption = { asOf: "2026 Q1"; sharePct: 17.8; cadence: string; sourceName: "Microsoft AI Economy Institute"; sourceUrl: string; dataUrl: string; visualCredit: "Damian Player"; visualCreditUrl: string; note: string; series: Array<{ period: string; sharePct: number }> };
+type SupernodeProduct = { id: string; vendor: string; name: string; status: string; imageSrc: string; imageAlt: string; imageCredit: string; imageFit?: "cover" | "contain"; headlineMetric: string; specs: Array<{ label: string; value: string }>; summary: string; sourceName: string; sourceUrl: string; secondarySourceName?: string; secondarySourceUrl?: string };
+type MnaDeal = { id: string; announcedAt: string; buyer: string; target: string; value: string; capacity: string; region: string; status: string; statusAsOf: string; valueBasis: string; capacityBasis: string; rationale: string; sourceName: string; sourceUrl: string };
+type TrackedSource = { id: string; name: string; scope: string; mode: string; sourceUrl: string };
+type DailySnapshotMeta = { date: string; generatedAt: string; source: "scheduled" | "bootstrap" };
+
+type AtlasPayload = {
+  generatedAt: string;
+  windowLabel: string;
+  newsStatus: "ok" | "unavailable";
+  benchmarkStatus: "ok" | "unavailable";
+  news: NewsItem[];
+  positiveNews: NewsItem[];
+  positiveNewsStatus: "live" | "official-fallback";
+  latestPositiveAt: string | null;
+  idcPulse: NewsItem[];
+  pulseWindowDays: number;
+  weeklyHighlightCount: number;
+  nvidiaNews: NewsItem[];
+  chinaChipNews: NewsItem[];
+  chinaChipWindowDays: number;
+  chinaChipStatus: "live" | "official-only";
+  coolingNews: NewsItem[];
+  modelNews: NewsItem[];
+  openRouterUsage: OpenRouterUsage;
+  arenaCodeLeaderboard: ArenaCodeLeaderboard;
+  aiAdoption: AiAdoption;
+  dailySnapshot: DailySnapshotMeta | null;
+  supernodes: SupernodeProduct[];
+  trackedSources: TrackedSource[];
+  chainWindowDays: number;
+  chainNews: Record<ChainKey, NewsItem[]>;
+  aiDaily: AihotDaily | null;
+  benchmarks: Benchmark[];
+  benchmarkDate: string | null;
+  benchmarkMethodology: string | null;
+  capacityRadar: SourceRecord[];
+  coolingProgress: SourceRecord[];
+  nvidiaProducts: NvidiaProduct[];
+  mnaDeals: MnaDeal[];
+};
+
+const signalMeta: Record<SignalKey, { label: string; color: string }> = {
+  capacity: { label: "园区与容量", color: "cyan" },
+  power: { label: "电力与能源", color: "lime" },
+  cooling: { label: "液冷与温控", color: "violet" },
+  network: { label: "网络与互联", color: "blue" },
+  policy: { label: "政策与审批", color: "amber" },
+  hardware: { label: "服务器与存储", color: "coral" },
+};
+
+const chainStages: Array<{ key: ChainKey; no: string; title: string; caption: string; className: string }> = [
+  { key: "compute", no: "01", title: "GPU 与服务器", caption: "算力底座", className: "compute" },
+  { key: "rack", no: "02", title: "机柜与互联", caption: "密度与网络", className: "rack" },
+  { key: "cooling", no: "03", title: "液冷与 CDU", caption: "散热瓶颈", className: "cooling" },
+  { key: "power", no: "04", title: "供配电与绿电", caption: "并网与能耗", className: "power" },
+  { key: "campus", no: "05", title: "IDC 园区", caption: "MW 与交付", className: "campus" },
+  { key: "model", no: "06", title: "模型与云厂商", caption: "需求终点", className: "model" },
+];
+
+type NavItem = { href: string; no: string; label: string; detail: string };
+type NavGroup = { key: NavGroupKey; no: string; label: string; detail: string; items: NavItem[] };
+
+const navGroups: NavGroup[] = [
+  { key: "today", no: "01", label: "今日情报", detail: "实时新闻与每日更新", items: [
+    { href: "#pulse", no: "01", label: "最新脉冲", detail: "园区建设与投运" },
+    { href: "#daily", no: "02", label: "AI 日报", detail: "AI HOT 每日更新" },
+  ] },
+  { key: "infrastructure", no: "02", label: "基础设施", detail: "硬件、园区与制冷", items: [
+    { href: "#chain", no: "03", label: "产业链情况", detail: "六个环节联动" },
+    { href: "#nvidia", no: "04", label: "NVIDIA 产品", detail: "硬件与发布节奏" },
+    { href: "#china-chips", no: "05", label: "中国 GPU", detail: "芯片、超节点与生态" },
+    { href: "#projects", no: "07", label: "大型园区", detail: "容量、招标与进度" },
+    { href: "#cooling", no: "09", label: "液冷进展", detail: "产品化与工程落地" },
+  ] },
+  { key: "demand", no: "03", label: "算力需求", detail: "模型发布、评测与调用", items: [
+    { href: "#models", no: "06", label: "大模型发布", detail: "评测与调用热度" },
+  ] },
+  { key: "capital", no: "04", label: "资本与市场", detail: "并购与每日市场温度", items: [
+    { href: "#mna", no: "08", label: "全球并购", detail: "重大交易情报" },
+    { href: "#benchmark", no: "10", label: "市场温度", detail: "CWW 每日表现" },
+  ] },
+];
+
+function ExternalIcon() {
+  return <svg className="ui-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 13 14 6M9 6h5v5" /><path d="M13 11v4H5V7h4" /></svg>;
+}
+
+function ArrowIcon({ direction = "right" }: { direction?: "right" | "down-right" }) {
+  return <svg className={`ui-icon arrow-${direction}`} viewBox="0 0 20 20" aria-hidden="true"><path d={direction === "right" ? "M4 10h11M11 6l4 4-4 4" : "M5 5l10 10M9 15h6V9"} /></svg>;
+}
+
+function MenuIcon({ close = false }: { close?: boolean }) {
+  return <svg className="menu-icon" viewBox="0 0 24 24" aria-hidden="true">{close ? <><path d="m6 6 12 12" /><path d="M18 6 6 18" /></> : <><path d="M5 7h14" /><path d="M9 12h10" /><path d="M5 17h14" /></>}</svg>;
+}
+
+function GithubIcon() {
+  return <svg className="github-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8a9.2 9.2 0 0 0-2.9 17.9c.5.1.6-.2.6-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 0 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-4.8 0-1.1.4-1.9 1-2.6-.1-.3-.4-1.3.1-2.6 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.8-1.3 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.6.7.7 1 1.5 1 2.6 0 3.7-2.3 4.5-4.5 4.8.4.3.7.9.7 1.8v2.6c0 .3.2.6.7.5A9.2 9.2 0 0 0 12 2.8Z" /></svg>;
+}
+
+function ChainIcon({ type }: { type: ChainKey }) {
+  const body = {
+    compute: <><rect x="13" y="13" width="22" height="22" rx="3" /><path d="M18 18h12v12H18zM18 8v5m6-5v5m6-5v5M18 35v5m6-5v5m6-5v5M8 18h5m-5 6h5m-5 6h5m22-12h5m-5 6h5m-5 6h5" /></>,
+    rack: <><rect x="12" y="8" width="24" height="32" rx="3" /><path d="M17 14h14M17 21h14M17 28h14M17 35h14" /><circle cx="31" cy="14" r="1" fill="currentColor" stroke="none" /><circle cx="31" cy="21" r="1" fill="currentColor" stroke="none" /><circle cx="31" cy="28" r="1" fill="currentColor" stroke="none" /></>,
+    cooling: <><path d="M24 7c5 7 10 13 10 20a10 10 0 0 1-20 0c0-7 5-13 10-20Z" /><path d="M19 29c1 3 3 4 6 4" /></>,
+    power: <><circle cx="24" cy="24" r="17" /><path d="m27 11-10 15h7l-3 11 10-15h-7l3-11Z" /></>,
+    campus: <><path d="M8 39h32M11 39V20l10-5v24m0 0V10h16v29M15 25h3m-3 6h3m11-14h4m-4 7h4m-4 7h4" /></>,
+    model: <><circle cx="13" cy="24" r="5" /><circle cx="35" cy="15" r="5" /><circle cx="35" cy="33" r="5" /><path d="m18 22 12-5m-12 9 12 5m5-11v8" /></>,
+  }[type];
+  return <svg className="chain-node-icon" viewBox="0 0 48 48" aria-hidden="true">{body}</svg>;
+}
+
+function PulseTrace() {
+  const trace = "M2 25h46l8-8 10 18 13-31 14 42 12-21h28l8-7 9 14 13-26 14 38 13-19h24l8-8 8 8h29";
+  return <svg className="pulse-trace" viewBox="0 0 260 48" role="img" aria-label="实时脉冲动画"><path className="pulse-trace-base" d={trace} /><path className="pulse-trace-live" pathLength="1" d={trace} /><circle cx="257" cy="25" r="3" /></svg>;
+}
+
+function formatRelativeTime(value: string | null): string {
+  if (!value) return "时间未披露";
+  const minutes = Math.max(0, Math.floor((Date.now() - new Date(value).getTime()) / 60_000));
+  if (!Number.isFinite(minutes)) return value;
+  if (minutes < 60) return `${Math.max(1, minutes)} 分钟前`;
+  if (minutes < 1_440) return `${Math.floor(minutes / 60)} 小时前`;
+  return `${Math.floor(minutes / 1_440)} 天前`;
+}
+
+function formatDateTime(value: string | null): string {
+  if (!value) return "—";
+  const date = new Date(value);
+  if (!Number.isFinite(date.getTime())) return value;
+  return new Intl.DateTimeFormat("zh-CN", { timeZone: "Asia/Shanghai", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false }).format(date);
+}
+
+function Brand() {
+  return <a className="brand" href="#top" aria-label="IDC Atlas 首页"><span className="brand-symbol" aria-hidden="true"><i /><i /><i /><i /></span><span className="brand-copy"><strong>IDC</strong><b>ATLAS</b></span></a>;
+}
+
+function SiteQrCode() {
+  const [image, setImage] = useState("");
+
+  useEffect(() => {
+    void QRCode.toDataURL("https://idc-index.com", {
+      errorCorrectionLevel: "M",
+      margin: 1,
+      width: 256,
+      color: { dark: "#071019", light: "#eef8f8" },
+    }).then(setImage);
+  }, []);
+
+  return <div className="site-qr">
+    <div className="site-qr-image">{image ? <img src={image} alt="扫描访问 IDC Atlas" /> : <span aria-hidden="true" />}</div>
+    <div><span>SHARE IDC ATLAS</span><strong>扫码访问网站</strong><small>idc-index.com</small></div>
+  </div>;
+}
+
+function SourceRow({ item }: { item: NewsItem }) {
+  if (item.curator === "官方来源") return <div className="source-row"><a href={item.permalink} target="_blank" rel="noreferrer"><span>OFFICIAL SOURCE</span> {item.sourceName ?? "公开来源"}<ExternalIcon /></a></div>;
+  if (item.curator === "公开来源") return <div className="source-row"><a href={item.permalink} target="_blank" rel="noreferrer"><span>NEWS SOURCE</span> {item.sourceName ?? "公开报道"}<ExternalIcon /></a></div>;
+  return <div className="source-row"><a href={item.permalink} target="_blank" rel="noreferrer"><span>CURATED FROM</span> AI HOT<ExternalIcon /></a>{item.sourceUrl && <a href={item.sourceUrl} target="_blank" rel="noreferrer"><span>ORIGINAL SOURCE</span> {item.sourceName ?? "原始报道"}<ExternalIcon /></a>}</div>;
+}
+
+function TrustMeta({ item }: { item: NewsItem }) {
+  return <div className="trust-meta"><span>{item.curator === "官方来源" ? "PRIMARY SOURCE" : item.curator === "公开来源" ? "VERIFIED NEWS" : "AI HOT CURATED"}</span><time>{item.verifiedAt ? `核验至 ${item.verifiedAt}` : "实时来源"}</time></div>;
+}
+
+function NewsCard({ item, compact = false }: { item: NewsItem; compact?: boolean }) {
+  const signal = signalMeta[item.signal];
+  return <article className={`news-card ${compact ? "compact" : ""} ${item.weeklyHighlight ? "weekly-highlight" : ""}`}>
+    {item.weeklyHighlight && <span className="weekly-flag">WEEKLY HIGHLIGHT</span>}
+    <div className="news-meta"><div><span className={`signal-chip ${signal.color}`}>{signal.label}</span>{item.region && <span className="region-chip">{item.region}</span>}{item.listedTicker && <span className="ticker-chip">{item.listedTicker}</span>}</div><time>{formatRelativeTime(item.publishedAt)}</time></div>
+    <h3><a href={item.permalink} target="_blank" rel="noreferrer">{item.title}</a></h3>
+    <p>{item.summary || "AI HOT 暂未提供摘要，请打开来源查看完整内容。"}</p>
+    {item.whyItMatters && <div className="impact-note"><small>WHY IT MATTERS</small><p>{item.whyItMatters}</p></div>}
+    {(item.milestone || item.scale) && <div className="pulse-facts">{item.milestone && <span><small>阶段</small><strong>{item.milestone}</strong></span>}{item.scale && <span><small>规模</small><strong>{item.scale}</strong></span>}</div>}
+    {item.lifecycle && (compact || item.weeklyHighlight) && <div className="lifecycle" aria-label="项目生命周期">{item.lifecycle.map((stage) => <span className={stage.state} key={stage.label}><i />{stage.label}</span>)}</div>}
+    {(item.region || item.verifiedAt) && <TrustMeta item={item} />}
+    <SourceRow item={item} />
+  </article>;
+}
+
+function ChinaChipCard({ item, index }: { item: NewsItem; index: number }) {
+  return <article className="china-chip-card">
+    <div className="china-chip-head"><span>CN SILICON · {String(index + 1).padStart(2, "0")}</span><time>{formatRelativeTime(item.publishedAt)}</time></div>
+    {item.imageSrc ? <div className="china-chip-media"><img src={item.imageSrc} alt={item.imageAlt ?? item.title} loading="lazy" /><span>{item.imageCredit ?? item.sourceName}</span></div> : <div className="silicon-die" aria-hidden="true">{Array.from({ length: 9 }, (_, cell) => <i key={cell} />)}</div>}
+    <p>{item.listedTicker ?? item.sourceName ?? "中国算力芯片"}</p>
+    <h3><a href={item.permalink} target="_blank" rel="noreferrer">{item.title}</a></h3>
+    <div className="china-chip-summary">{item.summary}</div>
+    {(item.milestone || item.scale) && <div className="china-chip-facts">{item.milestone && <span><small>进展</small><strong>{item.milestone}</strong></span>}{item.scale && <span><small>信号</small><strong>{item.scale}</strong></span>}</div>}
+    {item.whyItMatters && <div className="china-chip-impact"><span>IDC IMPACT</span><p>{item.whyItMatters}</p></div>}
+    <SourceRow item={item} />
+  </article>;
+}
+
+function SupernodeCard({ product, index }: { product: SupernodeProduct; index: number }) {
+  return <article className={`supernode-card ${product.imageFit === "contain" ? "contain-image" : ""}`}>
+    <div className="supernode-media"><img src={product.imageSrc} alt={product.imageAlt} loading="lazy" /><span>{product.imageCredit}</span></div>
+    <div className="supernode-copy"><div className="supernode-head"><span>SUPERNODE · {String(index + 1).padStart(2, "0")}</span><small>{product.status}</small></div><p>{product.vendor}</p><h3>{product.name}</h3><strong>{product.headlineMetric}</strong><div className="supernode-specs">{product.specs.map((spec) => <span key={spec.label}><small>{spec.label}</small><b>{spec.value}</b></span>)}</div><p className="supernode-summary">{product.summary}</p><div className="supernode-sources"><a href={product.sourceUrl} target="_blank" rel="noreferrer">Source: {product.sourceName}<ExternalIcon /></a>{product.secondarySourceUrl && <a href={product.secondarySourceUrl} target="_blank" rel="noreferrer">Verify: {product.secondarySourceName ?? "官方披露"}<ExternalIcon /></a>}</div></div>
+  </article>;
+}
+
+function RecordSource({ record }: { record: SourceRecord }) {
+  return <a className="record-source" href={record.sourceUrl} target="_blank" rel="noreferrer"><span>SOURCE</span>{record.sourceName}<ExternalIcon /></a>;
+}
+
+function benchmarkLine(item: NewsItem): string | null {
+  const sentence = item.summary.split(/(?<=[。！？])/).find((part) => /评测|基准|榜|排名|得分|arena|mmlu|swe|rteb|ndcg/i.test(part));
+  return sentence?.trim() || null;
+}
+
+export default function Home() {
+  const [payload, setPayload] = useState<AtlasPayload | null>(null);
+  const [loadError, setLoadError] = useState(false);
+  const [activeStage, setActiveStage] = useState<ChainKey>("compute");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeMenuGroup, setActiveMenuGroup] = useState<NavGroupKey>("today");
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [menuOpen]);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    void (async () => {
+      try {
+        const response = await fetch("/api/atlas?schema=v22", { signal: controller.signal });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        setPayload(await response.json() as AtlasPayload);
+      } catch (error) {
+        if (!(error instanceof DOMException && error.name === "AbortError")) setLoadError(true);
+      }
+    })();
+    return () => controller.abort();
+  }, []);
+
+  const news = payload?.idcPulse ?? payload?.positiveNews ?? [];
+  const listedNews = news.filter((item) => item.listedTicker);
+  const industryNews = news.filter((item) => !item.listedTicker);
+  const topSignals = listedNews.slice(0, 3);
+  const currentStage = chainStages.find((stage) => stage.key === activeStage) ?? chainStages[0];
+  const activeNews = useMemo(() => payload?.chainNews?.[activeStage] ?? [], [activeStage, payload]);
+  const capacityRecords = payload?.capacityRadar ?? [];
+  const includedCapacity = capacityRecords.filter((record) => record.metric !== "容量待披露");
+  const coolingRecords = payload?.coolingProgress ?? [];
+  const products = payload?.nvidiaProducts ?? [];
+  const nvidiaNews = payload?.nvidiaNews ?? [];
+  const chinaChipNews = payload?.chinaChipNews ?? [];
+  const modelNews = payload?.modelNews ?? [];
+  const openRouterUsage = payload?.openRouterUsage ?? null;
+  const arenaCodeLeaderboard = payload?.arenaCodeLeaderboard ?? null;
+  const aiAdoption = payload?.aiAdoption ?? null;
+  const supernodes = payload?.supernodes ?? [];
+  const aiShare = aiAdoption?.sharePct ?? 17.8;
+  const aiFullDots = Math.floor(aiShare);
+  const aiPartialShare = Math.round((aiShare - aiFullDots) * 100);
+  const arenaScores = arenaCodeLeaderboard?.models.map((model) => model.score) ?? [];
+  const arenaFloor = arenaScores.length ? Math.min(...arenaScores) - 20 : 0;
+  const arenaCeiling = arenaScores.length ? Math.max(...arenaScores) : 1;
+  const daily = payload?.aiDaily ?? null;
+  const dailyItems = daily?.sections.flatMap((section) => section.items.map((item) => ({ ...item, dailySection: section.label }))).slice(0, 8) ?? [];
+  const deals = payload?.mnaDeals ?? [];
+  const currentMenuGroup = navGroups.find((group) => group.key === activeMenuGroup) ?? navGroups[0];
+
+  return <main id="top">
+    <header className="topbar">
+      <Brand />
+      <div className="topbar-actions"><div className="top-status"><span className={`live-dot ${loadError ? "warn" : ""}`} /><span>{loadError ? "部分数据暂不可用" : payload ? "EDGE DATA LIVE" : "CONNECTING"}</span></div><button className="menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="site-menu" onClick={() => setMenuOpen((open) => !open)}><span>{menuOpen ? "CLOSE" : "MENU"}</span><MenuIcon close={menuOpen} /></button></div>
+    </header>
+    {menuOpen && <><button className="menu-backdrop open" type="button" aria-label="关闭导航" onClick={() => setMenuOpen(false)} />
+    <nav className="site-menu open" id="site-menu" aria-label="折叠导航">
+      <div className="site-menu-head"><span>EXPLORE IDC ATLAS</span><strong>快速前往</strong></div>
+      <div className="site-menu-body"><div className="site-menu-groups" aria-label="导航主题">{navGroups.map((group) => <button key={group.key} type="button" aria-pressed={activeMenuGroup === group.key} onClick={() => setActiveMenuGroup(group.key)}><span>{group.no}</span><div><strong>{group.label}</strong><small>{group.detail}</small></div></button>)}</div><div className="site-menu-panel"><div className="site-menu-panel-head"><strong>{currentMenuGroup.label}</strong><small>{currentMenuGroup.items.length} 个模块</small></div><div className="site-menu-grid">{currentMenuGroup.items.map((item) => <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}><span>{item.no}</span><div><strong>{item.label}</strong><small>{item.detail}</small></div><ArrowIcon /></a>)}</div></div></div>
+      <a className="site-menu-github" href="https://github.com/jasonlx327" target="_blank" rel="noreferrer"><GithubIcon /><span><strong>GitHub</strong><small>@jasonlx327</small></span><ExternalIcon /></a>
+    </nav></>}
+
+    <section className="hero" aria-labelledby="hero-title">
+      <div className="hero-grid" aria-hidden="true" /><div className="hero-glow glow-a" aria-hidden="true" /><div className="hero-glow glow-b" aria-hidden="true" />
+      <div className="hero-copy"><p className="eyebrow"><span /> GLOBAL DATA CENTER INTELLIGENCE</p><h1 id="hero-title">Track the <span className="hero-pulse-line">pulse<PulseTrace /></span><br />of <em>infrastructure.</em></h1><p className="hero-lead">IDC Atlas 每日汇集全球数据中心的新项目、投运进展、液冷部署、算力硬件与模型需求动态。</p><div className="hero-actions"><a className="primary-action" href="#pulse">查看今日脉冲 <span><ArrowIcon direction="down-right" /></span></a><a className="secondary-action" href="#chain">查看产业链情况<ArrowIcon /></a></div><div className="hero-footnote"><span>DAILY SOURCE REFRESH</span><span>{payload ? `UPDATED ${formatDateTime(payload.generatedAt)}` : "CONNECTING TO EDGE"}</span></div></div>
+      <aside className="hero-signal" aria-label="今日三大 IDC 信号"><div className="signal-orbit" aria-hidden="true"><i className="orbit-one" /><i className="orbit-two" /><i className="orbit-core" /></div><div className="signal-head"><span><i /> TODAY&apos;S 3 SIGNALS</span><time>{payload ? `AS OF ${formatDateTime(payload.generatedAt)}` : "实时连接中"}</time></div>{topSignals.length ? <div className="hero-signal-list">{topSignals.map((item, index) => <article key={item.id}><div className="hero-signal-meta"><span>0{index + 1}</span><b>{item.listedTicker}</b><time>{formatRelativeTime(item.publishedAt)}</time></div><h2><a href={item.permalink} target="_blank" rel="noreferrer">{item.title}</a></h2><p>{item.whyItMatters ?? item.summary}</p><div className="hero-signal-facts"><span>{item.milestone}</span><strong>{item.scale}</strong><a href={item.permalink} target="_blank" rel="noreferrer">原始出处<ExternalIcon /></a></div></article>)}</div> : <div className="signal-loading"><span /><span /><span /><p>{loadError ? "实时资讯暂时无法连接。" : "正在从公开来源读取今日三大信号…"}</p></div>}</aside>
+      <div className="hero-metrics"><div><small>PUBLIC COMPANY PULSE</small><strong>{listedNews.length || "—"}</strong><span>近 45 天中美上市公司进展</span></div><div><small>WEEKLY HIGHLIGHT</small><strong>{payload?.weeklyHighlightCount ?? "—"}</strong><span>最近 7 天重点项目</span></div><div><small>LIQUID COOLING</small><strong>{coolingRecords.length || "—"}</strong><span>标准、产品、工程</span></div><div><small>AI HOT DAILY</small><strong>{dailyItems.length || "—"}</strong><span>{daily?.date ?? "今日内容连接中"}</span></div></div>
+    </section>
+
+    <section className="section pulse-section" id="pulse"><div className="section-title"><div><span className="section-no">01</span><p>45-DAY PUBLIC COMPANY PULSE</p><h2>IDC 最新脉冲</h2></div><p>优先追踪近 45 天中国与美国上市公司的大型园区建设、扩建、租赁、交付和投运；最近 7 天的重要进展会自动高亮。</p></div>{news.length ? <><div className="pulse-window"><span><i /> LISTED COMPANIES · LAST 45 DAYS</span><strong>{listedNews.length} 条上市公司进展</strong><small>更新至 {payload ? formatDateTime(payload.generatedAt) : "—"}</small></div><div className="news-grid">{listedNews.map((item) => <NewsCard key={item.id} item={item} />)}</div>{industryNews.length > 0 && <div className="industry-pulse"><div><span>INDUSTRY WATCH</span><h3>其他重要大型项目</h3><p>补充观察会影响区域容量和产业链节奏的非上市项目公司进展。</p></div><div className="news-grid">{industryNews.map((item) => <NewsCard key={item.id} item={item} compact />)}</div></div>}</> : <div className="data-empty"><i /><p>{loadError ? "实时资讯暂时不可用，请稍后刷新。" : "正在读取最新项目动态…"}</p></div>}</section>
+
+    <section className="section daily-section" id="daily"><div className="section-title inverse"><div><span className="section-no">02</span><p>AI HOT · DAILY EDITION</p><h2>今日 AI 日报</h2></div><p>每天同步 AI HOT 日报，快速浏览模型、产品、行业与研究进展，并保留每条内容的原始出处。</p></div>{daily ? <><div className="daily-head"><div><span>BEIJING DATE</span><strong>{daily.date}</strong><small>{payload?.dailySnapshot ? `晨间快照 · ${formatDateTime(payload.dailySnapshot.generatedAt)}` : "晨间快照准备中"}</small></div><a href={daily.canonical} target="_blank" rel="noreferrer">查看 AI HOT 完整日报<ExternalIcon /></a></div>{daily.lead && <article className="daily-lead"><span>LEAD STORY</span><h3><a href={daily.lead.permalink} target="_blank" rel="noreferrer">{daily.lead.title}</a></h3><p>{daily.lead.summary}</p><SourceRow item={daily.lead} /></article>}<div className="daily-grid">{dailyItems.map((item) => <article className="daily-card" key={`${item.dailySection}-${item.id}`}><span>{item.dailySection}</span><h3><a href={item.permalink} target="_blank" rel="noreferrer">{item.title}</a></h3><p>{item.summary}</p><SourceRow item={item} /></article>)}</div>{daily.flashes.length > 0 && <div className="daily-flashes"><span>FLASH</span>{daily.flashes.map((item) => <a key={item.id} href={item.permalink} target="_blank" rel="noreferrer">{item.title}<ExternalIcon /></a>)}</div>}</> : <div className="data-empty dark"><i /><p>正在读取 AI HOT 今日 AI 日报…</p></div>}</section>
+
+    <section className="section chain-section" id="chain"><div className="section-title inverse"><div><span className="section-no">03</span><p>INTERACTIVE SUPPLY CHAIN</p><h2>产业链情况</h2></div><p>从服务器、机柜和液冷，到电力、IDC 园区与大模型需求；点击任一环节，下方只显示最近 30 天的公开信息。</p></div><div className="chain-visual"><div className="chain-flow-head"><span>SUPPLY CHAIN · 6 NODES</span><p>点击节点查看最近 30 天动态</p></div><div className="chain-stage-row" aria-label="IDC 产业链六个环节">{chainStages.map((stage) => <button key={stage.key} className={`chain-stage ${stage.className} ${activeStage === stage.key ? "active" : ""}`} onClick={() => setActiveStage(stage.key)} aria-pressed={activeStage === stage.key}><span>{stage.no}</span><i className="chain-stage-icon"><ChainIcon type={stage.key} /></i><strong>{stage.title}</strong><small>{stage.caption}</small></button>)}</div></div><div className="chain-detail"><div className="chain-detail-head"><span>SELECTED NODE · LAST {payload?.chainWindowDays ?? 30} DAYS</span><h3>{currentStage.title}</h3><p>{currentStage.caption} · 近 30 天最新公开动态</p></div><div className="chain-news">{activeNews.length ? activeNews.map((item) => <NewsCard key={item.id} item={item} compact />) : <div className="chain-empty">近 30 天暂无新的公开动态。</div>}</div></div></section>
+
+    <section className="section nvidia-section" id="nvidia"><div className="section-title"><div><span className="section-no">04</span><p>NVIDIA PRODUCT RADAR</p><h2>产品、形态与发布节奏</h2></div><p>追踪 NVIDIA 数据中心产品的真实形态、关键能力、发布节点和公开价格信息。</p></div><div className="nvidia-layout"><div className="product-stack">{products.map((product, index) => <article className="product-card" key={product.id}><div className="product-art"><img src={product.imageSrc} alt={product.imageAlt} loading="lazy" /><span>NVIDIA 官方产品图</span></div><div className="product-copy"><p>PRODUCT {String(index + 1).padStart(2, "0")}</p><h3>{product.model}</h3><strong>{product.form}</strong><span>{product.spec}</span><dl><div><dt>发布</dt><dd>{product.release}</dd></div><div><dt>价格</dt><dd>{product.price}</dd></div></dl><a href={product.sourceUrl} target="_blank" rel="noreferrer">NVIDIA 官方资料<ExternalIcon /></a></div></article>)}</div><aside className="nvidia-news"><span>NVIDIA NOW · AI HOT</span><h3>发布会与产品动态</h3>{nvidiaNews.length ? nvidiaNews.slice(0, 3).map((item) => <a className="nvidia-news-item" key={item.id} href={item.permalink} target="_blank" rel="noreferrer"><time>{formatRelativeTime(item.publishedAt)}</time><strong>{item.title}</strong><small>CURATED FROM AI HOT<ExternalIcon /></small></a>) : <p>NVIDIA 最新内容正在更新中。</p>}</aside></div></section>
+
+    <section className="section china-chip-section" id="china-chips"><div className="section-title inverse"><div><span className="section-no">05</span><p>CHINA GPU &amp; AI SILICON</p><h2>中国 GPU / 芯片进展</h2></div><p>聚焦近 {payload?.chinaChipWindowDays ?? 30} 天国产 GPU、DCU、AI 加速芯片与超节点的产品、集群、模型适配和开发者生态进展。</p></div><div className="supernode-radar"><div className="supernode-radar-head"><span>SUPERNODE RADAR</span><div><h3>国产超节点路线</h3><p>从单卡参数转向高密度互联、统一内存、液冷和万卡扩展能力。</p></div></div><div className="supernode-grid">{supernodes.map((product, index) => <SupernodeCard key={product.id} product={product} index={index} />)}</div></div><div className="china-chip-status"><span><i /> OFFICIAL + AI HOT + 36KR</span><strong>{chinaChipNews.length} 条近期进展</strong><small>{payload?.chinaChipStatus === "live" ? "AI HOT 实时线索已接入" : "厂商披露优先 · 媒体线索复核"}</small></div>{chinaChipNews.length ? <div className="china-chip-grid">{chinaChipNews.slice(0, 6).map((item, index) => <ChinaChipCard key={item.id} item={item} index={index} />)}</div> : <div className="data-empty dark"><i /><p>正在读取中国 GPU 与 AI 芯片最新进展…</p></div>}</section>
+
+    <section className="section model-section" id="models"><div className="section-title inverse"><div><span className="section-no">06</span><p>MODEL DEMAND &amp; CAPABILITY</p><h2>大模型发布与评测</h2></div><p>用全球 AI 渗透率观察长期需求空间，用 OpenRouter 看近一周真实调用热度，再用 Arena 匿名对战榜单比较前端开发能力。</p></div><div className="adoption-panel"><div className="adoption-copy"><span>GLOBAL AI DIFFUSION · {aiAdoption?.asOf ?? "2026 Q1"}</span><strong>{aiShare}%</strong><h3>全球生成式 AI 使用率继续上升</h3><p>{aiAdoption?.note ?? "微软全球 AI 使用指标按季度追踪，并随报告发布更新。"}</p><div className="adoption-trend" aria-label="全球生成式 AI 使用率季度趋势">{(aiAdoption?.series ?? [{ period: "2025 H1", sharePct: 15.1 }, { period: "2025 H2", sharePct: 16.3 }, { period: "2026 Q1", sharePct: 17.8 }]).map((point) => <span key={point.period}><small>{point.period}</small><i><b style={{ width: `${(point.sharePct / 20) * 100}%` }} /></i><strong>{point.sharePct}%</strong></span>)}</div><div className="adoption-links"><a href={aiAdoption?.sourceUrl ?? "https://blogs.microsoft.com/on-the-issues/2026/05/07/the-state-of-global-ai-diffusion-in-2026/"} target="_blank" rel="noreferrer">Data: Microsoft<ExternalIcon /></a><a href={aiAdoption?.dataUrl ?? "https://github.com/microsoft/ai-diffusion-report"} target="_blank" rel="noreferrer">Quarterly data<ExternalIcon /></a><a href={aiAdoption?.visualCreditUrl ?? "https://www.damianplayer.com/"} target="_blank" rel="noreferrer">Visual idea: Damian Player<ExternalIcon /></a></div></div><div className="adoption-visual"><span>{aiAdoption?.cadence ?? "季度追踪 · 随报告发布更新"}</span><div className="adoption-dots" role="img" aria-label={`100 个点中约 ${aiShare} 个高亮，表示全球生成式 AI 使用率为 ${aiShare}%`}>{Array.from({ length: 100 }, (_, index) => <i key={index} className={index < aiFullDots ? "active" : index === aiFullDots && aiPartialShare > 0 ? "partial" : ""} style={index === aiFullDots && aiPartialShare > 0 ? { background: `linear-gradient(135deg, #72d690 0 ${aiPartialShare}%, #26313e ${aiPartialShare + 1}%)` } : undefined} />)}</div></div></div><div className="model-signal-grid"><div className="openrouter-panel"><div className="openrouter-head"><div><span>OPENROUTER · WEEKLY USAGE</span><h3>真实调用热度</h3></div><div><strong>{openRouterUsage?.period ?? "近7日"}</strong><small>{openRouterUsage ? `更新 ${formatDateTime(openRouterUsage.asOf)}` : "连接中"}</small></div></div>{openRouterUsage?.models.length ? <div className="openrouter-bars">{openRouterUsage.models.map((model) => <a key={model.id} href={model.url} target="_blank" rel="noreferrer"><span>{String(model.rank).padStart(2, "0")}</span><strong>{model.name}</strong><div><i style={{ width: `${model.heat}%` }} /></div><b>#{model.rank}</b></a>)}</div> : <div className="openrouter-empty">正在读取 OpenRouter 近一周热门模型排序…</div>}<div className="openrouter-foot"><p>{openRouterUsage?.note ?? "按 OpenRouter 公开周排名归一化展示，不代表全市场份额。"}</p><a href={openRouterUsage?.sourceUrl ?? "https://openrouter.ai/rankings/"} target="_blank" rel="noreferrer">Source: OpenRouter<ExternalIcon /></a></div></div><div className="arena-panel"><div className="arena-head"><div><span>ARENA · CODE / WEBDEV</span><h3>前端开发公开评测</h3></div><div><strong>{arenaCodeLeaderboard?.asOf ?? "连接中"}</strong><small>{arenaCodeLeaderboard?.models.length ? "TOP 8 · 动态榜单" : "实时连接中"}</small></div></div>{arenaCodeLeaderboard?.models.length ? <div className="arena-bars">{arenaCodeLeaderboard.models.map((model) => { const width = 34 + ((model.score - arenaFloor) / Math.max(1, arenaCeiling - arenaFloor)) * 66; return <div className={model.chinaLab ? "china-lab" : ""} key={`${model.rank}-${model.name}`}><span>{String(model.rank).padStart(2, "0")}</span><p><strong>{model.name}</strong><small>{model.organization}</small></p><div><i style={{ width: `${width}%` }} /></div><b>{model.score}</b></div>; })}</div> : <div className="openrouter-empty">正在读取 Arena Code 公开榜单…</div>}<div className="arena-foot"><p>{arenaCodeLeaderboard?.note ?? "Arena Code 公开榜单暂时不可用。"}</p><a href={arenaCodeLeaderboard?.sourceUrl ?? "https://arena.ai/leaderboard/code/webdev"} target="_blank" rel="noreferrer">Source: Arena<ExternalIcon /></a></div></div></div><div className="model-grid">{modelNews.slice(0, 6).map((item, index) => <article className="model-card" key={item.id}><div className="model-card-top"><span>{String(index + 1).padStart(2, "0")}</span><time>{formatRelativeTime(item.publishedAt)}</time></div><h3><a href={item.permalink} target="_blank" rel="noreferrer">{item.title}</a></h3><p>{item.summary}</p>{benchmarkLine(item) && <div className="benchmark-line"><span>PUBLIC BENCHMARK</span><strong>{benchmarkLine(item)}</strong></div>}<SourceRow item={item} /></article>)}</div>{!modelNews.length && <div className="data-empty dark"><i /><p>正在同步最新模型发布与公开评测…</p></div>}</section>
+
+    <section className="section project-section" id="projects"><div className="section-title inverse"><div><span className="section-no">07</span><p>LARGE-SCALE CAMPUS RADAR</p><h2>大型园区进度</h2></div><p>追踪大型 IDC 园区和关键能源配套的建设、招标、交付与投运进度。</p></div><div className="capacity-grid">{includedCapacity.map((record) => <article className="capacity-card" key={record.id}><div><span>{record.status}</span><strong>{record.metric}</strong></div><p>{record.publishedAt}</p><h3>{record.title}</h3><h4>{record.subject}</h4><p className="capacity-note">{record.note}</p><RecordSource record={record} /></article>)}</div><div className="disclosure-queue"><span>招标与前期项目</span>{capacityRecords.filter((record) => record.metric === "容量待披露").map((record) => <a key={record.id} href={record.sourceUrl} target="_blank" rel="noreferrer"><strong>{record.title}</strong><small>{record.status} · {record.sourceName}<ExternalIcon /></small></a>)}</div></section>
+
+    <section className="section mna-section" id="mna"><div className="section-title"><div><span className="section-no">08</span><p>GLOBAL IDC M&amp;A INTELLIGENCE</p><h2>全球重大并购</h2></div><p>关注会改变区域容量、平台控制权或能源获取能力的重大交易，展示买方、标的、交易规模与资产体量。</p></div><div className="mna-grid">{deals.map((deal) => <article className="mna-card" key={deal.id}><div className="mna-card-head"><span>{deal.status}</span><time>公告 {deal.announcedAt}</time></div><p>{deal.region}</p><h3>{deal.buyer}<i><ArrowIcon /></i>{deal.target}</h3><div className="mna-metrics"><div><small>DEAL VALUE · {deal.valueBasis}</small><strong>{deal.value}</strong></div><div><small>ASSET SCALE · {deal.capacityBasis}</small><strong>{deal.capacity}</strong></div></div><p className="mna-rationale">{deal.rationale}</p><a href={deal.sourceUrl} target="_blank" rel="noreferrer"><span>SOURCE</span>{deal.sourceName}<ExternalIcon /></a><small className="mna-verified">状态核验至 {deal.statusAsOf}</small></article>)}</div></section>
+
+    <section className="section cooling-section" id="cooling"><div className="section-title"><div><span className="section-no">09</span><p>LIQUID COOLING ADOPTION</p><h2>液冷部署进度</h2></div><p>从标准与材料、产品化到工程落地，持续更新液冷产业从验证走向规模应用的关键节点。</p></div><div className="cooling-journey">{coolingRecords.map((record, index) => <article className="cooling-step" key={record.id}><span>{String(index + 1).padStart(2, "0")}</span><i aria-hidden="true" /><p>{record.status}</p><h3>{record.metric}</h3><h4>{record.title}</h4><small>{record.subject} · {record.publishedAt}</small><p className="cooling-note">{record.note}</p><RecordSource record={record} /></article>)}</div></section>
+
+    <section className="benchmark-section section" id="benchmark"><div className="section-title"><div><span className="section-no">10</span><p>DAILY MARKET TEMPERATURE</p><h2>每日市场温度</h2></div><p>用 CWW 与 CWWCN 观察算力、存储和相关基础设施公司的当日整体表现。</p></div><div className="benchmark-layout"><div className="benchmark-cards">{(payload?.benchmarks ?? []).map((item) => <article className="benchmark-card" key={item.code}><div className="benchmark-head"><span>{item.code}</span><small>{item.count} 成分</small></div><p>{item.name}</p><strong>{item.level.toLocaleString("en-US", { maximumFractionDigits: 2 })}</strong><div className="benchmark-change"><span className={item.dayPct >= 0 ? "up" : "down"}>{item.dayPct >= 0 ? "+" : ""}{item.dayPct.toFixed(2)}%</span><small>较前收</small></div><div className="micro-bars" aria-hidden="true">{[34, 46, 40, 58, 52, 63, 49, 72, 67, 82, 75, 91].map((height, index) => <i key={index} style={{ height: `${height}%` }} />)}</div></article>)}{!payload?.benchmarks?.length && <div className="benchmark-placeholder">正在读取 CWW 官方收盘数据…</div>}</div><aside className="benchmark-note"><span>MARKET SNAPSHOT</span><h3>今天市场在交易什么？</h3><p>指数变化与产业新闻并列展示，帮助快速理解当日市场温度。</p><div className="data-source"><a href="https://cwwindex.today/" target="_blank" rel="noreferrer"><span>DATA FROM</span> CWW INDEX<ExternalIcon /></a><small>截至 {payload?.benchmarkDate ?? "—"} · Methodology v{payload?.benchmarkMethodology ?? "—"}</small></div></aside></div></section>
+
+    <section className="method-section" id="method"><div><p>SOURCE-FIRST INTELLIGENCE</p><h2>每条信息，都能回到出处。</h2></div><div className="method-copy"><p>AI HOT 与 36Kr 提供每日资讯线索；GPU 厂商、交易所、政府、项目和交易公告负责关键参数核验；Microsoft、OpenRouter、Arena 与 CWW 分别提供 AI 渗透率、模型热度、公开评测和每日市场表现。</p><div className="source-legend"><span>CURATED FROM <b>AI HOT / 36KR</b></span><span>OFFICIAL <b>GPU 厂商 / 交易所 / 项目公告</b></span><span>MODEL SIGNALS <b>MICROSOFT / OPENROUTER / ARENA</b></span><span>DATA FROM <b>CWW INDEX</b></span></div><div className="source-watchlist"><span>TRACKED SOURCES</span>{(payload?.trackedSources ?? []).map((source) => <a key={source.id} href={source.sourceUrl} target="_blank" rel="noreferrer"><strong>{source.name}</strong><small>{source.scope} · {source.mode}</small><ExternalIcon /></a>)}</div></div></section>
+    <footer><Brand /><p>全球数据中心产业地图与实时情报站</p><div className="footer-contact"><SiteQrCode /><a href="https://github.com/jasonlx327" target="_blank" rel="noreferrer"><GithubIcon /><span><strong>GitHub</strong><small>@jasonlx327</small></span><ExternalIcon /></a><div className="seo-topic-links"><a href="/topics/data-center-intelligence">数据中心情报 / Data Center Intelligence</a><a href="/topics/china-ai-silicon">中国 GPU / China AI Silicon</a></div><a className="privacy-link" href="/privacy">隐私说明</a><span>RESEARCH ONLY · NOT INVESTMENT ADVICE</span></div></footer>
+  </main>;
+}
