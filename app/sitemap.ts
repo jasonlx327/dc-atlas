@@ -22,5 +22,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    {
+      url: "https://idc-index.com/methodology",
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 }

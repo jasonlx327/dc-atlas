@@ -109,3 +109,16 @@ test("serves crawl directives and bilingual topic pages", async () => {
   assert.match(html, /China GPU &amp; AI Silicon/);
   assert.match(html, /rel="canonical" href="https:\/\/idc-index\.com\/topics\/china-ai-silicon"/i);
 });
+
+test("publishes the source methodology and includes it in the sitemap", async () => {
+  const methodology = await render("/methodology");
+  assert.equal(methodology.status, 200);
+  const html = await methodology.text();
+  assert.match(html, /方法与数据来源/);
+  assert.match(html, /How we build the signal/);
+  assert.match(html, /rel="canonical" href="https:\/\/idc-index\.com\/methodology"/i);
+
+  const sitemap = await render("/sitemap.xml");
+  assert.equal(sitemap.status, 200);
+  assert.match(await sitemap.text(), /https:\/\/idc-index\.com\/methodology/);
+});
