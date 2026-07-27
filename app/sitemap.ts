@@ -27,5 +27,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      url: "https://idc-index.com/calendar",
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
+    {
+      url: "https://idc-index.com/en",
+      changeFrequency: "daily",
+      priority: 0.9,
+    },
+    {
+      url: "https://idc-index.com/columns/ai-capex-power",
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: "https://idc-index.com/en/columns/ai-capex-power",
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
   ];
 }

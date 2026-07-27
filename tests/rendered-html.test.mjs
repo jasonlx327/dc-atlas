@@ -33,7 +33,10 @@ test("server-renders the finished IDC Atlas homepage", async () => {
   assert.match(html, /IDC 最新脉冲/);
   assert.match(html, /近 45 天中国与美国/);
   assert.match(html, /WEEKLY HIGHLIGHT/);
-  assert.match(html, /TODAY&#x27;S 3 SIGNALS/);
+  assert.match(html, /EARNINGS WATCH · IDC CALENDAR/);
+  assert.match(html, /NEW · IDC ATLAS COLUMN/);
+  assert.match(html, /AI 基建竞赛/);
+  assert.match(html, /href="\/columns\/ai-capex-power"/);
   assert.match(html, /今日 AI 日报/);
   assert.match(html, /产业链情况/);
   assert.match(html, /只显示最近 30 天/);
@@ -75,19 +78,122 @@ test("groups the menu into four themes without changing section links", async ()
   assert.doesNotMatch(source, /idc-index-chain-aurora\.png/);
 });
 
+test("uses explicit Beijing dates instead of relative timestamps", async () => {
+  const source = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");
+
+  assert.match(source, /year: "numeric", month: "2-digit", day: "2-digit"/);
+  assert.doesNotMatch(source, /分钟前|小时前|天前/);
+});
+
+test("keeps the English site fully translated across the live coverage stack", async () => {
+  const source = await readFile(new URL("../app/en/english-home.tsx", import.meta.url), "utf8");
+
+  for (const marker of [
+    "Digital Realty reports record Q2 leasing and backlog",
+    "ChangXin Technology lists on STAR Market as an A-share DRAM manufacturer",
+    "Shanghai DataPort joins a WAIC quantum-supercomputing-AI platform project",
+    "ABot-World-0: unlimited interactive world generation on a single desktop GPU",
+    "China Mobile Zhongwei data-center Campus B, Ningxia",
+    "Vertiv expands AI data-center cooling manufacturing and testing in Italy",
+    "AIP, MGX and BlackRock GIP completed the acquisition of 100% of Aligned",
+    '"/media/china/hygon-dcu-visual.png"',
+    '"/media/china/metax-c600.jpg"',
+    '"一期 EPC 招标": "Phase I EPC tender"',
+    '"科创板上市交易": "STAR Market trading begins"',
+    '"5.52 万㎡ · 2.78 亿元": "55,200 sq m · RMB 278m"',
+  ]) assert.match(source, new RegExp(marker));
+
+  assert.doesNotMatch(source, /editorial English translation is pending/);
+  assert.doesNotMatch(source, /lang="zh-CN"/);
+  assert.match(source, /The AI Buildout Enters/);
+  assert.match(source, /href="\/en\/columns\/ai-capex-power"/);
+});
+
+test("publishes the bilingual CAPEX Watch column with article metadata and primary sources", async () => {
+  const chinese = await render("/columns/ai-capex-power");
+  assert.equal(chinese.status, 200);
+  const chineseHtml = await chinese.text();
+  assert.match(chineseHtml, /AI 基建竞赛进入电力时代/);
+  assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns\/ai-capex-power"/i);
+  assert.match(chineseHtml, /"@type":"Article"/);
+  assert.match(chineseHtml, /微软 FY2026 Q3 财报电话会/);
+  assert.match(chineseHtml, /本网站内容仅用于信息展示与研究/);
+  assert.doesNotMatch(chineseHtml, /不在 GPU，而在电网/);
+
+  const english = await render("/en/columns/ai-capex-power");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /The AI Buildout Enters Its Power-Hungry Phase/);
+  assert.match(englishHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/columns\/ai-capex-power"/i);
+  assert.match(englishHtml, /Microsoft FY2026 Q3 earnings call/);
+  assert.match(englishHtml, /For information and research only/);
+  assert.doesNotMatch(englishHtml, /Isn.t the GPU/);
+});
+
+test("keeps the homepage earnings watch compact and reachable", async () => {
+  const source = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(source, /const heroCalendarEvents = upcomingEvents\.slice\(0, 3\)/);
+  assert.match(source, /hero-calendar-more" href="\/calendar"/);
+  assert.match(source, /aria-label=\{menuOpen \? "关闭导航菜单" : "打开导航菜单"\}/);
+  assert.match(source, /core-company-pulse" id="listed"/);
+  assert.match(source, /href="#listed"><span>03<\/span>标的/);
+  assert.match(css, /\.hero \{ padding-bottom: 78px; \}/);
+});
+
+test("server-primes the bilingual homepages with the live first-screen payload", async () => {
+  const initialAtlas = await readFile(new URL("../app/initial-atlas.ts", import.meta.url), "utf8");
+  const workerSource = await readFile(new URL("../worker/index.ts", import.meta.url), "utf8");
+  const homePage = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+  const englishPage = await readFile(new URL("../app/en/page.tsx", import.meta.url), "utf8");
+
+  assert.match(initialAtlas, /x-idc-atlas-prime/);
+  assert.match(initialAtlas, /DecompressionStream\("gzip"\)/);
+  assert.match(workerSource, /const INITIAL_ATLAS_HEADER = "x-idc-atlas-prime"/);
+  assert.match(workerSource, /function compactInitialAtlasPayload/);
+  assert.match(workerSource, /new CompressionStream\("gzip"\)/);
+  for (const key of ["idcPulse", "listedCompanyNews", "upcomingEvents", "aiDaily"]) assert.match(workerSource, new RegExp(key));
+  assert.match(homePage, /<Home initialPayload=\{initialPayload\}/);
+  assert.match(englishPage, /<EnglishHome initialPayload=\{initialPayload\}/);
+});
+
+test("uses source-linked earnings conclusions instead of stock-direction voting", async () => {
+  const workerSource = await readFile(new URL("../worker/index.ts", import.meta.url), "utf8");
+  const pageSource = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");
+
+  assert.match(workerSource, /conclusion:/);
+  assert.match(workerSource, /13\.5GWh/);
+  assert.match(workerSource, /alphabet-q2-2026[\s\S]*1,950–2,050/);
+  assert.match(workerSource, /intel-q2-2026[\s\S]*DCAI[\s\S]*59%/);
+  assert.match(workerSource, /function staticAtlasContent/);
+  for (const source of ["calendarEvents", "capacityRadar", "coolingProgress", "officialChinaChipNews", "nvidiaProducts", "supernodeProducts", "mnaDeals"]) assert.match(workerSource, new RegExp(source));
+  assert.match(workerSource, /content=\$\{staticContentVersion\}/);
+  assert.doesNotMatch(workerSource, /earnings-polls|EARNINGS_VOTES|idc_vote_token/);
+  assert.match(pageSource, /财报结论 · 已更新/);
+  assert.doesNotMatch(pageSource, /预测上涨|预测下跌|earningsPolls|earnings-vote/);
+});
+
 test("keeps the large-campus radar current and source-backed", async () => {
   const workerSource = await readFile(new URL("../worker/index.ts", import.meta.url), "utf8");
   const pageSource = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");
 
   for (const marker of ["5 GW 计算容量目标", "175 MW 关键 IT 负载", "133 MW IT 已交付", "332 MW IT 在运", "中国联通长三角（吴江）智算中心一期 EPC"]) assert.match(workerSource, new RegExp(marker));
-  assert.match(workerSource, /\/api\/atlas\?schema=v23/);
-  assert.match(pageSource, /\/api\/atlas\?schema=v23/);
+  assert.match(workerSource, /\/api\/atlas-live-v5\?schema=v1/);
+  assert.match(pageSource, /\/api\/atlas-live-v5\?schema=v1/);
   assert.match(workerSource, /口罩哥研报60秒/);
   assert.doesNotMatch(pageSource, /TRACKED SOURCES|source-watchlist/);
   assert.match(workerSource, /IDC_DAILY_SNAPSHOTS/);
   assert.match(workerSource, /\/api\/daily-snapshot/);
   assert.match(workerSource, /createScheduledSnapshot/);
+  assert.match(workerSource, /forceRefresh: true, allowBootstrapSnapshot: false/);
   assert.match(pageSource, /晨间快照/);
+});
+
+test("keeps the ChangXin Technology listing in China AI silicon coverage", async () => {
+  const workerSource = await readFile(new URL("../worker/index.ts", import.meta.url), "utf8");
+
+  for (const marker of ["长鑫科技登陆科创板", "688825.SH", "450,303.8971 万股", "科创板上市交易"]) assert.match(workerSource, new RegExp(marker));
 });
 
 test("keeps live-data validation in the deployment path", async () => {
@@ -109,6 +215,9 @@ test("includes social sharing metadata for the request host", async () => {
   assert.match(html, /property="og:image" content="https:\/\/dc-atlas\.example\/og\.png"/i);
   assert.match(html, /name="twitter:card" content="summary_large_image"/i);
   assert.match(html, /lang="zh-CN"/i);
+  assert.match(html, /rel="canonical" href="https:\/\/dc-atlas\.example\/"/i);
+  assert.match(html, /hrefLang="en" href="https:\/\/dc-atlas\.example\/en"/i);
+  assert.match(html, /"@type":"WebSite"/i);
 });
 
 test("serves crawl directives and bilingual topic pages", async () => {
@@ -122,6 +231,16 @@ test("serves crawl directives and bilingual topic pages", async () => {
   assert.match(html, /中国 GPU 与 AI 芯片进展/);
   assert.match(html, /China GPU &amp; AI Silicon/);
   assert.match(html, /rel="canonical" href="https:\/\/idc-index\.com\/topics\/china-ai-silicon"/i);
+  assert.match(html, /"@type":"FAQPage"/);
+  assert.match(html, /"@type":"BreadcrumbList"/);
+  assert.match(html, /Frequently asked questions/);
+
+  const dataCenterTopic = await render("/topics/data-center-intelligence");
+  assert.equal(dataCenterTopic.status, 200);
+  const dataCenterHtml = await dataCenterTopic.text();
+  assert.match(dataCenterHtml, /Global Data Center Intelligence/);
+  assert.match(dataCenterHtml, /"@type":"FAQPage"/);
+  assert.match(dataCenterHtml, /Is this investment advice/);
 });
 
 test("publishes the source methodology and includes it in the sitemap", async () => {
@@ -135,4 +254,18 @@ test("publishes the source methodology and includes it in the sitemap", async ()
   const sitemap = await render("/sitemap.xml");
   assert.equal(sitemap.status, 200);
   assert.match(await sitemap.text(), /https:\/\/idc-index\.com\/methodology/);
+  const sitemapXml = await (await render("/sitemap.xml")).text();
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns\/ai-capex-power/);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns\/ai-capex-power/);
+});
+
+test("gives the earnings calendar and poster route distinct crawl metadata", async () => {
+  const calendar = await render("/calendar");
+  const calendarHtml = await calendar.text();
+  assert.match(calendarHtml, /rel="canonical" href="https:\/\/idc-index\.com\/calendar"/i);
+  assert.match(calendarHtml, /property="og:title" content="美股科技财报日历｜IDC Atlas"/i);
+
+  const poster = await render("/calendar/poster");
+  const posterHtml = await poster.text();
+  assert.match(posterHtml, /<meta name="robots" content="noindex, nofollow"/i);
 });

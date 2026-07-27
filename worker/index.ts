@@ -7,6 +7,28 @@ const AIHOT_USER_AGENT = "aihot-skill/0.3.6 (+https://aihot.virxact.com/aihot-sk
 const CWW_ENDPOINT = "https://cwwindex.today/data/latest.json";
 const OPENROUTER_MODELS_ENDPOINT = "https://openrouter.ai/api/v1/models?sort=top-weekly";
 const ARENA_CODE_ENDPOINT = "https://arena.ai/leaderboard/code/webdev";
+const LLMS_TXT = `# IDC Atlas
+
+> IDC Atlas is a bilingual, source-first intelligence site for global data-center construction, AI infrastructure, power, cooling, networking and China AI silicon. Content is for public-information research and industry observation only, not investment advice.
+
+Use original disclosure links attached to individual updates to verify capacity, delivery, commissioning, product specifications and financial claims. The site separates news leads from verified public information. Time-sensitive content is refreshed continuously; dates and status should be checked on the linked source.
+
+## Core pages
+
+- [Live intelligence homepage](https://idc-index.com/): Current project pulse, listed-company updates, industry chain, AI infrastructure and market signals.
+- [Global Data Center Intelligence](https://idc-index.com/topics/data-center-intelligence): Bilingual guide to global data-center projects and infrastructure signals.
+- [China AI Silicon](https://idc-index.com/topics/china-ai-silicon): Bilingual guide to China GPU, DCU, AI accelerators, supernodes and developer ecosystem updates.
+- [Methodology and sources](https://idc-index.com/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
+- [US tech earnings calendar](https://idc-index.com/calendar): Upcoming cloud, semiconductor and data-center-infrastructure earnings events, CAPEX watch items and source-linked post-results conclusions.
+- [CAPEX Watch: AI infrastructure enters the power era](https://idc-index.com/columns/ai-capex-power): Chinese analysis of hyperscaler spending, grid access, campuses, cooling and commissioning.
+- [CAPEX Watch: The AI Buildout Enters Its Power-Hungry Phase](https://idc-index.com/en/columns/ai-capex-power): English edition with source-linked company disclosures and earnings watch items.
+
+## Interpretation
+
+- Primary sources control factual claims. News items are discovery signals and may require further verification.
+- This site does not provide investment advice, trading recommendations or guarantees about future outcomes.
+- Live and daily-snapshot data are distinct from research conclusions; read each item’s source and timestamp before relying on it.
+`;
 const PRODUCT_IMAGE_SOURCES: Record<string, string> = {
   "/media/china/huawei-atlas-950.jpg": "https://www-file.huawei.com/dam/asset/view/260717-01.png",
   "/media/china/sugon-scalex640.png": "https://img1.mydrivers.com/img/20251223/0dc36481138640e19718364ea19e1254.png",
@@ -83,13 +105,14 @@ type SourceRecord = {
 
 type NvidiaProduct = {
   id: string;
+  vendor: string;
   model: string;
   form: string;
   spec: string;
   release: string;
   price: string;
-  imageSrc: string;
-  imageAlt: string;
+  imageSrc?: string;
+  imageAlt?: string;
   sourceUrl: string;
 };
 
@@ -166,6 +189,24 @@ type TrackedSource = {
   scope: string;
   mode: string;
   sourceUrl: string;
+};
+
+type CalendarEvent = {
+  id: string;
+  startsAt: string;
+  company: string;
+  ticker: string;
+  sector: string;
+  description: string;
+  focus: string;
+  sourceName: string;
+  sourceUrl: string;
+  conclusion?: {
+    summary: string;
+    summaryEn?: string;
+    sourceName: string;
+    sourceUrl: string;
+  };
 };
 
 type JsonObject = { [key: string]: unknown };
@@ -490,6 +531,17 @@ function supernodeProducts(): SupernodeProduct[] {
 function capacityRadar(): SourceRecord[] {
   return [
     {
+      id: "digital-realty-q2-2026-capacity",
+      title: "Digital Realty Q2 披露新增园区地块与北弗吉尼亚 288MW 资产权益",
+      subject: "Digital Realty · NYSE: DLR",
+      metric: "亚特兰大园区 >1GW IT · 北弗州 288MW IT",
+      status: "收购 / 扩容推进",
+      publishedAt: "2026-07-23",
+      sourceName: "Digital Realty",
+      sourceUrl: "https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-reports-second-quarter-2026-results",
+      note: "公司披露已取得亚特兰大相邻地块，合计可支持超过 1GW IT 容量；同时完成北弗吉尼亚三座已出租数据中心 64% 权益收购，对应 288MW IT 容量。",
+    },
+    {
       id: "cleanspark-sandersville-175mw",
       title: "CleanSpark Sandersville AI 数据中心园区",
       subject: "CleanSpark · Nasdaq: CLSK",
@@ -572,6 +624,17 @@ function capacityRadar(): SourceRecord[] {
 function coolingProgress(): SourceRecord[] {
   return [
     {
+      id: "vertiv-tognana-cooling-expansion",
+      title: "Vertiv 扩建意大利 AI 数据中心冷却制造与测试能力",
+      subject: "Vertiv · NYSE: VRT",
+      metric: "2026 年底冷水机产能预计翻倍",
+      status: "制造扩产",
+      publishedAt: "2026-07-21",
+      sourceName: "Vertiv",
+      sourceUrl: "https://www.vertiv.com/en-us/about/news-and-events/corporate-news/2026/vertiv-expands-global-manufacturing-capacity-for-ai-ready-data-center-cooling-solutions/",
+      note: "Tognana 园区扩建将提升冷水机制造和集成测试能力；新大型实验室计划于 2027 年初完成，用于验证高密度负载下与液冷系统的集成。",
+    },
+    {
       id: "odcc-liquid-research",
       title: "液冷冷却液产业全景研究启动",
       subject: "ODCC / 中国移动设计院",
@@ -611,6 +674,7 @@ function nvidiaProducts(): NvidiaProduct[] {
   return [
     {
       id: "gb200-nvl72",
+      vendor: "NVIDIA",
       model: "GB200 NVL72",
       form: "液冷机柜级系统",
       spec: "面向大规模训练与推理的 Blackwell 平台",
@@ -622,6 +686,7 @@ function nvidiaProducts(): NvidiaProduct[] {
     },
     {
       id: "dgx-b200",
+      vendor: "NVIDIA",
       model: "DGX B200",
       form: "AI 工厂计算节点",
       spec: "Blackwell 架构 DGX 系统",
@@ -633,6 +698,7 @@ function nvidiaProducts(): NvidiaProduct[] {
     },
     {
       id: "vera-rubin",
+      vendor: "NVIDIA",
       model: "Vera Rubin",
       form: "下一代 AI 工厂平台",
       spec: "Vera CPU、Rubin GPU 与互联芯片组合",
@@ -642,11 +708,39 @@ function nvidiaProducts(): NvidiaProduct[] {
       imageAlt: "NVIDIA Vera Rubin 平台官方产品图",
       sourceUrl: "https://nvidianews.nvidia.com/news/nvidia-vera-rubin-platform",
     },
+    {
+      id: "amd-helios-mi400-2026",
+      vendor: "AMD",
+      model: "Instinct MI400 / Helios",
+      form: "面向前沿 AI 的机架级平台",
+      spec: "MI400 系列 GPU、EPYC 9006、Pensando 网络与 ROCm 开放软件",
+      release: "2026-07-23 · Advancing AI 发布",
+      price: "官方未披露统一定价",
+      sourceUrl: "https://newsroom.amd.com/press-kits/advancing-ai-2026-all-news/",
+    },
   ];
 }
 
 function officialChinaChipNews(): NewsItem[] {
   return [
+    {
+      id: "cxmt-star-market-listing-2026-07",
+      title: "长鑫科技登陆科创板，成为 A 股 DRAM 制造标的",
+      summary: "长鑫科技于 7 月 27 日在上交所科创板上市交易，证券简称“长鑫科技”，证券代码 688825；公告显示，450,303.8971 万股自当日起上市交易。",
+      publishedAt: "2026-07-27T09:00:00+08:00",
+      category: "china-ai-chip",
+      score: null,
+      permalink: "https://stcn.com/xinpi/jg-detail.html?id=9272870",
+      sourceUrl: "https://stcn.com/xinpi/jg-detail.html?id=9272870",
+      sourceName: "上海证券交易所",
+      signal: "hardware",
+      curator: "官方来源",
+      region: "中国",
+      listedTicker: "长鑫科技 · 688825.SH",
+      milestone: "科创板上市交易",
+      scale: "450,303.8971 万股首日上市流通",
+      whyItMatters: "长鑫为国内 DRAM 制造商，上市后其产能建设、服务器 DRAM 产品结构与先进存储研发将形成更连续的公开披露线索；这不是投资建议。",
+    },
     {
       id: "huawei-atlas-950-superpod-waic-2026",
       title: "昇腾 950 超节点真机首次亮相，扩展至 1024 卡",
@@ -818,15 +912,15 @@ function mnaDeals(): MnaDeal[] {
       buyer: "AIP（BlackRock / Microsoft / NVIDIA 等）",
       target: "Aligned Data Centers",
       value: "约 $400 亿",
-      capacity: "50 个园区 / 超 5 GW",
+      capacity: "51 个园区 / 超 6.4 GW",
       region: "美国 / 拉丁美洲",
-      status: "已签署 · 待交割",
-      statusAsOf: "2026-07-18",
+      status: "已完成",
+      statusAsOf: "2026-07-21",
       valueBasis: "企业价值（含债务）",
-      capacityBasis: "在运、规划及开发中容量合计",
-      rationale: "AI 基础设施资本平台对成熟超大规模数据中心组合的整体收购。",
-      sourceName: "Macquarie Asset Management",
-      sourceUrl: "https://www.macquarie.com/id/en/about/news/2025/macquarie-asset-management-to-lead-sale-of-aligned-data-centers-at-an-enterprise-value-of-us-40-billion.html",
+      capacityBasis: "在运及规划容量合计",
+      rationale: "AIP、MGX 与 BlackRock GIP 已完成对 Aligned 的 100% 股权收购，并在交割时承诺额外 50 亿美元增长资本支持 AI-ready 容量扩张。",
+      sourceName: "Aligned Data Centers / AIP / MGX / BlackRock GIP",
+      sourceUrl: "https://aligneddc.com/press-release/aip-mgx-and-blackrocks-gip-close-acquisition-of-aligned-data-centers/",
     },
   ];
 }
@@ -898,6 +992,24 @@ function positiveIdcNews(liveNews: NewsItem[], records: SourceRecord[]): NewsIte
 
 function constructionPulse(): NewsItem[] {
   const items: NewsItem[] = [
+    {
+      id: "dataport-jingan-quantum-hybrid-platform-waic",
+      title: "数据港参与静安量超智融合算力平台项目签约",
+      summary: "数据港、思朗科技与玻色量子联合申报的项目入选 WAIC 重点签约项目，依托上海一号智算中心的存量算力底座，推进智算、科算与量算协同调度。",
+      publishedAt: "2026-07-23T00:00:00+08:00",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://www.shanghai.gov.cn/nw15343/20260723/9d9df31d0e4b4a50a3bb16673c55b89b.html",
+      sourceUrl: "https://www.shanghai.gov.cn/nw15343/20260723/9d9df31d0e4b4a50a3bb16673c55b89b.html",
+      sourceName: "静安区人民政府",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "中国",
+      milestone: "WAIC 重点项目签约",
+      scale: "上海一号智算中心底座",
+      listedTicker: "数据港 · 603881.SH",
+      whyItMatters: "该项目以存量数据中心算力为底座接入异构资源，后续关注平台实际部署规模、客户导入和调度利用率。",
+    },
     {
       id: "unicom-wujiang-phase-1-epc",
       title: "中国联通长三角（吴江）智算中心一期启动 EPC 招标",
@@ -1155,6 +1267,64 @@ function constructionPulse(): NewsItem[] {
       ],
     },
     {
+      id: "cmcc-beijing-international-information-port-land-6-design",
+      title: "中国移动京津冀（北京）国际信息港 6 号地数据中心进入设计阶段",
+      summary: "北京市公共资源交易平台公示项目方案、初步及施工图设计中标候选人，项目位于昌平区中国移动国际信息港 6 号地。",
+      publishedAt: "2026-06-29T14:00:00+08:00",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://ggzyfw.beijing.gov.cn/jyxxzbhxrgs/20260629/5600768.html",
+      sourceUrl: null,
+      sourceName: "北京市公共资源交易服务平台",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "中国",
+      milestone: "设计中标候选人公示",
+      scale: "北京国际信息港 6 号地",
+      listedTicker: "中国移动 · 600941.SH / 0941.HK",
+      whyItMatters: "项目完成设计采购的关键节点，为后续土建、机电及算力设备建设形成明确的落地路径。",
+      lifecycle: [
+        { label: "项目立项", state: "done" },
+        { label: "设计采购", state: "current" },
+        { label: "工程建设", state: "next" },
+        { label: "分期投运", state: "next" },
+      ],
+    },
+    {
+      id: "guangzhou-zhisheng-compute-center-energy-approval",
+      title: "广州智晟算力中心获节能审查，计划 11 月投产",
+      summary: "项目获广州市发改委原则同意，拟建设 48 个液冷机柜，折合约 1310 个标准机柜，形成 4050PFlops@FP16 智能训练算力。",
+      publishedAt: "2026-07-06T00:00:00+08:00",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://fgw.gz.gov.cn/gkmlpt/content/10/10888/post_10888922.html",
+      sourceUrl: null,
+      sourceName: "广州市发展和改革委员会",
+      signal: "cooling",
+      curator: "官方来源",
+      region: "中国",
+      milestone: "节能审查通过",
+      scale: "4050PFlops · 约 1310 标准机柜",
+      whyItMatters: "项目明确采用高密度液冷机柜并给出投产计划，是广州城区智算基础设施与液冷落地的可核验节点。",
+    },
+    {
+      id: "jindian-cloud-shanghai-colocation-data-center-consulting",
+      title: "上海同城数据中心启动全过程咨询招标",
+      summary: "金电云（上海）项目启动项目管理及造价咨询招标，规划建设 598 个通算机柜与 61 个 25kW 智算机柜。",
+      publishedAt: "2026-06-12T18:09:22+08:00",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://jzcg.pbc.gov.cn/freecms/site/rmyh/ggxx/info/2026/12d3427f5d174b78930c588a5fa634e3.html?Type=fzjggg&noticeId=c9275ccd-6646-11f1-88d4-b4055dfb2cc6&noticeType=001011",
+      sourceUrl: null,
+      sourceName: "中国人民银行采购网",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "中国",
+      milestone: "全过程咨询招标",
+      scale: "659 机柜 · 1.8 亿元",
+      whyItMatters: "项目进入建设管理与造价咨询采购，提前释放了通算、智算和机电工程的具体建设参数。",
+    },
+    {
       id: "amazon-missouri-campus",
       title: "Amazon 宣布在密苏里州建设新数据中心园区",
       summary: "Amazon 计划在 Montgomery County 投资 100 亿美元建设数据中心园区，并配套道路、水务和社区基础设施。",
@@ -1206,6 +1376,343 @@ function constructionPulse(): NewsItem[] {
       weeklyHighlight: Boolean(item.publishedAt && now - new Date(item.publishedAt).getTime() <= 7 * day),
     }))
     .sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime());
+}
+
+function listedCompanyPulse(): NewsItem[] {
+  const items: NewsItem[] = [
+    {
+      id: "digital-realty-q2-2026-leasing-capacity",
+      title: "Digital Realty Q2 新签订单与积压租金创高，并披露 288MW 北弗州资产收购",
+      summary: "公司披露 Q2 签约订单对应年化 GAAP 基础租金 3.07 亿美元，并在 7 月签署两份 hyperscale 租约；期末签约未起租积压租金达 19 亿美元。",
+      publishedAt: "2026-07-23T16:05:00-04:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-reports-second-quarter-2026-results",
+      sourceUrl: "https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-reports-second-quarter-2026-results",
+      sourceName: "Digital Realty",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "Q2 业绩与租赁进展",
+      scale: "积压年化租金 $19 亿 · 北弗州 288MW IT",
+      listedTicker: "Digital Realty · DLR",
+      whyItMatters: "租赁积压与已租满资产收购共同提高未来投运和收入兑现的可见度；后续仍需跟踪起租时点与新增电力接入。",
+    },
+    {
+      id: "dataport-jingan-quantum-hybrid-platform-waic",
+      title: "数据港参与静安量超智融合算力平台重点项目签约",
+      summary: "数据港、思朗科技与玻色量子联合申报的量超智融合算力平台入选 WAIC 重点签约项目，项目以上海一号智算中心为算力底座。",
+      publishedAt: "2026-07-23T00:00:00+08:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://www.shanghai.gov.cn/nw15343/20260723/9d9df31d0e4b4a50a3bb16673c55b89b.html",
+      sourceUrl: "https://www.shanghai.gov.cn/nw15343/20260723/9d9df31d0e4b4a50a3bb16673c55b89b.html",
+      sourceName: "静安区人民政府",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "中国",
+      milestone: "WAIC 重点项目签约",
+      scale: "异构算力协同平台",
+      listedTicker: "数据港 · 603881.SH",
+      whyItMatters: "项目指向存量 IDC 算力与智算、科算、量算资源协同调度，后续以实际部署与商业化进展为准。",
+    },
+    {
+      id: "dongyangguang-compute-service-contract-july",
+      title: "东阳光云智算签署 130–150 亿元算力服务采购合同",
+      summary: "东莞东阳光云智算将采购、部署高性能算力服务器并提供全周期运维，合同在订单验收后进入为期 60 个月的服务期。",
+      publishedAt: "2026-07-10T00:00:00+08:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12441363&stockid=600673",
+      sourceUrl: null,
+      sourceName: "东阳光公告（上交所披露）",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "中国",
+      milestone: "算力服务合同签署",
+      scale: "130–150 亿元 · 60 个月",
+      listedTicker: "东阳光 · 600673.SH",
+      whyItMatters: "合同把高性能算力服务器部署、验收和长期运维连接为完整交付链条，后续关注实际订单与验收节奏。",
+    },
+    {
+      id: "runze-reit-expansion-accepted-july",
+      title: "润泽科技数据中心 REIT 扩募申请获受理",
+      summary: "南方基金公告显示，润泽科技数据中心 REIT 的产品变更暨扩募份额上市申请已获中国证监会和深交所受理。",
+      publishedAt: "2026-07-18T00:00:00+08:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://pdf.dfcfw.com/pdf/H2_AN202607171827058095_1.pdf",
+      sourceUrl: null,
+      sourceName: "南方基金公告",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "中国",
+      milestone: "REIT 扩募申请受理",
+      scale: "拟注入 A-7 / A-8 数据中心",
+      listedTicker: "润泽科技 · 300442.SZ",
+      whyItMatters: "申请受理是资产注入流程的监管节点；交易仍须完成注册、交易所审核和持有人大会审议。",
+    },
+    {
+      id: "dataport-compute-service-purchase-june",
+      title: "数据港披露采购算力服务事项",
+      summary: "上海数据港公告披露采购算力服务事项，反映其围绕算力服务供给的最新采购与运营安排。",
+      publishedAt: "2026-06-04T00:00:00+08:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://www.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-06-04/603881_20260604_532A.pdf",
+      sourceUrl: null,
+      sourceName: "上海证券交易所",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "中国",
+      milestone: "算力服务采购",
+      scale: "服务采购推进",
+      listedTicker: "数据港 · 603881.SH",
+      whyItMatters: "采购动作是数据中心运营商将资源配置转向算力服务的重要可披露节点，具体交付以公司后续公告为准。",
+    },
+    {
+      id: "vnet-hyperscale-orders-may",
+      title: "世纪互联披露年内新签 517MW 基地型 IDC 订单",
+      summary: "世纪互联一季度披露，年初至今累计新签 517MW，其中环京地区一笔头部互联网客户订单为 510MW。",
+      publishedAt: "2026-05-26T00:00:00+08:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://www.vnet.com/portal/article/index/cid/14/id/1081.html",
+      sourceUrl: null,
+      sourceName: "世纪互联",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "中国",
+      milestone: "基地型 IDC 新签订单",
+      scale: "517 MW · 单笔 510 MW",
+      listedTicker: "世纪互联 · VNET",
+      whyItMatters: "大额预签订单直接提高未来交付与上架的可见度，仍需持续跟踪客户验收、供电和建设进度。",
+    },
+    {
+      id: "gds-creit-langfang-shucheng-expansion",
+      title: "万国数据中心 REIT 拟扩募购入廊坊曙成数据中心",
+      summary: "南方万国数据中心 REIT 披露拟通过扩募新购入廊坊曙成数据中心项目，标的包括 3 栋数据中心楼及配套动力楼。",
+      publishedAt: "2026-07-10T00:00:00+08:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://finance.sina.com.cn/stock/estate/integration/2026-07-10/doc-inihinfu7082377.shtml?froms=ggmp",
+      sourceUrl: null,
+      sourceName: "南方基金公告（公开转引）",
+      signal: "capacity",
+      curator: "公开来源",
+      region: "中国",
+      milestone: "REIT 扩募拟购入资产",
+      scale: "3 栋数据中心楼 + 动力楼",
+      listedTicker: "万国数据 · GDS / 9698.HK",
+      whyItMatters: "若完成审批，资产池将从长三角延伸至京津冀；该事项尚待监管和持有人大会程序完成。",
+    },
+    {
+      id: "aofei-2026-delivery-plan",
+      title: "奥飞数据披露 2026 年多个数据中心交付计划",
+      summary: "奥飞数据在业绩说明会披露，廊坊固安预计交付 2–3 栋数据中心，无锡数据中心及河北定兴二期也计划在年内交付。",
+      publishedAt: "2026-05-08T00:00:00+08:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://pdf.dfcfw.com/pdf/H2_AN202605081822074118_1.pdf",
+      sourceUrl: null,
+      sourceName: "奥飞数据投资者关系公告",
+      signal: "capacity",
+      curator: "公开来源",
+      region: "中国",
+      milestone: "年度交付计划披露",
+      scale: "固安 2–3 栋 · 无锡 / 定兴二期",
+      listedTicker: "奥飞数据 · 300738.SZ",
+      whyItMatters: "年度交付计划给出了多地园区由建设转向可服务容量的路线，后续以定期报告和项目公告核验实际交付。",
+    },
+    {
+      id: "sinnet-inner-mongolia-compute-centers-progress",
+      title: "光环新网披露内蒙古两项智算中心处于前期筹备",
+      summary: "公司在互动平台表示，内蒙古两项智算中心已完成土地相关安排，正处于前期审批筹划阶段，并将按需求分期建设。",
+      publishedAt: "2026-07-17T00:00:00+08:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://vip.stock.finance.sina.com.cn/corp/go.php/vCB_AllNewsStock/symbol/sz300383.phtml",
+      sourceUrl: null,
+      sourceName: "光环新网互动平台（公开转引）",
+      signal: "capacity",
+      curator: "公开来源",
+      region: "中国",
+      milestone: "项目前期审批筹划",
+      scale: "内蒙古两项智算中心",
+      listedTicker: "光环新网 · 300383.SZ",
+      whyItMatters: "新增枢纽节点项目仍处于前期阶段，后续关注核准、开工和客户订单等可量化节点。",
+    },
+    {
+      id: "kehua-idc-rack-utilization-july",
+      title: "科华数据称自建 IDC 上架率持续向优",
+      summary: "公司披露自建数据中心上架率持续改善，并与头部互联网企业及云厂商合作，覆盖 IDC 租赁、异构算力平台和行业应用服务。",
+      publishedAt: "2026-07-07T00:00:00+08:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://www.xiaojingji.com/stock/one/notice?code=002335&type=5",
+      sourceUrl: null,
+      sourceName: "科华数据互动平台（公开转引）",
+      signal: "capacity",
+      curator: "公开来源",
+      region: "中国",
+      milestone: "IDC 上架率更新",
+      scale: "自建 IDC · 算力服务",
+      listedTicker: "科华数据 · 002335.SZ",
+      whyItMatters: "上架率改善是已建 IDC 容量由资源储备转化为经营性服务能力的关键运营信号。",
+    },
+    {
+      id: "baosight-baoscloud-green-operations",
+      title: "宝信软件披露宝之云数据中心绿色运营进展",
+      summary: "公司 ESG 报告披露，宝之云数据中心全年平均 PUE 处于行业先进水平，并通过绿证采购与碳管理持续降低运营能耗。",
+      publishedAt: "2026-04-18T00:00:00+08:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12040275&stockid=900926",
+      sourceUrl: null,
+      sourceName: "宝信软件 ESG 报告（公开转引）",
+      signal: "power",
+      curator: "公开来源",
+      region: "中国",
+      milestone: "绿色运营披露",
+      scale: "宝之云数据中心",
+      listedTicker: "宝信软件 · 600845.SH",
+      whyItMatters: "对大型存量园区而言，PUE 与绿电采购直接影响长期电力成本、合规和扩容可行性。",
+    },
+    {
+      id: "tongniu-state-cloud-compute-service",
+      title: "铜牛信息更新自建数据中心与国资云算力服务能力",
+      summary: "公司表示，依托自建数据中心和国资云计算平台，可为多类词元业务提供底层算力消耗与技术服务支撑。",
+      publishedAt: "2026-06-17T00:00:00+08:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://vip.stock.finance.sina.com.cn/corp/go.php/vCB_AllNewsStock/symbol/sz300895.phtml",
+      sourceUrl: null,
+      sourceName: "铜牛信息互动平台（公开转引）",
+      signal: "capacity",
+      curator: "公开来源",
+      region: "中国",
+      milestone: "算力服务能力更新",
+      scale: "自建数据中心 · 国资云",
+      listedTicker: "铜牛信息 · 300895.SZ",
+      whyItMatters: "该类政企算力服务的关注点在于实际客户导入、资源利用率与持续交付，而非单次技术表述。",
+    },
+    {
+      id: "equinix-cisco-nvidia-ai-factories",
+      title: "Equinix 联合 Cisco 与 NVIDIA 在全球数据中心部署 AI Factory",
+      summary: "Equinix 宣布与 Cisco、NVIDIA 协作，在其全球数据中心网络中部署面向企业的安全 AI Factory 基础设施。",
+      publishedAt: "2026-06-16T00:00:00-04:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://investor.equinix.com/news-events/press-releases",
+      sourceUrl: null,
+      sourceName: "Equinix",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "AI Factory 部署合作",
+      scale: "全球数据中心网络",
+      listedTicker: "Equinix · EQIX",
+      whyItMatters: "互联型 IDC 平台将 AI 基础设施能力嵌入既有全球节点网络，关注后续可用区域和客户采用情况。",
+    },
+    {
+      id: "digital-realty-northern-virginia-acquisition",
+      title: "Digital Realty 增持北弗吉尼亚 288MW 已出租数据中心组合",
+      summary: "Digital Realty 拟向 Blackstone 收购三座北弗吉尼亚数据中心权益；组合总 IT 容量 288MW，已全部出租。",
+      publishedAt: "2026-06-29T00:00:00-04:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-announces-purchase-blackstone-interest-three",
+      sourceUrl: null,
+      sourceName: "Digital Realty",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "已出租园区权益收购",
+      scale: "288 MW IT · $78 亿组合价值",
+      listedTicker: "Digital Realty · DLR",
+      whyItMatters: "交易增加了北弗吉尼亚紧俏市场中已签长租的容量敞口，后续关注交割与项目稳定化进度。",
+    },
+    {
+      id: "applied-digital-polaris-forge-company-update",
+      title: "Applied Digital Polaris Forge 1 在运 AI 容量升至 175MW",
+      summary: "Polaris Forge 1 二号楼一期达到可服务状态，新增 75MW，园区在运 AI 容量提升至 175MW。",
+      publishedAt: "2026-07-01T00:00:00-04:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://ir.applieddigital.com/news-events/press-releases/detail/157/applied-digital-delivers-second-building-at-polaris-forge-1",
+      sourceUrl: null,
+      sourceName: "Applied Digital",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "二号楼一期投运",
+      scale: "新增 75 MW · 在运 175 MW",
+      listedTicker: "Applied Digital · APLD",
+      whyItMatters: "从建设转为可服务容量是 AI IDC 执行能力的直接检验，园区满建合同容量为 400MW。",
+    },
+    {
+      id: "core-scientific-power-pipeline-may",
+      title: "Core Scientific 将总电力容量管线扩至 4.5GW",
+      summary: "公司披露总电力容量管线扩至 4.5GW，并计划在 Oklahoma Muskogee 与 Texas Pecos 园区各扩展至 1.5GW。",
+      publishedAt: "2026-05-06T00:00:00-04:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://investors.corescientific.com/news-events/press-releases/detail/136/core-scientific-announces-first-quarter-fiscal-year-2026-results",
+      sourceUrl: null,
+      sourceName: "Core Scientific",
+      signal: "power",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "园区电力容量扩展",
+      scale: "4.5 GW 管线 · 两园区各 1.5GW",
+      listedTicker: "Core Scientific · CORZ",
+      whyItMatters: "对高密度托管平台而言，获电与并网能力是比机房面积更前置的扩张约束。",
+    },
+    {
+      id: "terawulf-anthropic-company-update",
+      title: "TeraWulf 与 Anthropic 签署 20 年 AI 基础设施租约",
+      summary: "TeraWulf 在肯塔基 Justified Data Campus 与 Anthropic 签订 20 年租约，初始期限预计带来约 190 亿美元合同收入。",
+      publishedAt: "2026-07-06T00:00:00-04:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://investors.terawulf.com/news-events/press-releases/detail/142/terawulf-announces-anthropic-lease-at-justified-data-campus-and-sale-of-majority-interest-in-abernathy-joint-venture-to-fluidstack",
+      sourceUrl: null,
+      sourceName: "TeraWulf",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "20 年 AI 基础设施租约",
+      scale: "约 $190 亿合同收入",
+      listedTicker: "TeraWulf · WULF",
+      whyItMatters: "长期合约将 AI 客户需求转化为园区现金流可见度，仍需跟踪建设交付、融资和执行节奏。",
+    },
+  ];
+
+  return items
+    .map((item) => ({ ...item, verifiedAt: "2026-07-21" }))
+    .sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime());
+}
+
+function calendarEvents(): CalendarEvent[] {
+  return [
+    { id: "tesla-q2-2026", startsAt: "2026-07-22T21:30:00.000Z", company: "Tesla", ticker: "TSLA", sector: "新能源 / 储能", description: "全球电动车与储能龙头，Megapack 是电网级储能的重要供给。", focus: "储能部署、能源业务扩产与 AI 基础设施投入", sourceName: "Tesla Investor Relations · Q2 results", sourceUrl: "https://ir.tesla.com/press-release/tesla-releases-second-quarter-2026-financial-results", conclusion: { summary: "Q2 储能部署达 13.5GWh，电网级储能需求仍是最明确的基础设施读数；后续持续核验 Megapack 交付、扩产与能源业务资本投入。", summaryEn: "Q2 energy-storage deployments reached 13.5GWh, keeping grid-scale storage the clearest infrastructure read-through. Next checks: Megapack deliveries, capacity expansion and energy-business capital deployment.", sourceName: "Tesla Investor Relations · production & deployments", sourceUrl: "https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments" } },
+    { id: "alphabet-q2-2026", startsAt: "2026-07-22T20:00:00.000Z", company: "Alphabet", ticker: "GOOGL", sector: "互联网 / 云计算", description: "Google Cloud 位居全球主要云服务商之列，AI 基建投入的重要风向标。", focus: "Google Cloud 增长、全年 CAPEX 指引与 AI 算力供给", sourceName: "Alphabet Investor Relations · Q2 results", sourceUrl: "https://s206.q4cdn.com/479360582/files/doc_financials/2026/q2/2026q2-alphabet-earnings-release.pdf", conclusion: { summary: "Google Cloud 营收同比增长 82% 至 248 亿美元、积压订单升至 5,140 亿美元；Q2 资本开支为 449 亿美元，全年指引上调至 1,950–2,050 亿美元。云端 AI 需求仍超过既有产能，数据中心、服务器与加速器投入维持高强度。", summaryEn: "Google Cloud revenue rose 82% to $24.8B and backlog reached $514B. Q2 capex was $44.9B; full-year 2026 guidance was raised to $195B–$205B. AI-cloud demand remains ahead of existing capacity, keeping data-center, server and accelerator buildout at high intensity.", sourceName: "Alphabet Q2 results & earnings call · Reuters", sourceUrl: "https://wdez.com/2026/07/22/google-quarterly-cloud-revenue-growth-beats-expectations/" } },
+    { id: "intel-q2-2026", startsAt: "2026-07-23T20:00:00.000Z", company: "Intel", ticker: "INTC", sector: "半导体", description: "全球重要芯片制造商，PC 与数据中心 CPU 的关键供应商。", focus: "数据中心产品节奏、先进制程投入与资本开支安排", sourceName: "Intel Investor Relations · Q2 results", sourceUrl: "https://www.intc.com/news-events/press-releases/detail/1776/intel-reports-second-quarter-2026-financial-results", conclusion: { summary: "Q2 数据中心与 AI（DCAI）营收同比增长 59% 至 63 亿美元；公司称 AI 算力需求继续增强，并将增加设备、洁净室空间和基板投入，以支持产品与代工业务后续增长。", summaryEn: "Q2 Data Center and AI revenue rose 59% year over year to $6.3B. Intel said AI-driven compute demand continues to strengthen and that it is increasing investment in equipment, clean-room space and substrates to support product and foundry growth.", sourceName: "Intel Investor Relations · Q2 2026 results", sourceUrl: "https://www.intc.com/news-events/press-releases/detail/1776/intel-reports-second-quarter-2026-financial-results" } },
+    { id: "vertiv-q2-2026", startsAt: "2026-07-29T12:00:00.000Z", company: "Vertiv", ticker: "VRT", sector: "数据中心基础设施", description: "数据中心电力、散热、液冷与关键基础设施解决方案供应商。", focus: "订单、积压、液冷交付与全年需求指引", sourceName: "Vertiv Investor Relations", sourceUrl: "https://investors.vertiv.com/news/news-details/2026/Vertiv-Announces-Date-of-Second-Quarter-2026-Earnings-Release-and-Conference-Call/default.aspx" },
+    { id: "meta-q2-2026", startsAt: "2026-07-29T20:00:00.000Z", company: "Meta", ticker: "META", sector: "社交媒体 / AI", description: "全球社交平台龙头，前沿模型、广告 AI 与大规模数据中心建设并进。", focus: "AI 基础设施 CAPEX、数据中心容量和全年投入节奏", sourceName: "Meta Investor Relations", sourceUrl: "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Second-Quarter-2026-Results/default.aspx" },
+    { id: "microsoft-fy26-q4", startsAt: "2026-07-29T20:00:00.000Z", company: "Microsoft", ticker: "MSFT", sector: "云计算 / 软件", description: "Azure 是全球主要云平台，Copilot 与 AI 服务驱动基础设施扩张。", focus: "Azure 需求、资本开支、融资租赁与供给受限表述", sourceName: "Microsoft Investor Relations", sourceUrl: "https://news.microsoft.com/source/2026/07/08/microsoft-announces-quarterly-earnings-release-date-68/" },
+    { id: "arm-q1-fy27", startsAt: "2026-07-29T21:00:00.000Z", company: "Arm", ticker: "ARM", sector: "芯片 IP", description: "CPU 架构授权龙头，AI 服务器与移动芯片的重要底层技术提供商。", focus: "数据中心授权收入、AI 服务器渗透与客户产品节奏", sourceName: "Arm Investor Relations", sourceUrl: "https://investors.arm.com/financials/quarterly-annual-results" },
+    { id: "amazon-q2-2026", startsAt: "2026-07-30T21:00:00.000Z", company: "Amazon", ticker: "AMZN", sector: "电商 / 云计算", description: "AWS 是全球最大的云服务商之一，AI 基础设施投资的核心风向标。", focus: "AWS 增长、基础设施 CAPEX 与 AI 数据中心建设", sourceName: "Amazon Investor Relations", sourceUrl: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-to-Webcast-Second-Quarter-2026-Financial-Results-Conference-Call/default.aspx" },
+  ];
+}
+
+function upcomingCalendar(now = new Date()): CalendarEvent[] {
+  const events = calendarEvents();
+  const end = now.getTime() + 9 * 24 * 60 * 60 * 1_000;
+  return events.filter((event) => {
+    const time = new Date(event.startsAt).getTime();
+    return time >= now.getTime() - 4 * 24 * 60 * 60 * 1_000 && time <= end;
+  });
 }
 
 function chainFallbackNews(records: SourceRecord[], cooling: SourceRecord[]): Pick<Record<ChainKey, NewsItem[]>, "rack" | "cooling" | "power"> {
@@ -1340,13 +1847,36 @@ async function dailySnapshotApi(request: Request, env: Env): Promise<Response> {
   return new Response(snapshot, { headers: { "Cache-Control": "public, max-age=300, s-maxage=900", "Content-Type": "application/json; charset=utf-8", "Content-Language": "zh-CN", "X-Content-Type-Options": "nosniff" } });
 }
 
-async function atlasApi(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+type AtlasApiOptions = {
+  forceRefresh?: boolean;
+  allowBootstrapSnapshot?: boolean;
+  snapshotMeta?: DailySnapshotMeta;
+};
+
+function staticAtlasContent(): Record<string, unknown> {
+  return {
+    calendar: calendarEvents(),
+    capacity: capacityRadar(),
+    cooling: coolingProgress(),
+    chinaChip: officialChinaChipNews(),
+    nvidiaProducts: nvidiaProducts(),
+    supernodes: supernodeProducts(),
+    mna: mnaDeals(),
+    aiAdoption: aiAdoption(),
+    trackedSources: trackedSources(),
+  };
+}
+
+async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, options: AtlasApiOptions = {}): Promise<Response> {
   if (request.method !== "GET") return Response.json({ error: "Method not allowed" }, { status: 405 });
 
-  const cacheKey = new Request(new URL("/api/atlas?schema=v23", request.url), { method: "GET" });
+  const staticContentVersion = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(JSON.stringify(staticAtlasContent()))).then((digest) => Array.from(new Uint8Array(digest)).slice(0, 8).map((byte) => byte.toString(16).padStart(2, "0")).join(""));
+  const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}`, request.url), { method: "GET" });
   const edgeCache = (caches as unknown as { default: Cache }).default;
-  const cached = await edgeCache.match(cacheKey);
-  if (cached) return cached;
+  if (!options.forceRefresh) {
+    const cached = await edgeCache.match(cacheKey);
+    if (cached) return cached;
+  }
 
   const [newsResult, benchmarkResult, nvidiaResult, coolingResult, networkResult, powerResult, modelResult, dailyResult, openRouterResult, arenaResult, chinaChipResult] = await Promise.allSettled([
     fetchAihotNews("数据中心", 8, 14 * 24),
@@ -1407,6 +1937,8 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext): Prom
   const chinaChipNews = chinaChipPulse(chinaChipResult.status === "fulfilled" ? chinaChipResult.value : []);
   const positiveNews = positiveIdcNews(news, records);
   const idcPulse = constructionPulse();
+  const listedCompanyNews = listedCompanyPulse();
+  const upcomingEvents = upcomingCalendar();
   const fallback = chainFallbackNews(records, coolingRecords);
   const chainWindowDays = 30;
   const computeNews = nvidiaNews.filter((item) => /GPU|服务器|机柜|算力芯片|AI\s*工厂|Vera\s*Rubin|Blackwell|Rubin/i.test(item.title));
@@ -1435,6 +1967,8 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext): Prom
     positiveNewsStatus: positiveNews.some((item) => item.curator === "AI HOT") ? "live" : "official-fallback",
     latestPositiveAt: positiveNews[0]?.publishedAt ?? null,
     idcPulse,
+    listedCompanyNews,
+    upcomingEvents,
     pulseWindowDays: 45,
     weeklyHighlightCount: idcPulse.filter((item) => item.weeklyHighlight).length,
     nvidiaNews,
@@ -1462,7 +1996,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext): Prom
       models: [],
     },
     aiAdoption: aiAdoption(),
-    dailySnapshot: latestSnapshot,
+    dailySnapshot: options.snapshotMeta ?? latestSnapshot,
     supernodes: supernodeProducts(),
     trackedSources: trackedSources(),
     chainNews,
@@ -1484,7 +2018,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext): Prom
 
   if (coreSourcesHealthy) ctx.waitUntil(edgeCache.put(cacheKey, response.clone()));
   const today = beijingDate(new Date());
-  if (coreSourcesHealthy && (!latestSnapshot || latestSnapshot.date !== today)) {
+  if (coreSourcesHealthy && options.allowBootstrapSnapshot !== false && (!latestSnapshot || latestSnapshot.date !== today)) {
     const meta: DailySnapshotMeta = { date: today, generatedAt: new Date().toISOString(), source: "bootstrap" };
     ctx.waitUntil(response.clone().text().then((body) => persistDailySnapshot(env, meta, body)));
   }
@@ -1492,9 +2026,9 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext): Prom
 }
 
 async function createScheduledSnapshot(env: Env, scheduledTime: number, ctx: ExecutionContext): Promise<void> {
-  const response = await atlasApi(new Request("https://idc-index.com/api/atlas?schema=v23"), env, ctx);
-  if (!response.ok) throw new Error(`Snapshot request failed: HTTP ${response.status}`);
   const meta: DailySnapshotMeta = { date: beijingDate(scheduledTime), generatedAt: new Date(scheduledTime).toISOString(), source: "scheduled" };
+  const response = await atlasApi(new Request("https://idc-index.com/api/atlas-live-v5?schema=v1"), env, ctx, { forceRefresh: true, allowBootstrapSnapshot: false, snapshotMeta: meta });
+  if (!response.ok) throw new Error(`Snapshot request failed: HTTP ${response.status}`);
   await persistDailySnapshot(env, meta, await response.text());
   console.log(JSON.stringify({ message: "Daily snapshot saved", ...meta }));
 }
@@ -1525,6 +2059,59 @@ async function productImage(request: Request, ctx: ExecutionContext, sourceUrl: 
   return response;
 }
 
+const INITIAL_ATLAS_HEADER = "x-idc-atlas-prime";
+
+function firstItems(value: unknown, count: number): unknown[] {
+  return Array.isArray(value) ? value.slice(0, count) : [];
+}
+
+function compactInitialAtlasPayload(payload: Record<string, unknown>): Record<string, unknown> {
+  const daily = payload.aiDaily as Record<string, unknown> | null;
+  const sections = Array.isArray(daily?.sections)
+    ? daily.sections.map((section) => {
+      const item = section as Record<string, unknown>;
+      return { ...item, items: firstItems(item.items, 2) };
+    })
+    : [];
+
+  return {
+    generatedAt: payload.generatedAt,
+    weeklyHighlightCount: payload.weeklyHighlightCount,
+    idcPulse: firstItems(payload.idcPulse, 3),
+    positiveNews: firstItems(payload.positiveNews, 3),
+    listedCompanyNews: firstItems(payload.listedCompanyNews, 3),
+    upcomingEvents: firstItems(payload.upcomingEvents, 3),
+    coolingProgress: firstItems(payload.coolingProgress, 3),
+    aiDaily: daily ? { ...daily, sections, flashes: [] } : null,
+  };
+}
+
+function bytesToBase64(bytes: Uint8Array): string {
+  let value = "";
+  for (const byte of bytes) value += String.fromCharCode(byte);
+  return btoa(value);
+}
+
+async function initialAtlasHeader(request: Request, env: Env, ctx: ExecutionContext): Promise<string | null> {
+  try {
+    const response = await atlasApi(new Request(new URL("/api/atlas-live-v5?schema=v1", request.url)), env, ctx);
+    if (!response.ok) return null;
+    const payload = await response.json() as Record<string, unknown>;
+    const json = new TextEncoder().encode(JSON.stringify(compactInitialAtlasPayload(payload)));
+    const compressed = new Blob([json]).stream().pipeThrough(new CompressionStream("gzip"));
+    return bytesToBase64(new Uint8Array(await new Response(compressed).arrayBuffer()));
+  } catch (error) {
+    console.error(JSON.stringify({ message: "Initial atlas payload unavailable", error: String(error) }));
+    return null;
+  }
+}
+
+function shouldPrimeHomepage(request: Request, url: URL): boolean {
+  return request.method === "GET"
+    && (url.pathname === "/" || url.pathname === "/en")
+    && request.headers.get("accept")?.includes("text/html") === true;
+}
+
 const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
@@ -1535,9 +2122,18 @@ const worker = {
         return Response.redirect(url, 308);
       }
       if (url.pathname === "/api/daily-snapshot") return await dailySnapshotApi(request, env);
-      if (url.pathname === "/api/atlas") return await atlasApi(request, env, ctx);
+      if (url.pathname === "/api/atlas" || url.pathname === "/api/atlas-live" || url.pathname === "/api/atlas-live-v2" || url.pathname === "/api/atlas-live-v3" || url.pathname === "/api/atlas-live-v4" || url.pathname === "/api/atlas-live-v5") return await atlasApi(request, env, ctx);
+      if (url.pathname === "/llms.txt") return new Response(LLMS_TXT, { headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "public, max-age=3600" } });
       const productImageSource = PRODUCT_IMAGE_SOURCES[url.pathname];
       if (productImageSource) return await productImage(request, ctx, productImageSource);
+      if (shouldPrimeHomepage(request, url)) {
+        const prime = await initialAtlasHeader(request, env, ctx);
+        if (prime) {
+          const headers = new Headers(request.headers);
+          headers.set(INITIAL_ATLAS_HEADER, prime);
+          return await handler.fetch(new Request(request, { headers }), env, ctx);
+        }
+      }
       return await handler.fetch(request, env, ctx);
     } catch (error) {
       console.error(JSON.stringify({ message: "Unhandled request error", path: url.pathname, error: String(error) }));

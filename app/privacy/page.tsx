@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const canonical = "https://idc-index.com/privacy";
+
 export const metadata: Metadata = {
   title: "隐私说明｜IDC Atlas",
   description: "IDC Atlas 关于网站访问统计与 Google Analytics 的隐私说明。",
+  alternates: { canonical },
+  robots: { index: true, follow: true },
 };
 
 export default function PrivacyPage() {
@@ -12,7 +16,7 @@ export default function PrivacyPage() {
       <Link className="privacy-back" href="/">← 返回 IDC Atlas</Link>
       <p className="eyebrow"><span></span> PRIVACY NOTICE</p>
       <h1>隐私说明</h1>
-      <p className="privacy-updated">更新日期：2026 年 7 月 19 日</p>
+      <p className="privacy-updated">更新日期：2026 年 7 月 22 日</p>
 
       <section>
         <h2>访问统计</h2>
@@ -21,7 +25,7 @@ export default function PrivacyPage() {
 
       <section>
         <h2>Cookie 与第三方服务</h2>
-        <p>Google Analytics 可能使用 Cookie 或类似技术处理访问数据。Google 如何使用从网站收集的信息，可参阅 <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noreferrer">Google 的合作伙伴网站隐私说明</a>。你可以通过浏览器设置限制或删除 Cookie。</p>
+        <p>Google Analytics 可能使用 Cookie 或类似技术处理访问数据。IDC Atlas 不设置用于财报互动或用户画像的第一方 Cookie。Google 如何使用从网站收集的信息，可参阅 <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noreferrer">Google 的合作伙伴网站隐私说明</a>。你可以通过浏览器设置限制或删除 Cookie。</p>
       </section>
 
       <section>

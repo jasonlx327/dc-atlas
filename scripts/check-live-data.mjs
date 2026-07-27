@@ -1,4 +1,4 @@
-const endpoint = "https://idc-index.com/api/atlas?schema=v23&deploy_check=";
+const endpoint = "https://idc-index.com/api/atlas-live-v5?schema=v1&deploy_check=";
 let lastError = null;
 
 for (let attempt = 0; attempt < 4; attempt += 1) {
