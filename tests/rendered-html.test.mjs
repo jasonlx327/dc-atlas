@@ -68,6 +68,8 @@ test("renders a global-first English pulse and card-based earnings board", async
   const response = await render("/en");
   assert.equal(response.status, 200);
   const html = await response.text();
+  assert.match(html, /Track the/);
+  assert.match(html, /class="pulse-trace"/);
   assert.match(html, /Latest infrastructure pulse/);
   assert.match(html, /The next CAPEX read-throughs/);
   assert.match(html, /english-event-card-grid/);
@@ -173,6 +175,8 @@ test("keeps the homepage earnings watch compact and reachable", async () => {
   assert.match(source, /core-company-pulse" id="listed"/);
   assert.match(source, /href="#listed"><span>03<\/span>标的/);
   assert.match(css, /\.hero \{ padding-bottom: 78px; \}/);
+  assert.match(css, /\.compact-hero \.hero-signal \{ min-height: 0; \}/);
+  assert.doesNotMatch(source, /一次只加载当前阅读区|减少在首页连续滚动|首页只保留中美各三条|切换标签时只显示当前主题/);
 });
 
 test("server-primes the bilingual homepages with the live first-screen payload", async () => {
