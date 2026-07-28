@@ -4,7 +4,7 @@ import { loadInitialAtlasPayload } from "../initial-atlas";
 
 export const metadata: Metadata = {
   title: "IDC 产业中心｜算力、园区、电力与液冷",
-  description: "按主题查看数据中心产业链、NVIDIA 与 AMD、中国 GPU、模型需求、大型园区和液冷部署。",
+  description: "追踪从算力芯片、网络和电力，到大型园区、液冷与模型需求的公开进展。",
   alternates: { canonical: "https://idc-index.com/industry" },
 };
 
