@@ -15,7 +15,10 @@ Use original disclosure links attached to individual updates to verify capacity,
 
 ## Core pages
 
-- [Live intelligence homepage](https://idc-index.com/): Current project pulse, listed-company updates, industry chain, AI infrastructure and market signals.
+- [Chinese intelligence portal](https://idc-index.com/): Compact entry point for the current project pulse, listed-company watch, industry chain and market signals.
+- [Project and company pulse](https://idc-index.com/pulse): Full Chinese project pulse, A-share and US-listed company updates, plus the daily AI briefing.
+- [Infrastructure center](https://idc-index.com/industry): Topic tabs for the supply chain, NVIDIA and AMD products, China GPU, model demand, campuses and liquid cooling.
+- [English investor edition](https://idc-index.com/en): US- and global-first project pulse, listed-company disclosures, earnings CAPEX watch and a selective China watch.
 - [Global Data Center Intelligence](https://idc-index.com/topics/data-center-intelligence): Bilingual guide to global data-center projects and infrastructure signals.
 - [China AI Silicon](https://idc-index.com/topics/china-ai-silicon): Bilingual guide to China GPU, DCU, AI accelerators, supernodes and developer ecosystem updates.
 - [Methodology and sources](https://idc-index.com/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
@@ -2081,10 +2084,16 @@ function compactInitialAtlasPayload(payload: Record<string, unknown>): Record<st
   return {
     generatedAt: payload.generatedAt,
     weeklyHighlightCount: payload.weeklyHighlightCount,
-    idcPulse: firstItems(payload.idcPulse, 3),
+    idcPulse: firstItems(payload.idcPulse, 12),
     positiveNews: firstItems(payload.positiveNews, 3),
-    listedCompanyNews: firstItems(payload.listedCompanyNews, 3),
-    upcomingEvents: firstItems(payload.upcomingEvents, 3),
+    listedCompanyNews: firstItems(payload.listedCompanyNews, 8),
+    upcomingEvents: firstItems(payload.upcomingEvents, 6),
+    chainNews: payload.chainNews,
+    nvidiaProducts: firstItems(payload.nvidiaProducts, 4),
+    supernodes: firstItems(payload.supernodes, 2),
+    chinaChipNews: firstItems(payload.chinaChipNews, 4),
+    modelNews: firstItems(payload.modelNews, 4),
+    capacityRadar: firstItems(payload.capacityRadar, 4),
     coolingProgress: firstItems(payload.coolingProgress, 3),
     aiDaily: daily ? { ...daily, sections, flashes: [] } : null,
   };
@@ -2112,8 +2121,56 @@ async function initialAtlasHeader(request: Request, env: Env, ctx: ExecutionCont
 
 function shouldPrimeHomepage(request: Request, url: URL): boolean {
   return request.method === "GET"
-    && (url.pathname === "/" || url.pathname === "/en")
+    && ["/", "/en", "/pulse", "/industry"].includes(url.pathname)
     && request.headers.get("accept")?.includes("text/html") === true;
+}
+
+const LANGUAGE_COOKIE = "idc_lang";
+
+function cookieValue(request: Request, name: string): string | null {
+  const cookie = request.headers.get("cookie");
+  if (!cookie) return null;
+  for (const part of cookie.split(";")) {
+    const [key, ...value] = part.trim().split("=");
+    if (key === name) return decodeURIComponent(value.join("="));
+  }
+  return null;
+}
+
+function languageCookie(value: "zh" | "en"): string {
+  return `${LANGUAGE_COOKIE}=${value}; Max-Age=31536000; Path=/; SameSite=Lax; Secure`;
+}
+
+function languagePreferenceResponse(request: Request, url: URL): Response | null {
+  if (request.method !== "GET" || request.headers.get("accept")?.includes("text/html") !== true) return null;
+
+  const queryLanguage = url.searchParams.get("lang");
+  if ((url.pathname === "/" && queryLanguage === "zh") || (url.pathname === "/en" && queryLanguage === "en")) {
+    url.searchParams.delete("lang");
+    const headers = new Headers({
+      location: url.toString(),
+      "cache-control": "private, no-store",
+      "set-cookie": languageCookie(queryLanguage),
+      vary: "Cookie",
+    });
+    return new Response(null, { status: 302, headers });
+  }
+
+  if (url.pathname !== "/") return null;
+  const preference = cookieValue(request, LANGUAGE_COOKIE);
+  if (preference === "zh") return null;
+
+  type RequestWithCountry = Request & { cf?: IncomingRequestCfProperties };
+  const country = (request as RequestWithCountry).cf?.country;
+  if (preference !== "en" && (!country || country === "CN")) return null;
+
+  url.pathname = "/en";
+  const headers = new Headers({
+    location: url.toString(),
+    "cache-control": "private, no-store",
+    vary: "Cookie",
+  });
+  return new Response(null, { status: 307, headers });
 }
 
 const worker = {
@@ -2125,6 +2182,8 @@ const worker = {
         url.hostname = "idc-index.com";
         return Response.redirect(url, 308);
       }
+      const languageResponse = languagePreferenceResponse(request, url);
+      if (languageResponse) return languageResponse;
       if (url.pathname === "/api/daily-snapshot") return await dailySnapshotApi(request, env);
       if (url.pathname === "/api/atlas" || url.pathname === "/api/atlas-live" || url.pathname === "/api/atlas-live-v2" || url.pathname === "/api/atlas-live-v3" || url.pathname === "/api/atlas-live-v4" || url.pathname === "/api/atlas-live-v5") return await atlasApi(request, env, ctx);
       if (url.pathname === "/llms.txt") return new Response(LLMS_TXT, { headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "public, max-age=3600" } });

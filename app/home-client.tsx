@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable @next/next/no-html-link-for-pages */
+
 import { useEffect, useMemo, useState } from "react";
 import QRCode from "qrcode";
 import { ChainIcon, type ChainKey } from "./chain-icon";
@@ -8,6 +10,9 @@ type SignalKey = "capacity" | "power" | "cooling" | "network" | "policy" | "hard
 type NavGroupKey = "today" | "infrastructure" | "demand" | "capital";
 type PulseRegion = "all" | "中国" | "美国";
 type ListedMarket = "all" | "A 股" | "美股";
+type SiteView = "home" | "pulse" | "industry";
+type PulseHubTab = "projects" | "listed" | "daily";
+type IndustryHubTab = "chain" | "hardware" | "china" | "models" | "campus" | "cooling";
 type LifecycleStage = { label: string; state: "done" | "current" | "next" };
 
 type NewsItem = {
@@ -249,7 +254,7 @@ function benchmarkLine(item: NewsItem): string | null {
   return sentence?.trim() || null;
 }
 
-export default function Home({ initialPayload = null }: { initialPayload?: Partial<AtlasPayload> | null }) {
+export default function Home({ initialPayload = null, view = "home" }: { initialPayload?: Partial<AtlasPayload> | null; view?: SiteView }) {
   const [payload, setPayload] = useState<Partial<AtlasPayload> | null>(initialPayload);
   const [loadError, setLoadError] = useState(false);
   const [activeStage, setActiveStage] = useState<ChainKey>("compute");
@@ -259,6 +264,8 @@ export default function Home({ initialPayload = null }: { initialPayload?: Parti
   const [mobileListedExpanded, setMobileListedExpanded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenuGroup, setActiveMenuGroup] = useState<NavGroupKey>("today");
+  const [pulseHubTab, setPulseHubTab] = useState<PulseHubTab>("projects");
+  const [industryHubTab, setIndustryHubTab] = useState<IndustryHubTab>("chain");
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -332,6 +339,66 @@ export default function Home({ initialPayload = null }: { initialPayload?: Parti
   const dailyItems = daily?.sections.flatMap((section) => section.items.map((item) => ({ ...item, dailySection: section.label }))).slice(0, 8) ?? [];
   const deals = payload?.mnaDeals ?? [];
   const currentMenuGroup = navGroups.find((group) => group.key === activeMenuGroup) ?? navGroups[0];
+  const homePulseNews = [...news.filter((item) => item.region === "中国").slice(0, 3), ...news.filter((item) => item.region === "美国").slice(0, 3)];
+  const homeListedNews = [...aShareCompanyNews.slice(0, 2), ...usShareCompanyNews.slice(0, 2)];
+  const compactHeader = <header className="topbar compact-topbar">
+    <Brand />
+    <nav className="hub-main-nav" aria-label="IDC Atlas 主导航">
+      <a className={view === "home" ? "active" : ""} href="/">首页</a>
+      <a className={view === "pulse" ? "active" : ""} href="/pulse">最新脉冲</a>
+      <a className={view === "industry" ? "active" : ""} href="/industry">产业链</a>
+      <a href="/#market">市场</a>
+      <a href="/calendar">日历</a>
+      <a href="/columns" target="_blank" rel="noreferrer">专栏 ↗</a>
+    </nav>
+    <div className="topbar-actions"><a className="language-switch" href="/en?lang=en" lang="en">EN</a><div className="top-status"><span className={`live-dot ${loadError ? "warn" : ""}`} /><span>{loadError ? "部分数据暂不可用" : payload ? "EDGE DATA LIVE" : "CONNECTING"}</span></div></div>
+  </header>;
+  const compactFooter = <><section className="method-section compact-method" id="method"><div><p>SOURCE-FIRST INTELLIGENCE</p><h2>每条信息，都能回到出处。</h2></div><div className="method-copy"><p>公开来源优先，媒体线索与官方披露分层展示；规模、交付、投运和产品参数均保留原始出处。</p><div className="source-legend"><span>RESEARCH ONLY <b>NOT INVESTMENT ADVICE</b></span><a href="/methodology">查看方法与数据来源 →</a></div></div></section><footer className="compact-footer"><Brand /><p>全球数据中心产业地图与实时情报站</p><div><a href="/privacy">隐私说明</a><span>本网站数据仅用于信息展示与研究，不构成任何投资建议。</span></div></footer></>;
+
+  if (view === "home") return <main id="top" className="compact-home">
+    {compactHeader}
+    <section className="hero compact-hero" aria-labelledby="hero-title">
+      <div className="hero-grid" aria-hidden="true" /><div className="hero-glow glow-a" aria-hidden="true" /><div className="hero-glow glow-b" aria-hidden="true" />
+      <div className="hero-copy"><p className="eyebrow"><span /> GLOBAL DATA CENTER INTELLIGENCE</p><h1 id="hero-title">Track the <span className="hero-pulse-line">pulse<PulseTrace /></span> of <em>infrastructure.</em></h1><p className="hero-lead">IDC Atlas 每日汇集全球数据中心项目、上市公司、算力硬件、电力与液冷的公开进展。</p><div className="hero-actions"><a className="primary-action" href="/pulse">进入最新脉冲 <span><ArrowIcon /></span></a><a className="secondary-action" href="/industry">进入产业中心<ArrowIcon /></a></div><div className="hero-footnote"><span>DAILY SOURCE REFRESH</span><span>{payload ? `UPDATED ${formatDateTime(payload.generatedAt)}` : "CONNECTING TO EDGE"}</span></div></div>
+      <aside className="hero-signal hero-calendar" aria-label="未来一周 IDC 重要时间日历"><div className="signal-head"><span><i /> EARNINGS WATCH · IDC CALENDAR</span><time>{payload ? `AS OF ${formatDateTime(payload.generatedAt)}` : "连接中"}</time></div>{heroCalendarEvents.length ? <><div className="hero-calendar-list">{heroCalendarEvents.map((event) => { const timing = formatCalendarEvent(event.startsAt); return <article key={event.id}><time><strong>{timing.date}</strong><small>美东 {timing.time}</small></time><div><div className="hero-calendar-meta"><span>{event.sector}</span><b>{event.ticker}</b></div><h2><a href={event.sourceUrl} target="_blank" rel="noreferrer">{event.company} 财报</a></h2><p>{event.description}</p><small>CAPEX WATCH · {event.focus}</small></div></article>; })}</div><a className="hero-calendar-more" href="/calendar">查看完整财报日历 <ArrowIcon /></a></> : <div className="signal-loading"><p>正在整理未来一周的重要节点…</p></div>}</aside>
+      <div className="hero-metrics"><div><small>VERIFIED PROJECT PULSE</small><strong>{news.length || "—"}</strong><span>近 45 天中美已核验项目</span></div><div><small>LISTED COMPANIES</small><strong>{listedCompanyNews.length || "—"}</strong><span>A 股与美股核心标的</span></div><div><small>SUPPLY CHAIN</small><strong>6</strong><span>算力到模型需求</span></div><div><small>AI HOT DAILY</small><strong>{dailyItems.length || "—"}</strong><span>{daily?.date ?? "今日内容连接中"}</span></div></div>
+    </section>
+
+    <section className="column-feature compact-column-feature" id="columns" aria-labelledby="featured-column-title"><div className="column-feature-head"><span>IDC ATLAS 专栏精选</span><time dateTime="2026-07-28">2026 / 07 / 28</time></div><div className="column-teaser-card"><div><p>LEASE WATCH · 02</p><h2 id="featured-column-title">GW 级长租，正在改写 IDC 订单。</h2><p>头部互联网与云客户正把算力需求提前落到未来数年的电力资源上。合同期限、送电进度与已计费容量成为判断订单质量的关键证据。</p><div className="column-teaser-actions"><a href="/columns/hyperscale-idc-leases" target="_blank" rel="noreferrer">继续阅读 <ArrowIcon /></a><a href="/columns" target="_blank" rel="noreferrer">全部专栏</a></div></div><a className="column-teaser-image" href="/columns/hyperscale-idc-leases" target="_blank" rel="noreferrer"><img src="/column-hyperscale-leases.png" alt="由长期容量合同连接的超大规模数据中心园区" loading="eager" /><span>APLD 400MW · CORZ 590MW · VNET 510MW</span></a></div></section>
+
+    <section className="section home-pulse-preview" id="pulse"><div className="section-title"><div><span className="section-no">01</span><p>EDITOR&apos;S SNAPSHOT</p><h2>今天值得看的脉冲</h2></div><p>首页只保留中美各三条已核验项目，以及 A 股和美股各两条核心标的动态；完整内容进入最新脉冲页。</p></div><div className="news-grid">{homePulseNews.map((item) => <NewsCard key={item.id} item={item} />)}</div><div className="home-subsection-head"><div><span>LISTED COMPANY WATCH</span><h3>核心 IDC 标的</h3></div><a href="/pulse">查看全部项目与上市公司动态 <ArrowIcon /></a></div><div className="news-grid">{homeListedNews.map((item) => <NewsCard key={item.id} item={item} compact />)}</div></section>
+
+    <section className="section home-industry-preview" id="industry"><div className="section-title inverse"><div><span className="section-no">02</span><p>INFRASTRUCTURE MAP</p><h2>从算力到需求</h2></div><p>六个产业节点只展示一条最新信号；产品、国产 GPU、模型、园区与液冷详情统一进入产业中心。</p></div><div className="industry-gateway-grid">{chainStages.map((stage) => { const item = payload?.chainNews?.[stage.key]?.[0]; return <a href={`/industry?tab=chain#${stage.key}`} key={stage.key}><span>{stage.no}</span><i><ChainIcon type={stage.key} /></i><div><strong>{stage.title}</strong><small>{stage.caption}</small>{item && <p>{item.title}</p>}</div><ArrowIcon /></a>; })}</div><a className="section-more-link" href="/industry">进入完整产业中心 <ArrowIcon /></a></section>
+
+    <section className="section home-market-summary" id="market"><div className="section-title"><div><span className="section-no">03</span><p>CAPITAL &amp; MARKET</p><h2>并购与市场温度</h2></div><p>用重大交易理解资产控制权，用 CWW 与 CWWCN 观察每日市场温度。</p></div><div className="home-capital-grid"><div className="home-deal-list">{deals.slice(0, 2).map((deal) => <article key={deal.id}><span>{deal.status}</span><h3>{deal.buyer} → {deal.target}</h3><p>{deal.rationale}</p><a href={deal.sourceUrl} target="_blank" rel="noreferrer">{deal.sourceName}<ExternalIcon /></a></article>)}</div><div className="benchmark-cards">{(payload?.benchmarks ?? []).map((item) => <article className="benchmark-card" key={item.code}><div className="benchmark-head"><span>{item.code}</span><small>{item.count} 成分</small></div><p>{item.name}</p><strong>{item.level.toLocaleString("en-US", { maximumFractionDigits: 2 })}</strong><div className="benchmark-change"><span className={item.dayPct >= 0 ? "up" : "down"}>{item.dayPct >= 0 ? "+" : ""}{item.dayPct.toFixed(2)}%</span><small>较前收</small></div></article>)}</div></div></section>
+    {compactFooter}
+    <nav className="mobile-dock compact-mobile-dock" aria-label="移动端快速导航"><a href="/"><span>01</span>首页</a><a href="/pulse"><span>02</span>脉冲</a><a href="/industry"><span>03</span>产业</a><a href="/#market"><span>04</span>市场</a><a href="/columns"><span>05</span>专栏</a></nav>
+  </main>;
+
+  if (view === "pulse") return <main id="top" className="content-hub pulse-hub">
+    {compactHeader}
+    <section className="hub-hero"><p>IDC ATLAS · LIVE INTELLIGENCE</p><h1>最新脉冲，<br /><em>集中阅读。</em></h1><p>项目、上市公司与 AI 日报分开呈现。一次只加载当前阅读区，减少在首页连续滚动。</p><div><span>{news.length} 条项目</span><span>{listedCompanyNews.length} 条公司动态</span><span>{dailyItems.length} 条今日 AI</span></div></section>
+    <nav className="hub-tabs" aria-label="最新脉冲内容分类">{([["projects", "项目脉冲", news.length], ["listed", "上市公司", listedCompanyNews.length], ["daily", "AI 日报", dailyItems.length]] as const).map(([key, label, count]) => <button key={key} className={pulseHubTab === key ? "active" : ""} aria-pressed={pulseHubTab === key} onClick={() => setPulseHubTab(key)}><span>{label}</span><b>{count}</b></button>)}</nav>
+    {pulseHubTab === "projects" && <section className="section hub-content-section"><div className="hub-filter-row"><div><span>45-DAY VERIFIED PROJECT PULSE</span><h2>中美大型项目进展</h2></div><div className="pulse-region-tabs" aria-label="IDC 脉冲地区筛选">{(["all", "中国", "美国"] as const).map((region) => <button key={region} className={pulseRegion === region ? "active" : ""} aria-pressed={pulseRegion === region} onClick={() => setPulseRegion(region)}><span>{region === "all" ? "全部" : region}</span><b>{pulseRegionCounts[region]}</b></button>)}</div></div><div className="news-grid">{visiblePulseNews.map((item) => <NewsCard key={item.id} item={item} />)}</div></section>}
+    {pulseHubTab === "listed" && <section className="section hub-content-section"><div className="hub-filter-row"><div><span>CORE IDC LISTED COMPANIES</span><h2>A 股与美股动态</h2></div><div className="pulse-region-tabs" aria-label="上市公司市场筛选">{(["all", "A 股", "美股"] as const).map((market) => <button key={market} className={listedMarket === market ? "active" : ""} aria-pressed={listedMarket === market} onClick={() => setListedMarket(market)}><span>{market === "all" ? "全部" : market}</span><b>{listedMarketCounts[market]}</b></button>)}</div></div><div className="news-grid">{visibleListedCompanyNews.map((item) => <NewsCard key={item.id} item={item} />)}</div></section>}
+    {pulseHubTab === "daily" && <section className="section daily-section hub-content-section"><div className="hub-filter-row inverse"><div><span>AI HOT · DAILY EDITION</span><h2>今日 AI 日报</h2></div>{daily && <a href={daily.canonical} target="_blank" rel="noreferrer">查看完整日报<ExternalIcon /></a>}</div>{daily?.lead && <article className="daily-lead"><span>LEAD STORY</span><h3><a href={daily.lead.permalink} target="_blank" rel="noreferrer">{daily.lead.title}</a></h3><p>{daily.lead.summary}</p><SourceRow item={daily.lead} /></article>}<div className="daily-grid">{dailyItems.map((item) => <article className="daily-card" key={`${item.dailySection}-${item.id}`}><span>{item.dailySection}</span><h3><a href={item.permalink} target="_blank" rel="noreferrer">{item.title}</a></h3><p>{item.summary}</p><SourceRow item={item} /></article>)}</div></section>}
+    {compactFooter}
+    <nav className="mobile-dock compact-mobile-dock" aria-label="移动端快速导航"><a href="/"><span>01</span>首页</a><a href="/pulse"><span>02</span>脉冲</a><a href="/industry"><span>03</span>产业</a><a href="/#market"><span>04</span>市场</a><a href="/columns"><span>05</span>专栏</a></nav>
+  </main>;
+
+  if (view === "industry") return <main id="top" className="content-hub industry-hub">
+    {compactHeader}
+    <section className="hub-hero industry-hub-hero"><p>IDC ATLAS · INFRASTRUCTURE CENTER</p><h1>产业链，<br /><em>按主题展开。</em></h1><p>从算力硬件、国产 GPU 和模型需求，到大型园区与液冷工程。切换标签时只显示当前主题。</p><div><span>6 个产业节点</span><span>{products.length} 个硬件产品</span><span>{includedCapacity.length} 个园区进展</span></div></section>
+    <nav className="hub-tabs industry-tabs" aria-label="产业中心内容分类">{([["chain", "产业链"], ["hardware", "NVIDIA / AMD"], ["china", "中国 GPU"], ["models", "模型需求"], ["campus", "园区容量"], ["cooling", "液冷"]] as const).map(([key, label]) => <button key={key} className={industryHubTab === key ? "active" : ""} aria-pressed={industryHubTab === key} onClick={() => setIndustryHubTab(key)}><span>{label}</span></button>)}</nav>
+    {industryHubTab === "chain" && <section className="section chain-section hub-content-section"><div className="hub-filter-row inverse"><div><span>SUPPLY CHAIN · 6 NODES</span><h2>产业链最新信号</h2></div><p>点击节点切换最近 {payload?.chainWindowDays ?? 30} 天动态。</p></div><div className="chain-stage-row">{chainStages.map((stage) => <button key={stage.key} className={`chain-stage ${stage.className} ${activeStage === stage.key ? "active" : ""}`} onClick={() => setActiveStage(stage.key)} aria-pressed={activeStage === stage.key}><span>{stage.no}</span><i className="chain-stage-icon"><ChainIcon type={stage.key} /></i><strong>{stage.title}</strong><small>{stage.caption}</small></button>)}</div><div className="chain-detail"><div className="chain-detail-head"><span>SELECTED NODE</span><h3>{currentStage.title}</h3><p>{currentStage.caption} · 最近公开动态</p></div><div className="chain-news">{activeNews.map((item) => <NewsCard key={item.id} item={item} compact />)}</div></div></section>}
+    {industryHubTab === "hardware" && <section className="section hub-content-section"><div className="hub-filter-row"><div><span>NVIDIA &amp; AMD PRODUCT RADAR</span><h2>产品与发布节奏</h2></div></div><div className="product-stack hub-product-grid">{products.map((product, index) => <article className="product-card" key={product.id}><div className="product-art">{product.imageSrc && <img src={product.imageSrc} alt={product.imageAlt ?? `${product.vendor} 产品图`} loading="lazy" />}</div><div className="product-copy"><p>{product.vendor} · PRODUCT {String(index + 1).padStart(2, "0")}</p><h3>{product.model}</h3><strong>{product.form}</strong><span>{product.spec}</span><dl><div><dt>发布</dt><dd>{product.release}</dd></div><div><dt>价格</dt><dd>{product.price}</dd></div></dl><a href={product.sourceUrl} target="_blank" rel="noreferrer">{product.vendor} 官方资料<ExternalIcon /></a></div></article>)}</div></section>}
+    {industryHubTab === "china" && <section className="section china-chip-section hub-content-section"><div className="hub-filter-row inverse"><div><span>CHINA GPU &amp; AI SILICON</span><h2>中国 GPU 与超节点</h2></div></div><div className="supernode-grid">{supernodes.map((product, index) => <SupernodeCard key={product.id} product={product} index={index} />)}</div><div className="china-chip-grid hub-secondary-grid">{chinaChipNews.map((item, index) => <ChinaChipCard key={item.id} item={item} index={index} />)}</div></section>}
+    {industryHubTab === "models" && <section className="section model-section hub-content-section"><div className="hub-filter-row inverse"><div><span>MODEL DEMAND &amp; CAPABILITY</span><h2>模型需求与公开评测</h2></div></div><div className="model-grid">{modelNews.map((item, index) => <article className="model-card" key={item.id}><div className="model-card-top"><span>{String(index + 1).padStart(2, "0")}</span><time>{formatRelativeTime(item.publishedAt)}</time></div><h3><a href={item.permalink} target="_blank" rel="noreferrer">{item.title}</a></h3><p>{item.summary}</p>{benchmarkLine(item) && <div className="benchmark-line"><span>PUBLIC BENCHMARK</span><strong>{benchmarkLine(item)}</strong></div>}<SourceRow item={item} /></article>)}</div></section>}
+    {industryHubTab === "campus" && <section className="section project-section hub-content-section"><div className="hub-filter-row inverse"><div><span>LARGE-SCALE CAMPUS RADAR</span><h2>大型园区进度</h2></div></div><div className="capacity-grid">{includedCapacity.map((record) => <article className="capacity-card" key={record.id}><div><span>{record.status}</span><strong>{record.metric}</strong></div><p>{record.publishedAt}</p><h3>{record.title}</h3><h4>{record.subject}</h4><p className="capacity-note">{record.note}</p><RecordSource record={record} /></article>)}</div></section>}
+    {industryHubTab === "cooling" && <section className="section cooling-section hub-content-section"><div className="hub-filter-row"><div><span>LIQUID COOLING ADOPTION</span><h2>液冷部署进度</h2></div></div><div className="cooling-journey">{coolingRecords.map((record, index) => <article className="cooling-step" key={record.id}><span>{String(index + 1).padStart(2, "0")}</span><i /><p>{record.status}</p><h3>{record.metric}</h3><h4>{record.title}</h4><small>{record.subject} · {record.publishedAt}</small><p className="cooling-note">{record.note}</p><RecordSource record={record} /></article>)}</div></section>}
+    {compactFooter}
+    <nav className="mobile-dock compact-mobile-dock" aria-label="移动端快速导航"><a href="/"><span>01</span>首页</a><a href="/pulse"><span>02</span>脉冲</a><a href="/industry"><span>03</span>产业</a><a href="/#market"><span>04</span>市场</a><a href="/columns"><span>05</span>专栏</a></nav>
+  </main>;
 
   return <main id="top">
     <header className="topbar">

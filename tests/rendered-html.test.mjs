@@ -2,19 +2,23 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render(pathname = "/", host = "dc-atlas.example") {
+async function render(pathname = "/", host = "dc-atlas.example", country = null, cookie = null) {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
+  const headers = { accept: "text/html", host };
+  if (cookie) headers.cookie = cookie;
+  const request = new Request(`https://${host}${pathname}`, { headers });
+  if (country) Object.defineProperty(request, "cf", { value: { country } });
 
   return worker.fetch(
-    new Request(`https://${host}${pathname}`, { headers: { accept: "text/html", host } }),
+    request,
     { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
     { waitUntil() {}, passThroughOnException() {} },
   );
 }
 
-test("server-renders the finished IDC Atlas homepage", async () => {
+test("server-renders the compact IDC Atlas portal homepage", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
@@ -23,50 +27,52 @@ test("server-renders the finished IDC Atlas homepage", async () => {
   assert.match(html, /<title>IDC Atlas｜全球数据中心产业地图与实时情报站<\/title>/i);
   assert.match(html, /Track the/);
   assert.match(html, /class="pulse-trace"/);
-  assert.match(html, /aria-controls="site-menu"/);
-  assert.match(html, /github\.com\/jasonlx327/);
-  assert.match(html, /扫码访问网站/);
-  assert.match(html, /SHARE IDC ATLAS/);
   assert.match(html, /href="\/privacy"/);
   assert.match(html, /googletagmanager\.com\/gtag\/js\?id=G-XRKL96W42Q/);
   assert.match(html, /gtag\('config', 'G-XRKL96W42Q'\)/);
-  assert.match(html, /IDC 最新脉冲/);
-  assert.match(html, /近 45 天中国与美国/);
-  assert.match(html, /WEEKLY HIGHLIGHT/);
+  assert.match(html, /href="\/pulse">最新脉冲/);
+  assert.match(html, /href="\/industry">产业链/);
   assert.match(html, /EARNINGS WATCH · IDC CALENDAR/);
   assert.match(html, /IDC ATLAS 专栏精选/);
   assert.match(html, /GW 级长租/);
-  assert.match(html, /class="top-column-link" href="\/columns" target="_blank"/);
   assert.match(html, /href="\/columns\/hyperscale-idc-leases"/);
-  assert.match(html, /href="\/columns\/ai-capex-power"/);
-  assert.match(html, /今日 AI 日报/);
-  assert.match(html, /产业链情况/);
-  assert.match(html, /只显示最近 30 天/);
-  assert.match(html, /SUPPLY CHAIN · 6 NODES/);
+  assert.match(html, /今天值得看的脉冲/);
+  assert.match(html, /核心 IDC 标的/);
+  assert.match(html, /从算力到需求/);
   assert.match(html, /chain-node-icon/);
-  assert.doesNotMatch(html, /chain-mobile-focus|idc-index-chain-aurora\.png/);
-  assert.match(html, /产品、形态与发布节奏/);
-  assert.match(html, /真实形态、关键能力/);
-  assert.match(html, /中国 GPU \/ 芯片进展/);
-  assert.match(html, /CHINA GPU &amp; AI SILICON/);
-  assert.match(html, /id="china-chips"/);
-  assert.match(html, /国产超节点路线/);
-  assert.match(html, /SUPERNODE RADAR/);
-  assert.match(html, /OFFICIAL \+ AI HOT \+ 36KR/);
-  assert.match(html, /大模型发布与评测/);
-  assert.match(html, /OPENROUTER · WEEKLY USAGE/);
-  assert.match(html, /真实调用热度/);
-  assert.match(html, /GLOBAL AI DIFFUSION/);
-  assert.match(html, /17.8%/);
-  assert.match(html, /季度追踪/);
-  assert.match(html, /前端开发公开评测/);
-  assert.match(html, /Source: Arena/);
-  assert.match(html, /大型园区进度/);
-  assert.match(html, /全球重大并购/);
-  assert.match(html, /液冷部署进度/);
+  assert.match(html, /并购与市场温度/);
   assert.match(html, /每条信息，都能回到出处/);
-  assert.doesNotMatch(html, /不再罗列公司和小工程|默认只把公开披露容量|百 MW，不看小工程/);
+  assert.doesNotMatch(html, /产品、形态与发布节奏|国产超节点路线|大模型发布与评测|大型园区进度|液冷部署进度/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
+});
+
+test("publishes focused Pulse and Industry content hubs", async () => {
+  const pulse = await render("/pulse");
+  assert.equal(pulse.status, 200);
+  const pulseHtml = await pulse.text();
+  assert.match(pulseHtml, /最新脉冲，/);
+  assert.match(pulseHtml, /项目脉冲/);
+  assert.match(pulseHtml, /上市公司/);
+  assert.match(pulseHtml, /AI 日报/);
+
+  const industry = await render("/industry");
+  assert.equal(industry.status, 200);
+  const industryHtml = await industry.text();
+  assert.match(industryHtml, /产业链，/);
+  assert.match(industryHtml, /NVIDIA \/ AMD/);
+  assert.match(industryHtml, /中国 GPU/);
+  assert.match(industryHtml, /园区容量/);
+});
+
+test("renders a global-first English pulse and card-based earnings board", async () => {
+  const response = await render("/en");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Latest infrastructure pulse/);
+  assert.match(html, /The next CAPEX read-throughs/);
+  assert.match(html, /english-event-card-grid/);
+  assert.match(html, /China watch/);
+  assert.doesNotMatch(html, /China and United States · last 45 days/);
 });
 
 test("groups the menu into four themes without changing section links", async () => {
@@ -233,6 +239,24 @@ test("redirects the Sites fallback host to the canonical production domain", asy
   const response = await render("/?source=sites", "dc-atlas-cn-us.catknowspray.chatgpt.site");
   assert.equal(response.status, 308);
   assert.equal(response.headers.get("location"), "https://idc-index.com/?source=sites");
+});
+
+test("defaults overseas readers to English and remembers explicit language choice", async () => {
+  const overseas = await render("/", "dc-atlas.example", "US");
+  assert.equal(overseas.status, 307);
+  assert.equal(overseas.headers.get("location"), "https://dc-atlas.example/en");
+  assert.match(overseas.headers.get("cache-control") ?? "", /no-store/);
+
+  const mainland = await render("/", "dc-atlas.example", "CN");
+  assert.equal(mainland.status, 200);
+
+  const chinesePreference = await render("/", "dc-atlas.example", "US", "idc_lang=zh");
+  assert.equal(chinesePreference.status, 200);
+
+  const rememberEnglish = await render("/en?lang=en", "dc-atlas.example", "CN");
+  assert.equal(rememberEnglish.status, 302);
+  assert.equal(rememberEnglish.headers.get("location"), "https://dc-atlas.example/en");
+  assert.match(rememberEnglish.headers.get("set-cookie") ?? "", /idc_lang=en/);
 });
 
 test("includes social sharing metadata for the request host", async () => {

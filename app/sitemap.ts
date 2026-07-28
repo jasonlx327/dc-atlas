@@ -13,6 +13,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.2,
     },
     {
+      url: "https://idc-index.com/pulse",
+      changeFrequency: "daily",
+      priority: 0.9,
+    },
+    {
+      url: "https://idc-index.com/industry",
+      changeFrequency: "daily",
+      priority: 0.9,
+    },
+    {
       url: "https://idc-index.com/topics/data-center-intelligence",
       changeFrequency: "weekly",
       priority: 0.8,
