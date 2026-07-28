@@ -20,6 +20,8 @@ Use original disclosure links attached to individual updates to verify capacity,
 - [China AI Silicon](https://idc-index.com/topics/china-ai-silicon): Bilingual guide to China GPU, DCU, AI accelerators, supernodes and developer ecosystem updates.
 - [Methodology and sources](https://idc-index.com/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
 - [US tech earnings calendar](https://idc-index.com/calendar): Upcoming cloud, semiconductor and data-center-infrastructure earnings events, CAPEX watch items and source-linked post-results conclusions.
+- [IDC Atlas Columns](https://idc-index.com/columns): Chinese index of original, source-linked research on the data-center and AI-infrastructure cycle.
+- [IDC Atlas Columns in English](https://idc-index.com/en/columns): English index of original research for global investors.
 - [CAPEX Watch: AI infrastructure enters the power era](https://idc-index.com/columns/ai-capex-power): Chinese analysis of hyperscaler spending, grid access, campuses, cooling and commissioning.
 - [CAPEX Watch: The AI Buildout Enters Its Power-Hungry Phase](https://idc-index.com/en/columns/ai-capex-power): English edition with source-linked company disclosures and earnings watch items.
 - [Lease Watch: Gigawatt leases reshape IDC orders](https://idc-index.com/columns/hyperscale-idc-leases): Chinese analysis of large internet and cloud capacity leases, contract structure, delivery and concentration risk.

@@ -34,8 +34,9 @@ test("server-renders the finished IDC Atlas homepage", async () => {
   assert.match(html, /近 45 天中国与美国/);
   assert.match(html, /WEEKLY HIGHLIGHT/);
   assert.match(html, /EARNINGS WATCH · IDC CALENDAR/);
-  assert.match(html, /NEW · IDC ATLAS COLUMN/);
+  assert.match(html, /IDC ATLAS 专栏精选/);
   assert.match(html, /GW 级长租/);
+  assert.match(html, /class="top-column-link" href="\/columns" target="_blank"/);
   assert.match(html, /href="\/columns\/hyperscale-idc-leases"/);
   assert.match(html, /href="\/columns\/ai-capex-power"/);
   assert.match(html, /今日 AI 日报/);
@@ -107,6 +108,9 @@ test("keeps the English site fully translated across the live coverage stack", a
   assert.doesNotMatch(source, /editorial English translation is pending/);
   assert.doesNotMatch(source, /lang="zh-CN"/);
   assert.match(source, /Gigawatt Leases Are/);
+  assert.match(source, /className="english-columns-nav" href="\/en\/columns" target="_blank"/);
+  assert.match(source, /className="english-chain-icon"/);
+  assert.match(source, /<ChainIcon type=/);
   assert.match(source, /href="\/en\/columns\/hyperscale-idc-leases"/);
   assert.match(source, /href="\/en\/columns\/ai-capex-power"/);
 });
@@ -282,6 +286,24 @@ test("publishes the source methodology and includes it in the sitemap", async ()
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns\/ai-capex-power/);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns\/hyperscale-idc-leases/);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns\/hyperscale-idc-leases/);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns</);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns</);
+});
+
+test("publishes bilingual column indexes with crawl metadata", async () => {
+  const chinese = await render("/columns");
+  assert.equal(chinese.status, 200);
+  const chineseHtml = await chinese.text();
+  assert.match(chineseHtml, /专栏，追踪/);
+  assert.match(chineseHtml, /GW 级长租正在改写 IDC 订单/);
+  assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns"/i);
+
+  const english = await render("/en/columns");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /Columns for the/);
+  assert.match(englishHtml, /Gigawatt Leases Are Reshaping the Data Center Market/);
+  assert.match(englishHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/columns"/i);
 });
 
 test("gives the earnings calendar and poster route distinct crawl metadata", async () => {
