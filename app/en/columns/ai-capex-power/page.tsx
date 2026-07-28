@@ -4,11 +4,11 @@ import CapexPowerArticle from "../../../columns/ai-capex-power/article";
 const canonical = "https://idc-index.com/en/columns/ai-capex-power";
 
 export const metadata: Metadata = {
-  title: "The AI Buildout Enters Its Power-Hungry Phase｜IDC Atlas",
-  description: "What Microsoft, Alphabet, Meta and Amazon capital spending says about power, data centers, cooling and revenue-ready AI capacity.",
+  title: "Where Hyperscaler AI CapEx Actually Goes｜IDC Atlas",
+  description: "A source-linked breakdown of Microsoft, Alphabet, Meta and Amazon AI infrastructure spending, from silicon and servers to campuses, power and billable capacity.",
   alternates: { canonical, languages: { "zh-CN": "https://idc-index.com/columns/ai-capex-power", en: canonical } },
-  openGraph: { title: "The AI Buildout Enters Its Power-Hungry Phase", description: "Hyperscaler CapEx is moving from chip orders into power, campuses and billable AI capacity.", url: canonical, type: "article", publishedTime: "2026-07-27T00:00:00+08:00", images: [{ url: "https://idc-index.com/column-ai-capex-grid.png", width: 1672, height: 941, alt: "AI data centers meeting a constrained electric grid" }] },
-  twitter: { card: "summary_large_image", title: "The AI Buildout Enters Its Power-Hungry Phase", description: "Four hyperscalers reveal the power and commissioning constraints shaping the AI buildout.", images: ["https://idc-index.com/column-ai-capex-grid.png"] },
+  openGraph: { title: "Where Hyperscaler AI CapEx Actually Goes", description: "Follow the capital from silicon orders through campuses, power, commissioning and billable cloud capacity.", url: canonical, type: "article", publishedTime: "2026-07-27T00:00:00+08:00", modifiedTime: "2026-07-28T00:00:00+08:00", images: [{ url: "https://idc-index.com/column-ai-capex-grid.png", width: 1672, height: 941, alt: "AI data centers meeting a constrained electric grid" }] },
+  twitter: { card: "summary_large_image", title: "Where Hyperscaler AI CapEx Actually Goes", description: "Microsoft, Alphabet, Meta and Amazon show how AI infrastructure spending moves through the physical stack.", images: ["https://idc-index.com/column-ai-capex-grid.png"] },
 };
 
 export default function Page() {
@@ -17,11 +17,11 @@ export default function Page() {
     "@graph": [
       {
         "@type": "Article",
-        headline: "The AI Buildout Enters Its Power-Hungry Phase",
+        headline: "Where Hyperscaler AI CapEx Actually Goes",
         description: metadata.description,
         image: "https://idc-index.com/column-ai-capex-grid.png",
         datePublished: "2026-07-27T00:00:00+08:00",
-        dateModified: "2026-07-27T00:00:00+08:00",
+        dateModified: "2026-07-28T00:00:00+08:00",
         inLanguage: "en-US",
         articleSection: "AI infrastructure capital expenditure",
         isAccessibleForFree: true,
@@ -42,7 +42,7 @@ export default function Page() {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "IDC Atlas", item: "https://idc-index.com/en" },
           { "@type": "ListItem", position: 2, name: "Columns", item: "https://idc-index.com/en/columns" },
-          { "@type": "ListItem", position: 3, name: "The AI Buildout Enters Its Power-Hungry Phase", item: canonical },
+          { "@type": "ListItem", position: 3, name: "Where Hyperscaler AI CapEx Actually Goes", item: canonical },
         ],
       },
     ],

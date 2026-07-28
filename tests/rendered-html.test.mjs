@@ -38,10 +38,10 @@ test("server-renders the compact IDC Atlas portal homepage", async () => {
   assert.match(html, /EARNINGS WATCH · IDC CALENDAR/);
   assert.match(html, /href="\/#calendar"><span>04<\/span><strong>财报日历/);
   assert.match(html, /class="hero-signal hero-calendar" id="calendar"/);
-  assert.match(html, /IDC ATLAS 专栏精选/);
-  assert.match(html, /GW 级长租/);
+  assert.match(html, /IDC ATLAS 深度研究/);
+  assert.match(html, /四大云厂商的 AI CAPEX/);
   assert.match(html, /href="\/#columns"/);
-  assert.match(html, /href="\/columns\/hyperscale-idc-leases"/);
+  assert.match(html, /href="\/columns\/ai-capex-power"/);
   assert.match(html, /今天值得看的脉冲/);
   assert.match(html, /核心 IDC 标的/);
   assert.match(html, /从算力到需求/);
@@ -140,11 +140,11 @@ test("keeps the English site fully translated across the live coverage stack", a
 
   assert.doesNotMatch(source, /editorial English translation is pending/);
   assert.doesNotMatch(source, /lang="zh-CN"/);
-  assert.match(source, /Gigawatt leases are/);
+  assert.match(source, /Where hyperscaler AI CapEx actually goes/);
   assert.match(source, /href="\/en#columns"/);
   assert.match(source, /className="english-chain-icon"/);
   assert.match(source, /<ChainIcon type=/);
-  assert.match(source, /href="\/en\/columns\/hyperscale-idc-leases"/);
+  assert.match(source, /href="\/en\/columns\/ai-capex-power"/);
   assert.match(source, /view === "pulse"/);
 });
 
@@ -152,19 +152,23 @@ test("publishes the bilingual CAPEX Watch column with article metadata and prima
   const chinese = await render("/columns/ai-capex-power");
   assert.equal(chinese.status, 200);
   const chineseHtml = await chinese.text();
-  assert.match(chineseHtml, /AI 基建竞赛进入电力时代/);
+  assert.match(chineseHtml, /四大云厂商的 AI CAPEX/);
   assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns\/ai-capex-power"/i);
   assert.match(chineseHtml, /"@type":"Article"/);
-  assert.match(chineseHtml, /微软 FY2026 Q3 财报电话会/);
+  assert.match(chineseHtml, /Microsoft FY2026 Q3 财报电话会/);
+  assert.match(chineseHtml, /未投运资产 \$108\.6B/);
+  assert.match(chineseHtml, /Amazon 2026 Q1 业绩公告/);
   assert.match(chineseHtml, /本网站内容仅用于信息展示与研究/);
   assert.doesNotMatch(chineseHtml, /不在 GPU，而在电网/);
 
   const english = await render("/en/columns/ai-capex-power");
   assert.equal(english.status, 200);
   const englishHtml = await english.text();
-  assert.match(englishHtml, /The AI Buildout Enters Its Power-Hungry Phase/);
+  assert.match(englishHtml, /Where Hyperscaler AI CapEx Actually Goes/);
   assert.match(englishHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/columns\/ai-capex-power"/i);
   assert.match(englishHtml, /Microsoft FY2026 Q3 earnings call/);
+  assert.match(englishHtml, /\$75\.6B of future payments/);
+  assert.match(englishHtml, /Amazon Q1 2026 earnings release/);
   assert.match(englishHtml, /For information and research only/);
   assert.doesNotMatch(englishHtml, /Isn.t the GPU/);
 });

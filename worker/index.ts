@@ -28,8 +28,8 @@ Use original disclosure links attached to individual updates to verify capacity,
 - [US tech earnings calendar](https://idc-index.com/calendar): Upcoming cloud, semiconductor and data-center-infrastructure earnings events, CAPEX watch items and source-linked post-results conclusions.
 - [IDC Atlas Columns](https://idc-index.com/columns): Chinese index of original, source-linked research on the data-center and AI-infrastructure cycle.
 - [IDC Atlas Columns in English](https://idc-index.com/en/columns): English index of original research for global investors.
-- [CAPEX Watch: AI infrastructure enters the power era](https://idc-index.com/columns/ai-capex-power): Chinese analysis of hyperscaler spending, grid access, campuses, cooling and commissioning.
-- [CAPEX Watch: The AI Buildout Enters Its Power-Hungry Phase](https://idc-index.com/en/columns/ai-capex-power): English edition with source-linked company disclosures and earnings watch items.
+- [CAPEX Watch: 四大云厂商的 AI CAPEX 最终流向了哪里？](https://idc-index.com/columns/ai-capex-power): Chinese source-linked analysis of Microsoft, Alphabet, Meta and Amazon spending from silicon to billable capacity.
+- [CAPEX Watch: Where Hyperscaler AI CapEx Actually Goes](https://idc-index.com/en/columns/ai-capex-power): English analysis of capital intensity, construction pipelines, power, commissioning and utilization.
 - [Lease Watch: Gigawatt leases reshape IDC orders](https://idc-index.com/columns/hyperscale-idc-leases): Chinese analysis of large internet and cloud capacity leases, contract structure, delivery and concentration risk.
 - [Lease Watch: Gigawatt Leases Are Reshaping the Data Center Market](https://idc-index.com/en/columns/hyperscale-idc-leases): English edition covering recent CoreWeave, Digital Realty and VNET disclosures.
 

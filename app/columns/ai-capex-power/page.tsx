@@ -4,11 +4,11 @@ import CapexPowerArticle from "./article";
 const canonical = "https://idc-index.com/columns/ai-capex-power";
 
 export const metadata: Metadata = {
-  title: "AI 基建竞赛进入电力时代｜IDC Atlas",
-  description: "从 Microsoft、Alphabet、Meta 与 Amazon 的资本开支，看 AI 基础设施约束如何从芯片扩展至电力、园区、液冷与投运。",
+  title: "四大云厂商的 AI CAPEX 最终流向了哪里？｜IDC Atlas",
+  description: "拆解 Microsoft、Alphabet、Meta 与 Amazon 的 AI 资本开支，追踪资金从芯片、服务器流向园区、电力、投运与可计费容量。",
   alternates: { canonical, languages: { "zh-CN": canonical, en: "https://idc-index.com/en/columns/ai-capex-power" } },
-  openGraph: { title: "AI 基建竞赛进入电力时代", description: "科技巨头的资本开支，正在从芯片订单传导至电力、园区和可计费容量。", url: canonical, type: "article", publishedTime: "2026-07-27T00:00:00+08:00", images: [{ url: "https://idc-index.com/column-ai-capex-grid.png", width: 1672, height: 941, alt: "AI 数据中心与电网约束" }] },
-  twitter: { card: "summary_large_image", title: "AI 基建竞赛进入电力时代", description: "四家科技巨头的资本开支，正在揭示 AI 基建的供电与投运约束。", images: ["https://idc-index.com/column-ai-capex-grid.png"] },
+  openGraph: { title: "四大云厂商的 AI CAPEX 最终流向了哪里？", description: "从采购、建设、送电到可计费容量，拆解四家云厂商的 AI 基础设施投入。", url: canonical, type: "article", publishedTime: "2026-07-27T00:00:00+08:00", modifiedTime: "2026-07-28T00:00:00+08:00", images: [{ url: "https://idc-index.com/column-ai-capex-grid.png", width: 1672, height: 941, alt: "AI 数据中心与电网约束" }] },
+  twitter: { card: "summary_large_image", title: "四大云厂商的 AI CAPEX 最终流向了哪里？", description: "追踪 Microsoft、Alphabet、Meta 与 Amazon 的资本开支传导。", images: ["https://idc-index.com/column-ai-capex-grid.png"] },
 };
 
 export default function Page() {
@@ -17,11 +17,11 @@ export default function Page() {
     "@graph": [
       {
         "@type": "Article",
-        headline: "AI 基建竞赛进入电力时代",
+        headline: "四大云厂商的 AI CAPEX 最终流向了哪里？",
         description: metadata.description,
         image: "https://idc-index.com/column-ai-capex-grid.png",
         datePublished: "2026-07-27T00:00:00+08:00",
-        dateModified: "2026-07-27T00:00:00+08:00",
+        dateModified: "2026-07-28T00:00:00+08:00",
         inLanguage: "zh-CN",
         articleSection: "AI 基础设施资本开支",
         isAccessibleForFree: true,
@@ -42,7 +42,7 @@ export default function Page() {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "IDC Atlas", item: "https://idc-index.com/" },
           { "@type": "ListItem", position: 2, name: "专栏", item: "https://idc-index.com/columns" },
-          { "@type": "ListItem", position: 3, name: "AI 基建竞赛进入电力时代", item: canonical },
+          { "@type": "ListItem", position: 3, name: "四大云厂商的 AI CAPEX 最终流向了哪里？", item: canonical },
         ],
       },
     ],
