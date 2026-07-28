@@ -24,7 +24,7 @@ function ChineseArticle() {
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>核心判断</span><p>2026 年的 AI 基建竞争取决于整套系统能否按时送电并上线。GPU 仍然稀缺；对 IDC 产业链而言，电网接入、长周期园区资产、液冷和投运节奏正在成为更重要的边际变量。</p></aside>
 
-      <section><p className="column-dropcap">过去两年，AI 基础设施的叙事几乎被 GPU 占满。现在，资本开支的构成正在提醒投资者：一张加速卡只有在机房完成建设、供电稳定、网络接通、散热系统可用之后，才会变成收入。</p><p>微软在截至 2026 年 3 月的季度投入 319 亿美元资本开支，其中约三分之二用于 GPU、CPU 等短周期资产，其余用于可支撑十五年以上变现的数据中心等长周期资产；公司同时表示，当季新增约 1GW 容量，但客户需求仍高于可用供给。<SourceLink href={sources.microsoft}>微软 FY2026 Q3 财报电话会</SourceLink></p><p>这意味着，芯片不再是唯一约束。即使服务器已经到货，如果园区没有完成送电、变电、液冷与网络调试，资产仍无法“revenue-ready”。</p></section>
+      <section><p className="column-dropcap">过去两年，AI 基础设施的叙事几乎被 GPU 占满。现在，资本开支的构成正在提醒投资者：一张加速卡只有在机房完成建设、供电稳定、网络接通、散热系统可用之后，才会变成收入。</p><p>微软在截至 2026 年 3 月的季度投入 319 亿美元资本开支，其中约三分之二用于 GPU、CPU 等短周期资产，其余用于可支撑十五年以上变现的数据中心等长周期资产；公司同时表示，当季新增约 1GW 容量，但客户需求仍高于可用供给。<SourceLink href={sources.microsoft}>微软 FY2026 Q3 财报电话会</SourceLink></p><p>供电、变电、液冷与网络调试共同决定资产何时进入“revenue-ready”状态。服务器即使已经到货，也要等待整座园区完成交付。</p></section>
 
       <section><div className="column-section-label">01 · THE CAPEX WALL</div><h2>四组数字，勾勒出同一条产业链</h2><div className="column-company-grid">
         <article><span>MICROSOFT</span><strong>约 $190B</strong><p>公司预计 2026 日历年资本开支约 1,900 亿美元；最新季度资本开支为 319 亿美元，下一季度预计超过 400 亿美元。</p><SourceLink href={sources.microsoft}>官方电话会</SourceLink></article>

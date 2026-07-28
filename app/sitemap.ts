@@ -47,5 +47,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.85,
     },
+    {
+      url: "https://idc-index.com/columns/hyperscale-idc-leases",
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: "https://idc-index.com/en/columns/hyperscale-idc-leases",
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
   ];
 }

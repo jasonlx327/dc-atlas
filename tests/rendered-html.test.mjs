@@ -35,7 +35,8 @@ test("server-renders the finished IDC Atlas homepage", async () => {
   assert.match(html, /WEEKLY HIGHLIGHT/);
   assert.match(html, /EARNINGS WATCH · IDC CALENDAR/);
   assert.match(html, /NEW · IDC ATLAS COLUMN/);
-  assert.match(html, /AI 基建竞赛/);
+  assert.match(html, /GW 级长租/);
+  assert.match(html, /href="\/columns\/hyperscale-idc-leases"/);
   assert.match(html, /href="\/columns\/ai-capex-power"/);
   assert.match(html, /今日 AI 日报/);
   assert.match(html, /产业链情况/);
@@ -105,7 +106,8 @@ test("keeps the English site fully translated across the live coverage stack", a
 
   assert.doesNotMatch(source, /editorial English translation is pending/);
   assert.doesNotMatch(source, /lang="zh-CN"/);
-  assert.match(source, /The AI Buildout Enters/);
+  assert.match(source, /Gigawatt Leases Are/);
+  assert.match(source, /href="\/en\/columns\/hyperscale-idc-leases"/);
   assert.match(source, /href="\/en\/columns\/ai-capex-power"/);
 });
 
@@ -128,6 +130,27 @@ test("publishes the bilingual CAPEX Watch column with article metadata and prima
   assert.match(englishHtml, /Microsoft FY2026 Q3 earnings call/);
   assert.match(englishHtml, /For information and research only/);
   assert.doesNotMatch(englishHtml, /Isn.t the GPU/);
+});
+
+test("publishes the bilingual Lease Watch column with contract-level sourcing", async () => {
+  const chinese = await render("/columns/hyperscale-idc-leases");
+  assert.equal(chinese.status, 200);
+  const chineseHtml = await chinese.text();
+  assert.match(chineseHtml, /GW 级长租正在改写 IDC 订单/);
+  assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns\/hyperscale-idc-leases"/i);
+  assert.match(chineseHtml, /APPLIED DIGITAL × COREWEAVE/);
+  assert.match(chineseHtml, /VNET × LEADING INTERNET CUSTOMER/);
+  assert.match(chineseHtml, /公司未披露的客户名称保持匿名/);
+  assert.doesNotMatch(chineseHtml, /不是.+而是|不是什么/);
+
+  const english = await render("/en/columns/hyperscale-idc-leases");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /Gigawatt Leases Are Reshaping the Data Center Market/);
+  assert.match(englishHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/columns\/hyperscale-idc-leases"/i);
+  assert.match(englishHtml, /More than 185MW was active and billable/);
+  assert.match(englishHtml, /For information and research only/);
+  assert.doesNotMatch(englishHtml, /isn.t the .+[,;:] it.s|is not the .+[,;:] it is/i);
 });
 
 test("keeps the homepage earnings watch compact and reachable", async () => {
@@ -257,6 +280,8 @@ test("publishes the source methodology and includes it in the sitemap", async ()
   const sitemapXml = await (await render("/sitemap.xml")).text();
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns\/ai-capex-power/);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns\/ai-capex-power/);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns\/hyperscale-idc-leases/);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns\/hyperscale-idc-leases/);
 });
 
 test("gives the earnings calendar and poster route distinct crawl metadata", async () => {
