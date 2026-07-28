@@ -57,7 +57,7 @@ test("publishes focused Pulse and Industry content hubs", async () => {
   const pulse = await render("/pulse");
   assert.equal(pulse.status, 200);
   const pulseHtml = await pulse.text();
-  assert.match(pulseHtml, /最新脉冲，/);
+  assert.match(pulseHtml, /今天发生什么，/);
   assert.match(pulseHtml, /项目脉冲/);
   assert.match(pulseHtml, /上市公司/);
   assert.match(pulseHtml, /AI 日报/);
@@ -65,7 +65,7 @@ test("publishes focused Pulse and Industry content hubs", async () => {
   const industry = await render("/industry");
   assert.equal(industry.status, 200);
   const industryHtml = await industry.text();
-  assert.match(industryHtml, /产业链，/);
+  assert.match(industryHtml, /算力从哪里来，/);
   assert.match(industryHtml, /NVIDIA \/ AMD/);
   assert.match(industryHtml, /中国 GPU/);
   assert.match(industryHtml, /园区容量/);
