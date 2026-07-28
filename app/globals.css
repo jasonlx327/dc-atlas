@@ -149,7 +149,8 @@ button { color: inherit; }
   .hero { min-height: 0; padding-bottom: 76px; grid-template-columns: 1fr; row-gap: 34px; }
   .hero::before { display: none; }
   .hero-copy { width: 100%; }
-  .hero h1 { max-width: none; white-space: nowrap; font-size: clamp(46px, 5vw, 88px); }
+  .hero h1 { max-width: none; white-space: normal; font-size: clamp(42px, 4vw, 80px); }
+  .hero .pulse-trace { width: clamp(132px, 13vw, 220px); }
   .hero-lead { max-width: 760px; margin-top: 22px; }
   .hero-actions { margin-top: 26px; }
   .hero-footnote { margin-top: 34px; }
@@ -1101,6 +1102,7 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
   .console-hero { min-height: 650px; padding: 66px 18px 104px; }
   .console-hero .eyebrow { margin-bottom: 38px; font-size: 7px; }
   .console-hero h1 { font-size: clamp(52px, 16vw, 70px); line-height: .91; }
+  .console-hero h1 em { font-size: .8em; }
   .console-hero .hero-pulse-line { display: flex; width: 100%; align-items: center; }
   .console-hero .pulse-trace { width: 120px; }
   .console-hero > p:not(.eyebrow) { margin-top: 26px; font-size: 15px; }
