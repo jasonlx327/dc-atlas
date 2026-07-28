@@ -48,6 +48,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://idc-index.com/en/pulse",
+      changeFrequency: "daily",
+      priority: 0.9,
+    },
+    {
+      url: "https://idc-index.com/en/industry",
+      changeFrequency: "daily",
+      priority: 0.9,
+    },
+    {
       url: "https://idc-index.com/columns",
       changeFrequency: "weekly",
       priority: 0.9,

@@ -18,7 +18,9 @@ Use original disclosure links attached to individual updates to verify capacity,
 - [Chinese intelligence portal](https://idc-index.com/): Compact entry point for the current project pulse, listed-company watch, industry chain and market signals.
 - [Project and company pulse](https://idc-index.com/pulse): Full Chinese project pulse, A-share and US-listed company updates, plus the daily AI briefing.
 - [Infrastructure center](https://idc-index.com/industry): Topic tabs for the supply chain, NVIDIA and AMD products, China GPU, model demand, campuses and liquid cooling.
-- [English investor edition](https://idc-index.com/en): US- and global-first project pulse, listed-company disclosures, earnings CAPEX watch and a selective China watch.
+- [English investor console](https://idc-index.com/en): US- and global-first overview of project signals, listed-company disclosures, earnings CAPEX watch and market indices.
+- [English infrastructure pulse](https://idc-index.com/en/pulse): Verified global projects, leases, US-listed company updates and daily AI-demand signals.
+- [English infrastructure industry map](https://idc-index.com/en/industry): Compute, networking, power, cooling, campus capacity and selective China supply-chain coverage.
 - [Global Data Center Intelligence](https://idc-index.com/topics/data-center-intelligence): Bilingual guide to global data-center projects and infrastructure signals.
 - [China AI Silicon](https://idc-index.com/topics/china-ai-silicon): Bilingual guide to China GPU, DCU, AI accelerators, supernodes and developer ecosystem updates.
 - [Methodology and sources](https://idc-index.com/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
@@ -2121,7 +2123,7 @@ async function initialAtlasHeader(request: Request, env: Env, ctx: ExecutionCont
 
 function shouldPrimeHomepage(request: Request, url: URL): boolean {
   return request.method === "GET"
-    && ["/", "/en", "/pulse", "/industry"].includes(url.pathname)
+    && ["/", "/en", "/pulse", "/industry", "/en/pulse", "/en/industry"].includes(url.pathname)
     && request.headers.get("accept")?.includes("text/html") === true;
 }
 

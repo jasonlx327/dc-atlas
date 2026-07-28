@@ -30,8 +30,9 @@ test("server-renders the compact IDC Atlas portal homepage", async () => {
   assert.match(html, /href="\/privacy"/);
   assert.match(html, /googletagmanager\.com\/gtag\/js\?id=G-XRKL96W42Q/);
   assert.match(html, /gtag\('config', 'G-XRKL96W42Q'\)/);
-  assert.match(html, /href="\/pulse">最新脉冲/);
-  assert.match(html, /href="\/industry">产业链/);
+  assert.match(html, /class="zh-console-sidebar"/);
+  assert.match(html, /href="\/pulse"><span>02<\/span><strong>最新脉冲/);
+  assert.match(html, /href="\/industry"><span>05<\/span><strong>产业中心/);
   assert.match(html, /EARNINGS WATCH · IDC CALENDAR/);
   assert.match(html, /IDC ATLAS 专栏精选/);
   assert.match(html, /GW 级长租/);
@@ -64,17 +65,28 @@ test("publishes focused Pulse and Industry content hubs", async () => {
   assert.match(industryHtml, /园区容量/);
 });
 
-test("renders a global-first English pulse and card-based earnings board", async () => {
+test("renders the English research console and focused content routes", async () => {
   const response = await render("/en");
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /Track the/);
   assert.match(html, /class="pulse-trace"/);
-  assert.match(html, /Latest infrastructure pulse/);
-  assert.match(html, /The next CAPEX read-throughs/);
-  assert.match(html, /english-event-card-grid/);
-  assert.match(html, /China watch/);
+  assert.match(html, /class="english-console-sidebar"/);
+  assert.match(html, /What matters now/);
+  assert.match(html, /The next read-throughs/);
+  assert.match(html, /console-earnings-strip/);
   assert.doesNotMatch(html, /China and United States · last 45 days/);
+
+  const pulse = await render("/en/pulse");
+  assert.equal(pulse.status, 200);
+  assert.match(await pulse.text(), /Global project pulse/);
+
+  const industry = await render("/en/industry");
+  assert.equal(industry.status, 200);
+  const industryHtml = await industry.text();
+  assert.match(industryHtml, /Industry/);
+  assert.match(industryHtml, /China watch/);
+  assert.match(industryHtml, /Six infrastructure nodes/);
 });
 
 test("groups the menu into four themes without changing section links", async () => {
@@ -105,7 +117,6 @@ test("keeps the English site fully translated across the live coverage stack", a
     "ABot-World-0: unlimited interactive world generation on a single desktop GPU",
     "China Mobile Zhongwei data-center Campus B, Ningxia",
     "Vertiv expands AI data-center cooling manufacturing and testing in Italy",
-    "AIP, MGX and BlackRock GIP completed the acquisition of 100% of Aligned",
     '"/media/china/hygon-dcu-visual.png"',
     '"/media/china/metax-c600.jpg"',
     '"一期 EPC 招标": "Phase I EPC tender"',
@@ -115,12 +126,12 @@ test("keeps the English site fully translated across the live coverage stack", a
 
   assert.doesNotMatch(source, /editorial English translation is pending/);
   assert.doesNotMatch(source, /lang="zh-CN"/);
-  assert.match(source, /Gigawatt Leases Are/);
-  assert.match(source, /className="english-columns-nav" href="\/en\/columns" target="_blank"/);
+  assert.match(source, /Gigawatt leases are/);
+  assert.match(source, /href="\/en\/columns"/);
   assert.match(source, /className="english-chain-icon"/);
   assert.match(source, /<ChainIcon type=/);
   assert.match(source, /href="\/en\/columns\/hyperscale-idc-leases"/);
-  assert.match(source, /href="\/en\/columns\/ai-capex-power"/);
+  assert.match(source, /view === "pulse"/);
 });
 
 test("publishes the bilingual CAPEX Watch column with article metadata and primary sources", async () => {

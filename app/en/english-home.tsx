@@ -11,6 +11,7 @@ type CalendarEvent = { id: string; startsAt: string; company: string; ticker: st
 type Record = { id: string; title: string; subject: string; metric: string; status: string; publishedAt: string; sourceName: string; sourceUrl: string; note: string };
 type Product = { id: string; vendor: string; name: string; model?: string; form?: string; spec?: string; summary?: string; headlineMetric?: string; sourceName: string; sourceUrl: string; imageSrc?: string; imageAlt?: string };
 type Deal = { id: string; announcedAt: string; buyer: string; target: string; value: string; capacity: string; region: string; status: string; rationale: string; sourceName: string; sourceUrl: string };
+type EnglishView = "home" | "pulse" | "industry";
 export type AtlasPayload = {
   generatedAt: string;
   weeklyHighlightCount?: number;
@@ -174,13 +175,6 @@ const recordTranslations: Record<string, { title: string; status: string; metric
   "unicom-ningxia-liquid": { title: "Zhongwei cloud data center DC8 supporting works (liquid cooling)", status: "Engineering deployment", metric: "MEP and HVAC EPC", note: "Public reporting indicates that the MEP and HVAC EPC includes a dedicated liquid-cooling scope. Final contract and operating disclosures remain the confirmation point." },
 };
 
-const dealTranslations: Record<string, { buyer: string; value: string; capacity: string; region: string; status: string; rationale: string }> = {
-  "stt-gdc-kkr-singtel": { buyer: "KKR-led consortium / Singtel", value: "S$13.8bn enterprise value", capacity: "95+ data centers / 11 markets", region: "Asia-Pacific / Europe", status: "Signed · pending close", rationale: "A control transaction for a large cross-regional data-center platform that materially expands Singtel's digital-infrastructure footprint." },
-  "stark-sagebrush": { buyer: "Stark Power", value: "Not disclosed", capacity: "5.6GW development pipeline", region: "Central United States", status: "Signed · pending close", rationale: "The transaction secures five hyperscale campuses under development and integrates data-center development with on-site power capability." },
-  "alphabet-intersect": { buyer: "Alphabet", value: "$4.75bn cash plus assumed debt", capacity: "Multi-GW energy and data-center projects", region: "United States", status: "Completed", rationale: "The acquisition further combines power development with data-center construction, aiming to shorten the delivery cycle for new capacity." },
-  "aip-aligned": { buyer: "AIP (BlackRock / Microsoft / NVIDIA and others)", value: "Approximately $40bn", capacity: "51 campuses / more than 6.4GW", region: "United States / Latin America", status: "Completed", rationale: "AIP, MGX and BlackRock GIP completed the acquisition of 100% of Aligned and committed an additional $5 billion of growth capital at closing to expand AI-ready capacity." },
-};
-
 const supernodeTranslations: Record<string, { status: string; summary: string }> = {
   "huawei-atlas-superpod-roadmap": { status: "Existing deployment → 2026 system debut", summary: "Huawei is advancing from the 384-accelerator liquid-cooled Atlas 900 A3 supernode to the 1,024-accelerator Atlas 950 system, shifting the competitive focus to interconnect, unified memory and system-scale expansion." },
   "sugon-scalex640": { status: "Launched · core building block for 10,000-accelerator clusters", summary: "scaleX640 combines immersion phase-change cooling with dense interconnect and can scale from 16 nodes to a 10,000-accelerator cluster. Its proposition is multi-vendor accelerator compatibility and lower deployment friction for large-model clusters." },
@@ -271,19 +265,6 @@ const calendarNotes: Record<string, { sector: string; summary: string; focus: st
   AMZN: { sector: "Cloud / e-commerce", summary: "Amazon earnings with AWS as a core marker for hyperscale AI infrastructure investment.", focus: "AWS growth, capex, AI services and capacity additions." },
 };
 
-const sectionCopy = {
-  pulse: ["01 · 45-DAY VERIFIED PROJECT PULSE", "IDC project pulse", "Verified campus construction, expansion, leases, commissioning and operations across China and the United States."],
-  daily: ["02 · AI HOT DAILY EDITION", "Daily AI briefing", "The complete daily edition, with original-source links retained for every item."],
-  chain: ["03 · INTERACTIVE SUPPLY CHAIN", "Infrastructure supply chain", "Compute, racks, cooling, power, campuses and model demand — with the same live source layer as the Chinese site."],
-  nvidia: ["04 · NVIDIA PRODUCT RADAR", "NVIDIA product radar", "Product form factors, specifications and the latest AI-infrastructure context."],
-  silicon: ["05 · CHINA GPU & AI SILICON", "China AI silicon", "Accelerators, supernodes, software stacks and ecosystem progress, with English editorial coverage and original-source links."],
-  models: ["06 · MODEL DEMAND & CAPABILITY", "Model demand signals", "Global AI adoption, live model usage and public evaluation data alongside release activity."],
-  projects: ["07 · LARGE-SCALE CAMPUS RADAR", "Large-campus progress", "Construction, energy, tendering, delivery and operations at major data-center campuses."],
-  mna: ["08 · GLOBAL IDC M&A INTELLIGENCE", "Global strategic transactions", "Transactions that can change platform control, regional capacity or energy access."],
-  cooling: ["09 · LIQUID COOLING ADOPTION", "Liquid-cooling deployment", "Standards, modular products and engineering delivery from validation to production rollout."],
-  market: ["10 · DAILY MARKET TEMPERATURE", "Market temperature", "Daily public-market signals for compute, storage and related infrastructure."],
-} as const;
-
 const chainMeta: Record<ChainKey, { no: string; title: string; detail: string }> = {
   compute: { no: "01", title: "Compute & servers", detail: "Accelerators, CPUs and complete systems" },
   rack: { no: "02", title: "Racks & networking", detail: "Density, switching and optical links" },
@@ -309,7 +290,6 @@ function englishField(value: string | null | undefined, fallback: string) {
   return storyFieldTranslations[value] ?? (/[一-鿿]/.test(value) ? fallback : value);
 }
 function recordCopy(record: Record) { return recordTranslations[record.id] ?? { title: record.title, status: record.status, metric: record.metric, note: record.note }; }
-function dealCopy(deal: Deal) { return dealTranslations[deal.id] ?? { buyer: deal.buyer, value: deal.value, capacity: deal.capacity, region: deal.region, status: deal.status, rationale: deal.rationale }; }
 function supernodeCopy(node: Product) { return supernodeTranslations[node.id] ?? { status: "Public update", summary: node.summary ?? "Source-linked product update." }; }
 
 function StoryCard({ item, eyebrow = "SOURCE-LINKED SIGNAL" }: { item: Story; eyebrow?: string }) {
@@ -326,11 +306,60 @@ function StoryCard({ item, eyebrow = "SOURCE-LINKED SIGNAL" }: { item: Story; ey
   </article>;
 }
 
-function SectionHead({ copy }: { copy: readonly [string, string, string] }) {
-  return <div className="english-full-head"><div><span>{copy[0]}</span><h2>{copy[1]}</h2></div><p>{copy[2]}</p></div>;
+function ConsoleStoryRow({ item, index, eyebrow }: { item: Story; index: number; eyebrow: string }) {
+  const source = item.sourceUrl ?? item.permalink ?? "#";
+  const translated = titleTranslations[item.title];
+  return <article className="console-story-row">
+    <span>{String(index + 1).padStart(2, "0")}</span>
+    <div>
+      <div><b>{eyebrow}</b><time>{formatDate(item.publishedAt)}</time></div>
+      <h3><a href={source} target="_blank" rel="noreferrer">{englishTitle(item.title)}</a></h3>
+      <p>{translated ? summaryTranslations[item.title] ?? "Source-linked editorial signal." : "A new source-linked update is being reviewed for English editorial coverage."}</p>
+    </div>
+    <a href={source} target="_blank" rel="noreferrer" aria-label={`Open source for ${englishTitle(item.title)}`}>↗</a>
+  </article>;
 }
 
-export default function EnglishHome({ initialPayload = null }: { initialPayload?: Partial<AtlasPayload> | null }) {
+function ConsoleSectionHead({ label, title, copy, link, linkLabel }: { label: string; title: string; copy?: string; link?: string; linkLabel?: string }) {
+  return <header className="console-section-head">
+    <div><span>{label}</span><h2>{title}</h2></div>
+    {copy && <p>{copy}</p>}
+    {link && <a href={link}>{linkLabel ?? "View all"} →</a>}
+  </header>;
+}
+
+function EnglishConsoleNav({ view, live, updatedAt }: { view: EnglishView; live: boolean; updatedAt?: string }) {
+  return <aside className="english-console-sidebar">
+    <div className="console-brand"><a href="/en" aria-label="IDC Atlas English home">IDC <b>ATLAS</b></a><span>INTELLIGENCE CONSOLE</span></div>
+    <nav aria-label="English console navigation">
+      <p>WORKSPACE</p>
+      <a className={view === "home" ? "active" : ""} href="/en"><span>01</span><strong>Overview</strong></a>
+      <a className={view === "pulse" ? "active" : ""} href="/en/pulse"><span>02</span><strong>Infrastructure pulse</strong></a>
+      <a href="/en#calendar"><span>03</span><strong>Earnings watch</strong></a>
+      <a href="/en#companies"><span>04</span><strong>Company watch</strong></a>
+      <p>RESEARCH</p>
+      <a className={view === "industry" ? "active" : ""} href="/en/industry"><span>05</span><strong>Industry map</strong></a>
+      <a href="/en/columns"><span>06</span><strong>Columns</strong><i>↗</i></a>
+      <a href="/en#market"><span>07</span><strong>Markets</strong></a>
+    </nav>
+    <div className="console-sidebar-foot">
+      <div><i className={live ? "live" : ""} /><span>{live ? "EDGE DATA LIVE" : "CONNECTING"}</span></div>
+      <small>{updatedAt ? `UPDATED ${formatDate(updatedAt)}` : "SOURCE-LINKED RESEARCH"}</small>
+      <a href="/?lang=zh">中文站</a>
+    </div>
+  </aside>;
+}
+
+function EnglishMobileDock({ view }: { view: EnglishView }) {
+  return <nav className="english-console-mobile-dock" aria-label="English mobile navigation">
+    <a className={view === "home" ? "active" : ""} href="/en"><span>01</span>Overview</a>
+    <a className={view === "pulse" ? "active" : ""} href="/en/pulse"><span>02</span>Pulse</a>
+    <a className={view === "industry" ? "active" : ""} href="/en/industry"><span>03</span>Industry</a>
+    <a href="/en/columns"><span>04</span>Columns</a>
+  </nav>;
+}
+
+export default function EnglishHome({ initialPayload = null, view = "home" }: { initialPayload?: Partial<AtlasPayload> | null; view?: EnglishView }) {
   const [payload, setPayload] = useState<Partial<AtlasPayload> | null>(initialPayload);
   const [loadError, setLoadError] = useState(false);
 
@@ -353,39 +382,47 @@ export default function EnglishHome({ initialPayload = null }: { initialPayload?
   const models = payload?.modelNews ?? [];
   const capacity = (payload?.capacityRadar ?? []).filter((record) => !/中国|北京|上海|广州|青海|宁夏|中卫|内蒙古|长三角|京津冀|吉林|白城|乌兰察布/.test(`${record.title} ${record.subject}`));
   const cooling = payload?.coolingProgress ?? [];
-  const deals = payload?.mnaDeals ?? [];
   const market = payload?.benchmarks ?? [];
+  const status = Boolean(payload) && !loadError;
+  const shellStart = <><EnglishConsoleNav view={view} live={status} updatedAt={payload?.generatedAt} /><header className="english-console-mobile-head"><a href="/en">IDC <b>ATLAS</b></a><span>{view === "home" ? "OVERVIEW" : view === "pulse" ? "PULSE" : "INDUSTRY"}</span><a href="/?lang=zh">中文</a></header></>;
+  const shellEnd = <><footer className="english-console-footer"><span>IDC ATLAS · SOURCE-FIRST RESEARCH</span><p>Data for information and research only. Nothing on this site constitutes investment advice.</p><a href="/methodology">Methodology →</a></footer><EnglishMobileDock view={view} /></>;
 
-  return <main className="english-home-page english-full-page" lang="en">
-    <header className="english-nav"><a href="/en" aria-label="IDC Atlas English home">IDC <b>ATLAS</b></a><nav aria-label="English site navigation"><a href="#pulse">Pulse</a><a href="#calendar">Earnings</a><a className="english-columns-nav" href="/en/columns" target="_blank" rel="noreferrer">Columns ↗</a><a href="#chain">Supply chain</a><a href="#silicon">China watch</a><a href="#market">Markets</a></nav><a className="language-switch active" href="/?lang=zh">中文</a></header>
+  if (view === "pulse") return <main className="english-console english-full-page" lang="en">
+    {shellStart}<div className="english-console-workspace">
+      <section className="console-page-hero"><span>LIVE INTELLIGENCE · GLOBAL &amp; U.S.</span><h1>Infrastructure<br /><em>pulse.</em></h1><p>Verified campus projects, leases and public-company disclosures, ordered for fast source-first reading.</p><div><b>{pulse.length}</b><span>project signals</span><b>{listed.length}</b><span>listed-company updates</span></div></section>
+      <section className="console-section"><ConsoleSectionHead label="01 · VERIFIED PROJECTS" title="Global project pulse" copy="United States and global infrastructure developments from the last 45 days." /><div className="console-story-list">{pulse.map((item, index) => <ConsoleStoryRow key={item.id} item={item} index={index} eyebrow="VERIFIED PROJECT" />)}</div></section>
+      <section className="console-section console-section-muted"><ConsoleSectionHead label="02 · PUBLIC COMPANIES" title="U.S. listed-company watch" copy="Source-linked disclosures from the companies building, leasing and powering AI infrastructure." /><div className="console-story-list">{listed.map((item, index) => <ConsoleStoryRow key={item.id} item={item} index={index} eyebrow="US LISTED COMPANY" />)}</div></section>
+      <section className="console-section console-section-dark"><ConsoleSectionHead label="03 · DAILY AI DEMAND" title="AI demand signals" copy="A concise daily view of model and product activity that can transmit into infrastructure demand." />{payload?.aiDaily && <div className="english-daily-meta"><span>BEIJING DATE · {payload.aiDaily.date}</span><a href={payload.aiDaily.canonical} target="_blank" rel="noreferrer">Full AI HOT edition ↗</a></div>}<div className="english-story-grid">{dailyItems.map((item) => <StoryCard key={item.id} item={item} eyebrow="AI HOT DAILY" />)}</div></section>
+    </div>{shellEnd}
+  </main>;
 
-    <section className="english-hero english-full-hero"><p className="eyebrow"><span /> GLOBAL DATA CENTER INTELLIGENCE</p><h1 className="english-pulse-title">Track the <span className="hero-pulse-line">pulse<PulseTrace /></span> of <em>infrastructure.</em></h1><p>Daily intelligence on data-center projects, listed companies, hyperscaler CAPEX, compute, power and cooling.</p><div><a href="#pulse">Read the latest pulse</a><a href="#calendar">US earnings &amp; CAPEX watch</a></div><dl><div><dt>GLOBAL PROJECT PULSE</dt><dd>{pulse.length || "—"}</dd><small>verified project signals</small></div><div><dt>US LISTED COMPANIES</dt><dd>{listed.length || "—"}</dd><small>source-linked disclosures</small></div><div><dt>LAST UPDATE</dt><dd>{payload ? "LIVE" : loadError ? "OFFLINE" : "…"}</dd><small>{payload ? formatDate(payload.generatedAt) : "connecting"}</small></div></dl></section>
+  if (view === "industry") return <main className="english-console english-full-page" lang="en">
+    {shellStart}<div className="english-console-workspace">
+      <section className="console-page-hero"><span>INFRASTRUCTURE CENTER</span><h1>Industry<br /><em>map.</em></h1><p>Compute, networking, power, cooling and campus capacity — with selective China coverage where it affects global competition.</p><div><b>6</b><span>supply-chain nodes</span><b>{capacity.length}</b><span>campus updates</span></div></section>
+      <section className="console-section console-section-dark"><ConsoleSectionHead label="01 · SUPPLY CHAIN" title="Six infrastructure nodes" copy="The latest source-linked signal at each point in the AI infrastructure stack." /><div className="english-chain-grid">{chainGroups.map(([stage, items]) => { const meta = chainMeta[stage as ChainKey] ?? { no: "—", title: stage, detail: "Source-linked infrastructure signals" }; return <article key={stage}><header><span className="english-chain-icon"><ChainIcon type={stage as ChainKey} /></span><div><small>{meta.no} · SUPPLY CHAIN NODE</small><h3>{meta.title}</h3><p>{meta.detail}</p></div></header><div>{items.map((item) => <a href={item.sourceUrl ?? item.permalink ?? "#"} target="_blank" rel="noreferrer" key={item.id}>{englishTitle(item.title)} <small>↗</small></a>)}</div></article>; })}</div></section>
+      <section className="console-section"><ConsoleSectionHead label="02 · COMPUTE" title="NVIDIA product radar" copy="Current product form factors and infrastructure read-throughs." /><div className="english-product-grid">{nvidiaProducts.map((product) => <article key={product.id}>{product.imageSrc && <img src={product.imageSrc} alt={product.imageAlt ?? product.model ?? "NVIDIA product"} loading="lazy" />}<span>NVIDIA PRODUCT</span><h3>{product.model}</h3><strong>{product.form}</strong><p>{product.spec}</p><a href={product.sourceUrl} target="_blank" rel="noreferrer">{product.sourceName} ↗</a></article>)}</div><div className="english-story-grid english-compact-grid">{nvidiaNews.map((item) => <StoryCard key={item.id} item={item} eyebrow="NVIDIA NOW" />)}</div></section>
+      <section className="console-section console-section-muted"><ConsoleSectionHead label="03 · SELECTIVE COVERAGE" title="China watch" copy="Only developments with a material global supply-chain or competitive read-through." /><div className="english-supernode-grid">{supernodes.map((node) => { const copy = supernodeCopy(node); return <article key={node.id}>{node.imageSrc && <img src={node.imageSrc} alt={node.imageAlt ?? node.name} loading="lazy" />}<span>CHINA SUPERNODE · {copy.status}</span><h3>{node.name}</h3><strong>{node.headlineMetric}</strong><p>{copy.summary}</p><a href={node.sourceUrl} target="_blank" rel="noreferrer">{node.sourceName} ↗</a></article>; })}</div><div className="english-story-grid">{silicon.map((item) => <StoryCard key={item.id} item={item} eyebrow="SELECTIVE CHINA WATCH" />)}</div></section>
+      <section className="console-section console-section-dark"><ConsoleSectionHead label="04 · MODEL DEMAND" title="Usage and capability signals" /><div className="english-model-overview"><article><span>GLOBAL AI DIFFUSION</span><strong>{payload?.aiAdoption?.sharePct ?? "—"}%</strong><h3>Generative-AI adoption</h3><p>{payload?.aiAdoption?.note ?? "Quarterly public adoption indicator."}</p><a href={payload?.aiAdoption?.sourceUrl ?? "#"} target="_blank" rel="noreferrer">Source ↗</a></article><article><span>OPENROUTER · WEEKLY USAGE</span><h3>{payload?.openRouterUsage?.period ?? "Loading"}</h3><div className="english-rank-list">{(payload?.openRouterUsage?.models ?? []).slice(0, 6).map((model) => <a key={model.id} href={model.url} target="_blank" rel="noreferrer"><b>#{model.rank}</b><span>{model.name}</span><i style={{ width: `${model.heat}%` }} /></a>)}</div></article><article><span>ARENA · CODE / WEBDEV</span><h3>Public evaluation</h3><div className="english-rank-list">{(payload?.arenaCodeLeaderboard?.models ?? []).slice(0, 6).map((model) => <a key={`${model.rank}-${model.name}`} href={payload?.arenaCodeLeaderboard?.sourceUrl ?? "#"} target="_blank" rel="noreferrer"><b>#{model.rank}</b><span>{model.name}</span></a>)}</div></article></div><div className="english-story-grid">{models.slice(0, 6).map((item) => <StoryCard key={item.id} item={item} eyebrow="MODEL RELEASE" />)}</div></section>
+      <section className="console-section"><ConsoleSectionHead label="05 · CAMPUS &amp; COOLING" title="Physical deployment" /><div className="english-record-grid">{capacity.map((record) => { const copy = recordCopy(record); return <article key={record.id}><div><span>{copy.status}</span><strong>{copy.metric}</strong></div><small>{formatDate(record.publishedAt)}</small><h3>{copy.title}</h3><p>{copy.note}</p><a href={record.sourceUrl} target="_blank" rel="noreferrer">{record.sourceName} ↗</a></article>; })}</div><div className="english-record-grid english-cooling-grid">{cooling.map((record) => { const copy = recordCopy(record); return <article key={record.id}><span>{copy.status}</span><h3>{copy.metric}</h3><h4>{copy.title}</h4><p>{copy.note}</p><a href={record.sourceUrl} target="_blank" rel="noreferrer">{record.sourceName} ↗</a></article>; })}</div></section>
+    </div>{shellEnd}
+  </main>;
 
-    <section className="section pulse-section english-full-section english-pulse-lead" id="pulse"><SectionHead copy={["01 · GLOBAL & U.S. INFRASTRUCTURE PULSE", "Latest infrastructure pulse", "Verified projects and public-company disclosures across the AI infrastructure cycle."]} /><div className="english-full-subhead"><strong>Verified projects</strong><span>United States and global · last 45 days</span></div><div className="english-story-grid">{pulse.slice(0, 6).map((item) => <StoryCard key={item.id} item={item} eyebrow="VERIFIED PROJECT" />)}</div><div className="english-full-subhead"><strong>US listed-company watch</strong><span>{listed.length} source-linked disclosures</span></div><div className="english-story-grid">{listed.slice(0, 3).map((item) => <StoryCard key={item.id} item={item} eyebrow="US LISTED COMPANY" />)}</div></section>
-
-    <section className="column-feature english-column-feature" id="columns" aria-labelledby="english-featured-column-title"><div className="column-feature-head"><span>FROM THE IDC ATLAS COLUMN</span><time dateTime="2026-07-28">JULY 28, 2026</time></div><div className="column-teaser-card"><div><p>LEASE WATCH · 02</p><h2 id="english-featured-column-title">Gigawatt leases are reshaping the data-center market.</h2><p>Demand from the largest internet and cloud platforms is landing in third-party data-center contracts years before the underlying power is delivered. Traditional hyperscalers often remain unnamed; contract term, energization and billable capacity provide the stronger evidence.</p><div className="column-teaser-actions"><a href="/en/columns/hyperscale-idc-leases" target="_blank" rel="noreferrer">Continue reading ↗</a><a href="/en/columns" target="_blank" rel="noreferrer">All columns</a></div></div><a className="column-teaser-image" href="/en/columns/hyperscale-idc-leases" target="_blank" rel="noreferrer" aria-label="Read Gigawatt Leases Are Reshaping the Data Center Market"><img src="/column-hyperscale-leases.png" alt="A hyperscale data center campus linked by long-term capacity contracts" loading="eager" /><span>400MW APLD · 590MW CORZ · 510MW VNET</span></a></div><a className="column-archive-link" href="/en/columns/ai-capex-power" target="_blank" rel="noreferrer"><span>PREVIOUS · CAPEX WATCH 01</span><strong>The AI Buildout Enters Its Power-Hungry Phase</strong><small>Microsoft, Alphabet, Meta and Amazon CapEx transmission →</small></a></section>
-
-    <section className="english-calendar english-earnings-board" id="calendar"><div className="english-section-head"><div><span>OFFICIAL EARNINGS CALENDAR · US EASTERN TIME</span><h2>The next CAPEX read-throughs</h2></div><p>A compact investor calendar for cloud, semiconductors, power and thermal infrastructure. Each card links to the company&apos;s official investor-relations source.</p></div><div className="english-event-card-grid">{eventList.map((event) => { const note = calendarNotes[event.ticker] ?? { sector: event.sector, summary: "Officially scheduled earnings event.", focus: "Capex, demand and forward guidance." }; return <article key={event.id}><div className="english-event-card-top"><time>{formatEvent(event.startsAt)}</time><span>{note.sector}</span></div><h3>{event.company} <small>{event.ticker}</small></h3><p>{note.summary}</p><div className="english-event-focus"><strong>{event.conclusion ? "POST-RESULT CONCLUSION" : "WHAT TO WATCH"}</strong><p>{event.conclusion?.summaryEn ?? event.conclusion?.summary ?? note.focus}</p></div><a href={event.conclusion?.sourceUrl ?? event.sourceUrl} target="_blank" rel="noreferrer">{event.conclusion?.sourceName ?? event.sourceName} · official source ↗</a></article>; })}{!eventList.length && <p className="english-loading">Loading the next official earnings events…</p>}</div></section>
-
-    <section className="section daily-section english-full-section" id="daily"><SectionHead copy={sectionCopy.daily} />{payload?.aiDaily && <div className="english-daily-meta"><span>BEIJING DATE · {payload.aiDaily.date}</span><a href={payload.aiDaily.canonical} target="_blank" rel="noreferrer">Full AI HOT edition ↗</a></div>}<div className="english-story-grid">{dailyItems.map((item) => <StoryCard key={item.id} item={item} eyebrow="AI HOT DAILY" />)}</div>{!dailyItems.length && <p className="english-loading">{loadError ? "Daily briefing unavailable." : "Loading the daily AI briefing…"}</p>}</section>
-
-    <section className="section chain-section english-full-section" id="chain"><SectionHead copy={sectionCopy.chain} /><div className="english-chain-grid">{chainGroups.map(([stage, items]) => { const meta = chainMeta[stage as ChainKey] ?? { no: "—", title: stage, detail: "Source-linked infrastructure signals" }; return <article key={stage}><header><span className="english-chain-icon"><ChainIcon type={stage as ChainKey} /></span><div><small>{meta.no} · SUPPLY CHAIN NODE</small><h3>{meta.title}</h3><p>{meta.detail}</p></div></header><div>{items.slice(0, 3).map((item) => <a href={item.sourceUrl ?? item.permalink ?? "#"} target="_blank" rel="noreferrer" key={item.id}>{englishTitle(item.title)} <small>↗</small></a>)}</div></article>; })}</div></section>
-
-    <section className="section english-light-section english-full-section" id="nvidia"><SectionHead copy={sectionCopy.nvidia} /><div className="english-product-grid">{nvidiaProducts.map((product) => <article key={product.id}>{product.imageSrc && <img src={product.imageSrc} alt={product.imageAlt ?? product.model ?? "NVIDIA product"} loading="lazy" />}<span>NVIDIA PRODUCT</span><h3>{product.model}</h3><strong>{product.form}</strong><p>{product.spec}</p><a href={product.sourceUrl} target="_blank" rel="noreferrer">{product.sourceName} ↗</a></article>)}</div><div className="english-story-grid english-compact-grid">{nvidiaNews.map((item) => <StoryCard key={item.id} item={item} eyebrow="NVIDIA NOW" />)}</div></section>
-
-    <section className="section china-chip-section english-full-section english-china-watch" id="silicon"><SectionHead copy={["07 · SELECTIVE CHINA WATCH", "China watch", "A concise view of Chinese accelerators and systems only where the development can affect global competition or supply chains."]} /><div className="english-supernode-grid">{supernodes.map((node) => { const copy = supernodeCopy(node); return <article key={node.id}>{node.imageSrc && <img src={node.imageSrc} alt={node.imageAlt ?? node.name} loading="lazy" />}<span>CHINA SUPERNODE · {copy.status}</span><h3>{node.name}</h3><strong>{node.headlineMetric}</strong><p>{copy.summary}</p><a href={node.sourceUrl} target="_blank" rel="noreferrer">{node.sourceName} ↗</a></article>; })}</div><div className="english-story-grid">{silicon.map((item) => <StoryCard key={item.id} item={item} eyebrow="SELECTIVE CHINA WATCH" />)}</div></section>
-
-    <section className="section model-section english-full-section" id="models"><SectionHead copy={sectionCopy.models} /><div className="english-model-overview"><article><span>GLOBAL AI DIFFUSION</span><strong>{payload?.aiAdoption?.sharePct ?? "—"}%</strong><h3>Generative-AI adoption</h3><p>{payload?.aiAdoption?.note ?? "Quarterly public adoption indicator."}</p><a href={payload?.aiAdoption?.sourceUrl ?? "https://blogs.microsoft.com/on-the-issues/2026/05/07/the-state-of-global-ai-diffusion-in-2026/"} target="_blank" rel="noreferrer">Microsoft source ↗</a></article><article><span>OPENROUTER · WEEKLY USAGE</span><h3>{payload?.openRouterUsage?.period ?? "Loading"}</h3><div className="english-rank-list">{(payload?.openRouterUsage?.models ?? []).slice(0, 6).map((model) => <a key={model.id} href={model.url} target="_blank" rel="noreferrer"><b>#{model.rank}</b><span>{model.name}</span><i style={{ width: `${model.heat}%` }} /></a>)}</div><a href={payload?.openRouterUsage?.sourceUrl ?? "https://openrouter.ai/rankings/"} target="_blank" rel="noreferrer">OpenRouter source ↗</a></article><article><span>ARENA · CODE / WEBDEV</span><h3>Public evaluation</h3><div className="english-rank-list">{(payload?.arenaCodeLeaderboard?.models ?? []).slice(0, 6).map((model) => <a key={`${model.rank}-${model.name}`} href={payload?.arenaCodeLeaderboard?.sourceUrl ?? "https://arena.ai/leaderboard/code/webdev"} target="_blank" rel="noreferrer"><b>#{model.rank}</b><span>{model.name}</span><i style={{ width: `${Math.min(100, model.score / 15)}%` }} /></a>)}</div><a href={payload?.arenaCodeLeaderboard?.sourceUrl ?? "https://arena.ai/leaderboard/code/webdev"} target="_blank" rel="noreferrer">Arena source ↗</a></article></div><div className="english-story-grid">{models.map((item) => <StoryCard key={item.id} item={item} eyebrow="MODEL RELEASE" />)}</div></section>
-
-    <section className="section project-section english-full-section" id="projects"><SectionHead copy={sectionCopy.projects} /><div className="english-record-grid">{capacity.map((record) => { const copy = recordCopy(record); return <article key={record.id}><div><span>{copy.status}</span><strong>{copy.metric}</strong></div><small>{formatDate(record.publishedAt)}</small><h3>{copy.title}</h3><p>{copy.note}</p><a href={record.sourceUrl} target="_blank" rel="noreferrer">{record.sourceName} ↗</a></article>; })}</div></section>
-
-    <section className="section mna-section english-full-section" id="mna"><SectionHead copy={sectionCopy.mna} /><div className="english-deal-grid">{deals.map((deal) => { const copy = dealCopy(deal); return <article key={deal.id}><div><span>{copy.status}</span><time>Announced {formatDate(deal.announcedAt)}</time></div><p>{copy.region}</p><h3>{copy.buyer} <b>→</b> {deal.target}</h3><dl><div><dt>DEAL VALUE</dt><dd>{copy.value}</dd></div><div><dt>ASSET SCALE</dt><dd>{copy.capacity}</dd></div></dl><p>{copy.rationale}</p><a href={deal.sourceUrl} target="_blank" rel="noreferrer">{deal.sourceName} ↗</a></article>; })}</div></section>
-
-    <section className="section cooling-section english-full-section" id="cooling"><SectionHead copy={sectionCopy.cooling} /><div className="english-record-grid english-cooling-grid">{cooling.map((record) => { const copy = recordCopy(record); return <article key={record.id}><span>{copy.status}</span><h3>{copy.metric}</h3><h4>{copy.title}</h4><p>{copy.note}</p><a href={record.sourceUrl} target="_blank" rel="noreferrer">{record.sourceName} ↗</a></article>; })}</div></section>
-
-    <section className="benchmark-section section english-full-section" id="market"><SectionHead copy={sectionCopy.market} /><div className="english-market-grid">{market.map((item) => <article key={item.code}><span>{item.code} · {item.count} constituents</span><h3>{item.name}</h3><strong>{item.level.toLocaleString("en-US", { maximumFractionDigits: 2 })}</strong><p className={item.dayPct >= 0 ? "up" : "down"}>{item.dayPct >= 0 ? "+" : ""}{item.dayPct.toFixed(2)}% <small>vs. prior close</small></p></article>)}</div></section>
-
-    <section className="english-method"><span>RESEARCH BOUNDARY</span><h2>Global-first coverage, traceable sources, no investment advice.</h2><p>IDC Atlas separates discovery signals from verified public facts. The English edition prioritizes U.S. and global infrastructure while preserving original public-source links for every item.</p><a href="/methodology">Methodology &amp; sources →</a></section>
-    <footer className="english-footer"><a href="/?lang=zh">中文站 / Chinese site</a><span>IDC ATLAS · RESEARCH ONLY · NOT INVESTMENT ADVICE</span><a href="/llms.txt">LLM guide</a></footer>
+  return <main className="english-console english-full-page" lang="en">
+    {shellStart}<div className="english-console-workspace">
+      <section className="console-hero">
+        <p className="eyebrow"><span /> GLOBAL DATA CENTER INTELLIGENCE</p>
+        <h1>Track the <span className="hero-pulse-line">pulse<PulseTrace /></span> of <em>infrastructure.</em></h1>
+        <p>Daily intelligence for investors tracking data-center projects, listed companies, hyperscaler CAPEX, compute, power and cooling.</p>
+        <div className="console-hero-actions"><a href="/en/pulse">Open live pulse →</a><a href="/en/industry">Explore industry map</a></div>
+        <dl><div><dt>PROJECT SIGNALS</dt><dd>{pulse.length || "—"}</dd></div><div><dt>US COMPANY UPDATES</dt><dd>{listed.length || "—"}</dd></div><div><dt>DATA STATUS</dt><dd>{payload ? "LIVE" : loadError ? "OFFLINE" : "…"}</dd></div></dl>
+      </section>
+      <section className="console-section" id="pulse"><ConsoleSectionHead label="01 · LIVE PULSE" title="What matters now" copy="The latest verified infrastructure developments, ranked for quick reading." link="/en/pulse" linkLabel="Open all signals" /><div className="console-pulse-layout">{pulse[0] && <article className="console-lead-story"><span>LEAD INFRASTRUCTURE SIGNAL</span><time>{formatDate(pulse[0].publishedAt)}</time><h3><a href={pulse[0].sourceUrl ?? pulse[0].permalink ?? "#"} target="_blank" rel="noreferrer">{englishTitle(pulse[0].title)}</a></h3><p>{summaryTranslations[pulse[0].title] ?? "Source-linked infrastructure update."}</p><dl><div><dt>STAGE</dt><dd>{englishField(pulse[0].milestone, "Public update")}</dd></div><div><dt>SCALE</dt><dd>{englishField(pulse[0].scale, "Not disclosed")}</dd></div></dl></article>}<div className="console-story-list">{pulse.slice(1, 5).map((item, index) => <ConsoleStoryRow key={item.id} item={item} index={index + 1} eyebrow="PROJECT PULSE" />)}</div></div></section>
+      <section className="console-section console-section-dark" id="calendar"><ConsoleSectionHead label="02 · EARNINGS &amp; CAPEX" title="The next read-throughs" copy="Officially scheduled U.S. events in Eastern Time." /><div className="console-earnings-strip">{eventList.slice(0, 6).map((event) => { const note = calendarNotes[event.ticker] ?? { sector: event.sector, summary: "Officially scheduled earnings event.", focus: "Capex, demand and forward guidance." }; return <article key={event.id}><time>{formatEvent(event.startsAt)}</time><div><span>{note.sector}</span><h3>{event.company} <small>{event.ticker}</small></h3><p>{event.conclusion?.summaryEn ?? event.conclusion?.summary ?? note.focus}</p></div><a href={event.conclusion?.sourceUrl ?? event.sourceUrl} target="_blank" rel="noreferrer">↗</a></article>; })}</div></section>
+      <section className="console-section console-section-muted" id="companies"><ConsoleSectionHead label="03 · COMPANY WATCH" title="U.S. listed infrastructure" copy="Recent disclosures from listed data-center and infrastructure companies." link="/en/pulse" linkLabel="Open company watch" /><div className="console-story-list console-company-list">{listed.slice(0, 5).map((item, index) => <ConsoleStoryRow key={item.id} item={item} index={index} eyebrow={item.listedTicker ?? "US LISTED"} />)}</div></section>
+      <section className="console-section console-column-market" id="market">
+        <article className="console-column-card"><span>IDC ATLAS COLUMN · LEASE WATCH</span><h2>Gigawatt leases are reshaping the data-center market.</h2><p>Contract term, energization and billable capacity provide the stronger evidence when hyperscale customers remain unnamed.</p><a href="/en/columns/hyperscale-idc-leases">Continue reading →</a></article>
+        <div><ConsoleSectionHead label="04 · MARKET TEMPERATURE" title="Infrastructure indices" /> <div className="console-market-grid">{market.map((item) => <article key={item.code}><span>{item.code}</span><h3>{item.name}</h3><strong>{item.level.toLocaleString("en-US", { maximumFractionDigits: 2 })}</strong><p className={item.dayPct >= 0 ? "up" : "down"}>{item.dayPct >= 0 ? "+" : ""}{item.dayPct.toFixed(2)}%</p></article>)}</div></div>
+      </section>
+    </div>{shellEnd}
   </main>;
 }

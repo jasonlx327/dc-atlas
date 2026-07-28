@@ -337,21 +337,23 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
   const currentMenuGroup = navGroups.find((group) => group.key === activeMenuGroup) ?? navGroups[0];
   const homePulseNews = [...news.filter((item) => item.region === "中国").slice(0, 3), ...news.filter((item) => item.region === "美国").slice(0, 3)];
   const homeListedNews = [...aShareCompanyNews.slice(0, 2), ...usShareCompanyNews.slice(0, 2)];
-  const compactHeader = <header className="topbar compact-topbar">
-    <Brand />
-    <nav className="hub-main-nav" aria-label="IDC Atlas 主导航">
-      <a className={view === "home" ? "active" : ""} href="/">首页</a>
-      <a className={view === "pulse" ? "active" : ""} href="/pulse">最新脉冲</a>
-      <a className={view === "industry" ? "active" : ""} href="/industry">产业链</a>
-      <a href="/#market">市场</a>
-      <a href="/calendar">日历</a>
-      <a href="/columns" target="_blank" rel="noreferrer">专栏 ↗</a>
+  const compactHeader = <><aside className="zh-console-sidebar">
+    <div className="zh-console-brand"><Brand /><span>数据中心研究控制台</span></div>
+    <nav aria-label="IDC Atlas Console 导航">
+      <p>工作台</p>
+      <a className={view === "home" ? "active" : ""} href="/"><span>01</span><strong>总览</strong></a>
+      <a className={view === "pulse" ? "active" : ""} href="/pulse"><span>02</span><strong>最新脉冲</strong></a>
+      <a href="/#market"><span>03</span><strong>市场温度</strong></a>
+      <a href="/calendar"><span>04</span><strong>财报日历</strong></a>
+      <p>研究</p>
+      <a className={view === "industry" ? "active" : ""} href="/industry"><span>05</span><strong>产业中心</strong></a>
+      <a href="/columns"><span>06</span><strong>专栏</strong><i>↗</i></a>
     </nav>
-    <div className="topbar-actions"><a className="language-switch" href="/en?lang=en" lang="en">EN</a><div className="top-status"><span className={`live-dot ${loadError ? "warn" : ""}`} /><span>{loadError ? "部分数据暂不可用" : payload ? "EDGE DATA LIVE" : "CONNECTING"}</span></div></div>
-  </header>;
+    <div className="zh-console-foot"><div className="top-status"><span className={`live-dot ${loadError ? "warn" : ""}`} /><span>{loadError ? "部分数据暂不可用" : payload ? "EDGE DATA LIVE" : "CONNECTING"}</span></div><small>{payload ? `UPDATED ${formatDateTime(payload.generatedAt)}` : "SOURCE-LINKED RESEARCH"}</small><a className="language-switch" href="/en?lang=en" lang="en">ENGLISH</a></div>
+  </aside><header className="zh-console-mobile-head"><Brand /><span>{view === "home" ? "总览" : view === "pulse" ? "最新脉冲" : "产业中心"}</span><a href="/en?lang=en" lang="en">EN</a></header></>;
   const compactFooter = <><section className="method-section compact-method" id="method"><div><p>SOURCE-FIRST INTELLIGENCE</p><h2>每条信息，都能回到出处。</h2></div><div className="method-copy"><p>公开来源优先，媒体线索与官方披露分层展示；规模、交付、投运和产品参数均保留原始出处。</p><div className="source-legend"><span>RESEARCH ONLY <b>NOT INVESTMENT ADVICE</b></span><a href="/methodology">查看方法与数据来源 →</a></div></div></section><footer className="compact-footer"><Brand /><p>全球数据中心产业地图与实时情报站</p><div><a href="/privacy">隐私说明</a><span>本网站数据仅用于信息展示与研究，不构成任何投资建议。</span></div></footer></>;
 
-  if (view === "home") return <main id="top" className="compact-home">
+  if (view === "home") return <main id="top" className="compact-home zh-console">
     {compactHeader}
     <section className="hero compact-hero" aria-labelledby="hero-title">
       <div className="hero-grid" aria-hidden="true" /><div className="hero-glow glow-a" aria-hidden="true" /><div className="hero-glow glow-b" aria-hidden="true" />
@@ -371,7 +373,7 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
     <nav className="mobile-dock compact-mobile-dock" aria-label="移动端快速导航"><a href="/"><span>01</span>首页</a><a href="/pulse"><span>02</span>脉冲</a><a href="/industry"><span>03</span>产业</a><a href="/#market"><span>04</span>市场</a><a href="/columns"><span>05</span>专栏</a></nav>
   </main>;
 
-  if (view === "pulse") return <main id="top" className="content-hub pulse-hub">
+  if (view === "pulse") return <main id="top" className="content-hub pulse-hub zh-console">
     {compactHeader}
     <section className="hub-hero"><p>IDC ATLAS · LIVE INTELLIGENCE</p><h1>最新脉冲，<br /><em>集中阅读。</em></h1><p>已核验的项目进展、上市公司披露与每日 AI 资讯。</p><div><span>{news.length} 条项目</span><span>{listedCompanyNews.length} 条公司动态</span><span>{dailyItems.length} 条今日 AI</span></div></section>
     <nav className="hub-tabs" aria-label="最新脉冲内容分类">{([["projects", "项目脉冲", news.length], ["listed", "上市公司", listedCompanyNews.length], ["daily", "AI 日报", dailyItems.length]] as const).map(([key, label, count]) => <button key={key} className={pulseHubTab === key ? "active" : ""} aria-pressed={pulseHubTab === key} onClick={() => setPulseHubTab(key)}><span>{label}</span><b>{count}</b></button>)}</nav>
@@ -382,7 +384,7 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
     <nav className="mobile-dock compact-mobile-dock" aria-label="移动端快速导航"><a href="/"><span>01</span>首页</a><a href="/pulse"><span>02</span>脉冲</a><a href="/industry"><span>03</span>产业</a><a href="/#market"><span>04</span>市场</a><a href="/columns"><span>05</span>专栏</a></nav>
   </main>;
 
-  if (view === "industry") return <main id="top" className="content-hub industry-hub">
+  if (view === "industry") return <main id="top" className="content-hub industry-hub zh-console">
     {compactHeader}
     <section className="hub-hero industry-hub-hero"><p>IDC ATLAS · INFRASTRUCTURE CENTER</p><h1>产业链，<br /><em>按主题展开。</em></h1><p>算力硬件、国产 GPU、模型需求、大型园区与液冷工程的最新公开进展。</p><div><span>6 个产业节点</span><span>{products.length} 个硬件产品</span><span>{includedCapacity.length} 个园区进展</span></div></section>
     <nav className="hub-tabs industry-tabs" aria-label="产业中心内容分类">{([["chain", "产业链"], ["hardware", "NVIDIA / AMD"], ["china", "中国 GPU"], ["models", "模型需求"], ["campus", "园区容量"], ["cooling", "液冷"]] as const).map(([key, label]) => <button key={key} className={industryHubTab === key ? "active" : ""} aria-pressed={industryHubTab === key} onClick={() => setIndustryHubTab(key)}><span>{label}</span></button>)}</nav>
