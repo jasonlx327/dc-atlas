@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "隐私说明｜IDC Atlas",
   description: "IDC Atlas 关于网站访问统计与 Google Analytics 的隐私说明。",
   alternates: { canonical },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
 };
 
 export default function PrivacyPage() {

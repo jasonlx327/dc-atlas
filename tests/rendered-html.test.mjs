@@ -24,7 +24,9 @@ test("server-renders the compact IDC Atlas portal homepage", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>IDC Atlas｜全球数据中心产业地图与实时情报站<\/title>/i);
+  assert.match(html, /<title>全球数据中心与 AI 基础设施情报｜IDC Atlas<\/title>/i);
+  assert.match(html, /超大规模云厂商 CAPEX/);
+  assert.match(html, /hrefLang="x-default" href="https:\/\/dc-atlas\.example\/en"/);
   assert.match(html, /Track the/);
   assert.match(html, /class="pulse-trace"/);
   assert.match(html, /href="\/privacy"/);
@@ -77,6 +79,8 @@ test("renders the English research console and focused content routes", async ()
   const response = await render("/en");
   assert.equal(response.status, 200);
   const html = await response.text();
+  assert.match(html, /<title>Data Center Infrastructure Intelligence \| IDC Atlas<\/title>/);
+  assert.match(html, /Hyperscaler capital expenditure/);
   assert.match(html, /Track the/);
   assert.match(html, /class="pulse-trace"/);
   assert.match(html, /class="english-console-sidebar"/);
@@ -300,6 +304,10 @@ test("serves crawl directives and bilingual topic pages", async () => {
   const robots = await render("/robots.txt");
   assert.equal(robots.status, 200);
   assert.match(await robots.text(), /Sitemap: https:\/\/idc-index\.com\/sitemap\.xml/i);
+
+  const privacy = await render("/privacy");
+  assert.equal(privacy.status, 200);
+  assert.match(await privacy.text(), /<meta name="robots" content="noindex, follow"/i);
 
   const topic = await render("/topics/china-ai-silicon");
   assert.equal(topic.status, 200);

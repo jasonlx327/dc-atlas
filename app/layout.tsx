@@ -6,7 +6,7 @@ import "./globals.css";
 
 const googleAnalyticsId = "G-XRKL96W42Q";
 const siteUrl = "https://idc-index.com";
-const siteDescription = "结合产业链地图、IDC 最新消息、公开招标与每日市场温度，追踪基础设施正在发生的变化。";
+const siteDescription = "每日追踪全球数据中心项目、超大规模云厂商 CAPEX、IDC 租赁、电力、液冷与算力硬件，保留公开来源和更新时间。";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
   const origin = `${protocol}://${host}`;
-  const title = "IDC Atlas｜全球数据中心产业地图与实时情报站";
+  const title = "全球数据中心与 AI 基础设施情报｜IDC Atlas";
 
   return {
     metadataBase: new URL(origin),
@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
     category: "Data center intelligence",
     alternates: {
       canonical: `${siteUrl}/`,
-      languages: { "zh-CN": `${siteUrl}/`, en: `${siteUrl}/en` },
+      languages: { "zh-CN": `${siteUrl}/`, en: `${siteUrl}/en`, "x-default": `${siteUrl}/en` },
     },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },

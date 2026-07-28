@@ -5,17 +5,17 @@ import { loadInitialAtlasPayload } from "../../initial-atlas";
 const canonical = "https://idc-index.com/en/pulse";
 
 export const metadata: Metadata = {
-  title: "Infrastructure Pulse | IDC Atlas",
-  description: "Verified global data-center projects, leases and U.S. listed-company infrastructure disclosures.",
+  title: "Data Center Project & Lease Tracker | IDC Atlas",
+  description: "Daily source-linked tracker for global data-center projects, hyperscale leases and U.S. listed infrastructure-company disclosures.",
   alternates: { canonical, languages: { "zh-CN": "https://idc-index.com/pulse", en: canonical } },
   openGraph: {
-    title: "Infrastructure Pulse | IDC Atlas",
-    description: "Verified global data-center projects, leases and U.S. listed-company infrastructure disclosures.",
+    title: "Data Center Project & Lease Tracker | IDC Atlas",
+    description: "Daily source-linked tracker for global data-center projects, hyperscale leases and U.S. listed infrastructure-company disclosures.",
     url: canonical,
     type: "website",
     images: [{ url: "/og-idc-atlas-en.png", width: 1731, height: 909, alt: "IDC Atlas Infrastructure Pulse" }],
   },
-  twitter: { card: "summary_large_image", title: "Infrastructure Pulse | IDC Atlas", images: ["/og-idc-atlas-en.png"] },
+  twitter: { card: "summary_large_image", title: "Data Center Project & Lease Tracker | IDC Atlas", images: ["/og-idc-atlas-en.png"] },
 };
 
 export default async function EnglishPulsePage() {

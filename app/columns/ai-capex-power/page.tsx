@@ -12,6 +12,40 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  const structuredData = { "@context": "https://schema.org", "@type": "Article", headline: "AI 基建竞赛进入电力时代", description: metadata.description, image: "https://idc-index.com/column-ai-capex-grid.png", datePublished: "2026-07-27T00:00:00+08:00", dateModified: "2026-07-27T00:00:00+08:00", inLanguage: "zh-CN", author: { "@type": "Organization", name: "IDC Atlas", url: "https://idc-index.com/" }, publisher: { "@type": "Organization", name: "IDC Atlas", url: "https://idc-index.com/" }, mainEntityOfPage: canonical };
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: "AI 基建竞赛进入电力时代",
+        description: metadata.description,
+        image: "https://idc-index.com/column-ai-capex-grid.png",
+        datePublished: "2026-07-27T00:00:00+08:00",
+        dateModified: "2026-07-27T00:00:00+08:00",
+        inLanguage: "zh-CN",
+        articleSection: "AI 基础设施资本开支",
+        isAccessibleForFree: true,
+        about: ["超大规模云厂商资本开支", "数据中心电力", "液冷", "可计费 AI 容量"],
+        citation: [
+          "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3",
+          "https://abc.xyz/investor/events/event-details/2026/2025-Q4-Earnings-Call-2026-Dr_C033hS6/default.aspx",
+          "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm",
+          "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/",
+          "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/default.aspx",
+        ],
+        author: { "@type": "Organization", name: "IDC Atlas", url: "https://idc-index.com/" },
+        publisher: { "@type": "Organization", name: "IDC Atlas", url: "https://idc-index.com/" },
+        mainEntityOfPage: canonical,
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "IDC Atlas", item: "https://idc-index.com/" },
+          { "@type": "ListItem", position: 2, name: "专栏", item: "https://idc-index.com/columns" },
+          { "@type": "ListItem", position: 3, name: "AI 基建竞赛进入电力时代", item: canonical },
+        ],
+      },
+    ],
+  };
   return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /><CapexPowerArticle lang="zh" /></>;
 }

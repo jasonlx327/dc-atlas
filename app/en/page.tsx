@@ -5,20 +5,52 @@ import { loadInitialAtlasPayload } from "../initial-atlas";
 const canonical = "https://idc-index.com/en";
 
 export const metadata: Metadata = {
-  title: "IDC Atlas | Data Center Intelligence for Investors",
-  description: "Source-first data center intelligence for investors tracking AI infrastructure, cloud CAPEX, power, cooling, semiconductors and global campus buildouts.",
-  alternates: { canonical, languages: { "zh-CN": "https://idc-index.com/", en: canonical } },
+  title: "Data Center Infrastructure Intelligence | IDC Atlas",
+  description: "Track hyperscaler CAPEX, data-center leases, power, liquid cooling, AI hardware and earnings through daily source-linked intelligence.",
+  alternates: { canonical, languages: { "zh-CN": "https://idc-index.com/", en: canonical, "x-default": canonical } },
+  other: { "content-language": "en-US" },
   openGraph: {
-    title: "IDC Atlas | Data Center Intelligence for Investors",
-    description: "Track AI infrastructure, cloud CAPEX and data-center buildouts through source-linked public intelligence.",
+    title: "Data Center Infrastructure Intelligence | IDC Atlas",
+    description: "Track hyperscaler CAPEX, data-center leases, power, cooling and AI hardware through source-linked public intelligence.",
     url: canonical,
     type: "website",
     images: [{ url: "/og-idc-atlas-en.png", width: 1731, height: 909, alt: "IDC Atlas AI Infrastructure Intelligence" }],
   },
-  twitter: { card: "summary_large_image", title: "IDC Atlas | Data Center Intelligence for Investors", images: ["/og-idc-atlas-en.png"] },
+  twitter: { card: "summary_large_image", title: "Data Center Infrastructure Intelligence | IDC Atlas", description: "Daily intelligence on hyperscaler CAPEX, data-center leases, power, cooling and AI hardware.", images: ["/og-idc-atlas-en.png"] },
 };
 
 export default async function EnglishPage() {
   const initialPayload = await loadInitialAtlasPayload() as Partial<AtlasPayload> | null;
-  return <EnglishHome initialPayload={initialPayload} />;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        name: "Data Center Infrastructure Intelligence",
+        url: canonical,
+        inLanguage: "en-US",
+        description: metadata.description,
+        publisher: { "@type": "Organization", name: "IDC Atlas", url: "https://idc-index.com/" },
+        about: [
+          { "@type": "Thing", name: "Data center infrastructure" },
+          { "@type": "Thing", name: "Hyperscaler capital expenditure" },
+          { "@type": "Thing", name: "Data center leasing" },
+          { "@type": "Thing", name: "Power and liquid cooling" },
+        ],
+        hasPart: [
+          { "@type": "WebPage", name: "Infrastructure Pulse", url: "https://idc-index.com/en/pulse" },
+          { "@type": "WebPage", name: "AI Infrastructure Industry Map", url: "https://idc-index.com/en/industry" },
+          { "@type": "WebPage", name: "IDC Atlas Columns", url: "https://idc-index.com/en/columns" },
+        ],
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "IDC Atlas", item: canonical },
+        ],
+      },
+    ],
+  };
+
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /><EnglishHome initialPayload={initialPayload} /></>;
 }
