@@ -347,7 +347,7 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
       <a href="/calendar"><span>04</span><strong>财报日历</strong></a>
       <p>研究</p>
       <a className={view === "industry" ? "active" : ""} href="/industry"><span>05</span><strong>产业中心</strong></a>
-      <a href="/columns"><span>06</span><strong>专栏</strong><i>↗</i></a>
+      <a href="/#columns"><span>06</span><strong>专栏</strong></a>
     </nav>
     <div className="zh-console-foot"><div className="top-status"><span className={`live-dot ${loadError ? "warn" : ""}`} /><span>{loadError ? "部分数据暂不可用" : payload ? "EDGE DATA LIVE" : "CONNECTING"}</span></div><small>{payload ? `UPDATED ${formatDateTime(payload.generatedAt)}` : "SOURCE-LINKED RESEARCH"}</small><a className="language-switch" href="/en?lang=en" lang="en">ENGLISH</a></div>
   </aside><header className="zh-console-mobile-head"><Brand /><span>{view === "home" ? "总览" : view === "pulse" ? "最新脉冲" : "产业中心"}</span><a href="/en?lang=en" lang="en">EN</a></header></>;
@@ -370,7 +370,7 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
 
     <section className="section home-market-summary" id="market"><div className="section-title"><div><span className="section-no">03</span><p>CAPITAL &amp; MARKET</p><h2>并购与市场温度</h2></div><p>用重大交易理解资产控制权，用 CWW 与 CWWCN 观察每日市场温度。</p></div><div className="home-capital-grid"><div className="home-deal-list">{deals.slice(0, 2).map((deal) => <article key={deal.id}><span>{deal.status}</span><h3>{deal.buyer} → {deal.target}</h3><p>{deal.rationale}</p><a href={deal.sourceUrl} target="_blank" rel="noreferrer">{deal.sourceName}<ExternalIcon /></a></article>)}</div><div className="benchmark-cards">{(payload?.benchmarks ?? []).map((item) => <article className="benchmark-card" key={item.code}><div className="benchmark-head"><span>{item.code}</span><small>{item.count} 成分</small></div><p>{item.name}</p><strong>{item.level.toLocaleString("en-US", { maximumFractionDigits: 2 })}</strong><div className="benchmark-change"><span className={item.dayPct >= 0 ? "up" : "down"}>{item.dayPct >= 0 ? "+" : ""}{item.dayPct.toFixed(2)}%</span><small>较前收</small></div></article>)}</div></div></section>
     {compactFooter}
-    <nav className="mobile-dock compact-mobile-dock" aria-label="移动端快速导航"><a href="/"><span>01</span>首页</a><a href="/pulse"><span>02</span>脉冲</a><a href="/industry"><span>03</span>产业</a><a href="/#market"><span>04</span>市场</a><a href="/columns"><span>05</span>专栏</a></nav>
+    <nav className="mobile-dock compact-mobile-dock" aria-label="移动端快速导航"><a href="/"><span>01</span>首页</a><a href="/pulse"><span>02</span>脉冲</a><a href="/industry"><span>03</span>产业</a><a href="/#market"><span>04</span>市场</a><a href="/#columns"><span>05</span>专栏</a></nav>
   </main>;
 
   if (view === "pulse") return <main id="top" className="content-hub pulse-hub zh-console">
@@ -381,7 +381,7 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
     {pulseHubTab === "listed" && <section className="section hub-content-section"><div className="hub-filter-row"><div><span>CORE IDC LISTED COMPANIES</span><h2>A 股与美股动态</h2></div><div className="pulse-region-tabs" aria-label="上市公司市场筛选">{(["all", "A 股", "美股"] as const).map((market) => <button key={market} className={listedMarket === market ? "active" : ""} aria-pressed={listedMarket === market} onClick={() => setListedMarket(market)}><span>{market === "all" ? "全部" : market}</span><b>{listedMarketCounts[market]}</b></button>)}</div></div><div className="news-grid">{visibleListedCompanyNews.map((item) => <NewsCard key={item.id} item={item} />)}</div></section>}
     {pulseHubTab === "daily" && <section className="section daily-section hub-content-section"><div className="hub-filter-row inverse"><div><span>AI HOT · DAILY EDITION</span><h2>今日 AI 日报</h2></div>{daily && <a href={daily.canonical} target="_blank" rel="noreferrer">查看完整日报<ExternalIcon /></a>}</div>{daily?.lead && <article className="daily-lead"><span>LEAD STORY</span><h3><a href={daily.lead.permalink} target="_blank" rel="noreferrer">{daily.lead.title}</a></h3><p>{daily.lead.summary}</p><SourceRow item={daily.lead} /></article>}<div className="daily-grid">{dailyItems.map((item) => <article className="daily-card" key={`${item.dailySection}-${item.id}`}><span>{item.dailySection}</span><h3><a href={item.permalink} target="_blank" rel="noreferrer">{item.title}</a></h3><p>{item.summary}</p><SourceRow item={item} /></article>)}</div></section>}
     {compactFooter}
-    <nav className="mobile-dock compact-mobile-dock" aria-label="移动端快速导航"><a href="/"><span>01</span>首页</a><a href="/pulse"><span>02</span>脉冲</a><a href="/industry"><span>03</span>产业</a><a href="/#market"><span>04</span>市场</a><a href="/columns"><span>05</span>专栏</a></nav>
+    <nav className="mobile-dock compact-mobile-dock" aria-label="移动端快速导航"><a href="/"><span>01</span>首页</a><a href="/pulse"><span>02</span>脉冲</a><a href="/industry"><span>03</span>产业</a><a href="/#market"><span>04</span>市场</a><a href="/#columns"><span>05</span>专栏</a></nav>
   </main>;
 
   if (view === "industry") return <main id="top" className="content-hub industry-hub zh-console">
@@ -395,7 +395,7 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
     {industryHubTab === "campus" && <section className="section project-section hub-content-section"><div className="hub-filter-row inverse"><div><span>LARGE-SCALE CAMPUS RADAR</span><h2>大型园区进度</h2></div></div><div className="capacity-grid">{includedCapacity.map((record) => <article className="capacity-card" key={record.id}><div><span>{record.status}</span><strong>{record.metric}</strong></div><p>{record.publishedAt}</p><h3>{record.title}</h3><h4>{record.subject}</h4><p className="capacity-note">{record.note}</p><RecordSource record={record} /></article>)}</div></section>}
     {industryHubTab === "cooling" && <section className="section cooling-section hub-content-section"><div className="hub-filter-row"><div><span>LIQUID COOLING ADOPTION</span><h2>液冷部署进度</h2></div></div><div className="cooling-journey">{coolingRecords.map((record, index) => <article className="cooling-step" key={record.id}><span>{String(index + 1).padStart(2, "0")}</span><i /><p>{record.status}</p><h3>{record.metric}</h3><h4>{record.title}</h4><small>{record.subject} · {record.publishedAt}</small><p className="cooling-note">{record.note}</p><RecordSource record={record} /></article>)}</div></section>}
     {compactFooter}
-    <nav className="mobile-dock compact-mobile-dock" aria-label="移动端快速导航"><a href="/"><span>01</span>首页</a><a href="/pulse"><span>02</span>脉冲</a><a href="/industry"><span>03</span>产业</a><a href="/#market"><span>04</span>市场</a><a href="/columns"><span>05</span>专栏</a></nav>
+    <nav className="mobile-dock compact-mobile-dock" aria-label="移动端快速导航"><a href="/"><span>01</span>首页</a><a href="/pulse"><span>02</span>脉冲</a><a href="/industry"><span>03</span>产业</a><a href="/#market"><span>04</span>市场</a><a href="/#columns"><span>05</span>专栏</a></nav>
   </main>;
 
   return <main id="top">

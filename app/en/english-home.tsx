@@ -339,7 +339,7 @@ function EnglishConsoleNav({ view, live, updatedAt }: { view: EnglishView; live:
       <a href="/en#companies"><span>04</span><strong>Company watch</strong></a>
       <p>RESEARCH</p>
       <a className={view === "industry" ? "active" : ""} href="/en/industry"><span>05</span><strong>Industry map</strong></a>
-      <a href="/en/columns"><span>06</span><strong>Columns</strong><i>↗</i></a>
+      <a href="/en#columns"><span>06</span><strong>Columns</strong></a>
       <a href="/en#market"><span>07</span><strong>Markets</strong></a>
     </nav>
     <div className="console-sidebar-foot">
@@ -355,7 +355,7 @@ function EnglishMobileDock({ view }: { view: EnglishView }) {
     <a className={view === "home" ? "active" : ""} href="/en"><span>01</span>Overview</a>
     <a className={view === "pulse" ? "active" : ""} href="/en/pulse"><span>02</span>Pulse</a>
     <a className={view === "industry" ? "active" : ""} href="/en/industry"><span>03</span>Industry</a>
-    <a href="/en/columns"><span>04</span>Columns</a>
+    <a href="/en#columns"><span>04</span>Columns</a>
   </nav>;
 }
 
@@ -420,7 +420,7 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
       <section className="console-section console-section-dark" id="calendar"><ConsoleSectionHead label="02 · EARNINGS &amp; CAPEX" title="The next read-throughs" copy="Officially scheduled U.S. events in Eastern Time." /><div className="console-earnings-strip">{eventList.slice(0, 6).map((event) => { const note = calendarNotes[event.ticker] ?? { sector: event.sector, summary: "Officially scheduled earnings event.", focus: "Capex, demand and forward guidance." }; return <article key={event.id}><time>{formatEvent(event.startsAt)}</time><div><span>{note.sector}</span><h3>{event.company} <small>{event.ticker}</small></h3><p>{event.conclusion?.summaryEn ?? event.conclusion?.summary ?? note.focus}</p></div><a href={event.conclusion?.sourceUrl ?? event.sourceUrl} target="_blank" rel="noreferrer">↗</a></article>; })}</div></section>
       <section className="console-section console-section-muted" id="companies"><ConsoleSectionHead label="03 · COMPANY WATCH" title="U.S. listed infrastructure" copy="Recent disclosures from listed data-center and infrastructure companies." link="/en/pulse" linkLabel="Open company watch" /><div className="console-story-list console-company-list">{listed.slice(0, 5).map((item, index) => <ConsoleStoryRow key={item.id} item={item} index={index} eyebrow={item.listedTicker ?? "US LISTED"} />)}</div></section>
       <section className="console-section console-column-market" id="market">
-        <article className="console-column-card"><span>IDC ATLAS COLUMN · LEASE WATCH</span><h2>Gigawatt leases are reshaping the data-center market.</h2><p>Contract term, energization and billable capacity provide the stronger evidence when hyperscale customers remain unnamed.</p><a href="/en/columns/hyperscale-idc-leases">Continue reading →</a></article>
+        <article className="console-column-card" id="columns"><span>IDC ATLAS COLUMN · LEASE WATCH</span><h2>Gigawatt leases are reshaping the data-center market.</h2><p>Contract term, energization and billable capacity provide the stronger evidence when hyperscale customers remain unnamed.</p><a href="/en/columns/hyperscale-idc-leases">Continue reading →</a></article>
         <div><ConsoleSectionHead label="04 · MARKET TEMPERATURE" title="Infrastructure indices" /> <div className="console-market-grid">{market.map((item) => <article key={item.code}><span>{item.code}</span><h3>{item.name}</h3><strong>{item.level.toLocaleString("en-US", { maximumFractionDigits: 2 })}</strong><p className={item.dayPct >= 0 ? "up" : "down"}>{item.dayPct >= 0 ? "+" : ""}{item.dayPct.toFixed(2)}%</p></article>)}</div></div>
       </section>
     </div>{shellEnd}

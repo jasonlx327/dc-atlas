@@ -36,6 +36,7 @@ test("server-renders the compact IDC Atlas portal homepage", async () => {
   assert.match(html, /EARNINGS WATCH · IDC CALENDAR/);
   assert.match(html, /IDC ATLAS 专栏精选/);
   assert.match(html, /GW 级长租/);
+  assert.match(html, /href="\/#columns"/);
   assert.match(html, /href="\/columns\/hyperscale-idc-leases"/);
   assert.match(html, /今天值得看的脉冲/);
   assert.match(html, /核心 IDC 标的/);
@@ -72,6 +73,8 @@ test("renders the English research console and focused content routes", async ()
   assert.match(html, /Track the/);
   assert.match(html, /class="pulse-trace"/);
   assert.match(html, /class="english-console-sidebar"/);
+  assert.match(html, /href="\/en#columns"/);
+  assert.match(html, /class="console-column-card" id="columns"/);
   assert.match(html, /What matters now/);
   assert.match(html, /The next read-throughs/);
   assert.match(html, /console-earnings-strip/);
@@ -127,7 +130,7 @@ test("keeps the English site fully translated across the live coverage stack", a
   assert.doesNotMatch(source, /editorial English translation is pending/);
   assert.doesNotMatch(source, /lang="zh-CN"/);
   assert.match(source, /Gigawatt leases are/);
-  assert.match(source, /href="\/en\/columns"/);
+  assert.match(source, /href="\/en#columns"/);
   assert.match(source, /className="english-chain-icon"/);
   assert.match(source, /<ChainIcon type=/);
   assert.match(source, /href="\/en\/columns\/hyperscale-idc-leases"/);

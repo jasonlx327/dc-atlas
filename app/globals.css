@@ -943,6 +943,7 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
 
 /* Bilingual research console */
 .zh-console, .english-console { min-width: 0; }
+.zh-console [id], .english-console [id] { scroll-margin-top: 76px; }
 .zh-console { padding-left: 244px; }
 .zh-console-sidebar, .english-console-sidebar {
   position: fixed;
