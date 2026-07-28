@@ -5,6 +5,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { ChainIcon, type ChainKey } from "../chain-icon";
 import { PulseTrace } from "../pulse-trace";
+import { useSectionNavigation } from "../use-section-navigation";
 
 type Story = { id: string; title: string; summary?: string; publishedAt?: string | null; permalink?: string; sourceUrl?: string | null; sourceName?: string | null; category?: string | null; region?: string; milestone?: string; scale?: string; whyItMatters?: string; listedTicker?: string };
 type CalendarEvent = { id: string; startsAt: string; company: string; ticker: string; sector: string; sourceUrl: string; sourceName: string; conclusion?: { summary: string; summaryEn?: string; sourceName: string; sourceUrl: string } };
@@ -12,6 +13,8 @@ type Record = { id: string; title: string; subject: string; metric: string; stat
 type Product = { id: string; vendor: string; name: string; model?: string; form?: string; spec?: string; summary?: string; headlineMetric?: string; sourceName: string; sourceUrl: string; imageSrc?: string; imageAlt?: string };
 type Deal = { id: string; announcedAt: string; buyer: string; target: string; value: string; capacity: string; region: string; status: string; rationale: string; sourceName: string; sourceUrl: string };
 type EnglishView = "home" | "pulse" | "industry";
+const englishHomeSections = ["overview", "pulse", "calendar", "companies", "market", "columns"] as const;
+type EnglishHomeSection = (typeof englishHomeSections)[number];
 export type AtlasPayload = {
   generatedAt: string;
   weeklyHighlightCount?: number;
@@ -328,19 +331,19 @@ function ConsoleSectionHead({ label, title, copy, link, linkLabel }: { label: st
   </header>;
 }
 
-function EnglishConsoleNav({ view, live, updatedAt }: { view: EnglishView; live: boolean; updatedAt?: string }) {
+function EnglishConsoleNav({ view, live, updatedAt, activeSection, onNavigate }: { view: EnglishView; live: boolean; updatedAt?: string; activeSection: EnglishHomeSection; onNavigate: ReturnType<typeof useSectionNavigation<typeof englishHomeSections>>["navigate"] }) {
   return <aside className="english-console-sidebar">
     <div className="console-brand"><a href="/en" aria-label="IDC Atlas English home">IDC <b>ATLAS</b></a><span>INTELLIGENCE CONSOLE</span></div>
     <nav aria-label="English console navigation">
       <p>WORKSPACE</p>
-      <a className={view === "home" ? "active" : ""} href="/en"><span>01</span><strong>Overview</strong></a>
+      <a className={view === "home" && activeSection === "overview" ? "active" : ""} href="/en" onClick={(event) => onNavigate(event, "overview")}><span>01</span><strong>Overview</strong></a>
       <a className={view === "pulse" ? "active" : ""} href="/en/pulse"><span>02</span><strong>Infrastructure pulse</strong></a>
-      <a href="/en#calendar"><span>03</span><strong>Earnings watch</strong></a>
-      <a href="/en#companies"><span>04</span><strong>Company watch</strong></a>
+      <a className={view === "home" && activeSection === "calendar" ? "active" : ""} href="/en#calendar" onClick={(event) => onNavigate(event, "calendar")}><span>03</span><strong>Earnings watch</strong></a>
+      <a className={view === "home" && activeSection === "companies" ? "active" : ""} href="/en#companies" onClick={(event) => onNavigate(event, "companies")}><span>04</span><strong>Company watch</strong></a>
       <p>RESEARCH</p>
       <a className={view === "industry" ? "active" : ""} href="/en/industry"><span>05</span><strong>Industry map</strong></a>
-      <a href="/en#columns"><span>06</span><strong>Columns</strong></a>
-      <a href="/en#market"><span>07</span><strong>Markets</strong></a>
+      <a className={view === "home" && activeSection === "columns" ? "active" : ""} href="/en#columns" onClick={(event) => onNavigate(event, "columns")}><span>06</span><strong>Columns</strong></a>
+      <a className={view === "home" && activeSection === "market" ? "active" : ""} href="/en#market" onClick={(event) => onNavigate(event, "market")}><span>07</span><strong>Markets</strong></a>
     </nav>
     <div className="console-sidebar-foot">
       <div><i className={live ? "live" : ""} /><span>{live ? "EDGE DATA LIVE" : "CONNECTING"}</span></div>
@@ -350,18 +353,20 @@ function EnglishConsoleNav({ view, live, updatedAt }: { view: EnglishView; live:
   </aside>;
 }
 
-function EnglishMobileDock({ view }: { view: EnglishView }) {
+function EnglishMobileDock({ view, activeSection, onNavigate }: { view: EnglishView; activeSection: EnglishHomeSection; onNavigate: ReturnType<typeof useSectionNavigation<typeof englishHomeSections>>["navigate"] }) {
+  const columnActive = view === "home" && (activeSection === "columns" || activeSection === "market");
   return <nav className="english-console-mobile-dock" aria-label="English mobile navigation">
-    <a className={view === "home" ? "active" : ""} href="/en"><span>01</span>Overview</a>
+    <a className={view === "home" && !columnActive ? "active" : ""} href="/en" onClick={(event) => onNavigate(event, "overview")}><span>01</span>Overview</a>
     <a className={view === "pulse" ? "active" : ""} href="/en/pulse"><span>02</span>Pulse</a>
     <a className={view === "industry" ? "active" : ""} href="/en/industry"><span>03</span>Industry</a>
-    <a href="/en#columns"><span>04</span>Columns</a>
+    <a className={columnActive ? "active" : ""} href="/en#columns" onClick={(event) => onNavigate(event, "columns")}><span>04</span>Columns</a>
   </nav>;
 }
 
 export default function EnglishHome({ initialPayload = null, view = "home" }: { initialPayload?: Partial<AtlasPayload> | null; view?: EnglishView }) {
   const [payload, setPayload] = useState<Partial<AtlasPayload> | null>(initialPayload);
   const [loadError, setLoadError] = useState(false);
+  const sectionNavigation = useSectionNavigation(view === "home", englishHomeSections, "overview");
 
   useEffect(() => {
     void fetch("/api/atlas-live-v5?schema=v1", { cache: "no-store" })
@@ -384,8 +389,8 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
   const cooling = payload?.coolingProgress ?? [];
   const market = payload?.benchmarks ?? [];
   const status = Boolean(payload) && !loadError;
-  const shellStart = <><EnglishConsoleNav view={view} live={status} updatedAt={payload?.generatedAt} /><header className="english-console-mobile-head"><a href="/en">IDC <b>ATLAS</b></a><span>{view === "home" ? "OVERVIEW" : view === "pulse" ? "PULSE" : "INDUSTRY"}</span><a href="/?lang=zh">中文</a></header></>;
-  const shellEnd = <><footer className="english-console-footer"><span>IDC ATLAS · SOURCE-FIRST RESEARCH</span><nav aria-label="English research links"><a href="/en/topics/data-center-intelligence">Data center tracker</a><a href="/en/columns">Columns</a><a href="/methodology">Methodology</a></nav><p>Data for information and research only. Nothing on this site constitutes investment advice.</p></footer><EnglishMobileDock view={view} /></>;
+  const shellStart = <><EnglishConsoleNav view={view} live={status} updatedAt={payload?.generatedAt} activeSection={sectionNavigation.activeSection} onNavigate={sectionNavigation.navigate} /><header className="english-console-mobile-head"><a href="/en">IDC <b>ATLAS</b></a><span>{view === "home" ? sectionNavigation.activeSection.toUpperCase() : view === "pulse" ? "PULSE" : "INDUSTRY"}</span><a href="/?lang=zh">中文</a></header></>;
+  const shellEnd = <><footer className="english-console-footer"><span>IDC ATLAS · SOURCE-FIRST RESEARCH</span><nav aria-label="English research links"><a href="/en/topics/data-center-intelligence">Data center tracker</a><a href="/en/columns">Columns</a><a href="/methodology">Methodology</a></nav><p>Data for information and research only. Nothing on this site constitutes investment advice.</p></footer><EnglishMobileDock view={view} activeSection={sectionNavigation.activeSection} onNavigate={sectionNavigation.navigate} /></>;
 
   if (view === "pulse") return <main className="english-console english-full-page" lang="en">
     {shellStart}<div className="english-console-workspace">
@@ -409,7 +414,7 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
 
   return <main className="english-console english-full-page" lang="en">
     {shellStart}<div className="english-console-workspace">
-      <section className="console-hero">
+      <section className="console-hero" id="overview">
         <p className="eyebrow"><span /> GLOBAL DATA CENTER INTELLIGENCE</p>
         <h1>Track the <span className="hero-pulse-line">pulse<PulseTrace /></span> of <em>infrastructure.</em></h1>
         <p>Daily intelligence for investors tracking data-center projects, listed companies, hyperscaler CAPEX, compute, power and cooling.</p>

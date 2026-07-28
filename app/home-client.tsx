@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import QRCode from "qrcode";
 import { ChainIcon, type ChainKey } from "./chain-icon";
 import { PulseTrace } from "./pulse-trace";
+import { useSectionNavigation } from "./use-section-navigation";
 
 type SignalKey = "capacity" | "power" | "cooling" | "network" | "policy" | "hardware";
 type NavGroupKey = "today" | "infrastructure" | "demand" | "capital";
@@ -14,6 +15,7 @@ type ListedMarket = "all" | "A 股" | "美股";
 type SiteView = "home" | "pulse" | "industry";
 type PulseHubTab = "projects" | "listed" | "daily";
 type IndustryHubTab = "chain" | "hardware" | "china" | "models" | "campus" | "cooling";
+const zhHomeSections = ["overview", "calendar", "columns", "pulse", "industry", "market"] as const;
 type LifecycleStage = { label: string; state: "done" | "current" | "next" };
 
 type NewsItem = {
@@ -262,6 +264,7 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
   const [activeMenuGroup, setActiveMenuGroup] = useState<NavGroupKey>("today");
   const [pulseHubTab, setPulseHubTab] = useState<PulseHubTab>("projects");
   const [industryHubTab, setIndustryHubTab] = useState<IndustryHubTab>("chain");
+  const sectionNavigation = useSectionNavigation(view === "home", zhHomeSections, "overview");
 
   useEffect(() => {
     if (view !== "industry") return;
@@ -353,13 +356,13 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
     <div className="zh-console-brand"><Brand /><span>数据中心研究控制台</span></div>
     <nav aria-label="IDC Atlas Console 导航">
       <p>工作台</p>
-      <a className={view === "home" ? "active" : ""} href="/"><span>01</span><strong>总览</strong></a>
+      <a className={view === "home" && sectionNavigation.activeSection === "overview" ? "active" : ""} href="/" onClick={(event) => sectionNavigation.navigate(event, "overview")}><span>01</span><strong>总览</strong></a>
       <a className={view === "pulse" ? "active" : ""} href="/pulse"><span>02</span><strong>最新脉冲</strong></a>
-      <a href="/#market"><span>03</span><strong>市场温度</strong></a>
-      <a href="/#calendar"><span>04</span><strong>财报日历</strong></a>
+      <a className={view === "home" && sectionNavigation.activeSection === "market" ? "active" : ""} href="/#market" onClick={(event) => sectionNavigation.navigate(event, "market")}><span>03</span><strong>市场温度</strong></a>
+      <a className={view === "home" && sectionNavigation.activeSection === "calendar" ? "active" : ""} href="/#calendar" onClick={(event) => sectionNavigation.navigate(event, "calendar")}><span>04</span><strong>财报日历</strong></a>
       <p>研究</p>
       <a className={view === "industry" ? "active" : ""} href="/industry"><span>05</span><strong>产业中心</strong></a>
-      <a href="/#columns"><span>06</span><strong>专栏</strong></a>
+      <a className={view === "home" && sectionNavigation.activeSection === "columns" ? "active" : ""} href="/#columns" onClick={(event) => sectionNavigation.navigate(event, "columns")}><span>06</span><strong>专栏</strong></a>
     </nav>
     <div className="zh-console-foot"><div className="top-status"><span className={`live-dot ${loadError ? "warn" : ""}`} /><span>{loadError ? "部分数据暂不可用" : payload ? "EDGE DATA LIVE" : "CONNECTING"}</span></div><small>{payload ? `UPDATED ${formatDateTime(payload.generatedAt)}` : "SOURCE-LINKED RESEARCH"}</small><a className="language-switch" href="/en?lang=en" lang="en">ENGLISH</a></div>
   </aside><header className="zh-console-mobile-head"><Brand /><span>{view === "home" ? "总览" : view === "pulse" ? "最新脉冲" : "产业中心"}</span><a href="/en?lang=en" lang="en">EN</a></header></>;
@@ -367,7 +370,7 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
 
   if (view === "home") return <main id="top" className="compact-home zh-console">
     {compactHeader}
-    <section className="hero compact-hero" aria-labelledby="hero-title">
+    <section className="hero compact-hero" id="overview" aria-labelledby="hero-title">
       <div className="hero-grid" aria-hidden="true" /><div className="hero-glow glow-a" aria-hidden="true" /><div className="hero-glow glow-b" aria-hidden="true" />
       <div className="hero-copy"><p className="eyebrow"><span /> GLOBAL DATA CENTER INTELLIGENCE</p><h1 id="hero-title">Track the <span className="hero-pulse-line">pulse<PulseTrace label="实时基础设施脉冲" /></span> of <em>infrastructure.</em></h1><p className="hero-lead">IDC Atlas 每日汇集全球数据中心项目、上市公司、算力硬件、电力与液冷的公开进展。</p><div className="hero-actions"><a className="primary-action" href="/pulse">进入最新脉冲 <span><ArrowIcon /></span></a><a className="secondary-action" href="/industry">进入产业中心<ArrowIcon /></a></div><div className="hero-footnote"><span>DAILY SOURCE REFRESH</span><span>{payload ? `UPDATED ${formatDateTime(payload.generatedAt)}` : "CONNECTING TO EDGE"}</span></div></div>
       <aside className="hero-signal hero-calendar" id="calendar" aria-label="未来一周 IDC 重要时间日历"><div className="signal-head"><span><i /> EARNINGS WATCH · IDC CALENDAR</span><time>{payload ? `AS OF ${formatDateTime(payload.generatedAt)}` : "连接中"}</time></div>{heroCalendarEvents.length ? <><div className="hero-calendar-list">{heroCalendarEvents.map((event) => { const timing = formatCalendarEvent(event.startsAt); return <article key={event.id}><time><strong>{timing.date}</strong><small>美东 {timing.time}</small></time><div><div className="hero-calendar-meta"><span>{event.sector}</span><b>{event.ticker}</b></div><h2><a href={event.sourceUrl} target="_blank" rel="noreferrer">{event.company} 财报</a></h2><p>{event.description}</p><small>CAPEX WATCH · {event.focus}</small></div></article>; })}</div><a className="hero-calendar-more" href="/calendar">查看完整财报日历 <ArrowIcon /></a></> : <div className="signal-loading"><p>正在整理未来一周的重要节点…</p></div>}</aside>
@@ -382,7 +385,7 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
 
     <section className="section home-market-summary" id="market"><div className="section-title"><div><span className="section-no">03</span><p>CAPITAL &amp; MARKET</p><h2>并购与市场温度</h2></div><p>用重大交易理解资产控制权，用 CWW 与 CWWCN 观察每日市场温度。</p></div><div className="home-capital-grid"><div className="home-deal-list">{deals.slice(0, 2).map((deal) => <article key={deal.id}><span>{deal.status}</span><h3>{deal.buyer} → {deal.target}</h3><p>{deal.rationale}</p><a href={deal.sourceUrl} target="_blank" rel="noreferrer">{deal.sourceName}<ExternalIcon /></a></article>)}</div><div className="benchmark-cards">{(payload?.benchmarks ?? []).map((item) => <article className="benchmark-card" key={item.code}><div className="benchmark-head"><span>{item.code}</span><small>{item.count} 成分</small></div><p>{item.name}</p><strong>{item.level.toLocaleString("en-US", { maximumFractionDigits: 2 })}</strong><div className="benchmark-change"><span className={item.dayPct >= 0 ? "up" : "down"}>{item.dayPct >= 0 ? "+" : ""}{item.dayPct.toFixed(2)}%</span><small>较前收</small></div></article>)}</div></div></section>
     {compactFooter}
-    <nav className="mobile-dock compact-mobile-dock" aria-label="移动端快速导航"><a href="/"><span>01</span>首页</a><a href="/pulse"><span>02</span>脉冲</a><a href="/industry"><span>03</span>产业</a><a href="/#market"><span>04</span>市场</a><a href="/#columns"><span>05</span>专栏</a></nav>
+    <nav className="mobile-dock compact-mobile-dock" aria-label="移动端快速导航"><a className={sectionNavigation.activeSection === "overview" ? "active" : ""} href="/" onClick={(event) => sectionNavigation.navigate(event, "overview")}><span>01</span>首页</a><a className={sectionNavigation.activeSection === "pulse" ? "active" : ""} href="/pulse"><span>02</span>脉冲</a><a className={sectionNavigation.activeSection === "industry" ? "active" : ""} href="/industry"><span>03</span>产业</a><a className={sectionNavigation.activeSection === "market" ? "active" : ""} href="/#market" onClick={(event) => sectionNavigation.navigate(event, "market")}><span>04</span>市场</a><a className={sectionNavigation.activeSection === "columns" ? "active" : ""} href="/#columns" onClick={(event) => sectionNavigation.navigate(event, "columns")}><span>05</span>专栏</a></nav>
   </main>;
 
   if (view === "pulse") return <main id="top" className="content-hub pulse-hub zh-console">

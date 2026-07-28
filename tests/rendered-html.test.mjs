@@ -103,6 +103,17 @@ test("renders the English research console and focused content routes", async ()
   assert.match(industryHtml, /Six infrastructure nodes/);
 });
 
+test("keeps bilingual console section navigation stable and readable", async () => {
+  const hook = await readFile(new URL("../app/use-section-navigation.ts", import.meta.url), "utf8");
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(hook, /history\.replaceState/);
+  assert.match(hook, /scrollIntoView\(\{ behavior: "smooth"/);
+  assert.match(hook, /pageBottom >= documentBottom - 4/);
+  assert.match(css, /\.english-console-mobile-dock a \{[^}]*font: 650 11px/);
+  assert.match(css, /\.mobile-dock a \{[^}]*font-size: 11px/);
+  assert.match(css, /\.english-console-sidebar nav strong \{ font-size: 13px/);
+});
+
 test("groups the menu into four themes without changing section links", async () => {
   const source = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");
 
