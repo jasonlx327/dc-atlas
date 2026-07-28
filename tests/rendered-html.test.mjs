@@ -34,6 +34,8 @@ test("server-renders the compact IDC Atlas portal homepage", async () => {
   assert.match(html, /href="\/pulse"><span>02<\/span><strong>最新脉冲/);
   assert.match(html, /href="\/industry"><span>05<\/span><strong>产业中心/);
   assert.match(html, /EARNINGS WATCH · IDC CALENDAR/);
+  assert.match(html, /href="\/#calendar"><span>04<\/span><strong>财报日历/);
+  assert.match(html, /class="hero-signal hero-calendar" id="calendar"/);
   assert.match(html, /IDC ATLAS 专栏精选/);
   assert.match(html, /GW 级长租/);
   assert.match(html, /href="\/#columns"/);
@@ -42,6 +44,7 @@ test("server-renders the compact IDC Atlas portal homepage", async () => {
   assert.match(html, /核心 IDC 标的/);
   assert.match(html, /从算力到需求/);
   assert.match(html, /chain-node-icon/);
+  assert.match(html, /href="\/industry\?tab=chain&amp;stage=compute"/);
   assert.match(html, /并购与市场温度/);
   assert.match(html, /每条信息，都能回到出处/);
   assert.doesNotMatch(html, /产品、形态与发布节奏|国产超节点路线|大模型发布与评测|大型园区进度|液冷部署进度/);
@@ -64,6 +67,10 @@ test("publishes focused Pulse and Industry content hubs", async () => {
   assert.match(industryHtml, /NVIDIA \/ AMD/);
   assert.match(industryHtml, /中国 GPU/);
   assert.match(industryHtml, /园区容量/);
+  const source = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");
+  assert.match(source, /new URLSearchParams\(window\.location\.search\)/);
+  assert.match(source, /setIndustryHubTab\(tab as IndustryHubTab\)/);
+  assert.match(source, /setActiveStage\(stage as ChainKey\)/);
 });
 
 test("renders the English research console and focused content routes", async () => {
@@ -353,8 +360,10 @@ test("gives the earnings calendar and poster route distinct crawl metadata", asy
   const calendarHtml = await calendar.text();
   assert.match(calendarHtml, /rel="canonical" href="https:\/\/idc-index\.com\/calendar"/i);
   assert.match(calendarHtml, /property="og:title" content="美股科技财报日历｜IDC Atlas"/i);
+  assert.match(calendarHtml, /href="\/#calendar" class="calendar-share-back">← 返回首页<\/a>/i);
 
   const poster = await render("/calendar/poster");
   const posterHtml = await poster.text();
   assert.match(posterHtml, /<meta name="robots" content="noindex, nofollow"/i);
+  assert.doesNotMatch(posterHtml, /calendar-share-back/);
 });
