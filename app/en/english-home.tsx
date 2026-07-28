@@ -385,7 +385,7 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
   const market = payload?.benchmarks ?? [];
   const status = Boolean(payload) && !loadError;
   const shellStart = <><EnglishConsoleNav view={view} live={status} updatedAt={payload?.generatedAt} /><header className="english-console-mobile-head"><a href="/en">IDC <b>ATLAS</b></a><span>{view === "home" ? "OVERVIEW" : view === "pulse" ? "PULSE" : "INDUSTRY"}</span><a href="/?lang=zh">中文</a></header></>;
-  const shellEnd = <><footer className="english-console-footer"><span>IDC ATLAS · SOURCE-FIRST RESEARCH</span><p>Data for information and research only. Nothing on this site constitutes investment advice.</p><a href="/methodology">Methodology →</a></footer><EnglishMobileDock view={view} /></>;
+  const shellEnd = <><footer className="english-console-footer"><span>IDC ATLAS · SOURCE-FIRST RESEARCH</span><nav aria-label="English research links"><a href="/en/topics/data-center-intelligence">Data center tracker</a><a href="/en/columns">Columns</a><a href="/methodology">Methodology</a></nav><p>Data for information and research only. Nothing on this site constitutes investment advice.</p></footer><EnglishMobileDock view={view} /></>;
 
   if (view === "pulse") return <main className="english-console english-full-page" lang="en">
     {shellStart}<div className="english-console-workspace">

@@ -322,9 +322,17 @@ test("serves crawl directives and bilingual topic pages", async () => {
   const dataCenterTopic = await render("/topics/data-center-intelligence");
   assert.equal(dataCenterTopic.status, 200);
   const dataCenterHtml = await dataCenterTopic.text();
-  assert.match(dataCenterHtml, /Global Data Center Intelligence/);
+  assert.match(dataCenterHtml, /数据中心市场追踪/);
   assert.match(dataCenterHtml, /"@type":"FAQPage"/);
-  assert.match(dataCenterHtml, /Is this investment advice/);
+  assert.match(dataCenterHtml, /hrefLang="x-default" href="https:\/\/idc-index\.com\/en\/topics\/data-center-intelligence"/i);
+
+  const englishDataCenterTopic = await render("/en/topics/data-center-intelligence");
+  assert.equal(englishDataCenterTopic.status, 200);
+  const englishDataCenterHtml = await englishDataCenterTopic.text();
+  assert.match(englishDataCenterHtml, /Data Center Market Tracker/);
+  assert.match(englishDataCenterHtml, /International Data Corporation/);
+  assert.match(englishDataCenterHtml, /"@type":"FAQPage"/);
+  assert.match(englishDataCenterHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/topics\/data-center-intelligence"/i);
 });
 
 test("publishes the source methodology and includes it in the sitemap", async () => {
@@ -345,6 +353,8 @@ test("publishes the source methodology and includes it in the sitemap", async ()
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns\/hyperscale-idc-leases/);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns</);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns</);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/topics\/data-center-intelligence/);
+  assert.doesNotMatch(sitemapXml, /https:\/\/idc-index\.com\/privacy/);
 });
 
 test("publishes bilingual column indexes with crawl metadata", async () => {

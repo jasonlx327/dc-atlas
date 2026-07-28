@@ -8,11 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: "https://idc-index.com/privacy",
-      changeFrequency: "yearly",
-      priority: 0.2,
-    },
-    {
       url: "https://idc-index.com/pulse",
       changeFrequency: "daily",
       priority: 0.9,
@@ -24,6 +19,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://idc-index.com/topics/data-center-intelligence",
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: "https://idc-index.com/en/topics/data-center-intelligence",
       changeFrequency: "weekly",
       priority: 0.8,
     },

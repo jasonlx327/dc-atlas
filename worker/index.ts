@@ -21,7 +21,8 @@ Use original disclosure links attached to individual updates to verify capacity,
 - [English investor console](https://idc-index.com/en): US- and global-first overview of project signals, listed-company disclosures, earnings CAPEX watch and market indices.
 - [English infrastructure pulse](https://idc-index.com/en/pulse): Verified global projects, leases, US-listed company updates and daily AI-demand signals.
 - [English infrastructure industry map](https://idc-index.com/en/industry): Compute, networking, power, cooling, campus capacity and selective China supply-chain coverage.
-- [Global Data Center Intelligence](https://idc-index.com/topics/data-center-intelligence): Bilingual guide to global data-center projects and infrastructure signals.
+- [数据中心市场追踪与基础设施报告](https://idc-index.com/topics/data-center-intelligence): Chinese guide to data-center projects, capacity, leases, power, cooling and public-company disclosures.
+- [Data Center Market Tracker and Infrastructure Reports](https://idc-index.com/en/topics/data-center-intelligence): English topic guide for data-center projects, capacity, leases, power, cooling, CAPEX and public-company disclosures.
 - [China AI Silicon](https://idc-index.com/topics/china-ai-silicon): Bilingual guide to China GPU, DCU, AI accelerators, supernodes and developer ecosystem updates.
 - [Methodology and sources](https://idc-index.com/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
 - [US tech earnings calendar](https://idc-index.com/calendar): Upcoming cloud, semiconductor and data-center-infrastructure earnings events, CAPEX watch items and source-linked post-results conclusions.
