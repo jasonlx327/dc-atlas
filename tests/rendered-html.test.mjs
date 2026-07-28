@@ -58,6 +58,9 @@ test("publishes focused Pulse and Industry content hubs", async () => {
   assert.equal(pulse.status, 200);
   const pulseHtml = await pulse.text();
   assert.match(pulseHtml, /扩建、签约、投运，/);
+  assert.match(pulseHtml, /hrefLang="en" href="https:\/\/idc-index\.com\/en\/pulse"/);
+  assert.match(pulseHtml, /"@type":"CollectionPage"/);
+  assert.match(pulseHtml, /"@type":"BreadcrumbList"/);
   assert.match(pulseHtml, /项目脉冲/);
   assert.match(pulseHtml, /上市公司/);
   assert.match(pulseHtml, /AI 日报/);
@@ -66,6 +69,8 @@ test("publishes focused Pulse and Industry content hubs", async () => {
   assert.equal(industry.status, 200);
   const industryHtml = await industry.text();
   assert.match(industryHtml, /从芯片到电网，/);
+  assert.match(industryHtml, /hrefLang="en" href="https:\/\/idc-index\.com\/en\/industry"/);
+  assert.match(industryHtml, /"@type":"CollectionPage"/);
   assert.match(industryHtml, /NVIDIA \/ AMD/);
   assert.match(industryHtml, /中国 GPU/);
   assert.match(industryHtml, /园区容量/);
@@ -95,12 +100,16 @@ test("renders the English research console and focused content routes", async ()
   assert.equal(pulse.status, 200);
   const pulseHtml = await pulse.text();
   assert.match(pulseHtml, /Build\. Lease\./);
+  assert.match(pulseHtml, /hrefLang="zh-CN" href="https:\/\/idc-index\.com\/pulse"/);
+  assert.match(pulseHtml, /"@type":"CollectionPage"/);
   assert.match(pulseHtml, /Global project pulse/);
 
   const industry = await render("/en/industry");
   assert.equal(industry.status, 200);
   const industryHtml = await industry.text();
   assert.match(industryHtml, /From silicon to grid,/);
+  assert.match(industryHtml, /hrefLang="zh-CN" href="https:\/\/idc-index\.com\/industry"/);
+  assert.match(industryHtml, /"@type":"CollectionPage"/);
   assert.match(industryHtml, /Industry/);
   assert.match(industryHtml, /China watch/);
   assert.match(industryHtml, /Six infrastructure nodes/);
@@ -389,6 +398,23 @@ test("publishes bilingual column indexes with crawl metadata", async () => {
   assert.match(englishHtml, /Columns for the/);
   assert.match(englishHtml, /Gigawatt Leases Are Reshaping the Data Center Market/);
   assert.match(englishHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/columns"/i);
+});
+
+test("publishes bilingual RSS feeds for original research", async () => {
+  const chinese = await render("/feed.xml");
+  assert.equal(chinese.status, 200);
+  assert.match(chinese.headers.get("content-type") ?? "", /^application\/rss\+xml\b/i);
+  const chineseXml = await chinese.text();
+  assert.match(chineseXml, /<title>IDC Atlas 专栏<\/title>/);
+  assert.match(chineseXml, /四大云厂商的 AI CAPEX/);
+  assert.match(chineseXml, /https:\/\/idc-index\.com\/columns\/hyperscale-idc-leases/);
+
+  const english = await render("/en/feed.xml");
+  assert.equal(english.status, 200);
+  assert.match(english.headers.get("content-type") ?? "", /^application\/rss\+xml\b/i);
+  const englishXml = await english.text();
+  assert.match(englishXml, /<title>IDC Atlas Columns<\/title>/);
+  assert.match(englishXml, /Where Hyperscaler AI CapEx Actually Goes/);
 });
 
 test("gives the earnings calendar and poster route distinct crawl metadata", async () => {

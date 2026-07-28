@@ -27,6 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: {
       canonical: `${siteUrl}/`,
       languages: { "zh-CN": `${siteUrl}/`, en: `${siteUrl}/en`, "x-default": `${siteUrl}/en` },
+      types: { "application/rss+xml": `${siteUrl}/feed.xml` },
     },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },

@@ -3,7 +3,11 @@ import Home, { type AtlasPayload } from "./home-client";
 import { loadInitialAtlasPayload } from "./initial-atlas";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/", languages: { "zh-CN": "/", en: "/en", "x-default": "/en" } },
+  alternates: {
+    canonical: "/",
+    languages: { "zh-CN": "/", en: "/en", "x-default": "/en" },
+    types: { "application/rss+xml": "/feed.xml" },
+  },
 };
 
 export default async function Page() {

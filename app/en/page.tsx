@@ -7,7 +7,11 @@ const canonical = "https://idc-index.com/en";
 export const metadata: Metadata = {
   title: "Data Center Infrastructure Intelligence | IDC Atlas",
   description: "Track hyperscaler CAPEX, data-center leases, power, liquid cooling, AI hardware and earnings through daily source-linked intelligence.",
-  alternates: { canonical, languages: { "zh-CN": "https://idc-index.com/", en: canonical, "x-default": canonical } },
+  alternates: {
+    canonical,
+    languages: { "zh-CN": "https://idc-index.com/", en: canonical, "x-default": canonical },
+    types: { "application/rss+xml": "https://idc-index.com/en/feed.xml" },
+  },
   other: { "content-language": "en-US" },
   openGraph: {
     title: "Data Center Infrastructure Intelligence | IDC Atlas",

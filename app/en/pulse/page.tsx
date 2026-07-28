@@ -7,7 +7,7 @@ const canonical = "https://idc-index.com/en/pulse";
 export const metadata: Metadata = {
   title: "Data Center Project & Lease Tracker | IDC Atlas",
   description: "Daily source-linked tracker for global data-center projects, hyperscale leases and U.S. listed infrastructure-company disclosures.",
-  alternates: { canonical, languages: { "zh-CN": "https://idc-index.com/pulse", en: canonical } },
+  alternates: { canonical, languages: { "zh-CN": "https://idc-index.com/pulse", en: canonical, "x-default": canonical } },
   openGraph: {
     title: "Data Center Project & Lease Tracker | IDC Atlas",
     description: "Daily source-linked tracker for global data-center projects, hyperscale leases and U.S. listed infrastructure-company disclosures.",
@@ -20,5 +20,27 @@ export const metadata: Metadata = {
 
 export default async function EnglishPulsePage() {
   const initialPayload = await loadInitialAtlasPayload() as Partial<AtlasPayload> | null;
-  return <EnglishHome initialPayload={initialPayload} view="pulse" />;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        name: "Data Center Project and Lease Tracker",
+        url: canonical,
+        inLanguage: "en-US",
+        description: metadata.description,
+        dateModified: initialPayload?.generatedAt,
+        isPartOf: { "@type": "WebSite", name: "IDC Atlas", url: "https://idc-index.com/en" },
+        about: ["Data center projects", "Hyperscale leases", "U.S. listed infrastructure companies", "AI infrastructure"],
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "IDC Atlas", item: "https://idc-index.com/en" },
+          { "@type": "ListItem", position: 2, name: "Infrastructure Pulse", item: canonical },
+        ],
+      },
+    ],
+  };
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /><EnglishHome initialPayload={initialPayload} view="pulse" /></>;
 }
