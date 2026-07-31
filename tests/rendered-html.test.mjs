@@ -404,8 +404,15 @@ test("keeps the ChangXin Technology listing in China AI silicon coverage", async
 
 test("keeps live-data validation in the deployment path", async () => {
   const packageJson = JSON.parse(await readFile(new URL("../package.json", import.meta.url), "utf8"));
+  const workerSource = await readFile(new URL("../worker/index.ts", import.meta.url), "utf8");
+  const liveCheck = await readFile(new URL("../scripts/check-live-data.mjs", import.meta.url), "utf8");
   assert.match(packageJson.scripts.deploy, /check:live/);
-  assert.match(await readFile(new URL("../scripts/check-live-data.mjs", import.meta.url), "utf8"), /newsStatus !== \"ok\"/);
+  assert.match(liveCheck, /newsStatus !== "ok"/);
+  for (const section of ["idcPulse", "listedCompanyNews", "mnaDeals", "capacityRadar", "coolingProgress"]) assert.match(liveCheck, new RegExp(section));
+  assert.match(liveCheck, /freshness\.status === "stale"/);
+  assert.match(workerSource, /CONTENT_REVIEWED_AT = "2026-07-31"/);
+  assert.match(workerSource, /sectionFreshnessState/);
+  for (const marker of ["galaxy-mcgregor-campus-2026", "energy-vault-snyder-ai-groundbreaking", "hut8-beacon-point-second-352mw-lease", "eqt-copia-power"]) assert.match(workerSource, new RegExp(marker));
 });
 
 test("redirects the Sites fallback host to the canonical production domain", async () => {

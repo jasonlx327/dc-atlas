@@ -7,6 +7,7 @@ const AIHOT_USER_AGENT = "aihot-skill/0.3.6 (+https://aihot.virxact.com/aihot-sk
 const CWW_ENDPOINT = "https://cwwindex.today/data/latest.json";
 const OPENROUTER_MODELS_ENDPOINT = "https://openrouter.ai/api/v1/models?sort=top-weekly";
 const ARENA_CODE_ENDPOINT = "https://arena.ai/leaderboard/code/webdev";
+const CONTENT_REVIEWED_AT = "2026-07-31";
 const LLMS_TXT = `# IDC Atlas
 
 > IDC Atlas is a bilingual, source-first intelligence site for global data-center construction, AI infrastructure, power, cooling, networking and China AI silicon. Content is for public-information research and industry observation only, not investment advice.
@@ -113,6 +114,13 @@ type SourceRecord = {
   sourceName: string;
   sourceUrl: string;
   note: string;
+};
+
+type SectionFreshness = {
+  count: number;
+  latestContentAt: string | null;
+  latestVerifiedAt: string;
+  status: "current" | "verified-no-change" | "stale";
 };
 
 type NvidiaProduct = {
@@ -543,6 +551,39 @@ function supernodeProducts(): SupernodeProduct[] {
 function capacityRadar(): SourceRecord[] {
   return [
     {
+      id: "galaxy-mcgregor-campus",
+      title: "Galaxy 收购德州 McGregor 500 英亩数据中心园区",
+      subject: "Galaxy Digital · Nasdaq: GLXY",
+      metric: "首期 74MW · 远期数百 MW",
+      status: "土地收购完成 · 开发推进",
+      publishedAt: "2026-07-28",
+      sourceName: "Galaxy Digital",
+      sourceUrl: "https://www.prnewswire.com/news-releases/galaxy-expands-data-center-footprint-with-acquisition-of-500-acre-campus-in-mcgregor-texas-302836014.html",
+      note: "公司预计 2028 年获得首批电力，首期规划 74MW，并计划在 2030 年前扩展为数百 MW 园区。",
+    },
+    {
+      id: "energy-vault-snyder-ai",
+      title: "Energy Vault 启动德州 Snyder AI 园区建设",
+      subject: "Energy Vault · NYSE: NRGV",
+      metric: "首期 8MW · 可扩至 25MW / 远期 500MW",
+      status: "已开工",
+      publishedAt: "2026-07-27",
+      sourceName: "Energy Vault / Business Wire",
+      sourceUrl: "https://www.businesswire.com/news/home/20260727272502/en/Energy-Vault-Breaks-Ground-on-Powered-AI-Infrastructure-Campus-in-Snyder-Texas-to-Deploy-Crusoe-Spark-Modular-Data-Centers",
+      note: "首期为 Crusoe Cloud 部署 10 套 Spark 模块化数据中心，目标 2027 年一季度商业运行。",
+    },
+    {
+      id: "hut8-beacon-point-704mw",
+      title: "Hut 8 Beacon Point 园区签署第二份 352MW IT 租约",
+      subject: "Hut 8 · Nasdaq: HUT",
+      metric: "704MW IT 已签约 · 1GW 园区",
+      status: "园区商业化",
+      publishedAt: "2026-07-20",
+      sourceName: "Hut 8",
+      sourceUrl: "https://www.hut8.com/news-insights/press-releases/hut-8-fully-commercializes-1-gw-beacon-point-ai-data-center-campus-with-second-352-mw-it-lease",
+      note: "第二份 15 年、352MW IT 租约使园区签约容量增至 704MW IT，基础租期合同价值合计约 196 亿美元。",
+    },
+    {
       id: "digital-realty-q2-2026-capacity",
       title: "Digital Realty Q2 披露新增园区地块与北弗吉尼亚 288MW 资产权益",
       subject: "Digital Realty · NYSE: DLR",
@@ -871,6 +912,38 @@ function chinaChipPulse(liveNews: NewsItem[], days = 30): NewsItem[] {
 function mnaDeals(): MnaDeal[] {
   return [
     {
+      id: "galaxy-mcgregor-campus-acquisition",
+      announcedAt: "2026-07-28",
+      buyer: "Galaxy Digital",
+      target: "德州 McGregor 约 500 英亩数据中心园区土地",
+      value: "约 $750 万土地收购收入",
+      capacity: "首期 74MW · 远期数百 MW",
+      region: "美国德州",
+      status: "已完成土地收购 · 开发推进",
+      statusAsOf: CONTENT_REVIEWED_AT,
+      valueBasis: "项目所在地披露的土地出售收入",
+      capacityBasis: "Galaxy 公告的首期与远期规划",
+      rationale: "Galaxy 在 Helios 之外增加第二个德州大型园区，以已取得的土地和电力开发路径扩展 AI 数据中心容量。",
+      sourceName: "Galaxy Digital",
+      sourceUrl: "https://www.prnewswire.com/news-releases/galaxy-expands-data-center-footprint-with-acquisition-of-500-acre-campus-in-mcgregor-texas-302836014.html",
+    },
+    {
+      id: "eqt-copia-power",
+      announcedAt: "2026-07-10",
+      buyer: "EQT",
+      target: "Copia Power",
+      value: "未披露",
+      capacity: "9GW+ 并网数据中心开发管线",
+      region: "美国",
+      status: "已签署 · 预计 2026 年底交割",
+      statusAsOf: CONTENT_REVIEWED_AT,
+      valueBasis: "交易金额未披露",
+      capacityBasis: "Copia 公告的数据中心开发管线",
+      rationale: "EQT 通过收购把电源项目与已并网的数据中心开发管线纳入同一平台，直接增强 AI 基础设施的电力与选址能力。",
+      sourceName: "EQT / Copia Power",
+      sourceUrl: "https://www.prnewswire.com/news-releases/eqt-to-acquire-copia-power-a-leading-integrated-power-and-ai-infrastructure-platform-302822622.html",
+    },
+    {
       id: "digital-realty-blackstone-nova",
       announcedAt: "2026-06-29",
       buyer: "Digital Realty",
@@ -1020,6 +1093,60 @@ function positiveIdcNews(liveNews: NewsItem[], records: SourceRecord[]): NewsIte
 
 function constructionPulse(): NewsItem[] {
   const items: NewsItem[] = [
+    {
+      id: "galaxy-mcgregor-campus-2026",
+      title: "Galaxy 收购德州 McGregor 500 英亩园区，首期规划 74MW",
+      summary: "Galaxy 在德州 McGregor 获得约 500 英亩土地，预计 2028 年取得首批电力；首期规划 74MW，远期目标为数百 MW。",
+      publishedAt: "2026-07-28T09:00:00-05:00",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://www.prnewswire.com/news-releases/galaxy-expands-data-center-footprint-with-acquisition-of-500-acre-campus-in-mcgregor-texas-302836014.html",
+      sourceUrl: "https://www.prnewswire.com/news-releases/galaxy-expands-data-center-footprint-with-acquisition-of-500-acre-campus-in-mcgregor-texas-302836014.html",
+      sourceName: "Galaxy Digital",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "土地收购完成 · 开发推进",
+      scale: "首期 74MW · 约 500 英亩",
+      listedTicker: "Galaxy Digital · GLXY",
+      whyItMatters: "项目把土地控制、电力取得时间和首期容量放到同一开发路径中，后续关键节点是并网、客户签约与建设开工。",
+    },
+    {
+      id: "energy-vault-snyder-ai-groundbreaking",
+      title: "Energy Vault 启动 Snyder AI 园区建设，首期部署 8MW",
+      summary: "项目首期为 Crusoe Cloud 建设 8MW powered shell，可扩至 25MW；园区远期规划最高 500MW，首期目标 2027 年一季度商运。",
+      publishedAt: "2026-07-27T09:00:00-05:00",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://www.businesswire.com/news/home/20260727272502/en/Energy-Vault-Breaks-Ground-on-Powered-AI-Infrastructure-Campus-in-Snyder-Texas-to-Deploy-Crusoe-Spark-Modular-Data-Centers",
+      sourceUrl: "https://www.businesswire.com/news/home/20260727272502/en/Energy-Vault-Breaks-Ground-on-Powered-AI-Infrastructure-Campus-in-Snyder-Texas-to-Deploy-Crusoe-Spark-Modular-Data-Centers",
+      sourceName: "Energy Vault / Business Wire",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "首期工程开工",
+      scale: "8MW → 25MW · 远期 500MW",
+      listedTicker: "Energy Vault · NRGV",
+      whyItMatters: "模块化机房把已供电土地转为可服务算力的周期压缩至更短窗口，后续关注 2027 年一季度交付与扩建兑现。",
+    },
+    {
+      id: "hut8-beacon-point-second-352mw-lease",
+      title: "Hut 8 Beacon Point 再签 352MW IT 长租，园区已签约 704MW",
+      summary: "第二份 15 年、352MW IT 租约使 Beacon Point 的签约容量增至 704MW；园区电力规模为 1,330MW，基础租期合同价值合计约 196 亿美元。",
+      publishedAt: "2026-07-20T08:00:00-04:00",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://www.hut8.com/news-insights/press-releases/hut-8-fully-commercializes-1-gw-beacon-point-ai-data-center-campus-with-second-352-mw-it-lease",
+      sourceUrl: "https://www.hut8.com/news-insights/press-releases/hut-8-fully-commercializes-1-gw-beacon-point-ai-data-center-campus-with-second-352-mw-it-lease",
+      sourceName: "Hut 8",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "第二份 15 年租约签署",
+      scale: "704MW IT 已签约 · 1,330MW 电力",
+      listedTicker: "Hut 8 · HUT",
+      whyItMatters: "大额长期租约提高园区建设与融资的可见度，后续关键是按计划交付、客户集中度和资本结构。",
+    },
     {
       id: "dataport-jingan-quantum-hybrid-platform-waic",
       title: "数据港参与静安量超智融合算力平台项目签约",
@@ -1400,7 +1527,7 @@ function constructionPulse(): NewsItem[] {
     .filter((item) => item.publishedAt && now - new Date(item.publishedAt).getTime() <= 45 * day)
     .map((item) => ({
       ...item,
-      verifiedAt: item.verifiedAt ?? "2026-07-18",
+      verifiedAt: item.verifiedAt ?? CONTENT_REVIEWED_AT,
       weeklyHighlight: Boolean(item.publishedAt && now - new Date(item.publishedAt).getTime() <= 7 * day),
     }))
     .sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime());
@@ -1408,6 +1535,60 @@ function constructionPulse(): NewsItem[] {
 
 function listedCompanyPulse(): NewsItem[] {
   const items: NewsItem[] = [
+    {
+      id: "galaxy-mcgregor-campus-company-update",
+      title: "Galaxy 新增德州 McGregor 数据中心园区，首期规划 74MW",
+      summary: "公司收购约 500 英亩土地，预计 2028 年取得首批电力；首期规划 74MW，并准备在 2030 年前扩展至数百 MW。",
+      publishedAt: "2026-07-28T09:00:00-05:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://www.prnewswire.com/news-releases/galaxy-expands-data-center-footprint-with-acquisition-of-500-acre-campus-in-mcgregor-texas-302836014.html",
+      sourceUrl: "https://www.prnewswire.com/news-releases/galaxy-expands-data-center-footprint-with-acquisition-of-500-acre-campus-in-mcgregor-texas-302836014.html",
+      sourceName: "Galaxy Digital",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "第二个德州园区",
+      scale: "首期 74MW · 约 500 英亩",
+      listedTicker: "Galaxy Digital · GLXY",
+      whyItMatters: "新增园区扩大 Galaxy 在 Helios 之外的 AI 数据中心资产管线，但价值兑现仍取决于电力、客户和建设进度。",
+    },
+    {
+      id: "energy-vault-snyder-ai-company-update",
+      title: "Energy Vault 开建 Snyder AI 园区，首期 8MW 面向 Crusoe Cloud",
+      summary: "公司开始建设由 10 套 Crusoe Spark 模块化数据中心组成的首期工程，目标 2027 年一季度商业运行。",
+      publishedAt: "2026-07-27T09:00:00-05:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://www.businesswire.com/news/home/20260727272502/en/Energy-Vault-Breaks-Ground-on-Powered-AI-Infrastructure-Campus-in-Snyder-Texas-to-Deploy-Crusoe-Spark-Modular-Data-Centers",
+      sourceUrl: "https://www.businesswire.com/news/home/20260727272502/en/Energy-Vault-Breaks-Ground-on-Powered-AI-Infrastructure-Campus-in-Snyder-Texas-to-Deploy-Crusoe-Spark-Modular-Data-Centers",
+      sourceName: "Energy Vault / Business Wire",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "AI 基础设施开工",
+      scale: "首期 8MW · 可扩至 25MW",
+      listedTicker: "Energy Vault · NRGV",
+      whyItMatters: "项目检验 Energy Vault 从储能设备商向自持 AI 电力与机房基础设施平台延伸的执行能力。",
+    },
+    {
+      id: "hut8-beacon-point-company-update",
+      title: "Hut 8 将 Beacon Point 园区签约 AI 容量提升至 704MW IT",
+      summary: "公司签署第二份 352MW IT、15 年租约，园区基础租期合同价值合计约 196 亿美元，总电力规模 1,330MW。",
+      publishedAt: "2026-07-20T08:00:00-04:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://www.hut8.com/news-insights/press-releases/hut-8-fully-commercializes-1-gw-beacon-point-ai-data-center-campus-with-second-352-mw-it-lease",
+      sourceUrl: "https://www.hut8.com/news-insights/press-releases/hut-8-fully-commercializes-1-gw-beacon-point-ai-data-center-campus-with-second-352-mw-it-lease",
+      sourceName: "Hut 8",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "园区全面商业化",
+      scale: "704MW IT 已签约 · $196 亿",
+      listedTicker: "Hut 8 · HUT",
+      whyItMatters: "长期租约使大规模园区的未来收入和建设需求更可见，后续仍需核验资本投入、融资与分期交付。",
+    },
     {
       id: "digital-realty-q2-2026-leasing-capacity",
       title: "Digital Realty Q2 新签订单与积压租金创高，并披露 288MW 北弗州资产收购",
@@ -1717,7 +1898,7 @@ function listedCompanyPulse(): NewsItem[] {
   ];
 
   return items
-    .map((item) => ({ ...item, verifiedAt: "2026-07-21" }))
+    .map((item) => ({ ...item, verifiedAt: CONTENT_REVIEWED_AT }))
     .sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime());
 }
 
@@ -1881,6 +2062,30 @@ type AtlasApiOptions = {
   snapshotMeta?: DailySnapshotMeta;
 };
 
+function sectionFreshness<T>(items: T[], dateOf: (item: T) => string | null, contentWindowDays: number): SectionFreshness {
+  const timestamps = items
+    .map(dateOf)
+    .filter((value): value is string => Boolean(value))
+    .map((value) => ({ value, time: new Date(value).getTime() }))
+    .filter(({ time }) => Number.isFinite(time))
+    .sort((a, b) => b.time - a.time);
+  const latest = timestamps[0] ?? null;
+  const day = 24 * 60 * 60 * 1_000;
+  const now = Date.now();
+  const reviewedAt = new Date(`${CONTENT_REVIEWED_AT}T23:59:59+08:00`).getTime();
+  const status: SectionFreshness["status"] = latest && now - latest.time <= contentWindowDays * day
+    ? "current"
+    : now - reviewedAt <= 3 * day
+      ? "verified-no-change"
+      : "stale";
+  return {
+    count: items.length,
+    latestContentAt: latest?.value ?? null,
+    latestVerifiedAt: CONTENT_REVIEWED_AT,
+    status,
+  };
+}
+
 function staticAtlasContent(): Record<string, unknown> {
   return {
     calendar: calendarEvents(),
@@ -1966,6 +2171,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const positiveNews = positiveIdcNews(news, records);
   const idcPulse = constructionPulse();
   const listedCompanyNews = listedCompanyPulse();
+  const deals = mnaDeals();
   const upcomingEvents = upcomingCalendar();
   const fallback = chainFallbackNews(records, coolingRecords);
   const chainWindowDays = 30;
@@ -1985,8 +2191,17 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
 
   const latestSnapshot = await env.IDC_DAILY_SNAPSHOTS.get<DailySnapshotMeta>("latest-meta", "json");
   const coreSourcesHealthy = newsResult.status === "fulfilled" && benchmarkResult.status === "fulfilled";
+  const sectionFreshnessState = {
+    idcPulse: sectionFreshness(idcPulse, (item) => item.publishedAt, 14),
+    listedCompanyNews: sectionFreshness(listedCompanyNews, (item) => item.publishedAt, 14),
+    mnaDeals: sectionFreshness(deals, (item) => item.announcedAt, 45),
+    capacityRadar: sectionFreshness(records, (item) => item.publishedAt, 30),
+    coolingProgress: sectionFreshness(coolingRecords, (item) => item.publishedAt, 45),
+  };
   const response = Response.json({
     generatedAt: new Date().toISOString(),
+    contentReviewedAt: CONTENT_REVIEWED_AT,
+    sectionFreshness: sectionFreshnessState,
     windowLabel: "近45天",
     newsStatus: newsResult.status === "fulfilled" ? "ok" : "unavailable",
     benchmarkStatus: benchmarkResult.status === "fulfilled" ? "ok" : "unavailable",
@@ -2035,7 +2250,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
     capacityRadar: records,
     coolingProgress: coolingRecords,
     nvidiaProducts: nvidiaProducts(),
-    mnaDeals: mnaDeals(),
+    mnaDeals: deals,
   }, {
     headers: {
       "Cache-Control": coreSourcesHealthy ? "public, max-age=60, s-maxage=300, stale-while-revalidate=300" : "no-store",

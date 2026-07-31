@@ -8,7 +8,18 @@ for (let attempt = 0; attempt < 4; attempt += 1) {
     const payload = await response.json();
     if (payload.newsStatus !== "ok" || payload.benchmarkStatus !== "ok") throw new Error(`core sources: news=${payload.newsStatus} benchmark=${payload.benchmarkStatus}`);
     if (!payload.generatedAt || !Array.isArray(payload.news) || !Array.isArray(payload.benchmarks)) throw new Error("invalid payload shape");
-    console.log(`Live data check passed: ${payload.generatedAt} · news=${payload.news.length} · benchmarks=${payload.benchmarks.length}`);
+    if (!payload.contentReviewedAt || !payload.sectionFreshness) throw new Error("content freshness metadata missing");
+    const requiredSections = ["idcPulse", "listedCompanyNews", "mnaDeals", "capacityRadar", "coolingProgress"];
+    for (const section of requiredSections) {
+      if (!Array.isArray(payload[section]) || payload[section].length === 0) throw new Error(`${section} is empty`);
+      const freshness = payload.sectionFreshness[section];
+      if (!freshness || freshness.count !== payload[section].length || freshness.status === "stale") {
+        throw new Error(`${section} freshness invalid: ${freshness?.status ?? "missing"}`);
+      }
+    }
+    if (payload.benchmarks.length === 0) throw new Error("benchmarks is empty");
+    const sectionSummary = requiredSections.map((section) => `${section}=${payload[section].length}/${payload.sectionFreshness[section].status}`).join(" · ");
+    console.log(`Live data check passed: ${payload.generatedAt} · reviewed=${payload.contentReviewedAt} · ${sectionSummary} · news=${payload.news.length} · benchmarks=${payload.benchmarks.length}`);
     process.exit(0);
   } catch (error) {
     lastError = error;
