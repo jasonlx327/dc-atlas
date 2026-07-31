@@ -407,6 +407,7 @@ test("keeps live-data validation in the deployment path", async () => {
   const workerSource = await readFile(new URL("../worker/index.ts", import.meta.url), "utf8");
   const liveCheck = await readFile(new URL("../scripts/check-live-data.mjs", import.meta.url), "utf8");
   assert.match(packageJson.scripts.deploy, /check:live/);
+  assert.match(packageJson.scripts.build, /prepare-sites-build/);
   assert.match(liveCheck, /newsStatus !== "ok"/);
   for (const section of ["idcPulse", "listedCompanyNews", "mnaDeals", "capacityRadar", "coolingProgress"]) assert.match(liveCheck, new RegExp(section));
   assert.match(liveCheck, /freshness\.status === "stale"/);
