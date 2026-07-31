@@ -56,6 +56,16 @@ test("server-renders the compact IDC Atlas portal homepage", async () => {
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
+test("keeps mobile pages readable without forced horizontal layouts", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /\/\* Mobile readability and overflow guardrails \*\//);
+  assert.match(css, /\.columns-index-hero h1:lang\(zh-CN\)[\s\S]*white-space: normal; word-break: normal;/);
+  assert.match(css, /\.calendar-share-table-head \{ display: none; \}/);
+  assert.match(css, /\.calendar-share-table article \{[\s\S]*min-width: 0;[\s\S]*grid-template-columns: 66px minmax\(0, 1fr\);/);
+  assert.match(css, /\.mobile-dock a \{[\s\S]*font-size: 12px;/);
+  assert.match(css, /\.compact-footer, \.english-console-footer, footer \{ padding-bottom: calc\(98px \+ env\(safe-area-inset-bottom\)\); \}/);
+});
+
 test("publishes focused Pulse and Industry content hubs", async () => {
   const pulse = await render("/pulse");
   assert.equal(pulse.status, 200);
