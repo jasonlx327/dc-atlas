@@ -1225,6 +1225,11 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
   .console-column-archive > a span { font-size: 10px; }
   .console-column-archive > a strong { font-size: 15px; }
 
+  .industry-hub .chain-stage-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .industry-hub .chain-detail { display: grid; grid-template-columns: 1fr; padding: 18px; }
+  .industry-hub .chain-detail-head { padding: 0 0 16px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .industry-hub .chain-news { grid-template-columns: 1fr; }
+
   .calendar-share-table { overflow: visible; }
   .calendar-share-table-head { display: none; }
   .calendar-share-table article {

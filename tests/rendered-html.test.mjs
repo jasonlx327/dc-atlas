@@ -62,8 +62,18 @@ test("keeps mobile pages readable without forced horizontal layouts", async () =
   assert.match(css, /\.columns-index-hero h1:lang\(zh-CN\)[\s\S]*white-space: normal; word-break: normal;/);
   assert.match(css, /\.calendar-share-table-head \{ display: none; \}/);
   assert.match(css, /\.calendar-share-table article \{[\s\S]*min-width: 0;[\s\S]*grid-template-columns: 66px minmax\(0, 1fr\);/);
+  assert.match(css, /\.industry-hub \.chain-detail \{ display: grid; grid-template-columns: 1fr;/);
+  assert.match(css, /\.industry-hub \.chain-news \{ grid-template-columns: 1fr; \}/);
   assert.match(css, /\.mobile-dock a \{[\s\S]*font-size: 12px;/);
   assert.match(css, /\.compact-footer, \.english-console-footer, footer \{ padding-bottom: calc\(98px \+ env\(safe-area-inset-bottom\)\); \}/);
+});
+
+test("lets mobile supply-chain nodes expand and collapse", async () => {
+  const source = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");
+  assert.match(source, /const \[mobileOpenStage, setMobileOpenStage\] = useState<ChainKey \| null>\(null\)/);
+  assert.match(source, /const expanded = mobileOpenStage === stage\.key/);
+  assert.match(source, /setMobileOpenStage\(\(current\) => current === stage\.key \? null : stage\.key\)/);
+  assert.match(source, /aria-expanded=\{expanded\}/);
 });
 
 test("publishes focused Pulse and Industry content hubs", async () => {
