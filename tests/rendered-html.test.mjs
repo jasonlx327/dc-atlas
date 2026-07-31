@@ -33,15 +33,15 @@ test("server-renders the compact IDC Atlas portal homepage", async () => {
   assert.match(html, /googletagmanager\.com\/gtag\/js\?id=G-XRKL96W42Q/);
   assert.match(html, /gtag\('config', 'G-XRKL96W42Q'\)/);
   assert.match(html, /class="zh-console-sidebar"/);
-  assert.match(html, /href="\/pulse"><span>02<\/span><strong>最新脉冲/);
+  assert.match(html, /href="\/pulse"><span>04<\/span><strong>最新脉冲/);
   assert.match(html, /href="\/industry"><span>05<\/span><strong>产业中心/);
   assert.match(html, /EARNINGS WATCH · IDC CALENDAR/);
-  assert.match(html, /href="\/#calendar"><span>04<\/span><strong>财报日历/);
+  assert.match(html, /href="\/#calendar"><span>02<\/span><strong>财报日历/);
   assert.match(html, /class="hero-signal hero-calendar" id="calendar"/);
   assert.match(html, /IDC ATLAS 深度研究/);
-  assert.match(html, /四大云厂商的 AI CAPEX/);
+  assert.match(html, /Claude 与 GPT 都在降价，AI 基建真正要看什么/);
   assert.match(html, /href="\/#columns"/);
-  assert.match(html, /href="\/columns\/ai-capex-power"/);
+  assert.match(html, /href="\/columns\/frontier-model-economics"/);
   assert.match(html, /今天值得看的脉冲/);
   assert.match(html, /核心 IDC 标的/);
   assert.match(html, /从算力到需求/);
@@ -126,6 +126,24 @@ test("keeps bilingual console section navigation stable and readable", async () 
   assert.match(css, /\.english-console-sidebar nav strong \{ font-size: 13px/);
 });
 
+test("uses resilient typography rules across columns, console pages and calendar tables", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(css, /\.column-article-body h2 \{ max-width: none/);
+  assert.match(css, /\.column-article-body h2:lang\(zh-CN\) \{ word-break: keep-all; line-break: strict/);
+  assert.match(css, /\.console-hero h1 \{ max-width: 1120px;[^}]*96px/);
+  assert.match(css, /\.console-story-row p \{[^}]*font-size: 13\.5px/);
+  assert.match(css, /\.calendar-share-table article > p,[\s\S]*font-size: 12px/);
+  assert.match(css, /\.column-fact-table table \{[^}]*table-layout: auto/);
+  assert.match(css, /\.column-article-thesis span, \.column-section-label \{[^}]*font: 700 12px/);
+  assert.match(css, /\.column-article-hero > div \{[^}]*font: 650 11px/);
+  assert.match(css, /\.column-article-body \{ width: min\(920px[^}]*padding: 54px 0 86px/);
+  assert.match(css, /\.column-article-body > section \{ padding: 46px 0/);
+  assert.match(css, /\.column-article-body > section, \.column-article-body > section:first-of-type \{ padding: 38px 0/);
+  assert.doesNotMatch(css, /\.column-fact-table th:first-child/);
+  assert.doesNotMatch(css, /\.column-article-body h2 \{ max-width: 22ch/);
+});
+
 test("groups the menu into four themes without changing section links", async () => {
   const source = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");
 
@@ -163,12 +181,78 @@ test("keeps the English site fully translated across the live coverage stack", a
 
   assert.doesNotMatch(source, /editorial English translation is pending/);
   assert.doesNotMatch(source, /lang="zh-CN"/);
-  assert.match(source, /Where hyperscaler AI CapEx actually goes/);
+  assert.match(source, /Claude and GPT are getting cheaper\. What changes for AI infrastructure/);
   assert.match(source, /href="\/en#columns"/);
   assert.match(source, /className="english-chain-icon"/);
   assert.match(source, /<ChainIcon type=/);
-  assert.match(source, /href="\/en\/columns\/ai-capex-power"/);
+  assert.match(source, /href="\/en\/columns\/frontier-model-economics"/);
   assert.match(source, /view === "pulse"/);
+});
+
+test("publishes the bilingual CXMT impact column with ranked US chip exposure", async () => {
+  const chinese = await render("/columns/cxmt-us-chip-impact");
+  assert.equal(chinese.status, 200);
+  const chineseHtml = await chinese.text();
+  assert.match(chineseHtml, /长鑫上市，谁会先感到压力/);
+  assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns\/cxmt-us-chip-impact"/i);
+  assert.match(chineseHtml, /Micron 承受的是价格与中国份额的双重压力/);
+  assert.match(chineseHtml, /AMAT \/ LRCX \/ KLAC/);
+  assert.match(chineseHtml, /当前判断/);
+  assert.match(chineseHtml, /产能、bit 出货、收入份额和利润份额均为不同口径/);
+  assert.doesNotMatch(chineseHtml, /不是.+而是|不是什么/);
+
+  const english = await render("/en/columns/cxmt-us-chip-impact");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /CXMT Is Public\. Which US Chip Stocks Actually Feel It/);
+  assert.match(englishHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/columns\/cxmt-us-chip-impact"/i);
+  assert.match(englishHtml, /Micron faces both pricing pressure and China substitution/);
+  assert.match(englishHtml, /CXMT CapEx cannot be mapped dollar-for-dollar/);
+  assert.match(englishHtml, /For information and research only/);
+  assert.doesNotMatch(englishHtml, /isn.t the .+[,;:] it.s|is not the .+[,;:] it is/i);
+});
+
+test("keeps console navigation in the same order as the home-page reading sequence", async () => {
+  const chinese = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");
+  const english = await readFile(new URL("../app/en/english-home.tsx", import.meta.url), "utf8");
+  const chineseNav = chinese.slice(chinese.indexOf('aria-label="IDC Atlas Console 导航"'), chinese.indexOf("</nav>", chinese.indexOf('aria-label="IDC Atlas Console 导航"')));
+  const englishNav = english.slice(english.indexOf('aria-label="English console navigation"'), english.indexOf("</nav>", english.indexOf('aria-label="English console navigation"')));
+
+  for (const [first, second] of [["财报日历", "专栏"], ["专栏", "最新脉冲"], ["产业中心", "市场温度"]]) assert.ok(chineseNav.indexOf(first) < chineseNav.indexOf(second));
+  for (const [first, second] of [["Company watch", "Columns"], ["Columns", "Markets"], ["Markets", "Industry map"]]) assert.ok(englishNav.indexOf(first) < englishNav.indexOf(second));
+});
+
+test("keeps the SK hynix earnings column source-led in both languages", async () => {
+  const chinese = await render("/columns/sk-hynix-hbm-earnings");
+  assert.equal(chinese.status, 200);
+  const chineseHtml = await chinese.text();
+  assert.match(chineseHtml, /一份业绩，三层不同的证据/);
+  assert.match(chineseHtml, /未取得可可靠核验的完整电话会问答文本/);
+  assert.match(chineseHtml, /dateModified/);
+
+  const english = await render("/en/columns/sk-hynix-hbm-earnings");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /One earnings release, three layers of evidence/);
+  assert.match(englishHtml, /No complete earnings-call Q&amp;A transcript was reliably available/);
+  assert.match(englishHtml, /For information and research only/);
+});
+
+test("publishes a bilingual frontier-model infrastructure column and excludes rumors from conclusions", async () => {
+  const chinese = await render("/columns/frontier-model-economics");
+  assert.equal(chinese.status, 200);
+  const chineseHtml = await chinese.text();
+  assert.match(chineseHtml, /Claude 与 GPT 都在降价，AI 基建真正要看什么/);
+  assert.match(chineseHtml, /Rumor Filter|传闻的正确位置是待验证清单/);
+  assert.match(chineseHtml, /GPT-5\.6/);
+  assert.match(chineseHtml, /Claude Opus 5/);
+
+  const english = await render("/en/columns/frontier-model-economics");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /Claude and GPT Are Getting Cheaper\. What Changes for AI Infrastructure/);
+  assert.match(englishHtml, /Rumors belong on a verification list/);
+  assert.match(englishHtml, /For information and research only/);
 });
 
 test("publishes the bilingual CAPEX Watch column with article metadata and primary sources", async () => {
@@ -178,7 +262,8 @@ test("publishes the bilingual CAPEX Watch column with article metadata and prima
   assert.match(chineseHtml, /四大云厂商的 AI CAPEX/);
   assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns\/ai-capex-power"/i);
   assert.match(chineseHtml, /"@type":"Article"/);
-  assert.match(chineseHtml, /Microsoft FY2026 Q3 财报电话会/);
+  assert.match(chineseHtml, /Microsoft FY2026 Q4 财报电话会/);
+  assert.match(chineseHtml, /下一季度资本开支超过 500 亿美元/);
   assert.match(chineseHtml, /未投运资产 \$108\.6B/);
   assert.match(chineseHtml, /Amazon 2026 Q1 业绩公告/);
   assert.match(chineseHtml, /本网站内容仅用于信息展示与研究/);
@@ -189,7 +274,8 @@ test("publishes the bilingual CAPEX Watch column with article metadata and prima
   const englishHtml = await english.text();
   assert.match(englishHtml, /Where Hyperscaler AI CapEx Actually Goes/);
   assert.match(englishHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/columns\/ai-capex-power"/i);
-  assert.match(englishHtml, /Microsoft FY2026 Q3 earnings call/);
+  assert.match(englishHtml, /Microsoft FY2026 Q4 earnings call/);
+  assert.match(englishHtml, /Q1 CapEx is expected above \$50 billion/);
   assert.match(englishHtml, /\$75\.6B of future payments/);
   assert.match(englishHtml, /Amazon Q1 2026 earnings release/);
   assert.match(englishHtml, /For information and research only/);
@@ -321,6 +407,7 @@ test("includes social sharing metadata for the request host", async () => {
 
   assert.match(html, /property="og:image" content="https:\/\/dc-atlas\.example\/og\.png"/i);
   assert.match(html, /name="twitter:card" content="summary_large_image"/i);
+  assert.match(html, /name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/i);
   assert.match(html, /lang="zh-CN"/i);
   assert.match(html, /rel="canonical" href="https:\/\/dc-atlas\.example\/"/i);
   assert.match(html, /hrefLang="en" href="https:\/\/dc-atlas\.example\/en"/i);
@@ -378,6 +465,10 @@ test("publishes the source methodology and includes it in the sitemap", async ()
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns\/ai-capex-power/);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns\/hyperscale-idc-leases/);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns\/hyperscale-idc-leases/);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns\/cxmt-us-chip-impact/);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns\/cxmt-us-chip-impact/);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns\/frontier-model-economics/);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns\/frontier-model-economics/);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns</);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns</);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/topics\/data-center-intelligence/);
@@ -390,14 +481,21 @@ test("publishes bilingual column indexes with crawl metadata", async () => {
   const chineseHtml = await chinese.text();
   assert.match(chineseHtml, /专栏，追踪/);
   assert.match(chineseHtml, /GW 级长租正在改写 IDC 订单/);
+  assert.match(chineseHtml, /长鑫上市，谁会先感到压力/);
+  assert.match(chineseHtml, /Claude 与 GPT 都在降价，AI 基建真正要看什么/);
   assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns"/i);
+  assert.match(chineseHtml, /"@type":"ItemList"/);
+  assert.match(chineseHtml, /column-cxmt-us-chips\.png/);
 
   const english = await render("/en/columns");
   assert.equal(english.status, 200);
   const englishHtml = await english.text();
   assert.match(englishHtml, /Columns for the/);
   assert.match(englishHtml, /Gigawatt Leases Are Reshaping the Data Center Market/);
+  assert.match(englishHtml, /CXMT Is Public\. Which US Chip Stocks Actually Feel It/);
+  assert.match(englishHtml, /Claude and GPT Are Getting Cheaper\. What Changes for AI Infrastructure/);
   assert.match(englishHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/columns"/i);
+  assert.match(englishHtml, /"@type":"ItemList"/);
 });
 
 test("publishes bilingual RSS feeds for original research", async () => {
@@ -408,6 +506,10 @@ test("publishes bilingual RSS feeds for original research", async () => {
   assert.match(chineseXml, /<title>IDC Atlas 专栏<\/title>/);
   assert.match(chineseXml, /四大云厂商的 AI CAPEX/);
   assert.match(chineseXml, /https:\/\/idc-index\.com\/columns\/hyperscale-idc-leases/);
+  assert.match(chineseXml, /https:\/\/idc-index\.com\/columns\/cxmt-us-chip-impact/);
+  assert.match(chineseXml, /https:\/\/idc-index\.com\/columns\/frontier-model-economics/);
+  assert.match(chineseXml, /atom:link href="https:\/\/idc-index\.com\/feed\.xml"/);
+  assert.match(chineseXml, /<lastBuildDate>/);
 
   const english = await render("/en/feed.xml");
   assert.equal(english.status, 200);
@@ -415,6 +517,9 @@ test("publishes bilingual RSS feeds for original research", async () => {
   const englishXml = await english.text();
   assert.match(englishXml, /<title>IDC Atlas Columns<\/title>/);
   assert.match(englishXml, /Where Hyperscaler AI CapEx Actually Goes/);
+  assert.match(englishXml, /CXMT Is Public\. Which US Chip Stocks Actually Feel It/);
+  assert.match(englishXml, /Claude and GPT Are Getting Cheaper\. What Changes for AI Infrastructure/);
+  assert.match(englishXml, /atom:link href="https:\/\/idc-index\.com\/en\/feed\.xml"/);
 });
 
 test("gives the earnings calendar and poster route distinct crawl metadata", async () => {

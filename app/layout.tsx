@@ -29,7 +29,8 @@ export async function generateMetadata(): Promise<Metadata> {
       languages: { "zh-CN": `${siteUrl}/`, en: `${siteUrl}/en`, "x-default": `${siteUrl}/en` },
       types: { "application/rss+xml": `${siteUrl}/feed.xml` },
     },
-    robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+    robots: { index: true, follow: true },
+    other: { googlebot: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
     openGraph: {
       title,

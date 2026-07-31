@@ -68,6 +68,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://idc-index.com/columns/frontier-model-economics",
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: "https://idc-index.com/en/columns/frontier-model-economics",
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: "https://idc-index.com/columns/ai-capex-power",
       changeFrequency: "weekly",
       priority: 0.85,
@@ -84,6 +94,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://idc-index.com/en/columns/hyperscale-idc-leases",
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: "https://idc-index.com/columns/cxmt-us-chip-impact",
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: "https://idc-index.com/en/columns/cxmt-us-chip-impact",
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: "https://idc-index.com/columns/sk-hynix-hbm-earnings",
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: "https://idc-index.com/en/columns/sk-hynix-hbm-earnings",
       changeFrequency: "weekly",
       priority: 0.9,
     },

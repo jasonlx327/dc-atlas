@@ -32,6 +32,8 @@ Use original disclosure links attached to individual updates to verify capacity,
 - [CAPEX Watch: Where Hyperscaler AI CapEx Actually Goes](https://idc-index.com/en/columns/ai-capex-power): English analysis of capital intensity, construction pipelines, power, commissioning and utilization.
 - [Lease Watch: Gigawatt leases reshape IDC orders](https://idc-index.com/columns/hyperscale-idc-leases): Chinese analysis of large internet and cloud capacity leases, contract structure, delivery and concentration risk.
 - [Lease Watch: Gigawatt Leases Are Reshaping the Data Center Market](https://idc-index.com/en/columns/hyperscale-idc-leases): English edition covering recent CoreWeave, Digital Realty and VNET disclosures.
+- [Memory Watch: 长鑫上市，谁会先感到压力？](https://idc-index.com/columns/cxmt-us-chip-impact): Chinese source-linked analysis of CXMT's impact on Micron, US equipment vendors and AI accelerator companies.
+- [Memory Watch: CXMT Is Public. Which US Chip Stocks Actually Feel It?](https://idc-index.com/en/columns/cxmt-us-chip-impact): English impact ranking across MU, AMAT, LRCX, KLAC, NVDA, AMD and RMBS.
 
 ## Interpretation
 
@@ -868,6 +870,22 @@ function chinaChipPulse(liveNews: NewsItem[], days = 30): NewsItem[] {
 
 function mnaDeals(): MnaDeal[] {
   return [
+    {
+      id: "digital-realty-blackstone-nova",
+      announcedAt: "2026-06-29",
+      buyer: "Digital Realty",
+      target: "Blackstone 所持北弗州三座数据中心权益",
+      value: "$35 亿现金及股票",
+      capacity: "288MW IT / 3 座已满租园区",
+      region: "美国北弗吉尼亚",
+      status: "已公告 · 待交割",
+      statusAsOf: "2026-07-29",
+      valueBasis: "对 Blackstone 的支付对价",
+      capacityBasis: "三座已满租数据中心的 IT 容量",
+      rationale: "买入全球最大数据中心市场中已满租、长期合约资产；交易将现成容量与租金可见度置于新增开发之前。",
+      sourceName: "Digital Realty / Blackstone",
+      sourceUrl: "https://www.blackstone.com/news/press/digital-realty-announces-purchase-of-blackstone-interest-in-three-northern-virginia-data-centers/",
+    },
     {
       id: "stt-gdc-kkr-singtel",
       announcedAt: "2026-02-04",
@@ -1710,7 +1728,7 @@ function calendarEvents(): CalendarEvent[] {
     { id: "intel-q2-2026", startsAt: "2026-07-23T20:00:00.000Z", company: "Intel", ticker: "INTC", sector: "半导体", description: "全球重要芯片制造商，PC 与数据中心 CPU 的关键供应商。", focus: "数据中心产品节奏、先进制程投入与资本开支安排", sourceName: "Intel Investor Relations · Q2 results", sourceUrl: "https://www.intc.com/news-events/press-releases/detail/1776/intel-reports-second-quarter-2026-financial-results", conclusion: { summary: "Q2 数据中心与 AI（DCAI）营收同比增长 59% 至 63 亿美元；公司称 AI 算力需求继续增强，并将增加设备、洁净室空间和基板投入，以支持产品与代工业务后续增长。", summaryEn: "Q2 Data Center and AI revenue rose 59% year over year to $6.3B. Intel said AI-driven compute demand continues to strengthen and that it is increasing investment in equipment, clean-room space and substrates to support product and foundry growth.", sourceName: "Intel Investor Relations · Q2 2026 results", sourceUrl: "https://www.intc.com/news-events/press-releases/detail/1776/intel-reports-second-quarter-2026-financial-results" } },
     { id: "vertiv-q2-2026", startsAt: "2026-07-29T12:00:00.000Z", company: "Vertiv", ticker: "VRT", sector: "数据中心基础设施", description: "数据中心电力、散热、液冷与关键基础设施解决方案供应商。", focus: "订单、积压、液冷交付与全年需求指引", sourceName: "Vertiv Investor Relations", sourceUrl: "https://investors.vertiv.com/news/news-details/2026/Vertiv-Announces-Date-of-Second-Quarter-2026-Earnings-Release-and-Conference-Call/default.aspx" },
     { id: "meta-q2-2026", startsAt: "2026-07-29T20:00:00.000Z", company: "Meta", ticker: "META", sector: "社交媒体 / AI", description: "全球社交平台龙头，前沿模型、广告 AI 与大规模数据中心建设并进。", focus: "AI 基础设施 CAPEX、数据中心容量和全年投入节奏", sourceName: "Meta Investor Relations", sourceUrl: "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Second-Quarter-2026-Results/default.aspx" },
-    { id: "microsoft-fy26-q4", startsAt: "2026-07-29T20:00:00.000Z", company: "Microsoft", ticker: "MSFT", sector: "云计算 / 软件", description: "Azure 是全球主要云平台，Copilot 与 AI 服务驱动基础设施扩张。", focus: "Azure 需求、资本开支、融资租赁与供给受限表述", sourceName: "Microsoft Investor Relations", sourceUrl: "https://news.microsoft.com/source/2026/07/08/microsoft-announces-quarterly-earnings-release-date-68/" },
+    { id: "microsoft-fy26-q4", startsAt: "2026-07-29T20:00:00.000Z", company: "Microsoft", ticker: "MSFT", sector: "云计算 / 软件", description: "Azure 是全球主要云平台，Copilot 与 AI 服务驱动基础设施扩张。", focus: "Azure 需求、资本开支、融资租赁与供给受限表述", sourceName: "Microsoft Investor Relations · FY26 Q4 results", sourceUrl: "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast", conclusion: { summary: "FY26 Q4 Azure 增长 43%，下一季度指引约 45%（固定汇率）；当季 CAPEX 为 410 亿美元，下一季度预计超过 500 亿美元。电话会确认需求仍高于供给，FY27 CAPEX 将同比增长；2026 年约 1,750 亿美元的新口径主要来自数据中心租赁分类变化，不代表实际建设计划下调。", summaryEn: "FY26 Q4 Azure grew 43%, with Q1 guided to roughly 45% in constant currency. Quarterly capex was $41B and Q1 is expected above $50B. Management said demand still exceeds supply and FY27 capex will grow; the revised ~$175B calendar-2026 presentation mainly reflects data-center lease reclassification, not a reduction in underlying investment plans.", sourceName: "Microsoft FY26 Q4 results & earnings call", sourceUrl: "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4" } },
     { id: "arm-q1-fy27", startsAt: "2026-07-29T21:00:00.000Z", company: "Arm", ticker: "ARM", sector: "芯片 IP", description: "CPU 架构授权龙头，AI 服务器与移动芯片的重要底层技术提供商。", focus: "数据中心授权收入、AI 服务器渗透与客户产品节奏", sourceName: "Arm Investor Relations", sourceUrl: "https://investors.arm.com/financials/quarterly-annual-results" },
     { id: "amazon-q2-2026", startsAt: "2026-07-30T21:00:00.000Z", company: "Amazon", ticker: "AMZN", sector: "电商 / 云计算", description: "AWS 是全球最大的云服务商之一，AI 基础设施投资的核心风向标。", focus: "AWS 增长、基础设施 CAPEX 与 AI 数据中心建设", sourceName: "Amazon Investor Relations", sourceUrl: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-to-Webcast-Second-Quarter-2026-Financial-Results-Conference-Call/default.aspx" },
   ];

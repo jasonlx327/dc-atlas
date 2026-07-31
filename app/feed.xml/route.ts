@@ -7,6 +7,7 @@ function escapeXml(value: string): string {
 }
 
 export function GET() {
+  const latest = columnArticles.reduce((date, article) => article.date > date ? article.date : date, columnArticles[0].date);
   const items = columnArticles.map((article) => `<item>
     <title>${escapeXml(article.title)}</title>
     <link>${siteUrl}${article.href}</link>
@@ -15,12 +16,14 @@ export function GET() {
     <description>${escapeXml(article.summary)}</description>
   </item>`).join("\n");
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IDC Atlas 专栏</title>
     <link>${siteUrl}/columns</link>
     <description>数据中心与 AI 基础设施的来源可追溯研究。</description>
     <language>zh-CN</language>
+    <lastBuildDate>${new Date(`${latest}T00:00:00+08:00`).toUTCString()}</lastBuildDate>
+    <atom:link href="${siteUrl}/feed.xml" rel="self" type="application/rss+xml" />
     ${items}
   </channel>
 </rss>`;
