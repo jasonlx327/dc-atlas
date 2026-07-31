@@ -68,6 +68,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://idc-index.com/columns/microsoft-ai-capex",
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: "https://idc-index.com/en/columns/microsoft-ai-capex",
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: "https://idc-index.com/columns/frontier-model-economics",
       changeFrequency: "weekly",
       priority: 0.9,

@@ -238,6 +238,28 @@ test("keeps the SK hynix earnings column source-led in both languages", async ()
   assert.match(englishHtml, /For information and research only/);
 });
 
+test("publishes the deep Microsoft Azure and AI-capex column in both languages", async () => {
+  const chinese = await render("/columns/microsoft-ai-capex");
+  assert.equal(chinese.status, 200);
+  const chineseHtml = await chinese.text();
+  assert.match(chineseHtml, /Azure 增长 43% 之后/);
+  assert.match(chineseHtml, /从 1900 亿到 1750 亿美元/);
+  assert.match(chineseHtml, /供给仍紧，微软用“延后绑定”控制过度建设风险/);
+  assert.match(chineseHtml, /微软 FY2026 Q4 电话会/);
+  assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns\/microsoft-ai-capex"/i);
+  assert.match(chineseHtml, /"@type":"AnalysisNewsArticle"/);
+  assert.match(chineseHtml, /本网站数据与内容仅用于信息展示与研究/);
+
+  const english = await render("/en/columns/microsoft-ai-capex");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /Azure at 43%/);
+  assert.match(englishHtml, /The move from \$190B to \$175B is largely classification/);
+  assert.match(englishHtml, /“late binding” is the overbuild defense/);
+  assert.match(englishHtml, /Microsoft FY2026 Q4 earnings call/);
+  assert.match(englishHtml, /For information and research only/);
+});
+
 test("publishes a bilingual frontier-model infrastructure column and excludes rumors from conclusions", async () => {
   const chinese = await render("/columns/frontier-model-economics");
   assert.equal(chinese.status, 200);
@@ -469,6 +491,8 @@ test("publishes the source methodology and includes it in the sitemap", async ()
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns\/cxmt-us-chip-impact/);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns\/frontier-model-economics/);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns\/frontier-model-economics/);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns\/microsoft-ai-capex/);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns\/microsoft-ai-capex/);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns</);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns</);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/topics\/data-center-intelligence/);
@@ -483,6 +507,7 @@ test("publishes bilingual column indexes with crawl metadata", async () => {
   assert.match(chineseHtml, /GW 级长租正在改写 IDC 订单/);
   assert.match(chineseHtml, /长鑫上市，谁会先感到压力/);
   assert.match(chineseHtml, /Claude 与 GPT 都在降价，AI 基建真正要看什么/);
+  assert.match(chineseHtml, /Azure 增长 43% 之后，500 亿美元要兑现什么/);
   assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns"/i);
   assert.match(chineseHtml, /"@type":"ItemList"/);
   assert.match(chineseHtml, /column-cxmt-us-chips\.png/);
@@ -494,6 +519,7 @@ test("publishes bilingual column indexes with crawl metadata", async () => {
   assert.match(englishHtml, /Gigawatt Leases Are Reshaping the Data Center Market/);
   assert.match(englishHtml, /CXMT Is Public\. Which US Chip Stocks Actually Feel It/);
   assert.match(englishHtml, /Claude and GPT Are Getting Cheaper\. What Changes for AI Infrastructure/);
+  assert.match(englishHtml, /Azure at 43%: What Must the Next \$50B Deliver/);
   assert.match(englishHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/columns"/i);
   assert.match(englishHtml, /"@type":"ItemList"/);
 });
@@ -508,6 +534,7 @@ test("publishes bilingual RSS feeds for original research", async () => {
   assert.match(chineseXml, /https:\/\/idc-index\.com\/columns\/hyperscale-idc-leases/);
   assert.match(chineseXml, /https:\/\/idc-index\.com\/columns\/cxmt-us-chip-impact/);
   assert.match(chineseXml, /https:\/\/idc-index\.com\/columns\/frontier-model-economics/);
+  assert.match(chineseXml, /https:\/\/idc-index\.com\/columns\/microsoft-ai-capex/);
   assert.match(chineseXml, /atom:link href="https:\/\/idc-index\.com\/feed\.xml"/);
   assert.match(chineseXml, /<lastBuildDate>/);
 
@@ -519,6 +546,7 @@ test("publishes bilingual RSS feeds for original research", async () => {
   assert.match(englishXml, /Where Hyperscaler AI CapEx Actually Goes/);
   assert.match(englishXml, /CXMT Is Public\. Which US Chip Stocks Actually Feel It/);
   assert.match(englishXml, /Claude and GPT Are Getting Cheaper\. What Changes for AI Infrastructure/);
+  assert.match(englishXml, /Azure at 43%: What Must the Next \$50B Deliver/);
   assert.match(englishXml, /atom:link href="https:\/\/idc-index\.com\/en\/feed\.xml"/);
 });
 

@@ -1,5 +1,16 @@
 export const columnArticles = [
   {
+    href: "/columns/microsoft-ai-capex",
+    hrefEn: "/en/columns/microsoft-ai-capex",
+    date: "2026-07-31",
+    series: "CLOUD CAPEX · 06",
+    title: "Azure 增长 43% 之后，500 亿美元要兑现什么？",
+    titleEn: "Azure at 43%: What Must the Next $50B Deliver?",
+    summary: "从新增 1GW、GPU 上线速度、租赁会计到自由现金流，追踪微软 AI 基础设施如何转化为云收入。",
+    summaryEn: "One gigawatt, faster GPU activation and shifting lease accounting reveal how Microsoft must convert infrastructure into cloud revenue.",
+    image: "/column-microsoft-ai-capex.png",
+  },
+  {
     href: "/columns/frontier-model-economics",
     hrefEn: "/en/columns/frontier-model-economics",
     date: "2026-07-29",
