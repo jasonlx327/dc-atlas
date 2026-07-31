@@ -4,6 +4,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { ChainIcon, type ChainKey } from "../chain-icon";
+import { columnArticles } from "../columns/articles";
 import { PulseTrace } from "../pulse-trace";
 import { useSectionNavigation } from "../use-section-navigation";
 
@@ -15,6 +16,17 @@ type Deal = { id: string; announcedAt: string; buyer: string; target: string; va
 type EnglishView = "home" | "pulse" | "industry";
 const englishHomeSections = ["overview", "pulse", "calendar", "companies", "market", "columns"] as const;
 type EnglishHomeSection = (typeof englishHomeSections)[number];
+
+function EnglishColumnsFeature() {
+  const [featured, ...archive] = columnArticles.slice(0, 5);
+  return <article className="console-column-card" id="columns">
+    <span>IDC ATLAS DEEP RESEARCH · LATEST 5</span>
+    <h2>{featured.titleEn}</h2>
+    <p>{featured.summaryEn}</p>
+    <a className="console-column-primary" href={featured.hrefEn}>Read the full analysis →</a>
+    <div className="console-column-archive">{archive.map((article) => <a href={article.hrefEn} key={article.hrefEn}><span>{article.series}</span><strong>{article.titleEn}</strong></a>)}</div>
+  </article>;
+}
 export type AtlasPayload = {
   generatedAt: string;
   weeklyHighlightCount?: number;
@@ -425,7 +437,7 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
       <section className="console-section console-section-dark" id="calendar"><ConsoleSectionHead label="02 · EARNINGS &amp; CAPEX" title="The next read-throughs" copy="Officially scheduled U.S. events in Eastern Time." /><div className="console-earnings-strip">{eventList.slice(0, 6).map((event) => { const note = calendarNotes[event.ticker] ?? { sector: event.sector, summary: "Officially scheduled earnings event.", focus: "Capex, demand and forward guidance." }; return <article key={event.id}><time>{formatEvent(event.startsAt)}</time><div><span>{note.sector}</span><h3>{event.company} <small>{event.ticker}</small></h3><p>{event.conclusion?.summaryEn ?? event.conclusion?.summary ?? note.focus}</p></div><a href={event.conclusion?.sourceUrl ?? event.sourceUrl} target="_blank" rel="noreferrer">↗</a></article>; })}</div></section>
       <section className="console-section console-section-muted" id="companies"><ConsoleSectionHead label="03 · COMPANY WATCH" title="U.S. listed infrastructure" copy="Recent disclosures from listed data-center and infrastructure companies." link="/en/pulse" linkLabel="Open company watch" /><div className="console-story-list console-company-list">{listed.slice(0, 5).map((item, index) => <ConsoleStoryRow key={item.id} item={item} index={index} eyebrow={item.listedTicker ?? "US LISTED"} />)}</div></section>
       <section className="console-section console-column-market" id="market">
-        <article className="console-column-card" id="columns"><span>IDC ATLAS DEEP RESEARCH · MODEL DEMAND</span><h2>Claude and GPT are getting cheaper. What changes for AI infrastructure?</h2><p>Capability tiers, lower task cost and longer agent runs matter more than a single benchmark headline.</p><a href="/en/columns/frontier-model-economics">Read the full analysis →</a></article>
+        <EnglishColumnsFeature />
         <div><ConsoleSectionHead label="04 · MARKET TEMPERATURE" title="Infrastructure indices" /> <div className="console-market-grid">{market.map((item) => <article key={item.code}><span>{item.code}</span><h3>{item.name}</h3><strong>{item.level.toLocaleString("en-US", { maximumFractionDigits: 2 })}</strong><p className={item.dayPct >= 0 ? "up" : "down"}>{item.dayPct >= 0 ? "+" : ""}{item.dayPct.toFixed(2)}%</p></article>)}</div></div>
       </section>
     </div>{shellEnd}

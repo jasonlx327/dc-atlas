@@ -38,9 +38,12 @@ test("server-renders the compact IDC Atlas portal homepage", async () => {
   assert.match(html, /EARNINGS WATCH · IDC CALENDAR/);
   assert.match(html, /href="\/#calendar"><span>02<\/span><strong>财报日历/);
   assert.match(html, /class="hero-signal hero-calendar" id="calendar"/);
-  assert.match(html, /IDC ATLAS 深度研究/);
+  assert.match(html, /IDC ATLAS 深度研究 · 最新 5 篇/);
+  assert.match(html, /Azure 增长 43% 之后，500 亿美元要兑现什么/);
   assert.match(html, /Claude 与 GPT 都在降价，AI 基建真正要看什么/);
   assert.match(html, /href="\/#columns"/);
+  assert.equal((html.match(/class="column-archive-link"/g) ?? []).length, 4);
+  assert.match(html, /href="\/columns\/microsoft-ai-capex"/);
   assert.match(html, /href="\/columns\/frontier-model-economics"/);
   assert.match(html, /今天值得看的脉冲/);
   assert.match(html, /核心 IDC 标的/);
@@ -91,6 +94,10 @@ test("renders the English research console and focused content routes", async ()
   assert.match(html, /class="english-console-sidebar"/);
   assert.match(html, /href="\/en#columns"/);
   assert.match(html, /class="console-column-card" id="columns"/);
+  assert.match(html, /IDC ATLAS DEEP RESEARCH · LATEST 5/);
+  assert.match(html, /Azure at 43%: What Must the Next \$50B Deliver/);
+  assert.equal((html.match(/class="console-column-archive"/g) ?? []).length, 1);
+  assert.equal((html.match(/href="\/en\/columns\/(?!microsoft-ai-capex)[^"]+"/g) ?? []).length >= 4, true);
   assert.match(html, /What matters now/);
   assert.match(html, /The next read-throughs/);
   assert.match(html, /console-earnings-strip/);
@@ -131,6 +138,8 @@ test("uses resilient typography rules across columns, console pages and calendar
 
   assert.match(css, /\.column-article-body h2 \{ max-width: none/);
   assert.match(css, /\.column-article-body h2:lang\(zh-CN\) \{ word-break: keep-all; line-break: strict/);
+  assert.match(css, /\.columns-index-hero h1:lang\(zh-CN\) \{[^}]*max-width: 1240px;[^}]*word-break: keep-all;[^}]*line-break: strict/);
+  assert.match(css, /\.columns-index-hero h1:lang\(zh-CN\) > span, \.columns-index-hero h1:lang\(zh-CN\) > em \{ white-space: nowrap/);
   assert.match(css, /\.console-hero h1 \{ max-width: 1120px;[^}]*96px/);
   assert.match(css, /\.console-story-row p \{[^}]*font-size: 13\.5px/);
   assert.match(css, /\.calendar-share-table article > p,[\s\S]*font-size: 12px/);
@@ -181,11 +190,11 @@ test("keeps the English site fully translated across the live coverage stack", a
 
   assert.doesNotMatch(source, /editorial English translation is pending/);
   assert.doesNotMatch(source, /lang="zh-CN"/);
-  assert.match(source, /Claude and GPT are getting cheaper\. What changes for AI infrastructure/);
+  assert.match(source, /columnArticles\.slice\(0, 5\)/);
   assert.match(source, /href="\/en#columns"/);
   assert.match(source, /className="english-chain-icon"/);
   assert.match(source, /<ChainIcon type=/);
-  assert.match(source, /href="\/en\/columns\/frontier-model-economics"/);
+  assert.match(source, /article\.hrefEn/);
   assert.match(source, /view === "pulse"/);
 });
 
