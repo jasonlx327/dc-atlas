@@ -33,6 +33,8 @@ final result: passed
 - Chinese column detail in shared Console: `artifacts/design-qa/column-detail-zh-desktop-v1.png` — 1600 × 900.
 - English column detail in shared Console: `artifacts/design-qa/column-detail-en-desktop-v1.png` — 1600 × 900.
 - Chinese mobile column detail: `artifacts/design-qa/column-detail-zh-mobile-v1.png` — 390 × 844.
+- Chinese large-campus cards after shared light-card revision: `artifacts/design-qa/industry-campus-desktop-v4.png`.
+- Chinese GPU cards after shared light-card revision: `artifacts/design-qa/industry-china-mobile-v4.png`.
 
 The browser captures are JPEG-encoded at the recorded CSS pixel dimensions. No density normalization was needed because source and implementation were evaluated as layout references rather than pixel-identical clones.
 
@@ -93,6 +95,15 @@ The browser captures are JPEG-encoded at the recorded CSS pixel dimensions. No d
   - Fix: wrapped all six bilingual article components in one `ColumnArticleConsole`, removed the redundant article navigation, introduced a two-column editorial lead, increased body text to 18 px on desktop and disabled forced hero breaks on narrow screens.
   - Post-fix evidence: `column-detail-zh-desktop-v1.png`, `column-detail-en-desktop-v1.png` and `column-detail-zh-mobile-v1.png`.
 
+### Iteration 4
+
+- [P1] Chinese GPU and large-campus cards retained the legacy dark cyberpunk components inside the new light Console, creating a visible split between the page shell and its content.
+  - Fix: scoped the shared paper, surface, line, ink, forest, ultramarine and terracotta tokens across supernode, China GPU and campus cards; reduced oversized metrics and restored readable card hierarchy.
+- [P1] English China-watch cards retained a separate dark component treatment.
+  - Fix: moved the English supernode grid onto the same light card surface and source-link treatment as the Chinese Industry route.
+- [P1] “Close navigation” only changed the mobile drawer state and had no desktop effect.
+  - Fix: added a desktop rail-collapsed state, full-width canvas transition and a persistent “Open navigation” recovery control while retaining the mobile drawer behavior.
+
 ## Interaction and route checks
 
 - Checked `/`, `/en`, `/pulse`, `/en/pulse`, `/industry`, `/en/industry`, `/columns`, `/en/columns`, `/calendar`, `/methodology` and `/privacy`.
@@ -110,3 +121,5 @@ The browser captures are JPEG-encoded at the recorded CSS pixel dimensions. No d
 - `npm run build`: passed.
 - `node --test tests/rendered-html.test.mjs`: 33 passed, 0 failed.
 - Production deployment is performed only after this record and the exact source commit are complete.
+
+final result: passed

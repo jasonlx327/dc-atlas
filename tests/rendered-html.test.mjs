@@ -143,9 +143,14 @@ test("renders the English research console and focused content routes", async ()
 test("keeps bilingual console section navigation stable and readable", async () => {
   const hook = await readFile(new URL("../app/use-section-navigation.ts", import.meta.url), "utf8");
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  const overview = await readFile(new URL("../app/intelligence-console-overview.tsx", import.meta.url), "utf8");
   assert.match(hook, /history\.replaceState/);
   assert.match(hook, /scrollIntoView\(\{ behavior: "smooth"/);
   assert.match(hook, /pageBottom >= documentBottom - 4/);
+  assert.match(overview, /const \[navCollapsed, setNavCollapsed\] = useState\(false\)/);
+  assert.match(overview, /window\.matchMedia\("\(max-width: 820px\)"\)/);
+  assert.match(overview, /atlas-console-reopen/);
+  assert.match(css, /\.atlas-console-overview\.rail-collapsed \{ padding-left: 0; \}/);
   assert.match(css, /\.english-console-mobile-dock a \{[^}]*font: 650 11px/);
   assert.match(css, /\.mobile-dock a \{[^}]*font-size: 11px/);
   assert.match(css, /\.english-console-sidebar nav strong \{ font-size: 13px/);

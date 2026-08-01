@@ -169,12 +169,16 @@ function ShellNav({
   lang,
   mobileOpen,
   setMobileOpen,
+  collapsed,
+  setCollapsed,
   activeSection,
   setActiveSection,
 }: {
   lang: "zh" | "en";
   mobileOpen: boolean;
   setMobileOpen: (open: boolean) => void;
+  collapsed: boolean;
+  setCollapsed: (collapsed: boolean) => void;
   activeSection: string;
   setActiveSection: (section: string) => void;
 }) {
@@ -242,14 +246,27 @@ function ShellNav({
         </section>}
         <a href="/methodology">{isZh ? "方法论" : "Methodology"}</a>
         <a href="/privacy">{isZh ? "隐私" : "Privacy"}</a>
-        <button type="button" onClick={() => setMobileOpen(false)}>{isZh ? "收起导航" : "Close navigation"}</button>
+        <button type="button" onClick={() => {
+          if (window.matchMedia("(max-width: 820px)").matches) {
+            setMobileOpen(false);
+            return;
+          }
+          setCollapsed(true);
+        }}>{isZh ? "收起导航" : "Close navigation"}</button>
       </div>
     </aside>
     {mobileOpen && <button className="atlas-console-scrim" type="button" aria-label={isZh ? "关闭导航" : "Close navigation"} onClick={() => setMobileOpen(false)} />}
+    {collapsed && <button className="atlas-console-reopen" type="button" onClick={() => setCollapsed(false)}>
+      <span>IDC ATLAS</span>
+      <strong>{isZh ? "展开导航" : "Open navigation"}</strong>
+    </button>}
     <header className="atlas-console-mobile-head">
       <a href={isZh ? "/" : "/en"}><strong>IDC</strong> <b>ATLAS</b></a>
       <span>{isZh ? "产业情报控制台" : "INTELLIGENCE CONSOLE"}</span>
-      <button type="button" aria-expanded={mobileOpen} onClick={() => setMobileOpen(!mobileOpen)}>{isZh ? "目录" : "Menu"}</button>
+      <button type="button" aria-expanded={mobileOpen} onClick={() => {
+        setCollapsed(false);
+        setMobileOpen(!mobileOpen);
+      }}>{isZh ? "目录" : "Menu"}</button>
     </header>
   </>;
 }
@@ -290,13 +307,16 @@ export function IntelligenceConsoleShell({
   children,
 }: ShellProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [navCollapsed, setNavCollapsed] = useState(false);
   const [currentSection, setCurrentSection] = useState(activeSection);
   const isZh = lang === "zh";
-  return <main className={`atlas-console-overview atlas-console-page ${className}`.trim()} lang={isZh ? "zh-CN" : "en"}>
+  return <main className={["atlas-console-overview", "atlas-console-page", navCollapsed ? "rail-collapsed" : "", className].filter(Boolean).join(" ")} lang={isZh ? "zh-CN" : "en"}>
     <ShellNav
       lang={lang}
       mobileOpen={mobileOpen}
       setMobileOpen={setMobileOpen}
+      collapsed={navCollapsed}
+      setCollapsed={setNavCollapsed}
       activeSection={currentSection}
       setActiveSection={setCurrentSection}
     />
@@ -319,6 +339,7 @@ export function IntelligenceConsoleShell({
 
 export function IntelligenceConsoleOverview({ lang, data, translateStory }: Props) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [navCollapsed, setNavCollapsed] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
   const isZh = lang === "zh";
   const pulse = data.pulse.slice(0, 8).map((story) => translateStory?.(story) ?? story);
@@ -345,8 +366,8 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
     return () => observer.disconnect();
   }, []);
 
-  return <main className="atlas-console-overview" lang={isZh ? "zh-CN" : "en"}>
-    <ShellNav lang={lang} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} activeSection={activeSection} setActiveSection={setActiveSection} />
+  return <main className={navCollapsed ? "atlas-console-overview rail-collapsed" : "atlas-console-overview"} lang={isZh ? "zh-CN" : "en"}>
+    <ShellNav lang={lang} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} collapsed={navCollapsed} setCollapsed={setNavCollapsed} activeSection={activeSection} setActiveSection={setActiveSection} />
     <div className="atlas-console-canvas">
       <div id="overview"><ConsoleStatusbar lang={lang} generatedAt={data.generatedAt} sourceCount={uniqueSources.size} verifiedCount={verifiedCount} /></div>
 
