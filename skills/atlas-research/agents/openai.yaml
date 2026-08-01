@@ -1,0 +1,4 @@
+interface:
+  display_name: "Atlas Research"
+  short_description: "IDC Atlas 财报解读与深度专栏研究质量工作流"
+  default_prompt: "Use $atlas-research to produce a source-led IDC Atlas earnings review or deep industry column."
