@@ -1,3 +1,5 @@
+import { ColumnArticleConsole } from "../article-console";
+
 const sources = {
   microsoft: "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
   microsoftRelease: "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast",
@@ -20,7 +22,7 @@ function ArticleHeader({ lang }: { lang: "zh" | "en" }) {
 }
 
 function ChineseArticle() {
-  return <main className="column-article-page">
+  return <ColumnArticleConsole lang="zh">
     <ArticleHeader lang="zh" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>核心判断</span><p>四大云厂商 2026 年资本开支计划合计最高约 7,250 亿美元。这个数字衡量投入强度，无法直接回答新增算力何时形成收入。真正拉开差距的是资产从采购、在建、送电走向可计费容量的速度。</p></aside>
@@ -158,11 +160,11 @@ function ChineseArticle() {
 
       <footer className="column-article-disclosure"><p>本文使用截至 2026 年 7 月 31 日可获取的公司公告、财报电话会与 SEC 文件。不同公司的资本开支和租赁口径不可直接比较；Microsoft 的租赁分类变化会降低资本开支报告口径，但不代表实际投资预期下降。公司未披露的供应商份额、液冷投入比例和 AWS 单独资本开支不作估算。</p><p>本网站内容仅用于信息展示与研究，不构成任何投资建议。</p></footer>
     </article>
-  </main>;
+  </ColumnArticleConsole>;
 }
 
 function EnglishArticle() {
-  return <main className="column-article-page" lang="en">
+  return <ColumnArticleConsole lang="en">
     <ArticleHeader lang="en" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>THE TAKEAWAY</span><p>The four largest hyperscalers plan to spend as much as $725 billion in 2026. That figure captures investment intensity, not the timing of new revenue. The decisive variable is how quickly purchased and unfinished assets become energized, commissioned and billable.</p></aside>
@@ -300,7 +302,7 @@ function EnglishArticle() {
 
       <footer className="column-article-disclosure"><p>This analysis uses company releases, earnings calls and SEC filings available through July 31, 2026. CapEx and lease definitions are not directly comparable. Microsoft&apos;s lease-classification change lowers the reported CapEx frame without reducing its stated underlying investment expectations. We do not estimate undisclosed supplier shares, liquid-cooling spend or standalone AWS CapEx.</p><p>For information and research only. This is not investment advice.</p></footer>
     </article>
-  </main>;
+  </ColumnArticleConsole>;
 }
 
 export default function CapexPowerArticle({ lang }: { lang: "zh" | "en" }) {

@@ -1,3 +1,5 @@
+import { ColumnArticleConsole } from "../article-console";
+
 const sources = {
   cxmtListing: "https://stcn.com/xinpi/jg-detail.html?id=9272870",
   cxmtProspectus: "https://static.sse.com.cn/stock/disclosure/announcement/c/202512/002170_20251230_B8QS.pdf",
@@ -20,7 +22,7 @@ function ArticleHeader({ lang }: { lang: "zh" | "en" }) {
 }
 
 function ChineseArticle() {
-  return <main className="column-article-page" lang="zh-CN">
+  return <ColumnArticleConsole lang="zh">
     <ArticleHeader lang="zh" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>核心判断</span><p>长鑫科技登陆科创板，提升了融资能力和经营透明度，新增晶圆供给仍需要厂房、设备、良率和客户认证逐步兑现。美股芯片公司的近端影响高度分化：Micron 的通用 DRAM 业务最敏感；美国设备商同时面对中国扩产需求与出口限制；NVIDIA、AMD 当前的直接影响较低。</p></aside>
@@ -49,11 +51,11 @@ function ChineseArticle() {
 
       <footer className="column-article-disclosure"><p>资料截至 2026 年 7 月 28 日（北京时间），来自长鑫科技上交所文件及美国上市公司 SEC 文件。本文不使用盘中股价、分析师目标价或未披露产能推测。产能、bit 出货、收入份额和利润份额均为不同口径。</p><p>本网站数据与内容仅用于信息展示与研究，不构成任何投资建议。</p></footer>
     </article>
-  </main>;
+  </ColumnArticleConsole>;
 }
 
 function EnglishArticle() {
-  return <main className="column-article-page" lang="en">
+  return <ColumnArticleConsole lang="en">
     <ArticleHeader lang="en" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>THE TAKEAWAY</span><p>CXMT&apos;s STAR Market listing improves financing access and disclosure. New wafer supply still has to pass through construction, tool installation, yield ramp and customer qualification. Micron has the highest near-term exposure through conventional DRAM and China. US equipment vendors face demand constrained by export rules. The direct read-through to NVIDIA and AMD remains limited.</p></aside>
@@ -84,7 +86,7 @@ function EnglishArticle() {
 
       <footer className="column-article-disclosure"><p>Source cutoff: July 28, 2026, Beijing time. This analysis uses CXMT&apos;s Shanghai Stock Exchange filings and SEC filings from US-listed companies. It does not use intraday prices, analyst price targets or undisclosed capacity estimates. Capacity, bit shipments, revenue share and profit share are separate measures.</p><p>For information and research only. This is not investment advice.</p></footer>
     </article>
-  </main>;
+  </ColumnArticleConsole>;
 }
 
 export default function CxmtUsChipImpactArticle({ lang }: { lang: "zh" | "en" }) {

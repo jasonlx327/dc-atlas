@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ColumnArticleConsole } from "../article-console";
 
 const sources = {
   openai: "https://openai.com/index/gpt-5-6/",
@@ -18,7 +19,7 @@ function Header({ lang }: { lang: "zh" | "en" }) {
 }
 
 function ChineseArticle() {
-  return <main className="column-article-page" lang="zh-CN"><Header lang="zh" /><article className="column-article-body">
+  return <ColumnArticleConsole lang="zh"><Header lang="zh" /><article className="column-article-body">
     <aside className="column-article-thesis"><span>核心判断</span><p>GPT-5.6 与 Claude Opus 5 的共同方向，是用更低的单位任务成本提供接近旗舰的能力。它未必降低总算力需求：当开发者把模型用于更长的代理流程、更频繁的调用和更多业务场景，推理量反而可能增加。数据中心要跟踪的是调用深度、延迟目标、缓存命中率与峰值并发，而不是把“模型更便宜”等同于“芯片需求更少”。</p></aside>
 
     <section><p className="column-dropcap">这轮模型更新的标题很容易变成一场跑分比赛。OpenAI 在 7 月 9 日将 GPT-5.6 的 Sol、Terra、Luna 三档模型推向通用可用；Reuters 随后报道 Anthropic 在 7 月 24 日推出 Claude Opus 5，并称其定位是以更低价格接近 Fable 5 的能力。两家公司都在把前沿能力从一个昂贵的单品，改造成可以按任务选择的性能阶梯。</p><p>这对基础设施的含义并不直接等于“更高效，所以少建机房”。价格和延迟下降会降低每个工作流的试用门槛，促使用户把模型从一次性问答扩展到检索、编码、验证、工具调用和多步骤代理。需求曲线最终取决于每个任务使用多少 token、调用多少轮、是否并行，以及客户是否真的把这些流程部署到生产环境。</p><p><SourceLink href={sources.openai}>OpenAI：GPT-5.6 正式发布</SourceLink><SourceLink href={sources.openaiReuters}>Reuters：GPT-5.6 发布背景</SourceLink><SourceLink href={sources.anthropicReuters}>Reuters：Claude Opus 5 发布</SourceLink></p></section>
@@ -33,11 +34,11 @@ function ChineseArticle() {
 
     <blockquote><span>IDC ATLAS VIEW</span><p>模型更便宜不是需求变小的证据。它让更多任务跨过经济门槛，也把竞争从“谁有最强模型”推向“谁能以稳定延迟、可控成本和足够容量交付更多有用工作”。</p></blockquote>
     <footer className="column-article-disclosure"><p>资料截至 2026 年 7 月 29 日（北京时间）。产品事实采用 OpenAI 官方发布与 Reuters 报道；BloombergNEF 公开材料仅用于理解能源与建设约束。未将未证实的下一代模型传闻、训练规模或发布日期作为事实或基础设施预测依据。</p><p>本网站内容仅用于信息展示与研究，不构成任何投资建议。</p></footer>
-  </article></main>;
+  </article></ColumnArticleConsole>;
 }
 
 function EnglishArticle() {
-  return <main className="column-article-page" lang="en"><Header lang="en" /><article className="column-article-body">
+  return <ColumnArticleConsole lang="en"><Header lang="en" /><article className="column-article-body">
     <aside className="column-article-thesis"><span>THE TAKEAWAY</span><p>GPT-5.6 and Claude Opus 5 point to the same product shift: near-frontier capability at a lower cost per useful task. That does not automatically reduce compute demand. Cheaper inference can support longer agent runs, more calls and more production use. Infrastructure needs to track work depth, latency targets, cache behavior and peak concurrency — not treat a cheaper model as fewer chips.</p></aside>
     <section><p className="column-dropcap">The headline version of this release cycle is another benchmark race. The more durable development is product architecture. OpenAI made its GPT-5.6 family generally available on July 9 with Sol, Terra and Luna. Reuters reported that Anthropic released Claude Opus 5 on July 24, positioning it near Fable 5 capability at a lower price. Both are turning frontier intelligence from a single expensive product into a set of selectable performance, speed and cost tiers.</p><p>That does not translate neatly into less data-center demand. Lower cost and latency can move AI from occasional chat into retrieval, coding, checking, tool use and multi-step agents. The demand curve depends on tokens per task, rounds of inference, parallelism and whether those workflows reach production.</p><p><SourceLink href={sources.openai}>OpenAI: GPT-5.6 release</SourceLink><SourceLink href={sources.openaiReuters}>Reuters: GPT-5.6 rollout</SourceLink><SourceLink href={sources.anthropicReuters}>Reuters: Claude Opus 5 launch</SourceLink></p></section>
     <section><div className="column-section-label">01 · WHAT IS CONFIRMED</div><h2>Both labs are making frontier capability more tiered</h2><div className="column-fact-table"><table><thead><tr><th>Company</th><th>Confirmed release</th><th>Product signal</th><th>Infrastructure read-through</th></tr></thead><tbody><tr><th>OpenAI</th><td><strong>GPT-5.6</strong><small>Sol / Terra / Luna</small></td><td>Flagship, balanced and low-cost tiers run in parallel.</td><td>Customers can route work by difficulty, shifting demand from a small number of frontier requests to a broader mix of request types.</td></tr><tr><th>Anthropic</th><td><strong>Claude Opus 5</strong><small>Reuters, July 24</small></td><td>Reuters described a near-Fable 5 capability position at about half the price.</td><td>Lower marginal cost can make complex enterprise workflows more viable as continuous workloads.</td></tr></tbody></table></div><p>There is no clean comparable measure of total compute saved. API price, tokens, caching, reasoning effort and tool use vary across products. The confirmed change is that cost and speed are being treated as product dimensions alongside capability.</p></section>
@@ -46,7 +47,7 @@ function EnglishArticle() {
     <section><div className="column-section-label">04 · WHAT TO MEASURE NEXT</div><h2>Four measures matter more than the next headline</h2><ol className="column-transmission"><li><span>01</span><div><strong>Share of traffic by capability tier</strong><p>Track movement across flagship, balanced and low-cost models rather than a single rank.</p></div></li><li><span>02</span><div><strong>Tokens and tool calls per task</strong><p>Agent depth determines whether efficiency gains are offset by more work per job.</p></div></li><li><span>03</span><div><strong>Latency and peak concurrency</strong><p>Production response-time targets shape capacity reserve, network design and regional deployment.</p></div></li><li><span>04</span><div><strong>Cloud capacity actually in service</strong><p>Model releases are demand-side events. Energized, commissioned and sellable instances confirm the infrastructure side.</p></div></li></ol></section>
     <blockquote><span>IDC ATLAS VIEW</span><p>Cheaper models are not evidence of weaker demand. They let more work cross the economic threshold and move competition toward stable latency, controlled cost and enough capacity to deliver useful work at scale.</p></blockquote>
     <footer className="column-article-disclosure"><p>Information cut-off: July 29, 2026, Beijing time. Product facts rely on OpenAI’s release and Reuters reporting; BloombergNEF’s public material is used only for the energy and construction context. Unverified next-model rumors, training-scale claims and dates are not treated as facts or infrastructure inputs.</p><p>For information and research only. Not investment advice.</p></footer>
-  </article></main>;
+  </article></ColumnArticleConsole>;
 }
 
 export default function FrontierModelEconomicsArticle({ lang }: { lang: "zh" | "en" }) {

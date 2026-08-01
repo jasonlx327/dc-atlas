@@ -28,6 +28,11 @@ final result: passed
 - QR share desktop: `artifacts/design-qa/console-qr-desktop.png` — 1280 × 720.
 - Console tools mobile: `artifacts/design-qa/console-tools-mobile.png` — 390 × 844.
 - QR share mobile: `artifacts/design-qa/console-qr-mobile.png` — 390 × 844.
+- Chinese homepage after decision-row revision: `artifacts/design-qa/home-calendar-columns-desktop-v1.png` — 1600 × 900.
+- Chinese mobile lead image after fill fix: `artifacts/design-qa/home-lead-mobile-v1.png` — 390 × 844.
+- Chinese column detail in shared Console: `artifacts/design-qa/column-detail-zh-desktop-v1.png` — 1600 × 900.
+- English column detail in shared Console: `artifacts/design-qa/column-detail-en-desktop-v1.png` — 1600 × 900.
+- Chinese mobile column detail: `artifacts/design-qa/column-detail-zh-mobile-v1.png` — 390 × 844.
 
 The browser captures are JPEG-encoded at the recorded CSS pixel dimensions. No density normalization was needed because source and implementation were evaluated as layout references rather than pixel-identical clones.
 
@@ -76,6 +81,18 @@ The browser captures are JPEG-encoded at the recorded CSS pixel dimensions. No d
 - Desktop panel remains inside the rail; mobile panel expands to the drawer width without overflowing or hiding the close control.
 - Post-fix evidence: `console-tools-desktop.png`, `console-qr-desktop.png`, `console-tools-mobile.png`, `console-qr-mobile.png`.
 
+### Iteration 3
+
+- [P1] The homepage repeated Pulse content inside a separate intelligence brief and compressed the calendar and research queue into three narrow columns.
+  - Fix: removed the duplicate brief, expanded the decision row to two columns, added Eastern time and conclusion status to earnings entries, and gave the research feature a summary plus four series-labelled rows.
+  - Post-fix evidence: `home-calendar-columns-desktop-v1.png`.
+- [P1] The homepage lead visual reserved a fixed image region and left an empty gray block below short assets.
+  - Fix: converted the figure to a fill-and-caption grid so the image occupies all available height without creating a blank placeholder.
+  - Post-fix evidence: `home-calendar-columns-desktop-v1.png` and `home-lead-mobile-v1.png`.
+- [P1] All twelve Chinese and English column-detail routes still used a separate dark layout with oversized headings and no shared Console navigation.
+  - Fix: wrapped all six bilingual article components in one `ColumnArticleConsole`, removed the redundant article navigation, introduced a two-column editorial lead, increased body text to 18 px on desktop and disabled forced hero breaks on narrow screens.
+  - Post-fix evidence: `column-detail-zh-desktop-v1.png`, `column-detail-en-desktop-v1.png` and `column-detail-zh-mobile-v1.png`.
+
 ## Interaction and route checks
 
 - Checked `/`, `/en`, `/pulse`, `/en/pulse`, `/industry`, `/en/industry`, `/columns`, `/en/columns`, `/calendar`, `/methodology` and `/privacy`.
@@ -91,5 +108,5 @@ The browser captures are JPEG-encoded at the recorded CSS pixel dimensions. No d
 
 - `npm run lint`: passed with existing `no-img-element` performance warnings and no errors.
 - `npm run build`: passed.
-- `node --test tests/rendered-html.test.mjs`: 32 passed, 0 failed.
-- No production deployment was performed.
+- `node --test tests/rendered-html.test.mjs`: 33 passed, 0 failed.
+- Production deployment is performed only after this record and the exact source commit are complete.

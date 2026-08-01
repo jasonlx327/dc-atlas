@@ -1,3 +1,5 @@
+import { ColumnArticleConsole } from "../article-console";
+
 const sources = {
   appliedDigital: "https://ir.applieddigital.com/sec-filings/all-sec-filings/content/0001144879-26-000036/apld_invxinvestorpresent.htm",
   coreScientific: "https://investors.corescientific.com/sec-filings/all-sec-filings/content/0001193125-26-165121/d149019dex992.htm",
@@ -18,7 +20,7 @@ function ArticleHeader({ lang }: { lang: "zh" | "en" }) {
 }
 
 function ChineseArticle() {
-  return <main className="column-article-page">
+  return <ColumnArticleConsole lang="zh">
     <ArticleHeader lang="zh" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>核心判断</span><p>四笔公开合同合计接近 1.8GW，显示 IDC 租赁已经进入园区级交易阶段。长期合同提高收入可见度，同时把现金流押在三个节点上：开发商能否融资、园区能否按时送电、客户是否开始付费。</p></aside>
@@ -44,11 +46,11 @@ function ChineseArticle() {
 
       <footer className="column-article-disclosure"><p>本专栏基于截至 2026 年 7 月 28 日可获取的公司公告、投资者材料和监管文件。公司未披露的客户名称保持匿名；不同公司的容量口径不可直接比较。</p><p>本网站数据与内容仅用于信息展示与研究，不构成任何投资建议。</p></footer>
     </article>
-  </main>;
+  </ColumnArticleConsole>;
 }
 
 function EnglishArticle() {
-  return <main className="column-article-page" lang="en">
+  return <ColumnArticleConsole lang="en">
     <ArticleHeader lang="en" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>THE TAKEAWAY</span><p>Four disclosed agreements approach 1.8GW, showing that data-center leasing has moved to campus-scale transactions. Long contracts improve visibility while putting cash flow behind three gates: financing, on-time energization and the start of customer billing.</p></aside>
@@ -74,7 +76,7 @@ function EnglishArticle() {
 
       <footer className="column-article-disclosure"><p>This column uses company releases, investor materials and regulatory filings available through July 28, 2026. We preserve anonymity where companies have not named customers, and do not treat capacity measures as directly comparable.</p><p>For information and research only. This is not investment advice.</p></footer>
     </article>
-  </main>;
+  </ColumnArticleConsole>;
 }
 
 export default function HyperscaleLeaseArticle({ lang }: { lang: "zh" | "en" }) {

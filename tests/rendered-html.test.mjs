@@ -43,6 +43,8 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /href="\/#columns"/);
   assert.match(html, /href="\/columns\/microsoft-ai-capex"/);
   assert.match(html, /href="\/columns\/frontier-model-economics"/);
+  assert.match(html, /从新增 1GW、GPU 上线速度/);
+  assert.doesNotMatch(html, /情报摘要/);
   assert.match(html, /市场脉搏/);
   assert.match(html, /上市公司动态/);
   assert.match(html, /产业链地图/);
@@ -114,7 +116,7 @@ test("renders the English research console and focused content routes", async ()
   assert.match(html, /Azure at 43%: What Must the Next \$50B Deliver/);
   assert.equal((html.match(/href="\/en\/columns\/(?!microsoft-ai-capex)[^"]+"/g) ?? []).length >= 4, true);
   assert.match(html, /CapEx &amp; earnings watch/);
-  assert.match(html, /Atlas intelligence brief/);
+  assert.doesNotMatch(html, /Atlas intelligence brief/);
   assert.match(html, /Live infrastructure pulse/);
   assert.match(html, /Industry chain navigator/);
   assert.doesNotMatch(html, /China and United States · last 45 days/);
@@ -363,17 +365,48 @@ test("publishes the bilingual Lease Watch column with contract-level sourcing", 
   assert.doesNotMatch(englishHtml, /isn.t the .+[,;:] it.s|is not the .+[,;:] it is/i);
 });
 
+test("renders every bilingual column inside the shared console reading layout", async () => {
+  const slugs = [
+    "ai-capex-power",
+    "cxmt-us-chip-impact",
+    "frontier-model-economics",
+    "hyperscale-idc-leases",
+    "microsoft-ai-capex",
+    "sk-hynix-hbm-earnings",
+  ];
+  for (const slug of slugs) {
+    for (const prefix of ["/columns", "/en/columns"]) {
+      const response = await render(`${prefix}/${slug}`);
+      assert.equal(response.status, 200);
+      const html = await response.text();
+      assert.match(html, /atlas-column-article-shell/);
+      assert.match(html, /atlas-console-rail/);
+      assert.match(html, /class="column-article-page"/);
+    }
+  }
+
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /\.atlas-column-article-shell \.column-article-nav \{ display: none; \}/);
+  assert.match(css, /\.atlas-column-article-shell \.column-article-body > section > p \{[\s\S]*font-size: 18px;/);
+  assert.match(css, /\.atlas-column-article-shell \.column-article-hero h1 br \{ display: none; \}/);
+});
+
 test("keeps the homepage earnings watch compact and reachable", async () => {
   const source = await readFile(new URL("../app/intelligence-console-overview.tsx", import.meta.url), "utf8");
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 
-  assert.match(source, /const events = data\.events\.slice\(0, 5\)/);
+  assert.match(source, /const events = data\.events\.slice\(0, 6\)/);
+  assert.match(source, /财报结论已更新/);
+  assert.match(source, /Post-results read-through/);
   assert.match(source, /className="atlas-calendar" id="calendar"/);
   assert.match(source, /href="\/calendar"/);
   assert.match(source, /className="atlas-research-queue" id="columns"/);
   assert.match(source, /className="atlas-company-watch" id="companies"/);
-  assert.match(css, /\.atlas-calendar, \.atlas-brief, \.atlas-research-queue \{ min-height: 236px/);
+  assert.doesNotMatch(source, /className="atlas-brief"/);
+  assert.match(css, /\.atlas-calendar, \.atlas-research-queue \{ min-height: 320px/);
   assert.match(css, /\.atlas-decision-grid \{[\s\S]*grid-template-columns:/);
+  assert.match(css, /\.atlas-lead-image \{[\s\S]*grid-template-rows: minmax\(0, 1fr\) auto;/);
+  assert.match(css, /\.atlas-lead-image img \{ width: 100%; height: 100%; min-height: 180px;/);
   assert.doesNotMatch(source, /一次只加载当前阅读区|减少在首页连续滚动|首页只保留中美各三条|切换标签时只显示当前主题/);
 });
 

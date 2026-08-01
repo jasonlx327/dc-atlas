@@ -137,6 +137,12 @@ function eventDate(value: string, lang: "zh" | "en") {
       timeZone: "America/New_York",
       weekday: "short",
     }).format(date),
+    time: new Intl.DateTimeFormat(lang === "zh" ? "zh-CN" : "en-US", {
+      timeZone: "America/New_York",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: lang === "en",
+    }).format(date),
   };
 }
 
@@ -318,7 +324,7 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
   const pulse = data.pulse.slice(0, 8).map((story) => translateStory?.(story) ?? story);
   const companies = data.companies.slice(0, 4).map((story) => translateStory?.(story) ?? story);
   const lead = pulse[0] ?? companies[0];
-  const events = data.events.slice(0, 5);
+  const events = data.events.slice(0, 6);
   const deals = data.deals.slice(0, 5);
   const articles = columnArticles.slice(0, 5);
   const uniqueSources = new Set([...data.pulse, ...data.companies, ...data.deals].map((item) => item.sourceName).filter(Boolean));
@@ -369,20 +375,12 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
           <div>{events.map((event) => {
             const timing = eventDate(event.startsAt, lang);
             return <a href={event.conclusion?.sourceUrl ?? event.sourceUrl} target="_blank" rel="noreferrer" key={event.id}>
-              <time><b>{timing.day}</b><span>{timing.weekday}</span></time>
-              <strong>{event.company} <small>{event.ticker}</small></strong>
-              <span>{event.focus ?? event.sector}</span>
-              <em>{event.sector}</em>
+              <time><b>{timing.day}</b><span>{timing.weekday}</span><small>{isZh ? `美东 ${timing.time}` : `${timing.time} ET`}</small></time>
+              <div className="atlas-calendar-company"><strong>{event.company} <small>{event.ticker}</small></strong><em>{event.sector}</em></div>
+              <div className="atlas-calendar-focus"><span>{event.focus ?? event.sector}</span>{event.conclusion && <small>{isZh ? "财报结论已更新" : "Post-results read-through"}</small>}</div>
             </a>;
           })}</div>
         </div>
-        <article className="atlas-brief">
-          <header><strong>{isZh ? "情报摘要" : "Atlas intelligence brief"}</strong><span>{verifiedCount} {isZh ? "条核验记录" : "verified records"}</span></header>
-          <p>{isZh
-            ? "项目交付正从单一机柜扩展转向电力、冷却与园区并行推进。阅读顺序应先看已披露容量，再看送电节点与客户承诺。"
-            : "Delivery is shifting from isolated rack capacity toward coordinated power, cooling and campus execution. Start with disclosed capacity, then follow energization and customer commitments."}</p>
-          <a href={isZh ? "/pulse" : "/en/pulse"}>{isZh ? "查看完整脉冲" : "Open the full pulse"} →</a>
-        </article>
         <div className="atlas-research-queue" id="columns">
           <header><strong>{isZh ? "研究队列" : "Research queue"} (5)</strong><a href={isZh ? "/columns" : "/en/columns"}>{isZh ? "查看全部" : "View all"} →</a></header>
           <div className="atlas-research-content">
@@ -390,11 +388,12 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
               <img src={articles[0].image} alt={isZh ? articles[0].title : articles[0].titleEn} />
               <span>01 · {articles[0].series}</span>
               <strong>{isZh ? articles[0].title : articles[0].titleEn}</strong>
+              <p>{isZh ? articles[0].summary : articles[0].summaryEn}</p>
               <time>{articles[0].date}</time>
             </a>}
             <div className="atlas-research-list">{articles.slice(1).map((article, index) => <a href={isZh ? article.href : article.hrefEn} key={article.href}>
               <span>{String(index + 2).padStart(2, "0")}</span>
-              <strong>{isZh ? article.title : article.titleEn}</strong>
+              <div><small>{article.series}</small><strong>{isZh ? article.title : article.titleEn}</strong></div>
               <time>{article.date}</time>
             </a>)}</div>
           </div>
