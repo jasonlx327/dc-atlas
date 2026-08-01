@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { IntelligenceConsoleShell } from "../intelligence-console-overview";
 
 const canonical = "https://idc-index.com/privacy";
 
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="privacy-page">
-      <Link className="privacy-back" href="/">← 返回 IDC Atlas</Link>
+    <IntelligenceConsoleShell lang="zh" pageLabel="隐私说明" className="atlas-privacy-shell">
+    <div className="privacy-page atlas-console-content-page">
       <p className="eyebrow"><span></span> PRIVACY NOTICE</p>
       <h1>隐私说明</h1>
       <p className="privacy-updated">更新日期：2026 年 7 月 22 日</p>
@@ -32,6 +32,7 @@ export default function PrivacyPage() {
         <h2>外部链接与联系</h2>
         <p>本站包含新闻、公告与数据来源的外部链接，其隐私规则由相应网站负责。如对本说明有疑问，可通过 <a href="https://github.com/jasonlx327" target="_blank" rel="noreferrer">GitHub</a> 联系。</p>
       </section>
-    </main>
+    </div>
+    </IntelligenceConsoleShell>
   );
 }

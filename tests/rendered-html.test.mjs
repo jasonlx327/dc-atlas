@@ -18,7 +18,7 @@ async function render(pathname = "/", host = "dc-atlas.example", country = null,
   );
 }
 
-test("server-renders the compact IDC Atlas portal homepage", async () => {
+test("server-renders the bilingual intelligence-console homepage", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
@@ -27,31 +27,29 @@ test("server-renders the compact IDC Atlas portal homepage", async () => {
   assert.match(html, /<title>全球数据中心与 AI 基础设施情报｜IDC Atlas<\/title>/i);
   assert.match(html, /超大规模云厂商 CAPEX/);
   assert.match(html, /hrefLang="x-default" href="https:\/\/dc-atlas\.example\/en"/);
-  assert.match(html, /Track the/);
-  assert.match(html, /class="pulse-trace"/);
+  assert.match(html, /class="atlas-console-overview"/);
+  assert.match(html, /class="atlas-console-rail(?: |")/);
   assert.match(html, /href="\/privacy"/);
   assert.match(html, /googletagmanager\.com\/gtag\/js\?id=G-XRKL96W42Q/);
   assert.match(html, /gtag\('config', 'G-XRKL96W42Q'\)/);
-  assert.match(html, /class="zh-console-sidebar"/);
-  assert.match(html, /href="\/pulse"><span>04<\/span><strong>最新脉冲/);
-  assert.match(html, /href="\/industry"><span>05<\/span><strong>产业中心/);
-  assert.match(html, /EARNINGS WATCH · IDC CALENDAR/);
-  assert.match(html, /href="\/#calendar"><span>02<\/span><strong>财报日历/);
-  assert.match(html, /class="hero-signal hero-calendar" id="calendar"/);
-  assert.match(html, /IDC ATLAS 深度研究 · 最新 5 篇/);
+  assert.match(html, /href="\/#calendar"><span>02<\/span><strong>财报 \/ 资本支出/);
+  assert.match(html, /href="\/#columns"><span>03<\/span><strong>专栏/);
+  assert.match(html, /href="\/pulse"><span>04<\/span><strong>脉搏监测/);
+  assert.match(html, /href="\/industry"><span>06<\/span><strong>产业链地图/);
+  assert.match(html, /资本支出与财报日历/);
+  assert.match(html, /研究队列/);
   assert.match(html, /Azure 增长 43% 之后，500 亿美元要兑现什么/);
   assert.match(html, /Claude 与 GPT 都在降价，AI 基建真正要看什么/);
   assert.match(html, /href="\/#columns"/);
-  assert.equal((html.match(/class="column-archive-link"/g) ?? []).length, 4);
   assert.match(html, /href="\/columns\/microsoft-ai-capex"/);
   assert.match(html, /href="\/columns\/frontier-model-economics"/);
-  assert.match(html, /今天值得看的脉冲/);
-  assert.match(html, /核心 IDC 标的/);
-  assert.match(html, /从算力到需求/);
-  assert.match(html, /chain-node-icon/);
+  assert.match(html, /市场脉搏/);
+  assert.match(html, /上市公司动态/);
+  assert.match(html, /产业链地图/);
+  assert.match(html, /atlas-chain-icon/);
   assert.match(html, /href="\/industry\?tab=chain&amp;stage=compute"/);
-  assert.match(html, /并购与市场温度/);
-  assert.match(html, /每条信息，都能回到出处/);
+  assert.match(html, /并购与市场动态/);
+  assert.match(html, /信息仅供专业投资者参考，不构成投资建议/);
   assert.doesNotMatch(html, /产品、形态与发布节奏|国产超节点路线|大模型发布与评测|大型园区进度|液冷部署进度/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
@@ -109,18 +107,16 @@ test("renders the English research console and focused content routes", async ()
   const html = await response.text();
   assert.match(html, /<title>Data Center Infrastructure Intelligence \| IDC Atlas<\/title>/);
   assert.match(html, /Hyperscaler capital expenditure/);
-  assert.match(html, /Track the/);
-  assert.match(html, /class="pulse-trace"/);
-  assert.match(html, /class="english-console-sidebar"/);
+  assert.match(html, /class="atlas-console-overview"/);
+  assert.match(html, /class="atlas-console-rail(?: |")/);
   assert.match(html, /href="\/en#columns"/);
-  assert.match(html, /class="console-column-card" id="columns"/);
-  assert.match(html, /IDC ATLAS DEEP RESEARCH · LATEST 5/);
+  assert.match(html, /Research queue/);
   assert.match(html, /Azure at 43%: What Must the Next \$50B Deliver/);
-  assert.equal((html.match(/class="console-column-archive"/g) ?? []).length, 1);
   assert.equal((html.match(/href="\/en\/columns\/(?!microsoft-ai-capex)[^"]+"/g) ?? []).length >= 4, true);
-  assert.match(html, /What matters now/);
-  assert.match(html, /The next read-throughs/);
-  assert.match(html, /console-earnings-strip/);
+  assert.match(html, /CapEx &amp; earnings watch/);
+  assert.match(html, /Atlas intelligence brief/);
+  assert.match(html, /Live infrastructure pulse/);
+  assert.match(html, /Industry chain navigator/);
   assert.doesNotMatch(html, /China and United States · last 45 days/);
 
   const pulse = await render("/en/pulse");
@@ -193,6 +189,7 @@ test("uses explicit Beijing dates instead of relative timestamps", async () => {
 
 test("keeps the English site fully translated across the live coverage stack", async () => {
   const source = await readFile(new URL("../app/en/english-home.tsx", import.meta.url), "utf8");
+  const overview = await readFile(new URL("../app/intelligence-console-overview.tsx", import.meta.url), "utf8");
 
   for (const marker of [
     "Digital Realty reports record Q2 leasing and backlog",
@@ -210,11 +207,11 @@ test("keeps the English site fully translated across the live coverage stack", a
 
   assert.doesNotMatch(source, /editorial English translation is pending/);
   assert.doesNotMatch(source, /lang="zh-CN"/);
-  assert.match(source, /columnArticles\.slice\(0, 5\)/);
-  assert.match(source, /href="\/en#columns"/);
+  assert.match(overview, /columnArticles\.slice\(0, 5\)/);
+  assert.match(overview, /hrefEn: "\/en#columns"/);
   assert.match(source, /className="english-chain-icon"/);
   assert.match(source, /<ChainIcon type=/);
-  assert.match(source, /article\.hrefEn/);
+  assert.match(overview, /article\.hrefEn/);
   assert.match(source, /view === "pulse"/);
 });
 
@@ -242,13 +239,25 @@ test("publishes the bilingual CXMT impact column with ranked US chip exposure", 
 });
 
 test("keeps console navigation in the same order as the home-page reading sequence", async () => {
-  const chinese = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");
-  const english = await readFile(new URL("../app/en/english-home.tsx", import.meta.url), "utf8");
-  const chineseNav = chinese.slice(chinese.indexOf('aria-label="IDC Atlas Console 导航"'), chinese.indexOf("</nav>", chinese.indexOf('aria-label="IDC Atlas Console 导航"')));
-  const englishNav = english.slice(english.indexOf('aria-label="English console navigation"'), english.indexOf("</nav>", english.indexOf('aria-label="English console navigation"')));
+  const overview = await readFile(new URL("../app/intelligence-console-overview.tsx", import.meta.url), "utf8");
+  const nav = overview.slice(overview.indexOf("const navItems"), overview.indexOf("] as const;", overview.indexOf("const navItems")));
+  const overviewStart = overview.indexOf("export function IntelligenceConsoleOverview");
+  const layout = overview.slice(overviewStart, overview.indexOf('<footer className="atlas-console-footer"', overviewStart));
 
-  for (const [first, second] of [["财报日历", "专栏"], ["专栏", "最新脉冲"], ["产业中心", "市场温度"]]) assert.ok(chineseNav.indexOf(first) < chineseNav.indexOf(second));
-  for (const [first, second] of [["Company watch", "Columns"], ["Columns", "Markets"], ["Markets", "Industry map"]]) assert.ok(englishNav.indexOf(first) < englishNav.indexOf(second));
+  for (const [first, second] of [["财报 / 资本支出", "专栏"], ["专栏", "脉搏监测"], ["公司", "产业链地图"], ["产业链地图", "市场"]]) assert.ok(nav.indexOf(first) < nav.indexOf(second));
+  for (const [first, second] of [["id=\"calendar\"", 'id="columns"'], ['id="columns"', 'id="pulse"'], ['id="pulse"', 'id="companies"'], ['id="companies"', 'id="industry"'], ['id="industry"', 'id="market"']]) assert.ok(layout.indexOf(first) < layout.indexOf(second));
+});
+
+test("keeps bilingual RSS and canonical QR sharing in the shared console footer", async () => {
+  const overview = await readFile(new URL("../app/intelligence-console-overview.tsx", import.meta.url), "utf8");
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(overview, /isZh \? "\/feed\.xml" : "\/en\/feed\.xml"/);
+  assert.match(overview, /https:\/\/idc-index\.com\$\{path === "\/" \? "" : path\}/);
+  assert.match(overview, /二维码分享当前页面/);
+  assert.match(overview, /Share this page with a QR code/);
+  assert.match(css, /\.atlas-console-tools/);
+  assert.match(css, /\.atlas-console-share/);
 });
 
 test("keeps the SK hynix earnings column source-led in both languages", async () => {
@@ -355,16 +364,16 @@ test("publishes the bilingual Lease Watch column with contract-level sourcing", 
 });
 
 test("keeps the homepage earnings watch compact and reachable", async () => {
-  const source = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");
+  const source = await readFile(new URL("../app/intelligence-console-overview.tsx", import.meta.url), "utf8");
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 
-  assert.match(source, /const heroCalendarEvents = upcomingEvents\.slice\(0, 3\)/);
-  assert.match(source, /hero-calendar-more" href="\/calendar"/);
-  assert.match(source, /aria-label=\{menuOpen \? "关闭导航菜单" : "打开导航菜单"\}/);
-  assert.match(source, /core-company-pulse" id="listed"/);
-  assert.match(source, /href="#listed"><span>03<\/span>标的/);
-  assert.match(css, /\.hero \{ padding-bottom: 78px; \}/);
-  assert.match(css, /\.compact-hero \.hero-signal \{ min-height: 0; \}/);
+  assert.match(source, /const events = data\.events\.slice\(0, 5\)/);
+  assert.match(source, /className="atlas-calendar" id="calendar"/);
+  assert.match(source, /href="\/calendar"/);
+  assert.match(source, /className="atlas-research-queue" id="columns"/);
+  assert.match(source, /className="atlas-company-watch" id="companies"/);
+  assert.match(css, /\.atlas-calendar, \.atlas-brief, \.atlas-research-queue \{ min-height: 236px/);
+  assert.match(css, /\.atlas-decision-grid \{[\s\S]*grid-template-columns:/);
   assert.doesNotMatch(source, /一次只加载当前阅读区|减少在首页连续滚动|首页只保留中美各三条|切换标签时只显示当前主题/);
 });
 

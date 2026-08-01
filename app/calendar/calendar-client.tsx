@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import QRCode from "qrcode";
+import { IntelligenceConsoleShell } from "../intelligence-console-overview";
 
 type CalendarEvent = {
   id: string;
@@ -38,14 +39,23 @@ export default function CalendarClient({ poster = false }: { poster?: boolean })
     void QRCode.toDataURL("https://idc-index.com", { errorCorrectionLevel: "M", margin: 1, width: 360, color: { dark: "#06101a", light: "#effbfa" } }).then(setQr);
   }, []);
 
-  return <main className={`calendar-share-page${poster ? " poster-export" : ""}`}>
+  const calendar = <div className={`calendar-share-page atlas-console-content-page${poster ? " poster-export" : ""}`} id="calendar">
     <div className="calendar-share-grid" aria-hidden="true" />
-    <header className="calendar-share-nav"><Link className="calendar-share-brand" href="/">IDC <b>ATLAS</b></Link><span>JULY 2026 · US TECH EARNINGS</span>{!poster && <Link className="calendar-share-back" href="/#calendar">← 返回首页</Link>}</header>
+    <header className="calendar-share-nav"><Link className="calendar-share-brand" href="/">IDC <b>ATLAS</b></Link><span>US TECH EARNINGS · CAPEX WATCH</span>{!poster && <Link className="calendar-share-back" href="/#calendar">← 返回首页</Link>}</header>
     <section className="calendar-share-card">
       <div className="calendar-share-heading"><span>IDC ATLAS · EARNINGS WATCH</span><h1>美股科技<br /><em>财报日历</em></h1><p>云厂商、半导体与数据中心基础设施公司的关键财报节点；重点追踪 CAPEX、AI 基建、订单与供给。</p></div>
       <div className="calendar-share-table" role="table" aria-label="美股科技财报日历"><div className="calendar-share-table-head" role="row"><span>时间</span><span>公司名称</span><span>所属行业</span><span>CAPEX 关注 / 财报结论</span></div>{events.map((event) => { const timing = formatEvent(event.startsAt); return <article key={event.id} role="row"><time><strong>{timing.date}</strong><small>{timing.weekday} · 美东 {timing.time}</small></time><div><a href={event.sourceUrl} target="_blank" rel="noreferrer"><strong>{event.company}</strong><small>{event.ticker}</small></a></div><p>{event.sector}</p><div><p>{event.conclusion?.summary ?? event.description}</p><small>{event.conclusion ? `财报结论 · ${event.conclusion.sourceName}` : `CAPEX WATCH · ${event.focus}`}</small></div></article>})}{!events.length && <div className="calendar-share-empty">正在读取本轮财报季节点…</div>}</div>
       <aside className="calendar-share-qr"><div>{qr ? <img src={qr} alt="扫描访问 IDC Atlas" /> : <i aria-hidden="true" />}</div><span>SCAN TO VISIT</span><strong>扫码访问 IDC Atlas</strong><small>实时项目脉冲 · 上市公司 · AI 基建情报</small><a href="https://idc-index.com">idc-index.com</a></aside>
     </section>
     <footer className="calendar-share-footer"><span>时间以公司官方公告为准 · 美东时间</span><span>本网站数据仅用于信息展示与研究，不构成任何投资建议。</span></footer>
-  </main>;
+  </div>;
+
+  if (poster) return calendar;
+  return <IntelligenceConsoleShell
+    lang="zh"
+    activeSection="calendar"
+    verifiedCount={events.length}
+    pageLabel="资本支出与财报日历"
+    className="atlas-calendar-shell"
+  >{calendar}</IntelligenceConsoleShell>;
 }

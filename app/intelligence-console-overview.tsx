@@ -1,0 +1,455 @@
+"use client";
+
+import { useEffect, useState, type ReactNode } from "react";
+import QRCode from "qrcode";
+import { ChainIcon, type ChainKey } from "./chain-icon";
+import { columnArticles } from "./columns/articles";
+
+export type ConsoleStory = {
+  id: string;
+  title: string;
+  summary?: string;
+  publishedAt?: string | null;
+  sourceUrl?: string | null;
+  permalink?: string;
+  sourceName?: string | null;
+  region?: string;
+  category?: string | null;
+  listedTicker?: string;
+  milestone?: string;
+  scale?: string;
+  score?: number | null;
+  verifiedAt?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+};
+
+export type ConsoleEvent = {
+  id: string;
+  startsAt: string;
+  company: string;
+  ticker: string;
+  sector: string;
+  sourceUrl: string;
+  sourceName: string;
+  focus?: string;
+  conclusion?: { summary: string; summaryEn?: string; sourceName: string; sourceUrl: string };
+};
+
+export type ConsoleDeal = {
+  id: string;
+  announcedAt: string;
+  buyer: string;
+  target: string;
+  value: string;
+  capacity: string;
+  status: string;
+  rationale: string;
+  sourceName: string;
+  sourceUrl: string;
+};
+
+export type ConsoleBenchmark = {
+  code: string;
+  name: string;
+  level: number;
+  dayPct: number;
+};
+
+export type ConsoleOverviewData = {
+  generatedAt?: string;
+  reviewedAt?: string;
+  pulse: ConsoleStory[];
+  companies: ConsoleStory[];
+  events: ConsoleEvent[];
+  deals: ConsoleDeal[];
+  benchmarks: ConsoleBenchmark[];
+};
+
+type LocalizedStory = ConsoleStory & { displayTitle?: string; displaySummary?: string };
+
+type Props = {
+  lang: "zh" | "en";
+  data: ConsoleOverviewData;
+  translateStory?: (story: ConsoleStory) => LocalizedStory;
+};
+
+type ShellProps = {
+  lang: "zh" | "en";
+  activeSection?: string;
+  generatedAt?: string;
+  sourceCount?: number;
+  verifiedCount?: number;
+  pageLabel?: string;
+  className?: string;
+  children: ReactNode;
+};
+
+const stages: Array<{
+  key: ChainKey;
+  zh: string;
+  en: string;
+  zhDetail: string;
+  enDetail: string;
+}> = [
+  { key: "compute", zh: "芯片与半导体", en: "Chips & semiconductors", zhDetail: "GPU / ASIC / 存储 / 网络芯片", enDetail: "GPU / ASIC / memory / NIC" },
+  { key: "rack", zh: "服务器与硬件", en: "Servers & hardware", zhDetail: "服务器 / 存储 / 交换机 / 电源", enDetail: "Servers / storage / switch / PSU" },
+  { key: "campus", zh: "数据中心基础设施", en: "Data-center infrastructure", zhDetail: "机柜 / 配电 / UPS / 消防 / 安防", enDetail: "Racks / power / UPS / fire / security" },
+  { key: "cooling", zh: "制冷与热管理", en: "Cooling & thermal", zhDetail: "风冷 / 液冷 / CDU / 管路", enDetail: "Air / liquid / CRAC / CDU / piping" },
+  { key: "power", zh: "电力与能源", en: "Power & energy", zhDetail: "发电 / 电网 / 储能 / 天然气", enDetail: "Generation / grid / storage / gas" },
+  { key: "model", zh: "运营与服务", en: "Operations & services", zhDetail: "运维 / 连接 / 安全 / 托管", enDetail: "O&M / connectivity / security / FM" },
+];
+
+const navItems = [
+  { key: "overview", zh: "概览", en: "Overview", hrefZh: "/#overview", hrefEn: "/en#overview" },
+  { key: "calendar", zh: "财报 / 资本支出", en: "Earnings / CapEx", hrefZh: "/#calendar", hrefEn: "/en#calendar" },
+  { key: "columns", zh: "专栏", en: "Columns", hrefZh: "/#columns", hrefEn: "/en#columns" },
+  { key: "pulse", zh: "脉搏监测", en: "Pulse", hrefZh: "/pulse", hrefEn: "/en/pulse" },
+  { key: "companies", zh: "公司", en: "Companies", hrefZh: "/#companies", hrefEn: "/en#companies" },
+  { key: "industry", zh: "产业链地图", en: "Industry Map", hrefZh: "/industry", hrefEn: "/en/industry" },
+  { key: "market", zh: "市场", en: "Markets", hrefZh: "/#market", hrefEn: "/en#market" },
+] as const;
+
+function dateLabel(value: string | null | undefined, lang: "zh" | "en", includeTime = false) {
+  if (!value) return "—";
+  const date = new Date(value);
+  if (!Number.isFinite(date.getTime())) return value;
+  return new Intl.DateTimeFormat(lang === "zh" ? "zh-CN" : "en-US", {
+    timeZone: lang === "zh" ? "Asia/Shanghai" : "America/New_York",
+    year: includeTime ? undefined : "numeric",
+    month: includeTime ? "2-digit" : "short",
+    day: "2-digit",
+    hour: includeTime ? "2-digit" : undefined,
+    minute: includeTime ? "2-digit" : undefined,
+    hour12: lang === "en",
+  }).format(date);
+}
+
+function eventDate(value: string, lang: "zh" | "en") {
+  const date = new Date(value);
+  return {
+    day: new Intl.DateTimeFormat(lang === "zh" ? "zh-CN" : "en-US", {
+      timeZone: "America/New_York",
+      month: "numeric",
+      day: "numeric",
+    }).format(date),
+    weekday: new Intl.DateTimeFormat(lang === "zh" ? "zh-CN" : "en-US", {
+      timeZone: "America/New_York",
+      weekday: "short",
+    }).format(date),
+  };
+}
+
+function storyLink(story: ConsoleStory) {
+  return story.sourceUrl ?? story.permalink ?? "#";
+}
+
+function disclosedMetric(story: ConsoleStory, lang: "zh" | "en") {
+  if (story.scale) return story.scale;
+  const text = `${story.title} ${story.summary ?? ""}`;
+  const match = text.match(/(?:[$¥￥]\s?)?[\d,.]+\s?(?:GW|MW|亿元|亿美元|billion|million|机柜|racks)/i);
+  return match?.[0] ?? (lang === "zh" ? "规模待披露" : "Not disclosed");
+}
+
+function storyTitle(story: LocalizedStory) {
+  return story.displayTitle ?? story.title;
+}
+
+function storySummary(story: LocalizedStory, lang: "zh" | "en") {
+  return story.displaySummary ?? story.summary ?? (lang === "zh" ? "打开来源查看完整披露。" : "Open the source for the full disclosure.");
+}
+
+function ShellNav({
+  lang,
+  mobileOpen,
+  setMobileOpen,
+  activeSection,
+  setActiveSection,
+}: {
+  lang: "zh" | "en";
+  mobileOpen: boolean;
+  setMobileOpen: (open: boolean) => void;
+  activeSection: string;
+  setActiveSection: (section: string) => void;
+}) {
+  const isZh = lang === "zh";
+  const scrollKeys = new Set(["overview", "calendar", "columns", "companies", "market"]);
+  const [shareOpen, setShareOpen] = useState(false);
+  const [shareQr, setShareQr] = useState("");
+  const [shareUrl, setShareUrl] = useState("https://idc-index.com");
+
+  function toggleShare() {
+    if (shareOpen) {
+      setShareOpen(false);
+      return;
+    }
+    const path = window.location.pathname;
+    const url = `https://idc-index.com${path === "/" ? "" : path}`;
+    setShareUrl(url);
+    setShareQr("");
+    setShareOpen(true);
+    void QRCode.toDataURL(url, {
+      errorCorrectionLevel: "M",
+      margin: 1,
+      width: 320,
+      color: { dark: "#19362f", light: "#faf8f2" },
+    }).then(setShareQr);
+  }
+
+  return <>
+    <aside className={`atlas-console-rail ${mobileOpen ? "open" : ""}`}>
+      <a className="atlas-console-brand" href={isZh ? "/" : "/en"} aria-label="IDC Atlas">
+        <strong>IDC</strong><b>ATLAS</b>
+        <small>INTELLIGENCE CONSOLE · LIVE</small>
+        <span>{isZh ? "全球数据中心基础设施情报" : "Global data-center infrastructure intelligence"}</span>
+      </a>
+      <nav aria-label={isZh ? "IDC Atlas 主导航" : "IDC Atlas primary navigation"}>
+        {navItems.map((item) => <a className={item.key === activeSection ? "active" : ""} href={isZh ? item.hrefZh : item.hrefEn} key={item.key} onClick={(event) => {
+          setMobileOpen(false);
+          if (!scrollKeys.has(item.key)) return;
+          const target = document.getElementById(item.key);
+          if (!target) return;
+          event.preventDefault();
+          setActiveSection(item.key);
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          window.history.replaceState(null, "", `#${item.key}`);
+        }}>
+          <span>{String(navItems.indexOf(item) + 1).padStart(2, "0")}</span>
+          <strong>{isZh ? item.zh : item.en}</strong>
+        </a>)}
+      </nav>
+      <div className="atlas-console-rail-foot">
+        <div className="atlas-console-tools">
+          <a href={isZh ? "/feed.xml" : "/en/feed.xml"} target="_blank" rel="noreferrer">
+            <span>RSS</span><strong>{isZh ? "订阅研究更新" : "Subscribe to research"}</strong>
+          </a>
+          <button type="button" aria-expanded={shareOpen} onClick={toggleShare}>
+            <span>QR</span><strong>{isZh ? "二维码分享" : "Share with QR"}</strong>
+          </button>
+        </div>
+        {shareOpen && <section className="atlas-console-share" role="dialog" aria-label={isZh ? "二维码分享当前页面" : "Share this page with a QR code"}>
+          <button type="button" onClick={() => setShareOpen(false)}>{isZh ? "关闭" : "Close"}</button>
+          {shareQr ? <img src={shareQr} alt={isZh ? "当前页面分享二维码" : "QR code for this page"} /> : <span className="atlas-console-share-loading">{isZh ? "正在生成二维码…" : "Generating QR code…"}</span>}
+          <strong>{isZh ? "扫描分享当前页面" : "Scan to share this page"}</strong>
+          <small>{shareUrl.replace("https://", "")}</small>
+          <a href={shareUrl} target="_blank" rel="noreferrer">{isZh ? "打开正式链接" : "Open canonical link"}</a>
+        </section>}
+        <a href="/methodology">{isZh ? "方法论" : "Methodology"}</a>
+        <a href="/privacy">{isZh ? "隐私" : "Privacy"}</a>
+        <button type="button" onClick={() => setMobileOpen(false)}>{isZh ? "收起导航" : "Close navigation"}</button>
+      </div>
+    </aside>
+    {mobileOpen && <button className="atlas-console-scrim" type="button" aria-label={isZh ? "关闭导航" : "Close navigation"} onClick={() => setMobileOpen(false)} />}
+    <header className="atlas-console-mobile-head">
+      <a href={isZh ? "/" : "/en"}><strong>IDC</strong> <b>ATLAS</b></a>
+      <span>{isZh ? "产业情报控制台" : "INTELLIGENCE CONSOLE"}</span>
+      <button type="button" aria-expanded={mobileOpen} onClick={() => setMobileOpen(!mobileOpen)}>{isZh ? "目录" : "Menu"}</button>
+    </header>
+  </>;
+}
+
+function ConsoleStatusbar({
+  lang,
+  generatedAt,
+  sourceCount,
+  verifiedCount,
+  pageLabel,
+}: {
+  lang: "zh" | "en";
+  generatedAt?: string;
+  sourceCount?: number;
+  verifiedCount?: number;
+  pageLabel?: string;
+}) {
+  const isZh = lang === "zh";
+  return <header className="atlas-statusbar">
+    <div><strong>{dateLabel(generatedAt, lang)}</strong><span>{pageLabel ?? (isZh ? "每日产业情报" : "Daily industrial intelligence")}</span></div>
+    <dl>
+      <div><dt>{isZh ? "数据刷新" : "Data refreshed"}</dt><dd><i />{dateLabel(generatedAt, lang, true)}</dd></div>
+      <div><dt>{isZh ? "来源覆盖" : "Source coverage"}</dt><dd>{sourceCount ? `${sourceCount} ${isZh ? "个公开来源" : "public sources"}` : "—"}</dd></div>
+      <div><dt>{isZh ? "已核验记录" : "Verified records"}</dt><dd>{verifiedCount || "—"}</dd></div>
+    </dl>
+    <a className="atlas-language" href={isZh ? "/en?lang=en" : "/?lang=zh"}>{isZh ? "EN" : "中文"}</a>
+  </header>;
+}
+
+export function IntelligenceConsoleShell({
+  lang,
+  activeSection = "",
+  generatedAt,
+  sourceCount,
+  verifiedCount,
+  pageLabel,
+  className = "",
+  children,
+}: ShellProps) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [currentSection, setCurrentSection] = useState(activeSection);
+  const isZh = lang === "zh";
+  return <main className={`atlas-console-overview atlas-console-page ${className}`.trim()} lang={isZh ? "zh-CN" : "en"}>
+    <ShellNav
+      lang={lang}
+      mobileOpen={mobileOpen}
+      setMobileOpen={setMobileOpen}
+      activeSection={currentSection}
+      setActiveSection={setCurrentSection}
+    />
+    <div className="atlas-console-canvas">
+      <ConsoleStatusbar
+        lang={lang}
+        generatedAt={generatedAt}
+        sourceCount={sourceCount}
+        verifiedCount={verifiedCount}
+        pageLabel={pageLabel}
+      />
+      {children}
+      <footer className="atlas-console-footer">
+        <p>{isZh ? "信息仅供专业投资者参考，不构成投资建议。" : "Data for professional research only. Nothing here constitutes investment advice."}</p>
+        <nav><a href="/methodology">{isZh ? "方法论" : "Methodology"}</a><a href="/privacy">{isZh ? "隐私" : "Privacy"}</a></nav>
+      </footer>
+    </div>
+  </main>;
+}
+
+export function IntelligenceConsoleOverview({ lang, data, translateStory }: Props) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("overview");
+  const isZh = lang === "zh";
+  const pulse = data.pulse.slice(0, 8).map((story) => translateStory?.(story) ?? story);
+  const companies = data.companies.slice(0, 4).map((story) => translateStory?.(story) ?? story);
+  const lead = pulse[0] ?? companies[0];
+  const events = data.events.slice(0, 5);
+  const deals = data.deals.slice(0, 5);
+  const articles = columnArticles.slice(0, 5);
+  const uniqueSources = new Set([...data.pulse, ...data.companies, ...data.deals].map((item) => item.sourceName).filter(Boolean));
+  const verifiedCount = data.pulse.length + data.companies.length + data.deals.length;
+  const leadImage = lead?.imageSrc ?? "/column-ai-capex-grid.png";
+  const contextualImages = ["/column-hyperscale-leases.png", "/column-sk-hynix-hbm.png", "/products/nvidia-dgx-b200.jpg", "/column-ai-capex-grid.png", "/column-microsoft-ai-capex.png"];
+
+  useEffect(() => {
+    const sectionIds = ["overview", "calendar", "columns", "pulse", "companies", "industry", "market"];
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible?.target.id) setActiveSection(visible.target.id);
+    }, { rootMargin: "-12% 0px -70% 0px", threshold: [0, 0.2, 0.5] });
+    sectionIds.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  return <main className="atlas-console-overview" lang={isZh ? "zh-CN" : "en"}>
+    <ShellNav lang={lang} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} activeSection={activeSection} setActiveSection={setActiveSection} />
+    <div className="atlas-console-canvas">
+      <div id="overview"><ConsoleStatusbar lang={lang} generatedAt={data.generatedAt} sourceCount={uniqueSources.size} verifiedCount={verifiedCount} /></div>
+
+      <section className="atlas-lead" aria-labelledby="atlas-lead-title">
+        <div className="atlas-lead-copy">
+          <span>{isZh ? "今日首要信号" : "LEAD SIGNAL"}</span>
+          <h1 id="atlas-lead-title"><a href={lead ? storyLink(lead) : "#"} target="_blank" rel="noreferrer">{lead ? storyTitle(lead) : isZh ? "正在连接最新基础设施信号" : "Connecting to the latest infrastructure signal"}</a></h1>
+          <p>{lead ? storySummary(lead, lang) : isZh ? "数据连接后将显示最新已核验项目。" : "The latest verified project will appear when data connects."}</p>
+          {lead && <div className="atlas-lead-meta"><span>{lead.region ?? (isZh ? "全球" : "Global")}</span><span>{lead.category ?? (isZh ? "项目脉冲" : "Project pulse")}</span><time>{dateLabel(lead.publishedAt, lang)}</time></div>}
+        </div>
+        <figure className="atlas-lead-image">
+          <img src={leadImage} alt={lead?.imageAlt ?? (isZh ? "数据中心基础设施项目" : "Data-center infrastructure project")} />
+          <figcaption>{lead?.sourceName ?? (isZh ? "IDC Atlas 研究图示" : "IDC Atlas research visual")}</figcaption>
+        </figure>
+        <dl className="atlas-lead-facts">
+          <div><dt>{isZh ? "披露指标" : "Disclosed metric"}</dt><dd>{lead ? disclosedMetric(lead, lang) : "—"}</dd></div>
+          <div><dt>{isZh ? "项目状态" : "Status"}</dt><dd>{lead?.milestone ?? (isZh ? "公开披露" : "Public update")}</dd></div>
+          <div><dt>{isZh ? "主要来源" : "Primary source"}</dt><dd>{lead?.sourceName ?? "—"}<small>{dateLabel(lead?.publishedAt, lang)}</small></dd></div>
+          <div><dt>{isZh ? "核验状态" : "Verification"}</dt><dd className="verified">{isZh ? "已核验" : "Verified"}<i><b /><b /><b /><b /></i></dd></div>
+        </dl>
+      </section>
+
+      <section className="atlas-decision-grid">
+        <div className="atlas-calendar" id="calendar">
+          <header><strong>{isZh ? "资本支出与财报日历" : "CapEx & earnings watch"}</strong><a href="/calendar">{isZh ? "查看全部" : "View all"} →</a></header>
+          <div>{events.map((event) => {
+            const timing = eventDate(event.startsAt, lang);
+            return <a href={event.conclusion?.sourceUrl ?? event.sourceUrl} target="_blank" rel="noreferrer" key={event.id}>
+              <time><b>{timing.day}</b><span>{timing.weekday}</span></time>
+              <strong>{event.company} <small>{event.ticker}</small></strong>
+              <span>{event.focus ?? event.sector}</span>
+              <em>{event.sector}</em>
+            </a>;
+          })}</div>
+        </div>
+        <article className="atlas-brief">
+          <header><strong>{isZh ? "情报摘要" : "Atlas intelligence brief"}</strong><span>{verifiedCount} {isZh ? "条核验记录" : "verified records"}</span></header>
+          <p>{isZh
+            ? "项目交付正从单一机柜扩展转向电力、冷却与园区并行推进。阅读顺序应先看已披露容量，再看送电节点与客户承诺。"
+            : "Delivery is shifting from isolated rack capacity toward coordinated power, cooling and campus execution. Start with disclosed capacity, then follow energization and customer commitments."}</p>
+          <a href={isZh ? "/pulse" : "/en/pulse"}>{isZh ? "查看完整脉冲" : "Open the full pulse"} →</a>
+        </article>
+        <div className="atlas-research-queue" id="columns">
+          <header><strong>{isZh ? "研究队列" : "Research queue"} (5)</strong><a href={isZh ? "/columns" : "/en/columns"}>{isZh ? "查看全部" : "View all"} →</a></header>
+          <div className="atlas-research-content">
+            {articles[0] && <a className="atlas-research-feature" href={isZh ? articles[0].href : articles[0].hrefEn}>
+              <img src={articles[0].image} alt={isZh ? articles[0].title : articles[0].titleEn} />
+              <span>01 · {articles[0].series}</span>
+              <strong>{isZh ? articles[0].title : articles[0].titleEn}</strong>
+              <time>{articles[0].date}</time>
+            </a>}
+            <div className="atlas-research-list">{articles.slice(1).map((article, index) => <a href={isZh ? article.href : article.hrefEn} key={article.href}>
+              <span>{String(index + 2).padStart(2, "0")}</span>
+              <strong>{isZh ? article.title : article.titleEn}</strong>
+              <time>{article.date}</time>
+            </a>)}</div>
+          </div>
+        </div>
+      </section>
+
+      <section className="atlas-live-pulse" id="pulse">
+        <header><strong>{isZh ? "市场脉搏" : "Live infrastructure pulse"} <small>{isZh ? "按信号强度排序" : "ranked for fast reading"}</small></strong><a href={isZh ? "/pulse" : "/en/pulse"}>{isZh ? "查看全部信号" : "View all signals"} →</a></header>
+        <div className="atlas-pulse-table">
+          <div className="atlas-pulse-table-head"><span>#</span><span>{isZh ? "日期" : "Date"}</span><span>{isZh ? "信号" : "Signal"}</span><span>{isZh ? "公司 / 项目" : "Company / project"}</span><span>{isZh ? "类别" : "Category"}</span><span>{isZh ? "地区" : "Region"}</span><span>{isZh ? "披露指标" : "Disclosed metric"}</span><span>{isZh ? "来源" : "Primary source"}</span></div>
+          {pulse.map((story, index) => <a className="atlas-pulse-row" href={storyLink(story)} target="_blank" rel="noreferrer" key={story.id}>
+            <span>{index + 1}</span>
+            <time>{dateLabel(story.publishedAt, lang)}</time>
+            <b>{index < 2 ? (isZh ? "新增" : "NEW") : (isZh ? "更新" : "UPD")}</b>
+            <strong>{storyTitle(story)}</strong>
+            <span>{story.category ?? (isZh ? "项目" : "Project")}</span>
+            <span>{story.region ?? (isZh ? "全球" : "Global")}</span>
+            <em>{disclosedMetric(story, lang)}</em>
+            <span>{story.sourceName ?? "—"}</span>
+          </a>)}
+        </div>
+      </section>
+
+      <section className="atlas-company-watch" id="companies">
+        <header><strong>{isZh ? "上市公司动态" : "Listed-company watch"}</strong><a href={isZh ? "/pulse" : "/en/pulse"}>{isZh ? "进入公司脉冲" : "Open company watch"} →</a></header>
+        <div>{companies.map((story, index) => <a href={storyLink(story)} target="_blank" rel="noreferrer" key={story.id}>
+          <span>{story.listedTicker ?? String(index + 1).padStart(2, "0")}</span>
+          <strong>{storyTitle(story)}</strong>
+          <p>{storySummary(story, lang)}</p>
+          <time>{dateLabel(story.publishedAt, lang)}</time>
+        </a>)}</div>
+      </section>
+
+      <section className="atlas-industry-chain" id="industry">
+        <header><strong>{isZh ? "产业链地图" : "Industry chain navigator"}</strong><a href={isZh ? "/industry" : "/en/industry"}>{isZh ? "探索完整产业链" : "Explore industry map"} →</a></header>
+        <div>{stages.map((stage, index) => <a href={`${isZh ? "/industry" : "/en/industry"}?tab=chain&stage=${stage.key}`} key={stage.key}>
+          <span className="atlas-chain-icon"><ChainIcon type={stage.key} /></span>
+          <b>{String(index + 1).padStart(2, "0")}</b>
+          <strong>{isZh ? stage.zh : stage.en}</strong>
+          <small>{isZh ? stage.zhDetail : stage.enDetail}</small>
+        </a>)}</div>
+      </section>
+
+      <section className="atlas-market-strip" id="market">
+        <header><strong>{isZh ? "并购与市场动态" : "M&A and market movers"}</strong>{data.benchmarks.length > 0 && <span>{data.benchmarks.map((item) => `${item.code} ${item.dayPct >= 0 ? "+" : ""}${item.dayPct.toFixed(2)}%`).join(" · ")}</span>}</header>
+        <div>{deals.map((deal, index) => <a href={deal.sourceUrl} target="_blank" rel="noreferrer" key={deal.id}>
+          <div><time>{deal.announcedAt}</time><strong>{deal.buyer} → {deal.target}</strong><span>{deal.value} · {deal.capacity}</span><small>{deal.sourceName}</small></div>
+          <img src={contextualImages[index]} alt="" />
+        </a>)}</div>
+      </section>
+
+      <footer className="atlas-console-footer">
+        <p>{isZh ? "信息仅供专业投资者参考，不构成投资建议。" : "Data for professional research only. Nothing here constitutes investment advice."}</p>
+        <nav><a href="/methodology">{isZh ? "方法论" : "Methodology"}</a><a href="/privacy">{isZh ? "隐私" : "Privacy"}</a></nav>
+      </footer>
+    </div>
+  </main>;
+}
