@@ -200,6 +200,9 @@ test("keeps the English site fully translated across the live coverage stack", a
   const overview = await readFile(new URL("../app/intelligence-console-overview.tsx", import.meta.url), "utf8");
 
   for (const marker of [
+    "Amazon Q2: AWS grows 37% as AI infrastructure spending weighs on free cash flow",
+    "Meta Q2 capex reaches \\$31.1B; full-year range narrows to \\$130B–\\$145B",
+    "Microsoft FY26 Q4: Azure grows 43% and next-quarter capex is set to exceed \\$50B",
     "Digital Realty reports record Q2 leasing and backlog",
     "ChangXin Technology lists on STAR Market as an A-share DRAM manufacturer",
     "Shanghai DataPort joins a WAIC quantum-supercomputing-AI platform project",

@@ -34,6 +34,9 @@ export type AtlasPayload = {
 };
 
 const titleTranslations: Record<string, string> = {
+  "Amazon Q2 AWS 增长 37%，AI 基础设施投入继续压低自由现金流": "Amazon Q2: AWS grows 37% as AI infrastructure spending weighs on free cash flow",
+  "Meta Q2 资本开支 311 亿美元，全年区间收窄至 1,300–1,450 亿美元": "Meta Q2 capex reaches $31.1B; full-year range narrows to $130B–$145B",
+  "Microsoft FY26 Q4 Azure 增长 43%，下一季度资本开支预计超过 500 亿美元": "Microsoft FY26 Q4: Azure grows 43% and next-quarter capex is set to exceed $50B",
   "Galaxy 收购德州 McGregor 500 英亩园区，首期规划 74MW": "Galaxy acquires a 500-acre McGregor campus with 74MW planned for Phase I",
   "Galaxy 新增德州 McGregor 数据中心园区，首期规划 74MW": "Galaxy adds a McGregor, Texas data-center campus with 74MW planned for Phase I",
   "Energy Vault 启动 Snyder AI 园区建设，首期部署 8MW": "Energy Vault breaks ground on its Snyder AI campus with an initial 8MW deployment",
@@ -102,6 +105,9 @@ const titleTranslations: Record<string, string> = {
 };
 
 const summaryTranslations: Record<string, string> = {
+  "Amazon Q2 AWS 增长 37%，AI 基础设施投入继续压低自由现金流": "AWS revenue rose 37% to $42.2B. Trailing-12-month purchases of property and equipment, net, reached $169.0B, while free cash flow moved to a $7.6B outflow, primarily reflecting higher AI investment.",
+  "Meta Q2 资本开支 311 亿美元，全年区间收窄至 1,300–1,450 亿美元": "Meta reported $31.08B of Q2 capital expenditures, including finance-lease principal payments, and narrowed its 2026 capex outlook to $130B–$145B as revenue rose 28%.",
+  "Microsoft FY26 Q4 Azure 增长 43%，下一季度资本开支预计超过 500 亿美元": "Azure and other cloud-services revenue rose 43%. Microsoft reported roughly $41B of quarterly capex and expects more than $50B next quarter as demand continues to exceed available supply.",
   "Galaxy 收购德州 McGregor 500 英亩园区，首期规划 74MW": "Galaxy acquired roughly 500 acres in McGregor, Texas. First power is expected in 2028, with 74MW planned for Phase I and a pathway to several hundred megawatts.",
   "Galaxy 新增德州 McGregor 数据中心园区，首期规划 74MW": "Galaxy acquired roughly 500 acres in McGregor, Texas, with first power expected in 2028 and 74MW planned for Phase I.",
   "Energy Vault 启动 Snyder AI 园区建设，首期部署 8MW": "The Snyder, Texas campus has entered construction with 8MW in its first deployment, a planned expansion to 25MW and a longer-term site target of 500MW.",
@@ -205,6 +211,12 @@ const storyFieldTranslations: Record<string, string> = {
   "云计算 / 软件": "Cloud / software",
   "芯片 IP": "Chip IP",
   "电商 / 云计算": "E-commerce / cloud",
+  "Q2 业绩与 AI 投入更新": "Q2 results and AI investment update",
+  "Q2 业绩与 CAPEX 指引更新": "Q2 results and capex guidance update",
+  "FY26 Q4 业绩与供给指引": "FY26 Q4 results and supply outlook",
+  "AWS +37% · TTM 资本性资产采购 $1,690 亿": "AWS +37% · TTM property and equipment purchases $169.0B",
+  "Q2 CAPEX $311 亿 · FY26 $1,300–1,450 亿": "Q2 capex $31.1B · FY26 $130B–$145B",
+  "Azure +43% · 下季 CAPEX $500 亿+": "Azure +43% · next-quarter capex $50B+",
   "土地收购完成 · 开发推进": "Land acquired · development advancing",
   "启动建设 · 分期扩容": "Construction started · phased expansion",
   "首期 74MW · 约 500 英亩": "74MW Phase I · approximately 500 acres",
