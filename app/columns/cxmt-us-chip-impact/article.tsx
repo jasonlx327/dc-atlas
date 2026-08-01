@@ -18,7 +18,7 @@ function SourceLink({ href, children }: { href: string; children: React.ReactNod
 
 function ArticleHeader({ lang }: { lang: "zh" | "en" }) {
   const english = lang === "en";
-  return <><header className="column-article-nav"><a href={english ? "/en" : "/"}>IDC <b>ATLAS</b></a><div><a href={english ? "/columns/cxmt-us-chip-impact" : "/en/columns/cxmt-us-chip-impact"}>{english ? "中文" : "EN"}</a><a href={english ? "/en" : "/"}>{english ? "Back to intelligence" : "返回实时情报站"}</a></div></header><section className="column-article-hero"><div><span>IDC ATLAS COLUMN · MEMORY WATCH</span><time dateTime="2026-07-28">{english ? "JULY 28, 2026" : "2026 年 7 月 28 日"}</time></div><h1>{english ? <>CXMT Is Public. Which US Chip Stocks <em>Actually Feel It?</em></> : <>长鑫上市，<br /><em>谁会先感到压力？</em></>}</h1><p>{english ? "The immediate read-through runs through conventional DRAM pricing and China exposure. Micron sits closest to that channel; US equipment vendors face a policy-constrained opportunity; NVIDIA and AMD remain a longer-dated HBM question." : "最直接的传导链来自通用 DRAM 价格与中国市场份额。Micron 离这条链最近；美国设备商面对受出口管制约束的订单机会；NVIDIA 与 AMD 的影响仍取决于更长期的 HBM 进展。"}</p></section><figure className="column-article-cover"><img src="/column-cxmt-us-chips.png" alt={english ? "Editorial illustration of a DRAM wafer, memory supply and the semiconductor cycle" : "DRAM 晶圆、存储供给与半导体周期的原创专栏插画"} /><figcaption>{english ? "IDC Atlas original editorial cover · Memory Watch" : "IDC Atlas 原创专栏封面 · Memory Watch"}</figcaption></figure></>;
+  return <><header className="column-article-nav"><a href={english ? "/en" : "/"}>IDC <b>ATLAS</b></a><div><a href={english ? "/columns/cxmt-us-chip-impact" : "/en/columns/cxmt-us-chip-impact"}>{english ? "中文" : "EN"}</a><a href={english ? "/en" : "/"}>{english ? "Back to intelligence" : "返回实时情报站"}</a></div></header><section className="column-article-hero"><div><span>IDC ATLAS COLUMN · MEMORY WATCH</span><time dateTime="2026-08-01">{english ? "RECHECKED AUGUST 1, 2026" : "复核于 2026 年 8 月 1 日"}</time></div><h1>{english ? <>CXMT Is Public. Which US Chip Stocks <em>Actually Feel It?</em></> : <>长鑫上市，<br /><em>谁会先感到压力？</em></>}</h1><p>{english ? "The immediate read-through runs through conventional DRAM pricing and China exposure. Micron sits closest to that channel; US equipment vendors face a policy-constrained opportunity; NVIDIA and AMD remain a longer-dated HBM question." : "最直接的传导链来自通用 DRAM 价格与中国市场份额。Micron 离这条链最近；美国设备商面对受出口管制约束的订单机会；NVIDIA 与 AMD 的影响仍取决于更长期的 HBM 进展。"}</p></section><figure className="column-article-cover"><img src="/column-cxmt-us-chips.png" alt={english ? "Editorial illustration of a DRAM wafer, memory supply and the semiconductor cycle" : "DRAM 晶圆、存储供给与半导体周期的原创专栏插画"} /><figcaption>{english ? "IDC Atlas original editorial cover · Memory Watch" : "IDC Atlas 原创专栏封面 · Memory Watch"}</figcaption></figure></>;
 }
 
 function ChineseArticle() {
@@ -49,7 +49,7 @@ function ChineseArticle() {
 
       <blockquote><span>IDC ATLAS VIEW</span><p>长鑫上市提高了中国 DRAM 扩张的可见度。短期最敏感的美股标的是 Micron；设备商的机会受政策边界约束；NVIDIA 与 AMD 仍需等待 HBM 量产和认证证据。市场真正要定价的是新增合格 bit 供给，而非上市首日的融资数字。</p></blockquote>
 
-      <footer className="column-article-disclosure"><p>资料截至 2026 年 7 月 28 日（北京时间），来自长鑫科技上交所文件及美国上市公司 SEC 文件。本文不使用盘中股价、分析师目标价或未披露产能推测。产能、bit 出货、收入份额和利润份额均为不同口径。</p><p>本网站数据与内容仅用于信息展示与研究，不构成任何投资建议。</p></footer>
+      <footer className="column-article-disclosure"><p>资料复核至 2026 年 8 月 1 日 23:00（北京时间），未发现需要改变影响排序的新正式披露。证据来自长鑫科技上交所文件及美国上市公司 SEC 文件。本文不使用盘中股价、分析师目标价或未披露产能推测。产能、bit 出货、收入份额和利润份额均为不同口径。</p><p>本网站数据与内容仅用于信息展示与研究，不构成任何投资建议。</p></footer>
     </article>
   </ColumnArticleConsole>;
 }
@@ -84,7 +84,7 @@ function EnglishArticle() {
 
       <blockquote><span>IDC ATLAS VIEW</span><p>CXMT&apos;s listing makes China&apos;s DRAM expansion easier to observe. Micron carries the clearest near-term exposure. Equipment upside stops at the policy boundary. NVIDIA and AMD require evidence of qualified HBM volume. The variable worth pricing is incremental saleable bit supply, not the first-day financing headline.</p></blockquote>
 
-      <footer className="column-article-disclosure"><p>Source cutoff: July 28, 2026, Beijing time. This analysis uses CXMT&apos;s Shanghai Stock Exchange filings and SEC filings from US-listed companies. It does not use intraday prices, analyst price targets or undisclosed capacity estimates. Capacity, bit shipments, revenue share and profit share are separate measures.</p><p>For information and research only. This is not investment advice.</p></footer>
+      <footer className="column-article-disclosure"><p>Sources rechecked through August 1, 2026, 23:00 Beijing time; no new formal disclosure changed the impact ranking. This analysis uses CXMT&apos;s Shanghai Stock Exchange filings and SEC filings from US-listed companies. It does not use intraday prices, analyst price targets or undisclosed capacity estimates. Capacity, bit shipments, revenue share and profit share are separate measures.</p><p>For information and research only. This is not investment advice.</p></footer>
     </article>
   </ColumnArticleConsole>;
 }

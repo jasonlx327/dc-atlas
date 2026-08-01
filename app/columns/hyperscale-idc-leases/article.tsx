@@ -16,7 +16,7 @@ function SourceLink({ href, children }: { href: string; children: React.ReactNod
 
 function ArticleHeader({ lang }: { lang: "zh" | "en" }) {
   const english = lang === "en";
-  return <><header className="column-article-nav"><a href={english ? "/en" : "/"}>IDC <b>ATLAS</b></a><div><a href={english ? "/columns/hyperscale-idc-leases" : "/en/columns/hyperscale-idc-leases"}>{english ? "中文" : "EN"}</a><a href={english ? "/en" : "/"}>{english ? "Back to intelligence" : "返回实时情报站"}</a></div></header><section className="column-article-hero"><div><span>IDC ATLAS COLUMN · LEASE WATCH</span><time dateTime="2026-07-28">{english ? "JULY 28, 2026" : "2026 年 7 月 28 日"}</time></div><h1>{english ? <>Gigawatt Leases Are <em>Reshaping the Data Center Market.</em></> : <>GW 级长租，<br /><em>改写 IDC 订单。</em></>}</h1><p>{english ? "The largest cloud and internet customers are reserving power years before delivery. Contracted megawatts offer visibility, while energization, financing and customer concentration decide how much of that backlog becomes billable." : "头部云与互联网客户正在提前数年锁定电力和园区。签约 MW 提升了收入可见度，真正决定订单价值的仍是送电、融资、交付与客户集中度。"}</p></section><figure className="column-article-cover"><img src="/column-hyperscale-leases.png" alt={english ? "A hyperscale data center campus linked by long-term capacity contracts" : "由长期容量合同连接的超大规模数据中心园区"} /><figcaption>{english ? "IDC Atlas original editorial cover · Lease Watch" : "IDC Atlas 原创专栏封面 · Lease Watch"}</figcaption></figure></>;
+  return <><header className="column-article-nav"><a href={english ? "/en" : "/"}>IDC <b>ATLAS</b></a><div><a href={english ? "/columns/hyperscale-idc-leases" : "/en/columns/hyperscale-idc-leases"}>{english ? "中文" : "EN"}</a><a href={english ? "/en" : "/"}>{english ? "Back to intelligence" : "返回实时情报站"}</a></div></header><section className="column-article-hero"><div><span>IDC ATLAS COLUMN · LEASE WATCH</span><time dateTime="2026-08-01">{english ? "RECHECKED AUGUST 1, 2026" : "复核于 2026 年 8 月 1 日"}</time></div><h1>{english ? <>Gigawatt Leases Are <em>Reshaping the Data Center Market.</em></> : <>GW 级长租，<br /><em>改写 IDC 订单。</em></>}</h1><p>{english ? "The largest cloud and internet customers are reserving power years before delivery. Contracted megawatts offer visibility, while energization, financing and customer concentration decide how much of that backlog becomes billable." : "头部云与互联网客户正在提前数年锁定电力和园区。签约 MW 提升了收入可见度，真正决定订单价值的仍是送电、融资、交付与客户集中度。"}</p></section><figure className="column-article-cover"><img src="/column-hyperscale-leases.png" alt={english ? "A hyperscale data center campus linked by long-term capacity contracts" : "由长期容量合同连接的超大规模数据中心园区"} /><figcaption>{english ? "IDC Atlas original editorial cover · Lease Watch" : "IDC Atlas 原创专栏封面 · Lease Watch"}</figcaption></figure></>;
 }
 
 function ChineseArticle() {
@@ -44,7 +44,7 @@ function ChineseArticle() {
 
       <blockquote><span>IDC ATLAS VIEW</span><p>未来两年，优质 IDC 资产的稀缺性将体现在“有电、能按时交付、合同能兑现”。签约 GW 只是规模，已计费 MW 才是结果。</p></blockquote>
 
-      <footer className="column-article-disclosure"><p>本专栏基于截至 2026 年 7 月 28 日可获取的公司公告、投资者材料和监管文件。公司未披露的客户名称保持匿名；不同公司的容量口径不可直接比较。</p><p>本网站数据与内容仅用于信息展示与研究，不构成任何投资建议。</p></footer>
+      <footer className="column-article-disclosure"><p>本专栏使用截至 2026 年 8 月 1 日 23:00（北京时间）可获取的公司公告、投资者材料和监管文件；本轮复核未发现需要改变合同排序的新正式披露。公司未披露的客户名称保持匿名；不同公司的容量口径不可直接比较。</p><p>本网站数据与内容仅用于信息展示与研究，不构成任何投资建议。</p></footer>
     </article>
   </ColumnArticleConsole>;
 }
@@ -74,7 +74,7 @@ function EnglishArticle() {
 
       <blockquote><span>IDC ATLAS VIEW</span><p>Scarce data-center assets over the next two years will combine secured power, on-time delivery and enforceable contracts. Contracted gigawatts show scale; billable megawatts show the result.</p></blockquote>
 
-      <footer className="column-article-disclosure"><p>This column uses company releases, investor materials and regulatory filings available through July 28, 2026. We preserve anonymity where companies have not named customers, and do not treat capacity measures as directly comparable.</p><p>For information and research only. This is not investment advice.</p></footer>
+      <footer className="column-article-disclosure"><p>This column uses company releases, investor materials and regulatory filings available through August 1, 2026, 23:00 Beijing time; this review found no new formal disclosure that changed the contract ranking. We preserve anonymity where companies have not named customers, and do not treat capacity measures as directly comparable.</p><p>For information and research only. This is not investment advice.</p></footer>
     </article>
   </ColumnArticleConsole>;
 }

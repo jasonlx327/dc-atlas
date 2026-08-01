@@ -3,13 +3,12 @@ import { ColumnArticleConsole } from "../article-console";
 const sources = {
   microsoft: "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
   microsoftRelease: "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast",
-  microsoftDate: "https://news.microsoft.com/source/2026/07/08/microsoft-announces-quarterly-earnings-release-date-68/",
-  alphabet: "https://abc.xyz/investor/events/event-details/2026/2025-Q4-Earnings-Call-2026-Dr_C033hS6/default.aspx",
-  alphabetFiling: "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm",
-  meta: "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/",
-  metaDate: "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Second-Quarter-2026-Results/default.aspx",
-  amazon: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/default.aspx",
-  amazonDate: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-to-Webcast-Second-Quarter-2026-Financial-Results-Conference-Call/default.aspx",
+  alphabet: "https://s206.q4cdn.com/479360582/files/doc_financials/2026/q2/2026q2-alphabet-earnings-release.pdf",
+  alphabetCall: "https://www.investing.com/news/transcripts/earnings-call-transcript-alphabet-beats-q2-2026-estimates-shares-fall-on-capex-surge-93CH-4807140",
+  meta: "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+  metaCall: "https://s21.q4cdn.com/399680738/files/doc_financials/2026/q2/META-Q2-2026-Earnings-Call-Transcript.pdf",
+  amazon: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx",
+  amazonCall: "https://apnews.com/article/b4ce02b4666a35b8975823c5c22072ee",
 } as const;
 
 function SourceLink({ href, children }: { href: string; children: React.ReactNode }) {
@@ -18,14 +17,14 @@ function SourceLink({ href, children }: { href: string; children: React.ReactNod
 
 function ArticleHeader({ lang }: { lang: "zh" | "en" }) {
   const english = lang === "en";
-  return <><header className="column-article-nav"><a href={english ? "/en" : "/"}>IDC <b>ATLAS</b></a><div><a href={english ? "/columns/ai-capex-power" : "/en/columns/ai-capex-power"}>{english ? "中文" : "EN"}</a><a href={english ? "/en" : "/"}>{english ? "Back to intelligence" : "返回实时情报站"}</a></div></header><section className="column-article-hero"><div><span>IDC ATLAS COLUMN · CAPEX WATCH</span><time dateTime="2026-07-31">{english ? "UPDATED JULY 31, 2026" : "更新于 2026 年 7 月 31 日"}</time></div><h1>{english ? <>Where Hyperscaler AI CapEx <em>Actually Goes.</em></> : <>四大云厂商的 AI CAPEX，<br /><em>最终流向了哪里？</em></>}</h1><p>{english ? "Microsoft, Alphabet, Meta and Amazon are building at historic scale. Their disclosures show how spending moves from silicon into campuses, power and revenue-ready capacity—and where the timeline can break." : "Microsoft、Alphabet、Meta 与 Amazon 正在以历史级规模扩建 AI 基础设施。公司披露揭示了资金如何从芯片流向园区、电力和可计费容量，以及每个环节的时间差。"}</p></section><figure className="column-article-cover"><img src="/column-ai-capex-grid.png" alt={english ? "AI data centers connected to a constrained electric grid" : "AI 数据中心与受限电网连接的专栏封面"} /><figcaption>{english ? "IDC Atlas original editorial cover · CAPEX Watch" : "IDC Atlas 原创专栏封面 · CAPEX Watch"}</figcaption></figure></>;
+  return <><header className="column-article-nav"><a href={english ? "/en" : "/"}>IDC <b>ATLAS</b></a><div><a href={english ? "/columns/ai-capex-power" : "/en/columns/ai-capex-power"}>{english ? "中文" : "EN"}</a><a href={english ? "/en" : "/"}>{english ? "Back to intelligence" : "返回实时情报站"}</a></div></header><section className="column-article-hero"><div><span>IDC ATLAS COLUMN · CAPEX WATCH</span><time dateTime="2026-08-01">{english ? "UPDATED AUGUST 1, 2026" : "更新于 2026 年 8 月 1 日"}</time></div><h1>{english ? <>Where Hyperscaler AI CapEx <em>Actually Goes.</em></> : <>四大云厂商的 AI CAPEX，<br /><em>最终流向了哪里？</em></>}</h1><p>{english ? "The latest calls moved the story from budgets to conversion: cloud growth is accelerating, capacity remains tight, and cash generation now bears the weight of the buildout." : "最新一轮电话会把问题从预算规模推进到兑现效率：云收入正在加速，容量仍然紧张，而自由现金流已经开始承受建设高峰。"}</p></section><figure className="column-article-cover"><img src="/column-ai-capex-grid.png" alt={english ? "AI data centers connected to a constrained electric grid" : "AI 数据中心与受限电网连接的专栏封面"} /><figcaption>{english ? "IDC Atlas original editorial cover · CAPEX Watch" : "IDC Atlas 原创专栏封面 · CAPEX Watch"}</figcaption></figure></>;
 }
 
 function ChineseArticle() {
   return <ColumnArticleConsole lang="zh">
     <ArticleHeader lang="zh" />
     <article className="column-article-body">
-      <aside className="column-article-thesis"><span>核心判断</span><p>四大云厂商 2026 年资本开支计划合计最高约 7,250 亿美元。这个数字衡量投入强度，无法直接回答新增算力何时形成收入。真正拉开差距的是资产从采购、在建、送电走向可计费容量的速度。</p></aside>
+      <aside className="column-article-thesis"><span>核心判断</span><p>财报季给出了更清楚的双重信号：Azure、Google Cloud 与 AWS 同时加速，说明需求正在吸收新增供给；但四家公司仍在提高或维持历史级投入，说明供给缺口尚未闭合。接下来不能只比 CAPEX 总额，要比较“每一美元投入转成可计费容量”的速度。</p></aside>
 
       <section>
         <p className="column-dropcap">7,250 亿美元足以成为一个醒目的标题，却容易掩盖这轮建设最关键的时间差。芯片进入服务器机柜后仍需要园区、电力、网络和调试；已经记入资本开支的资产，可能要到数个季度以后才进入云平台的可售资源池。</p>
@@ -40,13 +39,13 @@ function ChineseArticle() {
             <thead><tr><th>公司</th><th>最新已披露季度</th><th>2026 年框架</th><th>披露口径</th><th>最重要的物理信号</th></tr></thead>
             <tbody>
               <tr><th>Microsoft</th><td><strong>$41.0B</strong><small>FY2026 Q4</small></td><td>约 $175B<small>2026 年新口径</small></td><td>约 2/3 为 GPU、CPU；租赁分类变化降低报告口径</td><td>当季新增约 1GW；Azure 增长 43%，供给仍受限</td></tr>
-              <tr><th>Alphabet</th><td><strong>$35.7B</strong><small>2026 Q1</small></td><td>$175–185B<small>全年指引</small></td><td>现金购置物业与设备；以技术基础设施为主</td><td>未投运资产 $108.6B；未开始数据中心租赁付款 $75.6B</td></tr>
-              <tr><th>Meta</th><td><strong>$19.84B</strong><small>2026 Q1</small></td><td>$125–145B<small>全年指引</small></td><td>包括融资租赁本金偿还</td><td>上调区间包含组件涨价与未来容量的数据中心成本</td></tr>
-              <tr><th>Amazon</th><td><strong>$44.2B</strong><small>2026 Q1</small></td><td>未给出可比全年区间</td><td>全公司物业与设备采购，覆盖范围不限于 AWS</td><td>过去 12 个月落地 210 万+ AI 芯片</td></tr>
+              <tr><th>Alphabet</th><td><strong>$44.9B</strong><small>2026 Q2</small></td><td>$195–205B<small>全年指引</small></td><td>现金购置物业与设备；以技术基础设施为主</td><td>Google Cloud +82%，积压订单 $514B；短期仍借用第三方容量</td></tr>
+              <tr><th>Meta</th><td><strong>$31.08B</strong><small>2026 Q2</small></td><td>$130–145B<small>全年指引</small></td><td>包括融资租赁本金偿还</td><td>服务器、数据中心和网络持续扩张；行业容量仍紧张</td></tr>
+              <tr><th>Amazon</th><td><strong>$53.1B</strong><small>2026 Q2 现金 CAPEX</small></td><td>约 $220B<small>全年电话会口径</small></td><td>全公司现金资本开支，覆盖范围不限于 AWS</td><td>AWS +37%；2026 与 2027 年供给仍不足</td></tr>
             </tbody>
           </table>
         </div>
-        <p className="column-source-note">数据截至 2026 年 7 月 31 日。Microsoft 的约 1,750 亿美元新口径来自数据中心租赁分类变化，公司明确表示实际投资预期未变；Amazon 的季度数字来自现金流量表，未披露其中属于 AWS 或 AI 数据中心的精确比例。</p>
+        <p className="column-source-note">数据截至 2026 年 8 月 1 日（北京时间）。Microsoft 的约 1,750 亿美元新口径来自数据中心租赁分类变化；Alphabet、Meta 的全年区间来自管理层指引；Amazon 的约 2,200 亿美元为电话会中的全公司现金 CAPEX 口径，不能视为 AWS 单独投入。</p>
       </section>
 
       <section>
@@ -54,7 +53,7 @@ function ChineseArticle() {
         <h2>报表先确认投入，收入要等物理世界交付</h2>
         <div className="column-question-grid">
           <article><span>SPEND</span><h3>采购先进入资本开支</h3><p>GPU、CPU、内存和网络设备形成最早的财务信号。组件涨价也会推高支出，因此 CAPEX 增幅不能直接等同于设备数量增幅。</p></article>
-          <article><span>QUEUE</span><h3>在建资产积累交付压力</h3><p>Alphabet 的未投运资产达到 1,086 亿美元，说明采购和建设队列很大，也显示折旧、可用容量和相关收入尚未同步启动。</p></article>
+          <article><span>QUEUE</span><h3>建设队列仍跑不赢需求</h3><p>Alphabet 在 Q2 仍需使用第三方容量作为过渡，Meta 把 2026、2027 年容量最大化列为建设目标。采购和建设已经加速，可售供给仍未完全同步。</p></article>
           <article><span>REVENUE</span><h3>送电与利用率决定回报</h3><p>容量完成并网、调试和客户分配后才开始变现。云需求、折旧、能源成本与上线节奏共同决定资本回报。</p></article>
         </div>
         <p>这条时间轴解释了产业链收入为何不同步：设备供应商更早看到订单，电力与工程环节跟随施工节点，数据中心运营商等待交付和计费，云厂商最终接受利用率检验。</p>
@@ -76,26 +75,26 @@ function ChineseArticle() {
 
       <section>
         <div className="column-section-label">04 · ALPHABET</div>
-        <h2>资产负债表里藏着建设队列</h2>
-        <p>Alphabet 2026 年第一季度资本开支为 357 亿美元，2026 年全年指引为 1,750–1,850 亿美元。公司在上一财年披露，技术基础设施投入大约 60% 用于服务器，约 40% 用于数据中心与网络设备，并预计 2026 年构成大致相似。<SourceLink href={sources.alphabet}>Alphabet 2025 Q4 电话会</SourceLink></p>
-        <p>10-Q 提供了更强的前瞻线索：截至 2026 年 3 月，尚未投入使用的资产从 2025 年末的 786 亿美元升至 1,086 亿美元；主要与数据中心相关、尚未开始的租赁未来付款达到 756 亿美元，租赁将在 2026–2031 年陆续开始。公司也明确说明，技术基础设施从购买到投入使用可能需要数月到数年。<SourceLink href={sources.alphabetFiling}>Alphabet 2026 Q1 10-Q</SourceLink></p>
-        <p><strong>传导判断：</strong>Alphabet 的服务器投入已经很大，长期园区与租赁承诺正在形成下一批容量。未投运资产增长意味着建设队列扩大，也意味着折旧和收入确认尚未完全开始。送电和投运节奏决定这批资产何时进入 Google Cloud 的可用供给。</p>
+        <h2>Cloud 已经兑现增长，容量缺口仍未闭合</h2>
+        <p>Alphabet Q2 资本开支为 449 亿美元，经营现金流 391 亿美元，自由现金流转为负 59 亿美元。Google Cloud 营收同比增长 82% 至 248 亿美元，营业利润升至 88 亿美元；这一次，资本强度与收入、利润的加速同时出现。<SourceLink href={sources.alphabet}>Alphabet 2026 Q2 业绩公告</SourceLink></p>
+        <p>电话会把全年资本开支指引从 1,800–1,900 亿美元上调至 1,950–2,050 亿美元。Cloud 积压订单达到 5,140 亿美元，较上季增加逾 500 亿美元；公司预计未来 24 个月确认其中略高于一半。由于内部供给仍然紧张，Q3 将增加第三方容量作为过渡，这会在短期内压低利润率。<SourceLink href={sources.alphabetCall}>Alphabet 2026 Q2 电话会转录</SourceLink></p>
+        <p><strong>传导判断：</strong>Alphabet 的问题已从“有没有需求”转为“内部容量何时追上需求”。第三方容量能保住客户和收入，但成本更高；自建容量越快投运，Cloud 利润率越有机会抵消折旧与能源压力。</p>
       </section>
 
       <section>
         <div className="column-section-label">05 · META</div>
-        <h2>指引上调同时包含价格与容量</h2>
-        <p>Meta 2026 年第一季度资本开支为 198.4 亿美元，其中包括融资租赁本金偿还。公司将全年资本开支区间从 1,150–1,350 亿美元上调至 1,250–1,450 亿美元，解释为组件价格上升，以及规模较小但明确存在的未来容量数据中心成本。<SourceLink href={sources.meta}>Meta 2026 Q1 业绩公告</SourceLink></p>
-        <p>这次上调不能全部理解为建设量增加。组件涨价抬高了相同采购规模的账面金额；新增数据中心成本则指向未来年份的容量。Meta 没有披露服务器、建筑、电力和网络的精确比例，因此产业链收入映射需要等待供应商订单、园区进度和租赁承诺进一步验证。</p>
-        <p><strong>传导判断：</strong>近期受益环节更靠近高端芯片、服务器与内存；更长期的确定性要从园区建设、供电和折旧增速中确认。财报应重点检查 CAPEX 上调中“价格”与“数量”的贡献是否变化。</p>
+        <h2>建设目标从追赶需求，转向保留多种变现路径</h2>
+        <p>Meta Q2 收入同比增长 28% 至 608 亿美元；资本开支（含融资租赁本金）为 310.8 亿美元，自由现金流降至 7.84 亿美元。公司把全年资本开支区间收窄至 1,300–1,450 亿美元，支出继续集中在服务器、数据中心和网络。<SourceLink href={sources.meta}>Meta 2026 Q2 业绩公告</SourceLink></p>
+        <p>官方电话会给出了更重要的容量框架：当前计划优先最大化 2026 与 2027 年可用容量，同时提前铺设数据中心和网络基础，为 2028 年后的服务器决策保留弹性。管理层认为行业容量将在可预见期内保持紧张，并列出 API、企业代理以及直接出售算力等潜在变现路径；这些仍是管理层设想，不是已披露收入。<SourceLink href={sources.metaCall}>Meta 2026 Q2 官方电话会全文</SourceLink></p>
+        <p><strong>传导判断：</strong>Meta 正在用长期园区与网络资产锁定选择权，再把短周期服务器采购绑定到需求。核心风险是现金流与利润率能否承受这段提前建设期，以及新产品或外部算力业务能否真正提高资产利用率。</p>
       </section>
 
       <section>
         <div className="column-section-label">06 · AMAZON</div>
-        <h2>现金流显示了投入强度</h2>
-        <p>Amazon 2026 年第一季度物业与设备采购为 442 亿美元，上年同期为 250 亿美元；过去十二个月采购达到 1,510 亿美元。同期自由现金流降至 12 亿美元，公司称同比增加的 593 亿美元物业与设备净采购主要反映 AI 投资。<SourceLink href={sources.amazon}>Amazon 2026 Q1 业绩公告</SourceLink></p>
-        <p>设备侧披露同样具体：过去十二个月落地超过 210 万颗 AI 芯片，其中一半以上为 Trainium；公司宣布自 2026 年开始部署超过 100 万颗 NVIDIA GPU。需求端已有大额容量承诺，包括 OpenAI 约 2GW 的 Trainium 容量自 2027 年起爬坡，以及 Anthropic 最高 5GW 的现有与未来 Trainium 容量。</p>
-        <p><strong>传导判断：</strong>Amazon 同时投入自研芯片与第三方 GPU，供应链覆盖芯片、服务器、网络和大规模园区。442 亿美元是全公司口径，不能直接视为 AWS CAPEX。下一步应观察 AWS 容量上线、Trainium 使用率与自由现金流恢复速度。</p>
+        <h2>AWS 加速，但自由现金流已经越过零线</h2>
+        <p>Amazon Q2 的 AWS 营收同比增长 37% 至 422 亿美元，为 18 个季度以来最快增速；AWS 营业利润为 166 亿美元。过去十二个月经营现金流增长 33% 至 1,614 亿美元，但物业与设备净采购升至 1,690 亿美元，自由现金流转为流出 76 亿美元。公司明确将变化主要归因于 AI 投资。<SourceLink href={sources.amazon}>Amazon 2026 Q2 业绩公告</SourceLink></p>
+        <p>Andy Jassy 在电话会中把 2026 年全公司现金资本开支预期从约 2,000 亿美元提高到约 2,200 亿美元，主要原因是内存成本上升。他同时表示，即使按这一投入规模，2026 年容量仍不足以满足全部需求，2027 年也可能如此。该口径还包含零售、机器人、芯片和卫星等投入，不能等同于 AWS 单独 CAPEX。<SourceLink href={sources.amazonCall}>Amazon Q2 电话会公开报道</SourceLink></p>
+        <p><strong>传导判断：</strong>AWS 的增长说明新增容量正在变现，负自由现金流则说明建设速度快于现金回收。接下来要看三件事：内存涨价是否继续推高单位容量成本、AWS 增速能否覆盖折旧与运营费用、以及 2027–2028 年合同需求能否按时接入电力。</p>
       </section>
 
       <section>
@@ -132,33 +131,35 @@ function ChineseArticle() {
           <article><time>04</time><h3>利润表压力</h3><p>折旧、能源和数据中心运营成本相对相关收入增长多快？</p></article>
           <article><time>05</time><h3>合同兑现</h3><p>积压订单、长期容量承诺和未开始租赁何时转为投运与计费？</p></article>
         </div>
-        <p>Microsoft 已确认下一季度 Azure 固定汇率增速约 45%、CAPEX 超过 500 亿美元；后续重点转向 Meta 与 Amazon 的最新资本开支、容量交付和供需表述。<SourceLink href={sources.microsoft}>Microsoft FY2026 Q4 电话会</SourceLink><SourceLink href={sources.metaDate}>Meta 官方材料</SourceLink><SourceLink href={sources.amazonDate}>Amazon 官方材料</SourceLink></p>
+        <p>这一轮答案已经更具体：Microsoft 下一季度 CAPEX 超过 500 亿美元；Alphabet 将全年指引抬至 1,950–2,050 亿美元；Meta 维持 1,300–1,450 亿美元；Amazon 把现金 CAPEX 提至约 2,200 亿美元。下一轮不再只问“还会花多少”，而要问内部容量、第三方租赁、自由现金流和云利润率能否同时改善。</p>
       </section>
 
       <section>
         <div className="column-section-label">10 · WHAT WOULD CHANGE THE VIEW</div>
         <h2>接下来要盯住两条分叉</h2>
-        <p><strong>回报改善路径：</strong>新容量更快送电，dock-to-live 周期继续缩短，云需求吸收新增供给，相关收入增速足以覆盖折旧、能源和运维成本。Microsoft 提前上线容量并确认收入，已经给出这条路径的早期样本。</p>
-        <p><strong>回报承压路径：</strong>云收入降速，同时未投运资产和租赁承诺持续堆积；并网或设备交付延期；折旧及能源成本增长快于相关收入；大型容量承诺推迟进入使用。Alphabet 的在建资产、Amazon 的自由现金流和 Meta 指引中的价格因素，是最需要连续核对的三个压力表。</p>
+        <p><strong>回报改善路径：</strong>新容量更快送电，云收入和利润同步加速，第三方高成本容量逐步退出，自由现金流在投入峰值后恢复。Microsoft 的上线速度与三家云业务的增长已经给出早期样本。</p>
+        <p><strong>回报承压路径：</strong>云收入降速，第三方容量、未投运资产和租赁承诺继续堆积；折旧、能源和组件价格增长快于相关收入；自由现金流长期为负。Alphabet 的第三方容量、Meta 的现金流和 Amazon 的内存成本，是新一轮最需要连续核对的压力表。</p>
         <p>下一阶段的研究将把 CAPEX、未投运资产、可用 MW、投运时间、利用率和折旧放在同一张跟踪表里。任何结论都要通过容量兑现和收入吸收再次验证。</p>
       </section>
 
       <blockquote><span>IDC ATLAS VIEW</span><p>AI CAPEX 的第一站是芯片，最终验收点是可计费容量。园区能否按时送电、调试并承载真实使用量，决定这轮历史级投入的回报速度。</p></blockquote>
 
       <section className="column-source-ledger">
-        <div className="column-section-label">SOURCE LEDGER · CUT-OFF 2026-07-31</div>
+        <div className="column-section-label">SOURCE LEDGER · CUT-OFF 2026-08-01</div>
         <h2>本文使用的一手来源</h2>
         <div>
           <SourceLink href={sources.microsoftRelease}>Microsoft FY2026 Q4 业绩公告</SourceLink>
           <SourceLink href={sources.microsoft}>Microsoft FY2026 Q4 财报电话会</SourceLink>
-          <SourceLink href={sources.alphabet}>Alphabet 2025 Q4 财报电话会</SourceLink>
-          <SourceLink href={sources.alphabetFiling}>Alphabet 2026 Q1 Form 10-Q</SourceLink>
-          <SourceLink href={sources.meta}>Meta 2026 Q1 业绩公告</SourceLink>
-          <SourceLink href={sources.amazon}>Amazon 2026 Q1 业绩公告</SourceLink>
+          <SourceLink href={sources.alphabet}>Alphabet 2026 Q2 业绩公告</SourceLink>
+          <SourceLink href={sources.alphabetCall}>Alphabet 2026 Q2 电话会转录</SourceLink>
+          <SourceLink href={sources.meta}>Meta 2026 Q2 业绩公告</SourceLink>
+          <SourceLink href={sources.metaCall}>Meta 2026 Q2 官方电话会全文</SourceLink>
+          <SourceLink href={sources.amazon}>Amazon 2026 Q2 业绩公告</SourceLink>
+          <SourceLink href={sources.amazonCall}>Amazon Q2 电话会公开报道</SourceLink>
         </div>
       </section>
 
-      <footer className="column-article-disclosure"><p>本文使用截至 2026 年 7 月 31 日可获取的公司公告、财报电话会与 SEC 文件。不同公司的资本开支和租赁口径不可直接比较；Microsoft 的租赁分类变化会降低资本开支报告口径，但不代表实际投资预期下降。公司未披露的供应商份额、液冷投入比例和 AWS 单独资本开支不作估算。</p><p>本网站内容仅用于信息展示与研究，不构成任何投资建议。</p></footer>
+      <footer className="column-article-disclosure"><p>本文使用截至 2026 年 8 月 1 日 23:00（北京时间）可获取的公司公告、财报电话会与监管文件。Microsoft、Meta 的电话会为官方全文；Alphabet 的公开转录由公司财报交叉核验；Amazon 的电话会信息由公司财报与公开报道交叉核验。不同公司的资本开支和租赁口径不可直接比较，未披露的 AWS 单独 CAPEX、供应商份额和液冷投入比例不作估算。</p><p>本网站内容仅用于信息展示与研究，不构成任何投资建议。</p></footer>
     </article>
   </ColumnArticleConsole>;
 }
@@ -167,7 +168,7 @@ function EnglishArticle() {
   return <ColumnArticleConsole lang="en">
     <ArticleHeader lang="en" />
     <article className="column-article-body">
-      <aside className="column-article-thesis"><span>THE TAKEAWAY</span><p>The four largest hyperscalers plan to spend as much as $725 billion in 2026. That figure captures investment intensity, not the timing of new revenue. The decisive variable is how quickly purchased and unfinished assets become energized, commissioned and billable.</p></aside>
+      <aside className="column-article-thesis"><span>THE TAKEAWAY</span><p>The latest calls produced a clearer two-sided signal: Azure, Google Cloud and AWS accelerated as demand absorbed new supply, while spending remains at historic levels because the capacity gap has not closed. The next comparison is not total CapEx, but how quickly each dollar becomes billable capacity.</p></aside>
 
       <section>
         <p className="column-dropcap">$725 billion makes a powerful headline. It also hides the most important lag in the AI buildout. Silicon entering a server rack still needs a campus, power, networking and commissioning. Assets already recorded as capital spending may remain months away from sellable cloud capacity.</p>
@@ -182,13 +183,13 @@ function EnglishArticle() {
             <thead><tr><th>Company</th><th>Latest reported quarter</th><th>2026 frame</th><th>Definition</th><th>Physical signal</th></tr></thead>
             <tbody>
               <tr><th>Microsoft</th><td><strong>$41.0B</strong><small>FY2026 Q4</small></td><td>≈ $175B<small>reclassified 2026 view</small></td><td>Roughly two-thirds CPUs and GPUs; lease classification lowers the reported frame</td><td>About 1GW added; Azure grew 43% and supply remains constrained</td></tr>
-              <tr><th>Alphabet</th><td><strong>$35.7B</strong><small>2026 Q1</small></td><td>$175–185B<small>full-year guide</small></td><td>Cash purchases of property and equipment, primarily technical infrastructure</td><td>$108.6B not yet in service; $75.6B of future payments on uncommenced data-center leases</td></tr>
-              <tr><th>Meta</th><td><strong>$19.84B</strong><small>2026 Q1</small></td><td>$125–145B<small>full-year guide</small></td><td>Includes principal payments on finance leases</td><td>Higher component pricing plus additional data-center costs for future capacity</td></tr>
-              <tr><th>Amazon</th><td><strong>$44.2B</strong><small>2026 Q1</small></td><td>No comparable full-year range disclosed</td><td>Company-wide property and equipment purchases; broader than AWS</td><td>More than 2.1 million AI chips landed over 12 months</td></tr>
+              <tr><th>Alphabet</th><td><strong>$44.9B</strong><small>2026 Q2</small></td><td>$195–205B<small>raised full-year guide</small></td><td>Cash purchases of property and equipment, primarily technical infrastructure</td><td>Google Cloud revenue +82%; backlog reached $514B</td></tr>
+              <tr><th>Meta</th><td><strong>$31.08B</strong><small>2026 Q2</small></td><td>$130–145B<small>narrowed full-year guide</small></td><td>Includes principal payments on finance leases</td><td>Capacity plans maximize 2026–27 supply and lay foundations for 2028+</td></tr>
+              <tr><th>Amazon</th><td><strong>≈ $53.1B</strong><small>2026 Q2 cash CapEx</small></td><td>≈ $220B<small>management&apos;s full-company view</small></td><td>Company-wide spending; not a standalone AWS disclosure</td><td>AWS revenue +37%; management still expects capacity constraints in 2026–27</td></tr>
             </tbody>
           </table>
         </div>
-        <p className="column-source-note">Data cut-off: July 31, 2026. Microsoft&apos;s revised $175 billion presentation reflects data-center lease classification; management said underlying investment expectations are unchanged. Amazon&apos;s quarterly figure comes from its consolidated cash-flow statement and does not isolate AWS or AI data centers.</p>
+        <p className="column-source-note">Data cut-off: August 1, 2026. Microsoft&apos;s revised $175 billion presentation reflects data-center lease classification; management said underlying investment expectations are unchanged. Amazon&apos;s figures are full-company cash CapEx, not standalone AWS or AI data-center disclosures.</p>
       </section>
 
       <section>
@@ -196,7 +197,7 @@ function EnglishArticle() {
         <h2>Accounting records the spend before physics delivers the revenue</h2>
         <div className="column-question-grid">
           <article><span>SPEND</span><h3>Orders hit CapEx first</h3><p>GPUs, CPUs, memory and networking equipment create the earliest financial signal. Component inflation can lift spending even when unit growth is lower.</p></article>
-          <article><span>QUEUE</span><h3>Construction creates a delivery queue</h3><p>Alphabet&apos;s $108.6 billion of assets not yet in service signals both a large build pipeline and capacity that has not started depreciating or producing related revenue.</p></article>
+          <article><span>QUEUE</span><h3>Construction creates a delivery queue</h3><p>Alphabet will use third-party capacity as a bridge in Q3, while Meta is maximizing 2026–27 capacity and preparing for 2028+. Both disclosures show that the delivery queue remains a live constraint.</p></article>
           <article><span>REVENUE</span><h3>Power and utilization set the return</h3><p>Capacity monetizes after grid connection, commissioning and customer allocation. Demand absorption, depreciation and energy costs determine the return.</p></article>
         </div>
         <p>The lag explains why supplier revenue arrives at different times. Equipment vendors see orders first. Electrical and construction work follows milestones. Data-center operators wait for delivery and billing. Cloud platforms face the final utilization test.</p>
@@ -218,26 +219,26 @@ function EnglishArticle() {
 
       <section>
         <div className="column-section-label">04 · ALPHABET</div>
-        <h2>The balance sheet reveals the construction queue</h2>
-        <p>Alphabet spent $35.7 billion in the first quarter and guides to $175–185 billion for 2026. Its 2025 infrastructure mix was about 60% servers and 40% data centers and networking, with management expecting a broadly similar mix this year. <SourceLink href={sources.alphabet}>Alphabet 2025 Q4 call</SourceLink></p>
-        <p>The 10-Q provides a sharper forward view. Assets not yet in service rose to $108.6 billion at March 2026 from $78.6 billion at year-end. The company also had $75.6 billion of future payments tied primarily to data-center leases that had not yet commenced, with start dates from 2026 through 2031. Alphabet says technical infrastructure can take months to years from purchase to placement in service. <SourceLink href={sources.alphabetFiling}>Alphabet 2026 Q1 10-Q</SourceLink></p>
-        <p><strong>Transmission:</strong> Alphabet already has a large server program and an expanding long-duration pipeline. Growth in construction-in-progress signals future capacity and future depreciation. Energization and commissioning determine when those assets become usable Google Cloud supply.</p>
+        <h2>Cloud growth is converting; the capacity gap remains</h2>
+        <p>Alphabet spent $44.9 billion on property and equipment in Q2. Operating cash flow was $39.1 billion and free cash flow was negative $5.9 billion. Google Cloud revenue reached $24.8 billion, up 82%, and operating income rose to $8.8 billion. The figures show that new capacity is converting into growth, but not yet fast enough to reduce investment intensity. <SourceLink href={sources.alphabet}>Alphabet Q2 2026 results</SourceLink></p>
+        <p>Management raised the 2026 CapEx guide to $195–205 billion from $180–190 billion. On the public call transcript, it said Cloud backlog reached $514 billion, up about $50 billion sequentially, with more than half expected to be recognized over the next 24 months. Alphabet will use third-party capacity in Q3 as a bridge and expects modest margin pressure from that choice. <SourceLink href={sources.alphabetCall}>Alphabet Q2 public call transcript</SourceLink></p>
+        <p><strong>Transmission:</strong> backlog supports the demand case, while third-party capacity shows the supply gap has not closed. The next test is whether owned capacity comes online fast enough to preserve Cloud margins as revenue scales.</p>
       </section>
 
       <section>
         <div className="column-section-label">05 · META</div>
-        <h2>A higher guide blends price and capacity</h2>
-        <p>Meta reported $19.84 billion of first-quarter CapEx, including finance-lease principal payments. It raised the 2026 range to $125–145 billion from $115–135 billion, citing higher component pricing and, to a lesser extent, additional data-center costs for future-year capacity. <SourceLink href={sources.meta}>Meta Q1 2026 release</SourceLink></p>
-        <p>The increase does not translate one-for-one into additional physical volume. Component inflation raises the accounting cost of a similar bill of materials. The data-center component reaches into future capacity. Meta does not publish a server/building/power split, so supplier exposure requires confirmation from orders, campus milestones and lease disclosures.</p>
-        <p><strong>Transmission:</strong> high-end compute, servers and memory sit closest to the current spending surge. Campuses and power require a longer evidence trail. The next calls should separate price effects from unit growth and test whether depreciation is tracking monetization.</p>
+        <h2>The buildout now preserves multiple monetization paths</h2>
+        <p>Meta reported Q2 revenue of $60.8 billion, up 28%, and CapEx of $31.08 billion including finance-lease principal payments. Free cash flow was $784 million. The company narrowed its 2026 CapEx range to $130–145 billion. <SourceLink href={sources.meta}>Meta Q2 2026 results</SourceLink></p>
+        <p>In the official transcript, management said it was maximizing capacity for 2026 and 2027 while laying foundations for 2028 and beyond. It also discussed APIs, enterprise agents and selling compute as possible monetization paths. These are strategic options, not reported revenue, and should not be counted before customers and economics are disclosed. <SourceLink href={sources.metaCall}>Meta Q2 official transcript</SourceLink></p>
+        <p><strong>Transmission:</strong> Meta is building for both internal models and optional external demand. The proof will come from delivered capacity, product revenue and whether depreciation grows in line with monetization.</p>
       </section>
 
       <section>
         <div className="column-section-label">06 · AMAZON</div>
-        <h2>The cash-flow statement shows the intensity</h2>
-        <p>Amazon purchased $44.2 billion of property and equipment in the first quarter, up from $25.0 billion a year earlier. Trailing-twelve-month purchases reached $151.0 billion. Free cash flow fell to $1.2 billion, with Amazon attributing a $59.3 billion year-over-year increase in net property and equipment purchases primarily to AI investment. <SourceLink href={sources.amazon}>Amazon Q1 2026 release</SourceLink></p>
-        <p>The hardware disclosures are unusually tangible. Amazon landed more than 2.1 million AI chips over twelve months, more than half Trainium, and announced more than one million NVIDIA GPUs to be deployed beginning in 2026. Demand commitments include roughly two gigawatts of Trainium capacity for OpenAI ramping in 2027 and up to five gigawatts of current and future Trainium capacity for Anthropic.</p>
-        <p><strong>Transmission:</strong> Amazon is scaling custom silicon and third-party GPUs in parallel, pulling through servers, networking and campuses. The $44.2 billion is a consolidated company figure, not an AWS CapEx disclosure. The next proof points are capacity delivery, Trainium utilization and the path back to stronger free cash flow.</p>
+        <h2>AWS accelerated as free cash flow crossed below zero</h2>
+        <p>AWS Q2 revenue reached $42.2 billion, up 37%, with operating income of $16.6 billion. Trailing-twelve-month operating cash flow rose 33% to $161.4 billion, while net property and equipment purchases reached $169.0 billion and free cash flow fell to negative $7.6 billion, primarily because of AI investment. <SourceLink href={sources.amazon}>Amazon Q2 2026 results</SourceLink></p>
+        <p>Public call reporting says management raised its 2026 full-company cash CapEx view to about $220 billion from roughly $200 billion, mainly because of memory costs. Management also said capacity would remain insufficient through 2026 and likely 2027. That figure covers the whole company and must not be presented as standalone AWS spending. <SourceLink href={sources.amazonCall}>Amazon Q2 public call reporting</SourceLink></p>
+        <p><strong>Transmission:</strong> AWS acceleration confirms demand absorption, but negative free cash flow shows the cost of staying ahead of that demand. Capacity delivery, memory costs and the path back to cash generation are now the combined test.</p>
       </section>
 
       <section>
@@ -274,33 +275,35 @@ function EnglishArticle() {
           <article><time>04</time><h3>P&amp;L pressure</h3><p>How fast are depreciation, energy and data-center operating costs growing against related revenue?</p></article>
           <article><time>05</time><h3>Conversion</h3><p>When do backlog, capacity commitments and uncommenced leases turn into service and billing?</p></article>
         </div>
-        <p>Microsoft now guides Q1 Azure growth to roughly 45% in constant currency and CapEx above $50 billion. The next checks are Meta and Amazon&apos;s updated spending, capacity-delivery and supply-demand disclosures. <SourceLink href={sources.microsoft}>Microsoft FY2026 Q4 call</SourceLink><SourceLink href={sources.metaDate}>Meta materials</SourceLink><SourceLink href={sources.amazonDate}>Amazon materials</SourceLink></p>
+        <p>Microsoft guides Q1 Azure growth to roughly 45% in constant currency and CapEx above $50 billion. Alphabet, Meta and Amazon now provide a second check: Cloud and AWS accelerated, but all three still describe a capacity gap or a buildout extending into 2028. <SourceLink href={sources.microsoft}>Microsoft FY2026 Q4 call</SourceLink><SourceLink href={sources.metaCall}>Meta Q2 official transcript</SourceLink><SourceLink href={sources.amazon}>Amazon Q2 results</SourceLink></p>
       </section>
 
       <section>
         <div className="column-section-label">10 · WHAT WOULD CHANGE THE VIEW</div>
         <h2>The cycle now has two visible paths</h2>
-        <p><strong>Return improvement:</strong> capacity energizes faster, dock-to-live keeps falling, cloud demand absorbs the supply, and related revenue grows fast enough to cover depreciation, energy and operating costs. Microsoft&apos;s early capacity delivery offers an initial example.</p>
-        <p><strong>Return pressure:</strong> cloud growth slows while unfinished assets and lease commitments accumulate; interconnections or equipment slip; depreciation and energy costs outrun supported revenue; large capacity commitments start later than planned. Alphabet&apos;s construction queue, Amazon&apos;s free cash flow and the price component in Meta&apos;s guide are the three gauges to keep checking.</p>
+        <p><strong>Return improvement:</strong> capacity energizes faster, dock-to-live keeps falling, cloud demand absorbs the supply, and related revenue grows fast enough to cover depreciation, energy and operating costs. Microsoft, Google Cloud and AWS now offer early evidence of that conversion.</p>
+        <p><strong>Return pressure:</strong> backlog remains strong but owned capacity arrives late; third-party capacity and component prices compress margins; depreciation and energy costs outrun supported revenue; free cash flow stays negative for longer. Alphabet&apos;s bridge capacity, Meta&apos;s multi-year build and Amazon&apos;s cash conversion are the gauges to keep checking.</p>
         <p>The next version of this research will track CapEx, assets not yet in service, usable megawatts, commissioning dates, utilization and depreciation together. Capacity conversion and revenue absorption remain the tests for every conclusion.</p>
       </section>
 
       <blockquote><span>IDC ATLAS VIEW</span><p>AI CapEx starts with silicon and clears its final test as billable capacity. The return clock is set by how quickly campuses energize, commission and carry real workloads.</p></blockquote>
 
       <section className="column-source-ledger">
-        <div className="column-section-label">SOURCE LEDGER · CUT-OFF 2026-07-31</div>
+        <div className="column-section-label">SOURCE LEDGER · CUT-OFF 2026-08-01</div>
         <h2>Primary sources used in this analysis</h2>
         <div>
           <SourceLink href={sources.microsoftRelease}>Microsoft FY2026 Q4 results</SourceLink>
           <SourceLink href={sources.microsoft}>Microsoft FY2026 Q4 earnings call</SourceLink>
-          <SourceLink href={sources.alphabet}>Alphabet 2025 Q4 earnings call</SourceLink>
-          <SourceLink href={sources.alphabetFiling}>Alphabet 2026 Q1 Form 10-Q</SourceLink>
-          <SourceLink href={sources.meta}>Meta Q1 2026 earnings release</SourceLink>
-          <SourceLink href={sources.amazon}>Amazon Q1 2026 earnings release</SourceLink>
+          <SourceLink href={sources.alphabet}>Alphabet Q2 2026 results</SourceLink>
+          <SourceLink href={sources.alphabetCall}>Alphabet Q2 public call transcript</SourceLink>
+          <SourceLink href={sources.meta}>Meta Q2 2026 earnings release</SourceLink>
+          <SourceLink href={sources.metaCall}>Meta Q2 official transcript</SourceLink>
+          <SourceLink href={sources.amazon}>Amazon Q2 2026 earnings release</SourceLink>
+          <SourceLink href={sources.amazonCall}>Amazon Q2 public call reporting</SourceLink>
         </div>
       </section>
 
-      <footer className="column-article-disclosure"><p>This analysis uses company releases, earnings calls and SEC filings available through July 31, 2026. CapEx and lease definitions are not directly comparable. Microsoft&apos;s lease-classification change lowers the reported CapEx frame without reducing its stated underlying investment expectations. We do not estimate undisclosed supplier shares, liquid-cooling spend or standalone AWS CapEx.</p><p>For information and research only. This is not investment advice.</p></footer>
+      <footer className="column-article-disclosure"><p>This analysis uses company releases, calls and regulatory materials available through August 1, 2026, 23:00 Beijing time. Microsoft and Meta provide official transcripts. Alphabet&apos;s public transcript is cross-checked to its release; Amazon&apos;s call reporting is cross-checked to company financials. CapEx definitions are not directly comparable, and this edition does not estimate undisclosed supplier shares, liquid-cooling spend or standalone AWS CapEx.</p><p>For information and research only. This is not investment advice.</p></footer>
     </article>
   </ColumnArticleConsole>;
 }

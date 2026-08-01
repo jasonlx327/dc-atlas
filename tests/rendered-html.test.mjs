@@ -40,11 +40,10 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /研究队列/);
   assert.match(html, /class="contain-art" src="\/column-ai-capex-grid\.png"/);
   assert.match(html, /Azure 增长 43% 之后，500 亿美元要兑现什么/);
-  assert.match(html, /Claude 与 GPT 都在降价，AI 基建真正要看什么/);
+  assert.match(html, /模型价格正在分层，AI 基建真正要看什么/);
   assert.match(html, /href="\/#columns"/);
   assert.match(html, /href="\/columns\/microsoft-ai-capex"/);
   assert.match(html, /href="\/columns\/frontier-model-economics"/);
-  assert.match(html, /从新增 1GW、GPU 上线速度/);
   assert.doesNotMatch(html, /情报摘要/);
   assert.match(html, /市场脉搏/);
   assert.match(html, /上市公司动态/);
@@ -276,14 +275,14 @@ test("keeps the SK hynix earnings column source-led in both languages", async ()
   assert.equal(chinese.status, 200);
   const chineseHtml = await chinese.text();
   assert.match(chineseHtml, /一份业绩，三层不同的证据/);
-  assert.match(chineseHtml, /未取得可可靠核验的完整电话会问答文本/);
+  assert.match(chineseHtml, /公司提供电话会音频归档，但未提供稳定可引用的官方全文/);
   assert.match(chineseHtml, /dateModified/);
 
   const english = await render("/en/columns/sk-hynix-hbm-earnings");
   assert.equal(english.status, 200);
   const englishHtml = await english.text();
   assert.match(englishHtml, /One earnings release, three layers of evidence/);
-  assert.match(englishHtml, /No complete earnings-call Q&amp;A transcript was reliably available/);
+  assert.match(englishHtml, /company provides a call archive but no stable official transcript/i);
   assert.match(englishHtml, /For information and research only/);
 });
 
@@ -313,16 +312,16 @@ test("publishes a bilingual frontier-model infrastructure column and excludes ru
   const chinese = await render("/columns/frontier-model-economics");
   assert.equal(chinese.status, 200);
   const chineseHtml = await chinese.text();
-  assert.match(chineseHtml, /Claude 与 GPT 都在降价，AI 基建真正要看什么/);
-  assert.match(chineseHtml, /Rumor Filter|传闻的正确位置是待验证清单/);
+  assert.match(chineseHtml, /模型价格正在分层，AI 基建真正要看什么/);
+  assert.match(chineseHtml, /RUMOR FILTER|待验证清单/);
   assert.match(chineseHtml, /GPT-5\.6/);
   assert.match(chineseHtml, /Claude Opus 5/);
 
   const english = await render("/en/columns/frontier-model-economics");
   assert.equal(english.status, 200);
   const englishHtml = await english.text();
-  assert.match(englishHtml, /Claude and GPT Are Getting Cheaper\. What Changes for AI Infrastructure/);
-  assert.match(englishHtml, /Rumors belong on a verification list/);
+  assert.match(englishHtml, /Model Prices Are Fragmenting\. What Changes for AI Infrastructure/);
+  assert.match(englishHtml, /Rumors and single-source reports belong on a verification list/);
   assert.match(englishHtml, /For information and research only/);
 });
 
@@ -335,8 +334,8 @@ test("publishes the bilingual CAPEX Watch column with article metadata and prima
   assert.match(chineseHtml, /"@type":"Article"/);
   assert.match(chineseHtml, /Microsoft FY2026 Q4 财报电话会/);
   assert.match(chineseHtml, /下一季度资本开支超过 500 亿美元/);
-  assert.match(chineseHtml, /未投运资产 \$108\.6B/);
-  assert.match(chineseHtml, /Amazon 2026 Q1 业绩公告/);
+  assert.match(chineseHtml, /Google Cloud \+82%/);
+  assert.match(chineseHtml, /Amazon 2026 Q2 业绩公告/);
   assert.match(chineseHtml, /本网站内容仅用于信息展示与研究/);
   assert.doesNotMatch(chineseHtml, /不在 GPU，而在电网/);
 
@@ -347,8 +346,8 @@ test("publishes the bilingual CAPEX Watch column with article metadata and prima
   assert.match(englishHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/columns\/ai-capex-power"/i);
   assert.match(englishHtml, /Microsoft FY2026 Q4 earnings call/);
   assert.match(englishHtml, /Q1 CapEx is expected above \$50 billion/);
-  assert.match(englishHtml, /\$75\.6B of future payments/);
-  assert.match(englishHtml, /Amazon Q1 2026 earnings release/);
+  assert.match(englishHtml, /Google Cloud revenue \+82%/);
+  assert.match(englishHtml, /Amazon Q2 2026 earnings release/);
   assert.match(englishHtml, /For information and research only/);
   assert.doesNotMatch(englishHtml, /Isn.t the GPU/);
 });
@@ -597,7 +596,7 @@ test("publishes bilingual column indexes with crawl metadata", async () => {
   assert.match(chineseHtml, /专栏，追踪/);
   assert.match(chineseHtml, /GW 级长租正在改写 IDC 订单/);
   assert.match(chineseHtml, /长鑫上市，谁会先感到压力/);
-  assert.match(chineseHtml, /Claude 与 GPT 都在降价，AI 基建真正要看什么/);
+  assert.match(chineseHtml, /模型价格正在分层，AI 基建真正要看什么/);
   assert.match(chineseHtml, /Azure 增长 43% 之后，500 亿美元要兑现什么/);
   assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns"/i);
   assert.match(chineseHtml, /"@type":"ItemList"/);
@@ -609,7 +608,7 @@ test("publishes bilingual column indexes with crawl metadata", async () => {
   assert.match(englishHtml, /Columns for the/);
   assert.match(englishHtml, /Gigawatt Leases Are Reshaping the Data Center Market/);
   assert.match(englishHtml, /CXMT Is Public\. Which US Chip Stocks Actually Feel It/);
-  assert.match(englishHtml, /Claude and GPT Are Getting Cheaper\. What Changes for AI Infrastructure/);
+  assert.match(englishHtml, /Model Prices Are Fragmenting\. What Changes for AI Infrastructure/);
   assert.match(englishHtml, /Azure at 43%: What Must the Next \$50B Deliver/);
   assert.match(englishHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/columns"/i);
   assert.match(englishHtml, /"@type":"ItemList"/);
@@ -636,7 +635,7 @@ test("publishes bilingual RSS feeds for original research", async () => {
   assert.match(englishXml, /<title>IDC Atlas Columns<\/title>/);
   assert.match(englishXml, /Where Hyperscaler AI CapEx Actually Goes/);
   assert.match(englishXml, /CXMT Is Public\. Which US Chip Stocks Actually Feel It/);
-  assert.match(englishXml, /Claude and GPT Are Getting Cheaper\. What Changes for AI Infrastructure/);
+  assert.match(englishXml, /Model Prices Are Fragmenting\. What Changes for AI Infrastructure/);
   assert.match(englishXml, /Azure at 43%: What Must the Next \$50B Deliver/);
   assert.match(englishXml, /atom:link href="https:\/\/idc-index\.com\/en\/feed\.xml"/);
 });
