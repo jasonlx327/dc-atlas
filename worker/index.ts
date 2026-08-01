@@ -7,7 +7,7 @@ const AIHOT_USER_AGENT = "aihot-skill/0.3.6 (+https://aihot.virxact.com/aihot-sk
 const CWW_ENDPOINT = "https://cwwindex.today/data/latest.json";
 const OPENROUTER_MODELS_ENDPOINT = "https://openrouter.ai/api/v1/models?sort=top-weekly";
 const ARENA_CODE_ENDPOINT = "https://arena.ai/leaderboard/code/webdev";
-const CONTENT_REVIEWED_AT = "2026-07-31";
+const CONTENT_REVIEWED_AT = "2026-08-01";
 const LLMS_TXT = `# IDC Atlas
 
 > IDC Atlas is a bilingual, source-first intelligence site for global data-center construction, AI infrastructure, power, cooling, networking and China AI silicon. Content is for public-information research and industry observation only, not investment advice.
@@ -1536,6 +1536,60 @@ function constructionPulse(): NewsItem[] {
 function listedCompanyPulse(): NewsItem[] {
   const items: NewsItem[] = [
     {
+      id: "amazon-q2-2026-ai-infrastructure",
+      title: "Amazon Q2 AWS 增长 37%，AI 基础设施投入继续压低自由现金流",
+      summary: "AWS Q2 营收同比增长 37% 至 422 亿美元；过去 12 个月资本性资产采购净额升至 1,690 亿美元，自由现金流转为流出 76 亿美元，主要由 AI 投资增加推动。",
+      publishedAt: "2026-07-30T16:05:00-07:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx",
+      sourceUrl: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx",
+      sourceName: "Amazon Investor Relations",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "Q2 业绩与 AI 投入更新",
+      scale: "AWS +37% · TTM 资本性资产采购 $1,690 亿",
+      listedTicker: "Amazon · AMZN",
+      whyItMatters: "AWS 增长加速与自由现金流转负同时出现，说明 AI 需求正在兑现，但服务器、数据中心和网络建设仍处于高投入阶段。",
+    },
+    {
+      id: "meta-q2-2026-capex",
+      title: "Meta Q2 资本开支 311 亿美元，全年区间收窄至 1,300–1,450 亿美元",
+      summary: "Meta Q2 资本开支（含融资租赁本金）为 310.8 亿美元；公司把 2026 年资本开支预期收窄至 1,300–1,450 亿美元，同时披露收入同比增长 28%。",
+      publishedAt: "2026-07-29T16:05:00-07:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+      sourceUrl: "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+      sourceName: "Meta Investor Relations",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "Q2 业绩与 CAPEX 指引更新",
+      scale: "Q2 CAPEX $311 亿 · FY26 $1,300–1,450 亿",
+      listedTicker: "Meta · META",
+      whyItMatters: "资本开支区间保持在高位，继续为多 GW 园区、服务器与网络扩容提供需求，但自由现金流已明显受投入节奏影响。",
+    },
+    {
+      id: "microsoft-fy26-q4-ai-capex",
+      title: "Microsoft FY26 Q4 Azure 增长 43%，下一季度资本开支预计超过 500 亿美元",
+      summary: "Azure 与其他云服务收入同比增长 43%；公司披露当季资本开支约 410 亿美元，并预计下一季度超过 500 亿美元，需求仍高于可用供给。",
+      publishedAt: "2026-07-29T16:00:00-07:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast",
+      sourceUrl: "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast",
+      sourceName: "Microsoft Investor Relations",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "FY26 Q4 业绩与供给指引",
+      scale: "Azure +43% · 下季 CAPEX $500 亿+",
+      listedTicker: "Microsoft · MSFT",
+      whyItMatters: "云需求仍快于基础设施供给，新增资本开支将继续传导至服务器、园区、电力、液冷和高速互联。",
+    },
+    {
       id: "galaxy-mcgregor-campus-company-update",
       title: "Galaxy 新增德州 McGregor 数据中心园区，首期规划 74MW",
       summary: "公司收购约 500 英亩土地，预计 2028 年取得首批电力；首期规划 74MW，并准备在 2030 年前扩展至数百 MW。",
@@ -1908,10 +1962,10 @@ function calendarEvents(): CalendarEvent[] {
     { id: "alphabet-q2-2026", startsAt: "2026-07-22T20:00:00.000Z", company: "Alphabet", ticker: "GOOGL", sector: "互联网 / 云计算", description: "Google Cloud 位居全球主要云服务商之列，AI 基建投入的重要风向标。", focus: "Google Cloud 增长、全年 CAPEX 指引与 AI 算力供给", sourceName: "Alphabet Investor Relations · Q2 results", sourceUrl: "https://s206.q4cdn.com/479360582/files/doc_financials/2026/q2/2026q2-alphabet-earnings-release.pdf", conclusion: { summary: "Google Cloud 营收同比增长 82% 至 248 亿美元、积压订单升至 5,140 亿美元；Q2 资本开支为 449 亿美元，全年指引上调至 1,950–2,050 亿美元。云端 AI 需求仍超过既有产能，数据中心、服务器与加速器投入维持高强度。", summaryEn: "Google Cloud revenue rose 82% to $24.8B and backlog reached $514B. Q2 capex was $44.9B; full-year 2026 guidance was raised to $195B–$205B. AI-cloud demand remains ahead of existing capacity, keeping data-center, server and accelerator buildout at high intensity.", sourceName: "Alphabet Q2 results & earnings call · Reuters", sourceUrl: "https://wdez.com/2026/07/22/google-quarterly-cloud-revenue-growth-beats-expectations/" } },
     { id: "intel-q2-2026", startsAt: "2026-07-23T20:00:00.000Z", company: "Intel", ticker: "INTC", sector: "半导体", description: "全球重要芯片制造商，PC 与数据中心 CPU 的关键供应商。", focus: "数据中心产品节奏、先进制程投入与资本开支安排", sourceName: "Intel Investor Relations · Q2 results", sourceUrl: "https://www.intc.com/news-events/press-releases/detail/1776/intel-reports-second-quarter-2026-financial-results", conclusion: { summary: "Q2 数据中心与 AI（DCAI）营收同比增长 59% 至 63 亿美元；公司称 AI 算力需求继续增强，并将增加设备、洁净室空间和基板投入，以支持产品与代工业务后续增长。", summaryEn: "Q2 Data Center and AI revenue rose 59% year over year to $6.3B. Intel said AI-driven compute demand continues to strengthen and that it is increasing investment in equipment, clean-room space and substrates to support product and foundry growth.", sourceName: "Intel Investor Relations · Q2 2026 results", sourceUrl: "https://www.intc.com/news-events/press-releases/detail/1776/intel-reports-second-quarter-2026-financial-results" } },
     { id: "vertiv-q2-2026", startsAt: "2026-07-29T12:00:00.000Z", company: "Vertiv", ticker: "VRT", sector: "数据中心基础设施", description: "数据中心电力、散热、液冷与关键基础设施解决方案供应商。", focus: "订单、积压、液冷交付与全年需求指引", sourceName: "Vertiv Investor Relations", sourceUrl: "https://investors.vertiv.com/news/news-details/2026/Vertiv-Announces-Date-of-Second-Quarter-2026-Earnings-Release-and-Conference-Call/default.aspx" },
-    { id: "meta-q2-2026", startsAt: "2026-07-29T20:00:00.000Z", company: "Meta", ticker: "META", sector: "社交媒体 / AI", description: "全球社交平台龙头，前沿模型、广告 AI 与大规模数据中心建设并进。", focus: "AI 基础设施 CAPEX、数据中心容量和全年投入节奏", sourceName: "Meta Investor Relations", sourceUrl: "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Second-Quarter-2026-Results/default.aspx" },
+    { id: "meta-q2-2026", startsAt: "2026-07-29T20:00:00.000Z", company: "Meta", ticker: "META", sector: "社交媒体 / AI", description: "全球社交平台龙头，前沿模型、广告 AI 与大规模数据中心建设并进。", focus: "AI 基础设施 CAPEX、数据中心容量和全年投入节奏", sourceName: "Meta Investor Relations · Q2 results", sourceUrl: "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx", conclusion: { summary: "Q2 收入同比增长 28%，资本开支（含融资租赁本金）为 310.8 亿美元；全年资本开支区间收窄至 1,300–1,450 亿美元。投入继续集中于 AI 基础设施，Q2 自由现金流降至 7.84 亿美元。", summaryEn: "Q2 revenue rose 28%. Capital expenditures, including finance-lease principal payments, were $31.08B; full-year 2026 capex guidance narrowed to $130B–$145B. AI-infrastructure investment remains elevated, while Q2 free cash flow fell to $784M.", sourceName: "Meta Q2 2026 results", sourceUrl: "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx" } },
     { id: "microsoft-fy26-q4", startsAt: "2026-07-29T20:00:00.000Z", company: "Microsoft", ticker: "MSFT", sector: "云计算 / 软件", description: "Azure 是全球主要云平台，Copilot 与 AI 服务驱动基础设施扩张。", focus: "Azure 需求、资本开支、融资租赁与供给受限表述", sourceName: "Microsoft Investor Relations · FY26 Q4 results", sourceUrl: "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast", conclusion: { summary: "FY26 Q4 Azure 增长 43%，下一季度指引约 45%（固定汇率）；当季 CAPEX 为 410 亿美元，下一季度预计超过 500 亿美元。电话会确认需求仍高于供给，FY27 CAPEX 将同比增长；2026 年约 1,750 亿美元的新口径主要来自数据中心租赁分类变化，不代表实际建设计划下调。", summaryEn: "FY26 Q4 Azure grew 43%, with Q1 guided to roughly 45% in constant currency. Quarterly capex was $41B and Q1 is expected above $50B. Management said demand still exceeds supply and FY27 capex will grow; the revised ~$175B calendar-2026 presentation mainly reflects data-center lease reclassification, not a reduction in underlying investment plans.", sourceName: "Microsoft FY26 Q4 results & earnings call", sourceUrl: "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4" } },
     { id: "arm-q1-fy27", startsAt: "2026-07-29T21:00:00.000Z", company: "Arm", ticker: "ARM", sector: "芯片 IP", description: "CPU 架构授权龙头，AI 服务器与移动芯片的重要底层技术提供商。", focus: "数据中心授权收入、AI 服务器渗透与客户产品节奏", sourceName: "Arm Investor Relations", sourceUrl: "https://investors.arm.com/financials/quarterly-annual-results" },
-    { id: "amazon-q2-2026", startsAt: "2026-07-30T21:00:00.000Z", company: "Amazon", ticker: "AMZN", sector: "电商 / 云计算", description: "AWS 是全球最大的云服务商之一，AI 基础设施投资的核心风向标。", focus: "AWS 增长、基础设施 CAPEX 与 AI 数据中心建设", sourceName: "Amazon Investor Relations", sourceUrl: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-to-Webcast-Second-Quarter-2026-Financial-Results-Conference-Call/default.aspx" },
+    { id: "amazon-q2-2026", startsAt: "2026-07-30T21:00:00.000Z", company: "Amazon", ticker: "AMZN", sector: "电商 / 云计算", description: "AWS 是全球最大的云服务商之一，AI 基础设施投资的核心风向标。", focus: "AWS 增长、基础设施 CAPEX 与 AI 数据中心建设", sourceName: "Amazon Investor Relations · Q2 results", sourceUrl: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx", conclusion: { summary: "AWS Q2 营收同比增长 37% 至 422 亿美元，为 18 个季度以来最快增速；过去 12 个月资本性资产采购净额升至 1,690 亿美元，自由现金流转为流出 76 亿美元，主要由 AI 投资增加推动。", summaryEn: "AWS Q2 revenue rose 37% to $42.2B, its fastest growth in 18 quarters. Trailing-12-month purchases of property and equipment, net, reached $169.0B; free cash flow moved to a $7.6B outflow, primarily reflecting higher AI investment.", sourceName: "Amazon Q2 2026 results", sourceUrl: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx" } },
   ];
 }
 

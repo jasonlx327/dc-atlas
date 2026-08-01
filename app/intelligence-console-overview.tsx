@@ -344,7 +344,7 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
   const isZh = lang === "zh";
   const pulse = data.pulse.slice(0, 8).map((story) => translateStory?.(story) ?? story);
   const companies = data.companies.slice(0, 4).map((story) => translateStory?.(story) ?? story);
-  const lead = pulse[0] ?? companies[0];
+  const lead = [...pulse, ...companies].sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime())[0];
   const events = data.events.slice(0, 6);
   const deals = data.deals.slice(0, 5);
   const articles = columnArticles.slice(0, 5);

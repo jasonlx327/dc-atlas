@@ -479,7 +479,10 @@ test("keeps live-data validation in the deployment path", async () => {
   assert.match(liveCheck, /newsStatus !== "ok"/);
   for (const section of ["idcPulse", "listedCompanyNews", "mnaDeals", "capacityRadar", "coolingProgress"]) assert.match(liveCheck, new RegExp(section));
   assert.match(liveCheck, /freshness\.status === "stale"/);
-  assert.match(workerSource, /CONTENT_REVIEWED_AT = "2026-07-31"/);
+  assert.match(workerSource, /CONTENT_REVIEWED_AT = "2026-08-01"/);
+  assert.match(workerSource, /Amazon Q2 AWS 增长 37%/);
+  assert.match(workerSource, /Meta Q2 资本开支 311 亿美元/);
+  assert.match(workerSource, /Microsoft FY26 Q4 Azure 增长 43%/);
   assert.match(workerSource, /sectionFreshnessState/);
   for (const marker of ["galaxy-mcgregor-campus-2026", "energy-vault-snyder-ai-groundbreaking", "hut8-beacon-point-second-352mw-lease", "eqt-copia-power"]) assert.match(workerSource, new RegExp(marker));
 });
