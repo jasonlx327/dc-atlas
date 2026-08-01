@@ -14,6 +14,10 @@ $atlas-research 解读最新一季微软财报对云算力、电力、园区和�
 $atlas-research 写一篇关于“AI 算力需求为什么未必立即转化为已投运数据中心容量”的 Atlas 深度专栏。
 ```
 
+```text
+$atlas-research 自动查找并分析 Equinix 最新一季电话会：管理层新增表述、分析师反复追问、容量与电力约束，以及对 IDC Atlas 结论的影响。
+```
+
 ## What it enforces
 
 - Current primary-source research and claim-level source ledger.
@@ -21,6 +25,7 @@ $atlas-research 写一篇关于“AI 算力需求为什么未必立即转化为�
 - Numerical reconciliation before narrative interpretation.
 - Mechanism, time-horizon, bottleneck, and counter-evidence analysis.
 - Publication quality gates and explicit `not-determined` / `verified-no-change` states.
+- Automatic official-call discovery and structured management Q&A analysis for earnings reviews.
 
 The Skill excludes stock-price commentary, ratings, price targets, trading signals, and investment advice.
 

@@ -19,7 +19,7 @@ Required when available:
 1. Earnings release.
 2. 10-Q, 10-K, 20-F, 6-K, exchange filing, or equivalent.
 3. Investor presentation and supplemental tables.
-4. Official webcast or transcript.
+4. Official webcast or transcript; actively locate it when external research is allowed.
 5. Previous-period guidance source.
 6. Relevant customer, supplier, regulator, grid, or project-owner disclosure for cross-checks.
 
@@ -60,16 +60,7 @@ Show unresolved bridges in the output.
 
 ## Read the call as evidence
 
-Extract:
-
-- What management emphasized.
-- What changed from prepared remarks to Q&A.
-- Questions asked repeatedly.
-- Explicit constraints and timing.
-- Guidance assumptions and dependencies.
-- Topics management declined to quantify.
-
-Do not infer confidence from tone alone. Use tone only as secondary context.
+Use [call-analysis-workflow.md](call-analysis-workflow.md). Actively locate the latest applicable call; do not wait for the user to supply a transcript. Record the result in the source ledger even when no usable call material exists.
 
 ## Map the infrastructure read-through
 
@@ -105,6 +96,8 @@ Use when speed matters and the source packet is complete enough:
 6. **Counter-case** — alternative explanation and evidence that would weaken the view.
 7. **Watch list** — specific operational disclosures to monitor next quarter.
 8. **Source ledger** — primary documents first.
+
+Include `call_status`, the call date, the source tier, and the material Q&A findings or the reason the call could not be used.
 
 ## Earnings-specific stop conditions
 

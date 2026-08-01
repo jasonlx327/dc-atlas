@@ -10,6 +10,7 @@ Create defensible IDC Atlas research that explains not only what changed, but ho
 ## Route the request
 
 - For quarterly or annual results, filings, guidance, earnings calls, or peer-result comparisons, read [references/earnings-workflow.md](references/earnings-workflow.md).
+- For an earnings call, management Q&A, analyst-question analysis, or transcript review, read [references/call-analysis-workflow.md](references/call-analysis-workflow.md).
 - For a thematic deep dive, industry mechanism, project event, supply-chain question, or Atlas column, read [references/column-workflow.md](references/column-workflow.md).
 - For every task, read [references/source-policy.md](references/source-policy.md) and [references/quality-gates.md](references/quality-gates.md).
 - Read [references/research-patterns.md](references/research-patterns.md) only when reviewing the Skill design or adapting its workflow.
@@ -42,6 +43,8 @@ Collect current primary documents before writing prose. Maintain a working ledge
 | Conflict | Contradictory figure or unresolved definition |
 
 Search snippets, social posts, and media summaries are discovery aids, not final evidence. A missing source is a gap, not permission to infer a fact.
+
+For every earnings review, actively check whether the latest applicable earnings call exists when external research is allowed. Record `call_status` as `official-transcript`, `official-webcast`, `official-ir-record`, `licensed-transcript`, `call-unavailable`, or `not-requested`. Do not wait for the user to provide a link.
 
 ## Run the Atlas analysis loop
 
@@ -107,6 +110,7 @@ Do not include stock-price moves, buy/sell ratings, price targets, portfolio adv
 - If two primary sources conflict, show both figures and explain the likely definitional or timing difference; do not choose silently.
 - If pre-release consensus is unavailable, do not call a result a beat or miss.
 - If an official transcript is unavailable, distinguish prepared remarks, webcast observations, and secondary transcripts.
+- If an earnings call was checked, state the source tier, call date, speakers or participants when available, and any transcript or audio limitation.
 
 ## Final delivery
 

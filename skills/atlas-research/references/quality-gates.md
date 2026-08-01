@@ -22,6 +22,7 @@ All required gates must pass. If one fails, deliver a research status note or dr
 - [ ] Percentages and basis-point movements recalculate correctly.
 - [ ] Material differences across release, filing, presentation, and call are reconciled or shown.
 - [ ] Beat/miss language uses timestamped pre-release consensus.
+- [ ] For an earnings review with external research allowed, the latest applicable call was actively checked and its `call_status` is recorded.
 
 ## Gate 4: Analytical integrity
 
@@ -30,6 +31,7 @@ All required gates must pass. If one fails, deliver a research status note or dr
 - [ ] No unsupported jump occurs in the infrastructure chain.
 - [ ] Announced, contracted, under-construction, and operational states are distinct.
 - [ ] The strongest alternative explanation and counter-evidence are addressed.
+- [ ] Prepared remarks, analyst questions, management answers, and recording-derived notes are not conflated.
 
 ## Gate 5: Editorial quality
 
