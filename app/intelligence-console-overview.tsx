@@ -379,7 +379,7 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
           {lead && <div className="atlas-lead-meta"><span>{lead.region ?? (isZh ? "全球" : "Global")}</span><span>{lead.category ?? (isZh ? "项目脉冲" : "Project pulse")}</span><time>{dateLabel(lead.publishedAt, lang)}</time></div>}
         </div>
         <figure className="atlas-lead-image">
-          <img src={leadImage} alt={lead?.imageAlt ?? (isZh ? "数据中心基础设施项目" : "Data-center infrastructure project")} />
+          <img className={leadImage.startsWith("/column-") ? "contain-art" : ""} src={leadImage} alt={lead?.imageAlt ?? (isZh ? "数据中心基础设施项目" : "Data-center infrastructure project")} />
           <figcaption>{lead?.sourceName ?? (isZh ? "IDC Atlas 研究图示" : "IDC Atlas research visual")}</figcaption>
         </figure>
         <dl className="atlas-lead-facts">

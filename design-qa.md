@@ -35,6 +35,7 @@ final result: passed
 - Chinese mobile column detail: `artifacts/design-qa/column-detail-zh-mobile-v1.png` — 390 × 844.
 - Chinese large-campus cards after shared light-card revision: `artifacts/design-qa/industry-campus-desktop-v4.png`.
 - Chinese GPU cards after shared light-card revision: `artifacts/design-qa/industry-china-mobile-v4.png`.
+- Homepage editorial lead after complete-image fitting: `artifacts/design-qa/home-lead-contained-desktop-v5.png`.
 
 The browser captures are JPEG-encoded at the recorded CSS pixel dimensions. No density normalization was needed because source and implementation were evaluated as layout references rather than pixel-identical clones.
 
@@ -46,6 +47,9 @@ The browser captures are JPEG-encoded at the recorded CSS pixel dimensions. No d
 - Full first-screen industry comparison: `artifacts/design-qa/compare-industry-v2.jpg`
   - Left: reported legacy dark page.
   - Right: shared light Console shell, status bar, rail, hero, tabs and first industry module.
+- Focused lead-image crop comparison: `artifacts/design-qa/compare-home-lead-crop-v5.png`
+  - Left: reported `object-fit: cover` crop with embedded typography cut at the edge.
+  - Right: the same editorial artwork fitted in full against its native dark background.
 - Focused checks were required because the research thumbnail, brand lockup, nav active state and mobile wrapping were too small to judge from a single full-page capture.
 
 ## Fidelity surfaces
@@ -103,6 +107,12 @@ The browser captures are JPEG-encoded at the recorded CSS pixel dimensions. No d
   - Fix: moved the English supernode grid onto the same light card surface and source-link treatment as the Chinese Industry route.
 - [P1] “Close navigation” only changed the mobile drawer state and had no desktop effect.
   - Fix: added a desktop rail-collapsed state, full-width canvas transition and a persistent “Open navigation” recovery control while retaining the mobile drawer behavior.
+
+### Iteration 5
+
+- [P1] The 16:9 editorial lead image was forced into a narrower portrait-like slot with `object-fit: cover`, cutting the embedded headline and IDC Atlas label at the left edge.
+  - Fix: editorial assets using the `/column-*` cover family now use complete-image fitting on the original dark artwork background; ordinary project photography retains its full-bleed crop.
+  - Post-fix evidence: `compare-home-lead-crop-v5.png`.
 
 ## Interaction and route checks
 
