@@ -45,9 +45,12 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const requestHeaders = await headers();
+  const requestPath = requestHeaders.get("x-idc-request-path") ?? requestHeaders.get("x-invoke-path") ?? "";
+
   return (
-    <html lang="zh-CN">
+    <html lang={requestPath === "/en" || requestPath.startsWith("/en/") ? "en" : "zh-CN"}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">

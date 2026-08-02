@@ -35,12 +35,45 @@ Use original disclosure links attached to individual updates to verify capacity,
 - [Lease Watch: Gigawatt Leases Are Reshaping the Data Center Market](https://idc-index.com/en/columns/hyperscale-idc-leases): English edition covering recent CoreWeave, Digital Realty and VNET disclosures.
 - [Memory Watch: 长鑫上市，谁会先感到压力？](https://idc-index.com/columns/cxmt-us-chip-impact): Chinese source-linked analysis of CXMT's impact on Micron, US equipment vendors and AI accelerator companies.
 - [Memory Watch: CXMT Is Public. Which US Chip Stocks Actually Feel It?](https://idc-index.com/en/columns/cxmt-us-chip-impact): English impact ranking across MU, AMAT, LRCX, KLAC, NVDA, AMD and RMBS.
+- [Microsoft Watch: Azure at 43%](https://idc-index.com/en/columns/microsoft-ai-capex): English analysis of Azure growth, activation speed, lease accounting and the next $50B-plus CapEx quarter.
+- [Model Economics Watch](https://idc-index.com/en/columns/frontier-model-economics): English analysis of model price tiers, agent workloads, inference depth and the infrastructure demand they create.
+- [Memory Watch: After SK hynix Earnings](https://idc-index.com/en/columns/sk-hynix-hbm-earnings): English analysis of contracted demand, HBM4 execution and capacity discipline.
 
 ## Interpretation
 
 - Primary sources control factual claims. News items are discovery signals and may require further verification.
 - This site does not provide investment advice, trading recommendations or guarantees about future outcomes.
 - Live and daily-snapshot data are distinct from research conclusions; read each item’s source and timestamp before relying on it.
+`;
+const LLMS_TXT_EN = `# IDC Atlas
+
+> IDC Atlas is a bilingual, source-first intelligence site for data-center construction, AI infrastructure, power, cooling, networking, memory and China AI silicon. Content is for public-information research and industry observation only, not investment advice.
+
+Primary sources control factual claims. News leads are discovery signals; verify capacity, delivery, commissioning, product specifications and financial figures through the linked original disclosure and its date.
+
+## Core pages
+
+- [IDC Atlas English console](https://idc-index.com/en): Global- and U.S.-first overview of project signals, listed-company disclosures, earnings CAPEX watch and market indices.
+- [Infrastructure pulse](https://idc-index.com/en/pulse): Source-linked global projects, leases, U.S.-listed infrastructure companies and daily AI-demand signals.
+- [Infrastructure industry map](https://idc-index.com/en/industry): Compute, networking, power, cooling, campus capacity and selective China supply-chain coverage.
+- [Data center market tracker](https://idc-index.com/en/topics/data-center-intelligence): Topic guide for projects, capacity, leases, power, cooling, CAPEX and public-company disclosures.
+- [Methodology and sources](https://idc-index.com/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
+- [Earnings calendar](https://idc-index.com/calendar): Upcoming cloud, semiconductor and data-center-infrastructure earnings events and CAPEX watch items.
+- [IDC Atlas Columns](https://idc-index.com/en/columns): Original, source-linked research for global investors.
+
+## Research
+
+- [Where Hyperscaler AI CapEx Actually Goes](https://idc-index.com/en/columns/ai-capex-power)
+- [Gigawatt Leases Are Reshaping the Data Center Market](https://idc-index.com/en/columns/hyperscale-idc-leases)
+- [CXMT Is Public. Which US Chip Stocks Actually Feel It?](https://idc-index.com/en/columns/cxmt-us-chip-impact)
+- [Azure at 43%: What Must the Next $50B Deliver?](https://idc-index.com/en/columns/microsoft-ai-capex)
+- [Model Prices Are Fragmenting. What Changes for AI Infrastructure?](https://idc-index.com/en/columns/frontier-model-economics)
+- [After SK hynix Earnings, What Still Looks Good in AI Memory?](https://idc-index.com/en/columns/sk-hynix-hbm-earnings)
+
+## Interpretation
+
+- This site does not provide investment advice, trading recommendations or guarantees about future outcomes.
+- Live data and daily snapshots are distinct from research conclusions. Read the source link and timestamp before relying on an item.
 `;
 const PRODUCT_IMAGE_SOURCES: Record<string, string> = {
   "/media/china/huawei-atlas-950.jpg": "https://www-file.huawei.com/dam/asset/view/260717-01.png",
@@ -2476,7 +2509,10 @@ const worker = {
       if (languageResponse) return languageResponse;
       if (url.pathname === "/api/daily-snapshot") return await dailySnapshotApi(request, env);
       if (url.pathname === "/api/atlas" || url.pathname === "/api/atlas-live" || url.pathname === "/api/atlas-live-v2" || url.pathname === "/api/atlas-live-v3" || url.pathname === "/api/atlas-live-v4" || url.pathname === "/api/atlas-live-v5") return await atlasApi(request, env, ctx);
-      if (url.pathname === "/llms.txt") return new Response(LLMS_TXT, { headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "public, max-age=3600" } });
+      if (url.pathname === "/llms.txt" || url.pathname === "/en/llms.txt") {
+        const content = url.pathname === "/en/llms.txt" ? LLMS_TXT_EN : LLMS_TXT;
+        return new Response(content, { headers: { "content-type": "text/plain; charset=utf-8", "content-language": url.pathname === "/en/llms.txt" ? "en-US" : "zh-CN, en-US", "cache-control": "public, max-age=3600" } });
+      }
       const productImageSource = PRODUCT_IMAGE_SOURCES[url.pathname];
       if (productImageSource) return await productImage(request, ctx, productImageSource);
       if (shouldPrimeHomepage(request, url)) {
@@ -2484,10 +2520,13 @@ const worker = {
         if (prime) {
           const headers = new Headers(request.headers);
           headers.set(INITIAL_ATLAS_HEADER, prime);
+          headers.set("x-idc-request-path", url.pathname);
           return await handler.fetch(new Request(request, { headers }), env, ctx);
         }
       }
-      return await handler.fetch(request, env, ctx);
+      const headers = new Headers(request.headers);
+      headers.set("x-idc-request-path", url.pathname);
+      return await handler.fetch(new Request(request, { headers }), env, ctx);
     } catch (error) {
       console.error(JSON.stringify({ message: "Unhandled request error", path: url.pathname, error: String(error) }));
       if (url.pathname.startsWith("/api/")) return Response.json({ error: "Service temporarily unavailable" }, { status: 503 });

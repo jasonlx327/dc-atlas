@@ -107,6 +107,7 @@ test("renders the English research console and focused content routes", async ()
   const response = await render("/en");
   assert.equal(response.status, 200);
   const html = await response.text();
+  assert.match(html, /<html lang="en">/i);
   assert.match(html, /<title>Data Center Infrastructure Intelligence \| IDC Atlas<\/title>/);
   assert.match(html, /Hyperscaler capital expenditure/);
   assert.match(html, /class="atlas-console-overview"/);
@@ -138,6 +139,20 @@ test("renders the English research console and focused content routes", async ()
   assert.match(industryHtml, /Industry/);
   assert.match(industryHtml, /China watch/);
   assert.match(industryHtml, /Six infrastructure nodes/);
+});
+
+test("exposes bilingual AI-readable discovery manifests", async () => {
+  const chinese = await render("/llms.txt");
+  assert.equal(chinese.status, 200);
+  assert.match(chinese.headers.get("content-type") ?? "", /^text\/plain/i);
+  assert.match(await chinese.text(), /## Core pages/);
+
+  const english = await render("/en/llms.txt");
+  assert.equal(english.status, 200);
+  assert.equal(english.headers.get("content-language"), "en-US");
+  const englishText = await english.text();
+  assert.match(englishText, /Where Hyperscaler AI CapEx Actually Goes/);
+  assert.match(englishText, /After SK hynix Earnings/);
 });
 
 test("keeps bilingual console section navigation stable and readable", async () => {
