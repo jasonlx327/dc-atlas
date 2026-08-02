@@ -6,13 +6,16 @@ import { IntelligenceConsoleOverview, IntelligenceConsoleShell, type ConsoleStor
 
 type Story = ConsoleStory & { whyItMatters?: string };
 type CalendarEvent = { id: string; startsAt: string; company: string; ticker: string; sector: string; sourceUrl: string; sourceName: string; focus?: string; conclusion?: { summary: string; summaryEn?: string; sourceName: string; sourceUrl: string } };
-type Record = { id: string; title: string; subject: string; metric: string; status: string; publishedAt: string; sourceName: string; sourceUrl: string; note: string };
+type CapacityRecord = { id: string; title: string; subject: string; metric: string; status: string; publishedAt: string; sourceName: string; sourceUrl: string; note: string };
 type Product = { id: string; vendor: string; name: string; model?: string; form?: string; spec?: string; summary?: string; headlineMetric?: string; sourceName: string; sourceUrl: string; imageSrc?: string; imageAlt?: string };
 type Deal = { id: string; announcedAt: string; buyer: string; target: string; value: string; capacity: string; region: string; status: string; rationale: string; sourceName: string; sourceUrl: string };
 type EnglishView = "home" | "pulse" | "industry";
 
 export type AtlasPayload = {
   generatedAt: string;
+  contentReviewedAt?: string;
+  sourceCount?: number;
+  verifiedCount?: number;
   weeklyHighlightCount?: number;
   benchmarks?: Array<{ code: string; name: string; level: number; dayPct: number; count: number }>;
   upcomingEvents?: CalendarEvent[];
@@ -22,8 +25,8 @@ export type AtlasPayload = {
   chinaChipNews?: Story[];
   modelNews?: Story[];
   chainNews?: Record<string, Story[]>;
-  capacityRadar?: Record[];
-  coolingProgress?: Record[];
+  capacityRadar?: CapacityRecord[];
+  coolingProgress?: CapacityRecord[];
   nvidiaProducts?: Product[];
   supernodes?: Product[];
   mnaDeals?: Deal[];
@@ -367,7 +370,7 @@ function englishDeal(deal: Deal): Deal {
     rationale: /[一-鿿]/.test(deal.rationale) ? "Source-linked transaction update." : deal.rationale,
   };
 }
-function recordCopy(record: Record) { return recordTranslations[record.id] ?? { title: record.title, status: record.status, metric: record.metric, note: record.note }; }
+function recordCopy(record: CapacityRecord) { return recordTranslations[record.id] ?? { title: record.title, status: record.status, metric: record.metric, note: record.note }; }
 function supernodeCopy(node: Product) { return supernodeTranslations[node.id] ?? { status: "Public update", summary: node.summary ?? "Source-linked product update." }; }
 
 function StoryCard({ item, eyebrow = "SOURCE-LINKED SIGNAL" }: { item: Story; eyebrow?: string }) {
@@ -411,10 +414,18 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
   const [, setLoadError] = useState(false);
 
   useEffect(() => {
-    void fetch("/api/atlas-live-v5?schema=v1", { cache: "no-store" })
+    const controller = new AbortController();
+    void fetch("/api/atlas-live-v5?schema=v1", { signal: controller.signal, cache: "no-store", headers: { "cache-control": "no-cache" } })
       .then((response) => response.ok ? response.json() : Promise.reject(new Error("Atlas unavailable")))
-      .then((data: AtlasPayload) => setPayload(data))
-      .catch(() => setLoadError(true));
+      .then((data: unknown) => {
+        const nextPayload = data as AtlasPayload;
+        setPayload(nextPayload);
+        setLoadError(false);
+      })
+      .catch((error: unknown) => {
+        if (!(error instanceof DOMException && error.name === "AbortError")) setLoadError(true);
+      });
+    return () => controller.abort();
   }, []);
 
   const dailyItems = useMemo(() => payload?.aiDaily ? [payload.aiDaily.lead, ...payload.aiDaily.sections.flatMap((section) => section.items), ...payload.aiDaily.flashes].filter((item): item is Story => Boolean(item)).slice(0, 6) : [], [payload]);
@@ -434,6 +445,7 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
     lang="en"
     activeSection="pulse"
     generatedAt={payload?.generatedAt}
+    reviewedAt={payload?.contentReviewedAt}
     sourceCount={new Set([...pulse, ...listed].map((item) => item.sourceName).filter(Boolean)).size}
     verifiedCount={pulse.length + listed.length}
     pageLabel="Infrastructure pulse"
@@ -449,6 +461,7 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
     lang="en"
     activeSection="industry"
     generatedAt={payload?.generatedAt}
+    reviewedAt={payload?.contentReviewedAt}
     sourceCount={new Set([...pulse, ...silicon, ...models].map((item) => item.sourceName).filter(Boolean)).size}
     verifiedCount={chainGroups.length + nvidiaProducts.length + capacity.length + cooling.length}
     pageLabel="Industry map"
@@ -466,6 +479,9 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
     lang="en"
     data={{
       generatedAt: payload?.generatedAt,
+      reviewedAt: payload?.contentReviewedAt,
+      sourceCount: payload?.sourceCount,
+      verifiedCount: payload?.verifiedCount,
       pulse,
       companies: listed,
       events: eventList.map(englishEvent),

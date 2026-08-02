@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import QRCode from "qrcode";
 import { IntelligenceConsoleShell } from "../intelligence-console-overview";
+import type { ConsoleMeta } from "../console-meta";
 
 type CalendarEvent = {
   id: string;
@@ -27,14 +28,17 @@ function formatEvent(value: string) {
   };
 }
 
-export default function CalendarClient({ poster = false }: { poster?: boolean }) {
+export default function CalendarClient({ poster = false, initialMeta }: { poster?: boolean; initialMeta?: ConsoleMeta }) {
   const [events, setEvents] = useState<CalendarEvent[]>([]);
   const [qr, setQr] = useState("");
 
   useEffect(() => {
     void fetch("/api/atlas-live-v5?schema=v1", { cache: "no-store" })
       .then((response) => response.ok ? response.json() : Promise.reject(new Error("Calendar unavailable")))
-      .then((payload: { upcomingEvents?: CalendarEvent[] }) => setEvents(payload.upcomingEvents ?? []))
+      .then((payload: unknown) => {
+        const data = payload as { upcomingEvents?: CalendarEvent[] };
+        setEvents(data.upcomingEvents ?? []);
+      })
       .catch(() => setEvents([]));
     void QRCode.toDataURL("https://idc-index.com", { errorCorrectionLevel: "M", margin: 1, width: 360, color: { dark: "#06101a", light: "#effbfa" } }).then(setQr);
   }, []);
@@ -54,7 +58,10 @@ export default function CalendarClient({ poster = false }: { poster?: boolean })
   return <IntelligenceConsoleShell
     lang="zh"
     activeSection="calendar"
-    verifiedCount={events.length}
+    generatedAt={initialMeta?.generatedAt}
+    reviewedAt={initialMeta?.reviewedAt}
+    sourceCount={initialMeta?.sourceCount}
+    verifiedCount={initialMeta?.verifiedCount ?? events.length}
     pageLabel="资本支出与财报日历"
     className="atlas-calendar-shell"
   >{calendar}</IntelligenceConsoleShell>;

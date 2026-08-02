@@ -141,6 +141,24 @@ test("renders the English research console and focused content routes", async ()
   assert.match(industryHtml, /Six infrastructure nodes/);
 });
 
+test("publishes searchable bilingual entity profiles", async () => {
+  const chinese = await render("/companies/microsoft");
+  assert.equal(chinese.status, 200);
+  const chineseHtml = await chinese.text();
+  assert.match(chineseHtml, /微软/);
+  assert.match(chineseHtml, /最新披露/);
+  assert.match(chineseHtml, /搜索公司 \/ 项目/);
+  assert.match(chineseHtml, /canonical" href="https:\/\/idc-index\.com\/companies\/microsoft"/);
+
+  const english = await render("/en/companies/microsoft");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /Microsoft/);
+  assert.match(englishHtml, /Latest disclosures/);
+  assert.match(englishHtml, /Find company \/ project/);
+  assert.match(englishHtml, /canonical" href="https:\/\/idc-index\.com\/en\/companies\/microsoft"/);
+});
+
 test("exposes bilingual AI-readable discovery manifests", async () => {
   const chinese = await render("/llms.txt");
   assert.equal(chinese.status, 200);
@@ -204,9 +222,11 @@ test("groups the menu into four themes without changing section links", async ()
 
 test("uses explicit Beijing dates instead of relative timestamps", async () => {
   const source = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");
+  const overview = await readFile(new URL("../app/intelligence-console-overview.tsx", import.meta.url), "utf8");
 
   assert.match(source, /year: "numeric", month: "2-digit", day: "2-digit"/);
   assert.doesNotMatch(source, /分钟前|小时前|天前/);
+  assert.match(overview, /const timezone = isZh \? "Asia\/Shanghai" : "America\/New_York"/);
 });
 
 test("keeps the English site fully translated across the live coverage stack", async () => {

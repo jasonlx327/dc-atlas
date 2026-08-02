@@ -4,6 +4,8 @@ import { useEffect, useState, type ReactNode } from "react";
 import QRCode from "qrcode";
 import { ChainIcon, type ChainKey } from "./chain-icon";
 import { columnArticles } from "./columns/articles";
+import { deriveConsoleMeta, type ConsoleMeta } from "./console-meta";
+import { entityDirectory } from "./entity-directory";
 
 export type ConsoleStory = {
   id: string;
@@ -59,6 +61,8 @@ export type ConsoleBenchmark = {
 export type ConsoleOverviewData = {
   generatedAt?: string;
   reviewedAt?: string;
+  sourceCount?: number;
+  verifiedCount?: number;
   pulse: ConsoleStory[];
   companies: ConsoleStory[];
   events: ConsoleEvent[];
@@ -78,12 +82,33 @@ type ShellProps = {
   lang: "zh" | "en";
   activeSection?: string;
   generatedAt?: string;
+  reviewedAt?: string;
   sourceCount?: number;
   verifiedCount?: number;
   pageLabel?: string;
   className?: string;
   children: ReactNode;
 };
+
+function useLiveConsoleMeta(enabled: boolean): ConsoleMeta {
+  const [meta, setMeta] = useState<ConsoleMeta>({});
+
+  useEffect(() => {
+    if (!enabled) return;
+    const controller = new AbortController();
+    void fetch("/api/atlas-live-v5?schema=v1", {
+      signal: controller.signal,
+      cache: "no-store",
+      headers: { "cache-control": "no-cache" },
+    })
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error("Atlas unavailable")))
+      .then((payload: unknown) => setMeta(deriveConsoleMeta(payload)))
+      .catch(() => undefined);
+    return () => controller.abort();
+  }, [enabled]);
+
+  return meta;
+}
 
 const stages: Array<{
   key: ChainKey;
@@ -110,12 +135,12 @@ const navItems = [
   { key: "market", zh: "市场", en: "Markets", hrefZh: "/#market", hrefEn: "/en#market" },
 ] as const;
 
-function dateLabel(value: string | null | undefined, lang: "zh" | "en", includeTime = false) {
+function dateLabel(value: string | null | undefined, lang: "zh" | "en", includeTime = false, timezone?: string) {
   if (!value) return "—";
   const date = new Date(value);
   if (!Number.isFinite(date.getTime())) return value;
   return new Intl.DateTimeFormat(lang === "zh" ? "zh-CN" : "en-US", {
-    timeZone: lang === "zh" ? "Asia/Shanghai" : "America/New_York",
+    timeZone: timezone ?? (lang === "zh" ? "Asia/Shanghai" : "America/New_York"),
     year: includeTime ? undefined : "numeric",
     month: includeTime ? "2-digit" : "short",
     day: "2-digit",
@@ -187,9 +212,16 @@ function ShellNav({
   const [shareOpen, setShareOpen] = useState(false);
   const [shareQr, setShareQr] = useState("");
   const [shareUrl, setShareUrl] = useState("https://idc-index.com");
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [rssOpen, setRssOpen] = useState(false);
   const [rssCopied, setRssCopied] = useState(false);
   const rssUrl = `https://idc-index.com${isZh ? "/feed.xml" : "/en/feed.xml"}`;
+  const normalizedQuery = searchQuery.trim().toLocaleLowerCase();
+  const searchResults = entityDirectory.filter((entity) => {
+    if (!normalizedQuery) return true;
+    return [entity.name, entity.nameEn, entity.ticker, ...entity.aliases].filter((value): value is string => Boolean(value)).some((value) => value.toLocaleLowerCase().includes(normalizedQuery));
+  }).slice(0, 8);
 
   function toggleShare() {
     if (shareOpen) {
@@ -212,6 +244,13 @@ function ShellNav({
   function toggleRss() {
     setRssOpen((open) => !open);
     setRssCopied(false);
+  }
+
+  function toggleSearch() {
+    setSearchOpen((open) => !open);
+    setSearchQuery("");
+    setRssOpen(false);
+    setShareOpen(false);
   }
 
   async function copyRssUrl() {
@@ -255,6 +294,9 @@ function ShellNav({
       </nav>
       <div className="atlas-console-rail-foot">
         <div className="atlas-console-tools">
+          <button type="button" aria-expanded={searchOpen} onClick={toggleSearch}>
+            <span>⌕</span><strong>{isZh ? "搜索公司 / 项目" : "Find company / project"}</strong>
+          </button>
           <button type="button" aria-expanded={rssOpen} onClick={toggleRss}>
             <span>RSS</span><strong>{isZh ? "订阅研究更新" : "Subscribe to research"}</strong>
           </button>
@@ -262,6 +304,19 @@ function ShellNav({
             <span>QR</span><strong>{isZh ? "二维码分享" : "Share with QR"}</strong>
           </button>
         </div>
+        {searchOpen && <section className="atlas-console-search" role="dialog" aria-label={isZh ? "搜索公司和项目" : "Search companies and projects"}>
+          <button type="button" onClick={() => setSearchOpen(false)}>{isZh ? "关闭" : "Close"}</button>
+          <strong>{isZh ? "搜索公司 / 项目" : "Search companies / projects"}</strong>
+          <input autoFocus value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder={isZh ? "名称、代码或别名" : "Name, ticker or alias"} aria-label={isZh ? "搜索名称、代码或别名" : "Search name, ticker or alias"} />
+          <div className="atlas-console-search-results">
+            {searchResults.map((entity) => <a href={isZh ? `/companies/${entity.slug}` : `/en/companies/${entity.slug}`} key={entity.slug} onClick={() => { setSearchOpen(false); setMobileOpen(false); }}>
+              <span>{entity.kind === "company" ? (isZh ? "公司" : "COMPANY") : (isZh ? "项目" : "PROJECT")}</span>
+              <strong>{isZh ? entity.name : entity.nameEn}</strong>
+              <small>{entity.ticker ?? entity.categoryEn}</small>
+            </a>)}
+            {!searchResults.length && <p>{isZh ? "没有匹配实体" : "No matching entity"}</p>}
+          </div>
+        </section>}
         {rssOpen && <section className="atlas-console-rss" role="dialog" aria-label={isZh ? "RSS 订阅" : "RSS subscription"}>
           <button type="button" onClick={() => setRssOpen(false)}>{isZh ? "关闭" : "Close"}</button>
           <strong>{isZh ? "轻量 RSS 订阅" : "Lightweight RSS subscription"}</strong>
@@ -308,23 +363,26 @@ function ShellNav({
 function ConsoleStatusbar({
   lang,
   generatedAt,
+  reviewedAt,
   sourceCount,
   verifiedCount,
   pageLabel,
 }: {
   lang: "zh" | "en";
   generatedAt?: string;
+  reviewedAt?: string;
   sourceCount?: number;
   verifiedCount?: number;
   pageLabel?: string;
 }) {
   const isZh = lang === "zh";
+  const timezone = isZh ? "Asia/Shanghai" : "America/New_York";
   return <header className="atlas-statusbar">
-    <div><strong>{dateLabel(generatedAt, lang)}</strong><span>{pageLabel ?? (isZh ? "每日产业情报" : "Daily industrial intelligence")}</span></div>
+    <div><strong>{dateLabel(generatedAt, lang, false, timezone)}</strong><span>{pageLabel ?? (isZh ? "每日产业情报" : "Daily industrial intelligence")}{reviewedAt ? ` · ${isZh ? "核验至" : "Verified through"} ${dateLabel(reviewedAt, lang, false, timezone)}` : ""}</span></div>
     <dl>
-      <div><dt>{isZh ? "数据刷新" : "Data refreshed"}</dt><dd><i />{dateLabel(generatedAt, lang, true)}</dd></div>
-      <div><dt>{isZh ? "来源覆盖" : "Source coverage"}</dt><dd>{sourceCount ? `${sourceCount} ${isZh ? "个公开来源" : "public sources"}` : "—"}</dd></div>
-      <div><dt>{isZh ? "已核验记录" : "Verified records"}</dt><dd>{verifiedCount || "—"}</dd></div>
+      <div><dt>{isZh ? "数据刷新" : "Data refreshed"}</dt><dd><i />{dateLabel(generatedAt, lang, true, timezone)}</dd></div>
+      <div><dt>{isZh ? "来源覆盖" : "Source coverage"}</dt><dd>{sourceCount == null ? "—" : `${sourceCount} ${isZh ? "个公开来源" : "public sources"}`}</dd></div>
+      <div><dt>{isZh ? "已核验记录" : "Verified records"}</dt><dd>{verifiedCount == null ? "—" : verifiedCount}</dd></div>
     </dl>
     <a className="atlas-language" href={isZh ? "/en?lang=en" : "/?lang=zh"}>{isZh ? "EN" : "中文"}</a>
   </header>;
@@ -334,6 +392,7 @@ export function IntelligenceConsoleShell({
   lang,
   activeSection = "",
   generatedAt,
+  reviewedAt,
   sourceCount,
   verifiedCount,
   pageLabel,
@@ -344,6 +403,11 @@ export function IntelligenceConsoleShell({
   const [navCollapsed, setNavCollapsed] = useState(false);
   const [currentSection, setCurrentSection] = useState(activeSection);
   const isZh = lang === "zh";
+  const liveMeta = useLiveConsoleMeta(!generatedAt || !reviewedAt || sourceCount == null || verifiedCount == null);
+  const resolvedGeneratedAt = generatedAt ?? liveMeta.generatedAt;
+  const resolvedReviewedAt = reviewedAt ?? liveMeta.reviewedAt;
+  const resolvedSourceCount = sourceCount ?? liveMeta.sourceCount;
+  const resolvedVerifiedCount = verifiedCount ?? liveMeta.verifiedCount;
   return <main className={["atlas-console-overview", "atlas-console-page", navCollapsed ? "rail-collapsed" : "", className].filter(Boolean).join(" ")} lang={isZh ? "zh-CN" : "en"}>
     <ShellNav
       lang={lang}
@@ -357,9 +421,10 @@ export function IntelligenceConsoleShell({
     <div className="atlas-console-canvas">
       <ConsoleStatusbar
         lang={lang}
-        generatedAt={generatedAt}
-        sourceCount={sourceCount}
-        verifiedCount={verifiedCount}
+        generatedAt={resolvedGeneratedAt}
+        reviewedAt={resolvedReviewedAt}
+        sourceCount={resolvedSourceCount}
+        verifiedCount={resolvedVerifiedCount}
         pageLabel={pageLabel}
       />
       {children}
@@ -403,7 +468,7 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
   return <main className={navCollapsed ? "atlas-console-overview rail-collapsed" : "atlas-console-overview"} lang={isZh ? "zh-CN" : "en"}>
     <ShellNav lang={lang} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} collapsed={navCollapsed} setCollapsed={setNavCollapsed} activeSection={activeSection} setActiveSection={setActiveSection} />
     <div className="atlas-console-canvas">
-      <div id="overview"><ConsoleStatusbar lang={lang} generatedAt={data.generatedAt} sourceCount={uniqueSources.size} verifiedCount={verifiedCount} /></div>
+      <div id="overview"><ConsoleStatusbar lang={lang} generatedAt={data.generatedAt} reviewedAt={data.reviewedAt} sourceCount={data.sourceCount ?? uniqueSources.size} verifiedCount={data.verifiedCount ?? verifiedCount} /></div>
 
       <section className="atlas-lead" aria-labelledby="atlas-lead-title">
         <div className="atlas-lead-copy">

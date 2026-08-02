@@ -1,8 +1,11 @@
 import { columnArticles } from "./articles";
 import { IntelligenceConsoleShell } from "../intelligence-console-overview";
+import { deriveConsoleMeta } from "../console-meta";
+import { loadInitialAtlasPayload } from "../initial-atlas";
 
-export default function ColumnsIndex({ lang }: { lang: "zh" | "en" }) {
+export default async function ColumnsIndex({ lang }: { lang: "zh" | "en" }) {
   const english = lang === "en";
+  const meta = deriveConsoleMeta(await loadInitialAtlasPayload());
   const canonical = english ? "https://idc-index.com/en/columns" : "https://idc-index.com/columns";
   const structuredData = {
     "@context": "https://schema.org",
@@ -38,7 +41,10 @@ export default function ColumnsIndex({ lang }: { lang: "zh" | "en" }) {
   return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /><IntelligenceConsoleShell
     lang={lang}
     activeSection="columns"
-    verifiedCount={columnArticles.length}
+    generatedAt={meta.generatedAt}
+    reviewedAt={meta.reviewedAt}
+    sourceCount={meta.sourceCount}
+    verifiedCount={meta.verifiedCount ?? columnArticles.length}
     pageLabel={english ? "Research columns" : "研究专栏"}
     className="atlas-columns-shell"
   ><div className="columns-index-page atlas-console-content-page" lang={english ? "en" : "zh-CN"} id="columns">

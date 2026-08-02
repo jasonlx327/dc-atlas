@@ -2390,6 +2390,7 @@ async function productImage(request: Request, ctx: ExecutionContext, sourceUrl: 
 }
 
 const INITIAL_ATLAS_HEADER = "x-idc-atlas-prime";
+const INITIAL_ATLAS_META_HEADER = "x-idc-atlas-meta";
 
 function firstItems(value: unknown, count: number): unknown[] {
   return Array.isArray(value) ? value.slice(0, count) : [];
@@ -2403,13 +2404,21 @@ function compactInitialAtlasPayload(payload: Record<string, unknown>): Record<st
       return { ...item, items: firstItems(item.items, 2) };
     })
     : [];
+  const coreRecords = ["idcPulse", "listedCompanyNews", "mnaDeals"].flatMap((key) => Array.isArray(payload[key]) ? payload[key] : []) as Array<Record<string, unknown>>;
+  const sourceCount = new Set(coreRecords.map((item) => typeof item.sourceName === "string" ? item.sourceName : null).filter((value): value is string => Boolean(value))).size;
 
   return {
     generatedAt: payload.generatedAt,
+    contentReviewedAt: payload.contentReviewedAt,
+    sectionFreshness: payload.sectionFreshness,
+    sourceCount,
+    verifiedCount: coreRecords.length,
     weeklyHighlightCount: payload.weeklyHighlightCount,
     idcPulse: firstItems(payload.idcPulse, 12),
     positiveNews: firstItems(payload.positiveNews, 3),
     listedCompanyNews: firstItems(payload.listedCompanyNews, 8),
+    mnaDeals: firstItems(payload.mnaDeals, 7),
+    benchmarks: firstItems(payload.benchmarks, 6),
     upcomingEvents: firstItems(payload.upcomingEvents, 6),
     chainNews: payload.chainNews,
     nvidiaProducts: firstItems(payload.nvidiaProducts, 4),
@@ -2428,14 +2437,21 @@ function bytesToBase64(bytes: Uint8Array): string {
   return btoa(value);
 }
 
-async function initialAtlasHeader(request: Request, env: Env, ctx: ExecutionContext): Promise<string | null> {
+async function initialAtlasHeaders(request: Request, env: Env, ctx: ExecutionContext): Promise<{ prime: string | null; meta: string } | null> {
   try {
     const response = await atlasApi(new Request(new URL("/api/atlas-live-v5?schema=v1", request.url)), env, ctx);
     if (!response.ok) return null;
     const payload = await response.json() as Record<string, unknown>;
+    const meta = JSON.stringify({
+      generatedAt: payload.generatedAt,
+      contentReviewedAt: payload.contentReviewedAt,
+      sourceCount: payload.sourceCount ?? new Set([...(Array.isArray(payload.idcPulse) ? payload.idcPulse : []), ...(Array.isArray(payload.listedCompanyNews) ? payload.listedCompanyNews : []), ...(Array.isArray(payload.mnaDeals) ? payload.mnaDeals : [])].map((item) => typeof item === "object" && item && "sourceName" in item && typeof item.sourceName === "string" ? item.sourceName : null).filter(Boolean)).size,
+      verifiedCount: payload.verifiedCount ?? (Array.isArray(payload.idcPulse) ? payload.idcPulse.length : 0) + (Array.isArray(payload.listedCompanyNews) ? payload.listedCompanyNews.length : 0) + (Array.isArray(payload.mnaDeals) ? payload.mnaDeals.length : 0),
+    });
     const json = new TextEncoder().encode(JSON.stringify(compactInitialAtlasPayload(payload)));
     const compressed = new Blob([json]).stream().pipeThrough(new CompressionStream("gzip"));
-    return bytesToBase64(new Uint8Array(await new Response(compressed).arrayBuffer()));
+    const prime = bytesToBase64(new Uint8Array(await new Response(compressed).arrayBuffer()));
+    return { prime: prime.length <= 7_000 ? prime : null, meta };
   } catch (error) {
     console.error(JSON.stringify({ message: "Initial atlas payload unavailable", error: String(error) }));
     return null;
@@ -2444,7 +2460,12 @@ async function initialAtlasHeader(request: Request, env: Env, ctx: ExecutionCont
 
 function shouldPrimeHomepage(request: Request, url: URL): boolean {
   return request.method === "GET"
-    && ["/", "/en", "/pulse", "/industry", "/en/pulse", "/en/industry"].includes(url.pathname)
+    && (["/", "/en", "/pulse", "/industry", "/en/pulse", "/en/industry"].includes(url.pathname)
+      || url.pathname === "/calendar"
+      || url.pathname.startsWith("/columns")
+      || url.pathname.startsWith("/en/columns")
+      || url.pathname.startsWith("/companies/")
+      || url.pathname.startsWith("/en/companies/"))
     && request.headers.get("accept")?.includes("text/html") === true;
 }
 
@@ -2516,10 +2537,11 @@ const worker = {
       const productImageSource = PRODUCT_IMAGE_SOURCES[url.pathname];
       if (productImageSource) return await productImage(request, ctx, productImageSource);
       if (shouldPrimeHomepage(request, url)) {
-        const prime = await initialAtlasHeader(request, env, ctx);
+        const prime = await initialAtlasHeaders(request, env, ctx);
         if (prime) {
           const headers = new Headers(request.headers);
-          headers.set(INITIAL_ATLAS_HEADER, prime);
+          if (prime.prime) headers.set(INITIAL_ATLAS_HEADER, prime.prime);
+          headers.set(INITIAL_ATLAS_META_HEADER, prime.meta);
           headers.set("x-idc-request-path", url.pathname);
           return await handler.fetch(new Request(request, { headers }), env, ctx);
         }

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import CalendarClient from "./calendar-client";
+import { deriveConsoleMeta } from "../console-meta";
+import { loadInitialAtlasPayload } from "../initial-atlas";
 
 const canonical = "https://idc-index.com/calendar";
 
@@ -20,6 +22,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function CalendarPage() {
-  return <CalendarClient />;
+export default async function CalendarPage() {
+  const meta = deriveConsoleMeta(await loadInitialAtlasPayload());
+  return <CalendarClient initialMeta={meta} />;
 }

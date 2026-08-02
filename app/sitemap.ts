@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { entityDirectory } from "./entity-directory";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -127,5 +128,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    ...entityDirectory.flatMap((entity) => [
+      { url: `https://idc-index.com/companies/${entity.slug}`, changeFrequency: "daily" as const, priority: 0.8 },
+      { url: `https://idc-index.com/en/companies/${entity.slug}`, changeFrequency: "daily" as const, priority: 0.8 },
+    ]),
   ];
 }

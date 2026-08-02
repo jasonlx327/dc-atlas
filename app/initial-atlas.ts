@@ -9,7 +9,16 @@ function isLivePayload(value: unknown): value is LivePayload {
 export async function loadInitialAtlasPayload(): Promise<LivePayload | null> {
   const requestHeaders = await headers();
   const encoded = requestHeaders.get("x-idc-atlas-prime");
-  if (!encoded) return null;
+  const meta = requestHeaders.get("x-idc-atlas-meta");
+  if (!encoded) {
+    if (!meta) return null;
+    try {
+      const payload: unknown = JSON.parse(meta);
+      return isLivePayload(payload) ? payload : null;
+    } catch {
+      return null;
+    }
+  }
 
   try {
     const binary = atob(encoded);

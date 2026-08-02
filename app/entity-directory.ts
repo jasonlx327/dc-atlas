@@ -1,0 +1,40 @@
+export type EntityRecord = {
+  slug: string;
+  kind: "company" | "project";
+  name: string;
+  nameEn: string;
+  ticker?: string;
+  region: "中国" | "美国" | "全球";
+  category: string;
+  categoryEn: string;
+  description: string;
+  descriptionEn: string;
+  aliases: string[];
+  columnSlugs: string[];
+};
+
+export const entityDirectory: EntityRecord[] = [
+  { slug: "microsoft", kind: "company", name: "微软", nameEn: "Microsoft", ticker: "MSFT", region: "美国", category: "云计算 / 软件", categoryEn: "Cloud / software", description: "Azure、AI 资本开支与数据中心容量兑现。", descriptionEn: "Azure growth, AI capex and data-center capacity conversion.", aliases: ["Microsoft", "Azure", "MSFT"], columnSlugs: ["microsoft-ai-capex", "ai-capex-power"] },
+  { slug: "amazon", kind: "company", name: "亚马逊", nameEn: "Amazon", ticker: "AMZN", region: "美国", category: "电商 / 云计算", categoryEn: "E-commerce / cloud", description: "AWS 增长、AI 基础设施投入与自由现金流。", descriptionEn: "AWS growth, AI infrastructure spending and free cash flow.", aliases: ["Amazon", "AWS", "AMZN"], columnSlugs: ["ai-capex-power"] },
+  { slug: "meta", kind: "company", name: "Meta", nameEn: "Meta", ticker: "META", region: "美国", category: "社交媒体 / AI", categoryEn: "Social / AI", description: "Hyperion 园区、AI 训练容量与资本开支。", descriptionEn: "Hyperion campus, AI training capacity and capital spending.", aliases: ["Meta", "Facebook", "Hyperion", "META"], columnSlugs: ["ai-capex-power"] },
+  { slug: "alphabet", kind: "company", name: "Alphabet", nameEn: "Alphabet", ticker: "GOOGL", region: "美国", category: "云计算 / AI", categoryEn: "Cloud / AI", description: "Google Cloud、TPU 与 AI 基础设施投入。", descriptionEn: "Google Cloud, TPU deployment and AI infrastructure spending.", aliases: ["Google", "Alphabet", "GOOGL"], columnSlugs: ["ai-capex-power"] },
+  { slug: "vertiv", kind: "company", name: "Vertiv", nameEn: "Vertiv", ticker: "VRT", region: "美国", category: "电力 / 液冷", categoryEn: "Power / cooling", description: "高密度 AI 数据中心的电源、热管理与制造扩产。", descriptionEn: "Power, thermal management and manufacturing for high-density AI data centers.", aliases: ["Vertiv", "VRT"], columnSlugs: ["ai-capex-power"] },
+  { slug: "digital-realty", kind: "company", name: "Digital Realty", nameEn: "Digital Realty", ticker: "DLR", region: "美国", category: "IDC / 托管", categoryEn: "Colocation / data centers", description: "数据中心租赁、积压订单与北弗吉尼亚资产。", descriptionEn: "Data-center leasing, backlog and Northern Virginia assets.", aliases: ["Digital Realty", "DLR"], columnSlugs: ["hyperscale-idc-leases"] },
+  { slug: "nvidia", kind: "company", name: "英伟达", nameEn: "NVIDIA", ticker: "NVDA", region: "美国", category: "GPU / 网络", categoryEn: "GPU / networking", description: "GPU 产品、超节点与 AI 工厂的算力需求信号。", descriptionEn: "GPU products, supernodes and AI-factory demand signals.", aliases: ["NVIDIA", "英伟达", "NVDA"], columnSlugs: ["ai-capex-power", "frontier-model-economics"] },
+  { slug: "amd", kind: "company", name: "超威半导体", nameEn: "AMD", ticker: "AMD", region: "美国", category: "GPU / CPU", categoryEn: "GPU / CPU", description: "数据中心 GPU、CPU 与 AI 加速器竞争。", descriptionEn: "Data-center GPUs, CPUs and AI accelerator competition.", aliases: ["AMD", "Advanced Micro Devices"], columnSlugs: ["frontier-model-economics"] },
+  { slug: "micron", kind: "company", name: "美光", nameEn: "Micron", ticker: "MU", region: "美国", category: "存储 / HBM", categoryEn: "Memory / HBM", description: "DRAM、HBM 供给与中国市场替代风险。", descriptionEn: "DRAM, HBM supply and China substitution risk.", aliases: ["Micron", "MU", "美光"], columnSlugs: ["cxmt-us-chip-impact", "sk-hynix-hbm-earnings"] },
+  { slug: "sk-hynix", kind: "company", name: "SK 海力士", nameEn: "SK hynix", ticker: "000660.KS", region: "全球", category: "存储 / HBM", categoryEn: "Memory / HBM", description: "HBM 订单、客户协议与扩产纪律。", descriptionEn: "HBM orders, customer agreements and disciplined capacity expansion.", aliases: ["SK hynix", "SK海力士", "海力士"], columnSlugs: ["sk-hynix-hbm-earnings"] },
+  { slug: "arm", kind: "company", name: "Arm", nameEn: "Arm Holdings", ticker: "ARM", region: "美国", category: "芯片 IP", categoryEn: "Chip IP", description: "服务器 CPU 架构授权与 AI 基础设施渗透。", descriptionEn: "Server CPU architecture licensing and AI-infrastructure penetration.", aliases: ["Arm", "ARM", "Arm Holdings"], columnSlugs: ["frontier-model-economics"] },
+  { slug: "data-port", kind: "company", name: "数据港", nameEn: "Shanghai DataPort", ticker: "603881.SH", region: "中国", category: "IDC / 算力服务", categoryEn: "Data centers / compute services", description: "A 股 IDC 标的，跟踪园区交付、客户订单与算力服务。", descriptionEn: "A-share data-center operator tracked for campus delivery, customer orders and compute services.", aliases: ["数据港", "Shanghai DataPort", "603881", "603881.SH"], columnSlugs: ["hyperscale-idc-leases"] },
+  { slug: "vnet", kind: "company", name: "世纪互联", nameEn: "VNET Group", ticker: "VNET", region: "中国", category: "IDC / 托管", categoryEn: "Colocation / data centers", description: "基地型 IDC 订单、机柜交付与算力租赁。", descriptionEn: "Campus-scale IDC orders, rack delivery and compute leases.", aliases: ["世纪互联", "VNET", "VNET Group"], columnSlugs: ["hyperscale-idc-leases"] },
+  { slug: "aofei-data", kind: "company", name: "奥飞数据", nameEn: "Aofei Data", ticker: "300738.SZ", region: "中国", category: "IDC / 液冷", categoryEn: "Data centers / cooling", description: "A 股 IDC 交付、液冷机房与算力服务进展。", descriptionEn: "A-share data-center delivery, liquid cooling and compute services.", aliases: ["奥飞数据", "Aofei Data", "300738"], columnSlugs: ["hyperscale-idc-leases"] },
+  { slug: "range-technology", kind: "company", name: "润泽科技", nameEn: "Range Technology", ticker: "300442.SZ", region: "中国", category: "IDC / REIT", categoryEn: "Data centers / REIT", description: "大型园区、REIT 扩募与 AI 算力容量。", descriptionEn: "Large campuses, REIT expansion and AI-compute capacity.", aliases: ["润泽科技", "Range Technology", "300442"], columnSlugs: ["hyperscale-idc-leases"] },
+  { slug: "gds", kind: "company", name: "万国数据", nameEn: "GDS Holdings", ticker: "GDS", region: "中国", category: "IDC / 托管", categoryEn: "Colocation / data centers", description: "数据中心 REIT、机房交付与云厂商客户。", descriptionEn: "Data-center REITs, facility delivery and hyperscaler customers.", aliases: ["万国数据", "GDS", "GDS Holdings"], columnSlugs: ["hyperscale-idc-leases"] },
+  { slug: "cxmt", kind: "company", name: "长鑫科技", nameEn: "ChangXin Technology", ticker: "688825.SH", region: "中国", category: "存储 / DRAM", categoryEn: "Memory / DRAM", description: "科创板 DRAM 标的，关注产能、产品组合与设备链。", descriptionEn: "STAR Market DRAM maker tracked through capacity, product mix and equipment exposure.", aliases: ["长鑫科技", "CXMT", "ChangXin", "688825"], columnSlugs: ["cxmt-us-chip-impact"] },
+  { slug: "hygon", kind: "company", name: "海光信息", nameEn: "Hygon Information", ticker: "688041.SH", region: "中国", category: "CPU / DCU", categoryEn: "CPU / DCU", description: "国产 CPU、DCU 与算力生态适配进展。", descriptionEn: "Domestic CPUs, DCUs and accelerator-software ecosystem progress.", aliases: ["海光信息", "Hygon", "688041"], columnSlugs: ["cxmt-us-chip-impact"] },
+  { slug: "metax", kind: "company", name: "沐曦", nameEn: "MetaX", region: "中国", category: "GPU / 软件栈", categoryEn: "GPU / software stack", description: "国产 GPU 产品与 MXMACA 开发者工具链。", descriptionEn: "Domestic GPUs and the MXMACA developer toolchain.", aliases: ["沐曦", "MetaX", "MXMACA"], columnSlugs: ["frontier-model-economics"] },
+];
+
+export function findEntity(slug: string): EntityRecord | undefined {
+  return entityDirectory.find((entity) => entity.slug === slug);
+}

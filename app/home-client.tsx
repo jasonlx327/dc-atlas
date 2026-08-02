@@ -69,6 +69,8 @@ type CalendarEvent = { id: string; startsAt: string; company: string; ticker: st
 export type AtlasPayload = {
   generatedAt: string;
   contentReviewedAt: string;
+  sourceCount?: number;
+  verifiedCount?: number;
   sectionFreshness: Record<"idcPulse" | "listedCompanyNews" | "mnaDeals" | "capacityRadar" | "coolingProgress", SectionFreshness>;
   windowLabel: string;
   newsStatus: "ok" | "unavailable";
@@ -365,6 +367,8 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
     data={{
       generatedAt: payload?.generatedAt,
       reviewedAt: payload?.contentReviewedAt,
+      sourceCount: payload?.sourceCount,
+      verifiedCount: payload?.verifiedCount,
       pulse: news,
       companies: listedCompanyNews,
       events: upcomingEvents,
