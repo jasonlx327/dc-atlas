@@ -44,6 +44,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://idc-index.com/policy",
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
+    {
+      url: "https://idc-index.com/rumors",
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
+    {
       url: "https://idc-index.com/en",
       changeFrequency: "daily",
       priority: 0.9,
@@ -57,6 +67,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://idc-index.com/en/industry",
       changeFrequency: "daily",
       priority: 0.9,
+    },
+    {
+      url: "https://idc-index.com/en/policy",
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
+    {
+      url: "https://idc-index.com/en/rumors",
+      changeFrequency: "daily",
+      priority: 0.8,
     },
     {
       url: "https://idc-index.com/columns",

@@ -103,6 +103,38 @@ test("publishes focused Pulse and Industry content hubs", async () => {
   assert.match(source, /setActiveStage\(stage as ChainKey\)/);
 });
 
+test("publishes bilingual policy index and rumor watch routes", async () => {
+  const policy = await render("/policy");
+  assert.equal(policy.status, 200);
+  const policyHtml = await policy.text();
+  assert.match(policyHtml, /中美数据中心政策追踪/);
+  assert.match(policyHtml, /POLICY WATCH · DIRECT IMPACT/);
+  assert.match(policyHtml, /弗吉尼亚州开始征收数据中心用电税/);
+  assert.match(policyHtml, /直接影响/);
+  assert.match(policyHtml, /市场传闻/);
+
+  const rumors = await render("/rumors");
+  assert.equal(rumors.status, 200);
+  const rumorsHtml = await rumors.text();
+  assert.match(rumorsHtml, /市场传闻与待核验线索/);
+  assert.match(rumorsHtml, /RUMOR WATCH · SOURCE LINKED/);
+  assert.match(rumorsHtml, /Hut 8未披露的得州租户/);
+  assert.match(rumorsHtml, /公开回应/);
+
+  const english = await render("/en/rumors");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /Rumor Watch/);
+  assert.match(englishHtml, /Reported market developments/);
+  assert.match(englishHtml, /Nvidia is reported to be Hut 8/);
+  assert.match(englishHtml, /PUBLIC RESPONSE/);
+
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /\.watch-impact \{/);
+  assert.match(css, /\.watch-card \{[^}]*background: var\(--atlas-surface\);[^}]*color: var\(--atlas-ink\);/);
+  assert.doesNotMatch(css, /\.watch-card \{[^}]*linear-gradient\(145deg, rgba\(17,28,41/);
+});
+
 test("renders the English research console and focused content routes", async () => {
   const response = await render("/en");
   assert.equal(response.status, 200);

@@ -1,5 +1,11 @@
 /** Cloudflare Worker entry point for IDC Atlas. */
 import handler from "vinext/server/app-router-entry";
+import {
+  POLICY_BRIEFS,
+  RUMOR_BRIEFS,
+  type PolicyIndexRecord,
+  type RumorWatchItem,
+} from "../app/watch-data";
 
 const AIHOT_ENDPOINT = "https://aihot.virxact.com/api/public/items";
 const AIHOT_DAILY_ENDPOINT = "https://aihot.virxact.com/api/public/daily";
@@ -27,6 +33,8 @@ Use original disclosure links attached to individual updates to verify capacity,
 - [China AI Silicon](https://idc-index.com/topics/china-ai-silicon): Bilingual guide to China GPU, DCU, AI accelerators, supernodes and developer ecosystem updates.
 - [Methodology and sources](https://idc-index.com/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
 - [US tech earnings calendar](https://idc-index.com/calendar): Upcoming cloud, semiconductor and data-center-infrastructure earnings events, CAPEX watch items and source-linked post-results conclusions.
+- [China / U.S. policy tracker](https://idc-index.com/policy): Source-linked briefs that summarize implementation status and direct effects on data-center construction, power, interconnection and operating costs.
+- [Rumor Watch](https://idc-index.com/rumors): Current reported infrastructure developments kept separate from verified pulse items, with entities, public responses and source boundaries visible.
 - [IDC Atlas Columns](https://idc-index.com/columns): Chinese index of original, source-linked research on the data-center and AI-infrastructure cycle.
 - [IDC Atlas Columns in English](https://idc-index.com/en/columns): English index of original research for global investors.
 - [CAPEX Watch: 四大云厂商的 AI CAPEX 最终流向了哪里？](https://idc-index.com/columns/ai-capex-power): Chinese source-linked analysis of Microsoft, Alphabet, Meta and Amazon spending from silicon to billable capacity.
@@ -59,6 +67,8 @@ Primary sources control factual claims. News leads are discovery signals; verify
 - [Data center market tracker](https://idc-index.com/en/topics/data-center-intelligence): Topic guide for projects, capacity, leases, power, cooling, CAPEX and public-company disclosures.
 - [Methodology and sources](https://idc-index.com/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
 - [Earnings calendar](https://idc-index.com/calendar): Upcoming cloud, semiconductor and data-center-infrastructure earnings events and CAPEX watch items.
+- [China / U.S. policy tracker](https://idc-index.com/en/policy): Source-linked briefs summarizing implementation status and direct effects on data-center construction, power, interconnection and operating costs.
+- [Rumor Watch](https://idc-index.com/en/rumors): Current reported infrastructure developments kept separate from verified pulse items, with entities, public responses and source boundaries visible.
 - [IDC Atlas Columns](https://idc-index.com/en/columns): Original, source-linked research for global investors.
 
 ## Research
@@ -2173,6 +2183,47 @@ function sectionFreshness<T>(items: T[], dateOf: (item: T) => string | null, con
   };
 }
 
+function policyIndex(): PolicyIndexRecord[] {
+  return POLICY_BRIEFS;
+}
+
+function rumorWatch(news: NewsItem[]): RumorWatchItem[] {
+  const mediaSource = /reuters|bloomberg|marketwatch|cnbc|financial times|the information|wall street journal/i;
+  const rumorLanguage = /rumou?r|report(?:ed|s)?|sources?|plans?|consider(?:s|ing)?|expects?|may |could |in talks|据称|消息人士|传闻|拟|考虑|计划|或将/i;
+  const liveCandidates = news
+    .filter((item) => mediaSource.test(item.sourceName ?? "") && rumorLanguage.test(`${item.title} ${item.summary}`))
+    .sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime())
+    .map((item): RumorWatchItem => ({
+      id: item.id,
+      title: item.title,
+      titleEn: item.title,
+      summary: item.summary,
+      summaryEn: item.summary,
+      publishedAt: item.publishedAt ?? new Date().toISOString(),
+      sourceName: item.sourceName ?? "公开媒体",
+      sourceUrl: item.sourceUrl ?? item.permalink,
+      region: item.region === "中国" || item.region === "美国" ? item.region : "全球",
+      status: "reported",
+      statusLabel: "媒体报道 · 尚待完整确认",
+      statusLabelEn: "Media report · not fully confirmed",
+      sourceCount: 1,
+      entities: [],
+      officialResponse: "当前公开资料中未找到完整的公司或监管方确认。",
+      officialResponseEn: "No complete company or regulatory confirmation was found in the public record.",
+      sourceNote: "动态抓取的媒体线索；请通过原始报道核对具体措辞与时间。",
+      sourceNoteEn: "Dynamically discovered media lead; use the original report to verify wording and timing.",
+    }));
+  const seen = new Set<string>();
+  return [...RUMOR_BRIEFS, ...liveCandidates]
+    .filter((item) => {
+      if (seen.has(item.sourceUrl)) return false;
+      seen.add(item.sourceUrl);
+      return true;
+    })
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .slice(0, 12);
+}
+
 function staticAtlasContent(): Record<string, unknown> {
   return {
     calendar: calendarEvents(),
@@ -2182,6 +2233,8 @@ function staticAtlasContent(): Record<string, unknown> {
     nvidiaProducts: nvidiaProducts(),
     supernodes: supernodeProducts(),
     mna: mnaDeals(),
+    policyIndex: policyIndex(),
+    rumors: RUMOR_BRIEFS,
     aiAdoption: aiAdoption(),
     trackedSources: trackedSources(),
   };
@@ -2255,6 +2308,15 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
       : []),
   ], 6);
   const chinaChipNews = chinaChipPulse(chinaChipResult.status === "fulfilled" ? chinaChipResult.value : []);
+  const rumors = rumorWatch(uniqueNews([
+    ...news,
+    ...nvidiaNews,
+    ...coolingNews,
+    ...networkNews,
+    ...powerNews,
+    ...modelNews,
+    ...chinaChipNews,
+  ], 80));
   const positiveNews = positiveIdcNews(news, records);
   const idcPulse = constructionPulse();
   const listedCompanyNews = listedCompanyPulse();
@@ -2293,6 +2355,13 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
     newsStatus: newsResult.status === "fulfilled" ? "ok" : "unavailable",
     benchmarkStatus: benchmarkResult.status === "fulfilled" ? "ok" : "unavailable",
     news,
+    rumors,
+    rumorStatus: rumors.length ? "live" : "not-yet-published",
+    rumorNote: rumors.length
+      ? "公开媒体报道与官方披露分开显示；条目不等同于已核验事实。"
+      : "当前没有符合来源与线索过滤条件的公开条目；Rumor Watch 不回填未经核验的内容。",
+    policyIndex: policyIndex(),
+    policyStatus: "policy-briefs",
     positiveNews,
     positiveNewsStatus: positiveNews.some((item) => item.curator === "AI HOT") ? "live" : "official-fallback",
     latestPositiveAt: positiveNews[0]?.publishedAt ?? null,
