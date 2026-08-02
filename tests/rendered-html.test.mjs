@@ -273,11 +273,11 @@ test("keeps console navigation in the same order as the home-page reading sequen
   for (const [first, second] of [["id=\"calendar\"", 'id="columns"'], ['id="columns"', 'id="pulse"'], ['id="pulse"', 'id="companies"'], ['id="companies"', 'id="industry"'], ['id="industry"', 'id="market"']]) assert.ok(layout.indexOf(first) < layout.indexOf(second));
 });
 
-test("keeps bilingual RSS and canonical QR sharing in the shared console footer", async () => {
+test("keeps canonical QR sharing in the shared console footer", async () => {
   const overview = await readFile(new URL("../app/intelligence-console-overview.tsx", import.meta.url), "utf8");
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 
-  assert.match(overview, /isZh \? "\/feed\.xml" : "\/en\/feed\.xml"/);
+  assert.doesNotMatch(overview, /订阅研究更新|Subscribe to research/);
   assert.match(overview, /https:\/\/idc-index\.com\$\{path === "\/" \? "" : path\}/);
   assert.match(overview, /二维码分享当前页面/);
   assert.match(overview, /Share this page with a QR code/);

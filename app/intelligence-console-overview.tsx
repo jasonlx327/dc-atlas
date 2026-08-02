@@ -230,9 +230,6 @@ function ShellNav({
       </nav>
       <div className="atlas-console-rail-foot">
         <div className="atlas-console-tools">
-          <a href={isZh ? "/feed.xml" : "/en/feed.xml"} target="_blank" rel="noreferrer">
-            <span>RSS</span><strong>{isZh ? "订阅研究更新" : "Subscribe to research"}</strong>
-          </a>
           <button type="button" aria-expanded={shareOpen} onClick={toggleShare}>
             <span>QR</span><strong>{isZh ? "二维码分享" : "Share with QR"}</strong>
           </button>
