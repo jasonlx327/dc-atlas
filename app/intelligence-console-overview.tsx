@@ -187,6 +187,9 @@ function ShellNav({
   const [shareOpen, setShareOpen] = useState(false);
   const [shareQr, setShareQr] = useState("");
   const [shareUrl, setShareUrl] = useState("https://idc-index.com");
+  const [rssOpen, setRssOpen] = useState(false);
+  const [rssCopied, setRssCopied] = useState(false);
+  const rssUrl = `https://idc-index.com${isZh ? "/feed.xml" : "/en/feed.xml"}`;
 
   function toggleShare() {
     if (shareOpen) {
@@ -204,6 +207,28 @@ function ShellNav({
       width: 320,
       color: { dark: "#19362f", light: "#faf8f2" },
     }).then(setShareQr);
+  }
+
+  function toggleRss() {
+    setRssOpen((open) => !open);
+    setRssCopied(false);
+  }
+
+  async function copyRssUrl() {
+    try {
+      await navigator.clipboard.writeText(rssUrl);
+    } catch {
+      const input = document.createElement("textarea");
+      input.value = rssUrl;
+      input.setAttribute("readonly", "true");
+      input.style.position = "fixed";
+      input.style.opacity = "0";
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      input.remove();
+    }
+    setRssCopied(true);
   }
 
   return <>
@@ -230,10 +255,22 @@ function ShellNav({
       </nav>
       <div className="atlas-console-rail-foot">
         <div className="atlas-console-tools">
+          <button type="button" aria-expanded={rssOpen} onClick={toggleRss}>
+            <span>RSS</span><strong>{isZh ? "订阅研究更新" : "Subscribe to research"}</strong>
+          </button>
           <button type="button" aria-expanded={shareOpen} onClick={toggleShare}>
             <span>QR</span><strong>{isZh ? "二维码分享" : "Share with QR"}</strong>
           </button>
         </div>
+        {rssOpen && <section className="atlas-console-rss" role="dialog" aria-label={isZh ? "RSS 订阅" : "RSS subscription"}>
+          <button type="button" onClick={() => setRssOpen(false)}>{isZh ? "关闭" : "Close"}</button>
+          <strong>{isZh ? "轻量 RSS 订阅" : "Lightweight RSS subscription"}</strong>
+          <p>{isZh ? "复制地址后粘贴到 Feedly、NetNewsWire 或其他阅读器。浏览器打开 XML 是正常的。" : "Copy this address into Feedly, NetNewsWire or another reader. Raw XML in a browser is expected."}</p>
+          <code>{rssUrl}</code>
+          <button type="button" className="atlas-console-rss-copy" onClick={copyRssUrl}>{rssCopied ? (isZh ? "RSS 地址已复制" : "RSS address copied") : (isZh ? "复制订阅地址" : "Copy RSS address")}</button>
+          <a href={`https://feedly.com/i/subscription/feed/${encodeURIComponent(rssUrl)}`} target="_blank" rel="noreferrer">{isZh ? "在 Feedly 中添加 ↗" : "Add to Feedly ↗"}</a>
+          <a href={rssUrl} target="_blank" rel="noreferrer">{isZh ? "直接打开 RSS XML ↗" : "Open RSS XML ↗"}</a>
+        </section>}
         {shareOpen && <section className="atlas-console-share" role="dialog" aria-label={isZh ? "二维码分享当前页面" : "Share this page with a QR code"}>
           <button type="button" onClick={() => setShareOpen(false)}>{isZh ? "关闭" : "Close"}</button>
           {shareQr ? <img src={shareQr} alt={isZh ? "当前页面分享二维码" : "QR code for this page"} /> : <span className="atlas-console-share-loading">{isZh ? "正在生成二维码…" : "Generating QR code…"}</span>}

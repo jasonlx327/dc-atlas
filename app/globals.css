@@ -1366,6 +1366,25 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
 }
 .atlas-console-tools span { color: var(--atlas-terracotta); font: 750 9px var(--font-geist-mono); }
 .atlas-console-tools strong { font-size: 10px; font-weight: 700; line-height: 1.25; }
+.atlas-console-rss {
+  position: absolute;
+  z-index: 160;
+  left: 0;
+  bottom: calc(100% + 12px);
+  width: 236px;
+  padding: 14px;
+  display: grid;
+  gap: 8px;
+  border: 1px solid var(--atlas-forest);
+  background: var(--atlas-surface);
+  box-shadow: 0 18px 42px rgba(32,41,36,.18);
+}
+.atlas-console-rss > button:first-child { justify-self: end; color: var(--atlas-ultramarine); font: 700 9px var(--font-geist-mono); }
+.atlas-console-rss > strong { color: var(--atlas-ink); font-size: 13px; line-height: 1.25; }
+.atlas-console-rss > p { margin: 0; color: #707872; font-size: 11px; line-height: 1.5; }
+.atlas-console-rss > code { overflow-wrap: anywhere; padding: 7px; color: #5f6963; background: #eef1eb; font: 600 8px/1.4 var(--font-geist-mono); }
+.atlas-console-rss > a, .atlas-console-rss-copy { color: var(--atlas-ultramarine); font-size: 10px; font-weight: 700; }
+.atlas-console-rss-copy { min-height: 30px; padding: 0 8px !important; border: 1px solid var(--atlas-forest) !important; background: #e6ebe4 !important; text-align: center !important; }
 .atlas-console-share {
   position: absolute;
   z-index: 160;
@@ -1628,6 +1647,7 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
     box-shadow: 28px 0 70px rgba(24,28,24,.18);
   }
   .atlas-console-rail.open { transform: translateX(0); }
+  .atlas-console-rss { width: min(300px, calc(100vw - 56px)); }
   .atlas-console-share { width: min(260px, calc(100vw - 56px)); }
   .atlas-console-scrim { position: fixed; z-index: 130; inset: 0; display: block; border: 0; background: rgba(27,31,28,.34); }
   .atlas-console-mobile-head {

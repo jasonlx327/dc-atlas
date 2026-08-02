@@ -16,6 +16,7 @@ export function GET() {
     <description>${escapeXml(article.summary)}</description>
   </item>`).join("\n");
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="${siteUrl}/rss.xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IDC Atlas 专栏</title>

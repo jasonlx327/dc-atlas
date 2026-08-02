@@ -273,11 +273,13 @@ test("keeps console navigation in the same order as the home-page reading sequen
   for (const [first, second] of [["id=\"calendar\"", 'id="columns"'], ['id="columns"', 'id="pulse"'], ['id="pulse"', 'id="companies"'], ['id="companies"', 'id="industry"'], ['id="industry"', 'id="market"']]) assert.ok(layout.indexOf(first) < layout.indexOf(second));
 });
 
-test("keeps canonical QR sharing in the shared console footer", async () => {
+test("keeps lightweight RSS and canonical QR sharing in the shared console footer", async () => {
   const overview = await readFile(new URL("../app/intelligence-console-overview.tsx", import.meta.url), "utf8");
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 
-  assert.doesNotMatch(overview, /订阅研究更新|Subscribe to research/);
+  assert.match(overview, /订阅研究更新|Subscribe to research/);
+  assert.match(overview, /RSS 地址已复制|RSS address copied/);
+  assert.match(overview, /feedly\.com\/i\/subscription\/feed/);
   assert.match(overview, /https:\/\/idc-index\.com\$\{path === "\/" \? "" : path\}/);
   assert.match(overview, /二维码分享当前页面/);
   assert.match(overview, /Share this page with a QR code/);
@@ -641,6 +643,7 @@ test("publishes bilingual RSS feeds for original research", async () => {
   assert.match(chineseXml, /https:\/\/idc-index\.com\/columns\/frontier-model-economics/);
   assert.match(chineseXml, /https:\/\/idc-index\.com\/columns\/microsoft-ai-capex/);
   assert.match(chineseXml, /atom:link href="https:\/\/idc-index\.com\/feed\.xml"/);
+  assert.match(chineseXml, /xml-stylesheet type="text\/xsl" href="https:\/\/idc-index\.com\/rss\.xsl"/);
   assert.match(chineseXml, /<lastBuildDate>/);
 
   const english = await render("/en/feed.xml");
@@ -653,6 +656,7 @@ test("publishes bilingual RSS feeds for original research", async () => {
   assert.match(englishXml, /Model Prices Are Fragmenting\. What Changes for AI Infrastructure/);
   assert.match(englishXml, /Azure at 43%: What Must the Next \$50B Deliver/);
   assert.match(englishXml, /atom:link href="https:\/\/idc-index\.com\/en\/feed\.xml"/);
+  assert.match(englishXml, /xml-stylesheet type="text\/xsl" href="https:\/\/idc-index\.com\/rss\.xsl"/);
 });
 
 test("gives the earnings calendar and poster route distinct crawl metadata", async () => {
