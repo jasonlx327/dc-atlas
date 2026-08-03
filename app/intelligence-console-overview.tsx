@@ -335,8 +335,8 @@ function ShellNav({
           <small>{shareUrl.replace("https://", "")}</small>
           <a href={shareUrl} target="_blank" rel="noreferrer">{isZh ? "打开正式链接" : "Open canonical link"}</a>
         </section>}
-        <a href="/methodology">{isZh ? "方法论" : "Methodology"}</a>
-        <a href="/privacy">{isZh ? "隐私" : "Privacy"}</a>
+        <a href={isZh ? "/methodology" : "/en/methodology"}>{isZh ? "方法论" : "Methodology"}</a>
+        <a href={isZh ? "/privacy" : "/en/privacy"}>{isZh ? "隐私" : "Privacy"}</a>
         <button type="button" onClick={() => {
           if (window.matchMedia("(max-width: 820px)").matches) {
             setMobileOpen(false);
@@ -432,7 +432,7 @@ export function IntelligenceConsoleShell({
       {children}
       <footer className="atlas-console-footer">
         <p>{isZh ? "信息仅供专业投资者参考，不构成投资建议。" : "Data for professional research only. Nothing here constitutes investment advice."}</p>
-        <nav><a href="/methodology">{isZh ? "方法论" : "Methodology"}</a><a href="/privacy">{isZh ? "隐私" : "Privacy"}</a></nav>
+        <nav><a href={isZh ? "/methodology" : "/en/methodology"}>{isZh ? "方法论" : "Methodology"}</a><a href={isZh ? "/privacy" : "/en/privacy"}>{isZh ? "隐私" : "Privacy"}</a></nav>
       </footer>
     </div>
   </main>;
@@ -639,7 +639,7 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
 
       <footer className="atlas-console-footer">
         <p>{isZh ? "信息仅供专业投资者参考，不构成投资建议。" : "Data for professional research only. Nothing here constitutes investment advice."}</p>
-        <nav><a href="/methodology">{isZh ? "方法论" : "Methodology"}</a><a href="/privacy">{isZh ? "隐私" : "Privacy"}</a></nav>
+        <nav><a href={isZh ? "/methodology" : "/en/methodology"}>{isZh ? "方法论" : "Methodology"}</a><a href={isZh ? "/privacy" : "/en/privacy"}>{isZh ? "隐私" : "Privacy"}</a></nav>
       </footer>
     </div>
   </main>;

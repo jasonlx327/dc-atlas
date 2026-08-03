@@ -166,6 +166,8 @@ test("renders the English research console and focused content routes", async ()
   assert.doesNotMatch(html, /Atlas intelligence brief/);
   assert.match(html, /Live infrastructure pulse/);
   assert.match(html, /Industry chain navigator/);
+  assert.match(html, /href="\/en\/methodology">Methodology/);
+  assert.match(html, /href="\/en\/privacy">Privacy/);
   assert.doesNotMatch(html, /China and United States · last 45 days/);
 
   const pulse = await render("/en/pulse");
@@ -668,6 +670,18 @@ test("publishes the source methodology and includes it in the sitemap", async ()
   assert.match(html, /How we build the signal/);
   assert.match(html, /rel="canonical" href="https:\/\/idc-index\.com\/methodology"/i);
 
+  const englishMethodology = await render("/en/methodology");
+  assert.equal(englishMethodology.status, 200);
+  const englishMethodologyHtml = await englishMethodology.text();
+  assert.match(englishMethodologyHtml, /How IDC Atlas[\s\S]*builds a signal/);
+  assert.match(englishMethodologyHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/methodology"/i);
+
+  const englishPrivacy = await render("/en/privacy");
+  assert.equal(englishPrivacy.status, 200);
+  const englishPrivacyHtml = await englishPrivacy.text();
+  assert.match(englishPrivacyHtml, /Privacy notice/);
+  assert.match(englishPrivacyHtml, /<meta name="robots" content="noindex, follow"/i);
+
   const sitemap = await render("/sitemap.xml");
   assert.equal(sitemap.status, 200);
   assert.match(await sitemap.text(), /https:\/\/idc-index\.com\/methodology/);
@@ -685,6 +699,7 @@ test("publishes the source methodology and includes it in the sitemap", async ()
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns</);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns</);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/topics\/data-center-intelligence/);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/methodology/);
   assert.doesNotMatch(sitemapXml, /https:\/\/idc-index\.com\/privacy/);
 });
 
