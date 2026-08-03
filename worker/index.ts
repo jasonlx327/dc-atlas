@@ -2119,13 +2119,15 @@ function calendarEvents(): CalendarEvent[] {
   ];
 }
 
-function upcomingCalendar(now = new Date()): CalendarEvent[] {
+function featuredCalendar(now = new Date()): CalendarEvent[] {
   const events = calendarEvents();
-  const end = now.getTime() + 9 * 24 * 60 * 60 * 1_000;
-  return events.filter((event) => {
-    const time = new Date(event.startsAt).getTime();
-    return time >= now.getTime() - 4 * 24 * 60 * 60 * 1_000 && time <= end;
-  });
+  const upcoming = events
+    .filter((event) => new Date(event.startsAt).getTime() >= now.getTime())
+    .sort((a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime());
+  const concluded = events
+    .filter((event) => event.conclusion && new Date(event.startsAt).getTime() < now.getTime())
+    .sort((a, b) => new Date(b.startsAt).getTime() - new Date(a.startsAt).getTime());
+  return [...upcoming, ...concluded].slice(0, 6);
 }
 
 function chainFallbackNews(records: SourceRecord[], cooling: SourceRecord[]): Pick<Record<ChainKey, NewsItem[]>, "rack" | "cooling" | "power"> {
@@ -2428,7 +2430,8 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const idcPulse = constructionPulse();
   const listedCompanyNews = listedCompanyPulse();
   const deals = mnaDeals();
-  const upcomingEvents = upcomingCalendar();
+  const allCalendarEvents = calendarEvents();
+  const upcomingEvents = featuredCalendar();
   const fallback = chainFallbackNews(records, coolingRecords);
   const chainWindowDays = 30;
   const computeNews = nvidiaNews.filter((item) => /GPU|服务器|机柜|算力芯片|AI\s*工厂|Vera\s*Rubin|Blackwell|Rubin/i.test(item.title));
@@ -2475,6 +2478,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
     idcPulse,
     listedCompanyNews,
     upcomingEvents,
+    calendarEvents: allCalendarEvents,
     pulseWindowDays: 45,
     weeklyHighlightCount: idcPulse.filter((item) => item.weeklyHighlight).length,
     nvidiaNews,
@@ -2596,6 +2600,7 @@ function compactInitialAtlasPayload(payload: Record<string, unknown>): Record<st
     mnaDeals: firstItems(payload.mnaDeals, 7),
     benchmarks: firstItems(payload.benchmarks, 6),
     upcomingEvents: firstItems(payload.upcomingEvents, 6),
+    calendarEvents: firstItems(payload.calendarEvents, 20),
     chainNews: payload.chainNews,
     nvidiaProducts: firstItems(payload.nvidiaProducts, 4),
     supernodes: firstItems(payload.supernodes, 2),

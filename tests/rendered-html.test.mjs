@@ -494,6 +494,16 @@ test("keeps the homepage earnings watch compact and reachable", async () => {
   assert.match(source, /--atlas-calendar-visible-rows/);
   assert.match(source, /className="atlas-calendar-track"/);
   assert.match(source, /setCalendarPaused/);
+  assert.match(source, /renderCalendarEvents/);
+  const calendarClient = await readFile(new URL("../app/calendar/calendar-client.tsx", import.meta.url), "utf8");
+  assert.match(calendarClient, /calendarEvents\?: CalendarEvent\[\]/);
+  assert.match(calendarClient, /即将发布/);
+  assert.match(calendarClient, /已发布结论/);
+  assert.match(calendarClient, /event\.conclusion && new Date\(event\.startsAt\)/);
+  const worker = await readFile(new URL("../worker/index.ts", import.meta.url), "utf8");
+  assert.match(worker, /function featuredCalendar/);
+  assert.match(worker, /return \[\.\.\.upcoming, \.\.\.concluded\]\.slice\(0, 6\)/);
+  assert.match(worker, /calendarEvents: allCalendarEvents/);
   assert.match(source, /href="\/calendar"/);
   assert.match(source, /className="atlas-research-queue" id="columns"/);
   assert.match(source, /className="atlas-company-watch" id="companies"/);
