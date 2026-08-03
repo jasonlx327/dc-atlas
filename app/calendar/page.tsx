@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import CalendarClient from "./calendar-client";
+import CalendarClient, { type CalendarEvent } from "./calendar-client";
 import { deriveConsoleMeta } from "../console-meta";
 import { loadInitialAtlasPayload } from "../initial-atlas";
 
@@ -23,6 +23,38 @@ export const metadata: Metadata = {
 };
 
 export default async function CalendarPage() {
-  const meta = deriveConsoleMeta(await loadInitialAtlasPayload());
-  return <CalendarClient initialMeta={meta} />;
+  const payload = await loadInitialAtlasPayload();
+  const data = payload as { calendarEvents?: CalendarEvent[]; upcomingEvents?: CalendarEvent[] } | null;
+  const initialEvents = data?.calendarEvents ?? data?.upcomingEvents ?? [];
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        name: "美股科技财报日历",
+        description: metadata.description,
+        url: canonical,
+        inLanguage: "zh-CN",
+        isPartOf: { "@type": "WebSite", name: "IDC Atlas", url: "https://idc-index.com/" },
+        mainEntity: {
+          "@type": "ItemList",
+          numberOfItems: initialEvents.length,
+          itemListElement: initialEvents.map((event, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            url: `${canonical}#${event.id}`,
+            name: `${event.company}（${event.ticker}）财报节点`,
+          })),
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "IDC Atlas", item: "https://idc-index.com/" },
+          { "@type": "ListItem", position: 2, name: "美股科技财报日历", item: canonical },
+        ],
+      },
+    ],
+  };
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /><CalendarClient initialMeta={deriveConsoleMeta(payload)} initialEvents={initialEvents} /></>;
 }

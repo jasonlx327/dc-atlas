@@ -6,7 +6,7 @@ import QRCode from "qrcode";
 import { IntelligenceConsoleShell } from "../intelligence-console-overview";
 import type { ConsoleMeta } from "../console-meta";
 
-type CalendarEvent = {
+export type CalendarEvent = {
   id: string;
   startsAt: string;
   company: string;
@@ -28,8 +28,8 @@ function formatEvent(value: string) {
   };
 }
 
-export default function CalendarClient({ poster = false, initialMeta }: { poster?: boolean; initialMeta?: ConsoleMeta }) {
-  const [events, setEvents] = useState<CalendarEvent[]>([]);
+export default function CalendarClient({ poster = false, initialMeta, initialEvents = [] }: { poster?: boolean; initialMeta?: ConsoleMeta; initialEvents?: CalendarEvent[] }) {
+  const [events, setEvents] = useState<CalendarEvent[]>(initialEvents);
   const [view, setView] = useState<"upcoming" | "results">("results");
   const [qr, setQr] = useState("");
 
@@ -40,7 +40,7 @@ export default function CalendarClient({ poster = false, initialMeta }: { poster
         const data = payload as { calendarEvents?: CalendarEvent[]; upcomingEvents?: CalendarEvent[] };
         setEvents(data.calendarEvents ?? data.upcomingEvents ?? []);
       })
-      .catch(() => setEvents([]));
+      .catch(() => undefined);
     void QRCode.toDataURL("https://idc-index.com", { errorCorrectionLevel: "M", margin: 1, width: 360, color: { dark: "#06101a", light: "#effbfa" } }).then(setQr);
   }, []);
 
@@ -62,7 +62,7 @@ export default function CalendarClient({ poster = false, initialMeta }: { poster
         <button type="button" aria-pressed={view === "upcoming"} onClick={() => setView("upcoming")}>即将发布 <span>{upcoming.length}</span></button>
         <button type="button" aria-pressed={view === "results"} onClick={() => setView("results")}>已发布结论 <span>{results.length}</span></button>
       </nav>}
-      <div className="calendar-share-table" role="table" aria-label={view === "upcoming" ? "即将发布的美股科技财报" : "已发布的美股科技财报结论"}><div className="calendar-share-table-head" role="row"><span>时间</span><span>公司名称</span><span>所属行业</span><span>CAPEX 关注 / 财报结论</span></div>{visibleEvents.map((event) => { const timing = formatEvent(event.startsAt); return <article key={event.id} role="row"><time><strong>{timing.date}</strong><small>{timing.weekday} · 美东 {timing.time}</small></time><div><a href={event.sourceUrl} target="_blank" rel="noreferrer"><strong>{event.company}</strong><small>{event.ticker}</small></a></div><p>{event.sector}</p><div><p>{event.conclusion?.summary ?? event.description}</p><small>{event.conclusion ? `财报结论 · ${event.conclusion.sourceName}` : `CAPEX WATCH · ${event.focus}`}</small></div></article>})}{!visibleEvents.length && <div className="calendar-share-empty">{view === "upcoming" ? "当前没有已确认的下一场财报，新增日程核验后会自动出现。" : "正在读取本轮财报结论…"}</div>}</div>
+      <div className="calendar-share-table" role="table" aria-label={view === "upcoming" ? "即将发布的美股科技财报" : "已发布的美股科技财报结论"}><div className="calendar-share-table-head" role="row"><span>时间</span><span>公司名称</span><span>所属行业</span><span>CAPEX 关注 / 财报结论</span></div>{visibleEvents.map((event) => { const timing = formatEvent(event.startsAt); return <article id={event.id} key={event.id} role="row"><time><strong>{timing.date}</strong><small>{timing.weekday} · 美东 {timing.time}</small></time><div><a href={event.sourceUrl} target="_blank" rel="noreferrer"><strong>{event.company}</strong><small>{event.ticker}</small></a></div><p>{event.sector}</p><div><p>{event.conclusion?.summary ?? event.description}</p><small>{event.conclusion ? `财报结论 · ${event.conclusion.sourceName}` : `CAPEX WATCH · ${event.focus}`}</small></div></article>})}{!visibleEvents.length && <div className="calendar-share-empty">{view === "upcoming" ? "当前没有已确认的下一场财报，新增日程核验后会自动出现。" : "正在读取本轮财报结论…"}</div>}</div>
       <aside className="calendar-share-qr"><div>{qr ? <img src={qr} alt="扫描访问 IDC Atlas" /> : <i aria-hidden="true" />}</div><span>SCAN TO VISIT</span><strong>扫码访问 IDC Atlas</strong><small>实时项目脉冲 · 上市公司 · AI 基建情报</small><a href="https://idc-index.com">idc-index.com</a></aside>
     </section>
     <footer className="calendar-share-footer"><span>时间以公司官方公告为准 · 美东时间</span><span>本网站数据仅用于信息展示与研究，不构成任何投资建议。</span></footer>

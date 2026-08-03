@@ -66,7 +66,7 @@ Primary sources control factual claims. News leads are discovery signals; verify
 - [Infrastructure industry map](https://idc-index.com/en/industry): Compute, networking, power, cooling, campus capacity and selective China supply-chain coverage.
 - [Data center market tracker](https://idc-index.com/en/topics/data-center-intelligence): Topic guide for projects, capacity, leases, power, cooling, CAPEX and public-company disclosures.
 - [Methodology and sources](https://idc-index.com/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
-- [Earnings calendar](https://idc-index.com/calendar): Upcoming cloud, semiconductor and data-center-infrastructure earnings events and CAPEX watch items.
+- [Earnings calendar](https://idc-index.com/calendar): Upcoming cloud, semiconductor and data-center-infrastructure earnings events, CAPEX watch items and source-linked post-results conclusions.
 - [China / U.S. policy tracker](https://idc-index.com/en/policy): Source-linked briefs summarizing implementation status and direct effects on data-center construction, power, interconnection and operating costs.
 - [Rumor Watch](https://idc-index.com/en/rumors): Current reported infrastructure developments kept separate from verified pulse items, with entities, public responses and source boundaries visible.
 - [IDC Atlas Columns](https://idc-index.com/en/columns): Original, source-linked research for global investors.
@@ -2600,7 +2600,6 @@ function compactInitialAtlasPayload(payload: Record<string, unknown>): Record<st
     mnaDeals: firstItems(payload.mnaDeals, 7),
     benchmarks: firstItems(payload.benchmarks, 6),
     upcomingEvents: firstItems(payload.upcomingEvents, 6),
-    calendarEvents: firstItems(payload.calendarEvents, 20),
     chainNews: payload.chainNews,
     nvidiaProducts: firstItems(payload.nvidiaProducts, 4),
     supernodes: firstItems(payload.supernodes, 2),
@@ -2629,7 +2628,14 @@ async function initialAtlasHeaders(request: Request, env: Env, ctx: ExecutionCon
       sourceCount: payload.sourceCount ?? new Set([...(Array.isArray(payload.idcPulse) ? payload.idcPulse : []), ...(Array.isArray(payload.listedCompanyNews) ? payload.listedCompanyNews : []), ...(Array.isArray(payload.mnaDeals) ? payload.mnaDeals : [])].map((item) => typeof item === "object" && item && "sourceName" in item && typeof item.sourceName === "string" ? item.sourceName : null).filter(Boolean)).size,
       verifiedCount: payload.verifiedCount ?? (Array.isArray(payload.idcPulse) ? payload.idcPulse.length : 0) + (Array.isArray(payload.listedCompanyNews) ? payload.listedCompanyNews.length : 0) + (Array.isArray(payload.mnaDeals) ? payload.mnaDeals.length : 0),
     });
-    const json = new TextEncoder().encode(JSON.stringify(compactInitialAtlasPayload(payload)));
+    const initialPayload = new URL(request.url).pathname === "/calendar"
+      ? {
+        generatedAt: payload.generatedAt,
+        contentReviewedAt: payload.contentReviewedAt,
+        calendarEvents: firstItems(payload.calendarEvents, 20),
+      }
+      : compactInitialAtlasPayload(payload);
+    const json = new TextEncoder().encode(JSON.stringify(initialPayload));
     const compressed = new Blob([json]).stream().pipeThrough(new CompressionStream("gzip"));
     const prime = bytesToBase64(new Uint8Array(await new Response(compressed).arrayBuffer()));
     return { prime: prime.length <= 7_000 ? prime : null, meta };

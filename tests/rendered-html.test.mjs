@@ -504,6 +504,8 @@ test("keeps the homepage earnings watch compact and reachable", async () => {
   assert.match(worker, /function featuredCalendar/);
   assert.match(worker, /return \[\.\.\.upcoming, \.\.\.concluded\]\.slice\(0, 6\)/);
   assert.match(worker, /calendarEvents: allCalendarEvents/);
+  assert.match(worker, /new URL\(request\.url\)\.pathname === "\/calendar"/);
+  assert.match(worker, /calendarEvents: firstItems\(payload\.calendarEvents, 20\)/);
   assert.match(source, /href="\/calendar"/);
   assert.match(source, /className="atlas-research-queue" id="columns"/);
   assert.match(source, /className="atlas-company-watch" id="companies"/);
@@ -751,10 +753,23 @@ test("gives the earnings calendar and poster route distinct crawl metadata", asy
   const calendarHtml = await calendar.text();
   assert.match(calendarHtml, /rel="canonical" href="https:\/\/idc-index\.com\/calendar"/i);
   assert.match(calendarHtml, /property="og:title" content="美股科技财报日历｜IDC Atlas"/i);
+  assert.match(calendarHtml, /"@type":"CollectionPage"/);
+  assert.match(calendarHtml, /"@type":"ItemList"/);
+  assert.match(calendarHtml, /"@type":"BreadcrumbList"/);
   assert.match(calendarHtml, /href="\/#calendar" class="calendar-share-back">← 返回首页<\/a>/i);
 
   const poster = await render("/calendar/poster");
   const posterHtml = await poster.text();
   assert.match(posterHtml, /<meta name="robots" content="noindex, nofollow"/i);
   assert.doesNotMatch(posterHtml, /calendar-share-back/);
+});
+
+test("makes public intelligence explicitly discoverable to OpenAI search", async () => {
+  const robots = await render("/robots.txt");
+  const body = await robots.text();
+  assert.match(body, /User-Agent: OAI-SearchBot/i);
+  assert.match(body, /Allow: \//);
+
+  const llms = await render("/en/llms.txt");
+  assert.match(await llms.text(), /source-linked post-results conclusions/);
 });
