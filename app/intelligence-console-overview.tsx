@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import QRCode from "qrcode";
 import { ChainIcon, type ChainKey } from "./chain-icon";
 import { columnArticles } from "./columns/articles";
@@ -442,6 +442,8 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
   const [mobileOpen, setMobileOpen] = useState(false);
   const [navCollapsed, setNavCollapsed] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
+  const [calendarPaused, setCalendarPaused] = useState(false);
+  const [calendarPointerHeld, setCalendarPointerHeld] = useState(false);
   const [pulsePaused, setPulsePaused] = useState(false);
   const [pulsePointerHeld, setPulsePointerHeld] = useState(false);
   const isZh = lang === "zh";
@@ -468,6 +470,23 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
     });
     return () => observer.disconnect();
   }, []);
+
+  function renderCalendarEvents(clone = false) {
+    return events.map((event) => {
+      const timing = eventDate(event.startsAt, lang);
+      return <a
+        href={event.conclusion?.sourceUrl ?? event.sourceUrl}
+        target="_blank"
+        rel="noreferrer"
+        key={`${clone ? "clone-" : ""}${event.id}`}
+        tabIndex={clone ? -1 : undefined}
+      >
+        <time><b>{timing.day}</b><span>{timing.weekday}</span><small>{isZh ? `美东 ${timing.time}` : `${timing.time} ET`}</small></time>
+        <div className="atlas-calendar-company"><strong>{event.company} <small>{event.ticker}</small></strong><em>{event.sector}</em></div>
+        <div className="atlas-calendar-focus"><span>{event.focus ?? event.sector}</span>{event.conclusion && <small>{isZh ? "财报结论已更新" : "Post-results read-through"}</small>}</div>
+      </a>;
+    });
+  }
 
   function renderPulseRows(clone = false) {
     return pulse.map((story, index) => <a
@@ -514,16 +533,29 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
       </section>
 
       <section className="atlas-decision-grid">
-        <div className="atlas-calendar" id="calendar">
-          <header><strong>{isZh ? "资本支出与财报日历" : "CapEx & earnings watch"}</strong><a href="/calendar">{isZh ? "查看全部" : "View all"} →</a></header>
-          <div>{events.map((event) => {
-            const timing = eventDate(event.startsAt, lang);
-            return <a href={event.conclusion?.sourceUrl ?? event.sourceUrl} target="_blank" rel="noreferrer" key={event.id}>
-              <time><b>{timing.day}</b><span>{timing.weekday}</span><small>{isZh ? `美东 ${timing.time}` : `${timing.time} ET`}</small></time>
-              <div className="atlas-calendar-company"><strong>{event.company} <small>{event.ticker}</small></strong><em>{event.sector}</em></div>
-              <div className="atlas-calendar-focus"><span>{event.focus ?? event.sector}</span>{event.conclusion && <small>{isZh ? "财报结论已更新" : "Post-results read-through"}</small>}</div>
-            </a>;
-          })}</div>
+        <div className="atlas-calendar" id="calendar" data-paused={calendarPaused || calendarPointerHeld ? "true" : undefined}>
+          <header>
+            <strong>{isZh ? "资本支出与财报日历" : "CapEx & earnings watch"}</strong>
+            <span className="atlas-calendar-actions">
+              <button type="button" aria-pressed={calendarPaused} onClick={() => setCalendarPaused((paused) => !paused)}>
+                {calendarPaused ? (isZh ? "继续" : "Resume") : (isZh ? "暂停" : "Pause")}
+              </button>
+              <a href="/calendar">{isZh ? "查看全部" : "View all"} →</a>
+            </span>
+          </header>
+          <div
+            className="atlas-calendar-viewport"
+            style={{ "--atlas-calendar-visible-rows": Math.min(events.length, 5) } as CSSProperties}
+            onPointerDown={() => setCalendarPointerHeld(true)}
+            onPointerUp={() => setCalendarPointerHeld(false)}
+            onPointerCancel={() => setCalendarPointerHeld(false)}
+            onPointerLeave={() => setCalendarPointerHeld(false)}
+          >
+            <div className="atlas-calendar-track">
+              <div className="atlas-calendar-group">{renderCalendarEvents()}</div>
+              <div className="atlas-calendar-group" aria-hidden="true">{renderCalendarEvents(true)}</div>
+            </div>
+          </div>
         </div>
         <div className="atlas-research-queue" id="columns">
           <header><strong>{isZh ? "研究队列" : "Research queue"} (5)</strong><a href={isZh ? "/columns" : "/en/columns"}>{isZh ? "查看全部" : "View all"} →</a></header>

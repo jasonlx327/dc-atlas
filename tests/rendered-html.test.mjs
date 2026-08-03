@@ -37,6 +37,9 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /href="\/pulse"><span>04<\/span><strong>脉搏监测/);
   assert.match(html, /href="\/industry"><span>06<\/span><strong>产业链地图/);
   assert.match(html, /资本支出与财报日历/);
+  assert.match(html, /class="atlas-calendar-viewport"/);
+  assert.match(html, /class="atlas-calendar-track"/);
+  assert.match(html, /class="atlas-calendar-group" aria-hidden="true"/);
   assert.match(html, /研究队列/);
   assert.match(html, /src="\/lead-amazon-aws-capex\.png"/);
   assert.match(html, /Azure 增长 43% 之后，500 亿美元要兑现什么/);
@@ -74,6 +77,7 @@ test("keeps mobile pages readable without forced horizontal layouts", async () =
   assert.match(css, /\.compact-footer, \.english-console-footer, footer \{ padding-bottom: calc\(98px \+ env\(safe-area-inset-bottom\)\); \}/);
   assert.match(css, /@keyframes atlasPulseLoop/);
   assert.match(css, /@keyframes atlasPulseSweep/);
+  assert.match(css, /@keyframes atlasCalendarLoop/);
   assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
   assert.match(css, /\.atlas-pulse-group\[aria-hidden="true"\] \{ display: none; \}/);
 });
@@ -486,6 +490,10 @@ test("keeps the homepage earnings watch compact and reachable", async () => {
   assert.match(source, /财报结论已更新/);
   assert.match(source, /Post-results read-through/);
   assert.match(source, /className="atlas-calendar" id="calendar"/);
+  assert.match(source, /className="atlas-calendar-viewport"/);
+  assert.match(source, /--atlas-calendar-visible-rows/);
+  assert.match(source, /className="atlas-calendar-track"/);
+  assert.match(source, /setCalendarPaused/);
   assert.match(source, /href="\/calendar"/);
   assert.match(source, /className="atlas-research-queue" id="columns"/);
   assert.match(source, /className="atlas-company-watch" id="companies"/);

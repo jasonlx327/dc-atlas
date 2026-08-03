@@ -1529,8 +1529,15 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
 .atlas-live-pulse header strong, .atlas-company-watch header strong, .atlas-industry-chain header strong,
 .atlas-market-strip header strong { color: var(--atlas-forest); font-size: 13px; }
 .atlas-console-overview header a { color: var(--atlas-ultramarine); font-size: 11px; font-weight: 700; }
-.atlas-calendar > div { border-top: 1px solid var(--atlas-line); }
-.atlas-calendar > div > a {
+.atlas-calendar-actions { display: flex; align-items: center; gap: 14px; white-space: nowrap; }
+.atlas-calendar-actions button { padding: 2px 7px; border: 1px solid var(--atlas-line-strong); border-radius: 999px; background: transparent; color: #717972; font: 650 9px var(--font-geist-mono); cursor: pointer; }
+.atlas-calendar-actions button:hover, .atlas-calendar-actions button[aria-pressed="true"] { border-color: var(--atlas-forest); color: var(--atlas-forest); }
+.atlas-calendar-viewport { height: calc(52px * var(--atlas-calendar-visible-rows, 5)); overflow: hidden; border-top: 1px solid var(--atlas-line); }
+.atlas-calendar-track { animation: atlasCalendarLoop 28s linear infinite; will-change: transform; }
+.atlas-calendar-viewport:hover .atlas-calendar-track,
+.atlas-calendar-viewport:focus-within .atlas-calendar-track,
+.atlas-calendar[data-paused="true"] .atlas-calendar-track { animation-play-state: paused; }
+.atlas-calendar-group > a {
   min-height: 52px;
   display: grid;
   grid-template-columns: 92px minmax(132px, .75fr) minmax(0, 1.45fr);
@@ -1539,7 +1546,7 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
   border-bottom: 1px solid var(--atlas-line);
   color: #515954;
 }
-.atlas-calendar > div > a:hover { background: rgba(49,77,154,.04); }
+.atlas-calendar-group > a:hover { background: rgba(49,77,154,.04); }
 .atlas-calendar time { display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 2px 6px; font-family: var(--font-geist-mono); }
 .atlas-calendar time b { font-size: 13px; }.atlas-calendar time span { color: #818781; font-size: 10px; }
 .atlas-calendar time small { grid-column: 1 / -1; color: #8b8f89; font-size: 8px; }
@@ -1550,6 +1557,9 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
 .atlas-calendar-focus { min-width: 0; display: grid; gap: 3px; }
 .atlas-calendar-focus > span { overflow: hidden; color: #626a65; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
 .atlas-calendar-focus > small { color: var(--atlas-forest); font: 700 8px var(--font-geist-mono); }
+@keyframes atlasCalendarLoop {
+  to { transform: translateY(-50%); }
+}
 .atlas-research-content {
   min-height: 260px;
   display: grid;
@@ -1762,7 +1772,7 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
   .atlas-lead-facts { grid-template-columns: repeat(2, 1fr); }
   .atlas-decision-grid { grid-template-columns: 1fr; }
   .atlas-calendar, .atlas-research-queue { min-height: 0; border-right: 0; border-bottom: 1px solid var(--atlas-line); }
-  .atlas-calendar > div > a { min-height: 44px; }
+  .atlas-calendar-group > a { min-height: 44px; }
   .atlas-company-watch > div { grid-template-columns: 1fr 1fr; }
   .atlas-industry-chain > div { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
   .atlas-industry-chain > div > a { min-width: 230px; border-bottom: 0 !important; scroll-snap-align: start; }
@@ -1789,7 +1799,11 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
   .atlas-lead-facts > div { min-height: 86px; padding: 12px; }
   .atlas-lead-facts dd { font-size: 14px; }
   .atlas-calendar, .atlas-research-queue { padding: 16px 18px; }
-  .atlas-calendar > div > a { min-height: 76px; grid-template-columns: 64px minmax(0, 1fr); align-items: start; gap: 7px 10px; padding: 10px 0; }
+  .atlas-calendar-actions button { display: none; }
+  .atlas-calendar-viewport { height: auto; overflow: visible; }
+  .atlas-calendar-track { animation: none; }
+  .atlas-calendar-group[aria-hidden="true"] { display: none; }
+  .atlas-calendar-group > a { min-height: 76px; grid-template-columns: 64px minmax(0, 1fr); align-items: start; gap: 7px 10px; padding: 10px 0; }
   .atlas-calendar-focus { grid-column: 2; }
   .atlas-calendar-focus > span { white-space: normal; line-height: 1.45; }
   .atlas-research-content { grid-template-columns: 1fr; }
@@ -1839,7 +1853,9 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .atlas-pulse-wave polyline.active, .atlas-pulse-track { animation: none; }
+  .atlas-calendar-track, .atlas-pulse-wave polyline.active, .atlas-pulse-track { animation: none; }
+  .atlas-calendar-viewport { height: auto; overflow: visible; }
+  .atlas-calendar-group[aria-hidden="true"] { display: none; }
   .atlas-pulse-viewport { height: auto; overflow: visible; }
   .atlas-pulse-group[aria-hidden="true"] { display: none; }
 }
