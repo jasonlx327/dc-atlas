@@ -13,7 +13,7 @@ const AIHOT_USER_AGENT = "aihot-skill/0.3.6 (+https://aihot.virxact.com/aihot-sk
 const CWW_ENDPOINT = "https://cwwindex.today/data/latest.json";
 const OPENROUTER_MODELS_ENDPOINT = "https://openrouter.ai/api/v1/models?sort=top-weekly";
 const ARENA_CODE_ENDPOINT = "https://arena.ai/leaderboard/code/webdev";
-const CONTENT_REVIEWED_AT = "2026-08-01";
+const CONTENT_REVIEWED_AT = "2026-08-03";
 const LLMS_TXT = `# IDC Atlas
 
 > IDC Atlas is a bilingual, source-first intelligence site for global data-center construction, AI infrastructure, power, cooling, networking and China AI silicon. Content is for public-information research and industry observation only, not investment advice.
@@ -594,6 +594,28 @@ function supernodeProducts(): SupernodeProduct[] {
 function capacityRadar(): SourceRecord[] {
   return [
     {
+      id: "meta-blackrock-el-paso-1gw",
+      title: "Meta 与 BlackRock 设立 El Paso 数据中心合资平台",
+      subject: "Meta · Nasdaq: META / BlackRock · NYSE: BLK",
+      metric: "1 GW 计算容量 · 约 $140 亿开发成本",
+      status: "园区在建 · 合资交易待交割",
+      publishedAt: "2026-07-28",
+      sourceName: "Meta",
+      sourceUrl: "https://about.fb.com/news/2026/07/meta-announces-new-venture-with-blackrock-to-develop-data-center-in-el-paso/",
+      note: "BlackRock 管理基金拟持有 80%、Meta 保留 20%；Meta 将作为初始唯一租户，园区计划自 2028 年开始分期上线。",
+    },
+    {
+      id: "naver-nvidia-brookfield-sejong-200mw",
+      title: "NAVER、NVIDIA 与 Brookfield 扩建韩国 AI Factory",
+      subject: "NAVER · NVIDIA · Brookfield",
+      metric: "55 MW → 200 MW",
+      status: "扩建计划公布",
+      publishedAt: "2026-07-24",
+      sourceName: "NVIDIA",
+      sourceUrl: "https://nvidianews.nvidia.com/news/naver-nvidia-and-brookfield-to-expand-koreas-national-ai-factory-infrastructure-buildout",
+      note: "三方计划把 GAK Sejong 数据中心内的 NVIDIA DSX AI Factory 从 55MW 扩至 200MW，目标于 2028 年完成。",
+    },
+    {
       id: "galaxy-mcgregor-campus",
       title: "Galaxy 收购德州 McGregor 500 英亩数据中心园区",
       subject: "Galaxy Digital · Nasdaq: GLXY",
@@ -719,6 +741,17 @@ function capacityRadar(): SourceRecord[] {
 
 function coolingProgress(): SourceRecord[] {
   return [
+    {
+      id: "vertiv-nps-dgx-gb300-liquid-cooling",
+      title: "Vertiv 为美国海军研究生院 DGX GB300 部署液冷基础设施",
+      subject: "Vertiv · NYSE: VRT / NVIDIA DGX GB300",
+      metric: "3 机柜 SmartIT · 液冷 / 配电一体化",
+      status: "已部署上线",
+      publishedAt: "2026-07-23",
+      sourceName: "Vertiv",
+      sourceUrl: "https://www.vertiv.com/en-us/about/news-and-events/corporate-news/2026/vertiv-infrastructure-helps-bring-nvidia-ai-computing-capability-to-the-naval-postgraduate-school/",
+      note: "项目在既有设施内集成配电、液冷、机柜、流体管理与调试服务，支持 NVIDIA DGX GB300 高密度系统投入运行。",
+    },
     {
       id: "vertiv-tognana-cooling-expansion",
       title: "Vertiv 扩建意大利 AI 数据中心冷却制造与测试能力",
@@ -1136,6 +1169,41 @@ function positiveIdcNews(liveNews: NewsItem[], records: SourceRecord[]): NewsIte
 
 function constructionPulse(): NewsItem[] {
   const items: NewsItem[] = [
+    {
+      id: "meta-blackrock-el-paso-1gw",
+      title: "Meta 与 BlackRock 设立 El Paso 1GW 数据中心合资平台",
+      summary: "双方计划共同持有并开发 Meta 在 El Paso 的在建园区；总开发成本约 140 亿美元，Meta 将作为初始唯一租户，容量计划自 2028 年起上线。",
+      publishedAt: "2026-07-28T05:30:00-07:00",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://about.fb.com/news/2026/07/meta-announces-new-venture-with-blackrock-to-develop-data-center-in-el-paso/",
+      sourceUrl: "https://about.fb.com/news/2026/07/meta-announces-new-venture-with-blackrock-to-develop-data-center-in-el-paso/",
+      sourceName: "Meta",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "合资开发结构公布",
+      scale: "1 GW · 约 $140 亿开发成本",
+      listedTicker: "Meta · META / BlackRock · BLK",
+      whyItMatters: "80/20 合资结构和长期租赁安排把多 GW 级建设需求与外部基础设施资本连接起来，后续关键是交易交割和 2028 年起分期上线。",
+    },
+    {
+      id: "naver-nvidia-brookfield-sejong-200mw",
+      title: "NAVER、NVIDIA 与 Brookfield 拟将韩国 AI Factory 扩至 200MW",
+      summary: "三方计划把 GAK Sejong 数据中心内的 NVIDIA DSX AI Factory 从 55MW 扩至 200MW，并以 2028 年为扩建目标。",
+      publishedAt: "2026-07-24T09:00:00+09:00",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://nvidianews.nvidia.com/news/naver-nvidia-and-brookfield-to-expand-koreas-national-ai-factory-infrastructure-buildout",
+      sourceUrl: "https://nvidianews.nvidia.com/news/naver-nvidia-and-brookfield-to-expand-koreas-national-ai-factory-infrastructure-buildout",
+      sourceName: "NVIDIA",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "全球",
+      milestone: "扩建计划公布",
+      scale: "55 MW → 200 MW",
+      whyItMatters: "项目把 GPU 平台、数据中心容量与基础设施资本放入同一扩建计划，后续关注投资落地、设备部署和 2028 年交付。",
+    },
     {
       id: "galaxy-mcgregor-campus-2026",
       title: "Galaxy 收购德州 McGregor 500 英亩园区，首期规划 74MW",
@@ -1579,6 +1647,42 @@ function constructionPulse(): NewsItem[] {
 function listedCompanyPulse(): NewsItem[] {
   const items: NewsItem[] = [
     {
+      id: "vertiv-q2-2026-results",
+      title: "Vertiv Q2 营收增长 24%，上调全年收入与利润指引",
+      summary: "Q2 营收为 32.74 亿美元，同比增长 24%，其中有机增长 18%；公司把全年营收指引中值提高至 140 亿美元，并继续扩充产能以应对 AI 与通用计算基础设施需求。",
+      publishedAt: "2026-07-29T08:00:00-04:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-Second-Quarter-2026-with-Diluted-EPS-Growth-of-53-Adjusted-Diluted-EPS-Growth-of-60-Raises-Full-Year-2026-Guidance-Across-All-Key-Metrics/default.aspx",
+      sourceUrl: "https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-Second-Quarter-2026-with-Diluted-EPS-Growth-of-53-Adjusted-Diluted-EPS-Growth-of-60-Raises-Full-Year-2026-Guidance-Across-All-Key-Metrics/default.aspx",
+      sourceName: "Vertiv Investor Relations",
+      signal: "cooling",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "Q2 业绩与全年指引上调",
+      scale: "营收 $32.74 亿 · 有机增长 18%",
+      listedTicker: "Vertiv · VRT",
+      whyItMatters: "收入增长、指引上调与持续扩产共同确认电力和散热基础设施需求仍强，但大项目分期执行与供应链节奏仍需跟踪。",
+    },
+    {
+      id: "meta-blackrock-el-paso-company-update",
+      title: "Meta 引入 BlackRock 共同开发 El Paso 1GW 数据中心",
+      summary: "BlackRock 管理基金拟持有合资平台 80%，Meta 保留 20%；双方将按比例承担约 140 亿美元开发成本，Meta 通过租赁使用整个园区。",
+      publishedAt: "2026-07-28T05:30:00-07:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://about.fb.com/news/2026/07/meta-announces-new-venture-with-blackrock-to-develop-data-center-in-el-paso/",
+      sourceUrl: "https://about.fb.com/news/2026/07/meta-announces-new-venture-with-blackrock-to-develop-data-center-in-el-paso/",
+      sourceName: "Meta",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "基础设施融资结构公布",
+      scale: "1 GW · 约 $140 亿开发成本",
+      listedTicker: "Meta · META / BlackRock · BLK",
+      whyItMatters: "外部资本与租赁结构提升了超大园区的资金灵活性，也把后续关注点转向交易交割、租赁承诺和容量上线。",
+    },
+    {
       id: "amazon-q2-2026-ai-infrastructure",
       title: "Amazon Q2 AWS 增长 37%，AI 基础设施投入继续压低自由现金流",
       summary: "AWS Q2 营收同比增长 37% 至 422 亿美元；过去 12 个月资本性资产采购净额升至 1,690 亿美元，自由现金流转为流出 76 亿美元，主要由 AI 投资增加推动。",
@@ -2004,11 +2108,12 @@ function calendarEvents(): CalendarEvent[] {
     { id: "tesla-q2-2026", startsAt: "2026-07-22T21:30:00.000Z", company: "Tesla", ticker: "TSLA", sector: "新能源 / 储能", description: "全球电动车与储能龙头，Megapack 是电网级储能的重要供给。", focus: "储能部署、能源业务扩产与 AI 基础设施投入", sourceName: "Tesla Investor Relations · Q2 results", sourceUrl: "https://ir.tesla.com/press-release/tesla-releases-second-quarter-2026-financial-results", conclusion: { summary: "Q2 储能部署达 13.5GWh，电网级储能需求仍是最明确的基础设施读数；后续持续核验 Megapack 交付、扩产与能源业务资本投入。", summaryEn: "Q2 energy-storage deployments reached 13.5GWh, keeping grid-scale storage the clearest infrastructure read-through. Next checks: Megapack deliveries, capacity expansion and energy-business capital deployment.", sourceName: "Tesla Investor Relations · production & deployments", sourceUrl: "https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments" } },
     { id: "alphabet-q2-2026", startsAt: "2026-07-22T20:00:00.000Z", company: "Alphabet", ticker: "GOOGL", sector: "互联网 / 云计算", description: "Google Cloud 位居全球主要云服务商之列，AI 基建投入的重要风向标。", focus: "Google Cloud 增长、全年 CAPEX 指引与 AI 算力供给", sourceName: "Alphabet Investor Relations · Q2 results", sourceUrl: "https://s206.q4cdn.com/479360582/files/doc_financials/2026/q2/2026q2-alphabet-earnings-release.pdf", conclusion: { summary: "Google Cloud 营收同比增长 82% 至 248 亿美元、积压订单升至 5,140 亿美元；Q2 资本开支为 449 亿美元，全年指引上调至 1,950–2,050 亿美元。管理层将以第三方容量衔接短期缺口，下一项验证是自建容量上线速度与云业务利润率。", summaryEn: "Google Cloud revenue rose 82% to $24.8B and backlog reached $514B. Q2 capex was $44.9B; full-year guidance rose to $195B–$205B. Management will use third-party capacity as a near-term bridge; the next test is owned-capacity delivery and Cloud margin.", sourceName: "Alphabet Q2 results & public call transcript", sourceUrl: "https://www.investing.com/news/transcripts/earnings-call-transcript-alphabet-beats-q2-2026-estimates-shares-fall-on-capex-surge-93CH-4807140" } },
     { id: "intel-q2-2026", startsAt: "2026-07-23T20:00:00.000Z", company: "Intel", ticker: "INTC", sector: "半导体", description: "全球重要芯片制造商，PC 与数据中心 CPU 的关键供应商。", focus: "数据中心产品节奏、先进制程投入与资本开支安排", sourceName: "Intel Investor Relations · Q2 results", sourceUrl: "https://www.intc.com/news-events/press-releases/detail/1776/intel-reports-second-quarter-2026-financial-results", conclusion: { summary: "Q2 数据中心与 AI（DCAI）营收同比增长 59% 至 63 亿美元；公司称 AI 算力需求继续增强，并将增加设备、洁净室空间和基板投入，以支持产品与代工业务后续增长。", summaryEn: "Q2 Data Center and AI revenue rose 59% year over year to $6.3B. Intel said AI-driven compute demand continues to strengthen and that it is increasing investment in equipment, clean-room space and substrates to support product and foundry growth.", sourceName: "Intel Investor Relations · Q2 2026 results", sourceUrl: "https://www.intc.com/news-events/press-releases/detail/1776/intel-reports-second-quarter-2026-financial-results" } },
-    { id: "vertiv-q2-2026", startsAt: "2026-07-29T12:00:00.000Z", company: "Vertiv", ticker: "VRT", sector: "数据中心基础设施", description: "数据中心电力、散热、液冷与关键基础设施解决方案供应商。", focus: "订单、积压、液冷交付与全年需求指引", sourceName: "Vertiv Investor Relations", sourceUrl: "https://investors.vertiv.com/news/news-details/2026/Vertiv-Announces-Date-of-Second-Quarter-2026-Earnings-Release-and-Conference-Call/default.aspx" },
+    { id: "vertiv-q2-2026", startsAt: "2026-07-29T12:00:00.000Z", company: "Vertiv", ticker: "VRT", sector: "数据中心基础设施", description: "数据中心电力、散热、液冷与关键基础设施解决方案供应商。", focus: "订单、积压、液冷交付与全年需求指引", sourceName: "Vertiv Investor Relations · Q2 results", sourceUrl: "https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-Second-Quarter-2026-with-Diluted-EPS-Growth-of-53-Adjusted-Diluted-EPS-Growth-of-60-Raises-Full-Year-2026-Guidance-Across-All-Key-Metrics/default.aspx", conclusion: { summary: "Q2 营收同比增长 24% 至 32.74 亿美元，有机增长 18%；公司把全年营收指引中值提高至 140 亿美元，并称 AI 与通用计算需求继续增强。后续关注大项目分期执行、供应链拥堵和新增产能交付。", summaryEn: "Q2 net sales rose 24% to $3.274B, including 18% organic growth. Vertiv raised the midpoint of full-year sales guidance to $14.0B and said AI and general-compute demand continues to intensify. Next checks are phased project execution, supply-chain congestion and capacity delivery.", sourceName: "Vertiv Investor Relations · Q2 2026 results", sourceUrl: "https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-Second-Quarter-2026-with-Diluted-EPS-Growth-of-53-Adjusted-Diluted-EPS-Growth-of-60-Raises-Full-Year-2026-Guidance-Across-All-Key-Metrics/default.aspx" } },
     { id: "meta-q2-2026", startsAt: "2026-07-29T20:00:00.000Z", company: "Meta", ticker: "META", sector: "社交媒体 / AI", description: "全球社交平台龙头，前沿模型、广告 AI 与大规模数据中心建设并进。", focus: "AI 基础设施 CAPEX、数据中心容量和全年投入节奏", sourceName: "Meta Investor Relations · Q2 results", sourceUrl: "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx", conclusion: { summary: "Q2 收入同比增长 28%，资本开支（含融资租赁本金）为 310.8 亿美元；全年资本开支区间收窄至 1,300–1,450 亿美元。官方电话会显示公司正最大化 2026–2027 年容量，并为 2028 年以后提前布局；Q2 自由现金流为 7.84 亿美元，后续需验证容量上线与变现节奏。", summaryEn: "Q2 revenue rose 28%. Capex, including finance-lease principal payments, was $31.08B; full-year guidance narrowed to $130B–$145B. The official call said Meta is maximizing 2026–27 capacity and laying foundations for 2028+. Q2 free cash flow was $784M; delivery and monetization now need to catch up.", sourceName: "Meta Q2 2026 official transcript", sourceUrl: "https://s21.q4cdn.com/399680738/files/doc_financials/2026/q2/META-Q2-2026-Earnings-Call-Transcript.pdf" } },
     { id: "microsoft-fy26-q4", startsAt: "2026-07-29T20:00:00.000Z", company: "Microsoft", ticker: "MSFT", sector: "云计算 / 软件", description: "Azure 是全球主要云平台，Copilot 与 AI 服务驱动基础设施扩张。", focus: "Azure 需求、资本开支、融资租赁与供给受限表述", sourceName: "Microsoft Investor Relations · FY26 Q4 results", sourceUrl: "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast", conclusion: { summary: "FY26 Q4 Azure 增长 43%，下一季度指引约 45%（固定汇率）；当季 CAPEX 为 410 亿美元，下一季度预计超过 500 亿美元。电话会确认需求仍高于供给，FY27 CAPEX 将同比增长；2026 年约 1,750 亿美元的新口径主要来自数据中心租赁分类变化，不代表实际建设计划下调。", summaryEn: "FY26 Q4 Azure grew 43%, with Q1 guided to roughly 45% in constant currency. Quarterly capex was $41B and Q1 is expected above $50B. Management said demand still exceeds supply and FY27 capex will grow; the revised ~$175B calendar-2026 presentation mainly reflects data-center lease reclassification, not a reduction in underlying investment plans.", sourceName: "Microsoft FY26 Q4 results & earnings call", sourceUrl: "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4" } },
     { id: "arm-q1-fy27", startsAt: "2026-07-29T21:00:00.000Z", company: "Arm", ticker: "ARM", sector: "芯片 IP", description: "CPU 架构授权龙头，AI 服务器与移动芯片的重要底层技术提供商。", focus: "数据中心授权收入、AI 服务器渗透与客户产品节奏", sourceName: "Arm Investor Relations", sourceUrl: "https://investors.arm.com/financials/quarterly-annual-results" },
     { id: "amazon-q2-2026", startsAt: "2026-07-30T21:00:00.000Z", company: "Amazon", ticker: "AMZN", sector: "电商 / 云计算", description: "AWS 是全球最大的云服务商之一，AI 基础设施投资的核心风向标。", focus: "AWS 增长、基础设施 CAPEX 与 AI 数据中心建设", sourceName: "Amazon Investor Relations · Q2 results", sourceUrl: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx", conclusion: { summary: "AWS Q2 营收同比增长 37% 至 422 亿美元，为 18 个季度以来最快增速；过去 12 个月资本性资产采购净额升至 1,690 亿美元，自由现金流转为流出 76 亿美元，主要由 AI 投资增加推动。", summaryEn: "AWS Q2 revenue rose 37% to $42.2B, its fastest growth in 18 quarters. Trailing-12-month purchases of property and equipment, net, reached $169.0B; free cash flow moved to a $7.6B outflow, primarily reflecting higher AI investment.", sourceName: "Amazon Q2 2026 results", sourceUrl: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx" } },
+    { id: "amd-q2-2026", startsAt: "2026-08-04T21:00:00.000Z", company: "AMD", ticker: "AMD", sector: "AI 加速器 / CPU", description: "Instinct、EPYC 与 Helios 机架级平台是 NVIDIA 之外的重要开放 AI 基础设施路线。", focus: "数据中心收入、MI350/MI450 交付、Helios 节奏与全年指引", sourceName: "AMD Investor Relations · Q2 webcast", sourceUrl: "https://ir.amd.com/news-events/press-releases/detail/1289/amd-to-report-fiscal-second-quarter-2026-financial-results" },
   ];
 }
 
