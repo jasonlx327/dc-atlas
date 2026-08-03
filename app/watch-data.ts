@@ -193,6 +193,26 @@ export const POLICY_BRIEFS: PolicyIndexRecord[] = [
 
 export const RUMOR_BRIEFS: RumorWatchItem[] = [
   {
+    id: "cxmt-beijing-second-dram-fab-financing-2026",
+    title: "长鑫科技据报考虑在北京亦庄建设第二座DRAM晶圆厂",
+    titleEn: "CXMT is reported to be considering a second DRAM fab in Beijing",
+    summary: "Reuters援引两名知情人士称，长鑫科技正考虑在北京亦庄建设第二座12英寸DRAM晶圆厂，并与当地政府支持的科技制造中心洽谈至少6000万元人民币资金支持。项目仍处早期，产能、总投资与融资结构尚未确定。",
+    summaryEn: "Reuters cited two people familiar with the matter saying CXMT is considering a second 12-inch DRAM fab in Beijing's Yizhuang area and is discussing at least RMB60 million of support with a locally backed technology manufacturing center. Capacity, total investment and financing structure remain undetermined.",
+    publishedAt: "2026-08-03T16:24:00+08:00",
+    sourceName: "Reuters",
+    sourceUrl: "https://www.reuters.com/world/asia-pacific/cxmt-plans-second-chip-plant-beijing-is-talks-its-funding-sources-say-2026-08-03/",
+    region: "中国",
+    status: "reported",
+    statusLabel: "单一来源报道 · 融资洽谈早期",
+    statusLabelEn: "Single-source report · early financing talks",
+    sourceCount: 1,
+    entities: ["长鑫科技", "CXMT", "北京亦庄", "北京经济技术开发区"],
+    officialResponse: "截至Reuters报道发布时，长鑫科技与北京市政府均未回应；未见项目备案、环评、土地、设备采购或公司公告。",
+    officialResponseEn: "CXMT and the Beijing municipal government had not responded when Reuters published. No project filing, environmental review, land record, equipment order or company announcement was located.",
+    sourceNote: "核心项目与融资信息来自Reuters的两名未具名知情人士。报道可以进入Rumor Watch，不能视作已开工、已获批或已形成确定产能。",
+    sourceNoteEn: "The project and financing details come from two unnamed Reuters sources. The report belongs in Rumor Watch and does not establish approval, construction or committed capacity.",
+  },
+  {
     id: "nvda-hut8-beacon-point-tenant-2026",
     title: "Hut 8未披露的得州租户，据报为英伟达",
     titleEn: "Nvidia is reported to be Hut 8's undisclosed Texas tenant",

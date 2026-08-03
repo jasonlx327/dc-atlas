@@ -32,6 +32,7 @@ export default function CalendarClient({ poster = false, initialMeta, initialEve
   const [events, setEvents] = useState<CalendarEvent[]>(initialEvents);
   const [view, setView] = useState<"upcoming" | "results">("results");
   const [qr, setQr] = useState("");
+  const [now] = useState(() => Date.now());
 
   useEffect(() => {
     void fetch("/api/atlas-live-v5?schema=v1", { cache: "no-store" })
@@ -44,7 +45,6 @@ export default function CalendarClient({ poster = false, initialMeta, initialEve
     void QRCode.toDataURL("https://idc-index.com", { errorCorrectionLevel: "M", margin: 1, width: 360, color: { dark: "#06101a", light: "#effbfa" } }).then(setQr);
   }, []);
 
-  const now = Date.now();
   const upcoming = events
     .filter((event) => new Date(event.startsAt).getTime() >= now)
     .sort((a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime());

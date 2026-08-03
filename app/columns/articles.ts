@@ -1,5 +1,16 @@
 export const columnArticles = [
   {
+    href: "/columns/alibaba-qwen-cloud",
+    hrefEn: "/en/columns/alibaba-qwen-cloud",
+    date: "2026-08-03",
+    series: "CHINA CLOUD · 07",
+    title: "Qwen3.8 已上线，阿里云下一份财报要回答七个问题",
+    titleEn: "Qwen3.8 Is Live: Seven Tests for Alibaba Cloud's Next Earnings",
+    summary: "从外部云收入、模型服务 ARR、三年 3800 亿元投入、自研芯片、利润率与现金流，检验阿里云 AI 商业化的转换效率。",
+    summaryEn: "Seven tests across external cloud growth, model-service ARR, the RMB380B buildout, proprietary silicon, margin and cash conversion.",
+    image: "/column-alibaba-qwen-cloud-v2.jpg",
+  },
+  {
     href: "/columns/microsoft-ai-capex",
     hrefEn: "/en/columns/microsoft-ai-capex",
     date: "2026-08-01",

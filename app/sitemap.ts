@@ -94,6 +94,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://idc-index.com/columns/alibaba-qwen-cloud",
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: "https://idc-index.com/en/columns/alibaba-qwen-cloud",
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: "https://idc-index.com/columns/microsoft-ai-capex",
       changeFrequency: "weekly",
       priority: 0.9,

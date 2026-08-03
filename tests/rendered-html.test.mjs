@@ -42,9 +42,10 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /class="atlas-calendar-group" aria-hidden="true"/);
   assert.match(html, /研究队列/);
   assert.match(html, /src="\/lead-amazon-aws-capex\.png"/);
+  assert.match(html, /Qwen3\.8 已上线，阿里云下一份财报要回答七个问题/);
   assert.match(html, /Azure 增长 43% 之后，500 亿美元要兑现什么/);
   assert.match(html, /模型价格正在分层，AI 基建真正要看什么/);
-  assert.match(html, /column-microsoft-ai-capex-v2\.jpg/);
+  assert.match(html, /column-alibaba-qwen-cloud-v2\.jpg/);
   assert.match(html, /href="\/#columns"/);
   assert.match(html, /href="\/columns\/microsoft-ai-capex"/);
   assert.match(html, /href="\/columns\/frontier-model-economics"/);
@@ -132,6 +133,7 @@ test("publishes bilingual policy index and rumor watch routes", async () => {
   const rumorsHtml = await rumors.text();
   assert.match(rumorsHtml, /市场传闻与待核验线索/);
   assert.match(rumorsHtml, /RUMOR WATCH · SOURCE LINKED/);
+  assert.match(rumorsHtml, /长鑫科技据报考虑在北京亦庄建设第二座DRAM晶圆厂/);
   assert.match(rumorsHtml, /Hut 8未披露的得州租户/);
   assert.match(rumorsHtml, /公开回应/);
 
@@ -140,6 +142,7 @@ test("publishes bilingual policy index and rumor watch routes", async () => {
   const englishHtml = await english.text();
   assert.match(englishHtml, /Rumor Watch/);
   assert.match(englishHtml, /Reported market developments/);
+  assert.match(englishHtml, /CXMT is reported to be considering a second DRAM fab in Beijing/);
   assert.match(englishHtml, /Nvidia is reported to be Hut 8/);
   assert.match(englishHtml, /PUBLIC RESPONSE/);
 
@@ -160,6 +163,7 @@ test("renders the English research console and focused content routes", async ()
   assert.match(html, /class="atlas-console-rail(?: |")/);
   assert.match(html, /href="\/en#columns"/);
   assert.match(html, /Research queue/);
+  assert.match(html, /Qwen3\.8 Is Live: Seven Tests for Alibaba Cloud/);
   assert.match(html, /Azure at 43%: What Must the Next \$50B Deliver/);
   assert.equal((html.match(/href="\/en\/columns\/(?!microsoft-ai-capex)[^"]+"/g) ?? []).length >= 4, true);
   assert.match(html, /CapEx &amp; earnings watch/);
@@ -390,6 +394,28 @@ test("publishes the deep Microsoft Azure and AI-capex column in both languages",
   assert.match(englishHtml, /The move from \$190B to \$175B is largely classification/);
   assert.match(englishHtml, /“late binding” is the overbuild defense/);
   assert.match(englishHtml, /Microsoft FY2026 Q4 earnings call/);
+  assert.match(englishHtml, /For information and research only/);
+});
+
+test("publishes the bilingual Alibaba Cloud and Qwen3.8 earnings preview", async () => {
+  const chinese = await render("/columns/alibaba-qwen-cloud");
+  assert.equal(chinese.status, 200);
+  const chineseHtml = await chinese.text();
+  assert.match(chineseHtml, /Qwen3\.8 已上线/);
+  assert.match(chineseHtml, /阿里云下一份财报要回答七个问题/);
+  assert.match(chineseHtml, /三年 3,800 亿元如何变成可售容量/);
+  assert.match(chineseHtml, /Qwen3\.8 在六月季度后发布/);
+  assert.match(chineseHtml, /column-alibaba-qwen-cloud-v2\.jpg/);
+  assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns\/alibaba-qwen-cloud"/i);
+  assert.match(chineseHtml, /"@type":"AnalysisNewsArticle"/);
+
+  const english = await render("/en/columns/alibaba-qwen-cloud");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /Qwen3\.8 Is Live/);
+  assert.match(englishHtml, /Seven Tests for Alibaba Cloud/);
+  assert.match(englishHtml, /how RMB380B becomes sellable capacity/);
+  assert.match(englishHtml, /Qwen3\.8 arrived after the June quarter/);
   assert.match(englishHtml, /For information and research only/);
 });
 
@@ -696,6 +722,8 @@ test("publishes the source methodology and includes it in the sitemap", async ()
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns\/frontier-model-economics/);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns\/microsoft-ai-capex/);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns\/microsoft-ai-capex/);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns\/alibaba-qwen-cloud/);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns\/alibaba-qwen-cloud/);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns</);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns</);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/topics\/data-center-intelligence/);
@@ -712,9 +740,11 @@ test("publishes bilingual column indexes with crawl metadata", async () => {
   assert.match(chineseHtml, /长鑫上市，谁会先感到压力/);
   assert.match(chineseHtml, /模型价格正在分层，AI 基建真正要看什么/);
   assert.match(chineseHtml, /Azure 增长 43% 之后，500 亿美元要兑现什么/);
+  assert.match(chineseHtml, /Qwen3\.8 已上线，阿里云下一份财报要回答七个问题/);
   assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns"/i);
   assert.match(chineseHtml, /"@type":"ItemList"/);
   for (const cover of [
+    "column-alibaba-qwen-cloud-v2.jpg",
     "column-microsoft-ai-capex-v2.jpg",
     "column-frontier-model-economics-v2.jpg",
     "column-sk-hynix-hbm-v2.jpg",
@@ -731,6 +761,7 @@ test("publishes bilingual column indexes with crawl metadata", async () => {
   assert.match(englishHtml, /CXMT Is Public\. Which US Chip Stocks Actually Feel It/);
   assert.match(englishHtml, /Model Prices Are Fragmenting\. What Changes for AI Infrastructure/);
   assert.match(englishHtml, /Azure at 43%: What Must the Next \$50B Deliver/);
+  assert.match(englishHtml, /Qwen3\.8 Is Live: Seven Tests for Alibaba Cloud/);
   assert.match(englishHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/columns"/i);
   assert.match(englishHtml, /"@type":"ItemList"/);
 });
@@ -746,6 +777,7 @@ test("publishes bilingual RSS feeds for original research", async () => {
   assert.match(chineseXml, /https:\/\/idc-index\.com\/columns\/cxmt-us-chip-impact/);
   assert.match(chineseXml, /https:\/\/idc-index\.com\/columns\/frontier-model-economics/);
   assert.match(chineseXml, /https:\/\/idc-index\.com\/columns\/microsoft-ai-capex/);
+  assert.match(chineseXml, /https:\/\/idc-index\.com\/columns\/alibaba-qwen-cloud/);
   assert.match(chineseXml, /atom:link href="https:\/\/idc-index\.com\/feed\.xml"/);
   assert.match(chineseXml, /xml-stylesheet type="text\/xsl" href="https:\/\/idc-index\.com\/rss\.xsl"/);
   assert.match(chineseXml, /<lastBuildDate>/);
@@ -759,6 +791,7 @@ test("publishes bilingual RSS feeds for original research", async () => {
   assert.match(englishXml, /CXMT Is Public\. Which US Chip Stocks Actually Feel It/);
   assert.match(englishXml, /Model Prices Are Fragmenting\. What Changes for AI Infrastructure/);
   assert.match(englishXml, /Azure at 43%: What Must the Next \$50B Deliver/);
+  assert.match(englishXml, /Qwen3\.8 Is Live: Seven Tests for Alibaba Cloud/);
   assert.match(englishXml, /atom:link href="https:\/\/idc-index\.com\/en\/feed\.xml"/);
   assert.match(englishXml, /xml-stylesheet type="text\/xsl" href="https:\/\/idc-index\.com\/rss\.xsl"/);
 });
