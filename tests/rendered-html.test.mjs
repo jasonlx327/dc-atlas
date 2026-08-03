@@ -47,6 +47,11 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /href="\/columns\/frontier-model-economics"/);
   assert.doesNotMatch(html, /情报摘要/);
   assert.match(html, /市场脉搏/);
+  assert.match(html, /class="atlas-pulse-wave"/);
+  assert.match(html, /class="atlas-pulse-viewport"/);
+  assert.match(html, /class="atlas-pulse-track"/);
+  assert.match(html, /class="atlas-pulse-group" aria-hidden="true"/);
+  assert.match(html, /aria-pressed="false">暂停/);
   assert.match(html, /上市公司动态/);
   assert.match(html, /产业链地图/);
   assert.match(html, /atlas-chain-icon/);
@@ -67,6 +72,10 @@ test("keeps mobile pages readable without forced horizontal layouts", async () =
   assert.match(css, /\.industry-hub \.chain-news \{ grid-template-columns: 1fr; \}/);
   assert.match(css, /\.mobile-dock a \{[\s\S]*font-size: 12px;/);
   assert.match(css, /\.compact-footer, \.english-console-footer, footer \{ padding-bottom: calc\(98px \+ env\(safe-area-inset-bottom\)\); \}/);
+  assert.match(css, /@keyframes atlasPulseLoop/);
+  assert.match(css, /@keyframes atlasPulseSweep/);
+  assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
+  assert.match(css, /\.atlas-pulse-group\[aria-hidden="true"\] \{ display: none; \}/);
 });
 
 test("lets mobile supply-chain nodes expand and collapse", async () => {

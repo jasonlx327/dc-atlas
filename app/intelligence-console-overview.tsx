@@ -442,6 +442,8 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
   const [mobileOpen, setMobileOpen] = useState(false);
   const [navCollapsed, setNavCollapsed] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
+  const [pulsePaused, setPulsePaused] = useState(false);
+  const [pulsePointerHeld, setPulsePointerHeld] = useState(false);
   const isZh = lang === "zh";
   const pulse = data.pulse.slice(0, 8).map((story) => translateStory?.(story) ?? story);
   const companies = data.companies.slice(0, 4).map((story) => translateStory?.(story) ?? story);
@@ -466,6 +468,26 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
     });
     return () => observer.disconnect();
   }, []);
+
+  function renderPulseRows(clone = false) {
+    return pulse.map((story, index) => <a
+      className="atlas-pulse-row"
+      href={storyLink(story)}
+      target="_blank"
+      rel="noreferrer"
+      key={`${clone ? "clone-" : ""}${story.id}`}
+      tabIndex={clone ? -1 : undefined}
+    >
+      <span>{index + 1}</span>
+      <time>{dateLabel(story.publishedAt, lang)}</time>
+      <b>{index < 2 ? (isZh ? "新增" : "NEW") : (isZh ? "更新" : "UPD")}</b>
+      <strong>{storyTitle(story)}</strong>
+      <span>{story.category ?? (isZh ? "项目" : "Project")}</span>
+      <span>{story.region ?? (isZh ? "全球" : "Global")}</span>
+      <em>{disclosedMetric(story, lang)}</em>
+      <span>{story.sourceName ?? "—"}</span>
+    </a>);
+  }
 
   return <main className={navCollapsed ? "atlas-console-overview rail-collapsed" : "atlas-console-overview"} lang={isZh ? "zh-CN" : "en"}>
     <ShellNav lang={lang} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} collapsed={navCollapsed} setCollapsed={setNavCollapsed} activeSection={activeSection} setActiveSection={setActiveSection} />
@@ -522,20 +544,36 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
         </div>
       </section>
 
-      <section className="atlas-live-pulse" id="pulse">
-        <header><strong>{isZh ? "市场脉搏" : "Live infrastructure pulse"} <small>{isZh ? "按信号强度排序" : "ranked for fast reading"}</small></strong><a href={isZh ? "/pulse" : "/en/pulse"}>{isZh ? "查看全部信号" : "View all signals"} →</a></header>
+      <section className="atlas-live-pulse" id="pulse" data-paused={pulsePaused || pulsePointerHeld ? "true" : undefined}>
+        <header>
+          <strong>{isZh ? "市场脉搏" : "Live infrastructure pulse"} <small>{isZh ? "按信号强度排序" : "ranked for fast reading"}</small></strong>
+          <span className="atlas-pulse-wave" aria-hidden="true">
+            <svg viewBox="0 0 600 36" preserveAspectRatio="none">
+              <polyline points="0,18 100,18 130,18 145,3 160,34 175,18 240,18 252,10 264,26 276,18 340,18 354,2 369,35 384,18 450,18 462,12 474,24 486,18 600,18" />
+              <polyline className="active" points="0,18 100,18 130,18 145,3 160,34 175,18 240,18 252,10 264,26 276,18 340,18 354,2 369,35 384,18 450,18 462,12 474,24 486,18 600,18" />
+            </svg>
+          </span>
+          <span className="atlas-pulse-actions">
+            <button type="button" aria-pressed={pulsePaused} onClick={() => setPulsePaused((paused) => !paused)}>
+              {pulsePaused ? (isZh ? "继续" : "Resume") : (isZh ? "暂停" : "Pause")}
+            </button>
+            <a href={isZh ? "/pulse" : "/en/pulse"}>{isZh ? "查看全部信号" : "View all signals"} →</a>
+          </span>
+        </header>
         <div className="atlas-pulse-table">
           <div className="atlas-pulse-table-head"><span>#</span><span>{isZh ? "日期" : "Date"}</span><span>{isZh ? "信号" : "Signal"}</span><span>{isZh ? "公司 / 项目" : "Company / project"}</span><span>{isZh ? "类别" : "Category"}</span><span>{isZh ? "地区" : "Region"}</span><span>{isZh ? "披露指标" : "Disclosed metric"}</span><span>{isZh ? "来源" : "Primary source"}</span></div>
-          {pulse.map((story, index) => <a className="atlas-pulse-row" href={storyLink(story)} target="_blank" rel="noreferrer" key={story.id}>
-            <span>{index + 1}</span>
-            <time>{dateLabel(story.publishedAt, lang)}</time>
-            <b>{index < 2 ? (isZh ? "新增" : "NEW") : (isZh ? "更新" : "UPD")}</b>
-            <strong>{storyTitle(story)}</strong>
-            <span>{story.category ?? (isZh ? "项目" : "Project")}</span>
-            <span>{story.region ?? (isZh ? "全球" : "Global")}</span>
-            <em>{disclosedMetric(story, lang)}</em>
-            <span>{story.sourceName ?? "—"}</span>
-          </a>)}
+          <div
+            className="atlas-pulse-viewport"
+            onPointerDown={() => setPulsePointerHeld(true)}
+            onPointerUp={() => setPulsePointerHeld(false)}
+            onPointerCancel={() => setPulsePointerHeld(false)}
+            onPointerLeave={() => setPulsePointerHeld(false)}
+          >
+            <div className="atlas-pulse-track">
+              <div className="atlas-pulse-group">{renderPulseRows()}</div>
+              <div className="atlas-pulse-group" aria-hidden="true">{renderPulseRows(true)}</div>
+            </div>
+          </div>
         </div>
       </section>
 
