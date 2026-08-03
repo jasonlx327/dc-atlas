@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MicrosoftAiCapexArticle from "./article";
 
 const canonical = "https://idc-index.com/columns/microsoft-ai-capex";
-const image = "https://idc-index.com/column-microsoft-ai-capex.png";
+const image = "https://idc-index.com/column-microsoft-ai-capex-v2.jpg";
 
 export const metadata: Metadata = {
   title: "Azure 增长 43% 之后，微软 500 亿美元 CAPEX 要兑现什么？｜IDC Atlas",

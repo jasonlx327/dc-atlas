@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   title: "四大云厂商的 AI CAPEX 最终流向了哪里？｜IDC Atlas",
   description: "拆解 Microsoft、Alphabet、Meta 与 Amazon 的 AI 资本开支，追踪资金从芯片、服务器流向园区、电力、投运与可计费容量。",
   alternates: { canonical, languages: { "zh-CN": canonical, en: "https://idc-index.com/en/columns/ai-capex-power", "x-default": "https://idc-index.com/en/columns/ai-capex-power" } },
-  openGraph: { title: "四大云厂商的 AI CAPEX 最终流向了哪里？", description: "从采购、建设、送电到可计费容量，拆解四家云厂商的 AI 基础设施投入。", url: canonical, type: "article", publishedTime: "2026-07-27T00:00:00+08:00", modifiedTime: "2026-08-01T23:00:00+08:00", images: [{ url: "https://idc-index.com/column-ai-capex-grid.png", width: 1672, height: 941, alt: "AI 数据中心与电网约束" }] },
-  twitter: { card: "summary_large_image", title: "四大云厂商的 AI CAPEX 最终流向了哪里？", description: "追踪 Microsoft、Alphabet、Meta 与 Amazon 的资本开支传导。", images: ["https://idc-index.com/column-ai-capex-grid.png"] },
+  openGraph: { title: "四大云厂商的 AI CAPEX 最终流向了哪里？", description: "从采购、建设、送电到可计费容量，拆解四家云厂商的 AI 基础设施投入。", url: canonical, type: "article", publishedTime: "2026-07-27T00:00:00+08:00", modifiedTime: "2026-08-01T23:00:00+08:00", images: [{ url: "https://idc-index.com/column-ai-capex-grid-v2.jpg", width: 1672, height: 941, alt: "AI 数据中心与电网约束" }] },
+  twitter: { card: "summary_large_image", title: "四大云厂商的 AI CAPEX 最终流向了哪里？", description: "追踪 Microsoft、Alphabet、Meta 与 Amazon 的资本开支传导。", images: ["https://idc-index.com/column-ai-capex-grid-v2.jpg"] },
 };
 
 export default function Page() {
@@ -19,7 +19,7 @@ export default function Page() {
         "@type": "Article",
         headline: "四大云厂商的 AI CAPEX 最终流向了哪里？",
         description: metadata.description,
-        image: "https://idc-index.com/column-ai-capex-grid.png",
+        image: "https://idc-index.com/column-ai-capex-grid-v2.jpg",
         datePublished: "2026-07-27T00:00:00+08:00",
         dateModified: "2026-08-01T23:00:00+08:00",
         inLanguage: "zh-CN",

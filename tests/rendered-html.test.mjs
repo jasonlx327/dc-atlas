@@ -41,6 +41,7 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /src="\/lead-amazon-aws-capex\.png"/);
   assert.match(html, /Azure 增长 43% 之后，500 亿美元要兑现什么/);
   assert.match(html, /模型价格正在分层，AI 基建真正要看什么/);
+  assert.match(html, /column-microsoft-ai-capex-v2\.jpg/);
   assert.match(html, /href="\/#columns"/);
   assert.match(html, /href="\/columns\/microsoft-ai-capex"/);
   assert.match(html, /href="\/columns\/frontier-model-economics"/);
@@ -669,7 +670,14 @@ test("publishes bilingual column indexes with crawl metadata", async () => {
   assert.match(chineseHtml, /Azure 增长 43% 之后，500 亿美元要兑现什么/);
   assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns"/i);
   assert.match(chineseHtml, /"@type":"ItemList"/);
-  assert.match(chineseHtml, /column-cxmt-us-chips\.png/);
+  for (const cover of [
+    "column-microsoft-ai-capex-v2.jpg",
+    "column-frontier-model-economics-v2.jpg",
+    "column-sk-hynix-hbm-v2.jpg",
+    "column-cxmt-us-chips-v2.jpg",
+    "column-ai-capex-grid-v2.jpg",
+    "column-hyperscale-leases-v2.jpg",
+  ]) assert.match(chineseHtml, new RegExp(cover.replace(".", "\\.")));
 
   const english = await render("/en/columns");
   assert.equal(english.status, 200);

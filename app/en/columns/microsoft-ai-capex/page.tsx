@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MicrosoftAiCapexArticle from "../../../columns/microsoft-ai-capex/article";
 
 const canonical = "https://idc-index.com/en/columns/microsoft-ai-capex";
-const image = "https://idc-index.com/column-microsoft-ai-capex.png";
+const image = "https://idc-index.com/column-microsoft-ai-capex-v2.jpg";
 
 export const metadata: Metadata = {
   title: "Azure at 43%: What Microsoft’s Next $50 Billion Quarter Must Deliver | IDC Atlas",

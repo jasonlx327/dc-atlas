@@ -8,7 +8,7 @@ export const columnArticles = [
     titleEn: "Azure at 43%: What Must the Next $50B Deliver?",
     summary: "从新增 1GW、GPU 上线速度、租赁会计到自由现金流，追踪微软 AI 基础设施如何转化为云收入。",
     summaryEn: "One gigawatt, faster GPU activation and shifting lease accounting reveal how Microsoft must convert infrastructure into cloud revenue.",
-    image: "/column-microsoft-ai-capex.png",
+    image: "/column-microsoft-ai-capex-v2.jpg",
   },
   {
     href: "/columns/frontier-model-economics",
@@ -19,7 +19,7 @@ export const columnArticles = [
     titleEn: "Model Prices Are Fragmenting. What Changes for AI Infrastructure?",
     summary: "GPT-5.6 与 Claude Sonnet 5、Opus 4.8、Fable 5 的共同信号不是单次跑分，而是能力、速度、价格与调用深度的分层。",
     summaryEn: "GPT-5.6 and Anthropic's Sonnet 5, Opus 4.8 and Fable 5 turn capability, speed, price and reasoning depth into separate infrastructure variables.",
-    image: "/ai-infrastructure-chain.png",
+    image: "/column-frontier-model-economics-v2.jpg",
   },
   {
     href: "/columns/sk-hynix-hbm-earnings",
@@ -30,7 +30,7 @@ export const columnArticles = [
     titleEn: "After SK hynix Earnings, What Still Looks Good in AI Memory?",
     summary: "创纪录业绩之外，长期客户协议、HBM4 性能与克制扩产，才是决定存储景气能否延续的三条线索。",
     summaryEn: "Beyond the record print, customer agreements, HBM4 execution and disciplined capacity are the three signals that matter for the memory cycle.",
-    image: "/column-sk-hynix-hbm.png",
+    image: "/column-sk-hynix-hbm-v2.jpg",
   },
   {
     href: "/columns/cxmt-us-chip-impact",
@@ -41,7 +41,7 @@ export const columnArticles = [
     titleEn: "CXMT Is Public. Which US Chip Stocks Actually Feel It?",
     summary: "从通用 DRAM、HBM、设备出口与中国收入四条链，判断 MU、AMAT、LRCX、KLAC、NVDA、AMD 与 RMBS 的影响顺序。",
     summaryEn: "A ranked read-through across MU, AMAT, LRCX, KLAC, NVDA, AMD and RMBS through conventional DRAM, HBM, equipment controls and China exposure.",
-    image: "/column-cxmt-us-chips.png",
+    image: "/column-cxmt-us-chips-v2.jpg",
   },
   {
     href: "/columns/ai-capex-power",
@@ -52,7 +52,7 @@ export const columnArticles = [
     titleEn: "Where Hyperscaler AI CapEx Actually Goes",
     summary: "Azure、Google Cloud 与 AWS 同时加速，供给缺口和自由现金流开始决定四大云厂商的 AI 基建回报。",
     summaryEn: "Azure, Google Cloud and AWS accelerated together; capacity gaps and free-cash-flow conversion now define the hyperscaler AI buildout.",
-    image: "/column-ai-capex-grid.png",
+    image: "/column-ai-capex-grid-v2.jpg",
   },
   {
     href: "/columns/hyperscale-idc-leases",
@@ -63,6 +63,6 @@ export const columnArticles = [
     titleEn: "Gigawatt Leases Are Reshaping the Data Center Market",
     summary: "四笔公开合同合计接近 1.8GW。拆开签约、送电与计费三个节点，判断园区级订单怎样转化为现金流。",
     summaryEn: "Four disclosed agreements approach 1.8GW. Contract, energization and billing reveal how campus-scale orders convert into cash flow.",
-    image: "/column-hyperscale-leases.png",
+    image: "/column-hyperscale-leases-v2.jpg",
   },
 ] as const;
