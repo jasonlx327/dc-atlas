@@ -451,7 +451,7 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
   const articles = columnArticles.slice(0, 5);
   const uniqueSources = new Set([...data.pulse, ...data.companies, ...data.deals].map((item) => item.sourceName).filter(Boolean));
   const verifiedCount = data.pulse.length + data.companies.length + data.deals.length;
-  const leadImage = lead?.imageSrc ?? "/column-ai-capex-grid.png";
+  const leadImage = lead?.imageSrc ?? "/lead-amazon-aws-capex.png";
   const contextualImages = ["/column-hyperscale-leases.png", "/column-sk-hynix-hbm.png", "/products/nvidia-dgx-b200.jpg", "/column-ai-capex-grid.png", "/column-microsoft-ai-capex.png"];
 
   useEffect(() => {

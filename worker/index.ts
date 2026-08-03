@@ -1695,6 +1695,8 @@ function listedCompanyPulse(): NewsItem[] {
       signal: "capacity",
       curator: "官方来源",
       region: "美国",
+      imageSrc: "/lead-amazon-aws-capex.png",
+      imageAlt: "AI 数据中心园区、电网与冷却基础设施的编辑插画",
       milestone: "Q2 业绩与 AI 投入更新",
       scale: "AWS +37% · TTM 资本性资产采购 $1,690 亿",
       listedTicker: "Amazon · AMZN",

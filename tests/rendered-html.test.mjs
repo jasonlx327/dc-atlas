@@ -38,7 +38,7 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /href="\/industry"><span>06<\/span><strong>产业链地图/);
   assert.match(html, /资本支出与财报日历/);
   assert.match(html, /研究队列/);
-  assert.match(html, /class="contain-art" src="\/column-ai-capex-grid\.png"/);
+  assert.match(html, /src="\/lead-amazon-aws-capex\.png"/);
   assert.match(html, /Azure 增长 43% 之后，500 亿美元要兑现什么/);
   assert.match(html, /模型价格正在分层，AI 基建真正要看什么/);
   assert.match(html, /href="\/#columns"/);
