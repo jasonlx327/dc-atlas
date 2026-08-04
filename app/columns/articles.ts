@@ -1,5 +1,16 @@
 export const columnArticles = [
   {
+    href: "/columns/palantir-sovereign-ai",
+    hrefEn: "/en/columns/palantir-sovereign-ai",
+    date: "2026-08-04",
+    series: "SOVEREIGN AI · 08",
+    title: "Palantir 把 AI 定义为主权，这条基建叙事要怎样验证？",
+    titleEn: "Palantir Calls AI Sovereign. What Must the Infrastructure Thesis Prove?",
+    summary: "从 Q2 业绩、电话会与主权 AI 架构出发，区分已披露合同、管理层命题与尚待验证的算力、网络、电力和液冷传导。",
+    summaryEn: "Palantir Q2 and sovereign AI separated into reported contracts, management claims and the still-unproven compute, network, power and cooling read-through.",
+    image: "/column-palantir-sovereign-ai-v2.jpg",
+  },
+  {
     href: "/columns/alibaba-qwen-cloud",
     hrefEn: "/en/columns/alibaba-qwen-cloud",
     date: "2026-08-03",

@@ -42,13 +42,10 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /class="atlas-calendar-group" aria-hidden="true"/);
   assert.match(html, /研究队列/);
   assert.match(html, /src="\/lead-amazon-aws-capex\.png"/);
-  assert.match(html, /Qwen3\.8 已上线，阿里云下一份财报要回答七个问题/);
-  assert.match(html, /Azure 增长 43% 之后，500 亿美元要兑现什么/);
-  assert.match(html, /模型价格正在分层，AI 基建真正要看什么/);
-  assert.match(html, /column-alibaba-qwen-cloud-v2\.jpg/);
+  assert.match(html, /Palantir 把 AI 定义为主权，这条基建叙事要怎样验证？/);
+  assert.match(html, /column-palantir-sovereign-ai-v2\.jpg/);
   assert.match(html, /href="\/#columns"/);
-  assert.match(html, /href="\/columns\/microsoft-ai-capex"/);
-  assert.match(html, /href="\/columns\/frontier-model-economics"/);
+  assert.match(html, /href="\/columns\/palantir-sovereign-ai"/);
   assert.doesNotMatch(html, /情报摘要/);
   assert.match(html, /市场脉搏/);
   assert.match(html, /class="atlas-pulse-wave"/);
