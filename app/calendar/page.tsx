@@ -6,18 +6,18 @@ import { loadInitialAtlasPayload } from "../initial-atlas";
 const canonical = "https://idc-index.com/calendar";
 
 export const metadata: Metadata = {
-  title: "美股科技财报日历｜IDC Atlas",
-  description: "IDC Atlas 美股科技财报日历：追踪云厂商、半导体与数据中心基础设施公司的关键财报节点与 CAPEX 关注项。",
+  title: "全球科技财报日历｜IDC Atlas",
+  description: "IDC Atlas 全球科技财报日历：追踪云厂商、半导体与数据中心基础设施公司的关键财报节点与 CAPEX 关注项。",
   alternates: { canonical },
   openGraph: {
-    title: "美股科技财报日历｜IDC Atlas",
+    title: "全球科技财报日历｜IDC Atlas",
     description: "追踪云厂商、半导体与数据中心基础设施公司的关键财报节点与 CAPEX 关注项。",
     url: canonical,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "美股科技财报日历｜IDC Atlas",
+    title: "全球科技财报日历｜IDC Atlas",
     description: "追踪云厂商、半导体与数据中心基础设施公司的关键财报节点与 CAPEX 关注项。",
   },
 };
@@ -31,7 +31,7 @@ export default async function CalendarPage() {
     "@graph": [
       {
         "@type": "CollectionPage",
-        name: "美股科技财报日历",
+        name: "全球科技财报日历",
         description: metadata.description,
         url: canonical,
         inLanguage: "zh-CN",
@@ -51,7 +51,7 @@ export default async function CalendarPage() {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "IDC Atlas", item: "https://idc-index.com/" },
-          { "@type": "ListItem", position: 2, name: "美股科技财报日历", item: canonical },
+          { "@type": "ListItem", position: 2, name: "全球科技财报日历", item: canonical },
         ],
       },
     ],

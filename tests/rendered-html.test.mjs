@@ -527,13 +527,15 @@ test("keeps the homepage earnings watch compact and reachable", async () => {
   assert.match(calendarClient, /calendarEvents\?: CalendarEvent\[\]/);
   assert.match(calendarClient, /即将发布/);
   assert.match(calendarClient, /已发布结论/);
-  assert.match(calendarClient, /event\.conclusion && new Date\(event\.startsAt\)/);
+  assert.match(calendarClient, /event\.conclusion && event\.startsAt && new Date\(event\.startsAt\)/);
   const worker = await readFile(new URL("../worker/index.ts", import.meta.url), "utf8");
   assert.match(worker, /function featuredCalendar/);
   assert.match(worker, /return \[\.\.\.upcoming, \.\.\.concluded\]\.slice\(0, 6\)/);
   assert.match(worker, /calendarEvents: allCalendarEvents/);
   assert.match(worker, /new URL\(request\.url\)\.pathname === "\/calendar"/);
   assert.match(worker, /calendarEvents: firstItems\(payload\.calendarEvents, 20\)/);
+  assert.match(worker, /tencent-q2-2026/);
+  assert.match(worker, /alibaba-june-quarter-2026-pending/);
   assert.match(source, /href="\/calendar"/);
   assert.match(source, /className="atlas-research-queue" id="columns"/);
   assert.match(source, /className="atlas-company-watch" id="companies"/);
@@ -802,7 +804,7 @@ test("gives the earnings calendar and poster route distinct crawl metadata", asy
   const calendar = await render("/calendar");
   const calendarHtml = await calendar.text();
   assert.match(calendarHtml, /rel="canonical" href="https:\/\/idc-index\.com\/calendar"/i);
-  assert.match(calendarHtml, /property="og:title" content="美股科技财报日历｜IDC Atlas"/i);
+  assert.match(calendarHtml, /property="og:title" content="全球科技财报日历｜IDC Atlas"/i);
   assert.match(calendarHtml, /"@type":"CollectionPage"/);
   assert.match(calendarHtml, /"@type":"ItemList"/);
   assert.match(calendarHtml, /"@type":"BreadcrumbList"/);

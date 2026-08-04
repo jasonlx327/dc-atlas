@@ -256,7 +256,8 @@ type TrackedSource = {
 
 type CalendarEvent = {
   id: string;
-  startsAt: string;
+  startsAt?: string;
+  dateLabel?: string;
   company: string;
   ticker: string;
   sector: string;
@@ -773,6 +774,28 @@ function coolingProgress(): SourceRecord[] {
       sourceName: "Vertiv",
       sourceUrl: "https://www.vertiv.com/en-us/about/news-and-events/corporate-news/2026/vertiv-expands-global-manufacturing-capacity-for-ai-ready-data-center-cooling-solutions/",
       note: "Tognana 园区扩建将提升冷水机制造和集成测试能力；新大型实验室计划于 2027 年初完成，用于验证高密度负载下与液冷系统的集成。",
+    },
+    {
+      id: "nvidia-vera-rubin-production-ramp",
+      title: "NVIDIA 称 Vera Rubin 已进入全面量产爬坡",
+      subject: "NVIDIA Vera Rubin / AI Factory supply chain",
+      metric: "350+ 工厂 · 30 个国家",
+      status: "公司称量产爬坡 · 发货计划待执行",
+      publishedAt: "2026-05-31",
+      sourceName: "NVIDIA",
+      sourceUrl: "https://nvidianews.nvidia.com/news/vera-rubin-full-production-agentic-ai-factory",
+      note: "NVIDIA称Vera Rubin系统正由生态伙伴规模制造，并计划于秋季开始生产出货；公告未披露冷板供应商名单、单家份额或机柜订单量。",
+    },
+    {
+      id: "cooler-master-nvidia-mgx-coldplates",
+      title: "Cooler Master 称为 NVIDIA MGX 机架供应冷板与歧管",
+      subject: "Cooler Master / NVIDIA MGX liquid cooling",
+      metric: "冷板 · 冷却液分配歧管",
+      status: "公司表述 · Rubin 份额未披露",
+      publishedAt: "2026-05-26",
+      sourceName: "Cooler Master",
+      sourceUrl: "https://www.coolermaster.com/en-global/newsroom/cooler-master-advances-global-ai-cooling-infrastructure.html",
+      note: "公司称其冷板和歧管用于NVIDIA MGX机架，但没有公布Vera Rubin指定供应商资格、订单金额、机柜数或任何60%份额。",
     },
     {
       id: "odcc-liquid-research",
@@ -2183,7 +2206,9 @@ function calendarEvents(): CalendarEvent[] {
     { id: "core-scientific-q2-2026", startsAt: "2026-07-28T12:30:00.000Z", company: "Core Scientific", ticker: "CORZ", sector: "高密度托管 / AI 数据中心", description: "从数字资产基础设施转向高密度 AI 托管，容量改造和计费爬坡是主要观察点。", focus: "已签约容量、已计费 MW、托管收入与改造交付", sourceName: "Core Scientific Investor Relations · Q2 results", sourceUrl: "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results", conclusion: { summary: "Q2 托管收入为 1.367 亿美元；截至 7 月中旬，437MW 已开始计费，已签约客户电力容量约 1.1GW。后续检验是其余合同容量按站点改造、交付并进入计费。", summaryEn: "Q2 colocation revenue was $136.7M. By mid-July, 437MW was billing and leased customer power capacity was approximately 1.1GW. The next test is site-by-site conversion, delivery and billing of the remaining contracted capacity.", sourceName: "Core Scientific Investor Relations · Q2 2026 results", sourceUrl: "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results" } },
     { id: "hut8-q2-2026", startsAt: "2026-08-04T12:30:00.000Z", company: "Hut 8", ticker: "HUT", sector: "电力 / AI 数据中心", description: "以电力资源、园区开发和长期租约推进 AI 数据中心平台。", focus: "Beacon Point / River Bend 建设、融资、交付与客户集中度", sourceName: "Hut 8 · Q2 event announcement", sourceUrl: "https://www.hut8.com/news-insights/press-releases/hut-8-schedules-second-quarter-2026-earnings-release-and-conference-call" },
     { id: "amd-q2-2026", startsAt: "2026-08-04T21:00:00.000Z", company: "AMD", ticker: "AMD", sector: "AI 加速器 / CPU", description: "Instinct、EPYC 与 Helios 机架级平台是 NVIDIA 之外的重要开放 AI 基础设施路线。", focus: "数据中心收入、MI350/MI450 交付、Helios 节奏与全年指引", sourceName: "AMD Investor Relations · Q2 webcast", sourceUrl: "https://ir.amd.com/news-events/press-releases/detail/1289/amd-to-report-fiscal-second-quarter-2026-financial-results" },
+    { id: "tencent-q2-2026", startsAt: "2026-08-12T12:00:00.000Z", company: "腾讯", ticker: "0700.HK", sector: "互联网 / 云计算 / AI", description: "腾讯的企业服务、混元模型与内部 AI 部署共同决定其算力、网络与云资源需求的下一组披露。", focus: "企业服务收入、混元与 AI 应用、云与算力投入、资本开支", sourceName: "Tencent Investor Kit & Calendar · Q2 2026 results", sourceUrl: "https://www.tencent.com/investors/investor-kit-calendar/" },
     { id: "energy-vault-q2-2026", startsAt: "2026-08-11T20:30:00.000Z", company: "Energy Vault", ticker: "NRGV", sector: "储能 / AI 基础设施", description: "储能平台正延伸至 AI 数据中心供电与模块化机房建设。", focus: "Snyder 项目进度、储能资产与 AI 基础设施资本安排", sourceName: "Energy Vault · Q2 event announcement", sourceUrl: "https://www.energyvault.com/newsroom/energy-vault-schedules-conference-call-to-discuss-second-quarter-2026-financial-results" },
+    { id: "alibaba-june-quarter-2026-pending", dateLabel: "待官方公告", company: "阿里巴巴", ticker: "BABA / 9988.HK", sector: "电商 / 云计算 / AI", description: "阿里六月季度业绩日期尚未由公司投资者关系页面公布；其云与 AI 披露会与既有阿里云专栏持续衔接。", focus: "阿里云外部客户收入、AI 产品商业化、基础设施投入与自研芯片交付", sourceName: "Alibaba Group Investor Relations · reporting date pending", sourceUrl: "https://www.alibabagroup.com/en-US/ir-news-filings" },
     { id: "china-mobile-h1-2026", startsAt: "2026-08-13T09:00:00.000Z", company: "中国移动", ticker: "600941.SH / 0941.HK", sector: "电信 / 云计算 / 算力网络", description: "国内运营商云、数据中心和算力网络建设的重要披露主体。", focus: "算力网络、IDC、移动云收入与资本开支", sourceName: "中国移动 / 上海证券交易所 · 半年报业绩说明会公告", sourceUrl: "https://static.cninfo.com.cn/finalpage/2026-08-04/1225453726.PDF" },
   ];
 }
@@ -2191,11 +2216,11 @@ function calendarEvents(): CalendarEvent[] {
 function featuredCalendar(now = new Date()): CalendarEvent[] {
   const events = calendarEvents();
   const upcoming = events
-    .filter((event) => new Date(event.startsAt).getTime() >= now.getTime())
-    .sort((a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime());
+    .filter((event) => event.startsAt && new Date(event.startsAt).getTime() >= now.getTime())
+    .sort((a, b) => new Date(a.startsAt!).getTime() - new Date(b.startsAt!).getTime());
   const concluded = events
-    .filter((event) => event.conclusion && new Date(event.startsAt).getTime() < now.getTime())
-    .sort((a, b) => new Date(b.startsAt).getTime() - new Date(a.startsAt).getTime());
+    .filter((event) => event.conclusion && event.startsAt && new Date(event.startsAt).getTime() < now.getTime())
+    .sort((a, b) => new Date(b.startsAt!).getTime() - new Date(a.startsAt!).getTime());
   return [...upcoming, ...concluded].slice(0, 6);
 }
 
@@ -2368,6 +2393,7 @@ function policyIndex(): PolicyIndexRecord[] {
 function rumorWatch(news: NewsItem[]): RumorWatchItem[] {
   const mediaSource = /reuters|bloomberg|marketwatch|cnbc|financial times|the information|wall street journal/i;
   const rumorLanguage = /rumou?r|report(?:ed|s)?|sources?|plans?|consider(?:s|ing)?|expects?|may |could |in talks|据称|消息人士|传闻|拟|考虑|计划|或将/i;
+  const orderSignal = /order|contract|lease|supply|procurement|deployment|shipment|delivery|客户|订单|合同|租约|供货|采购|交付|出货|中标/i;
   const liveCandidates = news
     .filter((item) => mediaSource.test(item.sourceName ?? "") && rumorLanguage.test(`${item.title} ${item.summary}`))
     .sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime())
@@ -2398,7 +2424,11 @@ function rumorWatch(news: NewsItem[]): RumorWatchItem[] {
       seen.add(item.sourceUrl);
       return true;
     })
-    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .sort((a, b) => {
+      const aOrder = orderSignal.test(`${a.title} ${a.summary} ${a.sourceNote}`) ? 1 : 0;
+      const bOrder = orderSignal.test(`${b.title} ${b.summary} ${b.sourceNote}`) ? 1 : 0;
+      return bOrder - aOrder || new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+    })
     .slice(0, 12);
 }
 

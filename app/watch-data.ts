@@ -193,6 +193,26 @@ export const POLICY_BRIEFS: PolicyIndexRecord[] = [
 
 export const RUMOR_BRIEFS: RumorWatchItem[] = [
   {
+    id: "texas-data-center-interconnection-audit-2026",
+    title: "得州据报暂停不符合新要求的数据中心并网审批",
+    titleEn: "Texas is reported to be pausing data-center interconnection approvals that miss new requirements",
+    summary: "Axios报道称，得州州长 Abbott 要求在审计拟接入 ERCOT 的项目期间，对不符合要求的新数据中心拒绝并网。州政府此前公开的指令要求 PUC 与 ERCOT 评估成本承担、供电能力、用水和社区影响，但本次核验未找到8月3日确认全州“暂停审批”的州政府、PUC或ERCOT原文。",
+    summaryEn: "Axios reported that Governor Abbott directed PUCT and ERCOT to deny interconnection to new data-center projects that do not meet requirements while the proposed pipeline is audited. Earlier public state directives cover cost allocation, capacity, water and community impacts; this review did not locate an August 3 state, PUCT or ERCOT record confirming a blanket statewide approval pause.",
+    publishedAt: "2026-08-03T20:27:32Z",
+    sourceName: "Axios",
+    sourceUrl: "https://www.axios.com/local/san-antonio/2026/08/03/greg-abbott-halts-texas-data-centers-electric-grid",
+    region: "美国",
+    status: "reported",
+    statusLabel: "单一来源报道 · 全面暂停尚未获政府原文确认",
+    statusLabelEn: "Single-source report · blanket pause not confirmed in public government records",
+    sourceCount: 1,
+    entities: ["Greg Abbott", "PUCT", "ERCOT", "Texas data centers"],
+    officialResponse: "州长办公室6月10日指令和7月23日公告确认：数据中心须承担新增电力基础设施成本，PUC/ERCOT需在既有权限下采取行动；公开原文没有确认8月3日开始的全州审批暂停。",
+    officialResponseEn: "The Governor's June 10 directive and July 23 announcement confirm that data centers should fund their incremental power infrastructure and that PUCT/ERCOT should act within existing authority; the public records reviewed do not confirm a statewide approval pause beginning August 3.",
+    sourceNote: "核心“暂停审批”表述来自Axios单一来源的公开报道。得州政府、PUC与ERCOT的可访问原文用于核对既有政策背景，不能替代对该新表述的正式确认。",
+    sourceNoteEn: "The core pause claim is from a single Axios report. Accessible Texas government, PUCT and ERCOT records establish the prior policy context but do not substitute for formal confirmation of the new wording.",
+  },
+  {
     id: "cxmt-beijing-second-dram-fab-financing-2026",
     title: "长鑫科技据报考虑在北京亦庄建设第二座DRAM晶圆厂",
     titleEn: "CXMT is reported to be considering a second DRAM fab in Beijing",

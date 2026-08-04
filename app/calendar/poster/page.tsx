@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CalendarClient from "../calendar-client";
 
 export const metadata: Metadata = {
-  title: "美股科技财报日历海报｜IDC Atlas",
+  title: "全球科技财报日历海报｜IDC Atlas",
   robots: { index: false, follow: false },
 };
 
