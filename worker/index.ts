@@ -13,7 +13,7 @@ const AIHOT_USER_AGENT = "aihot-skill/0.3.6 (+https://aihot.virxact.com/aihot-sk
 const CWW_ENDPOINT = "https://cwwindex.today/data/latest.json";
 const OPENROUTER_MODELS_ENDPOINT = "https://openrouter.ai/api/v1/models?sort=top-weekly";
 const ARENA_CODE_ENDPOINT = "https://arena.ai/leaderboard/code/webdev";
-const CONTENT_REVIEWED_AT = "2026-08-03";
+const CONTENT_REVIEWED_AT = "2026-08-04";
 const LLMS_TXT = `# IDC Atlas
 
 > IDC Atlas is a bilingual, source-first intelligence site for global data-center construction, AI infrastructure, power, cooling, networking and China AI silicon. Content is for public-information research and industry observation only, not investment advice.
@@ -594,6 +594,17 @@ function supernodeProducts(): SupernodeProduct[] {
 function capacityRadar(): SourceRecord[] {
   return [
     {
+      id: "core-scientific-q2-2026-capacity",
+      title: "Core Scientific Q2 更新已签约与已计费高密度托管容量",
+      subject: "Core Scientific · Nasdaq: CORZ / AMD",
+      metric: "约 1.1GW 已签约 · 437MW 已计费",
+      status: "合同执行 / 已计费容量扩张",
+      publishedAt: "2026-07-28",
+      sourceName: "Core Scientific Investor Relations",
+      sourceUrl: "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results",
+      note: "公司披露与 AMD 的合作潜在支持最高 2.5GW，其中五个站点约 530MW 已由 15 年协议锚定；截至 7 月中旬，已计费容量为 437MW。",
+    },
+    {
       id: "meta-blackrock-el-paso-1gw",
       title: "Meta 与 BlackRock 设立 El Paso 数据中心合资平台",
       subject: "Meta · Nasdaq: META / BlackRock · NYSE: BLK",
@@ -1170,6 +1181,24 @@ function positiveIdcNews(liveNews: NewsItem[], records: SourceRecord[]): NewsIte
 function constructionPulse(): NewsItem[] {
   const items: NewsItem[] = [
     {
+      id: "core-scientific-q2-2026-capacity",
+      title: "Core Scientific 已签约客户电力容量升至约 1.1GW",
+      summary: "公司 Q2 披露，截至 7 月中旬已有 437MW 容量开始计费；与 AMD 的合作潜在支持最高 2.5GW，其中五个站点约 530MW 已由 15 年协议锚定。",
+      publishedAt: "2026-07-28T08:30:00-04:00",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results",
+      sourceUrl: "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results",
+      sourceName: "Core Scientific Investor Relations",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "已签约 / 已计费容量更新",
+      scale: "约 1.1GW 已签约 · 437MW 已计费",
+      listedTicker: "Core Scientific · CORZ",
+      whyItMatters: "已签约容量与已计费容量的并列披露把合同管线和实际服务启动区分开来；后续关键是其余站点改造、交付和计费爬坡。",
+    },
+    {
       id: "meta-blackrock-el-paso-1gw",
       title: "Meta 与 BlackRock 设立 El Paso 1GW 数据中心合资平台",
       summary: "双方计划共同持有并开发 Meta 在 El Paso 的在建园区；总开发成本约 140 亿美元，Meta 将作为初始唯一租户，容量计划自 2028 年起上线。",
@@ -1647,6 +1676,42 @@ function constructionPulse(): NewsItem[] {
 function listedCompanyPulse(): NewsItem[] {
   const items: NewsItem[] = [
     {
+      id: "china-mobile-2026-h1-results-event",
+      title: "中国移动将于 8 月 13 日披露半年报并召开业绩说明会",
+      summary: "公司公告拟于 8 月 13 日披露 2026 年半年度报告，并于当日 17:00–18:30 通过上证路演中心等渠道召开业绩说明会。",
+      publishedAt: "2026-08-03T00:00:00+08:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://static.cninfo.com.cn/finalpage/2026-08-04/1225453726.PDF",
+      sourceUrl: "https://static.cninfo.com.cn/finalpage/2026-08-04/1225453726.PDF",
+      sourceName: "中国移动 / 上海证券交易所",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "中国",
+      milestone: "半年报披露日期确认",
+      scale: "2026 H1 · 8 月 13 日",
+      listedTicker: "中国移动 · 600941.SH / 0941.HK",
+      whyItMatters: "半年报将提供算力网络、数据中心、云业务和资本开支的最新正式口径；在披露前不预判经营结果。",
+    },
+    {
+      id: "core-scientific-q2-2026-results",
+      title: "Core Scientific Q2 已签约容量约 1.1GW，437MW 已开始计费",
+      summary: "公司披露 Q2 托管收入为 1.367 亿美元；截至 7 月中旬，437MW 容量已计费，已签约客户电力容量约 1.1GW。",
+      publishedAt: "2026-07-28T08:30:00-04:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results",
+      sourceUrl: "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results",
+      sourceName: "Core Scientific Investor Relations",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "Q2 业绩与托管容量更新",
+      scale: "托管收入 $1.367 亿 · 437MW 已计费",
+      listedTicker: "Core Scientific · CORZ",
+      whyItMatters: "托管收入与已计费 MW 同步增加，说明部分高密度容量已从合同和改造阶段进入服务；其余已签约容量仍需按站点验证交付。",
+    },
+    {
       id: "vertiv-q2-2026-results",
       title: "Vertiv Q2 营收增长 24%，上调全年收入与利润指引",
       summary: "Q2 营收为 32.74 亿美元，同比增长 24%，其中有机增长 18%；公司把全年营收指引中值提高至 140 亿美元，并继续扩充产能以应对 AI 与通用计算基础设施需求。",
@@ -2115,7 +2180,11 @@ function calendarEvents(): CalendarEvent[] {
     { id: "microsoft-fy26-q4", startsAt: "2026-07-29T20:00:00.000Z", company: "Microsoft", ticker: "MSFT", sector: "云计算 / 软件", description: "Azure 是全球主要云平台，Copilot 与 AI 服务驱动基础设施扩张。", focus: "Azure 需求、资本开支、融资租赁与供给受限表述", sourceName: "Microsoft Investor Relations · FY26 Q4 results", sourceUrl: "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast", conclusion: { summary: "FY26 Q4 Azure 增长 43%，下一季度指引约 45%（固定汇率）；当季 CAPEX 为 410 亿美元，下一季度预计超过 500 亿美元。电话会确认需求仍高于供给，FY27 CAPEX 将同比增长；2026 年约 1,750 亿美元的新口径主要来自数据中心租赁分类变化，不代表实际建设计划下调。", summaryEn: "FY26 Q4 Azure grew 43%, with Q1 guided to roughly 45% in constant currency. Quarterly capex was $41B and Q1 is expected above $50B. Management said demand still exceeds supply and FY27 capex will grow; the revised ~$175B calendar-2026 presentation mainly reflects data-center lease reclassification, not a reduction in underlying investment plans.", sourceName: "Microsoft FY26 Q4 results & earnings call", sourceUrl: "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4" } },
     { id: "arm-q1-fy27", startsAt: "2026-07-29T21:00:00.000Z", company: "Arm", ticker: "ARM", sector: "芯片 IP", description: "CPU 架构授权龙头，AI 服务器与移动芯片的重要底层技术提供商。", focus: "数据中心授权收入、AI 服务器渗透与客户产品节奏", sourceName: "Arm Investor Relations", sourceUrl: "https://investors.arm.com/financials/quarterly-annual-results" },
     { id: "amazon-q2-2026", startsAt: "2026-07-30T21:00:00.000Z", company: "Amazon", ticker: "AMZN", sector: "电商 / 云计算", description: "AWS 是全球最大的云服务商之一，AI 基础设施投资的核心风向标。", focus: "AWS 增长、基础设施 CAPEX 与 AI 数据中心建设", sourceName: "Amazon Investor Relations · Q2 results", sourceUrl: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx", conclusion: { summary: "AWS Q2 营收同比增长 37% 至 422 亿美元，为 18 个季度以来最快增速；过去 12 个月资本性资产采购净额升至 1,690 亿美元，自由现金流转为流出 76 亿美元，主要由 AI 投资增加推动。", summaryEn: "AWS Q2 revenue rose 37% to $42.2B, its fastest growth in 18 quarters. Trailing-12-month purchases of property and equipment, net, reached $169.0B; free cash flow moved to a $7.6B outflow, primarily reflecting higher AI investment.", sourceName: "Amazon Q2 2026 results", sourceUrl: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx" } },
+    { id: "core-scientific-q2-2026", startsAt: "2026-07-28T12:30:00.000Z", company: "Core Scientific", ticker: "CORZ", sector: "高密度托管 / AI 数据中心", description: "从数字资产基础设施转向高密度 AI 托管，容量改造和计费爬坡是主要观察点。", focus: "已签约容量、已计费 MW、托管收入与改造交付", sourceName: "Core Scientific Investor Relations · Q2 results", sourceUrl: "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results", conclusion: { summary: "Q2 托管收入为 1.367 亿美元；截至 7 月中旬，437MW 已开始计费，已签约客户电力容量约 1.1GW。后续检验是其余合同容量按站点改造、交付并进入计费。", summaryEn: "Q2 colocation revenue was $136.7M. By mid-July, 437MW was billing and leased customer power capacity was approximately 1.1GW. The next test is site-by-site conversion, delivery and billing of the remaining contracted capacity.", sourceName: "Core Scientific Investor Relations · Q2 2026 results", sourceUrl: "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results" } },
+    { id: "hut8-q2-2026", startsAt: "2026-08-04T12:30:00.000Z", company: "Hut 8", ticker: "HUT", sector: "电力 / AI 数据中心", description: "以电力资源、园区开发和长期租约推进 AI 数据中心平台。", focus: "Beacon Point / River Bend 建设、融资、交付与客户集中度", sourceName: "Hut 8 · Q2 event announcement", sourceUrl: "https://www.hut8.com/news-insights/press-releases/hut-8-schedules-second-quarter-2026-earnings-release-and-conference-call" },
     { id: "amd-q2-2026", startsAt: "2026-08-04T21:00:00.000Z", company: "AMD", ticker: "AMD", sector: "AI 加速器 / CPU", description: "Instinct、EPYC 与 Helios 机架级平台是 NVIDIA 之外的重要开放 AI 基础设施路线。", focus: "数据中心收入、MI350/MI450 交付、Helios 节奏与全年指引", sourceName: "AMD Investor Relations · Q2 webcast", sourceUrl: "https://ir.amd.com/news-events/press-releases/detail/1289/amd-to-report-fiscal-second-quarter-2026-financial-results" },
+    { id: "energy-vault-q2-2026", startsAt: "2026-08-11T20:30:00.000Z", company: "Energy Vault", ticker: "NRGV", sector: "储能 / AI 基础设施", description: "储能平台正延伸至 AI 数据中心供电与模块化机房建设。", focus: "Snyder 项目进度、储能资产与 AI 基础设施资本安排", sourceName: "Energy Vault · Q2 event announcement", sourceUrl: "https://www.energyvault.com/newsroom/energy-vault-schedules-conference-call-to-discuss-second-quarter-2026-financial-results" },
+    { id: "china-mobile-h1-2026", startsAt: "2026-08-13T09:00:00.000Z", company: "中国移动", ticker: "600941.SH / 0941.HK", sector: "电信 / 云计算 / 算力网络", description: "国内运营商云、数据中心和算力网络建设的重要披露主体。", focus: "算力网络、IDC、移动云收入与资本开支", sourceName: "中国移动 / 上海证券交易所 · 半年报业绩说明会公告", sourceUrl: "https://static.cninfo.com.cn/finalpage/2026-08-04/1225453726.PDF" },
   ];
 }
 
