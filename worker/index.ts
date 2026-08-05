@@ -13,7 +13,7 @@ const AIHOT_USER_AGENT = "aihot-skill/0.3.6 (+https://aihot.virxact.com/aihot-sk
 const CWW_ENDPOINT = "https://cwwindex.today/data/latest.json";
 const OPENROUTER_MODELS_ENDPOINT = "https://openrouter.ai/api/v1/models?sort=top-weekly";
 const ARENA_CODE_ENDPOINT = "https://arena.ai/leaderboard/code/webdev";
-const CONTENT_REVIEWED_AT = "2026-08-04";
+const CONTENT_REVIEWED_AT = "2026-08-05";
 const LLMS_TXT = `# IDC Atlas
 
 > IDC Atlas is a bilingual, source-first intelligence site for global data-center construction, AI infrastructure, power, cooling, networking and China AI silicon. Content is for public-information research and industry observation only, not investment advice.
@@ -594,6 +594,17 @@ function supernodeProducts(): SupernodeProduct[] {
 
 function capacityRadar(): SourceRecord[] {
   return [
+    {
+      id: "hut8-q2-2026-construction",
+      title: "Hut 8 Q2 将两座 AI 园区 1,330MW 电力容量推进至在建",
+      subject: "Hut 8 · Nasdaq: HUT",
+      metric: "949MW IT 已签约 · 1,330MW 电力容量在建",
+      status: "合同签署 / 公用事业容量在建",
+      publishedAt: "2026-08-04",
+      sourceName: "Hut 8 SEC 8-K / Q2 results",
+      sourceUrl: "https://cdn.kscope.io/e784885ee381047a57f1906fc12d4ad4.html",
+      note: "公司披露 River Bend 330MW 与 Beacon Point 1,000MW 公用事业容量处于施工阶段，首个数据厅目标分别于 2027 年二、三季度交付；该口径不等同于已投运 IT 容量。",
+    },
     {
       id: "core-scientific-q2-2026-capacity",
       title: "Core Scientific Q2 更新已签约与已计费高密度托管容量",
@@ -1204,6 +1215,24 @@ function positiveIdcNews(liveNews: NewsItem[], records: SourceRecord[]): NewsIte
 function constructionPulse(): NewsItem[] {
   const items: NewsItem[] = [
     {
+      id: "hut8-q2-2026-construction",
+      title: "Hut 8 两座 AI 园区共有 1,330MW 电力容量进入施工",
+      summary: "公司 Q2 披露 949MW IT 容量已签约，River Bend 与 Beacon Point 合计 1,330MW 公用事业容量处于施工阶段；首个数据厅目标分别于 2027 年二、三季度交付。",
+      publishedAt: "2026-08-04",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://cdn.kscope.io/e784885ee381047a57f1906fc12d4ad4.html",
+      sourceUrl: "https://cdn.kscope.io/e784885ee381047a57f1906fc12d4ad4.html",
+      sourceName: "Hut 8 SEC 8-K / Q2 results",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "在建容量与交付时间更新",
+      scale: "949MW IT 已签约 · 1,330MW 电力容量在建",
+      listedTicker: "Hut 8 · HUT",
+      whyItMatters: "签约 IT 容量与在建公用事业容量显示两座园区已进入合同和施工执行期，但仍需按 2027 年数据厅交付、通电与计费节点验证转化。",
+    },
+    {
       id: "core-scientific-q2-2026-capacity",
       title: "Core Scientific 已签约客户电力容量升至约 1.1GW",
       summary: "公司 Q2 披露，截至 7 月中旬已有 437MW 容量开始计费；与 AMD 的合作潜在支持最高 2.5GW，其中五个站点约 530MW 已由 15 年协议锚定。",
@@ -1698,6 +1727,42 @@ function constructionPulse(): NewsItem[] {
 
 function listedCompanyPulse(): NewsItem[] {
   const items: NewsItem[] = [
+    {
+      id: "amd-q2-2026-results",
+      title: "AMD Q2 数据中心收入 67 亿美元，Helios 开始爬坡",
+      summary: "公司 Q2 数据中心收入为 67 亿美元，同比增长 107%；管理层称 Helios 机架级平台开始爬坡，并预计 Q3 公司总收入约 130 亿美元，上下浮动 3 亿美元。",
+      publishedAt: "2026-08-04",
+      category: "idc-company",
+      score: null,
+      permalink: "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000121/amd-20260804.htm",
+      sourceUrl: "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000121/amd-20260804.htm",
+      sourceName: "AMD SEC 8-K / Q2 results",
+      signal: "hardware",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "Q2 业绩与 Helios 爬坡更新",
+      scale: "数据中心收入 $67 亿 · 同比 +107%",
+      listedTicker: "AMD · AMD",
+      whyItMatters: "数据中心收入和 Helios 爬坡为开放 AI 基础设施需求提供了公司级读数；爬坡不等同于客户部署，后续仍需验证 MI400 系列与整机架交付。",
+    },
+    {
+      id: "hut8-q2-2026-results",
+      title: "Hut 8 Q2 披露 949MW 已签约 IT 容量，1,330MW 电力容量在建",
+      summary: "公司披露前两座 AI 园区共有 949MW 已签约 IT 容量；River Bend 与 Beacon Point 合计 1,330MW 公用事业容量处于施工阶段，首个数据厅目标于 2027 年二、三季度交付。",
+      publishedAt: "2026-08-04",
+      category: "idc-company",
+      score: null,
+      permalink: "https://cdn.kscope.io/e784885ee381047a57f1906fc12d4ad4.html",
+      sourceUrl: "https://cdn.kscope.io/e784885ee381047a57f1906fc12d4ad4.html",
+      sourceName: "Hut 8 SEC 8-K / Q2 results",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "Q2 合同与建设进度更新",
+      scale: "949MW IT 已签约 · 1,330MW 电力容量在建",
+      listedTicker: "Hut 8 · HUT",
+      whyItMatters: "披露把已签约 IT 容量与公用事业施工容量分开；在 2027 年交付、通电和计费前，不把这些数字视为运营容量。",
+    },
     {
       id: "china-mobile-2026-h1-results-event",
       title: "中国移动将于 8 月 13 日披露半年报并召开业绩说明会",
@@ -2205,8 +2270,8 @@ function calendarEvents(): CalendarEvent[] {
     { id: "amazon-q2-2026", startsAt: "2026-07-30T21:00:00.000Z", company: "Amazon", ticker: "AMZN", sector: "电商 / 云计算", description: "AWS 是全球最大的云服务商之一，AI 基础设施投资的核心风向标。", focus: "AWS 增长、基础设施 CAPEX 与 AI 数据中心建设", sourceName: "Amazon Investor Relations · Q2 results", sourceUrl: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx", conclusion: { summary: "AWS Q2 营收同比增长 37% 至 422 亿美元，为 18 个季度以来最快增速；过去 12 个月资本性资产采购净额升至 1,690 亿美元，自由现金流转为流出 76 亿美元，主要由 AI 投资增加推动。", summaryEn: "AWS Q2 revenue rose 37% to $42.2B, its fastest growth in 18 quarters. Trailing-12-month purchases of property and equipment, net, reached $169.0B; free cash flow moved to a $7.6B outflow, primarily reflecting higher AI investment.", sourceName: "Amazon Q2 2026 results", sourceUrl: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx" } },
     { id: "core-scientific-q2-2026", startsAt: "2026-07-28T12:30:00.000Z", company: "Core Scientific", ticker: "CORZ", sector: "高密度托管 / AI 数据中心", description: "从数字资产基础设施转向高密度 AI 托管，容量改造和计费爬坡是主要观察点。", focus: "已签约容量、已计费 MW、托管收入与改造交付", sourceName: "Core Scientific Investor Relations · Q2 results", sourceUrl: "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results", conclusion: { summary: "Q2 托管收入为 1.367 亿美元；截至 7 月中旬，437MW 已开始计费，已签约客户电力容量约 1.1GW。后续检验是其余合同容量按站点改造、交付并进入计费。", summaryEn: "Q2 colocation revenue was $136.7M. By mid-July, 437MW was billing and leased customer power capacity was approximately 1.1GW. The next test is site-by-site conversion, delivery and billing of the remaining contracted capacity.", sourceName: "Core Scientific Investor Relations · Q2 2026 results", sourceUrl: "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results" } },
     { id: "palantir-q2-2026", startsAt: "2026-08-03T21:00:00.000Z", company: "Palantir", ticker: "PLTR", sector: "企业 AI / 数据平台", description: "企业 AI 平台提供商；其“主权 AI”框架围绕客户对数据、工作流、模型选择和后训练权重的控制。", focus: "美国商业收入、TCV/RDV 转换、受控推理部署与托管算力成本", sourceName: "Palantir Investor Relations · Q2 results", sourceUrl: "https://investors.palantir.com/events.html", conclusion: { summary: "Q2 营收为 19.35 亿美元，同比增 93%；美国商业收入为 7.64 亿美元，同比增 149%，美国商业 TCV 为 21.32 亿美元。电话会强调“主权 AI”，但未披露 GPU、机柜、MW 或数据中心订单；下一步核验合同转收入与生产部署规模。", summaryEn: "Q2 revenue was $1.935B, up 93% year over year; U.S. commercial revenue was $764M, up 149%, and U.S. commercial TCV was $2.132B. The call emphasized sovereign AI but disclosed no GPUs, racks, MW or data-center order; next checks are contract conversion and production-deployment scale.", sourceName: "Palantir Q2 2026 SEC 8-K & call materials", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000039/a2026q2ex991pressrelease.htm" } },
-    { id: "hut8-q2-2026", startsAt: "2026-08-04T12:30:00.000Z", company: "Hut 8", ticker: "HUT", sector: "电力 / AI 数据中心", description: "以电力资源、园区开发和长期租约推进 AI 数据中心平台。", focus: "Beacon Point / River Bend 建设、融资、交付与客户集中度", sourceName: "Hut 8 · Q2 event announcement", sourceUrl: "https://www.hut8.com/news-insights/press-releases/hut-8-schedules-second-quarter-2026-earnings-release-and-conference-call" },
-    { id: "amd-q2-2026", startsAt: "2026-08-04T21:00:00.000Z", company: "AMD", ticker: "AMD", sector: "AI 加速器 / CPU", description: "Instinct、EPYC 与 Helios 机架级平台是 NVIDIA 之外的重要开放 AI 基础设施路线。", focus: "数据中心收入、MI350/MI450 交付、Helios 节奏与全年指引", sourceName: "AMD Investor Relations · Q2 webcast", sourceUrl: "https://ir.amd.com/news-events/press-releases/detail/1289/amd-to-report-fiscal-second-quarter-2026-financial-results" },
+    { id: "hut8-q2-2026", startsAt: "2026-08-04T12:30:00.000Z", company: "Hut 8", ticker: "HUT", sector: "电力 / AI 数据中心", description: "以电力资源、园区开发和长期租约推进 AI 数据中心平台。", focus: "Beacon Point / River Bend 建设、融资、交付与客户集中度", sourceName: "Hut 8 SEC 8-K & Q2 results", sourceUrl: "https://cdn.kscope.io/e784885ee381047a57f1906fc12d4ad4.html", conclusion: { summary: "前两座 AI 园区共有 949MW 已签约 IT 容量；River Bend 与 Beacon Point 合计 1,330MW 公用事业容量处于施工阶段，首个数据厅目标分别于 2027 年二、三季度交付。下一项验证是按计划交付、通电并进入计费。", summaryEn: "The first two AI campuses have 949MW of contracted IT capacity. River Bend and Beacon Point have 1,330MW of utility capacity in active construction, with initial data-hall delivery targeted for Q2 and Q3 2027, respectively. The next test is delivery, energization and billing.", sourceName: "Hut 8 SEC 8-K & Q2 results", sourceUrl: "https://cdn.kscope.io/e784885ee381047a57f1906fc12d4ad4.html" } },
+    { id: "amd-q2-2026", startsAt: "2026-08-04T21:00:00.000Z", company: "AMD", ticker: "AMD", sector: "AI 加速器 / CPU", description: "Instinct、EPYC 与 Helios 机架级平台是 NVIDIA 之外的重要开放 AI 基础设施路线。", focus: "数据中心收入、MI350/MI450 交付、Helios 节奏与全年指引", sourceName: "AMD SEC 8-K & Q2 results", sourceUrl: "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000121/amd-20260804.htm", conclusion: { summary: "Q2 数据中心收入为 67 亿美元，同比增长 107%；管理层称 Helios 开始爬坡，并预计 Q3 公司总收入约 130 亿美元，上下浮动 3 亿美元。下一项验证是 MI400 系列与 Helios 的实际交付和客户部署。", summaryEn: "Q2 Data Center revenue was $6.7B, up 107% year over year. Management said Helios is beginning to ramp and guided Q3 company revenue to about $13.0B, plus or minus $0.3B. The next test is actual MI400-series and Helios delivery and customer deployment.", sourceName: "AMD SEC 8-K & Q2 results", sourceUrl: "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000121/amd-20260804.htm" } },
     { id: "tencent-q2-2026", startsAt: "2026-08-12T12:00:00.000Z", company: "腾讯", ticker: "0700.HK", sector: "互联网 / 云计算 / AI", description: "腾讯的企业服务、混元模型与内部 AI 部署共同决定其算力、网络与云资源需求的下一组披露。", focus: "企业服务收入、混元与 AI 应用、云与算力投入、资本开支", sourceName: "Tencent Investor Kit & Calendar · Q2 2026 results", sourceUrl: "https://www.tencent.com/investors/investor-kit-calendar/" },
     { id: "energy-vault-q2-2026", startsAt: "2026-08-11T20:30:00.000Z", company: "Energy Vault", ticker: "NRGV", sector: "储能 / AI 基础设施", description: "储能平台正延伸至 AI 数据中心供电与模块化机房建设。", focus: "Snyder 项目进度、储能资产与 AI 基础设施资本安排", sourceName: "Energy Vault · Q2 event announcement", sourceUrl: "https://www.energyvault.com/newsroom/energy-vault-schedules-conference-call-to-discuss-second-quarter-2026-financial-results" },
     { id: "alibaba-june-quarter-2026-pending", dateLabel: "待官方公告", company: "阿里巴巴", ticker: "BABA / 9988.HK", sector: "电商 / 云计算 / AI", description: "阿里六月季度业绩日期尚未由公司投资者关系页面公布；其云与 AI 披露会与既有阿里云专栏持续衔接。", focus: "阿里云外部客户收入、AI 产品商业化、基础设施投入与自研芯片交付", sourceName: "Alibaba Group Investor Relations · reporting date pending", sourceUrl: "https://www.alibabagroup.com/en-US/ir-news-filings" },

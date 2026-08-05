@@ -607,7 +607,10 @@ test("keeps live-data validation in the deployment path", async () => {
   assert.match(liveCheck, /newsStatus !== "ok"/);
   for (const section of ["idcPulse", "listedCompanyNews", "mnaDeals", "capacityRadar", "coolingProgress"]) assert.match(liveCheck, new RegExp(section));
   assert.match(liveCheck, /freshness\.status === "stale"/);
-  assert.match(workerSource, /CONTENT_REVIEWED_AT = "2026-08-04"/);
+  assert.match(workerSource, /CONTENT_REVIEWED_AT = "2026-08-05"/);
+  assert.match(workerSource, /AMD Q2 数据中心收入 67 亿美元/);
+  assert.match(workerSource, /Hut 8 Q2 披露 949MW 已签约 IT 容量/);
+  assert.match(workerSource, /hut8-q2-2026-construction/);
   assert.match(workerSource, /Amazon Q2 AWS 增长 37%/);
   assert.match(workerSource, /Meta Q2 资本开支 311 亿美元/);
   assert.match(workerSource, /Microsoft FY26 Q4 Azure 增长 43%/);
