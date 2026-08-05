@@ -1,0 +1,300 @@
+{
+  "schema_version": "atlas-watch.v1",
+  "generated_at": "2026-08-05T04:50:53.646768+00:00",
+  "stats": {
+    "input_items": 3,
+    "included_items": 3,
+    "excluded_items": 0,
+    "duplicate_items": 0,
+    "clusters": 3,
+    "route_counts": {
+      "rumor_watch": 2,
+      "pulse_candidate": 0,
+      "atlas_research_candidate": 0,
+      "relationship_edges": 1
+    }
+  },
+  "clusters": [
+    {
+      "event_id": "evt-563dfe84b2533d",
+      "event_key": "us|policy-proposal|chinese-optical-transceivers|2026-q3",
+      "label": "Trump administration drafting ban on Chinese data center devices, sources say",
+      "first_seen_at": "2026-08-04T00:00:00-04:00",
+      "last_updated_at": "2026-08-04T00:00:00-04:00",
+      "status": "single-source-report",
+      "entities": [
+        "Federal Communications Commission",
+        "Zhongji Innolight",
+        "Amazon Web Services",
+        "Coherent",
+        "Lumentum",
+        "Amazon"
+      ],
+      "locations": [
+        "United States",
+        "China"
+      ],
+      "event_types": [
+        "policy-proposal"
+      ],
+      "topic_hits": [
+        "capacity-and-projects",
+        "data-center",
+        "networking"
+      ],
+      "materiality_hits": [
+        "commitment"
+      ],
+      "independent_source_count": 1,
+      "observed_source_count": 1,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T2"
+      ],
+      "access_limits": [
+        "restricted"
+      ],
+      "items": [
+        {
+          "item_id": "itm-5d64265e614b12",
+          "title": "Trump administration drafting ban on Chinese data center devices, sources say",
+          "url": "https://reuters.com/world/trump-administration-drafting-ban-chinese-data-center-devices-sources-say-2026-08-04",
+          "origin_url": "",
+          "source_name": "Reuters",
+          "source_id": "reuters",
+          "source_class": "major-media",
+          "evidence_tier": "T2",
+          "independence_group": "reuters",
+          "access": "restricted",
+          "author": "",
+          "published_at": "2026-08-04T00:00:00-04:00",
+          "discovered_at": null,
+          "summary": "Reuters reported that the FCC is drafting a measure that could bar imports of new Chinese optical transceivers used inside data centers. The report cited four people familiar with the matter and said the restriction could still be modified or shelved.",
+          "language": "en",
+          "entities": [
+            "Federal Communications Commission",
+            "Zhongji Innolight",
+            "Amazon Web Services",
+            "Coherent",
+            "Lumentum",
+            "Amazon"
+          ],
+          "locations": [
+            "United States",
+            "China"
+          ],
+          "event_type": "policy-proposal",
+          "event_key": "us|policy-proposal|chinese-optical-transceivers|2026-q3",
+          "stance": "reports",
+          "topic_hits": [
+            "capacity-and-projects",
+            "data-center",
+            "networking"
+          ],
+          "materiality_hits": [
+            "commitment"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": true,
+        "pulse_candidate": false,
+        "atlas_research_candidate": false,
+        "relationship_edges": false
+      },
+      "relationship_edges": [],
+      "claims_to_verify": [
+        {
+          "claim": "Reuters reported that the FCC is drafting a measure that could bar imports of new Chinese optical transceivers used inside data centers. The report cited four people familiar with the matter and said the restriction could still be modified or shelved.",
+          "attribution": "Reuters",
+          "source_item_ids": [
+            "itm-5d64265e614b12"
+          ],
+          "starting_status": "not-determined"
+        }
+      ],
+      "atlas_research_handoff_stub": null,
+      "hold_reasons": []
+    },
+    {
+      "event_id": "evt-6575b5527f751c",
+      "event_key": "spacex|compute-deployment|nvidia|2026-q3",
+      "label": "SpaceX tops revenue expectations in first earnings report after IPO",
+      "first_seen_at": "2026-08-04T00:00:00-04:00",
+      "last_updated_at": "2026-08-04T00:00:00-04:00",
+      "status": "single-source-report",
+      "entities": [
+        "SpaceX",
+        "NVIDIA",
+        "Vera Rubin"
+      ],
+      "locations": [
+        "United States"
+      ],
+      "event_types": [
+        "compute-deployment"
+      ],
+      "topic_hits": [
+        "corporate-event"
+      ],
+      "materiality_hits": [],
+      "independent_source_count": 1,
+      "observed_source_count": 1,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T2"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-1f8abdc01f3cc9",
+          "title": "SpaceX tops revenue expectations in first earnings report after IPO",
+          "url": "https://axios.com/2026/08/04/spacex-earnings-elon-musk",
+          "origin_url": "",
+          "source_name": "Axios",
+          "source_id": "axios.com",
+          "source_class": "major-media",
+          "evidence_tier": "T2",
+          "independence_group": "axios",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-04T00:00:00-04:00",
+          "discovered_at": null,
+          "summary": "Axios reported that Elon Musk said on SpaceX's earnings call that the company had decided to build out its AI infrastructure exclusively with Nvidia chips, citing Vera Rubin. SpaceX's August 4 8-K confirms that results were released but does not contain a full call transcript or the quoted hardware statement.",
+          "language": "en",
+          "entities": [
+            "SpaceX",
+            "NVIDIA",
+            "Vera Rubin"
+          ],
+          "locations": [
+            "United States"
+          ],
+          "event_type": "compute-deployment",
+          "event_key": "spacex|compute-deployment|nvidia|2026-q3",
+          "stance": "reports",
+          "topic_hits": [
+            "corporate-event"
+          ],
+          "materiality_hits": [],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": true,
+        "pulse_candidate": false,
+        "atlas_research_candidate": false,
+        "relationship_edges": true
+      },
+      "relationship_edges": [
+        {
+          "from": "SpaceX",
+          "relation": "plans-to-use",
+          "to": "NVIDIA",
+          "observed_at": "2026-08-04T00:00:00-04:00",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_status": "media-reported",
+          "source_item_ids": [
+            "itm-1f8abdc01f3cc9"
+          ]
+        }
+      ],
+      "claims_to_verify": [
+        {
+          "claim": "Axios reported that Elon Musk said on SpaceX's earnings call that the company had decided to build out its AI infrastructure exclusively with Nvidia chips, citing Vera Rubin. SpaceX's August 4 8-K confirms that results were released but does not contain a full call transcript or the quoted hardware statement.",
+          "attribution": "Axios",
+          "source_item_ids": [
+            "itm-1f8abdc01f3cc9"
+          ],
+          "starting_status": "not-determined"
+        }
+      ],
+      "atlas_research_handoff_stub": null,
+      "hold_reasons": []
+    },
+    {
+      "event_id": "evt-5ffc2642d2d2f2",
+      "event_key": "us|fcc-covered-list-component-proposal|2026-q3",
+      "label": "Chairman Carr proposes to strengthen rules governing dangerous gear",
+      "first_seen_at": "2026-07-01T00:00:00-04:00",
+      "last_updated_at": "2026-07-01T00:00:00-04:00",
+      "status": "stale",
+      "entities": [
+        "Federal Communications Commission",
+        "Covered List"
+      ],
+      "locations": [
+        "United States"
+      ],
+      "event_types": [
+        "policy-proposal"
+      ],
+      "topic_hits": [
+        "capacity-and-projects"
+      ],
+      "materiality_hits": [
+        "commitment"
+      ],
+      "independent_source_count": 1,
+      "observed_source_count": 1,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T0"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-0255bad9bd9308",
+          "title": "Chairman Carr proposes to strengthen rules governing dangerous gear",
+          "url": "https://docs.fcc.gov/public/attachments/DOC-422722A1.pdf",
+          "origin_url": "",
+          "source_name": "Federal Communications Commission",
+          "source_id": "fcc",
+          "source_class": "government",
+          "evidence_tier": "T0",
+          "independence_group": "fcc",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-07-01T00:00:00-04:00",
+          "discovered_at": null,
+          "summary": "The FCC Chairman proposed extending Covered List restrictions to logic-bearing components in equipment authorization and sought comment on broader supply-chain controls. The FCC stated that the item would require full Commission adoption and was not official action when published.",
+          "language": "en",
+          "entities": [
+            "Federal Communications Commission",
+            "Covered List"
+          ],
+          "locations": [
+            "United States"
+          ],
+          "event_type": "policy-proposal",
+          "event_key": "us|fcc-covered-list-component-proposal|2026-q3",
+          "stance": "confirms",
+          "topic_hits": [
+            "capacity-and-projects"
+          ],
+          "materiality_hits": [
+            "commitment"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": false,
+        "pulse_candidate": false,
+        "atlas_research_candidate": false,
+        "relationship_edges": false
+      },
+      "relationship_edges": [],
+      "claims_to_verify": [],
+      "atlas_research_handoff_stub": null,
+      "hold_reasons": []
+    }
+  ],
+  "excluded": [],
+  "duplicates": []
+}

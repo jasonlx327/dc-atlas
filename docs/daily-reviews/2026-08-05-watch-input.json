@@ -1,0 +1,66 @@
+{
+  "items": [
+    {
+      "title": "Trump administration drafting ban on Chinese data center devices, sources say",
+      "url": "https://www.reuters.com/world/trump-administration-drafting-ban-chinese-data-center-devices-sources-say-2026-08-04/",
+      "source_name": "Reuters",
+      "published_at": "2026-08-04T00:00:00-04:00",
+      "summary": "Reuters reported that the FCC is drafting a measure that could bar imports of new Chinese optical transceivers used inside data centers. The report cited four people familiar with the matter and said the restriction could still be modified or shelved.",
+      "language": "en",
+      "entities": ["Federal Communications Commission", "Zhongji Innolight", "Amazon Web Services", "Coherent", "Lumentum"],
+      "locations": ["United States", "China"],
+      "event_type": "policy-proposal",
+      "event_key": "us|policy-proposal|chinese-optical-transceivers|2026-q3",
+      "stance": "reports",
+      "source_class": "major-media",
+      "evidence_tier": "T2",
+      "independence_group": "reuters",
+      "access": "restricted"
+    },
+    {
+      "title": "SpaceX tops revenue expectations in first earnings report after IPO",
+      "url": "https://www.axios.com/2026/08/04/spacex-earnings-elon-musk",
+      "source_name": "Axios",
+      "published_at": "2026-08-04T00:00:00-04:00",
+      "summary": "Axios reported that Elon Musk said on SpaceX's earnings call that the company had decided to build out its AI infrastructure exclusively with Nvidia chips, citing Vera Rubin. SpaceX's August 4 8-K confirms that results were released but does not contain a full call transcript or the quoted hardware statement.",
+      "language": "en",
+      "entities": ["SpaceX", "NVIDIA", "Vera Rubin"],
+      "locations": ["United States"],
+      "event_type": "compute-deployment",
+      "event_key": "spacex|compute-deployment|nvidia|2026-q3",
+      "stance": "reports",
+      "source_class": "major-media",
+      "evidence_tier": "T2",
+      "independence_group": "axios",
+      "access": "public",
+      "relations": [
+        {
+          "from": "SpaceX",
+          "relation": "plans-to-use",
+          "to": "NVIDIA",
+          "observed_at": "2026-08-04T00:00:00-04:00",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_status": "media-reported"
+        }
+      ]
+    },
+    {
+      "title": "Chairman Carr proposes to strengthen rules governing dangerous gear",
+      "url": "https://docs.fcc.gov/public/attachments/DOC-422722A1.pdf",
+      "source_name": "Federal Communications Commission",
+      "published_at": "2026-07-01T00:00:00-04:00",
+      "summary": "The FCC Chairman proposed extending Covered List restrictions to logic-bearing components in equipment authorization and sought comment on broader supply-chain controls. The FCC stated that the item would require full Commission adoption and was not official action when published.",
+      "language": "en",
+      "entities": ["Federal Communications Commission", "Covered List"],
+      "locations": ["United States"],
+      "event_type": "policy-proposal",
+      "event_key": "us|fcc-covered-list-component-proposal|2026-q3",
+      "stance": "confirms",
+      "source_class": "government",
+      "evidence_tier": "T0",
+      "independence_group": "fcc",
+      "access": "public"
+    }
+  ]
+}
