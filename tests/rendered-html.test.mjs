@@ -281,6 +281,7 @@ test("uses resilient typography rules across columns, console pages and calendar
   assert.match(css, /\.console-story-row p \{[^}]*font-size: 13\.5px/);
   assert.match(css, /\.calendar-share-table article > p,[\s\S]*font-size: 12px/);
   assert.match(css, /\.column-fact-table table \{[^}]*table-layout: auto/);
+  assert.match(css, /\.atlas-column-article-shell \.column-fact-table tbody th \{[\s\S]*white-space: normal;[\s\S]*overflow-wrap: anywhere;/);
   assert.match(css, /\.column-article-thesis span, \.column-section-label \{[^}]*font: 700 12px/);
   assert.match(css, /\.column-article-hero > div \{[^}]*font: 650 11px/);
   assert.match(css, /\.column-article-body \{ width: min\(920px[^}]*padding: 54px 0 86px/);

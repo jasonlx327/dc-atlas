@@ -2608,6 +2608,12 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
 }
 .atlas-column-article-shell .column-fact-table tbody th,
 .atlas-column-article-shell .column-fact-table td strong { color: var(--atlas-ink); }
+.atlas-column-article-shell .column-fact-table tbody th {
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.55;
+}
 .atlas-column-article-shell .column-fact-table td small,
 .atlas-column-article-shell .column-source-note,
 .atlas-column-article-shell .column-article-disclosure p { color: #727b76 !important; }
