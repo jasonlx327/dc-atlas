@@ -598,7 +598,7 @@ test("keeps the homepage earnings watch compact and reachable", async () => {
   assert.match(worker, /calendarEvents: firstItems\(payload\.calendarEvents, 20\)/);
   assert.match(worker, /tencent-q2-2026/);
   assert.match(worker, /alibaba-june-quarter-2026-pending/);
-  assert.match(source, /href="\/calendar"/);
+  assert.match(source, /isZh \? "\/calendar" : "\/en#calendar"/);
   assert.match(source, /className="atlas-research-queue" id="columns"/);
   assert.match(source, /className="atlas-company-watch" id="companies"/);
   assert.doesNotMatch(source, /className="atlas-brief"/);
@@ -739,7 +739,12 @@ test("serves crawl directives and bilingual topic pages", async () => {
   assert.match(html, /rel="canonical" href="https:\/\/idc-index\.com\/topics\/china-ai-silicon"/i);
   assert.match(html, /"@type":"FAQPage"/);
   assert.match(html, /"@type":"BreadcrumbList"/);
-  assert.match(html, /Frequently asked questions/);
+  assert.match(html, /常见问题/);
+  const englishChinaTopic = await render("/en/topics/china-ai-silicon");
+  assert.equal(englishChinaTopic.status, 200);
+  const englishChinaHtml = await englishChinaTopic.text();
+  assert.match(englishChinaHtml, /Frequently asked questions/);
+  assert.match(englishChinaHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/topics\/china-ai-silicon"/i);
 
   const dataCenterTopic = await render("/topics/data-center-intelligence");
   assert.equal(dataCenterTopic.status, 200);

@@ -38,6 +38,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://idc-index.com/en/topics/china-ai-silicon",
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
       url: "https://idc-index.com/methodology",
       changeFrequency: "monthly",
       priority: 0.6,

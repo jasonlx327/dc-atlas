@@ -61,7 +61,7 @@ export default async function ColumnsIndex({ lang }: { lang: "zh" | "en" }) {
     <section className="columns-index-hero"><span>IDC ATLAS · ORIGINAL RESEARCH</span><h1>{english ? <>Columns for the <em>infrastructure cycle.</em></> : <><span>专栏，追踪</span><em>基础设施周期。</em></>}</h1><p>{english ? "Source-linked analysis of data-center contracts, cloud capital spending, power availability and the path from announced capacity to billable infrastructure." : "围绕数据中心合同、云厂商资本开支、电力资源与容量兑现进行持续研究。每篇文章保留公开来源，并明确数据口径与研究边界。"}</p></section>
     <section className="columns-index-list" aria-label={english ? "IDC Atlas columns" : "IDC Atlas 专栏列表"}>
       {articles.map((article, index) => <article className={index === 0 ? "featured" : ""} key={article.href}>
-        <a className="columns-index-image" href={english ? article.hrefEn : article.href}><img src={article.image} alt="" loading={index === 0 ? "eager" : "lazy"} /></a>
+        <a className="columns-index-image" href={english ? article.hrefEn : article.href}><img src={article.image} alt={english ? article.titleEn : article.title} loading={index === 0 ? "eager" : "lazy"} /></a>
         <div><div className="columns-index-meta"><span>{article.series}</span><time dateTime={article.publishAt}>{columnDate(article.publishAt, lang)}</time></div><h2><a href={english ? article.hrefEn : article.href}>{english ? article.titleEn : article.title}</a></h2><p>{english ? article.summaryEn : article.summary}</p><a className="columns-index-read" href={english ? article.hrefEn : article.href}>{english ? "Read the column →" : "阅读全文 →"}</a></div>
       </article>)}
     </section>

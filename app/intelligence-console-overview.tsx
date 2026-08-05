@@ -540,7 +540,7 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
               <button type="button" aria-pressed={calendarPaused} onClick={() => setCalendarPaused((paused) => !paused)}>
                 {calendarPaused ? (isZh ? "继续" : "Resume") : (isZh ? "暂停" : "Pause")}
               </button>
-              <a href="/calendar">{isZh ? "查看全部" : "View all"} →</a>
+              <a href={isZh ? "/calendar" : "/en#calendar"}>{isZh ? "查看全部" : "View all"} →</a>
             </span>
           </header>
           <div

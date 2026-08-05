@@ -7,7 +7,14 @@ const canonical = "https://idc-index.com/methodology";
 export const metadata: Metadata = {
   title: "方法与数据来源｜Methodology｜IDC Atlas",
   description: "IDC Atlas 的信息来源、核验原则、更新频率与研究边界说明。",
-  alternates: { canonical },
+  alternates: {
+    canonical,
+    languages: {
+      "zh-CN": canonical,
+      en: "https://idc-index.com/en/methodology",
+      "x-default": "https://idc-index.com/en/methodology",
+    },
+  },
 };
 
 const sections = [
