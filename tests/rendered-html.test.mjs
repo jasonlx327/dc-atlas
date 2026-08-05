@@ -149,6 +149,38 @@ test("publishes bilingual policy index and rumor watch routes", async () => {
   assert.doesNotMatch(css, /\.watch-card \{[^}]*linear-gradient\(145deg, rgba\(17,28,41/);
 });
 
+test("publishes shareable bilingual policy and Rumor Watch brief pages", async () => {
+  const policy = await render("/policy/us-fcc-covered-list-component-proposal-2026");
+  assert.equal(policy.status, 200);
+  const policyHtml = await policy.text();
+  assert.match(policyHtml, /FCC拟扩大Covered List组件限制/);
+  assert.match(policyHtml, /rel="canonical" href="https:\/\/idc-index\.com\/policy\/us-fcc-covered-list-component-proposal-2026"/i);
+  assert.match(policyHtml, /"@type":"Article"/);
+  assert.match(policyHtml, /"@type":"BreadcrumbList"/);
+  assert.match(policyHtml, /直接影响/);
+  assert.match(policyHtml, /Federal Communications Commission/);
+
+  const rumor = await render("/rumors/spacex-nvidia-ai-infrastructure-call-2026");
+  assert.equal(rumor.status, 200);
+  const rumorHtml = await rumor.text();
+  assert.match(rumorHtml, /SpaceX据报将AI基础设施部署锁定为NVIDIA路线/);
+  assert.match(rumorHtml, /rel="canonical" href="https:\/\/idc-index\.com\/rumors\/spacex-nvidia-ai-infrastructure-call-2026"/i);
+  assert.match(rumorHtml, /公开回应/);
+  assert.match(rumorHtml, /不等同于已核验事实/);
+
+  const english = await render("/en/rumors/spacex-nvidia-ai-infrastructure-call-2026");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /SpaceX is reported to be choosing Nvidia for its AI-infrastructure buildout/);
+  assert.match(englishHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/rumors\/spacex-nvidia-ai-infrastructure-call-2026"/i);
+  assert.match(englishHtml, /PUBLIC RESPONSE/);
+
+  const sitemap = await readFile(new URL("../app/sitemap.ts", import.meta.url), "utf8");
+  assert.match(sitemap, /palantir-sovereign-ai/);
+  assert.match(sitemap, /POLICY_BRIEFS\.flatMap/);
+  assert.match(sitemap, /RUMOR_BRIEFS\.flatMap/);
+});
+
 test("renders the English research console and focused content routes", async () => {
   const response = await render("/en");
   assert.equal(response.status, 200);

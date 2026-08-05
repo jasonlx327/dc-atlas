@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { entityDirectory } from "./entity-directory";
+import { POLICY_BRIEFS, RUMOR_BRIEFS } from "./watch-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -163,6 +164,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    {
+      url: "https://idc-index.com/columns/palantir-sovereign-ai",
+      lastModified: "2026-08-04T12:45:00+08:00",
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: "https://idc-index.com/en/columns/palantir-sovereign-ai",
+      lastModified: "2026-08-04T12:45:00+08:00",
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    ...POLICY_BRIEFS.flatMap((item) => [
+      { url: `https://idc-index.com/policy/${item.id}`, lastModified: item.publishedAt, changeFrequency: "weekly" as const, priority: 0.75 },
+      { url: `https://idc-index.com/en/policy/${item.id}`, lastModified: item.publishedAt, changeFrequency: "weekly" as const, priority: 0.75 },
+    ]),
+    ...RUMOR_BRIEFS.flatMap((item) => [
+      { url: `https://idc-index.com/rumors/${item.id}`, lastModified: item.publishedAt, changeFrequency: "daily" as const, priority: 0.75 },
+      { url: `https://idc-index.com/en/rumors/${item.id}`, lastModified: item.publishedAt, changeFrequency: "daily" as const, priority: 0.75 },
+    ]),
     ...entityDirectory.flatMap((entity) => [
       { url: `https://idc-index.com/companies/${entity.slug}`, changeFrequency: "daily" as const, priority: 0.8 },
       { url: `https://idc-index.com/en/companies/${entity.slug}`, changeFrequency: "daily" as const, priority: 0.8 },

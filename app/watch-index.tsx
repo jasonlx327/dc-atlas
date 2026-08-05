@@ -91,6 +91,12 @@ function WatchIndex({ lang, kind, initialPayload = null }: Props) {
     ? (isZh ? "追踪影响数据中心建设、用电、并网和运营成本的中美政策变化。每条提炼政策内容、执行状态和直接影响，原文仅作核验出处。" : "Tracks China and U.S. policy that changes data-center construction, power, interconnection and operating costs. Each brief separates the policy, its status and its direct effect.")
     : (isZh ? "汇总已由主流媒体公开报道、但尚未获得公司或监管方完整确认的基础设施线索。每条保留涉及主体、报道状态与原始出处。" : "Tracks infrastructure developments reported by major media but not yet fully confirmed by companies or regulators. Each item keeps the entities, status and original source visible.");
   const items = kind === "policy" ? visiblePolicy : visibleRumors;
+  const detailHref = (id: string) => {
+    const isStaticRecord = kind === "policy"
+      ? POLICY_BRIEFS.some((item) => item.id === id)
+      : RUMOR_BRIEFS.some((item) => item.id === id);
+    return isStaticRecord ? (isZh ? `/${kind}/${id}` : `/en/${kind}/${id}`) : null;
+  };
 
   return <IntelligenceConsoleShell
     lang={lang}
@@ -134,7 +140,7 @@ function WatchIndex({ lang, kind, initialPayload = null }: Props) {
       {items.length ? <section className="watch-grid" aria-live="polite">{kind === "policy"
         ? visiblePolicy.map((item) => <article className="watch-card policy-card" key={item.id}>
           <div className="watch-card-top"><span>{item.jurisdiction === "US" ? "U.S." : "中国"}</span><time>{formatDate(item.publishedAt, lang)}</time></div>
-          <h2>{isZh ? item.title : item.titleEn}</h2>
+          <h2>{detailHref(item.id) ? <a href={detailHref(item.id)!}>{isZh ? item.title : item.titleEn}</a> : (isZh ? item.title : item.titleEn)}</h2>
           <p className="watch-scope">{isZh ? item.scope : item.scopeEn}</p>
           <p>{isZh ? item.summary : item.summaryEn}</p>
           <div className="watch-impact">
@@ -155,7 +161,7 @@ function WatchIndex({ lang, kind, initialPayload = null }: Props) {
         </article>)
         : visibleRumors.map((item) => <article className="watch-card rumor-card" key={item.id}>
           <div className="watch-card-top"><span>{isZh ? "媒体报道" : "REPORTED"}</span><time>{formatDate(item.publishedAt, lang)}</time></div>
-          <h2>{isZh ? item.title : item.titleEn}</h2>
+          <h2>{detailHref(item.id) ? <a href={detailHref(item.id)!}>{isZh ? item.title : item.titleEn}</a> : (isZh ? item.title : item.titleEn)}</h2>
           <p>{isZh ? item.summary : item.summaryEn}</p>
           <div className="watch-entity-row">
             {item.entities.map((entity) => <span key={entity}>{entity}</span>)}

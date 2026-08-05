@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import WatchIndex, { type WatchPayload } from "../watch-index";
 import { loadInitialAtlasPayload } from "../initial-atlas";
+import { POLICY_BRIEFS } from "../watch-data";
 
 const canonical = "https://idc-index.com/policy";
 
@@ -21,6 +22,16 @@ export default async function PolicyPage() {
     inLanguage: "zh-CN",
     description: metadata.description,
     isPartOf: { "@type": "WebSite", name: "IDC Atlas", url: "https://idc-index.com/" },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: POLICY_BRIEFS.length,
+      itemListElement: POLICY_BRIEFS.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.title,
+        url: `https://idc-index.com/policy/${item.id}`,
+      })),
+    },
   };
   return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /><WatchIndex lang="zh" kind="policy" initialPayload={initialPayload} /></>;
 }
