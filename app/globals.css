@@ -2017,6 +2017,56 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
   background: #ebece6;
   color: var(--atlas-ink);
 }
+.atlas-console-page .section.daily-section {
+  border-color: var(--atlas-line);
+  background: var(--atlas-paper);
+  color: var(--atlas-ink);
+}
+.atlas-console-page .daily-section .section-title.inverse,
+.atlas-console-page .daily-section .section-title.inverse h2,
+.atlas-console-page .daily-section .section-title.inverse > p {
+  color: var(--atlas-ink);
+}
+.atlas-console-page .daily-section .section-title.inverse > div > p {
+  color: var(--atlas-terracotta);
+}
+.atlas-console-page .daily-head {
+  border-color: var(--atlas-line);
+  background: #f4f1eb;
+}
+.atlas-console-page .daily-head span { color: var(--atlas-terracotta); }
+.atlas-console-page .daily-head strong { color: var(--atlas-ink); }
+.atlas-console-page .daily-head small { color: #68716c; }
+.atlas-console-page .daily-head a { color: var(--atlas-ultramarine); }
+.atlas-console-page .daily-lead {
+  border-color: var(--atlas-line-strong);
+  background: var(--atlas-surface);
+}
+.atlas-console-page .daily-lead > span { color: var(--atlas-terracotta); }
+.atlas-console-page .daily-lead h3,
+.atlas-console-page .daily-lead h3 a { color: var(--atlas-ink); }
+.atlas-console-page .daily-lead > p { color: #68716c; }
+.atlas-console-page .daily-grid { border-color: var(--atlas-line); }
+.atlas-console-page .daily-card {
+  border-color: var(--atlas-line);
+  background: var(--atlas-surface);
+}
+.atlas-console-page .daily-card > span { color: var(--atlas-terracotta); }
+.atlas-console-page .daily-card h3,
+.atlas-console-page .daily-card h3 a { color: var(--atlas-ink); }
+.atlas-console-page .daily-card > p { color: #68716c; }
+.atlas-console-page .daily-card h3 a:hover,
+.atlas-console-page .daily-head a:hover,
+.atlas-console-page .daily-lead h3 a:hover { color: var(--atlas-ultramarine); }
+.atlas-console-page .daily-card .source-row a,
+.atlas-console-page .daily-lead .source-row a { color: var(--atlas-ultramarine); }
+.atlas-console-page .daily-card .source-row a span,
+.atlas-console-page .daily-lead .source-row a span { color: #7b827d; }
+.atlas-console-page .daily-flashes {
+  border-color: var(--atlas-line);
+  background: var(--atlas-surface);
+}
+.atlas-console-page .daily-flashes a { color: var(--atlas-ultramarine); }
 .atlas-console-page .hub-filter-row { margin-bottom: 24px; }
 .atlas-console-page .hub-filter-row > div > span,
 .atlas-console-page .console-section-head span,

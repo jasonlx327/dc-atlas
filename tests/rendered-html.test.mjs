@@ -28,6 +28,9 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /超大规模云厂商 CAPEX/);
   assert.match(html, /hrefLang="x-default" href="https:\/\/dc-atlas\.example\/en"/);
   assert.match(html, /class="atlas-console-overview"/);
+  assert.match(html, /全球科技财报日历/);
+  assert.match(html, /数据中心政策索引/);
+  assert.match(html, /市场传闻与待核验线索/);
   assert.match(html, /class="atlas-console-rail(?: |")/);
   assert.match(html, /href="\/privacy"/);
   assert.match(html, /googletagmanager\.com\/gtag\/js\?id=G-XRKL96W42Q/);
@@ -78,6 +81,9 @@ test("keeps mobile pages readable without forced horizontal layouts", async () =
   assert.match(css, /@keyframes atlasCalendarLoop/);
   assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
   assert.match(css, /\.atlas-pulse-group\[aria-hidden="true"\] \{ display: none; \}/);
+  assert.match(css, /\.atlas-console-page \.section\.daily-section \{[\s\S]*background: var\(--atlas-paper\);[\s\S]*color: var\(--atlas-ink\);/);
+  assert.match(css, /\.atlas-console-page \.daily-card h3,[\s\S]*color: var\(--atlas-ink\);/);
+  assert.match(css, /\.atlas-console-page \.daily-card > p \{ color: #68716c; \}/);
 });
 
 test("lets mobile supply-chain nodes expand and collapse", async () => {
