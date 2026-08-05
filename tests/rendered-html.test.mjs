@@ -42,10 +42,10 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /class="atlas-calendar-group" aria-hidden="true"/);
   assert.match(html, /研究队列/);
   assert.match(html, /src="\/lead-amazon-aws-capex\.png"/);
-  assert.match(html, /Palantir 把 AI 定义为主权，这条基建叙事要怎样验证？/);
-  assert.match(html, /column-palantir-sovereign-ai-v2\.jpg/);
+  assert.match(html, /SpaceX 1\.4GW 只押 NVIDIA，Anthropic 2GW 引入 AMD/);
+  assert.match(html, /column-accelerator-platform-divergence-v1\.jpg/);
   assert.match(html, /href="\/#columns"/);
-  assert.match(html, /href="\/columns\/palantir-sovereign-ai"/);
+  assert.match(html, /href="\/columns\/accelerator-platform-divergence"/);
   assert.doesNotMatch(html, /情报摘要/);
   assert.match(html, /市场脉搏/);
   assert.match(html, /class="atlas-pulse-wave"/);
@@ -176,7 +176,7 @@ test("publishes shareable bilingual policy and Rumor Watch brief pages", async (
   assert.match(englishHtml, /PUBLIC RESPONSE/);
 
   const sitemap = await readFile(new URL("../app/sitemap.ts", import.meta.url), "utf8");
-  assert.match(sitemap, /palantir-sovereign-ai/);
+  assert.match(sitemap, /publishedColumnArticles/);
   assert.match(sitemap, /POLICY_BRIEFS\.flatMap/);
   assert.match(sitemap, /RUMOR_BRIEFS\.flatMap/);
 });
@@ -333,7 +333,7 @@ test("keeps the English site fully translated across the live coverage stack", a
 
   assert.doesNotMatch(source, /editorial English translation is pending/);
   assert.doesNotMatch(source, /lang="zh-CN"/);
-  assert.match(overview, /columnArticles\.slice\(0, 5\)/);
+  assert.match(overview, /publishedColumnArticles\(\)\.slice\(0, 5\)/);
   assert.match(overview, /hrefEn: "\/en#columns"/);
   assert.match(source, /className="english-chain-icon"/);
   assert.match(source, /<ChainIcon type=/);
@@ -513,8 +513,40 @@ test("publishes the bilingual Lease Watch column with contract-level sourcing", 
   assert.doesNotMatch(englishHtml, /isn.t the .+[,;:] it.s|is not the .+[,;:] it is/i);
 });
 
+test("publishes the first scheduled research column and keeps later releases time-gated", async () => {
+  const chinese = await render("/columns/accelerator-platform-divergence");
+  assert.equal(chinese.status, 200);
+  const chineseHtml = await chinese.text();
+  assert.match(chineseHtml, /SpaceX 1\.4GW 只押 NVIDIA，Anthropic 2GW 引入 AMD/);
+  assert.match(chineseHtml, /铭牌功率为 1\.4GW/);
+  assert.match(chineseHtml, /媒体对电话会的报道/);
+  assert.match(chineseHtml, /column-accelerator-platform-divergence-v1\.jpg/);
+  assert.match(chineseHtml, /"@type":"AnalysisNewsArticle"/);
+
+  const english = await render("/en/columns/accelerator-platform-divergence");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /SpaceX Standardizes on NVIDIA While Anthropic Brings AMD to 2GW/);
+  assert.match(englishHtml, /Nameplate compute draw reached 1\.4GW/);
+  assert.match(englishHtml, /media account of the call/);
+
+  const articleSource = await readFile(new URL("../app/columns/articles.ts", import.meta.url), "utf8");
+  const routeSource = await readFile(new URL("../app/columns/[slug]/page.tsx", import.meta.url), "utf8");
+  const feedSource = await readFile(new URL("../app/feed.xml/route.ts", import.meta.url), "utf8");
+  for (const publishAt of [
+    "2026-08-05T00:00:00+08:00",
+    "2026-08-05T21:00:00+08:00",
+    "2026-08-06T09:00:00+08:00",
+    "2026-08-06T21:00:00+08:00",
+    "2026-08-07T09:00:00+08:00",
+  ]) assert.match(articleSource, new RegExp(publishAt.replaceAll("+", "\\+")));
+  assert.match(routeSource, /isColumnPublished\(slug\)/);
+  assert.match(feedSource, /publishedColumnArticles\(\)/);
+});
+
 test("renders every bilingual column inside the shared console reading layout", async () => {
   const slugs = [
+    "accelerator-platform-divergence",
     "ai-capex-power",
     "cxmt-us-chip-impact",
     "frontier-model-economics",

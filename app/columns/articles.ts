@@ -1,8 +1,69 @@
 export const columnArticles = [
   {
+    href: "/columns/accelerator-platform-divergence",
+    hrefEn: "/en/columns/accelerator-platform-divergence",
+    date: "2026-08-05",
+    publishAt: "2026-08-05T00:00:00+08:00",
+    series: "COMPUTE STACK · 13",
+    title: "SpaceX 1.4GW 只押 NVIDIA，Anthropic 2GW 引入 AMD",
+    titleEn: "SpaceX Standardizes on NVIDIA While Anthropic Brings AMD to 2GW",
+    summary: "同一家公司可以多元采购，但同一座大规模集群往往趋向单一平台。拆解 GPU、网络、软件与运维如何把芯片选择变成基础设施架构。",
+    summaryEn: "A buyer can diversify at portfolio level while standardizing each large cluster. GPU, network, software and operations turn chip choice into infrastructure architecture.",
+    image: "/column-accelerator-platform-divergence-v1.jpg",
+  },
+  {
+    href: "/columns/us-data-center-power-gate",
+    hrefEn: "/en/columns/us-data-center-power-gate",
+    date: "2026-08-05",
+    publishAt: "2026-08-05T21:00:00+08:00",
+    series: "POWER POLICY · 12",
+    title: "美国数据中心的新门票：自带电源，并承担电网成本",
+    titleEn: "The New Price of U.S. Data-Center Access: Bring Power and Pay the Grid",
+    summary: "EPA、PJM 与地方监管正在把新增电源、输配电升级、容量付款和空气许可写进项目经济性，园区选址逻辑随之改变。",
+    summaryEn: "EPA guidance, PJM capacity policy and state permitting are moving new generation, grid upgrades and air compliance onto data-center economics.",
+    image: "/column-us-data-center-power-gate-v1.jpg",
+  },
+  {
+    href: "/columns/ai-infrastructure-financing",
+    hrefEn: "/en/columns/ai-infrastructure-financing",
+    date: "2026-08-06",
+    publishAt: "2026-08-06T09:00:00+08:00",
+    series: "CAPITAL STACK · 11",
+    title: "350 亿美元如何变成 1GW：AI 算力融资的风险由谁承担？",
+    titleEn: "How $35 Billion Becomes 1GW—and Who Keeps the Risk",
+    summary: "Broadcom、Apollo 与 Blackstone 的 AI XPV 平台把芯片、机房、长期使用承诺和私人信贷装进同一结构，关键不在资金规模，而在残值与利用率。",
+    summaryEn: "The Broadcom-Apollo-Blackstone AI XPV platform links silicon, sites, long-term demand and private credit. Residual value and utilization matter more than headline size.",
+    image: "/column-ai-infrastructure-financing-v1.jpg",
+  },
+  {
+    href: "/columns/eu-ai-gigafactories",
+    hrefEn: "/en/columns/eu-ai-gigafactories",
+    date: "2026-08-06",
+    publishAt: "2026-08-06T21:00:00+08:00",
+    series: "SOVEREIGN COMPUTE · 10",
+    title: "欧洲动员 200 亿欧元建设公共算力，谁为利用率负责？",
+    titleEn: "Europe Is Mobilizing €20B for AI Compute. Who Owns Utilization Risk?",
+    summary: "AI Gigafactory 不是简单补贴：欧盟最多承担 17% CAPEX 或预购等值算力时间，剩余投资、OPEX、芯片与客户利用率仍需项目方兑现。",
+    summaryEn: "EU support can cover up to 17% of capex or pre-purchase equivalent access time. The consortium still carries the remaining capital, opex, silicon and utilization burden.",
+    image: "/column-eu-ai-gigafactories-v1.jpg",
+  },
+  {
+    href: "/columns/caterpillar-ai-power",
+    hrefEn: "/en/columns/caterpillar-ai-power",
+    date: "2026-08-07",
+    publishAt: "2026-08-07T09:00:00+08:00",
+    series: "POWER EQUIPMENT · 09",
+    title: "Caterpillar 发电业务增长 29%，下一美元 AI CAPEX 流向哪里？",
+    titleEn: "Caterpillar's Power-Generation Sales Rose 29%. Where Does the Next AI Dollar Go?",
+    summary: "Q2 发电业务销售增至 30.98 亿美元，增长主要来自数据中心用大型往复式发动机与燃机。订单开始从 GPU 外溢到持续电源、储能与运维。",
+    summaryEn: "Q2 power-generation sales reached $3.098B, led by large reciprocating engines and turbines for data centers. AI spending is spilling into firm power, storage and service.",
+    image: "/column-caterpillar-ai-power-v1.jpg",
+  },
+  {
     href: "/columns/palantir-sovereign-ai",
     hrefEn: "/en/columns/palantir-sovereign-ai",
     date: "2026-08-04",
+    publishAt: "2026-08-04T12:45:00+08:00",
     series: "SOVEREIGN AI · 08",
     title: "Palantir 把 AI 定义为主权，这条基建叙事要怎样验证？",
     titleEn: "Palantir Calls AI Sovereign. What Must the Infrastructure Thesis Prove?",
@@ -14,6 +75,7 @@ export const columnArticles = [
     href: "/columns/alibaba-qwen-cloud",
     hrefEn: "/en/columns/alibaba-qwen-cloud",
     date: "2026-08-03",
+    publishAt: "2026-08-03T21:00:00+08:00",
     series: "CHINA CLOUD · 07",
     title: "Qwen3.8 已上线，阿里云下一份财报要回答七个问题",
     titleEn: "Qwen3.8 Is Live: Seven Tests for Alibaba Cloud's Next Earnings",
@@ -25,6 +87,7 @@ export const columnArticles = [
     href: "/columns/microsoft-ai-capex",
     hrefEn: "/en/columns/microsoft-ai-capex",
     date: "2026-08-01",
+    publishAt: "2026-08-01T21:00:00+08:00",
     series: "CLOUD CAPEX · 06",
     title: "Azure 增长 43% 之后，500 亿美元要兑现什么？",
     titleEn: "Azure at 43%: What Must the Next $50B Deliver?",
@@ -36,6 +99,7 @@ export const columnArticles = [
     href: "/columns/frontier-model-economics",
     hrefEn: "/en/columns/frontier-model-economics",
     date: "2026-08-01",
+    publishAt: "2026-08-01T18:00:00+08:00",
     series: "MODEL DEMAND · 05",
     title: "模型价格正在分层，AI 基建真正要看什么？",
     titleEn: "Model Prices Are Fragmenting. What Changes for AI Infrastructure?",
@@ -47,6 +111,7 @@ export const columnArticles = [
     href: "/columns/sk-hynix-hbm-earnings",
     hrefEn: "/en/columns/sk-hynix-hbm-earnings",
     date: "2026-08-01",
+    publishAt: "2026-08-01T15:00:00+08:00",
     series: "MEMORY WATCH · 04",
     title: "海力士财报之后，AI 存储的好消息还剩什么？",
     titleEn: "After SK hynix Earnings, What Still Looks Good in AI Memory?",
@@ -58,6 +123,7 @@ export const columnArticles = [
     href: "/columns/cxmt-us-chip-impact",
     hrefEn: "/en/columns/cxmt-us-chip-impact",
     date: "2026-08-01",
+    publishAt: "2026-08-01T12:00:00+08:00",
     series: "MEMORY WATCH · 03",
     title: "长鑫上市，谁会先感到压力？",
     titleEn: "CXMT Is Public. Which US Chip Stocks Actually Feel It?",
@@ -69,6 +135,7 @@ export const columnArticles = [
     href: "/columns/ai-capex-power",
     hrefEn: "/en/columns/ai-capex-power",
     date: "2026-08-01",
+    publishAt: "2026-08-01T09:00:00+08:00",
     series: "CAPEX WATCH · 01",
     title: "四大云厂商的 AI CAPEX 最终流向了哪里？",
     titleEn: "Where Hyperscaler AI CapEx Actually Goes",
@@ -80,6 +147,7 @@ export const columnArticles = [
     href: "/columns/hyperscale-idc-leases",
     hrefEn: "/en/columns/hyperscale-idc-leases",
     date: "2026-08-01",
+    publishAt: "2026-08-01T06:00:00+08:00",
     series: "LEASE WATCH · 02",
     title: "GW 级长租正在改写 IDC 订单",
     titleEn: "Gigawatt Leases Are Reshaping the Data Center Market",
@@ -88,3 +156,19 @@ export const columnArticles = [
     image: "/column-hyperscale-leases-v2.jpg",
   },
 ] as const;
+
+export type ColumnArticle = typeof columnArticles[number];
+
+export function publishedColumnArticles(now = new Date()): ColumnArticle[] {
+  const timestamp = now.getTime();
+  return columnArticles.filter((article) => new Date(article.publishAt).getTime() <= timestamp);
+}
+
+export function columnArticleBySlug(slug: string): ColumnArticle | undefined {
+  return columnArticles.find((article) => article.href.endsWith(`/${slug}`));
+}
+
+export function isColumnPublished(slug: string, now = new Date()): boolean {
+  const article = columnArticleBySlug(slug);
+  return Boolean(article && new Date(article.publishAt).getTime() <= now.getTime());
+}

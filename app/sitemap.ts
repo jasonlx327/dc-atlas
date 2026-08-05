@@ -1,6 +1,9 @@
 import type { MetadataRoute } from "next";
+import { publishedColumnArticles } from "./columns/articles";
 import { entityDirectory } from "./entity-directory";
 import { POLICY_BRIEFS, RUMOR_BRIEFS } from "./watch-data";
+
+export const dynamic = "force-dynamic";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -94,88 +97,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
-    {
-      url: "https://idc-index.com/columns/alibaba-qwen-cloud",
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://idc-index.com/en/columns/alibaba-qwen-cloud",
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://idc-index.com/columns/microsoft-ai-capex",
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://idc-index.com/en/columns/microsoft-ai-capex",
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://idc-index.com/columns/frontier-model-economics",
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://idc-index.com/en/columns/frontier-model-economics",
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://idc-index.com/columns/ai-capex-power",
-      changeFrequency: "weekly",
-      priority: 0.85,
-    },
-    {
-      url: "https://idc-index.com/en/columns/ai-capex-power",
-      changeFrequency: "weekly",
-      priority: 0.85,
-    },
-    {
-      url: "https://idc-index.com/columns/hyperscale-idc-leases",
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://idc-index.com/en/columns/hyperscale-idc-leases",
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://idc-index.com/columns/cxmt-us-chip-impact",
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://idc-index.com/en/columns/cxmt-us-chip-impact",
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://idc-index.com/columns/sk-hynix-hbm-earnings",
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://idc-index.com/en/columns/sk-hynix-hbm-earnings",
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://idc-index.com/columns/palantir-sovereign-ai",
-      lastModified: "2026-08-04T12:45:00+08:00",
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://idc-index.com/en/columns/palantir-sovereign-ai",
-      lastModified: "2026-08-04T12:45:00+08:00",
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
+    ...publishedColumnArticles().flatMap((article) => [
+      { url: `https://idc-index.com${article.href}`, lastModified: article.publishAt, changeFrequency: "weekly" as const, priority: 0.9 },
+      { url: `https://idc-index.com${article.hrefEn}`, lastModified: article.publishAt, changeFrequency: "weekly" as const, priority: 0.9 },
+    ]),
     ...POLICY_BRIEFS.flatMap((item) => [
       { url: `https://idc-index.com/policy/${item.id}`, lastModified: item.publishedAt, changeFrequency: "weekly" as const, priority: 0.75 },
       { url: `https://idc-index.com/en/policy/${item.id}`, lastModified: item.publishedAt, changeFrequency: "weekly" as const, priority: 0.75 },

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { columnArticles } from "./columns/articles";
+import { publishedColumnArticles, type ColumnArticle } from "./columns/articles";
 import { deriveConsoleMeta, type ConsoleMeta } from "./console-meta";
 import { IntelligenceConsoleShell, type ConsoleStory } from "./intelligence-console-overview";
 import type { EntityRecord } from "./entity-directory";
@@ -75,7 +75,8 @@ export default function EntityPage({ entity, lang, initialPayload }: { entity: E
   }, []);
 
   const stories = useMemo(() => relatedStories(entity, payload ?? {}), [entity, payload]);
-  const articles = entity.columnSlugs.map((slug) => columnArticles.find((article) => article.href.endsWith(`/${slug}`))).filter((article): article is typeof columnArticles[number] => Boolean(article));
+  const publishedArticles = publishedColumnArticles();
+  const articles = entity.columnSlugs.map((slug) => publishedArticles.find((article) => article.href.endsWith(`/${slug}`))).filter((article): article is ColumnArticle => Boolean(article));
   const liveMeta = payload ?? {};
   const displayName = english ? entity.nameEn : entity.name;
   const description = english ? entity.descriptionEn : entity.description;

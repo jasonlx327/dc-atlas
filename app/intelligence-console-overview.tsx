@@ -3,7 +3,7 @@
 import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import QRCode from "qrcode";
 import { ChainIcon, type ChainKey } from "./chain-icon";
-import { columnArticles } from "./columns/articles";
+import { publishedColumnArticles } from "./columns/articles";
 import { deriveConsoleMeta, type ConsoleMeta } from "./console-meta";
 import { entityDirectory } from "./entity-directory";
 
@@ -452,7 +452,7 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
   const lead = [...pulse, ...companies].sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime())[0];
   const events = data.events.slice(0, 6);
   const deals = data.deals.slice(0, 5);
-  const articles = columnArticles.slice(0, 5);
+  const articles = publishedColumnArticles().slice(0, 5);
   const uniqueSources = new Set([...data.pulse, ...data.companies, ...data.deals].map((item) => item.sourceName).filter(Boolean));
   const verifiedCount = data.pulse.length + data.companies.length + data.deals.length;
   const leadImage = lead?.imageSrc ?? "/lead-amazon-aws-capex.png";

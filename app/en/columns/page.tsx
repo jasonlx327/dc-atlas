@@ -3,6 +3,8 @@ import ColumnsIndex from "../../columns/columns-index";
 
 const canonical = "https://idc-index.com/en/columns";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "IDC Atlas Columns｜Data Center & AI Infrastructure Research",
   description: "Source-linked IDC Atlas analysis of data-center contracts, hyperscaler capital spending, power, cooling and billable capacity.",

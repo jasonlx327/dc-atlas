@@ -2473,6 +2473,12 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
   object-fit: cover;
   object-position: left center;
 }
+.atlas-column-article-shell .column-article-cover--contain { background: var(--atlas-paper); }
+.atlas-column-article-shell .column-article-cover--contain img {
+  object-fit: contain;
+  object-position: center;
+  background: var(--atlas-paper);
+}
 .atlas-column-article-shell .column-article-cover figcaption {
   min-height: 36px;
   padding: 10px 14px;
@@ -2504,6 +2510,29 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
 .atlas-column-article-shell .column-company-grid a,
 .atlas-column-article-shell .column-watch-grid a,
 .atlas-column-article-shell .column-source-ledger > div:last-child a { color: var(--atlas-ultramarine); }
+.atlas-column-article-shell .column-source-links {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--atlas-line);
+}
+.atlas-column-article-shell .column-source-links > span {
+  color: var(--atlas-terracotta);
+  font: 700 11px var(--font-geist-mono);
+  letter-spacing: .1em;
+}
+.atlas-column-article-shell .column-source-links > div { display: flex; flex-wrap: wrap; gap: 9px 18px; min-width: 0; }
+.atlas-column-article-shell .column-source-links a {
+  max-width: 100%;
+  color: var(--atlas-ultramarine);
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
 .atlas-column-article-shell .column-dropcap::first-letter { color: var(--atlas-forest); }
 .atlas-column-article-shell .column-article-thesis {
   padding: 22px 24px;
@@ -2647,6 +2676,7 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
   .atlas-column-article-shell .column-article-cover { min-height: 0; }
   .atlas-column-article-shell .column-article-cover img { min-height: 260px; max-height: 420px; }
   .atlas-column-article-shell .column-article-body { width: calc(100% - 40px); padding: 20px 0 62px; }
+  .atlas-column-article-shell .column-source-links { grid-template-columns: 1fr; gap: 12px; }
   .atlas-column-article-shell .column-article-body > section,
   .atlas-column-article-shell .column-article-body > section:first-of-type { padding: 32px 0 35px; }
   .atlas-column-article-shell .column-article-body h2 { font-size: clamp(29px, 7.5vw, 38px); }

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import QRCode from "qrcode";
 import { ChainIcon, type ChainKey } from "./chain-icon";
-import { columnArticles } from "./columns/articles";
+import { publishedColumnArticles } from "./columns/articles";
 import { IntelligenceConsoleOverview, IntelligenceConsoleShell } from "./intelligence-console-overview";
 import { PulseTrace } from "./pulse-trace";
 
@@ -17,7 +17,8 @@ type IndustryHubTab = "chain" | "hardware" | "china" | "models" | "campus" | "co
 type LifecycleStage = { label: string; state: "done" | "current" | "next" };
 
 function ChineseColumnsFeature() {
-  const [featured, ...archive] = columnArticles.slice(0, 5);
+  const [featured, ...archive] = publishedColumnArticles().slice(0, 5);
+  if (!featured) return null;
   return <section className="column-feature compact-column-feature" id="columns" aria-labelledby="featured-column-title">
     <div className="column-feature-head"><span>IDC ATLAS 深度研究 · 最新 5 篇</span><time dateTime={featured.date}>{featured.date.replaceAll("-", " / ")}</time></div>
     <div className="column-teaser-card"><div><p>{featured.series}</p><h2 id="featured-column-title">{featured.title}</h2><p>{featured.summary}</p><div className="column-teaser-actions"><a href={featured.href} target="_blank" rel="noreferrer">阅读全文 <ArrowIcon /></a><a href="/columns" target="_blank" rel="noreferrer">全部专栏</a></div></div><a className="column-teaser-image" href={featured.href} target="_blank" rel="noreferrer" aria-label={`阅读：${featured.title}`}><img src={featured.image} alt={featured.title} loading="eager" /><span>{featured.series}</span></a></div>

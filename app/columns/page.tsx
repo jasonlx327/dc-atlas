@@ -3,6 +3,8 @@ import ColumnsIndex from "./columns-index";
 
 const canonical = "https://idc-index.com/columns";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "IDC Atlas 专栏｜数据中心与 AI 基础设施研究",
   description: "IDC Atlas 原创专栏，分析数据中心合同、云厂商资本开支、电力、液冷与可计费容量。",

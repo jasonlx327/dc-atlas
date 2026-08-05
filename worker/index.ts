@@ -1,5 +1,6 @@
 /** Cloudflare Worker entry point for IDC Atlas. */
 import handler from "vinext/server/app-router-entry";
+import { publishedColumnArticles } from "../app/columns/articles";
 import {
   POLICY_BRIEFS,
   RUMOR_BRIEFS,
@@ -37,15 +38,6 @@ Use original disclosure links attached to individual updates to verify capacity,
 - [Rumor Watch](https://idc-index.com/rumors): Current reported infrastructure developments kept separate from verified pulse items, with entities, public responses and source boundaries visible.
 - [IDC Atlas Columns](https://idc-index.com/columns): Chinese index of original, source-linked research on the data-center and AI-infrastructure cycle.
 - [IDC Atlas Columns in English](https://idc-index.com/en/columns): English index of original research for global investors.
-- [CAPEX Watch: 四大云厂商的 AI CAPEX 最终流向了哪里？](https://idc-index.com/columns/ai-capex-power): Chinese source-linked analysis of Microsoft, Alphabet, Meta and Amazon spending from silicon to billable capacity.
-- [CAPEX Watch: Where Hyperscaler AI CapEx Actually Goes](https://idc-index.com/en/columns/ai-capex-power): English analysis of capital intensity, construction pipelines, power, commissioning and utilization.
-- [Lease Watch: Gigawatt leases reshape IDC orders](https://idc-index.com/columns/hyperscale-idc-leases): Chinese analysis of large internet and cloud capacity leases, contract structure, delivery and concentration risk.
-- [Lease Watch: Gigawatt Leases Are Reshaping the Data Center Market](https://idc-index.com/en/columns/hyperscale-idc-leases): English edition covering recent CoreWeave, Digital Realty and VNET disclosures.
-- [Memory Watch: 长鑫上市，谁会先感到压力？](https://idc-index.com/columns/cxmt-us-chip-impact): Chinese source-linked analysis of CXMT's impact on Micron, US equipment vendors and AI accelerator companies.
-- [Memory Watch: CXMT Is Public. Which US Chip Stocks Actually Feel It?](https://idc-index.com/en/columns/cxmt-us-chip-impact): English impact ranking across MU, AMAT, LRCX, KLAC, NVDA, AMD and RMBS.
-- [Microsoft Watch: Azure at 43%](https://idc-index.com/en/columns/microsoft-ai-capex): English analysis of Azure growth, activation speed, lease accounting and the next $50B-plus CapEx quarter.
-- [Model Economics Watch](https://idc-index.com/en/columns/frontier-model-economics): English analysis of model price tiers, agent workloads, inference depth and the infrastructure demand they create.
-- [Memory Watch: After SK hynix Earnings](https://idc-index.com/en/columns/sk-hynix-hbm-earnings): English analysis of contracted demand, HBM4 execution and capacity discipline.
 
 ## Interpretation
 
@@ -71,20 +63,21 @@ Primary sources control factual claims. News leads are discovery signals; verify
 - [Rumor Watch](https://idc-index.com/en/rumors): Current reported infrastructure developments kept separate from verified pulse items, with entities, public responses and source boundaries visible.
 - [IDC Atlas Columns](https://idc-index.com/en/columns): Original, source-linked research for global investors.
 
-## Research
-
-- [Where Hyperscaler AI CapEx Actually Goes](https://idc-index.com/en/columns/ai-capex-power)
-- [Gigawatt Leases Are Reshaping the Data Center Market](https://idc-index.com/en/columns/hyperscale-idc-leases)
-- [CXMT Is Public. Which US Chip Stocks Actually Feel It?](https://idc-index.com/en/columns/cxmt-us-chip-impact)
-- [Azure at 43%: What Must the Next $50B Deliver?](https://idc-index.com/en/columns/microsoft-ai-capex)
-- [Model Prices Are Fragmenting. What Changes for AI Infrastructure?](https://idc-index.com/en/columns/frontier-model-economics)
-- [After SK hynix Earnings, What Still Looks Good in AI Memory?](https://idc-index.com/en/columns/sk-hynix-hbm-earnings)
-
 ## Interpretation
 
 - This site does not provide investment advice, trading recommendations or guarantees about future outcomes.
 - Live data and daily snapshots are distinct from research conclusions. Read the source link and timestamp before relying on an item.
 `;
+
+function llmsResearchDirectory(lang: "zh" | "en"): string {
+  const rows = publishedColumnArticles().map((article) => {
+    const title = lang === "zh" ? article.title : article.titleEn;
+    const summary = lang === "zh" ? article.summary : article.summaryEn;
+    const href = lang === "zh" ? article.href : article.hrefEn;
+    return `- [${title}](https://idc-index.com${href}): ${summary}`;
+  });
+  return `\n## ${lang === "zh" ? "当前已发布研究" : "Current published research"}\n\n${rows.join("\n")}\n`;
+}
 const PRODUCT_IMAGE_SOURCES: Record<string, string> = {
   "/media/china/huawei-atlas-950.jpg": "https://www-file.huawei.com/dam/asset/view/260717-01.png",
   "/media/china/sugon-scalex640.png": "https://img1.mydrivers.com/img/20251223/0dc36481138640e19718364ea19e1254.png",
@@ -2883,7 +2876,8 @@ const worker = {
       if (url.pathname === "/api/daily-snapshot") return await dailySnapshotApi(request, env);
       if (url.pathname === "/api/atlas" || url.pathname === "/api/atlas-live" || url.pathname === "/api/atlas-live-v2" || url.pathname === "/api/atlas-live-v3" || url.pathname === "/api/atlas-live-v4" || url.pathname === "/api/atlas-live-v5") return await atlasApi(request, env, ctx);
       if (url.pathname === "/llms.txt" || url.pathname === "/en/llms.txt") {
-        const content = url.pathname === "/en/llms.txt" ? LLMS_TXT_EN : LLMS_TXT;
+        const english = url.pathname === "/en/llms.txt";
+        const content = `${english ? LLMS_TXT_EN : LLMS_TXT}${llmsResearchDirectory(english ? "en" : "zh")}`;
         return new Response(content, { headers: { "content-type": "text/plain; charset=utf-8", "content-language": url.pathname === "/en/llms.txt" ? "en-US" : "zh-CN, en-US", "cache-control": "public, max-age=3600" } });
       }
       const productImageSource = PRODUCT_IMAGE_SOURCES[url.pathname];
