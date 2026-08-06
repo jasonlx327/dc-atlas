@@ -36,7 +36,7 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /googletagmanager\.com\/gtag\/js\?id=G-XRKL96W42Q/);
   assert.match(html, /gtag\('config', 'G-XRKL96W42Q'\)/);
   assert.match(html, /href="\/#calendar"><span>02<\/span><strong>财报 \/ 资本支出/);
-  assert.match(html, /href="\/#columns"><span>03<\/span><strong>专栏/);
+  assert.match(html, /href="\/columns"><span>03<\/span><strong>专栏/);
   assert.match(html, /href="\/pulse"><span>04<\/span><strong>脉搏监测/);
   assert.match(html, /href="\/industry"><span>06<\/span><strong>产业链地图/);
   assert.match(html, /资本支出与财报日历/);
@@ -47,7 +47,7 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /src="\/lead-amazon-aws-capex\.png"/);
   assert.match(html, /SpaceX 1\.4GW 只押 NVIDIA，Anthropic 2GW 引入 AMD/);
   assert.match(html, /column-accelerator-platform-divergence-v1\.jpg/);
-  assert.match(html, /href="\/#columns"/);
+  assert.match(html, /href="\/columns"/);
   assert.match(html, /href="\/columns\/accelerator-platform-divergence"/);
   assert.doesNotMatch(html, /情报摘要/);
   assert.match(html, /市场脉搏/);
@@ -196,7 +196,7 @@ test("renders the English research console and focused content routes", async ()
   assert.match(html, /Hyperscaler capital expenditure/);
   assert.match(html, /class="atlas-console-overview"/);
   assert.match(html, /class="atlas-console-rail(?: |")/);
-  assert.match(html, /href="\/en#columns"/);
+  assert.match(html, /href="\/en\/columns"/);
   assert.match(html, /Research queue/);
   assert.match(html, /SpaceX Standardizes on NVIDIA While Anthropic Brings AMD to 2GW/);
   assert.match(html, /How \$35 Billion Becomes 1GW/);
@@ -385,7 +385,7 @@ test("keeps the English site fully translated across the live coverage stack", a
   assert.doesNotMatch(source, /editorial English translation is pending/);
   assert.doesNotMatch(source, /lang="zh-CN"/);
   assert.match(overview, /publishedColumnArticles\(\)\.slice\(0, 5\)/);
-  assert.match(overview, /hrefEn: "\/en#columns"/);
+  assert.match(overview, /hrefEn: "\/en\/columns"/);
   assert.match(source, /className="english-chain-icon"/);
   assert.match(source, /<ChainIcon type=/);
   assert.match(overview, /article\.hrefEn/);

@@ -134,7 +134,7 @@ const stages: Array<{
 const navItems = [
   { key: "overview", zh: "概览", en: "Overview", hrefZh: "/#overview", hrefEn: "/en#overview" },
   { key: "calendar", zh: "财报 / 资本支出", en: "Earnings / CapEx", hrefZh: "/#calendar", hrefEn: "/en#calendar" },
-  { key: "columns", zh: "专栏", en: "Columns", hrefZh: "/#columns", hrefEn: "/en#columns" },
+  { key: "columns", zh: "专栏", en: "Columns", hrefZh: "/columns", hrefEn: "/en/columns" },
   { key: "pulse", zh: "脉搏监测", en: "Pulse", hrefZh: "/pulse", hrefEn: "/en/pulse" },
   { key: "companies", zh: "公司", en: "Companies", hrefZh: "/#companies", hrefEn: "/en#companies" },
   { key: "industry", zh: "产业链地图", en: "Industry Map", hrefZh: "/industry", hrefEn: "/en/industry" },
@@ -216,7 +216,7 @@ function ShellNav({
   setActiveSection: (section: string) => void;
 }) {
   const isZh = lang === "zh";
-  const scrollKeys = new Set(["overview", "calendar", "columns", "companies", "market"]);
+  const scrollKeys = new Set(["overview", "calendar", "companies", "market"]);
   const [shareOpen, setShareOpen] = useState(false);
   const [shareQr, setShareQr] = useState("");
   const [shareUrl, setShareUrl] = useState("https://idc-index.com");
