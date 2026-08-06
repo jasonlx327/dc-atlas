@@ -1,0 +1,1266 @@
+{
+  "schema_version": "atlas-watch.v1",
+  "generated_at": "2026-08-06T13:11:09.797476+00:00",
+  "stats": {
+    "input_items": 17,
+    "included_items": 17,
+    "excluded_items": 0,
+    "duplicate_items": 0,
+    "clusters": 6,
+    "route_counts": {
+      "rumor_watch": 5,
+      "pulse_candidate": 1,
+      "atlas_research_candidate": 6,
+      "relationship_edges": 4
+    }
+  },
+  "clusters": [
+    {
+      "event_id": "evt-2f60a5342a0fc1",
+      "event_key": "spacex|ai-infrastructure-buildout|nvidia|us|2026-q3",
+      "label": "抛弃AMD锁定英伟达，SpaceX独家采用英伟达芯片，自身股价却大跌13.6%",
+      "first_seen_at": "2026-08-04T00:00:00-04:00",
+      "last_updated_at": "2026-08-06T13:17:11+08:00",
+      "status": "multi-source-report",
+      "entities": [
+        "SpaceX",
+        "NVIDIA",
+        "Vera Rubin",
+        "Tesla",
+        "SpaceXAI",
+        "Greater Memphis",
+        "AMD"
+      ],
+      "locations": [
+        "United States",
+        "Tennessee"
+      ],
+      "event_types": [
+        "ai-infrastructure",
+        "power-infrastructure"
+      ],
+      "topic_hits": [
+        "compute-and-memory",
+        "corporate-event",
+        "capacity-and-projects",
+        "data-center",
+        "power"
+      ],
+      "materiality_hits": [
+        "capacity",
+        "commitment",
+        "infrastructure-gate",
+        "money"
+      ],
+      "independent_source_count": 3,
+      "observed_source_count": 3,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T2",
+        "T5"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-1f8abdc01f3cc9",
+          "title": "SpaceX earnings call: Musk says AI infrastructure to use Nvidia chips",
+          "url": "https://axios.com/2026/08/04/spacex-earnings-elon-musk",
+          "origin_url": "",
+          "source_name": "Axios",
+          "source_id": "axios.com",
+          "source_class": "major-media",
+          "evidence_tier": "T2",
+          "independence_group": "axios",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-04T00:00:00-04:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "Axios reported Musk said on SpaceX's Q2 earnings call that SpaceX decided to build out AI infrastructure with Nvidia chips, citing Vera Rubin; no complete call transcript or GPU order was disclosed.",
+          "language": "en",
+          "entities": [
+            "SpaceX",
+            "NVIDIA",
+            "Vera Rubin"
+          ],
+          "locations": [
+            "United States"
+          ],
+          "event_type": "ai-infrastructure",
+          "event_key": "spacex|ai-infrastructure-buildout|nvidia|us|2026-q3",
+          "stance": "reports",
+          "topic_hits": [
+            "compute-and-memory",
+            "corporate-event"
+          ],
+          "materiality_hits": [
+            "capacity",
+            "commitment"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        },
+        {
+          "item_id": "itm-08c186d77a5f98",
+          "title": "SpaceX ramps up Tesla Megapack purchases in Q2 to power its AI data centers",
+          "url": "https://cnbc.com/2026/08/05/spacex-tesla-megapack-ai-data-centers.html",
+          "origin_url": "",
+          "source_name": "CNBC",
+          "source_id": "cnbc",
+          "source_class": "major-media",
+          "evidence_tier": "T2",
+          "independence_group": "cnbc",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-05T00:00:00-04:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "CNBC reported SpaceX financial filings show $295 million of Tesla Megapack purchases in Q2 2026 (H1 total $329 million) to help power Colossus data centers near Memphis; Musk set a tentative target of 20 GW of power and cooling live online by end of next year, with about 15 GW at the power-plant level.",
+          "language": "en",
+          "entities": [
+            "SpaceX",
+            "Tesla",
+            "SpaceXAI",
+            "Greater Memphis"
+          ],
+          "locations": [
+            "Tennessee",
+            "United States"
+          ],
+          "event_type": "power-infrastructure",
+          "event_key": "spacex|ai-infrastructure-buildout|nvidia|us|2026-q3",
+          "stance": "reports",
+          "topic_hits": [
+            "capacity-and-projects",
+            "data-center",
+            "power"
+          ],
+          "materiality_hits": [
+            "capacity",
+            "infrastructure-gate",
+            "money"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        },
+        {
+          "item_id": "itm-98a1a0fe3b7b77",
+          "title": "抛弃AMD锁定英伟达，SpaceX独家采用英伟达芯片，自身股价却大跌13.6%",
+          "url": "https://163.com/dy/article/L3LCEF5Q05568W0A.html",
+          "origin_url": "",
+          "source_name": "新浪财经（财闻）",
+          "source_id": "163.com",
+          "source_class": "community-relay",
+          "evidence_tier": "T5",
+          "independence_group": "sina-caiwen",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-06T13:17:11+08:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "财闻/新浪财经转述马斯克电话会表态：SpaceX将独家使用英伟达芯片并预计明年获得较大比例GPU供货份额；Q2算力扩容至1.4GW，目标今年底2GW、2027年末10GW；Q2资本开支184亿美元，其中AI板块158亿美元。属自媒体转述，未获完整原始记录。",
+          "language": "zh-CN",
+          "entities": [
+            "SpaceX",
+            "NVIDIA",
+            "AMD",
+            "Vera Rubin"
+          ],
+          "locations": [
+            "United States"
+          ],
+          "event_type": "ai-infrastructure",
+          "event_key": "spacex|ai-infrastructure-buildout|nvidia|us|2026-q3",
+          "stance": "reports",
+          "topic_hits": [
+            "capacity-and-projects",
+            "compute-and-memory",
+            "corporate-event"
+          ],
+          "materiality_hits": [
+            "capacity",
+            "money"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": true,
+        "pulse_candidate": false,
+        "atlas_research_candidate": true,
+        "relationship_edges": true
+      },
+      "relationship_edges": [
+        {
+          "from": "SpaceX",
+          "relation": "partners-with",
+          "to": "NVIDIA",
+          "observed_at": "2026-08-04T00:00:00-04:00",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_status": "media-reported",
+          "source_item_ids": [
+            "itm-1f8abdc01f3cc9"
+          ]
+        }
+      ],
+      "claims_to_verify": [
+        {
+          "claim": "Axios reported Musk said on SpaceX's Q2 earnings call that SpaceX decided to build out AI infrastructure with Nvidia chips, citing Vera Rubin; no complete call transcript or GPU order was disclosed.",
+          "attribution": "Axios",
+          "source_item_ids": [
+            "itm-1f8abdc01f3cc9"
+          ],
+          "starting_status": "not-determined"
+        },
+        {
+          "claim": "CNBC reported SpaceX financial filings show $295 million of Tesla Megapack purchases in Q2 2026 (H1 total $329 million) to help power Colossus data centers near Memphis; Musk set a tentative target of 20 GW of power and cooling live online by end of next year, with about 15 GW at the power-plant level.",
+          "attribution": "CNBC",
+          "source_item_ids": [
+            "itm-08c186d77a5f98"
+          ],
+          "starting_status": "not-determined"
+        },
+        {
+          "claim": "财闻/新浪财经转述马斯克电话会表态：SpaceX将独家使用英伟达芯片并预计明年获得较大比例GPU供货份额；Q2算力扩容至1.4GW，目标今年底2GW、2027年末10GW；Q2资本开支184亿美元，其中AI板块158亿美元。属自媒体转述，未获完整原始记录。",
+          "attribution": "新浪财经（财闻）",
+          "source_item_ids": [
+            "itm-98a1a0fe3b7b77"
+          ],
+          "starting_status": "not-determined"
+        }
+      ],
+      "atlas_research_handoff_stub": {
+        "watch_event_id": "evt-2f60a5342a0fc1",
+        "research_question": "Do current primary records substantiate “抛弃AMD锁定英伟达，SpaceX独家采用英伟达芯片，自身股价却大跌13.6%”, and what infrastructure mechanism, timing, and constraints would follow if confirmed?",
+        "suggested_route": "column",
+        "primary_source_item_ids": [],
+        "media_claim_item_ids": [
+          "itm-1f8abdc01f3cc9",
+          "itm-08c186d77a5f98",
+          "itm-98a1a0fe3b7b77"
+        ],
+        "publication_authority": "draft-only"
+      },
+      "hold_reasons": []
+    },
+    {
+      "event_id": "evt-dd6c57cf837fb8",
+      "event_key": "partners-group|majority-stake|avk|europe|2026",
+      "label": "Partners Group to become majority shareholder in data center power solutions provider AVK and accelerate future growth",
+      "first_seen_at": "2026-08-06T00:00:00+02:00",
+      "last_updated_at": "2026-08-06T00:00:00+02:00",
+      "status": "officially-confirmed",
+      "entities": [
+        "Partners Group",
+        "AVK"
+      ],
+      "locations": [
+        "Europe"
+      ],
+      "event_types": [
+        "mna"
+      ],
+      "topic_hits": [
+        "corporate-event",
+        "data-center",
+        "power"
+      ],
+      "materiality_hits": [
+        "infrastructure-gate",
+        "money"
+      ],
+      "independent_source_count": 1,
+      "observed_source_count": 1,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T1"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-9d3add0b769f8e",
+          "title": "Partners Group to become majority shareholder in data center power solutions provider AVK and accelerate future growth",
+          "url": "https://partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=80e9420b-67c0-43f1-b298-e0dfa2aba73e",
+          "origin_url": "",
+          "source_name": "Partners Group",
+          "source_id": "partnersgroup.com",
+          "source_class": "issuer",
+          "evidence_tier": "T1",
+          "independence_group": "partnersgroup",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-06T00:00:00+02:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "Partners Group announced it will become the majority shareholder of data-center power solutions provider AVK, planning an initial investment of more than USD 1 billion of equity supplemented by debt financing; AVK management retains a minority stake and expansion targets European data-center infrastructure demand.",
+          "language": "en",
+          "entities": [
+            "Partners Group",
+            "AVK"
+          ],
+          "locations": [
+            "Europe"
+          ],
+          "event_type": "mna",
+          "event_key": "partners-group|majority-stake|avk|europe|2026",
+          "stance": "confirms",
+          "topic_hits": [
+            "corporate-event",
+            "data-center",
+            "power"
+          ],
+          "materiality_hits": [
+            "infrastructure-gate",
+            "money"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": false,
+        "pulse_candidate": true,
+        "atlas_research_candidate": true,
+        "relationship_edges": true
+      },
+      "relationship_edges": [
+        {
+          "from": "Partners Group",
+          "relation": "acquires-stake-in",
+          "to": "AVK",
+          "observed_at": "2026-08-06T00:00:00+02:00",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_status": "official-source",
+          "source_item_ids": [
+            "itm-9d3add0b769f8e"
+          ]
+        }
+      ],
+      "claims_to_verify": [],
+      "atlas_research_handoff_stub": {
+        "watch_event_id": "evt-dd6c57cf837fb8",
+        "research_question": "What do current primary records confirm about “Partners Group to become majority shareholder in data center power solutions provider AVK and accelerate future growth”, and how does the disclosed scope and timing propagate through AI infrastructure?",
+        "suggested_route": "column",
+        "primary_source_item_ids": [
+          "itm-9d3add0b769f8e"
+        ],
+        "media_claim_item_ids": [],
+        "publication_authority": "draft-only"
+      },
+      "hold_reasons": []
+    },
+    {
+      "event_id": "evt-21a3e1487b3529",
+      "event_key": "anthropic|compute-capacity-contract|volta-infra|norway|2026",
+      "label": "Anthropic 与初创公司 Volta 签订 100 亿美元算力采购协议，后者成立仅半年",
+      "first_seen_at": "2026-08-04T00:00:00-04:00",
+      "last_updated_at": "2026-08-05T07:25:20+08:00",
+      "status": "multi-source-report",
+      "entities": [
+        "Anthropic",
+        "Volta Infra Holdings",
+        "NVIDIA",
+        "Bitdeer",
+        "Tydal",
+        "Andreessen Horowitz",
+        "Altimeter Capital",
+        "Michael Dell"
+      ],
+      "locations": [
+        "Norway",
+        "Tydal"
+      ],
+      "event_types": [
+        "capacity-contract"
+      ],
+      "topic_hits": [
+        "corporate-event",
+        "capacity-and-projects",
+        "compute-and-memory",
+        "data-center",
+        "power"
+      ],
+      "materiality_hits": [
+        "commitment",
+        "money",
+        "capacity"
+      ],
+      "independent_source_count": 3,
+      "observed_source_count": 3,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T2",
+        "T3"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-f5932fccda0bc1",
+          "title": "AI cloud startup Volta valued at $2.4 billion, announces $10 billion AI partnership",
+          "url": "https://au.finance.yahoo.com/news/ai-cloud-startup-volta-valued-143851167.html",
+          "origin_url": "",
+          "source_name": "Reuters",
+          "source_id": "au.finance.yahoo.com",
+          "source_class": "wire",
+          "evidence_tier": "T2",
+          "independence_group": "reuters",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-04T00:00:00-04:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "Reuters reported Volta Infra said it raised funds at a $2.4 billion valuation and landed a $10 billion six-year contract; Bloomberg News reported the Nvidia-backed Volta's $10 billion cloud contract is with Anthropic, citing people familiar with the matter.",
+          "language": "en",
+          "entities": [
+            "Anthropic",
+            "Volta Infra Holdings",
+            "NVIDIA"
+          ],
+          "locations": [
+            "Norway"
+          ],
+          "event_type": "capacity-contract",
+          "event_key": "anthropic|compute-capacity-contract|volta-infra|norway|2026",
+          "stance": "reports",
+          "topic_hits": [
+            "corporate-event"
+          ],
+          "materiality_hits": [
+            "commitment",
+            "money"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        },
+        {
+          "item_id": "itm-d6fac32a4fbf6e",
+          "title": "Anthropic signed a $10 billion computing deal with a months-old Nvidia-backed startup",
+          "url": "https://qz.com/anthropic-volta-infra-computing-deal-10-billion-080426",
+          "origin_url": "",
+          "source_name": "Quartz",
+          "source_id": "qz.com",
+          "source_class": "specialist-media",
+          "evidence_tier": "T3",
+          "independence_group": "qz",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-04T00:00:00-04:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "Quartz relayed Bloomberg reporting that Anthropic signed a six-year, $10 billion agreement to use computing capacity from Volta Infra Holdings, a months-old AI infrastructure startup backed by Nvidia; capacity is 133 MW powered by Vera Rubin chips.",
+          "language": "en",
+          "entities": [
+            "Anthropic",
+            "Volta Infra Holdings",
+            "NVIDIA"
+          ],
+          "locations": [
+            "Norway"
+          ],
+          "event_type": "capacity-contract",
+          "event_key": "anthropic|compute-capacity-contract|volta-infra|norway|2026",
+          "stance": "reports",
+          "topic_hits": [
+            "capacity-and-projects"
+          ],
+          "materiality_hits": [
+            "capacity",
+            "commitment",
+            "money"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        },
+        {
+          "item_id": "itm-56f2f604f5b352",
+          "title": "Anthropic 与初创公司 Volta 签订 100 亿美元算力采购协议，后者成立仅半年",
+          "url": "https://ithome.com/0/985/747.htm",
+          "origin_url": "",
+          "source_name": "IT之家",
+          "source_id": "ithome.com",
+          "source_class": "specialist-media",
+          "evidence_tier": "T3",
+          "independence_group": "ithome",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-05T07:25:20+08:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "IT之家援引彭博社：Anthropic与成立数月的Volta Infra Holdings签订100亿美元、六年期算力采购协议；算力来自挪威Tydal由Bitdeer运营、水电供电并部署英伟达Vera Rubin的数据中心，容量133MW，分两阶段最迟2027年3月交付；Volta完成3亿美元融资（a16z、Altimeter领投，英伟达与Michael Dell参与），估值24亿美元，并设50亿美元芯片采购融资计划。",
+          "language": "zh-CN",
+          "entities": [
+            "Anthropic",
+            "Volta Infra Holdings",
+            "Bitdeer",
+            "NVIDIA",
+            "Tydal",
+            "Andreessen Horowitz",
+            "Altimeter Capital",
+            "Michael Dell"
+          ],
+          "locations": [
+            "Norway",
+            "Tydal"
+          ],
+          "event_type": "capacity-contract",
+          "event_key": "anthropic|compute-capacity-contract|volta-infra|norway|2026",
+          "stance": "reports",
+          "topic_hits": [
+            "capacity-and-projects",
+            "compute-and-memory",
+            "corporate-event",
+            "data-center",
+            "power"
+          ],
+          "materiality_hits": [
+            "capacity",
+            "money"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": true,
+        "pulse_candidate": false,
+        "atlas_research_candidate": true,
+        "relationship_edges": true
+      },
+      "relationship_edges": [
+        {
+          "from": "Anthropic",
+          "relation": "buys-from",
+          "to": "Volta Infra Holdings",
+          "observed_at": "2026-08-05T07:25:20+08:00",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_status": "media-reported",
+          "source_item_ids": [
+            "itm-56f2f604f5b352"
+          ]
+        },
+        {
+          "from": "Volta Infra Holdings",
+          "relation": "partners-with",
+          "to": "Bitdeer",
+          "observed_at": "2026-08-05T07:25:20+08:00",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_status": "media-reported",
+          "source_item_ids": [
+            "itm-56f2f604f5b352"
+          ]
+        }
+      ],
+      "claims_to_verify": [
+        {
+          "claim": "Reuters reported Volta Infra said it raised funds at a $2.4 billion valuation and landed a $10 billion six-year contract; Bloomberg News reported the Nvidia-backed Volta's $10 billion cloud contract is with Anthropic, citing people familiar with the matter.",
+          "attribution": "Reuters",
+          "source_item_ids": [
+            "itm-f5932fccda0bc1"
+          ],
+          "starting_status": "not-determined"
+        },
+        {
+          "claim": "Quartz relayed Bloomberg reporting that Anthropic signed a six-year, $10 billion agreement to use computing capacity from Volta Infra Holdings, a months-old AI infrastructure startup backed by Nvidia; capacity is 133 MW powered by Vera Rubin chips.",
+          "attribution": "Quartz",
+          "source_item_ids": [
+            "itm-d6fac32a4fbf6e"
+          ],
+          "starting_status": "not-determined"
+        },
+        {
+          "claim": "IT之家援引彭博社：Anthropic与成立数月的Volta Infra Holdings签订100亿美元、六年期算力采购协议；算力来自挪威Tydal由Bitdeer运营、水电供电并部署英伟达Vera Rubin的数据中心，容量133MW，分两阶段最迟2027年3月交付；Volta完成3亿美元融资（a16z、Altimeter领投，英伟达与Michael Dell参与），估值24亿美元，并设50亿美元芯片采购融资计划。",
+          "attribution": "IT之家",
+          "source_item_ids": [
+            "itm-56f2f604f5b352"
+          ],
+          "starting_status": "not-determined"
+        }
+      ],
+      "atlas_research_handoff_stub": {
+        "watch_event_id": "evt-21a3e1487b3529",
+        "research_question": "Do current primary records substantiate “Anthropic 与初创公司 Volta 签订 100 亿美元算力采购协议，后者成立仅半年”, and what infrastructure mechanism, timing, and constraints would follow if confirmed?",
+        "suggested_route": "column",
+        "primary_source_item_ids": [],
+        "media_claim_item_ids": [
+          "itm-f5932fccda0bc1",
+          "itm-d6fac32a4fbf6e",
+          "itm-56f2f604f5b352"
+        ],
+        "publication_authority": "draft-only"
+      },
+      "hold_reasons": []
+    },
+    {
+      "event_id": "evt-b0f0b3f0694c6d",
+      "event_key": "nexus-data-centers|debt-refinancing|anthropic-google|texas|2026-q3",
+      "label": "AI基建债成了烫手山芋？大摩拟转售150亿美元数据中心银行贷款，在债券市场寻找接盘侠",
+      "first_seen_at": "2026-07-30T00:00:00-04:00",
+      "last_updated_at": "2026-08-05T00:00:00+08:00",
+      "status": "multi-source-report",
+      "entities": [
+        "Nexus Data Centers",
+        "Anthropic",
+        "Google",
+        "Morgan Stanley",
+        "Alphabet",
+        "Hubbard"
+      ],
+      "locations": [
+        "Texas",
+        "United States",
+        "Hubbard"
+      ],
+      "event_types": [
+        "financing"
+      ],
+      "topic_hits": [
+        "capacity-and-projects",
+        "data-center",
+        "compute-and-memory",
+        "corporate-event"
+      ],
+      "materiality_hits": [
+        "money",
+        "commitment"
+      ],
+      "independent_source_count": 2,
+      "observed_source_count": 2,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T2"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-71880dd44bd7bc",
+          "title": "Banks in talks to lend $15 billion for Anthropic data center backed by Google, WSJ reports",
+          "url": "https://reuters.com/legal/litigation/banks-talks-lend-15-billion-anthropic-data-center-backed-by-google-wsj-reports-2026-07-30",
+          "origin_url": "",
+          "source_name": "Reuters",
+          "source_id": "reuters",
+          "source_class": "wire",
+          "evidence_tier": "T2",
+          "independence_group": "reuters",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-07-30T00:00:00-04:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "Reuters relayed a Wall Street Journal report that data-center developer Nexus Data Centers is in advanced talks to raise $15 billion for a Texas campus tied to Anthropic, with Alphabet's Google offering financial guarantees and supplying chips.",
+          "language": "en",
+          "entities": [
+            "Nexus Data Centers",
+            "Anthropic",
+            "Google",
+            "Morgan Stanley",
+            "Alphabet"
+          ],
+          "locations": [
+            "Texas",
+            "United States"
+          ],
+          "event_type": "financing",
+          "event_key": "nexus-data-centers|debt-refinancing|anthropic-google|texas|2026-q3",
+          "stance": "reports",
+          "topic_hits": [
+            "capacity-and-projects",
+            "data-center"
+          ],
+          "materiality_hits": [
+            "money"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        },
+        {
+          "item_id": "itm-44b87fd27371fd",
+          "title": "AI基建债成了烫手山芋？大摩拟转售150亿美元数据中心银行贷款，在债券市场寻找接盘侠",
+          "url": "https://news.qq.com/rain/a/20260805A0BJJ600",
+          "origin_url": "",
+          "source_name": "Financial Times (via Tencent News)",
+          "source_id": "news.qq.com",
+          "source_class": "major-media",
+          "evidence_tier": "T2",
+          "independence_group": "ft",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-05T00:00:00+08:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "《金融时报》报道，以摩根士丹利为首的银行财团计划把与得州Hubbard一处由谷歌提供资金支持、租赁给Anthropic的数据中心相关的150亿美元债务，在贷款提取后推向债券市场再融资；园区约2000英亩、开发商为Nexus Data Centers且仍在施工，谷歌TPU芯片融资另行安排，谷歌背书在完工后生效，预计债券为投机级，项目配建自有天然气发电。",
+          "language": "zh-CN",
+          "entities": [
+            "Morgan Stanley",
+            "Nexus Data Centers",
+            "Google",
+            "Anthropic",
+            "Hubbard",
+            "Alphabet"
+          ],
+          "locations": [
+            "Texas",
+            "Hubbard",
+            "United States"
+          ],
+          "event_type": "financing",
+          "event_key": "nexus-data-centers|debt-refinancing|anthropic-google|texas|2026-q3",
+          "stance": "reports",
+          "topic_hits": [
+            "capacity-and-projects",
+            "compute-and-memory",
+            "corporate-event",
+            "data-center"
+          ],
+          "materiality_hits": [
+            "commitment",
+            "money"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": true,
+        "pulse_candidate": false,
+        "atlas_research_candidate": true,
+        "relationship_edges": true
+      },
+      "relationship_edges": [
+        {
+          "from": "Anthropic",
+          "relation": "leases-from",
+          "to": "Nexus Data Centers",
+          "observed_at": "2026-07-30T00:00:00-04:00",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence_status": "media-reported",
+          "source_item_ids": [
+            "itm-71880dd44bd7bc"
+          ]
+        }
+      ],
+      "claims_to_verify": [
+        {
+          "claim": "Reuters relayed a Wall Street Journal report that data-center developer Nexus Data Centers is in advanced talks to raise $15 billion for a Texas campus tied to Anthropic, with Alphabet's Google offering financial guarantees and supplying chips.",
+          "attribution": "Reuters",
+          "source_item_ids": [
+            "itm-71880dd44bd7bc"
+          ],
+          "starting_status": "not-determined"
+        },
+        {
+          "claim": "《金融时报》报道，以摩根士丹利为首的银行财团计划把与得州Hubbard一处由谷歌提供资金支持、租赁给Anthropic的数据中心相关的150亿美元债务，在贷款提取后推向债券市场再融资；园区约2000英亩、开发商为Nexus Data Centers且仍在施工，谷歌TPU芯片融资另行安排，谷歌背书在完工后生效，预计债券为投机级，项目配建自有天然气发电。",
+          "attribution": "Financial Times (via Tencent News)",
+          "source_item_ids": [
+            "itm-44b87fd27371fd"
+          ],
+          "starting_status": "not-determined"
+        }
+      ],
+      "atlas_research_handoff_stub": {
+        "watch_event_id": "evt-b0f0b3f0694c6d",
+        "research_question": "Do current primary records substantiate “AI基建债成了烫手山芋？大摩拟转售150亿美元数据中心银行贷款，在债券市场寻找接盘侠”, and what infrastructure mechanism, timing, and constraints would follow if confirmed?",
+        "suggested_route": "column",
+        "primary_source_item_ids": [],
+        "media_claim_item_ids": [
+          "itm-71880dd44bd7bc",
+          "itm-44b87fd27371fd"
+        ],
+        "publication_authority": "draft-only"
+      },
+      "hold_reasons": []
+    },
+    {
+      "event_id": "evt-c906a94849b3e0",
+      "event_key": "memory-supply|2027-tightness-and-nvidia-specs|global|2027",
+      "label": "存储原厂完成2027全年产能分配，DRAM及HBM产能全数售罄",
+      "first_seen_at": "2026-08-04T00:00:00+08:00",
+      "last_updated_at": "2026-08-04T10:10:00+08:00",
+      "status": "multi-source-report",
+      "entities": [
+        "NVIDIA",
+        "Rubin Ultra",
+        "HBM4e",
+        "HBM4",
+        "DRAM",
+        "HBM",
+        "NAND Flash",
+        "存储原厂"
+      ],
+      "locations": [
+        "Global"
+      ],
+      "event_types": [
+        "supply-constraint"
+      ],
+      "topic_hits": [
+        "compute-and-memory"
+      ],
+      "materiality_hits": [
+        "capacity",
+        "infrastructure-gate"
+      ],
+      "independent_source_count": 2,
+      "observed_source_count": 2,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T3"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-0d4783af54d25b",
+          "title": "TrendForce: 2027年DRAM供給持續緊張，NVIDIA評估下調Rubin Ultra HBM配置",
+          "url": "https://trendforce.com.tw/presscenter/news/20260804-13165.html",
+          "origin_url": "",
+          "source_name": "TrendForce",
+          "source_id": "trendforce.com.tw",
+          "source_class": "specialist-media",
+          "evidence_tier": "T3",
+          "independence_group": "trendforce",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-04T00:00:00+08:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "TrendForce研究：DRAM供应短缺预计延续至2027年；因HBM4e验证与量产良率存在不确定性，NVIDIA自2026年三季度起并行评估Rubin Ultra的HBM4e 8hi、HBM4 12hi与8hi等替代配置，最终规格未定；2027年HBM位元出货量预计同比增长约50-60%，仍不足以满足需求增长。",
+          "language": "zh-TW",
+          "entities": [
+            "NVIDIA",
+            "Rubin Ultra",
+            "HBM4e",
+            "HBM4"
+          ],
+          "locations": [
+            "Global"
+          ],
+          "event_type": "supply-constraint",
+          "event_key": "memory-supply|2027-tightness-and-nvidia-specs|global|2027",
+          "stance": "reports",
+          "topic_hits": [
+            "compute-and-memory"
+          ],
+          "materiality_hits": [
+            "capacity",
+            "infrastructure-gate"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        },
+        {
+          "item_id": "itm-6c42c056d1406d",
+          "title": "存储原厂完成2027全年产能分配，DRAM及HBM产能全数售罄",
+          "url": "https://m.nbd.com.cn/articles/2026-08-04/4531262.html",
+          "origin_url": "",
+          "source_name": "每日经济新闻",
+          "source_id": "m.nbd.com.cn",
+          "source_class": "specialist-media",
+          "evidence_tier": "T3",
+          "independence_group": "nbd",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-04T10:10:00+08:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "每日经济新闻援引业界消息：存储原厂已完成2027全年产能分配，三大厂DRAM与HBM产能全部售罄；NAND至2026年8月底前产能基本订完；无论是否签长协，买家均接受预付订金模式，印证2027年为存储最短缺年份的预期。",
+          "language": "zh-CN",
+          "entities": [
+            "DRAM",
+            "HBM",
+            "NAND Flash",
+            "存储原厂"
+          ],
+          "locations": [
+            "Global"
+          ],
+          "event_type": "supply-constraint",
+          "event_key": "memory-supply|2027-tightness-and-nvidia-specs|global|2027",
+          "stance": "reports",
+          "topic_hits": [
+            "compute-and-memory"
+          ],
+          "materiality_hits": [
+            "capacity",
+            "infrastructure-gate"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": true,
+        "pulse_candidate": false,
+        "atlas_research_candidate": true,
+        "relationship_edges": false
+      },
+      "relationship_edges": [],
+      "claims_to_verify": [
+        {
+          "claim": "TrendForce研究：DRAM供应短缺预计延续至2027年；因HBM4e验证与量产良率存在不确定性，NVIDIA自2026年三季度起并行评估Rubin Ultra的HBM4e 8hi、HBM4 12hi与8hi等替代配置，最终规格未定；2027年HBM位元出货量预计同比增长约50-60%，仍不足以满足需求增长。",
+          "attribution": "TrendForce",
+          "source_item_ids": [
+            "itm-0d4783af54d25b"
+          ],
+          "starting_status": "not-determined"
+        },
+        {
+          "claim": "每日经济新闻援引业界消息：存储原厂已完成2027全年产能分配，三大厂DRAM与HBM产能全部售罄；NAND至2026年8月底前产能基本订完；无论是否签长协，买家均接受预付订金模式，印证2027年为存储最短缺年份的预期。",
+          "attribution": "每日经济新闻",
+          "source_item_ids": [
+            "itm-6c42c056d1406d"
+          ],
+          "starting_status": "not-determined"
+        }
+      ],
+      "atlas_research_handoff_stub": {
+        "watch_event_id": "evt-c906a94849b3e0",
+        "research_question": "Do current primary records substantiate “存储原厂完成2027全年产能分配，DRAM及HBM产能全数售罄”, and what infrastructure mechanism, timing, and constraints would follow if confirmed?",
+        "suggested_route": "column",
+        "primary_source_item_ids": [],
+        "media_claim_item_ids": [
+          "itm-0d4783af54d25b",
+          "itm-6c42c056d1406d"
+        ],
+        "publication_authority": "draft-only"
+      },
+      "hold_reasons": []
+    },
+    {
+      "event_id": "evt-8e0cf149488966",
+      "event_key": "texas|interconnection-audit-pause|ercot-puct|texas|2026-q3",
+      "label": "Data center approvals in Texas halted until audits completed, Gov. Greg Abbott says",
+      "first_seen_at": "2026-08-03T00:00:00-04:00",
+      "last_updated_at": "2026-08-04T00:00:00-04:00",
+      "status": "multi-source-report",
+      "entities": [
+        "Greg Abbott",
+        "PUCT",
+        "ERCOT"
+      ],
+      "locations": [
+        "Texas",
+        "United States"
+      ],
+      "event_types": [
+        "policy-enforcement"
+      ],
+      "topic_hits": [
+        "data-center",
+        "power",
+        "capacity-and-projects"
+      ],
+      "materiality_hits": [
+        "capacity",
+        "infrastructure-gate"
+      ],
+      "independent_source_count": 6,
+      "observed_source_count": 6,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T2",
+        "T3"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-f1220f0a71b64d",
+          "title": "Texas Orders Statewide Audit of AI Data Center Projects",
+          "url": "https://datacenterknowledge.com/energy-power-supply/texas-orders-statewide-audit-of-ai-data-center-projects-in-ercot-queue",
+          "origin_url": "",
+          "source_name": "Data Center Knowledge",
+          "source_id": "dck",
+          "source_class": "specialist-media",
+          "evidence_tier": "T3",
+          "independence_group": "datacenterknowledge",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-03T00:00:00-04:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "Data Center Knowledge reported ERCOT will work with PUCT to implement the governor's directive including postponement of the Batch Zero transmission planning study; PUCT Chairman Thomas Gleeson endorsed the directive.",
+          "language": "en",
+          "entities": [
+            "Greg Abbott",
+            "PUCT",
+            "ERCOT"
+          ],
+          "locations": [
+            "Texas",
+            "United States"
+          ],
+          "event_type": "policy-enforcement",
+          "event_key": "texas|interconnection-audit-pause|ercot-puct|texas|2026-q3",
+          "stance": "reports",
+          "topic_hits": [
+            "data-center",
+            "power"
+          ],
+          "materiality_hits": [],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        },
+        {
+          "item_id": "itm-c7e63f27e41c48",
+          "title": "Abbott Orders Full Audit of Texas Data Center Interconnection Queue, Threatens to Deny Grid Access",
+          "url": "https://powermag.com/abbott-orders-full-audit-of-texas-data-center-interconnection-queue-threatens-to-deny-grid-access",
+          "origin_url": "",
+          "source_name": "POWER Magazine",
+          "source_id": "powermag.com",
+          "source_class": "specialist-media",
+          "evidence_tier": "T3",
+          "independence_group": "powermag",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-03T00:00:00-04:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "POWER Magazine reported the August 3 letter to PUCT Chairman Thomas Gleeson and ERCOT CEO Pablo Vegas, noting ERCOT's July 29 Senate testimony that the large-load interconnection queue has reached 474 GW, of which about 90% is data centers.",
+          "language": "en",
+          "entities": [
+            "Greg Abbott",
+            "PUCT",
+            "ERCOT"
+          ],
+          "locations": [
+            "Texas",
+            "United States"
+          ],
+          "event_type": "policy-enforcement",
+          "event_key": "texas|interconnection-audit-pause|ercot-puct|texas|2026-q3",
+          "stance": "reports",
+          "topic_hits": [
+            "capacity-and-projects",
+            "data-center",
+            "power"
+          ],
+          "materiality_hits": [
+            "capacity",
+            "infrastructure-gate"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        },
+        {
+          "item_id": "itm-ef38e763c634a4",
+          "title": "New Texas data center projects frozen until state audits them",
+          "url": "https://texastribune.org/2026/08/03/texas-data-center-project-audit-greg-abbott",
+          "origin_url": "",
+          "source_name": "Texas Tribune",
+          "source_id": "texastribune.org",
+          "source_class": "major-media",
+          "evidence_tier": "T2",
+          "independence_group": "texastribune",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-03T00:00:00-05:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "Texas Tribune reported that Abbott on August 3 ordered PUCT and ERCOT to audit all data centers seeking grid connection and that non-compliant projects must be denied; the audit covers energy, water, tax breaks, ownership and community impact.",
+          "language": "en",
+          "entities": [
+            "Greg Abbott",
+            "PUCT",
+            "ERCOT"
+          ],
+          "locations": [
+            "Texas",
+            "United States"
+          ],
+          "event_type": "policy-enforcement",
+          "event_key": "texas|interconnection-audit-pause|ercot-puct|texas|2026-q3",
+          "stance": "reports",
+          "topic_hits": [
+            "data-center",
+            "power"
+          ],
+          "materiality_hits": [
+            "infrastructure-gate"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        },
+        {
+          "item_id": "itm-8cf72006b327a8",
+          "title": "Greg Abbott halts Texas data centers",
+          "url": "https://axios.com/local/san-antonio/2026/08/03/greg-abbott-halts-texas-data-centers-electric-grid",
+          "origin_url": "",
+          "source_name": "Axios",
+          "source_id": "axios.com",
+          "source_class": "major-media",
+          "evidence_tier": "T2",
+          "independence_group": "axios",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-03T20:27:32+00:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "Axios reported that Texas Governor Greg Abbott directed PUCT and ERCOT to deny interconnection to data-center projects that fail to meet requirements while proposed projects are audited.",
+          "language": "en",
+          "entities": [
+            "Greg Abbott",
+            "PUCT",
+            "ERCOT"
+          ],
+          "locations": [
+            "Texas",
+            "United States"
+          ],
+          "event_type": "policy-enforcement",
+          "event_key": "texas|interconnection-audit-pause|ercot-puct|texas|2026-q3",
+          "stance": "reports",
+          "topic_hits": [
+            "data-center",
+            "power"
+          ],
+          "materiality_hits": [],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        },
+        {
+          "item_id": "itm-a7a88c50a3baff",
+          "title": "Data center approvals in Texas halted until audits completed, Gov. Greg Abbott says",
+          "url": "https://apnews.com/article/data-centers-texas-approvals-paused-audits-5cac087049aeae1b51221043972cf631",
+          "origin_url": "",
+          "source_name": "Associated Press",
+          "source_id": "apnews.com",
+          "source_class": "wire",
+          "evidence_tier": "T2",
+          "independence_group": "ap",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-04T00:00:00-04:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "AP reported Abbott announced a moratorium on data-center approvals until an audit is completed; ERCOT tracks more than 1,800 queue projects exceeding 474 GW, about five times the record peak, with roughly 90% of new power requests from data centers; ERCOT paused its Batch Zero review.",
+          "language": "en",
+          "entities": [
+            "Greg Abbott",
+            "PUCT",
+            "ERCOT"
+          ],
+          "locations": [
+            "Texas",
+            "United States"
+          ],
+          "event_type": "policy-enforcement",
+          "event_key": "texas|interconnection-audit-pause|ercot-puct|texas|2026-q3",
+          "stance": "reports",
+          "topic_hits": [
+            "capacity-and-projects",
+            "data-center",
+            "power"
+          ],
+          "materiality_hits": [
+            "capacity",
+            "infrastructure-gate"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        },
+        {
+          "item_id": "itm-87bc8bb34d8ee6",
+          "title": "Facing an estimated 474 GW of interconnection requests, Texas hits pause on data centers",
+          "url": "https://utilitydive.com/news/texas-hits-pause-data-center-interconnections/827046",
+          "origin_url": "",
+          "source_name": "Utility Dive",
+          "source_id": "utilitydive.com",
+          "source_class": "specialist-media",
+          "evidence_tier": "T3",
+          "independence_group": "utilitydive",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-04T00:00:00-04:00",
+          "discovered_at": "2026-08-06T21:01:00+08:00",
+          "summary": "Utility Dive reported ERCOT delayed the Batch Zero transmission planning study after Abbott's August 3 letter and plans to ask PUCT for a good-cause exemption to the timeline at its August 20 open meeting; queue requests total about 474 GW, more than five times ERCOT's record peak.",
+          "language": "en",
+          "entities": [
+            "Greg Abbott",
+            "PUCT",
+            "ERCOT"
+          ],
+          "locations": [
+            "Texas",
+            "United States"
+          ],
+          "event_type": "policy-enforcement",
+          "event_key": "texas|interconnection-audit-pause|ercot-puct|texas|2026-q3",
+          "stance": "reports",
+          "topic_hits": [
+            "capacity-and-projects",
+            "data-center",
+            "power"
+          ],
+          "materiality_hits": [
+            "capacity"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": true,
+        "pulse_candidate": false,
+        "atlas_research_candidate": true,
+        "relationship_edges": false
+      },
+      "relationship_edges": [],
+      "claims_to_verify": [
+        {
+          "claim": "Data Center Knowledge reported ERCOT will work with PUCT to implement the governor's directive including postponement of the Batch Zero transmission planning study; PUCT Chairman Thomas Gleeson endorsed the directive.",
+          "attribution": "Data Center Knowledge",
+          "source_item_ids": [
+            "itm-f1220f0a71b64d"
+          ],
+          "starting_status": "not-determined"
+        },
+        {
+          "claim": "POWER Magazine reported the August 3 letter to PUCT Chairman Thomas Gleeson and ERCOT CEO Pablo Vegas, noting ERCOT's July 29 Senate testimony that the large-load interconnection queue has reached 474 GW, of which about 90% is data centers.",
+          "attribution": "POWER Magazine",
+          "source_item_ids": [
+            "itm-c7e63f27e41c48"
+          ],
+          "starting_status": "not-determined"
+        },
+        {
+          "claim": "Texas Tribune reported that Abbott on August 3 ordered PUCT and ERCOT to audit all data centers seeking grid connection and that non-compliant projects must be denied; the audit covers energy, water, tax breaks, ownership and community impact.",
+          "attribution": "Texas Tribune",
+          "source_item_ids": [
+            "itm-ef38e763c634a4"
+          ],
+          "starting_status": "not-determined"
+        },
+        {
+          "claim": "Axios reported that Texas Governor Greg Abbott directed PUCT and ERCOT to deny interconnection to data-center projects that fail to meet requirements while proposed projects are audited.",
+          "attribution": "Axios",
+          "source_item_ids": [
+            "itm-8cf72006b327a8"
+          ],
+          "starting_status": "not-determined"
+        },
+        {
+          "claim": "AP reported Abbott announced a moratorium on data-center approvals until an audit is completed; ERCOT tracks more than 1,800 queue projects exceeding 474 GW, about five times the record peak, with roughly 90% of new power requests from data centers; ERCOT paused its Batch Zero review.",
+          "attribution": "Associated Press",
+          "source_item_ids": [
+            "itm-a7a88c50a3baff"
+          ],
+          "starting_status": "not-determined"
+        },
+        {
+          "claim": "Utility Dive reported ERCOT delayed the Batch Zero transmission planning study after Abbott's August 3 letter and plans to ask PUCT for a good-cause exemption to the timeline at its August 20 open meeting; queue requests total about 474 GW, more than five times ERCOT's record peak.",
+          "attribution": "Utility Dive",
+          "source_item_ids": [
+            "itm-87bc8bb34d8ee6"
+          ],
+          "starting_status": "not-determined"
+        }
+      ],
+      "atlas_research_handoff_stub": {
+        "watch_event_id": "evt-8e0cf149488966",
+        "research_question": "Do current primary records substantiate “Data center approvals in Texas halted until audits completed, Gov. Greg Abbott says”, and what infrastructure mechanism, timing, and constraints would follow if confirmed?",
+        "suggested_route": "column",
+        "primary_source_item_ids": [],
+        "media_claim_item_ids": [
+          "itm-f1220f0a71b64d",
+          "itm-c7e63f27e41c48",
+          "itm-ef38e763c634a4",
+          "itm-8cf72006b327a8",
+          "itm-a7a88c50a3baff",
+          "itm-87bc8bb34d8ee6"
+        ],
+        "publication_authority": "draft-only"
+      },
+      "hold_reasons": []
+    }
+  ],
+  "excluded": [],
+  "duplicates": []
+}

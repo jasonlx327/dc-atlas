@@ -169,7 +169,7 @@ test("publishes shareable bilingual policy and Rumor Watch brief pages", async (
   const rumor = await render("/rumors/spacex-nvidia-ai-infrastructure-call-2026");
   assert.equal(rumor.status, 200);
   const rumorHtml = await rumor.text();
-  assert.match(rumorHtml, /SpaceX据报将AI基础设施部署锁定为NVIDIA路线/);
+  assert.match(rumorHtml, /SpaceX据报锁定NVIDIA路线，并披露10GW算力与20GW电力目标/);
   assert.match(rumorHtml, /rel="canonical" href="https:\/\/idc-index\.com\/rumors\/spacex-nvidia-ai-infrastructure-call-2026"/i);
   assert.match(rumorHtml, /公开回应/);
   assert.match(rumorHtml, /不等同于已核验事实/);
@@ -177,7 +177,7 @@ test("publishes shareable bilingual policy and Rumor Watch brief pages", async (
   const english = await render("/en/rumors/spacex-nvidia-ai-infrastructure-call-2026");
   assert.equal(english.status, 200);
   const englishHtml = await english.text();
-  assert.match(englishHtml, /SpaceX is reported to be choosing Nvidia for its AI-infrastructure buildout/);
+  assert.match(englishHtml, /SpaceX is reported to be locking in Nvidia for AI infrastructure, with 10GW compute and 20GW power targets/);
   assert.match(englishHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/rumors\/spacex-nvidia-ai-infrastructure-call-2026"/i);
   assert.match(englishHtml, /PUBLIC RESPONSE/);
 
@@ -198,7 +198,7 @@ test("renders the English research console and focused content routes", async ()
   assert.match(html, /class="atlas-console-rail(?: |")/);
   assert.match(html, /href="\/en#columns"/);
   assert.match(html, /Research queue/);
-  assert.match(html, /Qwen3\.8 Is Live: Seven Tests for Alibaba Cloud/);
+  assert.match(html, /SpaceX Standardizes on NVIDIA While Anthropic Brings AMD to 2GW/);
   assert.match(html, /How \$35 Billion Becomes 1GW/);
   assert.equal((html.match(/href="\/en\/columns\/(?!microsoft-ai-capex)[^"]+"/g) ?? []).length >= 4, true);
   assert.match(html, /CapEx &amp; earnings watch/);
@@ -959,4 +959,40 @@ test("makes public intelligence explicitly discoverable to OpenAI search", async
 
   const llms = await render("/en/llms.txt");
   assert.match(await llms.text(), /source-linked post-results conclusions/);
+});
+
+test("publishes the bilingual industry network with user-friendly copy", async () => {
+  const chinese = await render("/industry-network");
+  assert.equal(chinese.status, 200);
+  const chineseHtml = await chinese.text();
+  assert.match(chineseHtml, /产业链信息网/);
+  assert.match(chineseHtml, /从一家公司出发，看它和上下游之间的公开关系、金额与来源/);
+  assert.match(chineseHtml, /收录公司/);
+  assert.match(chineseHtml, /上游在左 · 下游在右/);
+  assert.match(chineseHtml, /下游/);
+  assert.match(chineseHtml, /hrefLang="en" href="https:\/\/idc-index\.com\/en\/industry-network"/);
+
+  const english = await render("/en/industry-network");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /Industry network/);
+  assert.match(englishHtml, /Start from one company/);
+  assert.match(englishHtml, /Upstream/);
+  assert.match(englishHtml, /Downstream/);
+  assert.match(englishHtml, /hrefLang="zh-CN" href="https:\/\/idc-index\.com\/industry-network"/);
+});
+
+test("embeds the industry network section into entity profiles", async () => {
+  const chinese = await render("/companies/microsoft");
+  assert.equal(chinese.status, 200);
+  const chineseHtml = await chinese.text();
+  assert.match(chineseHtml, /产业链上下游/);
+  assert.match(chineseHtml, /查看全链路/);
+  assert.match(chineseHtml, /industry-network\?focus=microsoft/);
+
+  const english = await render("/en/companies/microsoft");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /Industry network/);
+  assert.match(englishHtml, /Open full network/);
 });
