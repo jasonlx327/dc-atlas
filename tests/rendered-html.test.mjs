@@ -199,7 +199,7 @@ test("renders the English research console and focused content routes", async ()
   assert.match(html, /href="\/en#columns"/);
   assert.match(html, /Research queue/);
   assert.match(html, /Qwen3\.8 Is Live: Seven Tests for Alibaba Cloud/);
-  assert.match(html, /Azure at 43%: What Must the Next \$50B Deliver/);
+  assert.match(html, /How \$35 Billion Becomes 1GW/);
   assert.equal((html.match(/href="\/en\/columns\/(?!microsoft-ai-capex)[^"]+"/g) ?? []).length >= 4, true);
   assert.match(html, /CapEx &amp; earnings watch/);
   assert.doesNotMatch(html, /Atlas intelligence brief/);
@@ -678,7 +678,9 @@ test("keeps live-data validation in the deployment path", async () => {
   assert.match(liveCheck, /newsStatus !== "ok"/);
   for (const section of ["idcPulse", "listedCompanyNews", "mnaDeals", "capacityRadar", "coolingProgress"]) assert.match(liveCheck, new RegExp(section));
   assert.match(liveCheck, /freshness\.status === "stale"/);
-  assert.match(workerSource, /CONTENT_REVIEWED_AT = "2026-08-05"/);
+  assert.match(workerSource, /CONTENT_REVIEWED_AT = "2026-08-06"/);
+  assert.match(workerSource, /Galaxy Q2 数据中心业务首次产生收入/);
+  assert.match(workerSource, /TeraWulf Q2 HPC 租赁收入 3,190 万美元/);
   assert.match(workerSource, /AMD Q2 数据中心收入 67 亿美元/);
   assert.match(workerSource, /Hut 8 Q2 披露 949MW 已签约 IT 容量/);
   assert.match(workerSource, /hut8-q2-2026-construction/);

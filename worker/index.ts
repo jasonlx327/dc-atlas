@@ -14,7 +14,7 @@ const AIHOT_USER_AGENT = "aihot-skill/0.3.6 (+https://aihot.virxact.com/aihot-sk
 const CWW_ENDPOINT = "https://cwwindex.today/data/latest.json";
 const OPENROUTER_MODELS_ENDPOINT = "https://openrouter.ai/api/v1/models?sort=top-weekly";
 const ARENA_CODE_ENDPOINT = "https://arena.ai/leaderboard/code/webdev";
-const CONTENT_REVIEWED_AT = "2026-08-05";
+const CONTENT_REVIEWED_AT = "2026-08-06";
 const LLMS_TXT = `# IDC Atlas
 
 > IDC Atlas is a bilingual, source-first intelligence site for global data-center construction, AI infrastructure, power, cooling, networking and China AI silicon. Content is for public-information research and industry observation only, not investment advice.
@@ -588,6 +588,28 @@ function supernodeProducts(): SupernodeProduct[] {
 function capacityRadar(): SourceRecord[] {
   return [
     {
+      id: "galaxy-q2-2026-helios",
+      title: "Galaxy Q2 确认 Helios 一期 133MW IT 全部在服",
+      subject: "Galaxy Digital · Nasdaq: GLXY / CoreWeave",
+      metric: "133MW IT 在服 · 260MW IT 二期在建",
+      status: "一期收入运营 / 二期施工",
+      publishedAt: "2026-08-05",
+      sourceName: "Galaxy SEC 8-K / Q2 results",
+      sourceUrl: "https://www.sec.gov/Archives/edgar/data/1859392/000185939226000084/glxy-20260630xpressrelease.htm",
+      note: "公司披露 Helios 一期 133MW 关键 IT 负载已在 Q2 末全部投入服务，Q2 为数据中心业务首个收入运营季度；二期 260MW IT 已开工，目标 2027 年二季度开始交付。",
+    },
+    {
+      id: "terawulf-q2-2026-lake-mariner",
+      title: "TeraWulf Q2 将 Lake Mariner 收入容量推进至 102MW",
+      subject: "TeraWulf · Nasdaq: WULF / Fluidstack / Google",
+      metric: "102MW IT 产生收入 · 336MW IT 在建",
+      status: "CB-3 已交付 / CB-4 首个数据厅调试",
+      publishedAt: "2026-08-05",
+      sourceName: "TeraWulf SEC 8-K / Q2 results",
+      sourceUrl: "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000162/a_wulfearningsreleaseq22026.htm",
+      note: "公司披露 6 月末有 81MW 收入容量，7 月初完成 CB-3 后增至 102MW；另有 CB-4/CB-5 合计 336MW 在建，首个 CB-4 数据厅已进入调试。",
+    },
+    {
       id: "hut8-q2-2026-construction",
       title: "Hut 8 Q2 将两座 AI 园区 1,330MW 电力容量推进至在建",
       subject: "Hut 8 · Nasdaq: HUT",
@@ -1026,6 +1048,22 @@ function chinaChipPulse(liveNews: NewsItem[], days = 30): NewsItem[] {
 function mnaDeals(): MnaDeal[] {
   return [
     {
+      id: "galaxy-caspian-selene-site-acquisitions",
+      announcedAt: "2026-08-05",
+      buyer: "Galaxy Digital",
+      target: "德州 Caspian 与 Selene 两处 AI 数据中心站点",
+      value: "未披露",
+      capacity: "约 700MW + 900MW 潜在容量",
+      region: "美国德州",
+      status: "已完成站点收购 · 电力审批推进",
+      statusAsOf: CONTENT_REVIEWED_AT,
+      valueBasis: "交易金额未披露",
+      capacityBasis: "Galaxy Q2 文件披露的潜在电力容量",
+      rationale: "两处站点把 Galaxy 在 Helios 与 McGregor 之外的德州开发管线扩展至多园区，但容量仍取决于 ERCOT 并网流程。",
+      sourceName: "Galaxy SEC 8-K / Q2 results",
+      sourceUrl: "https://www.sec.gov/Archives/edgar/data/1859392/000185939226000084/glxy-20260630xpressrelease.htm",
+    },
+    {
       id: "galaxy-mcgregor-campus-acquisition",
       announcedAt: "2026-07-28",
       buyer: "Galaxy Digital",
@@ -1207,6 +1245,42 @@ function positiveIdcNews(liveNews: NewsItem[], records: SourceRecord[]): NewsIte
 
 function constructionPulse(): NewsItem[] {
   const items: NewsItem[] = [
+    {
+      id: "galaxy-q2-2026-helios",
+      title: "Galaxy Helios 一期 133MW IT 全部在服，二期 260MW 已开工",
+      summary: "公司 Q2 文件确认一期 133MW 关键 IT 负载已全部投入服务，数据中心业务首次产生收入；二期土方完成并进入结构基础施工，目标 2027 年二季度开始交付。",
+      publishedAt: "2026-08-05T07:00:00-04:00",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://www.sec.gov/Archives/edgar/data/1859392/000185939226000084/glxy-20260630xpressrelease.htm",
+      sourceUrl: "https://www.sec.gov/Archives/edgar/data/1859392/000185939226000084/glxy-20260630xpressrelease.htm",
+      sourceName: "Galaxy SEC 8-K / Q2 results",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "一期收入运营 / 二期施工",
+      scale: "133MW IT 在服 · 260MW IT 在建",
+      listedTicker: "Galaxy Digital · GLXY",
+      whyItMatters: "一期从交付推进到全部在服和收入运营，为园区执行提供了经营验证；二期仍需按计划完成建设、交付和起租。",
+    },
+    {
+      id: "terawulf-q2-2026-lake-mariner",
+      title: "TeraWulf Lake Mariner 收入容量升至 102MW，另有 336MW 在建",
+      summary: "公司 Q2 文件披露 CB-3 于 7 月初完成交付，使收入容量从 6 月末的 81MW 增至 102MW；CB-4/CB-5 合计 336MW 在建，其中首个 CB-4 数据厅已进入调试。",
+      publishedAt: "2026-08-05T07:00:00-04:00",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000162/a_wulfearningsreleaseq22026.htm",
+      sourceUrl: "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000162/a_wulfearningsreleaseq22026.htm",
+      sourceName: "TeraWulf SEC 8-K / Q2 results",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "CB-3 交付 / CB-4 调试",
+      scale: "102MW IT 产生收入 · 336MW IT 在建",
+      listedTicker: "TeraWulf · WULF",
+      whyItMatters: "已产生收入的 IT 容量把租约转化为运营读数；后续关键是 CB-4/CB-5 分期交付、起租与成本控制。",
+    },
     {
       id: "hut8-q2-2026-construction",
       title: "Hut 8 两座 AI 园区共有 1,330MW 电力容量进入施工",
@@ -1720,6 +1794,42 @@ function constructionPulse(): NewsItem[] {
 
 function listedCompanyPulse(): NewsItem[] {
   const items: NewsItem[] = [
+    {
+      id: "galaxy-q2-2026-results",
+      title: "Galaxy Q2 数据中心业务首次产生收入，133MW IT 已全部在服",
+      summary: "数据中心板块 Q2 调整后毛利为 2,000 万美元、调整后 EBITDA 为 1,100 万美元；Helios 一期 133MW 关键 IT 负载在季末全部投入服务。",
+      publishedAt: "2026-08-05T07:00:00-04:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://www.sec.gov/Archives/edgar/data/1859392/000185939226000084/glxy-20260630xpressrelease.htm",
+      sourceUrl: "https://www.sec.gov/Archives/edgar/data/1859392/000185939226000084/glxy-20260630xpressrelease.htm",
+      sourceName: "Galaxy SEC 8-K / Q2 results",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "Q2 数据中心收入运营",
+      scale: "133MW IT 在服 · 调整后 EBITDA $1,100 万",
+      listedTicker: "Galaxy Digital · GLXY",
+      whyItMatters: "Helios 首次把在建容量转化为租赁运营与板块收益；季度指标为公司披露的非 GAAP 口径，后续仍需跟踪 GAAP 收入和二期交付。",
+    },
+    {
+      id: "terawulf-q2-2026-results",
+      title: "TeraWulf Q2 HPC 租赁收入 3,190 万美元，102MW 已产生收入",
+      summary: "公司 Q2 总收入为 4,480 万美元，其中 HPC 租赁收入 3,190 万美元、约占 71%；7 月初完成 CB-3 后，Lake Mariner 收入容量达到 102MW。",
+      publishedAt: "2026-08-05T07:00:00-04:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000162/a_wulfearningsreleaseq22026.htm",
+      sourceUrl: "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000162/a_wulfearningsreleaseq22026.htm",
+      sourceName: "TeraWulf SEC 8-K / Q2 results",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "Q2 HPC 收入与容量交付",
+      scale: "HPC 租赁收入 $3,190 万 · 102MW IT",
+      listedTicker: "TeraWulf · WULF",
+      whyItMatters: "HPC 收入占比超过七成，说明业务重心正在由数字资产基础设施转向长期 AI 租赁；在建容量仍需按期交付和起租。",
+    },
     {
       id: "amd-q2-2026-results",
       title: "AMD Q2 数据中心收入 67 亿美元，Helios 开始爬坡",
@@ -2265,6 +2375,8 @@ function calendarEvents(): CalendarEvent[] {
     { id: "palantir-q2-2026", startsAt: "2026-08-03T21:00:00.000Z", company: "Palantir", ticker: "PLTR", sector: "企业 AI / 数据平台", description: "企业 AI 平台提供商；其“主权 AI”框架围绕客户对数据、工作流、模型选择和后训练权重的控制。", focus: "美国商业收入、TCV/RDV 转换、受控推理部署与托管算力成本", sourceName: "Palantir Investor Relations · Q2 results", sourceUrl: "https://investors.palantir.com/events.html", conclusion: { summary: "Q2 营收为 19.35 亿美元，同比增 93%；美国商业收入为 7.64 亿美元，同比增 149%，美国商业 TCV 为 21.32 亿美元。电话会强调“主权 AI”，但未披露 GPU、机柜、MW 或数据中心订单；下一步核验合同转收入与生产部署规模。", summaryEn: "Q2 revenue was $1.935B, up 93% year over year; U.S. commercial revenue was $764M, up 149%, and U.S. commercial TCV was $2.132B. The call emphasized sovereign AI but disclosed no GPUs, racks, MW or data-center order; next checks are contract conversion and production-deployment scale.", sourceName: "Palantir Q2 2026 SEC 8-K & call materials", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000039/a2026q2ex991pressrelease.htm" } },
     { id: "hut8-q2-2026", startsAt: "2026-08-04T12:30:00.000Z", company: "Hut 8", ticker: "HUT", sector: "电力 / AI 数据中心", description: "以电力资源、园区开发和长期租约推进 AI 数据中心平台。", focus: "Beacon Point / River Bend 建设、融资、交付与客户集中度", sourceName: "Hut 8 SEC 8-K & Q2 results", sourceUrl: "https://cdn.kscope.io/e784885ee381047a57f1906fc12d4ad4.html", conclusion: { summary: "前两座 AI 园区共有 949MW 已签约 IT 容量；River Bend 与 Beacon Point 合计 1,330MW 公用事业容量处于施工阶段，首个数据厅目标分别于 2027 年二、三季度交付。下一项验证是按计划交付、通电并进入计费。", summaryEn: "The first two AI campuses have 949MW of contracted IT capacity. River Bend and Beacon Point have 1,330MW of utility capacity in active construction, with initial data-hall delivery targeted for Q2 and Q3 2027, respectively. The next test is delivery, energization and billing.", sourceName: "Hut 8 SEC 8-K & Q2 results", sourceUrl: "https://cdn.kscope.io/e784885ee381047a57f1906fc12d4ad4.html" } },
     { id: "amd-q2-2026", startsAt: "2026-08-04T21:00:00.000Z", company: "AMD", ticker: "AMD", sector: "AI 加速器 / CPU", description: "Instinct、EPYC 与 Helios 机架级平台是 NVIDIA 之外的重要开放 AI 基础设施路线。", focus: "数据中心收入、MI350/MI450 交付、Helios 节奏与全年指引", sourceName: "AMD SEC 8-K & Q2 results", sourceUrl: "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000121/amd-20260804.htm", conclusion: { summary: "Q2 数据中心收入为 67 亿美元，同比增长 107%；管理层称 Helios 开始爬坡，并预计 Q3 公司总收入约 130 亿美元，上下浮动 3 亿美元。下一项验证是 MI400 系列与 Helios 的实际交付和客户部署。", summaryEn: "Q2 Data Center revenue was $6.7B, up 107% year over year. Management said Helios is beginning to ramp and guided Q3 company revenue to about $13.0B, plus or minus $0.3B. The next test is actual MI400-series and Helios delivery and customer deployment.", sourceName: "AMD SEC 8-K & Q2 results", sourceUrl: "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000121/amd-20260804.htm" } },
+    { id: "terawulf-q2-2026", startsAt: "2026-08-05T12:00:00.000Z", company: "TeraWulf", ticker: "WULF", sector: "AI 数据中心 / 电力", description: "以电力控制、长期 AI 租约和分期交付推进多园区 HPC 平台。", focus: "收入容量、在建 MW、HPC 租赁收入与交付节奏", sourceName: "TeraWulf SEC 8-K & Q2 results", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000162/a_wulfearningsreleaseq22026.htm", conclusion: { summary: "Q2 HPC 租赁收入为 3,190 万美元、约占总收入 71%；7 月初 CB-3 交付后，Lake Mariner 收入容量达到 102MW，另有 336MW 在建。下一项验证是 CB-4/CB-5 的分期交付、起租与成本控制。", summaryEn: "Q2 HPC lease revenue was $31.9M, about 71% of total revenue. After CB-3 was delivered in early July, Lake Mariner reached 102MW of revenue-generating capacity, with another 336MW under construction. The next test is phased CB-4/CB-5 delivery, rent commencement and cost control.", sourceName: "TeraWulf SEC 8-K & Q2 results", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000162/a_wulfearningsreleaseq22026.htm" } },
+    { id: "galaxy-q2-2026", startsAt: "2026-08-05T12:30:00.000Z", company: "Galaxy Digital", ticker: "GLXY", sector: "AI 数据中心 / 数字资产", description: "Helios 园区从建设转入收入运营，并向多站点、数 GW 电力管线扩展。", focus: "Helios 收入、交付 MW、二期建设与新站点电力审批", sourceName: "Galaxy SEC 8-K & Q2 results", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1859392/000185939226000084/glxy-20260630xpressrelease.htm", conclusion: { summary: "Q2 为数据中心业务首个收入运营季度，板块调整后毛利 2,000 万美元、调整后 EBITDA 1,100 万美元；Helios 一期 133MW IT 已全部在服，二期 260MW 已开工。下一项验证是二期交付和新增站点并网。", summaryEn: "Q2 was the Data Centers segment's first revenue-generating quarter, with $20M of adjusted gross profit and $11M of adjusted EBITDA. All 133MW of Helios Phase I critical IT load was in service, and the 260MW Phase II build had started. Next checks are Phase II delivery and interconnection progress at new sites.", sourceName: "Galaxy SEC 8-K & Q2 results", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1859392/000185939226000084/glxy-20260630xpressrelease.htm" } },
     { id: "tencent-q2-2026", startsAt: "2026-08-12T12:00:00.000Z", company: "腾讯", ticker: "0700.HK", sector: "互联网 / 云计算 / AI", description: "腾讯的企业服务、混元模型与内部 AI 部署共同决定其算力、网络与云资源需求的下一组披露。", focus: "企业服务收入、混元与 AI 应用、云与算力投入、资本开支", sourceName: "Tencent Investor Kit & Calendar · Q2 2026 results", sourceUrl: "https://www.tencent.com/investors/investor-kit-calendar/" },
     { id: "energy-vault-q2-2026", startsAt: "2026-08-11T20:30:00.000Z", company: "Energy Vault", ticker: "NRGV", sector: "储能 / AI 基础设施", description: "储能平台正延伸至 AI 数据中心供电与模块化机房建设。", focus: "Snyder 项目进度、储能资产与 AI 基础设施资本安排", sourceName: "Energy Vault · Q2 event announcement", sourceUrl: "https://www.energyvault.com/newsroom/energy-vault-schedules-conference-call-to-discuss-second-quarter-2026-financial-results" },
     { id: "alibaba-june-quarter-2026-pending", dateLabel: "待官方公告", company: "阿里巴巴", ticker: "BABA / 9988.HK", sector: "电商 / 云计算 / AI", description: "阿里六月季度业绩日期尚未由公司投资者关系页面公布；其云与 AI 披露会与既有阿里云专栏持续衔接。", focus: "阿里云外部客户收入、AI 产品商业化、基础设施投入与自研芯片交付", sourceName: "Alibaba Group Investor Relations · reporting date pending", sourceUrl: "https://www.alibabagroup.com/en-US/ir-news-filings" },
