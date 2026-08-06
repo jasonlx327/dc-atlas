@@ -588,6 +588,17 @@ function supernodeProducts(): SupernodeProduct[] {
 function capacityRadar(): SourceRecord[] {
   return [
     {
+      id: "envision-ulaanqab-xinghe-2gw",
+      title: "远景乌兰察布星河基地投产 · 规划总容量 2GW",
+      subject: "远景科技集团（未上市）",
+      metric: "2GW 规划 · 12 万㎡ · 绿电直连 >80%",
+      status: "公司宣布投产",
+      publishedAt: "2026-08-06",
+      sourceName: "远景科技集团 / 财联社",
+      sourceUrl: "https://www.cls.cn/detail/2447085",
+      note: "公司披露基地总建筑体量 12 万平方米、绿电直连比例超 80%，总规划容量 2GW；“百万卡/百万P”为公司披露的未来预期目标，“全球最大超级单体/Token 产出最强”为公司口径。作为“戈壁使命”首个旗舰项目，该基地面向国产算力集群规模化部署；2GW 为规划容量，不等于已投运负载。",
+    },
+    {
       id: "galaxy-q2-2026-helios",
       title: "Galaxy Q2 确认 Helios 一期 133MW IT 全部在服",
       subject: "Galaxy Digital · Nasdaq: GLXY / CoreWeave",
@@ -1245,6 +1256,23 @@ function positiveIdcNews(liveNews: NewsItem[], records: SourceRecord[]): NewsIte
 
 function constructionPulse(): NewsItem[] {
   const items: NewsItem[] = [
+    {
+      id: "envision-ulaanqab-xinghe-2gw-commissioning",
+      title: "远景乌兰察布星河基地投产，公司称全球最大 AI 算力超级单体",
+      summary: "远景 8 月 6 日宣布星河基地正式投产：总建筑体量 12 万平方米（约 20 个标准足球场）、绿电直连比例超 80%，园区总规划容量 2GW，是公司“戈壁使命”首个旗舰项目。公司披露“百万卡并行、百万P 算力规模”为未来预期目标；“全球最大超级单体/Token 产出最强”为公司口径，尚无独立第三方验证。",
+      publishedAt: "2026-08-06T11:36:00+08:00",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://www.cls.cn/detail/2447085",
+      sourceUrl: "https://www.cls.cn/detail/2447085",
+      sourceName: "远景科技集团 / 财联社",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "中国",
+      milestone: "正式投产（公司宣布）",
+      scale: "2GW 规划 · 12 万㎡ · 绿电直连 >80%",
+      whyItMatters: "该基地以“超级单体+AI 电力系统”承载国产算力集群，是公司所称中国方案的关键样板；2GW 为园区规划容量，百万卡/百万P 为预期目标，投运后实际承载规模仍需后续披露验证。",
+    },
     {
       id: "galaxy-q2-2026-helios",
       title: "Galaxy Helios 一期 133MW IT 全部在服，二期 260MW 已开工",
