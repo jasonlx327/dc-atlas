@@ -40,6 +40,8 @@ Use original disclosure links attached to individual updates to verify capacity,
 - [English infrastructure industry map](https://idc-index.com/en/industry): Compute, networking, power, cooling, campus capacity and selective China supply-chain coverage.
 - [数据中心市场追踪与基础设施报告](https://idc-index.com/topics/data-center-intelligence): Chinese guide to data-center projects, capacity, leases, power, cooling and public-company disclosures.
 - [Data Center Market Tracker and Infrastructure Reports](https://idc-index.com/en/topics/data-center-intelligence): English topic guide for data-center projects, capacity, leases, power, cooling, CAPEX and public-company disclosures.
+- [数据中心术语：容量、CAPEX、电力、液冷与 AI 集群](https://idc-index.com/topics/data-center-glossary): Chinese reference guide to the terms and disclosure boundaries used in IDC Atlas coverage.
+- [Data Center Glossary](https://idc-index.com/en/topics/data-center-glossary): English reference guide to capacity, CAPEX, power, cooling and AI-cluster terminology.
 - [China AI Silicon](https://idc-index.com/topics/china-ai-silicon): Bilingual guide to China GPU, DCU, AI accelerators, supernodes and developer ecosystem updates.
 - [Methodology and sources](https://idc-index.com/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
 - [US tech earnings calendar](https://idc-index.com/calendar): Upcoming cloud, semiconductor and data-center-infrastructure earnings events, CAPEX watch items and source-linked post-results conclusions.
@@ -75,6 +77,7 @@ Primary sources control factual claims. News leads are discovery signals; verify
 - [Infrastructure pulse](https://idc-index.com/en/pulse): Source-linked global projects, leases, U.S.-listed infrastructure companies and daily AI-demand signals.
 - [Infrastructure industry map](https://idc-index.com/en/industry): Compute, networking, power, cooling, campus capacity and selective China supply-chain coverage.
 - [Data center market tracker](https://idc-index.com/en/topics/data-center-intelligence): Topic guide for projects, capacity, leases, power, cooling, CAPEX and public-company disclosures.
+- [Data center glossary](https://idc-index.com/en/topics/data-center-glossary): Reference guide to capacity, CAPEX, power, cooling and AI-cluster terms used throughout IDC Atlas.
 - [Methodology and sources](https://idc-index.com/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
 - [Earnings calendar](https://idc-index.com/calendar): Upcoming cloud, semiconductor and data-center-infrastructure earnings events, CAPEX watch items and source-linked post-results conclusions.
 - [China / U.S. policy tracker](https://idc-index.com/en/policy): Source-linked briefs summarizing implementation status and direct effects on data-center construction, power, interconnection and operating costs.

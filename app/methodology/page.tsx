@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { ContextPage } from "../context-page";
 import { IntelligenceConsoleShell } from "../intelligence-console-overview";
 
 const canonical = "https://idc-index.com/methodology";
@@ -17,12 +17,6 @@ export const metadata: Metadata = {
   },
 };
 
-const sections = [
-  ["信息来源 / Sources", "AI HOT 与公开媒体用于发现线索；厂商官网、交易所披露、政府与项目公告、开发者文档等一手材料用于核验关键事实。", "AI HOT and public reporting surface leads. Vendor sites, exchange filings, government and project notices, and developer documentation verify material facts."],
-  ["核验与呈现 / Verification", "容量、金额、产品规格、投产时间等关键信息优先采用原始披露。若只有媒体报道，会明确标注来源，不把推测写成结论。", "Capacity, value, specifications and delivery timing are anchored to primary disclosures where available. Media-only claims remain attributed rather than presented as settled fact."],
-  ["更新频率 / Update cadence", "首页资讯与市场信号按可用公开数据更新；专题页按周或在出现重要披露后更新；每条内容尽量保留来源入口与核验时间。", "The homepage updates with available public signals. Topic pages are reviewed weekly or after material disclosures, with source links and verification dates retained where possible."],
-] as const;
-
 export default function MethodologyPage() {
   const structuredData = { "@context": "https://schema.org", "@type": "AboutPage", name: "方法与数据来源 | Methodology", url: canonical, inLanguage: ["zh-CN", "en"], isPartOf: { "@type": "WebSite", name: "IDC Atlas", url: "https://idc-index.com/" } };
 
@@ -30,5 +24,19 @@ export default function MethodologyPage() {
     lang="zh"
     pageLabel="方法论与数据来源"
     className="atlas-method-shell"
-  ><div className="topic-page atlas-console-content-page"><section className="topic-hero"><p>METHOD &amp; SOURCES · 方法与数据来源</p><h1>信息如何进入 IDC Atlas<br /><em>How we build the signal</em></h1><p>IDC Atlas 追踪数据中心、AI 基础设施与国产算力的公开进展。我们区分“发现线索”和“核验事实”，让读者能够回到出处理解信息边界。</p><p>IDC Atlas tracks public developments in data centers, AI infrastructure and China AI silicon. We distinguish discovery signals from verified facts so readers can trace the evidence themselves.</p><Link href="/#overview">返回情报总览 / Back to overview</Link></section><section className="topic-sections">{sections.map(([title, zh, en]) => <article key={title}><span>IDC ATLAS STANDARD</span><h2>{title}</h2><p>{zh}</p><p lang="en">{en}</p></article>)}</section><section className="topic-note"><h2>研究边界 / Research boundary</h2><p>本站仅用于公开信息研究与行业观察，不构成投资建议。未公开、无法独立核验或彼此矛盾的信息，将不被表述为确定事实。</p><p lang="en">This site is for public-information research and industry observation only, not investment advice. Undisclosed, unverifiable or conflicting claims are not presented as confirmed facts.</p></section></div></IntelligenceConsoleShell></>;
+    contextStatus={{ title: "研究方法", subtitle: "方法论与数据来源", languageHref: "/en/methodology?lang=en", items: [{ label: "来源层级", value: "一手披露优先" }, { label: "更新机制", value: "重要披露后复核" }, { label: "研究边界", value: "不构成投资建议" }] }}
+  ><ContextPage
+    eyebrow="METHOD & SOURCES · 研究方法"
+    title={<>信息如何进入<br />IDC Atlas</>}
+    summary="IDC Atlas 追踪数据中心、AI 基础设施与国产算力的公开进展。我们把发现线索、原始披露与研究结论分开呈现，让读者能回到来源判断信息边界。"
+    backHref="/#overview"
+    backLabel="返回情报总览 →"
+    items={[{ label: "来源层级", value: "原始披露优先" }, { label: "核验对象", value: "容量、金额、规格与交付" }, { label: "呈现原则", value: "线索不等于结论" }]}
+    sections={[
+      { label: "01 · DISCOVERY", title: "发现线索", copy: "公开媒体、行业渠道与开发者信息用于发现变化；它们提示我们去寻找原始材料，而不直接构成事实结论。" },
+      { label: "02 · PRIMARY SOURCES", title: "核验事实", copy: "厂商官网、交易所披露、政府与项目公告、开发者文档等一手材料，用来核验容量、金额、产品规格与投产时间。" },
+      { label: "03 · REVIEW", title: "复核与更新", copy: "首页随可用公开信号更新；专题页在出现重要披露后复核。每条重点内容尽量保留来源入口与具体日期。" },
+    ]}
+    boundary={{ label: "RESEARCH BOUNDARY", title: "公开信息研究，不替代判断", copy: "本站仅用于公开信息研究与行业观察，不构成投资建议。未公开、无法独立核验或彼此矛盾的信息，不会被表述为确定事实。" }}
+  /></IntelligenceConsoleShell></>;
 }

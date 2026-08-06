@@ -4,11 +4,11 @@ import CxmtUsChipImpactArticle from "./article";
 const canonical = "https://idc-index.com/columns/cxmt-us-chip-impact";
 
 export const metadata: Metadata = {
-  title: "长鑫上市，对美股芯片有什么影响？｜IDC Atlas",
+  title: "长鑫上市：美股芯片的影响路径｜IDC Atlas",
   description: "从通用 DRAM、HBM、半导体设备与中国收入四条传导链，分析长鑫科技上市对 Micron、NVIDIA、AMD、AMAT、LRCX、KLAC 与 Rambus 的影响。",
   alternates: { canonical, languages: { "zh-CN": canonical, en: "https://idc-index.com/en/columns/cxmt-us-chip-impact", "x-default": "https://idc-index.com/en/columns/cxmt-us-chip-impact" } },
-  openGraph: { title: "长鑫上市，谁会先感到压力？", description: "Micron 处在第一层，美国设备商面临双向影响，NVIDIA 与 AMD 仍取决于 HBM 量产和认证。", url: canonical, type: "article", publishedTime: "2026-07-28T00:00:00+08:00", modifiedTime: "2026-08-01T23:00:00+08:00", images: [{ url: "https://idc-index.com/column-cxmt-us-chips-v2.jpg", width: 1672, height: 941, alt: "DRAM 晶圆、存储供给与半导体周期的原创专栏插画" }] },
-  twitter: { card: "summary_large_image", title: "长鑫上市，对美股芯片有什么影响？", description: "拆解 MU、AMAT、LRCX、KLAC、NVDA、AMD 与 RMBS 的影响顺序。", images: ["https://idc-index.com/column-cxmt-us-chips-v2.jpg"] },
+  openGraph: { title: "长鑫上市：美股芯片的影响路径", description: "Micron 处在第一层，美国设备商面临双向影响，NVIDIA 与 AMD 仍取决于 HBM 量产和认证。", url: canonical, type: "article", publishedTime: "2026-07-28T00:00:00+08:00", modifiedTime: "2026-08-01T23:00:00+08:00", images: [{ url: "https://idc-index.com/column-cxmt-us-chips-v2.jpg", width: 1672, height: 941, alt: "DRAM 晶圆、存储供给与半导体周期的原创专栏插画" }] },
+  twitter: { card: "summary_large_image", title: "长鑫上市：美股芯片的影响路径", description: "拆解 MU、AMAT、LRCX、KLAC、NVDA、AMD 与 RMBS 的影响顺序。", images: ["https://idc-index.com/column-cxmt-us-chips-v2.jpg"] },
 };
 
 export default function Page() {
@@ -17,7 +17,7 @@ export default function Page() {
     "@graph": [
       {
         "@type": "Article",
-        headline: "长鑫上市，对美股芯片有什么影响？",
+        headline: "长鑫上市：美股芯片的影响路径",
         description: metadata.description,
         image: "https://idc-index.com/column-cxmt-us-chips-v2.jpg",
         datePublished: "2026-07-28T00:00:00+08:00",
@@ -43,7 +43,7 @@ export default function Page() {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "IDC Atlas", item: "https://idc-index.com/" },
           { "@type": "ListItem", position: 2, name: "专栏", item: "https://idc-index.com/columns" },
-          { "@type": "ListItem", position: 3, name: "长鑫上市，对美股芯片有什么影响？", item: canonical },
+          { "@type": "ListItem", position: 3, name: "长鑫上市：美股芯片的影响路径", item: canonical },
         ],
       },
     ],

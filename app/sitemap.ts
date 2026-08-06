@@ -28,9 +28,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://idc-index.com/topics/data-center-glossary",
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: "https://idc-index.com/en/topics/data-center-intelligence",
       changeFrequency: "weekly",
       priority: 0.8,
+    },
+    {
+      url: "https://idc-index.com/en/topics/data-center-glossary",
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: "https://idc-index.com/topics/china-ai-silicon",

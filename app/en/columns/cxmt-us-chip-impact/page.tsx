@@ -4,11 +4,11 @@ import CxmtUsChipImpactArticle from "../../../columns/cxmt-us-chip-impact/articl
 const canonical = "https://idc-index.com/en/columns/cxmt-us-chip-impact";
 
 export const metadata: Metadata = {
-  title: "CXMT Is Public. Which US Chip Stocks Feel It? | IDC Atlas",
+  title: "CXMT's Listing: The US Chip Exposure Map | IDC Atlas",
   description: "A source-linked analysis of CXMT's impact on Micron, NVIDIA, AMD, Applied Materials, Lam Research, KLA and Rambus through DRAM pricing, HBM and China exposure.",
   alternates: { canonical, languages: { "zh-CN": "https://idc-index.com/columns/cxmt-us-chip-impact", en: canonical, "x-default": canonical } },
-  openGraph: { title: "CXMT Is Public. Which US Chip Stocks Actually Feel It?", description: "Micron sits closest to conventional DRAM pressure. Equipment exposure is two-sided, while NVIDIA and AMD remain a longer-dated HBM question.", url: canonical, type: "article", publishedTime: "2026-07-28T00:00:00+08:00", modifiedTime: "2026-08-01T23:00:00+08:00", images: [{ url: "https://idc-index.com/column-cxmt-us-chips-v2.jpg", width: 1672, height: 941, alt: "Editorial illustration of a DRAM wafer, memory supply and the semiconductor cycle" }] },
-  twitter: { card: "summary_large_image", title: "Which US Chip Stocks Actually Feel CXMT?", description: "The impact ranking across MU, AMAT, LRCX, KLAC, NVDA, AMD and RMBS.", images: ["https://idc-index.com/column-cxmt-us-chips-v2.jpg"] },
+  openGraph: { title: "CXMT's Listing: The US Chip Exposure Map", description: "Micron sits closest to conventional DRAM pressure. Equipment exposure is two-sided, while NVIDIA and AMD remain a longer-dated HBM question.", url: canonical, type: "article", publishedTime: "2026-07-28T00:00:00+08:00", modifiedTime: "2026-08-01T23:00:00+08:00", images: [{ url: "https://idc-index.com/column-cxmt-us-chips-v2.jpg", width: 1672, height: 941, alt: "Editorial illustration of a DRAM wafer, memory supply and the semiconductor cycle" }] },
+  twitter: { card: "summary_large_image", title: "CXMT's Listing: The US Chip Exposure Map", description: "The impact ranking across MU, AMAT, LRCX, KLAC, NVDA, AMD and RMBS.", images: ["https://idc-index.com/column-cxmt-us-chips-v2.jpg"] },
 };
 
 export default function Page() {
@@ -17,7 +17,7 @@ export default function Page() {
     "@graph": [
       {
         "@type": "Article",
-        headline: "CXMT Is Public. Which US Chip Stocks Actually Feel It?",
+        headline: "CXMT's Listing: The US Chip Exposure Map",
         description: metadata.description,
         image: "https://idc-index.com/column-cxmt-us-chips-v2.jpg",
         datePublished: "2026-07-28T00:00:00+08:00",

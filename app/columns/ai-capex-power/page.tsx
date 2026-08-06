@@ -4,11 +4,11 @@ import CapexPowerArticle from "./article";
 const canonical = "https://idc-index.com/columns/ai-capex-power";
 
 export const metadata: Metadata = {
-  title: "四大云厂商的 AI CAPEX 最终流向了哪里？｜IDC Atlas",
+  title: "四大云厂商的 AI CAPEX 正流向供给缺口｜IDC Atlas",
   description: "拆解 Microsoft、Alphabet、Meta 与 Amazon 的 AI 资本开支，追踪资金从芯片、服务器流向园区、电力、投运与可计费容量。",
   alternates: { canonical, languages: { "zh-CN": canonical, en: "https://idc-index.com/en/columns/ai-capex-power", "x-default": "https://idc-index.com/en/columns/ai-capex-power" } },
-  openGraph: { title: "四大云厂商的 AI CAPEX 最终流向了哪里？", description: "从采购、建设、送电到可计费容量，拆解四家云厂商的 AI 基础设施投入。", url: canonical, type: "article", publishedTime: "2026-07-27T00:00:00+08:00", modifiedTime: "2026-08-01T23:00:00+08:00", images: [{ url: "https://idc-index.com/column-ai-capex-grid-v2.jpg", width: 1672, height: 941, alt: "AI 数据中心与电网约束" }] },
-  twitter: { card: "summary_large_image", title: "四大云厂商的 AI CAPEX 最终流向了哪里？", description: "追踪 Microsoft、Alphabet、Meta 与 Amazon 的资本开支传导。", images: ["https://idc-index.com/column-ai-capex-grid-v2.jpg"] },
+  openGraph: { title: "四大云厂商的 AI CAPEX 正流向供给缺口", description: "从采购、建设、送电到可计费容量，拆解四家云厂商的 AI 基础设施投入。", url: canonical, type: "article", publishedTime: "2026-07-27T00:00:00+08:00", modifiedTime: "2026-08-01T23:00:00+08:00", images: [{ url: "https://idc-index.com/column-ai-capex-grid-v2.jpg", width: 1672, height: 941, alt: "AI 数据中心与电网约束" }] },
+  twitter: { card: "summary_large_image", title: "四大云厂商的 AI CAPEX 正流向供给缺口", description: "追踪 Microsoft、Alphabet、Meta 与 Amazon 的资本开支传导。", images: ["https://idc-index.com/column-ai-capex-grid-v2.jpg"] },
 };
 
 export default function Page() {
@@ -17,7 +17,7 @@ export default function Page() {
     "@graph": [
       {
         "@type": "Article",
-        headline: "四大云厂商的 AI CAPEX 最终流向了哪里？",
+        headline: "四大云厂商的 AI CAPEX 正流向供给缺口",
         description: metadata.description,
         image: "https://idc-index.com/column-ai-capex-grid-v2.jpg",
         datePublished: "2026-07-27T00:00:00+08:00",
@@ -43,7 +43,7 @@ export default function Page() {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "IDC Atlas", item: "https://idc-index.com/" },
           { "@type": "ListItem", position: 2, name: "专栏", item: "https://idc-index.com/columns" },
-          { "@type": "ListItem", position: 3, name: "四大云厂商的 AI CAPEX 最终流向了哪里？", item: canonical },
+          { "@type": "ListItem", position: 3, name: "四大云厂商的 AI CAPEX 正流向供给缺口", item: canonical },
         ],
       },
     ],

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { ContextPage } from "../../context-page";
 import { IntelligenceConsoleShell } from "../../intelligence-console-overview";
 
 const canonical = "https://idc-index.com/en/methodology";
@@ -16,12 +16,6 @@ export const metadata: Metadata = {
   },
 };
 
-const sections = [
-  ["Sources", "Public reporting and specialist feeds surface leads. Vendor sites, exchange filings, government and project notices, and developer documentation are used to verify material facts."],
-  ["Verification", "Capacity, value, specifications and delivery timing are anchored to primary disclosures where available. Media-only claims remain attributed rather than presented as settled fact."],
-  ["Update cadence", "The homepage updates with available public signals. Topic pages are reviewed after material disclosures, with source links and verification dates retained wherever possible."],
-] as const;
-
 export default function EnglishMethodologyPage() {
   const structuredData = {
     "@context": "https://schema.org",
@@ -36,5 +30,19 @@ export default function EnglishMethodologyPage() {
     lang="en"
     pageLabel="Methodology and sources"
     className="atlas-method-shell"
-  ><div className="topic-page atlas-console-content-page"><section className="topic-hero"><p>METHOD &amp; SOURCES</p><h1>How IDC Atlas<br /><em>builds a signal</em></h1><p>IDC Atlas tracks public developments across data centers, AI infrastructure, compute, power and cooling. Discovery signals and verified facts are kept separate so readers can trace the evidence and understand its limits.</p><Link href="/en#overview">Back to the intelligence overview</Link></section><section className="topic-sections">{sections.map(([title, copy]) => <article key={title}><span>IDC ATLAS STANDARD</span><h2>{title}</h2><p>{copy}</p></article>)}</section><section className="topic-note"><h2>Research boundary</h2><p>This site is for public-information research and industry observation only, not investment advice. Undisclosed, unverifiable or conflicting claims are not presented as confirmed facts.</p></section></div></IntelligenceConsoleShell></>;
+    contextStatus={{ title: "Research method", subtitle: "Methodology and sources", languageHref: "/methodology?lang=zh", items: [{ label: "Source hierarchy", value: "Primary disclosure first" }, { label: "Review cadence", value: "After material disclosure" }, { label: "Research boundary", value: "Not investment advice" }] }}
+  ><ContextPage
+    eyebrow="METHOD & SOURCES · RESEARCH METHOD"
+    title={<>How information<br />enters IDC Atlas</>}
+    summary="IDC Atlas tracks public data-center and AI-infrastructure developments. Discovery leads, primary disclosures and research conclusions are shown separately so readers can trace the source and judge its boundary."
+    backHref="/en#overview"
+    backLabel="Back to intelligence overview →"
+    items={[{ label: "Source hierarchy", value: "Primary disclosure first" }, { label: "Verified fields", value: "Capacity, value, specs and delivery" }, { label: "Presentation rule", value: "Lead is not a conclusion" }]}
+    sections={[
+      { label: "01 · DISCOVERY", title: "Surface a lead", copy: "Public reporting, specialist channels and developer information help surface a change. They begin a source check; they do not settle a factual claim." },
+      { label: "02 · PRIMARY SOURCES", title: "Verify the record", copy: "Vendor sites, exchange filings, government and project notices, and developer documentation anchor capacity, value, specifications and delivery timing." },
+      { label: "03 · REVIEW", title: "Review and update", copy: "The homepage follows available public signals. Topic pages are reviewed after material disclosures, with sources and specific dates retained where possible." },
+    ]}
+    boundary={{ label: "RESEARCH BOUNDARY", title: "Public-information research, not a recommendation", copy: "This site is for public-information research and industry observation only. Undisclosed, unverifiable or conflicting claims are not presented as confirmed facts." }}
+  /></IntelligenceConsoleShell></>;
 }

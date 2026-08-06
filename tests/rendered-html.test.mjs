@@ -259,6 +259,7 @@ test("exposes bilingual AI-readable discovery manifests", async () => {
   assert.match(chineseText, /## About/);
   assert.match(chineseText, /Languages/);
   assert.match(chineseText, /Verification rule/);
+  assert.match(await (await render("/llms.txt")).text(), /data-center-glossary/);
 
   const english = await render("/en/llms.txt");
   assert.equal(english.status, 200);
@@ -269,6 +270,19 @@ test("exposes bilingual AI-readable discovery manifests", async () => {
   assert.match(englishText, /Verification rule/);
   assert.match(englishText, /Where Hyperscaler AI CapEx Actually Goes/);
   assert.match(englishText, /After SK hynix Earnings/);
+  assert.match(englishText, /Data center glossary/);
+
+  const chineseGlossary = await render("/topics/data-center-glossary");
+  assert.equal(chineseGlossary.status, 200);
+  const chineseGlossaryHtml = await chineseGlossary.text();
+  assert.match(chineseGlossaryHtml, /数据中心术语：容量、CAPEX、电力、液冷与 AI 集群/);
+  assert.match(chineseGlossaryHtml, /DefinedTermSet/);
+
+  const englishGlossary = await render("/en/topics/data-center-glossary");
+  assert.equal(englishGlossary.status, 200);
+  const englishGlossaryHtml = await englishGlossary.text();
+  assert.match(englishGlossaryHtml, /Data Center Glossary: Capacity, CAPEX, Power, Cooling &amp; AI Clusters/);
+  assert.match(englishGlossaryHtml, /DefinedTermSet/);
 });
 
 test("keeps robots and home structured data GEO-friendly", async () => {
@@ -382,7 +396,7 @@ test("publishes the bilingual CXMT impact column with ranked US chip exposure", 
   const chinese = await render("/columns/cxmt-us-chip-impact");
   assert.equal(chinese.status, 200);
   const chineseHtml = await chinese.text();
-  assert.match(chineseHtml, /长鑫上市，谁会先感到压力/);
+  assert.match(chineseHtml, /长鑫上市：美股芯片的影响路径/);
   assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns\/cxmt-us-chip-impact"/i);
   assert.match(chineseHtml, /Micron 承受的是价格与中国份额的双重压力/);
   assert.match(chineseHtml, /AMAT \/ LRCX \/ KLAC/);
@@ -393,7 +407,7 @@ test("publishes the bilingual CXMT impact column with ranked US chip exposure", 
   const english = await render("/en/columns/cxmt-us-chip-impact");
   assert.equal(english.status, 200);
   const englishHtml = await english.text();
-  assert.match(englishHtml, /CXMT Is Public\. Which US Chip Stocks Actually Feel It/);
+  assert.match(englishHtml, /CXMT's Listing: The US Chip Exposure Map/);
   assert.match(englishHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/columns\/cxmt-us-chip-impact"/i);
   assert.match(englishHtml, /Micron faces both pricing pressure and China substitution/);
   assert.match(englishHtml, /CXMT CapEx cannot be mapped dollar-for-dollar/);
@@ -468,7 +482,7 @@ test("publishes the bilingual Alibaba Cloud and Qwen3.8 earnings preview", async
   assert.equal(chinese.status, 200);
   const chineseHtml = await chinese.text();
   assert.match(chineseHtml, /Qwen3\.8 已上线/);
-  assert.match(chineseHtml, /阿里云下一份财报要回答七个问题/);
+  assert.match(chineseHtml, /阿里云财报的七项检验/);
   assert.match(chineseHtml, /三年 3,800 亿元如何变成可售容量/);
   assert.match(chineseHtml, /Qwen3\.8 在六月季度后发布/);
   assert.match(chineseHtml, /column-alibaba-qwen-cloud-v2\.jpg/);
@@ -489,7 +503,7 @@ test("publishes a bilingual frontier-model infrastructure column and excludes ru
   const chinese = await render("/columns/frontier-model-economics");
   assert.equal(chinese.status, 200);
   const chineseHtml = await chinese.text();
-  assert.match(chineseHtml, /模型价格正在分层，AI 基建真正要看什么/);
+  assert.match(chineseHtml, /模型价格开始分层，AI 基建进入调用深度竞争/);
   assert.match(chineseHtml, /RUMOR FILTER|待验证清单/);
   assert.match(chineseHtml, /GPT-5\.6/);
   assert.match(chineseHtml, /Claude Opus 5/);
@@ -497,7 +511,7 @@ test("publishes a bilingual frontier-model infrastructure column and excludes ru
   const english = await render("/en/columns/frontier-model-economics");
   assert.equal(english.status, 200);
   const englishHtml = await english.text();
-  assert.match(englishHtml, /Model Prices Are Fragmenting\. What Changes for AI Infrastructure/);
+  assert.match(englishHtml, /Model Prices Are Fragmenting, Reshaping AI Infrastructure Demand/);
   assert.match(englishHtml, /Rumors and single-source reports belong on a verification list/);
   assert.match(englishHtml, /For information and research only/);
 });
@@ -805,19 +819,30 @@ test("publishes the source methodology and includes it in the sitemap", async ()
   assert.equal(methodology.status, 200);
   const html = await methodology.text();
   assert.match(html, /方法与数据来源/);
-  assert.match(html, /How we build the signal/);
+  assert.match(html, /信息如何进入/);
+  assert.match(html, /来源层级/);
+  assert.match(html, /一手披露优先/);
   assert.match(html, /rel="canonical" href="https:\/\/idc-index\.com\/methodology"/i);
 
   const englishMethodology = await render("/en/methodology");
   assert.equal(englishMethodology.status, 200);
   const englishMethodologyHtml = await englishMethodology.text();
-  assert.match(englishMethodologyHtml, /How IDC Atlas[\s\S]*builds a signal/);
+  assert.match(englishMethodologyHtml, /How information[\s\S]*enters IDC Atlas/);
+  assert.match(englishMethodologyHtml, /Source hierarchy/);
   assert.match(englishMethodologyHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/methodology"/i);
+
+  const privacy = await render("/privacy");
+  assert.equal(privacy.status, 200);
+  const privacyHtml = await privacy.text();
+  assert.match(privacyHtml, /我们如何处理/);
+  assert.match(privacyHtml, /未开放注册/);
+  assert.match(privacyHtml, /<meta name="robots" content="noindex, follow"/i);
 
   const englishPrivacy = await render("/en/privacy");
   assert.equal(englishPrivacy.status, 200);
   const englishPrivacyHtml = await englishPrivacy.text();
   assert.match(englishPrivacyHtml, /Privacy notice/);
+  assert.match(englishPrivacyHtml, /How we handle[\s\S]*usage data/);
   assert.match(englishPrivacyHtml, /<meta name="robots" content="noindex, follow"/i);
 
   const sitemap = await render("/sitemap.xml");
@@ -839,6 +864,8 @@ test("publishes the source methodology and includes it in the sitemap", async ()
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns</);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/columns</);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/topics\/data-center-intelligence/);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/topics\/data-center-glossary/);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/topics\/data-center-glossary/);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/methodology/);
   assert.doesNotMatch(sitemapXml, /https:\/\/idc-index\.com\/privacy/);
 });
@@ -849,10 +876,10 @@ test("publishes bilingual column indexes with crawl metadata", async () => {
   const chineseHtml = await chinese.text();
   assert.match(chineseHtml, /专栏，追踪/);
   assert.match(chineseHtml, /GW 级长租正在改写 IDC 订单/);
-  assert.match(chineseHtml, /长鑫上市，谁会先感到压力/);
-  assert.match(chineseHtml, /模型价格正在分层，AI 基建真正要看什么/);
-  assert.match(chineseHtml, /Azure 增长 43% 之后，500 亿美元要兑现什么/);
-  assert.match(chineseHtml, /Qwen3\.8 已上线，阿里云下一份财报要回答七个问题/);
+  assert.match(chineseHtml, /长鑫上市：美股芯片的影响路径/);
+  assert.match(chineseHtml, /模型价格开始分层，AI 基建进入调用深度竞争/);
+  assert.match(chineseHtml, /Azure 增长 43% 之后，500 亿美元 CAPEX 的兑现路径/);
+  assert.match(chineseHtml, /Qwen3\.8 已上线，阿里云财报的七项检验/);
   assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns"/i);
   assert.match(chineseHtml, /"@type":"ItemList"/);
   for (const cover of [
@@ -870,10 +897,10 @@ test("publishes bilingual column indexes with crawl metadata", async () => {
   const englishHtml = await english.text();
   assert.match(englishHtml, /Columns for the/);
   assert.match(englishHtml, /Gigawatt Leases Are Reshaping the Data Center Market/);
-  assert.match(englishHtml, /CXMT Is Public\. Which US Chip Stocks Actually Feel It/);
-  assert.match(englishHtml, /Model Prices Are Fragmenting\. What Changes for AI Infrastructure/);
-  assert.match(englishHtml, /Azure at 43%: What Must the Next \$50B Deliver/);
-  assert.match(englishHtml, /Qwen3\.8 Is Live: Seven Tests for Alibaba Cloud/);
+  assert.match(englishHtml, /CXMT's Listing: The US Chip Exposure Map/);
+  assert.match(englishHtml, /Model Prices Are Fragmenting, Reshaping AI Infrastructure Demand/);
+  assert.match(englishHtml, /Azure at 43%: The Delivery Test for Its Next \$50B/);
+  assert.match(englishHtml, /Qwen3\.8 Is Live: Seven Tests for Alibaba Cloud's Next Earnings/);
   assert.match(englishHtml, /rel="canonical" href="https:\/\/idc-index\.com\/en\/columns"/i);
   assert.match(englishHtml, /"@type":"ItemList"/);
 });
@@ -900,10 +927,10 @@ test("publishes bilingual RSS feeds for original research", async () => {
   const englishXml = await english.text();
   assert.match(englishXml, /<title>IDC Atlas Columns<\/title>/);
   assert.match(englishXml, /Where Hyperscaler AI CapEx Actually Goes/);
-  assert.match(englishXml, /CXMT Is Public\. Which US Chip Stocks Actually Feel It/);
-  assert.match(englishXml, /Model Prices Are Fragmenting\. What Changes for AI Infrastructure/);
-  assert.match(englishXml, /Azure at 43%: What Must the Next \$50B Deliver/);
-  assert.match(englishXml, /Qwen3\.8 Is Live: Seven Tests for Alibaba Cloud/);
+  assert.match(englishXml, /CXMT(?:'|&apos;)s Listing: The US Chip Exposure Map/);
+  assert.match(englishXml, /Model Prices Are Fragmenting, Reshaping AI Infrastructure Demand/);
+  assert.match(englishXml, /Azure at 43%: The Delivery Test for Its Next \$50B/);
+  assert.match(englishXml, /Qwen3\.8 Is Live: Seven Tests for Alibaba Cloud(?:'|&apos;)s Next Earnings/);
   assert.match(englishXml, /atom:link href="https:\/\/idc-index\.com\/en\/feed\.xml"/);
   assert.match(englishXml, /xml-stylesheet type="text\/xsl" href="https:\/\/idc-index\.com\/rss\.xsl"/);
 });

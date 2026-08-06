@@ -85,6 +85,12 @@ type ShellProps = {
   reviewedAt?: string;
   sourceCount?: number;
   verifiedCount?: number;
+  contextStatus?: {
+    title: string;
+    subtitle: string;
+    languageHref: string;
+    items: Array<{ label: string; value: string }>;
+  };
   pageLabel?: string;
   className?: string;
   children: ReactNode;
@@ -369,6 +375,7 @@ function ConsoleStatusbar({
   sourceCount,
   verifiedCount,
   pageLabel,
+  contextStatus,
 }: {
   lang: "zh" | "en";
   generatedAt?: string;
@@ -376,9 +383,15 @@ function ConsoleStatusbar({
   sourceCount?: number;
   verifiedCount?: number;
   pageLabel?: string;
+  contextStatus?: ShellProps["contextStatus"];
 }) {
   const isZh = lang === "zh";
   const timezone = isZh ? "Asia/Shanghai" : "America/New_York";
+  if (contextStatus) return <header className="atlas-statusbar atlas-context-statusbar">
+    <div><strong>{contextStatus.title}</strong><span>{contextStatus.subtitle}</span></div>
+    <dl>{contextStatus.items.map((item) => <div key={item.label}><dt>{item.label}</dt><dd>{item.value}</dd></div>)}</dl>
+    <a className="atlas-language" href={contextStatus.languageHref}>{isZh ? "EN" : "中文"}</a>
+  </header>;
   return <header className="atlas-statusbar">
     <div><strong>{dateLabel(generatedAt, lang, false, timezone)}</strong><span>{pageLabel ?? (isZh ? "每日产业情报" : "Daily industrial intelligence")}{reviewedAt ? ` · ${isZh ? "核验至" : "Verified through"} ${dateLabel(reviewedAt, lang, false, timezone)}` : ""}</span></div>
     <dl>
@@ -397,6 +410,7 @@ export function IntelligenceConsoleShell({
   reviewedAt,
   sourceCount,
   verifiedCount,
+  contextStatus,
   pageLabel,
   className = "",
   children,
@@ -405,7 +419,7 @@ export function IntelligenceConsoleShell({
   const [navCollapsed, setNavCollapsed] = useState(false);
   const [currentSection, setCurrentSection] = useState(activeSection);
   const isZh = lang === "zh";
-  const liveMeta = useLiveConsoleMeta(!generatedAt || !reviewedAt || sourceCount == null || verifiedCount == null);
+  const liveMeta = useLiveConsoleMeta(!contextStatus && (!generatedAt || !reviewedAt || sourceCount == null || verifiedCount == null));
   const resolvedGeneratedAt = generatedAt ?? liveMeta.generatedAt;
   const resolvedReviewedAt = reviewedAt ?? liveMeta.reviewedAt;
   const resolvedSourceCount = sourceCount ?? liveMeta.sourceCount;
@@ -428,6 +442,7 @@ export function IntelligenceConsoleShell({
         sourceCount={resolvedSourceCount}
         verifiedCount={resolvedVerifiedCount}
         pageLabel={pageLabel}
+        contextStatus={contextStatus}
       />
       {children}
       <footer className="atlas-console-footer">

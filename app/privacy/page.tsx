@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IntelligenceConsoleShell } from "../intelligence-console-overview";
+import { ContextPage } from "../context-page";
 
 const canonical = "https://idc-index.com/privacy";
 
@@ -12,27 +13,21 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <IntelligenceConsoleShell lang="zh" pageLabel="隐私说明" className="atlas-privacy-shell">
-    <div className="privacy-page atlas-console-content-page">
-      <p className="eyebrow"><span></span> PRIVACY NOTICE</p>
-      <h1>隐私说明</h1>
-      <p className="privacy-updated">更新日期：2026 年 7 月 22 日</p>
-
-      <section>
-        <h2>访问统计</h2>
-        <p>IDC Atlas 使用 Google Analytics 了解页面访问量、来源渠道、设备类型、近似地区和页面互动情况，用于改进内容与使用体验。网站不会要求注册账号，也不会主动通过 Analytics 收集姓名、邮箱等可直接识别个人身份的信息。</p>
-      </section>
-
-      <section>
-        <h2>Cookie 与第三方服务</h2>
-        <p>Google Analytics 可能使用 Cookie 或类似技术处理访问数据。IDC Atlas 不设置用于财报互动或用户画像的第一方 Cookie。Google 如何使用从网站收集的信息，可参阅 <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noreferrer">Google 的合作伙伴网站隐私说明</a>。你可以通过浏览器设置限制或删除 Cookie。</p>
-      </section>
-
-      <section>
-        <h2>外部链接与联系</h2>
-        <p>本站包含新闻、公告与数据来源的外部链接，其隐私规则由相应网站负责。如对本说明有疑问，可通过 <a href="https://github.com/jasonlx327" target="_blank" rel="noreferrer">GitHub</a> 联系。</p>
-      </section>
-    </div>
-    </IntelligenceConsoleShell>
+    <IntelligenceConsoleShell lang="zh" pageLabel="隐私说明" className="atlas-privacy-shell"
+      contextStatus={{ title: "隐私说明", subtitle: "访问统计与第三方服务", languageHref: "/en/privacy?lang=en", items: [{ label: "数据用途", value: "改进内容与体验" }, { label: "账户体系", value: "无需注册" }, { label: "最后更新", value: "2026 年 7 月 22 日" }] }}
+    ><ContextPage
+      eyebrow="PRIVACY NOTICE · 数据使用边界"
+      title={<>我们如何处理<br />访问数据</>}
+      summary="IDC Atlas 使用最小必要的访问统计来改善内容与体验。本站不要求注册账号，也不会主动通过 Analytics 收集姓名、邮箱等可直接识别个人身份的信息。"
+      backHref="/#overview"
+      backLabel="返回情报总览 →"
+      items={[{ label: "分析工具", value: "Google Analytics" }, { label: "站内账户", value: "未开放注册" }, { label: "个人画像", value: "不建立" }]}
+      sections={[
+        { label: "01 · ANALYTICS", title: "访问统计", copy: "我们使用 Google Analytics 了解页面访问量、来源渠道、设备类型、近似地区和页面互动情况，用于改进内容与使用体验。" },
+        { label: "02 · COOKIES", title: "Cookie 与第三方服务", copy: <>Google Analytics 可能使用 Cookie 或类似技术处理访问数据。IDC Atlas 不设置用于财报互动或用户画像的第一方 Cookie；你可以在浏览器设置中限制或删除 Cookie。Google 如何处理合作伙伴网站数据，可参阅 <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noreferrer">Google 的说明</a>。</> },
+        { label: "03 · EXTERNAL LINKS", title: "外部链接与联系", copy: <>本站链接至新闻、公告与数据来源；对应网站适用其自身隐私规则。如对本说明有疑问，可通过 <a href="https://github.com/jasonlx327" target="_blank" rel="noreferrer">GitHub</a> 联系。</> },
+      ]}
+      boundary={{ label: "NOTICE", title: "第三方网站适用其自身规则", copy: "当你离开 IDC Atlas 前往原始来源或其他第三方网站时，其数据收集、Cookie 与隐私处理方式由该网站负责。" }}
+    /></IntelligenceConsoleShell>
   );
 }
