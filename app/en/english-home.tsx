@@ -105,6 +105,7 @@ const titleTranslations: Record<string, string> = {
   "通义千问发布Qwen-Audio-3.0-TTS，登顶TTS排行榜": "Qwen releases Qwen-Audio-3.0-TTS and tops a public TTS leaderboard",
   "Cactus 发布 Gemma 4 E2B Hybrid：可在设备端为每个回答输出置信度分数，低分时自动路由至更大模型": "Cactus releases Gemma 4 E2B Hybrid with on-device answer-confidence routing",
   "Google 发布三款新模型：3.6 Flash、3.5 Flash-Lite 与 3.5 Flash Cyber": "Google releases Gemini 3.6 Flash, 3.5 Flash-Lite and 3.5 Flash Cyber",
+  "远景乌兰察布星河基地投产，公司称全球最大 AI 算力超级单体": "Envision puts its Ulanqab Xinghe base into operation, calling it the world's largest AI-compute super-monolith",
 };
 
 const summaryTranslations: Record<string, string> = {
@@ -116,6 +117,7 @@ const summaryTranslations: Record<string, string> = {
   "Energy Vault 启动 Snyder AI 园区建设，首期部署 8MW": "The Snyder, Texas campus has entered construction with 8MW in its first deployment, a planned expansion to 25MW and a longer-term site target of 500MW.",
   "Energy Vault 开建 Snyder AI 园区，首期 8MW 面向 Crusoe Cloud": "The first 8MW phase uses ten Crusoe Spark modular data centers and is targeted for commercial operation in the first quarter of 2027.",
   "Hut 8 Beacon Point 再签 352MW IT 长租，园区已签约 704MW": "A second 352MW IT lease brings Beacon Point's contracted capacity to 704MW against 1,330MW of secured power.",
+  "远景乌兰察布星河基地投产，公司称全球最大 AI 算力超级单体": "On August 6, Envision announced the commissioning of its Ulanqab Xinghe base: a 120,000-square-meter building with green-power direct connection above 80% and 2GW of planned campus capacity, its first flagship project under the Gobi Mission. Million-card and million-PFLOPS capability are the company's disclosed future targets; \"world's largest super-monolith / strongest token output\" is company language, not independently verified.",
   "中国联通长三角（吴江）智算中心一期启动 EPC 招标": "Phase I includes a new DC1 building of roughly 55,200 square meters. Construction is scheduled to begin in October 2026 and complete in November 2027.",
   "Crusoe 与 Lancium 落地德州 Childress 1GW AI 数据中心园区": "The partners signed a binding development agreement for a 1GW AI data-center campus in Childress, Texas.",
   "CleanSpark 为乔治亚州园区签下 175MW 长期租约": "The Sandersville campus signed a 20-year triple-net lease with an investment-grade global technology company, with phased delivery expected from the fourth quarter of 2027.",
@@ -233,6 +235,8 @@ const storyFieldTranslations: Record<string, string> = {
   "扩建": "Expansion",
   "园区官宣": "Campus announced",
   "运营进度更新": "Operating-progress update",
+  "正式投产（公司宣布）": "Commissioning announced by company",
+  "2GW 规划 · 12 万㎡ · 绿电直连 >80%": "2GW planned · 120,000 m² · >80% green-power direct",
   "一期投运": "Phase I operational",
   "启动建设": "Construction started",
   "节能审查通过": "Energy review approved",
@@ -431,7 +435,9 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
   const dailyItems = useMemo(() => payload?.aiDaily ? [payload.aiDaily.lead, ...payload.aiDaily.sections.flatMap((section) => section.items), ...payload.aiDaily.flashes].filter((item): item is Story => Boolean(item)).slice(0, 6) : [], [payload]);
   const chainGroups = Object.entries(payload?.chainNews ?? {}).map(([stage, items]) => [stage, items.filter((item) => item.region !== "中国").slice(0, 2)] as const);
   const eventList = payload?.upcomingEvents ?? [];
-  const pulse = (payload?.idcPulse ?? []).filter((item) => item.region !== "中国");
+  // Selective-coverage exception: keep the English pulse U.S./global-focused, but surface this
+  // globally material China milestone (2GW planned, green-powered domestic-compute cluster).
+  const pulse = (payload?.idcPulse ?? []).filter((item) => item.region !== "中国" || item.id === "envision-ulaanqab-xinghe-2gw-commissioning");
   const listed = (payload?.listedCompanyNews ?? []).filter((item) => !/\.(SH|SZ)\b/.test(item.listedTicker ?? ""));
   const nvidiaProducts = payload?.nvidiaProducts ?? [];
   const nvidiaNews = payload?.nvidiaNews ?? [];
