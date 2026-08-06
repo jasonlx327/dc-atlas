@@ -21,6 +21,15 @@ const LLMS_TXT = `# IDC Atlas
 
 Use original disclosure links attached to individual updates to verify capacity, delivery, commissioning, product specifications and financial claims. The site separates news leads from verified public information. Time-sensitive content is refreshed continuously; dates and status should be checked on the linked source.
 
+## About
+
+- Publisher: IDC Atlas (independent research and industry observation; not investment advice).
+- Languages: Simplified Chinese (zh-CN) and English (en-US).
+- Update cadence: Daily project, company, policy and demand signals with source timestamps; research columns are published on their own schedule.
+- Coverage: Data-center projects and capacity, hyperscaler CAPEX and leases, GPU/accelerator and memory supply, power and interconnection, liquid cooling, China AI silicon, and US/China policy affecting data centers.
+- Verification rule: Primary sources (company, regulator, exchange, government and project-owner records) control factual claims. Media items are leads; check the linked original disclosure and its date before relying on any figure.
+- Citation: Link the underlying original disclosure rather than this site when a capacity, delivery or financial figure is cited.
+
 ## Core pages
 
 - [Chinese intelligence portal](https://idc-index.com/): Compact entry point for the current project pulse, listed-company watch, industry chain and market signals.
@@ -50,6 +59,15 @@ const LLMS_TXT_EN = `# IDC Atlas
 > IDC Atlas is a bilingual, source-first intelligence site for data-center construction, AI infrastructure, power, cooling, networking, memory and China AI silicon. Content is for public-information research and industry observation only, not investment advice.
 
 Primary sources control factual claims. News leads are discovery signals; verify capacity, delivery, commissioning, product specifications and financial figures through the linked original disclosure and its date.
+
+## About
+
+- Publisher: IDC Atlas (independent research and industry observation; not investment advice).
+- Languages: English (en-US) and Simplified Chinese (zh-CN).
+- Update cadence: Daily project, company, policy and demand signals with source timestamps; research columns are published on their own schedule.
+- Coverage: Data-center projects and capacity, hyperscaler CAPEX and leases, GPU/accelerator and memory supply, power and interconnection, liquid cooling, China AI silicon, and US/China policy affecting data centers.
+- Verification rule: Primary sources (company, regulator, exchange, government and project-owner records) control factual claims. Media items are leads; check the linked original disclosure and its date before relying on any figure.
+- Citation: Link the underlying original disclosure rather than this site when a capacity, delivery or financial figure is cited.
 
 ## Core pages
 

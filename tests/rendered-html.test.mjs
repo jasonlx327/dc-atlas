@@ -236,6 +236,8 @@ test("publishes searchable bilingual entity profiles", async () => {
   assert.match(chineseHtml, /最新披露/);
   assert.match(chineseHtml, /搜索公司 \/ 项目/);
   assert.match(chineseHtml, /canonical" href="https:\/\/idc-index\.com\/companies\/microsoft"/);
+  assert.match(chineseHtml, /"@type":"ProfilePage"/);
+  assert.match(chineseHtml, /tickerSymbol/);
 
   const english = await render("/en/companies/microsoft");
   assert.equal(english.status, 200);
@@ -244,20 +246,48 @@ test("publishes searchable bilingual entity profiles", async () => {
   assert.match(englishHtml, /Latest disclosures/);
   assert.match(englishHtml, /Find company \/ project/);
   assert.match(englishHtml, /canonical" href="https:\/\/idc-index\.com\/en\/companies\/microsoft"/);
+  assert.match(englishHtml, /"@type":"ProfilePage"/);
+  assert.match(englishHtml, /tickerSymbol/);
 });
 
 test("exposes bilingual AI-readable discovery manifests", async () => {
   const chinese = await render("/llms.txt");
   assert.equal(chinese.status, 200);
   assert.match(chinese.headers.get("content-type") ?? "", /^text\/plain/i);
-  assert.match(await chinese.text(), /## Core pages/);
+  const chineseText = await chinese.text();
+  assert.match(chineseText, /## Core pages/);
+  assert.match(chineseText, /## About/);
+  assert.match(chineseText, /Languages/);
+  assert.match(chineseText, /Verification rule/);
 
   const english = await render("/en/llms.txt");
   assert.equal(english.status, 200);
   assert.equal(english.headers.get("content-language"), "en-US");
   const englishText = await english.text();
+  assert.match(englishText, /## About/);
+  assert.match(englishText, /Languages/);
+  assert.match(englishText, /Verification rule/);
   assert.match(englishText, /Where Hyperscaler AI CapEx Actually Goes/);
   assert.match(englishText, /After SK hynix Earnings/);
+});
+
+test("keeps robots and home structured data GEO-friendly", async () => {
+  const robots = await readFile(new URL("../app/robots.ts", import.meta.url), "utf8");
+  for (const bot of ["OAI-SearchBot", "GPTBot", "ChatGPT-User", "PerplexityBot", "ClaudeBot", "Google-Extended", "Bingbot"]) {
+    assert.match(robots, new RegExp(bot));
+  }
+
+  const chinese = await render("/");
+  assert.equal(chinese.status, 200);
+  const chineseHtml = await chinese.text();
+  assert.match(chineseHtml, /"@type":"WebSite"/);
+  assert.match(chineseHtml, /"@type":"Organization"/);
+
+  const english = await render("/en");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /"@type":"WebSite"/);
+  assert.match(englishHtml, /"@type":"Organization"/);
 });
 
 test("keeps bilingual console section navigation stable and readable", async () => {

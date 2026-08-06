@@ -5,6 +5,12 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       { userAgent: "*", allow: "/" },
       { userAgent: "OAI-SearchBot", allow: "/" },
+      { userAgent: "GPTBot", allow: "/" },
+      { userAgent: "ChatGPT-User", allow: "/" },
+      { userAgent: "PerplexityBot", allow: "/" },
+      { userAgent: "ClaudeBot", allow: "/" },
+      { userAgent: "Google-Extended", allow: "/" },
+      { userAgent: "Bingbot", allow: "/" },
     ],
     sitemap: "https://idc-index.com/sitemap.xml",
   };

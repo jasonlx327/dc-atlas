@@ -29,6 +29,19 @@ export default async function EnglishPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        name: "IDC Atlas",
+        url: "https://idc-index.com/en",
+        inLanguage: ["en", "zh-CN"],
+        description: "Source-linked intelligence for data-center construction, AI infrastructure, power, cooling, networking and China AI silicon.",
+      },
+      {
+        "@type": "Organization",
+        name: "IDC Atlas",
+        url: "https://idc-index.com/",
+        sameAs: ["https://github.com/jasonlx327"],
+      },
+      {
         "@type": "CollectionPage",
         name: "Data Center Infrastructure Intelligence",
         url: canonical,
