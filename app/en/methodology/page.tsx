@@ -14,6 +14,19 @@ export const metadata: Metadata = {
       "zh-CN": "https://idc-index.com/methodology",
     },
   },
+  openGraph: {
+    title: "Methodology and Sources | IDC Atlas",
+    description: "How IDC Atlas sources, verifies and updates data-center and AI-infrastructure intelligence.",
+    url: canonical,
+    type: "article",
+    images: [{ url: "/og-idc-atlas-en.png", width: 1731, height: 909, alt: "IDC Atlas methodology and sources" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Methodology and Sources | IDC Atlas",
+    description: "How IDC Atlas sources, verifies and updates data-center and AI-infrastructure intelligence.",
+    images: ["/og-idc-atlas-en.png"],
+  },
 };
 
 export default function EnglishMethodologyPage() {

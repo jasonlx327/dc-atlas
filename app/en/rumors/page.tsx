@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   title: "Rumor Watch | IDC Atlas",
   description: "Reported data-center, cloud, chip and AI-infrastructure developments not yet fully confirmed by companies or regulators, with entities, responses and sources visible.",
   alternates: { canonical, languages: { "zh-CN": "https://idc-index.com/rumors", en: canonical, "x-default": canonical } },
-  openGraph: { title: "Rumor Watch | IDC Atlas", description: "Reported developments with entities, public responses, timestamps and source boundaries visible.", url: canonical, type: "website" },
+  openGraph: { title: "Rumor Watch | IDC Atlas", description: "Reported developments with entities, public responses, timestamps and source boundaries visible.", url: canonical, type: "website", images: [{ url: "/og-idc-atlas-en.png", width: 1731, height: 909, alt: "IDC Atlas Rumor Watch" }] },
+  twitter: { card: "summary_large_image", title: "Rumor Watch | IDC Atlas", description: "Reported developments with entities, public responses, timestamps and source boundaries visible.", images: ["/og-idc-atlas-en.png"] },
 };
 
 export default async function EnglishRumorsPage() {
@@ -21,6 +22,7 @@ export default async function EnglishRumorsPage() {
     url: canonical,
     inLanguage: "en-US",
     description: metadata.description,
+    dateModified: initialPayload?.generatedAt,
     isPartOf: { "@type": "WebSite", name: "IDC Atlas", url: "https://idc-index.com/en" },
     mainEntity: {
       "@type": "ItemList",

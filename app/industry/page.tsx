@@ -9,6 +9,19 @@ export const metadata: Metadata = {
     canonical: "https://idc-index.com/industry",
     languages: { "zh-CN": "https://idc-index.com/industry", en: "https://idc-index.com/en/industry", "x-default": "https://idc-index.com/en/industry" },
   },
+  openGraph: {
+    title: "IDC 产业中心｜算力、园区、电力与液冷",
+    description: "追踪从算力芯片、网络和电力，到大型园区、液冷与模型需求的公开进展。",
+    url: "https://idc-index.com/industry",
+    type: "website",
+    images: [{ url: "/og.png", width: 1731, height: 909, alt: "IDC Atlas 产业中心" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IDC 产业中心｜算力、园区、电力与液冷",
+    description: "追踪从算力芯片、网络和电力，到大型园区、液冷与模型需求的公开进展。",
+    images: ["/og.png"],
+  },
 };
 
 export default async function IndustryPage() {

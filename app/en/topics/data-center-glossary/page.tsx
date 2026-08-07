@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description: "A source-first guide to data-center capacity, CAPEX, power, liquid cooling and AI GPU clusters, including the boundaries that matter when reading disclosures.",
   alternates: { canonical, languages: { "zh-CN": "https://idc-index.com/topics/data-center-glossary", en: canonical, "x-default": canonical } },
   openGraph: { title: "Data Center Glossary: Capacity, CAPEX, Power, Cooling & AI Clusters", description: "Core terms and disclosure boundaries for data-center and AI-infrastructure research.", url: canonical, type: "article", images: [{ url: "/og-idc-atlas-en.png", width: 1731, height: 909, alt: "IDC Atlas data center infrastructure intelligence" }] },
+  twitter: { card: "summary_large_image", title: "Data Center Glossary | IDC Atlas", description: "Core terms and disclosure boundaries for data-center and AI-infrastructure research.", images: ["/og-idc-atlas-en.png"] },
 };
 
 const terms = [

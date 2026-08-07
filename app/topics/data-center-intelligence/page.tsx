@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       "x-default": "https://idc-index.com/en/topics/data-center-intelligence",
     },
   },
-  openGraph: { title: "数据中心市场追踪与基础设施报告", description: "公开来源驱动的数据中心项目、容量、租赁、电力、液冷与算力需求情报。", url: canonical, type: "article" },
+  openGraph: { title: "数据中心市场追踪与基础设施报告", description: "公开来源驱动的数据中心项目、容量、租赁、电力、液冷与算力需求情报。", url: canonical, type: "article", images: [{ url: "/og.png", width: 1731, height: 909, alt: "IDC Atlas 数据中心市场追踪" }] },
+  twitter: { card: "summary_large_image", title: "数据中心市场追踪与基础设施报告｜IDC Atlas", description: "公开来源驱动的数据中心项目、容量、租赁、电力、液冷与算力需求情报。", images: ["/og.png"] },
 };
 
 const sections = [

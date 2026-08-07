@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       "x-default": canonical,
     },
   },
-  openGraph: { title: "China GPU & AI Silicon", description: "Source-linked coverage of China's GPU, DCU, AI-accelerator, supernode and software-ecosystem milestones.", url: canonical, type: "article" },
+  openGraph: { title: "China GPU & AI Silicon", description: "Source-linked coverage of China's GPU, DCU, AI-accelerator, supernode and software-ecosystem milestones.", url: canonical, type: "article", images: [{ url: "/og-idc-atlas-en.png", width: 1731, height: 909, alt: "IDC Atlas China GPU and AI silicon" }] },
+  twitter: { card: "summary_large_image", title: "China GPU & AI Silicon | IDC Atlas", description: "Source-linked coverage of China's GPU, DCU, AI-accelerator, supernode and software-ecosystem milestones.", images: ["/og-idc-atlas-en.png"] },
 };
 
 const sections = [

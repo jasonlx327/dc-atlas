@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   title: "China / U.S. Data Center Policy Tracker | IDC Atlas",
   description: "Source-linked briefs on China and U.S. policy changes affecting data-center construction, power, interconnection and operating costs, with status and direct effects.",
   alternates: { canonical, languages: { "zh-CN": "https://idc-index.com/policy", en: canonical, "x-default": canonical } },
-  openGraph: { title: "China / U.S. Data Center Policy Tracker", description: "Source-linked policy briefs with implementation status and direct effects.", url: canonical, type: "website" },
+  openGraph: { title: "China / U.S. Data Center Policy Tracker", description: "Source-linked policy briefs with implementation status and direct effects.", url: canonical, type: "website", images: [{ url: "/og-idc-atlas-en.png", width: 1731, height: 909, alt: "IDC Atlas China and U.S. data-center policy tracker" }] },
+  twitter: { card: "summary_large_image", title: "China / U.S. Data Center Policy Tracker | IDC Atlas", description: "Source-linked policy briefs with implementation status and direct effects.", images: ["/og-idc-atlas-en.png"] },
 };
 
 export default async function EnglishPolicyPage() {
@@ -21,6 +22,7 @@ export default async function EnglishPolicyPage() {
     url: canonical,
     inLanguage: "en-US",
     description: metadata.description,
+    dateModified: initialPayload?.generatedAt,
     isPartOf: { "@type": "WebSite", name: "IDC Atlas", url: "https://idc-index.com/en" },
     mainEntity: {
       "@type": "ItemList",

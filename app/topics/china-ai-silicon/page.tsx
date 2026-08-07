@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       "x-default": "https://idc-index.com/en/topics/china-ai-silicon",
     },
   },
-  openGraph: { title: "中国 GPU 与 AI 芯片进展", description: "中国 GPU、DCU、AI 加速芯片与超节点的公开进展。", url: canonical, type: "article" },
+  openGraph: { title: "中国 GPU 与 AI 芯片进展", description: "中国 GPU、DCU、AI 加速芯片与超节点的公开进展。", url: canonical, type: "article", images: [{ url: "/og.png", width: 1731, height: 909, alt: "IDC Atlas 中国 GPU 与 AI 芯片进展" }] },
+  twitter: { card: "summary_large_image", title: "中国 GPU 与 AI 芯片进展｜IDC Atlas", description: "中国 GPU、DCU、AI 加速芯片与超节点的公开进展。", images: ["/og.png"] },
 };
 
 const sections = [

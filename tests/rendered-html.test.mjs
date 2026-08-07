@@ -45,10 +45,10 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /class="atlas-calendar-group" aria-hidden="true"/);
   assert.match(html, /研究队列/);
   assert.match(html, /src="\/lead-amazon-aws-capex\.png"/);
-  assert.match(html, /SpaceX 1\.4GW 只押 NVIDIA，Anthropic 2GW 引入 AMD/);
-  assert.match(html, /column-accelerator-platform-divergence-v1\.jpg/);
+  assert.match(html, /100 亿美元、6 年、133MW：Volta 与未具名 AI 实验室的算力协议/);
+  assert.match(html, /column-anthropic-volta-compute-v1\.jpg/);
   assert.match(html, /href="\/columns"/);
-  assert.match(html, /href="\/columns\/accelerator-platform-divergence"/);
+  assert.match(html, /href="\/columns\/anthropic-volta-compute"/);
   assert.doesNotMatch(html, /情报摘要/);
   assert.match(html, /市场脉搏/);
   assert.match(html, /class="atlas-pulse-wave"/);
@@ -198,8 +198,8 @@ test("renders the English research console and focused content routes", async ()
   assert.match(html, /class="atlas-console-rail(?: |")/);
   assert.match(html, /href="\/en\/columns"/);
   assert.match(html, /Research queue/);
-  assert.match(html, /SpaceX Standardizes on NVIDIA While Anthropic Brings AMD to 2GW/);
-  assert.match(html, /How \$35 Billion Becomes 1GW/);
+  assert.match(html, /\$10 Billion, Six Years, 133MW: Volta/);
+  assert.match(html, /From \$15B Loans to Bonds: Refinancing the Nexus Campus and Its Risk/);
   assert.equal((html.match(/href="\/en\/columns\/(?!microsoft-ai-capex)[^"]+"/g) ?? []).length >= 4, true);
   assert.match(html, /CapEx &amp; earnings watch/);
   assert.doesNotMatch(html, /Atlas intelligence brief/);
@@ -589,7 +589,7 @@ test("publishes the first scheduled research column and keeps later releases tim
     "2026-08-05T21:00:00+08:00",
     "2026-08-06T09:00:00+08:00",
     "2026-08-06T21:00:00+08:00",
-    "2026-08-07T09:00:00+08:00",
+    "2026-08-06T22:15:00+08:00",
   ]) assert.match(articleSource, new RegExp(publishAt.replaceAll("+", "\\+")));
   assert.match(routeSource, /isColumnPublished\(slug\)/);
   assert.match(feedSource, /publishedColumnArticles\(\)/);
@@ -598,6 +598,11 @@ test("publishes the first scheduled research column and keeps later releases tim
 test("renders every bilingual column inside the shared console reading layout", async () => {
   const slugs = [
     "accelerator-platform-divergence",
+    "anthropic-volta-compute",
+    "partners-group-avk-power",
+    "ai-debt-refinancing",
+    "memory-2027-allocation",
+    "earnings-season-review-2026",
     "ai-capex-power",
     "cxmt-us-chip-impact",
     "frontier-model-economics",
@@ -883,6 +888,16 @@ test("publishes bilingual column indexes with crawl metadata", async () => {
   assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns"/i);
   assert.match(chineseHtml, /"@type":"ItemList"/);
   for (const cover of [
+    "column-anthropic-volta-compute-v1.jpg",
+    "column-partners-group-avk-power-v1.jpg",
+    "column-ai-debt-refinancing-v1.jpg",
+    "column-memory-2027-allocation-v1.jpg",
+    "column-earnings-season-review-2026-v1.jpg",
+    "column-cxmt-us-chips-v2.jpg",
+    "column-caterpillar-ai-power-v1.jpg",
+    "column-eu-ai-gigafactories-v1.jpg",
+    "column-us-data-center-power-gate-v1.jpg",
+    "column-accelerator-platform-divergence-v1.jpg",
     "column-alibaba-qwen-cloud-v2.jpg",
     "column-microsoft-ai-capex-v2.jpg",
     "column-frontier-model-economics-v2.jpg",

@@ -14,11 +14,13 @@ export const metadata: Metadata = {
     description: "追踪云厂商、半导体与数据中心基础设施公司的关键财报节点与 CAPEX 关注项。",
     url: canonical,
     type: "website",
+    images: [{ url: "/og.png", width: 1731, height: 909, alt: "IDC Atlas 全球科技财报日历" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "全球科技财报日历｜IDC Atlas",
     description: "追踪云厂商、半导体与数据中心基础设施公司的关键财报节点与 CAPEX 关注项。",
+    images: ["/og.png"],
   },
 };
 

@@ -15,6 +15,19 @@ export const metadata: Metadata = {
       "x-default": "https://idc-index.com/en/methodology",
     },
   },
+  openGraph: {
+    title: "方法与数据来源｜Methodology｜IDC Atlas",
+    description: "IDC Atlas 的信息来源、核验原则、更新频率与研究边界说明。",
+    url: canonical,
+    type: "article",
+    images: [{ url: "/og.png", width: 1731, height: 909, alt: "IDC Atlas 方法与数据来源" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "方法与数据来源｜Methodology｜IDC Atlas",
+    description: "IDC Atlas 的信息来源、核验原则、更新频率与研究边界说明。",
+    images: ["/og.png"],
+  },
 };
 
 export default function MethodologyPage() {

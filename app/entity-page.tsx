@@ -5,6 +5,7 @@ import { publishedColumnArticles, type ColumnArticle } from "./columns/articles"
 import { deriveConsoleMeta, type ConsoleMeta } from "./console-meta";
 import { IntelligenceConsoleShell, type ConsoleStory } from "./intelligence-console-overview";
 import type { EntityRecord } from "./entity-directory";
+import IndustryNetworkMini, { networkIdForProfile } from "./industry-network-mini";
 
 type LiveDeal = {
   id: string;
@@ -82,6 +83,8 @@ export default function EntityPage({ entity, lang, initialPayload }: { entity: E
   const description = english ? entity.descriptionEn : entity.description;
   const region = english ? (entity.region === "中国" ? "China" : entity.region === "美国" ? "United States" : "Global") : entity.region;
   const category = english ? entity.categoryEn : entity.category;
+  const networkFocus = networkIdForProfile(entity.slug);
+  const networkHref = english ? `/en/industry-network${networkFocus ? `?focus=${networkFocus}` : ""}` : `/industry-network${networkFocus ? `?focus=${networkFocus}` : ""}`;
 
   return <IntelligenceConsoleShell
     lang={lang}
@@ -104,12 +107,20 @@ export default function EntityPage({ entity, lang, initialPayload }: { entity: E
         {stories.length ? <div className="atlas-entity-story-grid">{stories.map((story) => <article className="atlas-entity-story" key={story.id}><div><span>{story.category ?? (english ? "Infrastructure" : "基础设施")}</span><time>{formatDate(story.publishedAt, lang)}</time></div><h3>{story.sourceUrl ? <a href={story.sourceUrl} target="_blank" rel="noreferrer">{story.title} ↗</a> : story.title}</h3><p>{story.summary ?? (english ? "Open the source for the full disclosure." : "打开来源查看完整披露。")}</p><small>{story.sourceName ?? "IDC Atlas source record"}</small></article>)}</div> : <p className="atlas-entity-empty">{english ? "No matching source-linked update in the current window." : "当前窗口暂未匹配到来源可追溯动态。"}</p>}
       </section>
 
+      <section className="atlas-entity-section atlas-entity-network-section">
+        <header>
+          <div><span>{english ? "UPSTREAM & DOWNSTREAM" : "上下游关系"}</span><h2>{english ? "Industry network" : "产业链上下游"}</h2></div>
+          <a href={networkHref}>{english ? "Open full network" : "查看全链路"} →</a>
+        </header>
+        <IndustryNetworkMini slug={entity.slug} lang={lang} />
+      </section>
+
       <section className="atlas-entity-section atlas-entity-research">
         <header><div><span>{english ? "RELATED RESEARCH" : "关联研究"}</span><h2>{english ? "Read the analysis" : "阅读相关专栏"}</h2></div><a href={english ? "/en/columns" : "/columns"}>{english ? "All columns" : "全部专栏"} →</a></header>
         <div className="atlas-entity-column-grid">{articles.map((article) => <a href={english ? article.hrefEn : article.href} key={article.href}><img src={article.image} alt={english ? article.titleEn : article.title} /><div><span>{article.series}</span><h3>{english ? article.titleEn : article.title}</h3><p>{english ? article.summaryEn : article.summary}</p><time>{formatDate(article.date, lang)}</time></div></a>)}{!articles.length && <p className="atlas-entity-empty">{english ? "No related column yet." : "暂无线性关联专栏。"}</p>}</div>
       </section>
 
-      <footer className="atlas-entity-footer"><a href={english ? "/en/industry" : "/industry"}>{english ? "Explore the industry map" : "探索产业链地图"} →</a><span>{english ? "Entity pages combine current source-linked records with IDC Atlas research." : "实体页将当前来源记录与 IDC Atlas 研究关联展示。"}</span></footer>
+      <footer className="atlas-entity-footer"><a href={networkHref}>{english ? "Explore the industry network" : "探索产业链信息网"} →</a><span>{english ? "Entity pages combine current source-linked records with IDC Atlas research." : "实体页将当前来源记录与 IDC Atlas 研究关联展示。"}</span></footer>
     </div>
   </IntelligenceConsoleShell>;
 }

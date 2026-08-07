@@ -138,6 +138,7 @@ const navItems = [
   { key: "pulse", zh: "脉搏监测", en: "Pulse", hrefZh: "/pulse", hrefEn: "/en/pulse" },
   { key: "companies", zh: "公司", en: "Companies", hrefZh: "/#companies", hrefEn: "/en#companies" },
   { key: "industry", zh: "产业链地图", en: "Industry Map", hrefZh: "/industry", hrefEn: "/en/industry" },
+  { key: "network", zh: "产业链信息网", en: "Industry Network", hrefZh: "/industry-network", hrefEn: "/en/industry-network" },
   { key: "market", zh: "市场", en: "Markets", hrefZh: "/#market", hrefEn: "/en#market" },
   { key: "rumors", zh: "市场传闻", en: "Rumor Watch", hrefZh: "/rumors", hrefEn: "/en/rumors" },
   { key: "policy", zh: "政策索引", en: "Policy Index", hrefZh: "/policy", hrefEn: "/en/policy" },

@@ -12,8 +12,11 @@ export const metadata: Metadata = {
     languages: {
       "en": canonical,
       "zh-CN": "https://idc-index.com/privacy",
+      "x-default": canonical,
     },
   },
+  openGraph: { title: "Privacy Notice | IDC Atlas", description: "How IDC Atlas uses Google Analytics and handles website-usage data.", url: canonical, type: "article", images: [{ url: "/og-idc-atlas-en.png", width: 1731, height: 909, alt: "IDC Atlas privacy notice" }] },
+  twitter: { card: "summary_large_image", title: "Privacy Notice | IDC Atlas", description: "How IDC Atlas uses Google Analytics and handles website-usage data.", images: ["/og-idc-atlas-en.png"] },
   robots: { index: false, follow: true },
 };
 

@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   title: "市场传闻与待核验线索｜IDC Atlas",
   description: "汇总主流媒体已公开报道、但尚未获得公司或监管方完整确认的数据中心、云计算、芯片与 AI 基础设施线索。",
   alternates: { canonical, languages: { "zh-CN": canonical, en: "https://idc-index.com/en/rumors", "x-default": "https://idc-index.com/en/rumors" } },
-  openGraph: { title: "市场传闻与待核验线索｜IDC Atlas", description: "保留涉及主体、公开回应、时间与来源的媒体报道监测。", url: canonical, type: "website" },
+  openGraph: { title: "市场传闻与待核验线索｜IDC Atlas", description: "保留涉及主体、公开回应、时间与来源的媒体报道监测。", url: canonical, type: "website", images: [{ url: "/og.png", width: 1731, height: 909, alt: "IDC Atlas 市场传闻与待核验线索" }] },
+  twitter: { card: "summary_large_image", title: "市场传闻与待核验线索｜IDC Atlas", description: "保留涉及主体、公开回应、时间与来源的媒体报道监测。", images: ["/og.png"] },
 };
 
 export default async function RumorsPage() {
@@ -21,6 +22,7 @@ export default async function RumorsPage() {
     url: canonical,
     inLanguage: "zh-CN",
     description: metadata.description,
+    dateModified: initialPayload?.generatedAt,
     isPartOf: { "@type": "WebSite", name: "IDC Atlas", url: "https://idc-index.com/" },
     mainEntity: {
       "@type": "ItemList",

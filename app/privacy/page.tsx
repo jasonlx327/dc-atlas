@@ -7,7 +7,9 @@ const canonical = "https://idc-index.com/privacy";
 export const metadata: Metadata = {
   title: "隐私说明｜IDC Atlas",
   description: "IDC Atlas 关于网站访问统计与 Google Analytics 的隐私说明。",
-  alternates: { canonical },
+  alternates: { canonical, languages: { "zh-CN": canonical, en: "https://idc-index.com/en/privacy", "x-default": "https://idc-index.com/en/privacy" } },
+  openGraph: { title: "隐私说明｜IDC Atlas", description: "IDC Atlas 关于网站访问统计与 Google Analytics 的隐私说明。", url: canonical, type: "article", images: [{ url: "/og.png", width: 1731, height: 909, alt: "IDC Atlas 隐私说明" }] },
+  twitter: { card: "summary_large_image", title: "隐私说明｜IDC Atlas", description: "IDC Atlas 关于网站访问统计与 Google Analytics 的隐私说明。", images: ["/og.png"] },
   robots: { index: false, follow: true },
 };
 

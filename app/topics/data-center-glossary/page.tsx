@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: "数据中心术语：容量、CAPEX、电力、液冷与 AI 集群｜IDC Atlas",
   description: "解释数据中心容量、资本开支、并网与电力、液冷、AI GPU 集群等常见术语，并说明各指标的阅读边界。",
   alternates: { canonical, languages: { "zh-CN": canonical, en: "https://idc-index.com/en/topics/data-center-glossary", "x-default": "https://idc-index.com/en/topics/data-center-glossary" } },
-  openGraph: { title: "数据中心术语：容量、CAPEX、电力、液冷与 AI 集群", description: "面向数据中心和 AI 基础设施研究的核心术语与阅读边界。", url: canonical, type: "article" },
+  openGraph: { title: "数据中心术语：容量、CAPEX、电力、液冷与 AI 集群", description: "面向数据中心和 AI 基础设施研究的核心术语与阅读边界。", url: canonical, type: "article", images: [{ url: "/og.png", width: 1731, height: 909, alt: "IDC Atlas 数据中心术语" }] },
+  twitter: { card: "summary_large_image", title: "数据中心术语｜IDC Atlas", description: "面向数据中心和 AI 基础设施研究的核心术语与阅读边界。", images: ["/og.png"] },
 };
 
 const terms = [

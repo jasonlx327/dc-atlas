@@ -9,6 +9,19 @@ export const metadata: Metadata = {
     canonical: "https://idc-index.com/pulse",
     languages: { "zh-CN": "https://idc-index.com/pulse", en: "https://idc-index.com/en/pulse", "x-default": "https://idc-index.com/en/pulse" },
   },
+  openGraph: {
+    title: "IDC 最新脉冲｜项目、上市公司与 AI 日报",
+    description: "追踪近 45 天中美数据中心项目、A 股与美股核心 IDC 标的及每日 AI 资讯。",
+    url: "https://idc-index.com/pulse",
+    type: "website",
+    images: [{ url: "/og.png", width: 1731, height: 909, alt: "IDC Atlas 最新脉冲" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IDC 最新脉冲｜项目、上市公司与 AI 日报",
+    description: "追踪近 45 天中美数据中心项目、A 股与美股核心 IDC 标的及每日 AI 资讯。",
+    images: ["/og.png"],
+  },
 };
 
 export default async function PulsePage() {
