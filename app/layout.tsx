@@ -23,6 +23,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title,
     description: siteDescription,
     applicationName: "IDC Atlas",
+    authors: [{ name: "IDC Atlas" }],
+    creator: "IDC Atlas",
+    publisher: "IDC Atlas",
     category: "Data center intelligence",
     alternates: {
       canonical: `${siteUrl}/`,
