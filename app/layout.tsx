@@ -35,16 +35,6 @@ export async function generateMetadata(): Promise<Metadata> {
     robots: { index: true, follow: true },
     other: { googlebot: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
-    openGraph: {
-      title,
-      description: siteDescription,
-      type: "website",
-      locale: "zh_CN",
-      alternateLocale: "en_US",
-      siteName: "IDC Atlas",
-      images: [{ url: `${origin}/og.png`, width: 1731, height: 909, alt: "IDC Atlas 全球数据中心产业地图与实时情报站" }],
-    },
-    twitter: { card: "summary_large_image", title, description: siteDescription, images: [`${origin}/og.png`] },
   };
 }
 
