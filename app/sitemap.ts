@@ -23,16 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: "https://idc-index.com/industry-network",
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
-      url: "https://idc-index.com/en/industry-network",
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
       url: "https://idc-index.com/topics/data-center-intelligence",
       changeFrequency: "weekly",
       priority: 0.8,

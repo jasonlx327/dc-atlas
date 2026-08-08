@@ -980,38 +980,24 @@ test("makes public intelligence explicitly discoverable to OpenAI search", async
   assert.match(await llms.text(), /source-linked post-results conclusions/);
 });
 
-test("publishes the bilingual industry network with user-friendly copy", async () => {
+test("keeps the unfinished bilingual industry network offline", async () => {
   const chinese = await render("/industry-network");
-  assert.equal(chinese.status, 200);
-  const chineseHtml = await chinese.text();
-  assert.match(chineseHtml, /产业链信息网/);
-  assert.match(chineseHtml, /从一家公司出发，看它和上下游之间的公开关系、金额与来源/);
-  assert.match(chineseHtml, /收录公司/);
-  assert.match(chineseHtml, /上游在左 · 下游在右/);
-  assert.match(chineseHtml, /下游/);
-  assert.match(chineseHtml, /hrefLang="en" href="https:\/\/idc-index\.com\/en\/industry-network"/);
+  assert.equal(chinese.status, 404);
 
   const english = await render("/en/industry-network");
-  assert.equal(english.status, 200);
-  const englishHtml = await english.text();
-  assert.match(englishHtml, /Industry network/);
-  assert.match(englishHtml, /Start from one company/);
-  assert.match(englishHtml, /Upstream/);
-  assert.match(englishHtml, /Downstream/);
-  assert.match(englishHtml, /hrefLang="zh-CN" href="https:\/\/idc-index\.com\/industry-network"/);
+  assert.equal(english.status, 404);
 });
 
-test("embeds the industry network section into entity profiles", async () => {
+test("removes industry-network entry points from entity profiles", async () => {
   const chinese = await render("/companies/microsoft");
   assert.equal(chinese.status, 200);
   const chineseHtml = await chinese.text();
-  assert.match(chineseHtml, /产业链上下游/);
-  assert.match(chineseHtml, /查看全链路/);
-  assert.match(chineseHtml, /industry-network\?focus=microsoft/);
+  assert.doesNotMatch(chineseHtml, /产业链上下游/);
+  assert.doesNotMatch(chineseHtml, /industry-network/);
 
   const english = await render("/en/companies/microsoft");
   assert.equal(english.status, 200);
   const englishHtml = await english.text();
-  assert.match(englishHtml, /Industry network/);
-  assert.match(englishHtml, /Open full network/);
+  assert.doesNotMatch(englishHtml, /Industry network/);
+  assert.doesNotMatch(englishHtml, /industry-network/);
 });

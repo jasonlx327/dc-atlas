@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-08-08-full",
+  "sources": [
+    {"ref":"ceg-q2-2026","sourceName":"Constellation SEC 8-K / Q2 results","tier":"T0","canonicalUrl":"https://www.sec.gov/Archives/edgar/data/1168165/000186827526000097/ceg-20260806991.htm","publishedAt":"2026-08-06T06:30:00-04:00","accessState":"public","independenceGroup":"sec","sections":["idc-pulse","listed-companies","mna","capacity","power-model-demand","earnings-calendar"]},
+    {"ref":"vertiv-cooling-2026","sourceName":"Vertiv","tier":"T1","canonicalUrl":"https://www.vertiv.com/en-us/about/news-and-events/corporate-news/2026/vertiv-infrastructure-helps-bring-nvidia-ai-computing-capability-to-the-naval-postgraduate-school/","publishedAt":"2026-07-23T09:00:00-04:00","accessState":"public","independenceGroup":"vertiv","sections":["cooling"]},
+    {"ref":"nvidia-rubin-2026","sourceName":"NVIDIA Newsroom","tier":"T1","canonicalUrl":"https://nvidianews.nvidia.com/news/vera-rubin-full-production-agentic-ai-factory","publishedAt":"2026-05-31T09:00:00-07:00","accessState":"public","independenceGroup":"nvidia","sections":["compute-products","supply-chain"]},
+    {"ref":"huawei-atlas-950-2026","sourceName":"华为","tier":"T1","canonicalUrl":"https://www.huawei.com/cn/news/2026/7/atlas-950-superpod","publishedAt":"2026-07-17T09:00:00+08:00","accessState":"public","independenceGroup":"huawei","sections":["china-gpu"]},
+    {"ref":"fcc-covered-list-proposal-2026","sourceName":"Federal Communications Commission","tier":"T0","canonicalUrl":"https://docs.fcc.gov/public/attachments/DOC-422722A1.pdf","publishedAt":"2026-07-01T12:00:00-04:00","accessState":"public","independenceGroup":"fcc","sections":["policy"]},
+    {"ref":"reuters-optics-report-2026","sourceName":"Reuters","tier":"T2","canonicalUrl":"https://www.reuters.com/world/trump-administration-drafting-ban-chinese-data-center-devices-sources-say-2026-08-04/","publishedAt":"2026-08-04T00:00:00-04:00","accessState":"partial","independenceGroup":"reuters","sections":["rumors"]},
+    {"ref":"amazon-q2-2026","sourceName":"Amazon Investor Relations","tier":"T1","canonicalUrl":"https://ir.aboutamazon.com/quarterly-results/default.aspx","publishedAt":"2026-07-31T16:00:00-04:00","accessState":"public","independenceGroup":"amazon","sections":["columns"]}
+  ]
+}
