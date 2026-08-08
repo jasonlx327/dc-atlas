@@ -237,6 +237,7 @@ test("publishes searchable bilingual entity profiles", async () => {
   assert.match(chineseHtml, /搜索公司 \/ 项目/);
   assert.match(chineseHtml, /canonical" href="https:\/\/idc-index\.com\/companies\/microsoft"/);
   assert.match(chineseHtml, /"@type":"ProfilePage"/);
+  assert.match(chineseHtml, /"mainEntity":\{"@type":"Organization"/);
   assert.match(chineseHtml, /tickerSymbol/);
 
   const english = await render("/en/companies/microsoft");
@@ -247,6 +248,7 @@ test("publishes searchable bilingual entity profiles", async () => {
   assert.match(englishHtml, /Find company \/ project/);
   assert.match(englishHtml, /canonical" href="https:\/\/idc-index\.com\/en\/companies\/microsoft"/);
   assert.match(englishHtml, /"@type":"ProfilePage"/);
+  assert.match(englishHtml, /"mainEntity":\{"@type":"Organization"/);
   assert.match(englishHtml, /tickerSymbol/);
 });
 

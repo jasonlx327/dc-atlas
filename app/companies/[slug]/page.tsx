@@ -32,7 +32,13 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
     name: `${entity.name}｜IDC Atlas 实体档案`,
     url: canonical,
     inLanguage: "zh-CN",
-    about: { "@type": "Organization", name: entity.name, tickerSymbol: entity.ticker },
+    mainEntity: {
+      "@type": "Organization",
+      name: entity.name,
+      description: entity.description,
+      url: canonical,
+      ...(entity.ticker ? { tickerSymbol: entity.ticker } : {}),
+    },
     isPartOf: { "@type": "WebSite", name: "IDC Atlas", url: "https://idc-index.com/" },
   };
   return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /><EntityPage entity={entity} lang="zh" initialPayload={initialPayload} /></>;
