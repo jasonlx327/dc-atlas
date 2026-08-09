@@ -29,16 +29,18 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /hrefLang="x-default" href="https:\/\/dc-atlas\.example\/en"/);
   assert.match(html, /class="atlas-console-overview"/);
   assert.match(html, /全球科技财报日历/);
-  assert.match(html, /数据中心政策索引/);
-  assert.match(html, /市场传闻与待核验线索/);
+  assert.doesNotMatch(html, /数据中心政策索引/);
+  assert.match(html, /市场情报/);
+  assert.match(html, /class="atlas-rumor-desk"/);
   assert.match(html, /class="atlas-console-rail(?: |")/);
   assert.match(html, /href="\/privacy"/);
   assert.match(html, /googletagmanager\.com\/gtag\/js\?id=G-XRKL96W42Q/);
   assert.match(html, /gtag\('config', 'G-XRKL96W42Q'\)/);
-  assert.match(html, /href="\/#calendar"><span>02<\/span><strong>财报 \/ 资本支出/);
-  assert.match(html, /href="\/columns"><span>03<\/span><strong>专栏/);
-  assert.match(html, /href="\/pulse"><span>04<\/span><strong>脉搏监测/);
-  assert.match(html, /href="\/industry"><span>06<\/span><strong>产业链地图/);
+  assert.match(html, /href="\/rumors"><span>02<\/span><strong>市场情报/);
+  assert.match(html, /href="\/pulse"><span>03<\/span><strong>事实脉冲/);
+  assert.match(html, /href="\/columns"><span>04<\/span><strong>深度研究/);
+  assert.match(html, /href="\/#calendar"><span>05<\/span><strong>财报 \/ 资本支出/);
+  assert.match(html, /href="\/industry"><span>07<\/span><strong>产业链地图/);
   assert.match(html, /资本支出与财报日历/);
   assert.match(html, /class="atlas-calendar-viewport"/);
   assert.match(html, /class="atlas-calendar-track"/);
@@ -121,20 +123,19 @@ test("publishes focused Pulse and Industry content hubs", async () => {
   assert.match(source, /setActiveStage\(stage as ChainKey\)/);
 });
 
-test("publishes bilingual policy index and rumor watch routes", async () => {
+test("redirects the retired policy index and publishes bilingual Rumor Watch routes", async () => {
   const policy = await render("/policy");
-  assert.equal(policy.status, 200);
-  const policyHtml = await policy.text();
-  assert.match(policyHtml, /中美数据中心政策追踪/);
-  assert.match(policyHtml, /POLICY WATCH · DIRECT IMPACT/);
-  assert.match(policyHtml, /弗吉尼亚州开始征收数据中心用电税/);
-  assert.match(policyHtml, /直接影响/);
-  assert.match(policyHtml, /市场传闻/);
+  assert.ok([307, 308].includes(policy.status));
+  assert.match(policy.headers.get("location") ?? "", /\/pulse\?signal=policy$/);
+
+  const englishPolicy = await render("/en/policy");
+  assert.ok([307, 308].includes(englishPolicy.status));
+  assert.match(englishPolicy.headers.get("location") ?? "", /\/en\/pulse\?signal=policy$/);
 
   const rumors = await render("/rumors");
   assert.equal(rumors.status, 200);
   const rumorsHtml = await rumors.text();
-  assert.match(rumorsHtml, /市场传闻与待核验线索/);
+  assert.match(rumorsHtml, /市场情报/);
   assert.match(rumorsHtml, /RUMOR WATCH · SOURCE LINKED/);
   assert.match(rumorsHtml, /长鑫科技据报考虑在北京亦庄建设第二座DRAM晶圆厂/);
   assert.match(rumorsHtml, /Amazon据报确认在得州Pecos County推进配套现场发电的数据中心项目/);
@@ -145,7 +146,7 @@ test("publishes bilingual policy index and rumor watch routes", async () => {
   assert.equal(english.status, 200);
   const englishHtml = await english.text();
   assert.match(englishHtml, /Rumor Watch/);
-  assert.match(englishHtml, /Reported market developments/);
+  assert.match(englishHtml, /Reported intelligence/);
   assert.match(englishHtml, /CXMT is reported to be considering a second DRAM fab in Beijing/);
   assert.match(englishHtml, /Amazon is reported to have confirmed a Pecos County data-center project with on-site generation/);
   assert.match(englishHtml, /Nvidia is reported to be Hut 8/);
@@ -187,6 +188,7 @@ test("publishes shareable bilingual policy and Rumor Watch brief pages", async (
   assert.match(sitemap, /publishedColumnArticles/);
   assert.match(sitemap, /POLICY_BRIEFS\.flatMap/);
   assert.match(sitemap, /RUMOR_BRIEFS\.flatMap/);
+  assert.doesNotMatch(sitemap, /url: "https:\/\/idc-index\.com\/policy",/);
 });
 
 test("renders the English research console and focused content routes", async () => {
@@ -421,12 +423,15 @@ test("publishes the bilingual CXMT impact column with ranked US chip exposure", 
 
 test("keeps console navigation in the same order as the home-page reading sequence", async () => {
   const overview = await readFile(new URL("../app/intelligence-console-overview.tsx", import.meta.url), "utf8");
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   const nav = overview.slice(overview.indexOf("const navItems"), overview.indexOf("] as const;", overview.indexOf("const navItems")));
   const overviewStart = overview.indexOf("export function IntelligenceConsoleOverview");
   const layout = overview.slice(overviewStart, overview.indexOf('<footer className="atlas-console-footer"', overviewStart));
 
-  for (const [first, second] of [["财报 / 资本支出", "专栏"], ["专栏", "脉搏监测"], ["公司", "产业链地图"], ["产业链地图", "市场"]]) assert.ok(nav.indexOf(first) < nav.indexOf(second));
-  for (const [first, second] of [["id=\"calendar\"", 'id="columns"'], ['id="columns"', 'id="pulse"'], ['id="pulse"', 'id="companies"'], ['id="companies"', 'id="industry"'], ['id="industry"', 'id="market"']]) assert.ok(layout.indexOf(first) < layout.indexOf(second));
+  for (const [first, second] of [["市场情报", "事实脉冲"], ["事实脉冲", "深度研究"], ["深度研究", "财报 / 资本支出"], ["公司", "产业链地图"], ["产业链地图", 'zh: "市场", en: "Markets"']]) assert.ok(nav.indexOf(first) < nav.indexOf(second));
+  for (const [first, second] of [['id="rumors"', 'id="pulse"'], ['id="pulse"', 'className="atlas-decision-grid"'], ['id="companies"', 'id="industry"'], ['id="industry"', 'id="market"']]) assert.ok(layout.indexOf(first) < layout.indexOf(second));
+  assert.match(css, /\.atlas-research-queue \{ order: 1;/);
+  assert.match(css, /\.atlas-calendar \{ order: 2;/);
 });
 
 test("keeps lightweight RSS and canonical QR sharing in the shared console footer", async () => {

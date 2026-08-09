@@ -6,6 +6,7 @@ import { ChainIcon, type ChainKey } from "./chain-icon";
 import { publishedColumnArticles } from "./columns/articles";
 import { IntelligenceConsoleOverview, IntelligenceConsoleShell } from "./intelligence-console-overview";
 import { PulseTrace } from "./pulse-trace";
+import type { RumorWatchItem } from "./watch-data";
 
 type SignalKey = "capacity" | "power" | "cooling" | "network" | "policy" | "hardware";
 type NavGroupKey = "today" | "infrastructure" | "demand" | "capital";
@@ -107,6 +108,7 @@ export type AtlasPayload = {
   coolingProgress: SourceRecord[];
   nvidiaProducts: NvidiaProduct[];
   mnaDeals: MnaDeal[];
+  rumors?: RumorWatchItem[];
 };
 
 const signalMeta: Record<SignalKey, { label: string; color: string }> = {
@@ -174,7 +176,7 @@ function formatRelativeTime(value: string | null): string {
   return new Intl.DateTimeFormat("zh-CN", { timeZone: "Asia/Shanghai", year: "numeric", month: "2-digit", day: "2-digit" }).format(date);
 }
 
-function formatDateTime(value: string | null): string {
+function formatDateTime(value: string | null | undefined): string {
   if (!value) return "—";
   const date = new Date(value);
   if (!Number.isFinite(date.getTime())) return value;
@@ -375,6 +377,7 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
       events: upcomingEvents,
       deals,
       benchmarks: payload?.benchmarks ?? [],
+      rumors: payload?.rumors ?? [],
     }}
   />;
 

@@ -83,13 +83,13 @@ function WatchIndex({ lang, kind, initialPayload = null }: Props) {
     ? new Set(policy.map((item) => item.sourceName)).size
     : new Set(rumors.map((item) => item.sourceName)).size;
   const verifiedCount = kind === "policy" ? policy.length : 0;
-  const pageLabel = kind === "policy" ? (isZh ? "政策动态" : "Policy tracker") : (isZh ? "市场传闻" : "Rumor Watch");
+  const pageLabel = kind === "policy" ? (isZh ? "政策证据存档" : "Policy evidence archive") : (isZh ? "市场情报" : "Rumor Watch");
   const title = kind === "policy"
     ? (isZh ? "中美数据中心政策追踪" : "Data-center policy tracker")
-    : (isZh ? "市场传闻与待核验线索" : "Reported market developments");
+    : (isZh ? "市场情报" : "Reported intelligence");
   const description = kind === "policy"
     ? (isZh ? "追踪影响数据中心建设、用电、并网和运营成本的中美政策变化。每条提炼政策内容、执行状态和直接影响，原文仅作核验出处。" : "Tracks China and U.S. policy that changes data-center construction, power, interconnection and operating costs. Each brief separates the policy, its status and its direct effect.")
-    : (isZh ? "汇总已由主流媒体公开报道、但尚未获得公司或监管方完整确认的基础设施线索。每条保留涉及主体、报道状态与原始出处。" : "Tracks infrastructure developments reported by major media but not yet fully confirmed by companies or regulators. Each item keeps the entities, status and original source visible.");
+    : (isZh ? "聚合主流媒体报道的数据中心与 AI 基础设施线索，追踪后续进展与公开回应。报道事实、官方确认和尚待核实的部分会明确分开。" : "Aggregates reported data-center and AI-infrastructure developments, then tracks follow-ups and public responses. Reported facts, primary confirmation and unresolved claims remain explicitly separated.");
   const items = kind === "policy" ? visiblePolicy : visibleRumors;
   const detailHref = (id: string) => {
     const isStaticRecord = kind === "policy"
@@ -119,9 +119,9 @@ function WatchIndex({ lang, kind, initialPayload = null }: Props) {
             <span>{isZh ? "执行状态" : "Implementation status"}</span>
             <span>{isZh ? "直接影响" : "Direct effect"}</span>
           </> : <>
-            <span>{isZh ? "媒体报道" : "Media reported"}</span>
-            <span>{isZh ? "未获完整确认" : "Not fully confirmed"}</span>
-            <span>{isZh ? "保留来源" : "Source linked"}</span>
+            <span>{isZh ? "报道时间线" : "Source timeline"}</span>
+            <span>{isZh ? "证据状态" : "Evidence status"}</span>
+            <span>{isZh ? "公开回应" : "Public response"}</span>
           </>}
           <span>{isZh ? "更新时间" : "Updated"} {formatDate(payload?.generatedAt, lang)}</span>
         </div>

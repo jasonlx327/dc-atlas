@@ -1,0 +1,38 @@
+{
+  "schema_version": "atlas-relationship.v1",
+  "generated_at": "2026-08-06T06:03:11.620086+00:00",
+  "source_packet": "docs/daily-reviews/2026-08-05-watch-packet.json",
+  "stats": {
+    "input_edges": 1,
+    "passed": 1,
+    "failed": 0,
+    "by_evidence": {
+      "media": 1
+    },
+    "by_relation": {
+      "supplies": 1
+    }
+  },
+  "edges": [
+    {
+      "from": "nvidia",
+      "to": "spacex",
+      "relation": "supplies",
+      "relation_label": "供货",
+      "amount": null,
+      "amount_currency": null,
+      "capacity_mw": null,
+      "capacity_unit": null,
+      "status": "announced",
+      "observed_at": "2026-08-04T00:00:00-04:00",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence_label": "media",
+      "source_item_ids": [
+        "itm-1f8abdc01f3cc9"
+      ],
+      "last_verified_at": "2026-08-06T06:03:11.620021+00:00"
+    }
+  ],
+  "failures": []
+}

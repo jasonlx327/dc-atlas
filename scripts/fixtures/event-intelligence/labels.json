@@ -1,0 +1,49 @@
+[
+  {
+    "eventKey": "us-policy|data-center-reporting|federal-register|united-states|2026-08",
+    "expectedRoute": "pulse",
+    "expectedEvidenceStatus": "officially_confirmed",
+    "expectedPublic": true
+  },
+  {
+    "eventKey": "cloud-company|capacity-lease|ai-campus|texas|2026-q3",
+    "expectedRoute": "rumor-watch",
+    "expectedEvidenceStatus": "official_response",
+    "expectedPublic": true,
+    "expectedCapacityQualifiers": ["potential"]
+  },
+  {
+    "eventKey": "galaxy|capacity-status|helios|texas|2026-q2",
+    "expectedRoute": "pulse",
+    "expectedEvidenceStatus": "officially_confirmed",
+    "expectedPublic": true,
+    "expectedCapacityQualifiers": ["operating", "under_construction"]
+  },
+  {
+    "eventKey": "nvidia|ai-factory-expansion|partner-campus|sejong|2028",
+    "expectedRoute": "hold",
+    "expectedEvidenceStatus": "officially_confirmed",
+    "expectedPublic": false,
+    "expectedCapacityQualifiers": ["proposed"]
+  },
+  {
+    "eventKey": "nvidia|construction|partner-campus-phase-2|sejong|2026-q3",
+    "expectedRoute": "hold",
+    "expectedEvidenceStatus": "officially_confirmed",
+    "expectedPublic": false,
+    "expectedCapacityQualifiers": ["under_construction"]
+  },
+  {
+    "eventKey": "nvidia|capacity-plan|other-campus|busan|2026",
+    "expectedRoute": "hold",
+    "expectedEvidenceStatus": "officially_confirmed",
+    "expectedPublic": false,
+    "expectedCapacityQualifiers": ["proposed"]
+  },
+  {
+    "eventKey": "ai-model|release|example-model|global|2026-08",
+    "expectedRoute": "hold",
+    "expectedEvidenceStatus": "lead",
+    "expectedPublic": false
+  }
+]

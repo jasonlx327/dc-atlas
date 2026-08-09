@@ -68,14 +68,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: "https://idc-index.com/policy",
-      changeFrequency: "daily",
-      priority: 0.8,
-    },
-    {
       url: "https://idc-index.com/rumors",
       changeFrequency: "daily",
-      priority: 0.8,
+      priority: 0.95,
     },
     {
       url: "https://idc-index.com/en",
@@ -93,14 +88,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: "https://idc-index.com/en/policy",
-      changeFrequency: "daily",
-      priority: 0.8,
-    },
-    {
       url: "https://idc-index.com/en/rumors",
       changeFrequency: "daily",
-      priority: 0.8,
+      priority: 0.95,
     },
     {
       url: "https://idc-index.com/columns",
@@ -117,8 +107,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { url: `https://idc-index.com${article.hrefEn}`, lastModified: article.publishAt, changeFrequency: "weekly" as const, priority: 0.9 },
     ]),
     ...POLICY_BRIEFS.flatMap((item) => [
-      { url: `https://idc-index.com/policy/${item.id}`, lastModified: item.publishedAt, changeFrequency: "weekly" as const, priority: 0.75 },
-      { url: `https://idc-index.com/en/policy/${item.id}`, lastModified: item.publishedAt, changeFrequency: "weekly" as const, priority: 0.75 },
+      { url: `https://idc-index.com/policy/${item.id}`, lastModified: item.publishedAt, changeFrequency: "monthly" as const, priority: 0.35 },
+      { url: `https://idc-index.com/en/policy/${item.id}`, lastModified: item.publishedAt, changeFrequency: "monthly" as const, priority: 0.35 },
     ]),
     ...RUMOR_BRIEFS.flatMap((item) => [
       { url: `https://idc-index.com/rumors/${item.id}`, lastModified: item.publishedAt, changeFrequency: "daily" as const, priority: 0.75 },

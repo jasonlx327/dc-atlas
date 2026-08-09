@@ -1,0 +1,365 @@
+{
+  "schema": "atlas-benchmarks.v1",
+  "updated_at": "2026-08-06",
+  "rules": {
+    "estimate_label": "估算",
+    "no_benchmark": "暂无可靠估算",
+    "principle": "仅当存在可辩护的公开基准且边上有可乘的量化口径（容量/数量/规模）时才生成估算；无基准或无量纲一律空缺，禁止编造。",
+    "disclaimer": "估算为研究推断，非公司披露，不作交易依据。",
+    "display": "估算必须展示：区间、方法、基准来源、置信度、有效期。"
+  },
+  "benchmarks": [
+    {
+      "id": "gpu-asp-h100-us",
+      "category": "gpu-asp",
+      "name": "NVIDIA H100 单颗均价（美国市场）",
+      "name_en": "NVIDIA H100 ASP (US)",
+      "metric": "单颗 GPU 均价",
+      "unit": "USD/颗",
+      "value_min": 25000,
+      "value_max": 40000,
+      "period": "2025-12",
+      "valid_from": "2025-12-01",
+      "confidence": "medium",
+      "method": "GPU 均价 × 出货量（或集群 GPU 数 × 均价）",
+      "sources": [
+        {
+          "title": "Asset Lifecycle Management for GPUs: From Procurement to Decommissioning",
+          "url": "https://introl.com/th/blog/asset-lifecycle-management-gpus-procurement-decommissioning",
+          "published": "2026-03-22",
+          "type": "consultancy"
+        },
+        {
+          "title": "Supply Chain Resilience (GPU procurement pricing)",
+          "url": "https://introl.com/blog/supply-chain-resilience-managing-gpu-procurement-constrained-markets",
+          "published": "2026-04-04",
+          "type": "consultancy"
+        }
+      ],
+      "notes": "2025 年 12 月更新：H100 采购价稳定在 2.5–4 万美元，8-GPU 整机约 35–40 万美元。"
+    },
+    {
+      "id": "gpu-asp-h200-us",
+      "category": "gpu-asp",
+      "name": "NVIDIA H200 单颗均价（美国市场）",
+      "name_en": "NVIDIA H200 ASP (US)",
+      "metric": "单颗 GPU 均价",
+      "unit": "USD/颗",
+      "value_min": 30000,
+      "value_max": 40000,
+      "period": "2025-10",
+      "valid_from": "2025-10-01",
+      "confidence": "medium",
+      "method": "GPU 均价 × 出货量",
+      "sources": [
+        {
+          "title": "GPU Cost: definition, the H100/B200 economics",
+          "url": "https://www.startups.com/articles/gpu-cost",
+          "published": "2026-05-26",
+          "type": "consultancy"
+        },
+        {
+          "title": "2025 年 GPU 服务器价格汇总",
+          "url": "https://www.webhostingtalk.cn/ai/gpu-server-prices-2025-a100-h100-h200-rtx4090/",
+          "published": "2025-10-19",
+          "type": "media"
+        }
+      ],
+      "notes": "H200 与 H100 价差有限，NVIDIA 8×H200 模组约 31.5 万美元。"
+    },
+    {
+      "id": "gpu-asp-b200-us",
+      "category": "gpu-asp",
+      "name": "NVIDIA B200 市场价（美国）",
+      "name_en": "NVIDIA B200 market price (US)",
+      "metric": "单颗 GPU 市场价",
+      "unit": "USD/颗",
+      "value_min": 30000,
+      "value_max": 40000,
+      "period": "2025-12",
+      "valid_from": "2025-12-01",
+      "confidence": "low",
+      "method": "GPU 均价 × 出货量",
+      "sources": [
+        {
+          "title": "80% 利润 NVIDIA 顶级 AI 显卡 B200 成本分析",
+          "url": "http://m.mydrivers.com/newsview/1092393.html",
+          "published": "2025-12-12",
+          "type": "media"
+        }
+      ],
+      "notes": "媒体口径：B200 市场价 3–4 万美元，192GB HBM3e 成本约 2,800–3,100 美元。"
+    },
+    {
+      "id": "gpu-asp-h20-cn",
+      "category": "gpu-asp-cn",
+      "name": "NVIDIA H20 单颗售价（中国市场）",
+      "name_en": "NVIDIA H20 ASP (China)",
+      "metric": "单颗 GPU 售价",
+      "unit": "USD/颗",
+      "value_min": 10000,
+      "value_max": 12000,
+      "period": "2025-05",
+      "valid_from": "2025-05-01",
+      "confidence": "low",
+      "method": "中国区出货量 × H20 均价",
+      "sources": [
+        {
+          "title": "H20 之后英伟达全新特供版 GPU 曝光（H20 售价 1 万–1.2 万美元）",
+          "url": "https://www.pconline.com.cn/focus/1929/19298492.html",
+          "published": "2025-05-26",
+          "type": "media"
+        }
+      ],
+      "notes": "仅用于中国区供货/订单边；新特供 Blackwell 若量产需替换本基准。"
+    },
+    {
+      "id": "rack-gb200-nvl72-us",
+      "category": "rack-asp",
+      "name": "GB200 NVL72 整机柜均价",
+      "name_en": "GB200 NVL72 rack ASP",
+      "metric": "整机柜均价",
+      "unit": "USD/柜",
+      "value_min": 2200000,
+      "value_max": 3000000,
+      "period": "2025-01",
+      "valid_from": "2025-01-01",
+      "confidence": "low",
+      "method": "机柜单价 × 出货量",
+      "sources": [
+        {
+          "title": "鸿海独供 GB200 NVL72 服务器爆单（ASP 约 300 万美元；NVL36 约 180 万美元）",
+          "url": "https://www.eepw.com.cn/zhuanlan/202501/354450.html",
+          "published": "2025-01-10",
+          "type": "media"
+        },
+        {
+          "title": "NVIDIA DGX GB200 NVL72 rack 报价",
+          "url": "https://www.soniccomponents.com/product/dgxg-0072fp2edi48-nvidia-dgx/",
+          "published": "2025-03-08",
+          "type": "marketplace"
+        }
+      ],
+      "notes": "报价区间含教育折扣价；GB300 世代需新增基准。"
+    },
+    {
+      "id": "gpu-server-8g-h200-cn",
+      "category": "server-asp-cn",
+      "name": "H200/H20 8 卡整机模组价格（中国市场）",
+      "name_en": "H200/H20 8-GPU module price (China)",
+      "metric": "8 卡整机模组价格",
+      "unit": "CNY/套",
+      "value_min": 880000,
+      "value_max": 1400000,
+      "period": "2025-12",
+      "valid_from": "2025-12-01",
+      "confidence": "low",
+      "method": "整机模组单价 × 出货量（中国区）",
+      "sources": [
+        {
+          "title": "H200 8 卡模组单价 140 万人民币，H20 8 卡 88 万–105 万人民币",
+          "url": "https://news.xfastest.com/nvidia/157597/nvidia-h200-china/",
+          "published": "2025-12-24",
+          "type": "media"
+        }
+      ],
+      "notes": "仅用于中国区云厂采购整机场景。"
+    },
+    {
+      "id": "ppa-solar-na-p25",
+      "category": "ppa",
+      "name": "北美太阳能 PPA P25 均价（Q4 2025）",
+      "name_en": "North America solar PPA P25 average",
+      "metric": "购电协议电价",
+      "unit": "USD/MWh",
+      "value_min": 61.7,
+      "value_max": 61.7,
+      "period": "2025-Q4",
+      "valid_from": "2025-10-01",
+      "confidence": "high",
+      "method": "PPA 电价 × 供电容量(MW) × 年小时数 × 容量系数",
+      "sources": [
+        {
+          "title": "AI power dash transforms clean energy offtake market (LevelTen Energy)",
+          "url": "https://www.reuters.com/business/energy/ai-power-dash-transforms-clean-energy-offtake-market--reeii-2026-03-17/",
+          "published": "2026-03-17",
+          "type": "media"
+        },
+        {
+          "title": "2025 年 Q4 北美光伏 PPA 价格（61.67 美元/兆瓦时）",
+          "url": "https://news.smm.cn/live/detail/103769697",
+          "published": "2026-02-12",
+          "type": "media"
+        }
+      ],
+      "notes": "P25 指 25 分位报价；用于供电边年购电金额估算。"
+    },
+    {
+      "id": "ppa-wind-na-p25",
+      "category": "ppa",
+      "name": "北美风电 PPA P25 均价（Q4 2025）",
+      "name_en": "North America wind PPA P25 average",
+      "metric": "购电协议电价",
+      "unit": "USD/MWh",
+      "value_min": 73.7,
+      "value_max": 73.7,
+      "period": "2025-Q4",
+      "valid_from": "2025-10-01",
+      "confidence": "high",
+      "method": "PPA 电价 × 供电容量(MW) × 年小时数 × 容量系数",
+      "sources": [
+        {
+          "title": "AI power dash transforms clean energy offtake market (LevelTen Energy)",
+          "url": "https://www.reuters.com/business/energy/ai-power-dash-transforms-clean-energy-offtake-market--reeii-2026-03-17/",
+          "published": "2026-03-17",
+          "type": "media"
+        }
+      ],
+      "notes": "P25 指 25 分位报价；用于供电边年购电金额估算。"
+    },
+    {
+      "id": "rack-rent-cn-tower",
+      "category": "rack-rent-cn",
+      "name": "中国铁塔机柜租赁年费（5kW / 8kW）",
+      "name_en": "China Tower rack rental (5kW / 8kW)",
+      "metric": "单柜年租金",
+      "unit": "CNY/柜/年",
+      "value_min": 37735.85,
+      "value_max": 75471.7,
+      "period": "2025-05",
+      "valid_from": "2025-05-01",
+      "confidence": "high",
+      "method": "单柜年租金 × 机柜数",
+      "sources": [
+        {
+          "title": "中国铁塔电子采购平台：机柜租赁（5kW 柜 37,735.85 元/年；8kW 柜 75,471.70 元/年）",
+          "url": "https://ebid.chinatowercom.cn/zgtt/gggs/003001/20250516/53f75f3b-fa00-48c9-baa9-463912cc6352.html",
+          "published": "2025-05-15",
+          "type": "official"
+        }
+      ],
+      "notes": "招标口径，可作国内租约边低端参考。"
+    },
+    {
+      "id": "rack-rent-bj-pera",
+      "category": "rack-rent-cn",
+      "name": "北京高质量非定制机柜托管费（包电）",
+      "name_en": "Beijing high-quality non-customized cabinet fee (power included)",
+      "metric": "单柜托管费",
+      "unit": "CNY/A/月",
+      "value_min": 307,
+      "value_max": 311,
+      "period": "2025",
+      "valid_from": "2025-01-01",
+      "confidence": "medium",
+      "method": "单柜租金（按 A 折算）× 机柜数 × 12",
+      "sources": [
+        {
+          "title": "科智咨询：北京区域 IDC 机柜资源价格（307 元/A/月，2025；至 2029 年 330 元/A/月）",
+          "url": "http://static.cninfo.com.cn/finalpage/2025-09-13/1224658996.PDF",
+          "published": "2025-09-13",
+          "type": "research"
+        }
+      ],
+      "notes": "A 为单位按电流计费；单柜按典型功率折算电流后使用。"
+    },
+    {
+      "id": "cooling-asp-per-kw",
+      "category": "cooling",
+      "name": "液冷方案均价（2025）",
+      "name_en": "Liquid cooling ASP (2025)",
+      "metric": "液冷系统单价",
+      "unit": "USD/kW",
+      "value_min": 1800,
+      "value_max": 1800,
+      "period": "2025",
+      "valid_from": "2025-01-01",
+      "confidence": "low",
+      "method": "液冷单价(USD/kW) × 服务容量(kW)",
+      "sources": [
+        {
+          "title": "AI Datacenter Liquid Cooling Market (average selling price ≈ USD 1,800/kW in 2025)",
+          "url": "https://qyang.livedoor.blog/archives/13219248.html",
+          "published": "2026-05-18",
+          "type": "market-research"
+        }
+      ],
+      "notes": "市场研究口径，波动大；冷板/CDU 分项见原型 EST 说明。"
+    },
+    {
+      "id": "cooling-opex-per-mw",
+      "category": "cooling",
+      "name": "数据中心冷却年运营投入",
+      "name_en": "Data center annual cooling spend",
+      "metric": "每 MW 年冷却投入",
+      "unit": "USD/MW/年",
+      "value_min": 1900000,
+      "value_max": 2800000,
+      "period": "2025",
+      "valid_from": "2025-01-01",
+      "confidence": "low",
+      "method": "单位 MW 冷却投入 × 服务容量(MW)",
+      "sources": [
+        {
+          "title": "Liquid cooling for AI (economics: $1.9–2.8M per MW annually)",
+          "url": "https://introl.com/blog/liquid-cooling-ai-data-center-infrastructure-essential-2025",
+          "published": "2026-02-04",
+          "type": "consultancy"
+        }
+      ],
+      "notes": "含冷板/CDU/管路等运营口径，仅作冷却服务边参考。"
+    },
+    {
+      "id": "arm-royalty-v8-v9",
+      "category": "royalty",
+      "name": "Arm 版税率（v8 / v9）",
+      "name_en": "Arm royalty rate (v8 / v9)",
+      "metric": "版税率",
+      "unit": "% of chip value",
+      "value_min": 2.5,
+      "value_max": 5,
+      "period": "2025-09",
+      "valid_from": "2025-09-01",
+      "confidence": "medium",
+      "method": "版税率 × 服务器芯片均价",
+      "sources": [
+        {
+          "title": "Arm Holdings: royalty rates from v8 (≈2.5–3%) to v9 (≈5%), CSS exceeding 10%",
+          "url": "https://finance.yahoo.com/news/arm-holdings-nasdaqgs-arm-revisiting-110201691.html",
+          "published": "2025-09-27",
+          "type": "media"
+        },
+        {
+          "title": "ARM Holdings: Assessing Valuation After Court Ruling (same royalty figures)",
+          "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-arm/arm-holdings-news/arm-holdings-nasdaqgsarm-assessing-valuation-after-court-rul",
+          "published": "2025-10-02",
+          "type": "media"
+        }
+      ],
+      "notes": "v9 服务器级芯片取 3–5%；CSS 授权超过 10% 仅适用于定制化订单。"
+    },
+    {
+      "id": "hbm3e-per-gb-ref",
+      "category": "hbm",
+      "name": "HBM3e 单位成本参考（由 B200 成本拆分反推）",
+      "name_en": "HBM3e per-GB cost reference (implied from B200 BOM)",
+      "metric": "HBM3e 单价",
+      "unit": "USD/GB",
+      "value_min": 14.6,
+      "value_max": 16.1,
+      "period": "2025-12",
+      "valid_from": "2025-12-01",
+      "confidence": "low",
+      "method": "HBM 用量(GB) × 单价区间",
+      "sources": [
+        {
+          "title": "B200 成本分析：192GB HBM3e 成本 2,800–3,100 美元",
+          "url": "http://m.mydrivers.com/newsview/1092393.html",
+          "published": "2025-12-12",
+          "type": "media"
+        }
+      ],
+      "notes": "TrendForce 2026 年 HBM3e 合约价面临下滑压力（HBM 市场快讯 2025-08-15），正式均价需以 TrendForce 报告为准；本条目仅作量级参考。"
+    }
+  ]
+}

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { ChainIcon, type ChainKey } from "../chain-icon";
 import { IntelligenceConsoleOverview, IntelligenceConsoleShell, type ConsoleStory } from "../intelligence-console-overview";
+import type { RumorWatchItem } from "../watch-data";
 
 type Story = ConsoleStory & { whyItMatters?: string };
 type CalendarEvent = { id: string; startsAt: string; company: string; ticker: string; sector: string; sourceUrl: string; sourceName: string; focus?: string; conclusion?: { summary: string; summaryEn?: string; sourceName: string; sourceUrl: string } };
@@ -34,6 +35,7 @@ export type AtlasPayload = {
   aiAdoption?: { asOf: string; sharePct: number; note: string; sourceUrl: string };
   openRouterUsage?: { period: string; asOf: string; sourceUrl: string; models: Array<{ id: string; name: string; rank: number; heat: number; url: string }> };
   arenaCodeLeaderboard?: { asOf: string; sourceUrl: string; models: Array<{ rank: number; name: string; organization: string; score: number }> };
+  rumors?: RumorWatchItem[];
 };
 
 const titleTranslations: Record<string, string> = {
@@ -513,6 +515,7 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
       events: eventList.map(englishEvent),
       deals: (payload?.mnaDeals ?? []).map(englishDeal),
       benchmarks: market,
+      rumors: payload?.rumors ?? [],
     }}
     translateStory={(story) => ({
       ...story,

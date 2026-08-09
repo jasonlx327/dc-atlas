@@ -25,8 +25,8 @@ Use original disclosure links attached to individual updates to verify capacity,
 
 - Publisher: IDC Atlas (independent research and industry observation; not investment advice).
 - Languages: Simplified Chinese (zh-CN) and English (en-US).
-- Update cadence: Daily project, company, policy and demand signals with source timestamps; research columns are published on their own schedule.
-- Coverage: Data-center projects and capacity, hyperscaler CAPEX and leases, GPU/accelerator and memory supply, power and interconnection, liquid cooling, China AI silicon, and US/China policy affecting data centers.
+- Update cadence: Daily project, company, reported-intelligence and demand signals with source timestamps; research columns are published on their own schedule.
+- Coverage: Data-center projects and capacity, hyperscaler CAPEX and leases, GPU/accelerator and memory supply, power and interconnection, liquid cooling, China AI silicon, and material US/China policy changes affecting data centers.
 - Verification rule: Primary sources (company, regulator, exchange, government and project-owner records) control factual claims. Media items are leads; check the linked original disclosure and its date before relying on any figure.
 - Citation: Link the underlying original disclosure rather than this site when a capacity, delivery or financial figure is cited.
 
@@ -45,8 +45,7 @@ Use original disclosure links attached to individual updates to verify capacity,
 - [China AI Silicon](https://idc-index.com/topics/china-ai-silicon): Bilingual guide to China GPU, DCU, AI accelerators, supernodes and developer ecosystem updates.
 - [Methodology and sources](https://idc-index.com/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
 - [US tech earnings calendar](https://idc-index.com/calendar): Upcoming cloud, semiconductor and data-center-infrastructure earnings events, CAPEX watch items and source-linked post-results conclusions.
-- [China / U.S. policy tracker](https://idc-index.com/policy): Source-linked briefs that summarize implementation status and direct effects on data-center construction, power, interconnection and operating costs.
-- [Rumor Watch](https://idc-index.com/rumors): Current reported infrastructure developments kept separate from verified pulse items, with entities, public responses and source boundaries visible.
+- [市场情报 / Rumor Watch](https://idc-index.com/rumors): Current reported infrastructure developments with entities, timestamps, public responses and source boundaries visible. Direct official disclosures move to the verified Pulse; material policy changes are incorporated into Pulse or research rather than maintained as a separate tracker.
 - [IDC Atlas Columns](https://idc-index.com/columns): Chinese index of original, source-linked research on the data-center and AI-infrastructure cycle.
 - [IDC Atlas Columns in English](https://idc-index.com/en/columns): English index of original research for global investors.
 
@@ -66,8 +65,8 @@ Primary sources control factual claims. News leads are discovery signals; verify
 
 - Publisher: IDC Atlas (independent research and industry observation; not investment advice).
 - Languages: English (en-US) and Simplified Chinese (zh-CN).
-- Update cadence: Daily project, company, policy and demand signals with source timestamps; research columns are published on their own schedule.
-- Coverage: Data-center projects and capacity, hyperscaler CAPEX and leases, GPU/accelerator and memory supply, power and interconnection, liquid cooling, China AI silicon, and US/China policy affecting data centers.
+- Update cadence: Daily project, company, reported-intelligence and demand signals with source timestamps; research columns are published on their own schedule.
+- Coverage: Data-center projects and capacity, hyperscaler CAPEX and leases, GPU/accelerator and memory supply, power and interconnection, liquid cooling, China AI silicon, and material US/China policy changes affecting data centers.
 - Verification rule: Primary sources (company, regulator, exchange, government and project-owner records) control factual claims. Media items are leads; check the linked original disclosure and its date before relying on any figure.
 - Citation: Link the underlying original disclosure rather than this site when a capacity, delivery or financial figure is cited.
 
@@ -80,8 +79,7 @@ Primary sources control factual claims. News leads are discovery signals; verify
 - [Data center glossary](https://idc-index.com/en/topics/data-center-glossary): Reference guide to capacity, CAPEX, power, cooling and AI-cluster terms used throughout IDC Atlas.
 - [Methodology and sources](https://idc-index.com/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
 - [Earnings calendar](https://idc-index.com/calendar): Upcoming cloud, semiconductor and data-center-infrastructure earnings events, CAPEX watch items and source-linked post-results conclusions.
-- [China / U.S. policy tracker](https://idc-index.com/en/policy): Source-linked briefs summarizing implementation status and direct effects on data-center construction, power, interconnection and operating costs.
-- [Rumor Watch](https://idc-index.com/en/rumors): Current reported infrastructure developments kept separate from verified pulse items, with entities, public responses and source boundaries visible.
+- [Rumor Watch](https://idc-index.com/en/rumors): Current reported infrastructure developments with entities, timestamps, public responses and source boundaries visible. Direct official disclosures move to the verified Pulse; material policy changes are incorporated into Pulse or research rather than maintained as a separate tracker.
 - [IDC Atlas Columns](https://idc-index.com/en/columns): Original, source-linked research for global investors.
 
 ## Interpretation
@@ -123,7 +121,7 @@ type NewsItem = {
   sourceName: string | null;
   signal: SignalKey;
   curator: "AI HOT" | "官方来源" | "公开来源";
-  region?: "中国" | "美国" | "全球";
+  region?: "中国" | "美国" | "全球" | "亚美尼亚";
   milestone?: string;
   scale?: string;
   weeklyHighlight?: boolean;

@@ -1505,14 +1505,45 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
 .atlas-lead-facts dd.verified { color: var(--atlas-forest); }
 .atlas-lead-facts dd.verified > i { margin-top: 8px; display: flex; gap: 3px; }
 .atlas-lead-facts dd.verified b { width: 15px; height: 5px; background: #3e7958; }
+.atlas-rumor-desk {
+  padding: 14px 18px 16px;
+  border-bottom: 1px solid #29423f;
+  background: #102321;
+  color: #f4f1e8;
+}
+.atlas-rumor-desk > header {
+  min-height: 48px;
+  display: grid;
+  grid-template-columns: minmax(220px, .65fr) minmax(360px, 1.35fr) auto;
+  align-items: center;
+  gap: 22px;
+}
+.atlas-rumor-desk > header > div { display: grid; gap: 4px; }
+.atlas-rumor-desk > header span { color: #d88460; font: 750 9px var(--font-geist-mono); letter-spacing: .07em; }
+.atlas-rumor-desk > header strong { font-size: 17px; letter-spacing: -.025em; }
+.atlas-rumor-desk > header p { margin: 0; color: #becbc5; font-size: 12px; line-height: 1.55; }
+.atlas-rumor-desk > header a { color: #82d2c7; font-size: 11px; font-weight: 750; white-space: nowrap; }
+.atlas-rumor-desk-grid { margin-top: 10px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid #33504c; background: #0d1d1c; }
+.atlas-rumor-desk-grid > a { min-height: 176px; padding: 14px; display: flex; flex-direction: column; border-right: 1px solid #33504c; background: #142c29; }
+.atlas-rumor-desk-grid > a:last-child { border-right: 0; }
+.atlas-rumor-desk-grid > a:hover { background: #193531; }
+.atlas-rumor-desk-grid > a > div { display: flex; justify-content: space-between; gap: 12px; color: #a6b7b1; font: 650 10px var(--font-geist-mono); }
+.atlas-rumor-desk-grid > a > div span { color: #e08860; }
+.atlas-rumor-desk-grid > a > strong { margin: 14px 0 8px; color: #f4f1e8; font-size: 15px; line-height: 1.35; }
+.atlas-rumor-desk-grid > a > p { margin: 0; color: #c4cec9; font-size: 11px; line-height: 1.55; display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+.atlas-rumor-desk-grid > a > footer { min-height: 0; margin-top: auto; padding: 12px 0 0; display: flex; flex-wrap: wrap; gap: 5px 12px; border: 0; background: transparent; color: #aebbb6; font-size: 9px; }
+.atlas-rumor-desk-grid > a > footer span:first-child { color: #e7a07d; }
+.atlas-rumor-desk-grid > a > footer b { margin-left: auto; color: #dce5df; font-weight: 650; }
+.atlas-rumor-desk-empty { margin-top: 10px; padding: 20px; border: 1px dashed #33504c; color: #becbc5; font-size: 12px; }
 .atlas-decision-grid {
   display: grid;
   grid-template-columns: minmax(470px, 1.04fr) minmax(520px, .96fr);
   border-bottom: 1px solid var(--atlas-line);
   background: #f8f5ee;
 }
-.atlas-calendar, .atlas-research-queue { min-height: 320px; padding: 14px 18px; border-right: 1px solid var(--atlas-line); }
-.atlas-research-queue { border-right: 0; }
+.atlas-calendar, .atlas-research-queue { min-height: 320px; padding: 14px 18px; }
+.atlas-research-queue { order: 1; border-right: 1px solid var(--atlas-line); }
+.atlas-calendar { order: 2; }
 .atlas-calendar > header, .atlas-research-queue > header,
 .atlas-live-pulse > header, .atlas-company-watch > header, .atlas-industry-chain > header,
 .atlas-market-strip > header {
@@ -1714,6 +1745,7 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
   .atlas-lead-facts { grid-column: 1 / -1; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--atlas-line); }
   .atlas-lead-facts > div { border-bottom: 0; }
   .atlas-decision-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .atlas-rumor-desk > header { grid-template-columns: minmax(200px, .7fr) minmax(0, 1.3fr) auto; }
   .atlas-pulse-table { overflow-x: auto; }
   .atlas-pulse-table-head, .atlas-pulse-row { min-width: 970px; }
   .atlas-company-watch > div { grid-template-columns: repeat(2, 1fr); }
@@ -1768,6 +1800,10 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
   .atlas-lead { padding: 18px; grid-template-columns: 1fr 220px; }
   .atlas-lead-facts { grid-template-columns: repeat(2, 1fr); }
   .atlas-decision-grid { grid-template-columns: 1fr; }
+  .atlas-rumor-desk > header { grid-template-columns: 1fr auto; }
+  .atlas-rumor-desk > header p { grid-column: 1 / -1; grid-row: 2; }
+  .atlas-rumor-desk-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
+  .atlas-rumor-desk-grid > a { min-width: min(360px, 82vw); border-right: 1px solid rgba(244,240,231,.18); scroll-snap-align: start; }
   .atlas-calendar, .atlas-research-queue { min-height: 0; border-right: 0; border-bottom: 1px solid var(--atlas-line); }
   .atlas-calendar-group > a { min-height: 44px; }
   .atlas-company-watch > div { grid-template-columns: 1fr 1fr; }
@@ -1795,6 +1831,11 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
   .atlas-lead-facts { grid-template-columns: 1fr 1fr; }
   .atlas-lead-facts > div { min-height: 86px; padding: 12px; }
   .atlas-lead-facts dd { font-size: 14px; }
+  .atlas-rumor-desk { padding: 16px 18px 18px; }
+  .atlas-rumor-desk > header { grid-template-columns: 1fr; gap: 8px; }
+  .atlas-rumor-desk > header p { grid-column: auto; grid-row: auto; font-size: 12px; }
+  .atlas-rumor-desk > header a { margin-top: 3px; }
+  .atlas-rumor-desk-grid > a { min-width: 86vw; min-height: 190px; }
   .atlas-calendar, .atlas-research-queue { padding: 16px 18px; }
   .atlas-calendar-actions button { display: none; }
   .atlas-calendar-viewport { height: auto; overflow: visible; }
@@ -3198,3 +3239,58 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
   transition: background .15s, color .15s;
 }
 .industry-network-entry:hover { background: #1D433A; color: #F3EFE5; }
+
+/* ============ Local event intelligence console ============ */
+.atlas-intelligence-page { width: min(100% - 44px, 1240px); margin: 0 auto; padding: 40px 0 80px; color: #17231E; }
+.atlas-intelligence-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 28px; padding: 10px 0 28px; border-bottom: 1px solid #DCD5C4; }
+.atlas-intelligence-kicker, .atlas-intelligence-eyebrow { margin: 0 0 8px; color: #7A6218; letter-spacing: .12em; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.atlas-intelligence-header h1 { margin: 0; color: #1D433A; font-size: clamp(28px, 4vw, 46px); letter-spacing: -.03em; }
+.atlas-intelligence-lede { max-width: 720px; margin: 12px 0 0; color: #5A645C; line-height: 1.7; font-size: 14px; }
+.atlas-intelligence-run-status { min-width: 170px; display: grid; justify-items: end; gap: 8px; }
+.atlas-intelligence-run-status small { color: #78877D; text-align: right; line-height: 1.5; }
+.atlas-intelligence-tabs { display: flex; flex-wrap: wrap; gap: 8px; padding: 18px 0 4px; position: sticky; top: 0; z-index: 2; background: rgba(243, 239, 229, .94); backdrop-filter: blur(8px); }
+.atlas-intelligence-tabs a { border: 1px solid #DCD5C4; border-radius: 999px; padding: 8px 13px; color: #1D433A; background: #FFFDF7; text-decoration: none; font-size: 12px; }
+.atlas-intelligence-tabs a:hover { border-color: #1D433A; background: #EFF5EF; }
+.atlas-intelligence-section { margin-top: 28px; padding: 22px; border: 1px solid #DCD5C4; border-radius: 16px; background: #FFFDF7; scroll-margin-top: 72px; }
+.atlas-intelligence-section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; margin-bottom: 18px; }
+.atlas-intelligence-section-heading > div { display: flex; align-items: baseline; gap: 12px; }
+.atlas-intelligence-section-heading span { color: #7A6218; font-size: 11px; font-weight: 700; }
+.atlas-intelligence-section-heading h2 { margin: 0; color: #1D433A; font-size: 22px; }
+.atlas-intelligence-section-heading small, .atlas-intelligence-note { color: #78877D; line-height: 1.6; font-size: 12px; }
+.atlas-intelligence-metrics { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+.atlas-intelligence-metric, .atlas-intelligence-card { padding: 14px; border: 1px solid #E4DDCF; border-radius: 12px; background: #F7F3E8; }
+.atlas-intelligence-metric small, .atlas-intelligence-card small, .atlas-intelligence-detail-columns > div > small { display: block; color: #78877D; font-size: 11px; }
+.atlas-intelligence-metric strong { display: block; margin-top: 6px; color: #1D433A; font-size: 25px; }
+.atlas-intelligence-grid { display: grid; gap: 12px; margin-top: 14px; }
+.atlas-intelligence-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.atlas-intelligence-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.atlas-intelligence-card strong { display: block; margin: 6px 0; color: #1D433A; font-size: 16px; }
+.atlas-intelligence-card p { margin: 0; color: #5A645C; font-size: 12px; line-height: 1.6; }
+.atlas-intelligence-table-wrap { overflow-x: auto; }
+.atlas-intelligence-table { width: 100%; border-collapse: collapse; min-width: 760px; }
+.atlas-intelligence-table th, .atlas-intelligence-table td { padding: 11px 10px; border-bottom: 1px solid #E4DDCF; text-align: left; vertical-align: top; font-size: 12px; }
+.atlas-intelligence-table th { color: #78877D; font-weight: 600; font-size: 11px; }
+.atlas-intelligence-table td strong { display: block; color: #1D433A; }
+.atlas-intelligence-table td small { display: block; max-width: 360px; margin-top: 4px; overflow-wrap: anywhere; color: #9AA39B; font-size: 10px; }
+.atlas-intelligence-table a { color: inherit; text-decoration: none; }
+.atlas-intelligence-table a:hover strong { text-decoration: underline; }
+.atlas-intelligence-badge { display: inline-block; border: 1px solid #C7D2C9; border-radius: 999px; padding: 3px 8px; background: #EFF5EF; color: #1D433A; font-size: 10px; line-height: 1.2; white-space: nowrap; }
+.atlas-intelligence-badge-failed, .atlas-intelligence-badge-blocked, .atlas-intelligence-badge-rejected, .atlas-intelligence-badge-contradiction { border-color: #E0BDB3; background: #FBF0ED; color: #8E3C2E; }
+.atlas-intelligence-badge-hold, .atlas-intelligence-badge-partial, .atlas-intelligence-badge-lead, .atlas-intelligence-badge-reported { border-color: #D7C68C; background: #FBF6E5; color: #7A6218; }
+.atlas-intelligence-note { margin: 16px 0 0; }
+.atlas-intelligence-detail-list { display: grid; gap: 14px; }
+.atlas-intelligence-detail { padding: 16px; border: 1px solid #E4DDCF; border-radius: 12px; background: #F7F3E8; scroll-margin-top: 76px; }
+.atlas-intelligence-detail-head { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; }
+.atlas-intelligence-detail h3 { margin: 0 0 7px; color: #1D433A; font-size: 17px; }
+.atlas-intelligence-detail-head p:not(.atlas-intelligence-eyebrow) { margin: 0; color: #5A645C; font-size: 12px; line-height: 1.6; }
+.atlas-intelligence-detail-columns { display: grid; grid-template-columns: 1.2fr 1.2fr 1fr; gap: 16px; margin-top: 15px; padding-top: 14px; border-top: 1px solid #E4DDCF; }
+.atlas-intelligence-detail-columns ul { margin: 7px 0 0; padding-left: 16px; color: #5A645C; font-size: 11px; line-height: 1.7; }
+.atlas-intelligence-detail-columns strong { color: #1D433A; }
+.atlas-intelligence-funnel { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+.atlas-intelligence-funnel > div { padding: 13px 11px; border-left: 3px solid #1D433A; background: #EFF5EF; }
+.atlas-intelligence-funnel span, .atlas-intelligence-comparison span { display: block; color: #78877D; font-size: 10px; }
+.atlas-intelligence-funnel strong, .atlas-intelligence-comparison strong { display: block; margin-top: 5px; color: #1D433A; font-size: 20px; }
+.atlas-intelligence-comparison { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+.atlas-intelligence-comparison > div { padding: 14px; border: 1px solid #E4DDCF; border-radius: 10px; background: #F7F3E8; }
+@media (max-width: 960px) { .atlas-intelligence-metrics, .atlas-intelligence-funnel { grid-template-columns: repeat(3, minmax(0, 1fr)); } .atlas-intelligence-grid-3 { grid-template-columns: 1fr; } .atlas-intelligence-detail-columns { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .atlas-intelligence-page { width: min(100% - 28px, 1240px); padding-top: 22px; } .atlas-intelligence-header { display: block; } .atlas-intelligence-run-status { justify-items: start; margin-top: 18px; } .atlas-intelligence-run-status small { text-align: left; } .atlas-intelligence-section { padding: 16px; } .atlas-intelligence-section-heading { display: block; } .atlas-intelligence-section-heading small { display: block; margin-top: 7px; } .atlas-intelligence-metrics, .atlas-intelligence-funnel, .atlas-intelligence-grid-2, .atlas-intelligence-comparison { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

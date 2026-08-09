@@ -58,6 +58,22 @@ export type ConsoleBenchmark = {
   dayPct: number;
 };
 
+export type ConsoleRumor = {
+  id: string;
+  title: string;
+  titleEn: string;
+  summary: string;
+  summaryEn: string;
+  publishedAt: string;
+  sourceName: string;
+  region: "中国" | "美国" | "全球";
+  statusLabel: string;
+  statusLabelEn: string;
+  sourceCount: number;
+  officialResponse: string;
+  officialResponseEn: string;
+};
+
 export type ConsoleOverviewData = {
   generatedAt?: string;
   reviewedAt?: string;
@@ -68,6 +84,7 @@ export type ConsoleOverviewData = {
   events: ConsoleEvent[];
   deals: ConsoleDeal[];
   benchmarks: ConsoleBenchmark[];
+  rumors?: ConsoleRumor[];
 };
 
 type LocalizedStory = ConsoleStory & { displayTitle?: string; displaySummary?: string };
@@ -133,14 +150,13 @@ const stages: Array<{
 
 const navItems = [
   { key: "overview", zh: "概览", en: "Overview", hrefZh: "/#overview", hrefEn: "/en#overview" },
+  { key: "rumors", zh: "市场情报", en: "Rumor Watch", hrefZh: "/rumors", hrefEn: "/en/rumors" },
+  { key: "pulse", zh: "事实脉冲", en: "Verified Pulse", hrefZh: "/pulse", hrefEn: "/en/pulse" },
+  { key: "columns", zh: "深度研究", en: "Research", hrefZh: "/columns", hrefEn: "/en/columns" },
   { key: "calendar", zh: "财报 / 资本支出", en: "Earnings / CapEx", hrefZh: "/#calendar", hrefEn: "/en#calendar" },
-  { key: "columns", zh: "专栏", en: "Columns", hrefZh: "/columns", hrefEn: "/en/columns" },
-  { key: "pulse", zh: "脉搏监测", en: "Pulse", hrefZh: "/pulse", hrefEn: "/en/pulse" },
   { key: "companies", zh: "公司", en: "Companies", hrefZh: "/#companies", hrefEn: "/en#companies" },
   { key: "industry", zh: "产业链地图", en: "Industry Map", hrefZh: "/industry", hrefEn: "/en/industry" },
   { key: "market", zh: "市场", en: "Markets", hrefZh: "/#market", hrefEn: "/en#market" },
-  { key: "rumors", zh: "市场传闻", en: "Rumor Watch", hrefZh: "/rumors", hrefEn: "/en/rumors" },
-  { key: "policy", zh: "政策索引", en: "Policy Index", hrefZh: "/policy", hrefEn: "/en/policy" },
 ] as const;
 
 function dateLabel(value: string | null | undefined, lang: "zh" | "en", includeTime = false, timezone?: string) {
@@ -467,6 +483,7 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
   const lead = [...pulse, ...companies].sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime())[0];
   const events = data.events.slice(0, 6);
   const deals = data.deals.slice(0, 5);
+  const rumors = (data.rumors ?? []).slice(0, 3);
   const articles = publishedColumnArticles().slice(0, 5);
   const uniqueSources = new Set([...data.pulse, ...data.companies, ...data.deals].map((item) => item.sourceName).filter(Boolean));
   const verifiedCount = data.pulse.length + data.companies.length + data.deals.length;
@@ -547,6 +564,53 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
         </dl>
       </section>
 
+      <section className="atlas-rumor-desk" id="rumors" aria-labelledby="atlas-rumor-desk-title">
+        <header>
+          <div><span>RUMOR WATCH · INTELLIGENCE DESK</span><strong id="atlas-rumor-desk-title">{isZh ? "市场情报" : "Reported intelligence"}</strong></div>
+          <p>{isZh ? "追踪主流媒体报道、后续进展与公开回应；官方披露出现后转入事实脉冲。" : "Tracks reported developments, follow-ups and public responses. Primary disclosures move to Verified Pulse."}</p>
+          <a href={isZh ? "/rumors" : "/en/rumors"}>{isZh ? "进入情报台" : "Open Rumor Watch"} →</a>
+        </header>
+        {rumors.length ? <div className="atlas-rumor-desk-grid">{rumors.map((item, index) => <a href={`${isZh ? "/rumors" : "/en/rumors"}/${item.id}`} key={item.id}>
+          <div><span>{String(index + 1).padStart(2, "0")}</span><time>{dateLabel(item.publishedAt, lang)}</time></div>
+          <strong>{isZh ? item.title : item.titleEn}</strong>
+          <p>{isZh ? item.summary : item.summaryEn}</p>
+          <footer><span>{isZh ? item.statusLabel : item.statusLabelEn}</span><span>{item.sourceCount} {isZh ? "个报道来源" : "reported sources"}</span><b>{item.sourceName}</b></footer>
+        </a>)}</div> : <div className="atlas-rumor-desk-empty">{isZh ? "当前没有符合来源与时效门槛的市场线索。" : "No current report clears the source and freshness thresholds."}</div>}
+      </section>
+
+      <section className="atlas-live-pulse" id="pulse" data-paused={pulsePaused || pulsePointerHeld ? "true" : undefined}>
+        <header>
+          <strong>{isZh ? "市场脉搏" : "Live infrastructure pulse"} <small>{isZh ? "按信号强度排序" : "ranked for fast reading"}</small></strong>
+          <span className="atlas-pulse-wave" aria-hidden="true">
+            <svg viewBox="0 0 600 36" preserveAspectRatio="none">
+              <polyline points="0,18 100,18 130,18 145,3 160,34 175,18 240,18 252,10 264,26 276,18 340,18 354,2 369,35 384,18 450,18 462,12 474,24 486,18 600,18" />
+              <polyline className="active" points="0,18 100,18 130,18 145,3 160,34 175,18 240,18 252,10 264,26 276,18 340,18 354,2 369,35 384,18 450,18 462,12 474,24 486,18 600,18" />
+            </svg>
+          </span>
+          <span className="atlas-pulse-actions">
+            <button type="button" aria-pressed={pulsePaused} onClick={() => setPulsePaused((paused) => !paused)}>
+              {pulsePaused ? (isZh ? "继续" : "Resume") : (isZh ? "暂停" : "Pause")}
+            </button>
+            <a href={isZh ? "/pulse" : "/en/pulse"}>{isZh ? "查看全部信号" : "View all signals"} →</a>
+          </span>
+        </header>
+        <div className="atlas-pulse-table">
+          <div className="atlas-pulse-table-head"><span>#</span><span>{isZh ? "日期" : "Date"}</span><span>{isZh ? "信号" : "Signal"}</span><span>{isZh ? "公司 / 项目" : "Company / project"}</span><span>{isZh ? "类别" : "Category"}</span><span>{isZh ? "地区" : "Region"}</span><span>{isZh ? "披露指标" : "Disclosed metric"}</span><span>{isZh ? "来源" : "Primary source"}</span></div>
+          <div
+            className="atlas-pulse-viewport"
+            onPointerDown={() => setPulsePointerHeld(true)}
+            onPointerUp={() => setPulsePointerHeld(false)}
+            onPointerCancel={() => setPulsePointerHeld(false)}
+            onPointerLeave={() => setPulsePointerHeld(false)}
+          >
+            <div className="atlas-pulse-track">
+              <div className="atlas-pulse-group">{renderPulseRows()}</div>
+              <div className="atlas-pulse-group" aria-hidden="true">{renderPulseRows(true)}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="atlas-decision-grid">
         <div className="atlas-calendar" id="calendar" data-paused={calendarPaused || calendarPointerHeld ? "true" : undefined}>
           <header>
@@ -587,39 +651,6 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
               <div><small>{article.series}</small><strong>{isZh ? article.title : article.titleEn}</strong></div>
               <time>{article.date}</time>
             </a>)}</div>
-          </div>
-        </div>
-      </section>
-
-      <section className="atlas-live-pulse" id="pulse" data-paused={pulsePaused || pulsePointerHeld ? "true" : undefined}>
-        <header>
-          <strong>{isZh ? "市场脉搏" : "Live infrastructure pulse"} <small>{isZh ? "按信号强度排序" : "ranked for fast reading"}</small></strong>
-          <span className="atlas-pulse-wave" aria-hidden="true">
-            <svg viewBox="0 0 600 36" preserveAspectRatio="none">
-              <polyline points="0,18 100,18 130,18 145,3 160,34 175,18 240,18 252,10 264,26 276,18 340,18 354,2 369,35 384,18 450,18 462,12 474,24 486,18 600,18" />
-              <polyline className="active" points="0,18 100,18 130,18 145,3 160,34 175,18 240,18 252,10 264,26 276,18 340,18 354,2 369,35 384,18 450,18 462,12 474,24 486,18 600,18" />
-            </svg>
-          </span>
-          <span className="atlas-pulse-actions">
-            <button type="button" aria-pressed={pulsePaused} onClick={() => setPulsePaused((paused) => !paused)}>
-              {pulsePaused ? (isZh ? "继续" : "Resume") : (isZh ? "暂停" : "Pause")}
-            </button>
-            <a href={isZh ? "/pulse" : "/en/pulse"}>{isZh ? "查看全部信号" : "View all signals"} →</a>
-          </span>
-        </header>
-        <div className="atlas-pulse-table">
-          <div className="atlas-pulse-table-head"><span>#</span><span>{isZh ? "日期" : "Date"}</span><span>{isZh ? "信号" : "Signal"}</span><span>{isZh ? "公司 / 项目" : "Company / project"}</span><span>{isZh ? "类别" : "Category"}</span><span>{isZh ? "地区" : "Region"}</span><span>{isZh ? "披露指标" : "Disclosed metric"}</span><span>{isZh ? "来源" : "Primary source"}</span></div>
-          <div
-            className="atlas-pulse-viewport"
-            onPointerDown={() => setPulsePointerHeld(true)}
-            onPointerUp={() => setPulsePointerHeld(false)}
-            onPointerCancel={() => setPulsePointerHeld(false)}
-            onPointerLeave={() => setPulsePointerHeld(false)}
-          >
-            <div className="atlas-pulse-track">
-              <div className="atlas-pulse-group">{renderPulseRows()}</div>
-              <div className="atlas-pulse-group" aria-hidden="true">{renderPulseRows(true)}</div>
-            </div>
           </div>
         </div>
       </section>

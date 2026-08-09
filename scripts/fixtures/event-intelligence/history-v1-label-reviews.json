@@ -1,0 +1,3966 @@
+{
+  "schema_version": "atlas-event-label-review.v1",
+  "corpus_id": "history-v1",
+  "reviews": [
+    {
+      "fixture_id": "history-e6d9703304f82c043f16",
+      "label_hash": "f2c64c81a55f579acc742701c0edc02c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-37c8e9dc5113db2e6baa",
+      "label_hash": "509673b8d813b85c8f2951d2123d5b74",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.tdlr.texas.gov/TABS/Projects/TABS2026026954"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c83a52d509f19e589d76",
+      "label_hash": "49661cfddc280d4fb07692d293ff2fa7",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/922224/000092222426000042/ppl-6302026exhibit991.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-6c40cccfd7a50e6bbee4",
+      "label_hash": "50c18aeeccae5d696f0d408e250b6de5",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1507605/000150760526000020/q226shareholderletter.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-0ba513d3a9a817812dea",
+      "label_hash": "f53db552205e0f253abd6b9188bc71c3",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.cls.cn/detail/2447085"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-5e5171ab1ef210e3086a",
+      "label_hash": "73220f123b18668fe6389e0bf0a63b24",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://cdn.kscope.io/e784885ee381047a57f1906fc12d4ad4.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-b4d8bf8bf74218ab4ffa",
+      "label_hash": "340d4e9a0252cb276d5be4989655d91d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-960430819eb490503dbd",
+      "label_hash": "7a95e39064799ce57e4671f8e3acefff",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.prnewswire.com/news-releases/galaxy-expands-data-center-footprint-with-acquisition-of-500-acre-campus-in-mcgregor-texas-302836014.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-43fe1008ebcc457db8ec",
+      "label_hash": "79449cda7a66e17ed2e3bb6f1910579b",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.hut8.com/news-insights/press-releases/hut-8-fully-commercializes-1-gw-beacon-point-ai-data-center-campus-with-second-352-mw-it-lease"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-5ea73ef8fe12e4bb3bbb",
+      "label_hash": "d22e5119c975a5c091228115423c9fe4",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/827876/000119312526337999/clsk-ex99_1.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-df9fe8faa4a4cc516054",
+      "label_hash": "e327c8e578ace2db87fa379a26843762",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://zj.people.com.cn/n2/2026/0702/c186327-41627255.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-b23835d5c7cc7dd59718",
+      "label_hash": "e51808cb1b8340df9616cd2d293af239",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://wap.sasac.gov.cn/n2588025/n2588124/c35420702/content.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-50de5cef48b221782bb5",
+      "label_hash": "00c8b1ab11a3a6f5badee8c00e7c6dbf",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-620e2850b24c6cded360",
+      "label_hash": "e9d1b8aae49492756a71ab7129ae57c8",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.tdlr.texas.gov/TABS/Projects/TABS2026026954"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-9a7bc4737c880a8304a8",
+      "label_hash": "254ae8559e127acd60862ab6f227684d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/922224/000092222426000042/ppl-6302026exhibit991.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-0dfca8e21e746e32845a",
+      "label_hash": "3e3925e66346f1a11309a79d225a5aff",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/827876/000119312526337999/clsk-ex99_1.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-390d9ccee94855315b79",
+      "label_hash": "f011a6ef3657758aa900955424245bb0",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.cls.cn/detail/2447085"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-5bb25d3c3b03c605b1dd",
+      "label_hash": "73a8c8c52c83799c3d035613d241a0c0",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://cdn.kscope.io/e784885ee381047a57f1906fc12d4ad4.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-29bd55b5f90a4399725c",
+      "label_hash": "7c07ef744104b2bea2e248e0b30d2e35",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ecad04cb111bd932fdfd",
+      "label_hash": "cbcabb7e451bf039161768b6cd738f6f",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.prnewswire.com/news-releases/galaxy-expands-data-center-footprint-with-acquisition-of-500-acre-campus-in-mcgregor-texas-302836014.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-e67141f59d1e8f64b83e",
+      "label_hash": "bc328e364171efc94a1bfe37ca90e680",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.businesswire.com/news/home/20260727272502/en/Energy-Vault-Breaks-Ground-on-Powered-AI-Infrastructure-Campus-in-Snyder-Texas-to-Deploy-Crusoe-Spark-Modular-Data-Centers"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-81d473b82212099217c2",
+      "label_hash": "9abe84e2d8c04e8c427be0152b685d67",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.hut8.com/news-insights/press-releases/hut-8-fully-commercializes-1-gw-beacon-point-ai-data-center-campus-with-second-352-mw-it-lease"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-5f6ea83f4cd8cd5a8d97",
+      "label_hash": "220713abd47035a05d5d1813bb1fd1c3",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/922224/000092222426000042/ppl-6302026exhibit991.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-a439b63da49e5d1042be",
+      "label_hash": "a3dd03a477a117105be2cc3e07065f12",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1507605/000150760526000020/q226shareholderletter.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-e9d7256f8879f9972893",
+      "label_hash": "e61f9a59c18c404d83dca5ffbcc9dcc3",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://cdn.kscope.io/e784885ee381047a57f1906fc12d4ad4.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-a45f4e9608d01ff8f562",
+      "label_hash": "ccfcfb8a17e3d495d8ffb2bfae59bfba",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-0b50841b52229c16ca07",
+      "label_hash": "cbcabb7e451bf039161768b6cd738f6f",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.prnewswire.com/news-releases/galaxy-expands-data-center-footprint-with-acquisition-of-500-acre-campus-in-mcgregor-texas-302836014.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c9b74f1a070aa9180a89",
+      "label_hash": "4fb2a20e92d6299b1cc2e59d4fd00ea1",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.hut8.com/news-insights/press-releases/hut-8-fully-commercializes-1-gw-beacon-point-ai-data-center-campus-with-second-352-mw-it-lease"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-1136ae4d0fa1df226eff",
+      "label_hash": "6254b5cc3ed6631b61ddf82b10eeab86",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-reports-second-quarter-2026-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c6eaa08d19ee08736fe9",
+      "label_hash": "f5438b762dd0948d593e32e92d5d07e0",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1507605/000150760526000020/q226shareholderletter.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-7420585c37e09641dc4a",
+      "label_hash": "3e3925e66346f1a11309a79d225a5aff",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/827876/000119312526337999/clsk-ex99_1.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-3e396557a2d1ace93c9a",
+      "label_hash": "8dfc636b555750d3674c4e639ce938e3",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-d77b73e572fee00277ef",
+      "label_hash": "554c3bf1e76e7dafb2822bd5a35e8172",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-29966e30672bdc6a44a9",
+      "label_hash": "d4174c604a1721726f44a01b84a046d5",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000039/a2026q2ex991pressrelease.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f404dd88a3c6b9e08972",
+      "label_hash": "562cdd82c7ed20b175c146988637be2e",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://cdn.kscope.io/e784885ee381047a57f1906fc12d4ad4.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-388b06929037987ebc62",
+      "label_hash": "82c6945a31fac55454ba295c497f330e",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.whitehouse.gov/presidential-actions/2025/07/accelerating-federal-permitting-of-data-center-infrastructure"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-d32979c66f8dc3800644",
+      "label_hash": "b1ebd9eb26fff3c11c2baf49907196a6",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.nytimes.com/2026/08/08/climate/amazon-data-center-texas-pollution.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-dfbc5cd1e003a209b03f",
+      "label_hash": "beb225d4e7c2b9c62ca203089ef7e3f4",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.cnbc.com/2026/08/05/spacex-tesla-megapack-ai-data-centers.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-8065fe3665b31b5d2707",
+      "label_hash": "7f512a5ef8ca7920e324beebdaab030a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://au.finance.yahoo.com/news/ai-cloud-startup-volta-valued-143851167.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-505185c564bec96e40a8",
+      "label_hash": "d993d4a777b2d666fa5097975b119bf0",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://apnews.com/article/data-centers-texas-approvals-paused-audits-5cac087049aeae1b51221043972cf631"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ac6c03847c9f09b365c2",
+      "label_hash": "f16d63aace5563fd56549252ac2ce3b3",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://openrouter.ai/rankings"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-fa6bd641294673f0aff7",
+      "label_hash": "1364ea67e9b77c470e126c00bc32dcf4",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.huawei.com/cn/news/2026/7/atlas-950-superpod"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-5e20abb069e3f3273094",
+      "label_hash": "0b127e48451cf339168e066b895d5a24",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1859392/000185939226000084/glxy-20260630xpressrelease.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-bfb4078f2ea6414b53cf",
+      "label_hash": "12f90e8cefc914f658a6d685f451dd4d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000162/a_wulfearningsreleaseq22026.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-6cfc964fe3bd36499cb0",
+      "label_hash": "2472d4710a73f09419f5205e793f278a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://about.fb.com/news/2026/07/meta-announces-new-venture-with-blackrock-to-develop-data-center-in-el-paso"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-282a30dffc03d4cdc4ff",
+      "label_hash": "2cbeadb2a46a6d4901e8772def3bef00",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://blogs.microsoft.com/on-the-issues/2026/05/07/the-state-of-global-ai-diffusion-in-2026"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-5e9a4d5bfe1f54ded3e8",
+      "label_hash": "3498ddf5175b17818aa75f9a1a8c704c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/vera-rubin-full-production-agentic-ai-factory"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-7b1cb9df847851ea9023",
+      "label_hash": "6d47ecfdc3e58f34bf52b209a3a1f546",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.birentech.com/news/cxrfex7rmzwuuhx1oedkdmsq"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-fcf6e70d1470b4e34691",
+      "label_hash": "84f14b0536f59dc32593b517749c18c2",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://developer.metax-tech.com/doc"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-8186a55c898b48bf59af",
+      "label_hash": "fa07cdf5c5af3ebae7243dcbd897841a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-Second-Quarter-2026-with-Diluted-EPS-Growth-of-53-Adjusted-Diluted-EPS-Growth-of-60-Raises-Full-Year-2026-Guidance-Across-All-Key-Metrics/default.aspx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-38dd65369e0eadeea4ba",
+      "label_hash": "fddc32cd2c35b755a3445c6471ac9aa4",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ab354cd8323e4b15bb45",
+      "label_hash": "e2eae330859ddecbdc003bca86b9be42",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://s206.q4cdn.com/479360582/files/doc_financials/2026/q2/2026q2-alphabet-earnings-release.pdf"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f2dc2fae25245d53cfec",
+      "label_hash": "75e027dfd1a96fcb0611f4d11460f338",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-Second-Quarter-2026-with-Diluted-EPS-Growth-of-53-Adjusted-Diluted-EPS-Growth-of-60-Raises-Full-Year-2026-Guidance-Across-All-Key-Metrics/default.aspx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-385e35a1e214a4a6ef30",
+      "label_hash": "b8e5bf161ed89e84fd7b8fecbb49b583",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-3a54de48218eae7b1b06",
+      "label_hash": "2ed7b9a43f80869c4027d0c031ba9a06",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ff0dbda3175ace7434b1",
+      "label_hash": "63ca4407c9166c3d7d1e5f106ccf3263",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-d881cd8223c1f2ca843c",
+      "label_hash": "2bb7175bb1c357278e4f55389107a63b",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-4150f8c64d8aa49bc878",
+      "label_hash": "c3fea2ff21cb7e302751746b4d2f34c7",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-0383179f7f5ae71eb80f",
+      "label_hash": "6d0255745f63bf147a95160e3e61f3da",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://investors.palantir.com/events.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-eb7d80dfb4ca27d24151",
+      "label_hash": "ae1cfdca9778df1285af88547a780b8d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000121/amd-20260804.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-e1e35b596e0fbe8b5bb6",
+      "label_hash": "bbe993e700a3e79ec1885097bade988a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.alibabagroup.com/en-US/ir-news-filings"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-7a1a96a96281ed2d4fb4",
+      "label_hash": "5dd06fbd34e70ed954938ed3ba3139e9",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://drivenets.com/news-and-events/press-release/drivenets-extends-ai-networking-portfolio-with-high-capacity-ai-fabric-platforms"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-379690fee1de87250a09",
+      "label_hash": "f16d63aace5563fd56549252ac2ce3b3",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://openrouter.ai/rankings"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ab655a7e5303ee458a30",
+      "label_hash": "c7d1b44cfac769b9ff3fa9695994510f",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/open-world-models-physical-ai"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f9ff49b908a42cefa7cc",
+      "label_hash": "7bb0a1e16d298a2e08c98a38f4781cf1",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/nsf-state-regional-ai-hub-program"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-36ac04472cf5207996c8",
+      "label_hash": "77ef2a67334d9614cb5deecf6fee4a12",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/nvidia-expands-nvidia-agent-toolkit-with-nvidia-physicsnemo-and-cuda-x-libraries-to-transform-how-the-world-engineers-designs-and-builds"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-a87c5df97c464d5fcc7a",
+      "label_hash": "3b51992605b17388c60dc823e8aa1faa",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/naver-nvidia-and-brookfield-to-expand-koreas-national-ai-factory-infrastructure-buildout"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-cc0ce1f19c1191c21338",
+      "label_hash": "d8e85e7a12a94e89845ef0b8446f6a2c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/ai-summit-korea-partners-and-nvidia"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-8e7610ec18350f04b9d8",
+      "label_hash": "90dd53ff8b8ed51a48fb815e62210d4d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/nvidia-and-kaist-launch-joint-ai-research-lab-to-accelerate-ai-innovation-in-korea"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-0bacf60f8ad63aa9cdaf",
+      "label_hash": "c7d1b44cfac769b9ff3fa9695994510f",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/open-world-models-physical-ai"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-b535ad1f6cc9f7a94cf4",
+      "label_hash": "7bb0a1e16d298a2e08c98a38f4781cf1",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/nsf-state-regional-ai-hub-program"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-d3293bb4d14ddbe33872",
+      "label_hash": "77ef2a67334d9614cb5deecf6fee4a12",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/nvidia-expands-nvidia-agent-toolkit-with-nvidia-physicsnemo-and-cuda-x-libraries-to-transform-how-the-world-engineers-designs-and-builds"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-6aebb59a2268826ec61c",
+      "label_hash": "3b51992605b17388c60dc823e8aa1faa",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/naver-nvidia-and-brookfield-to-expand-koreas-national-ai-factory-infrastructure-buildout"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c3aedcbf40588471e95f",
+      "label_hash": "d8e85e7a12a94e89845ef0b8446f6a2c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/ai-summit-korea-partners-and-nvidia"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-913eea98d375ce3ae006",
+      "label_hash": "950543e28acef38ba7aee2dd78476f3d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/naver-nvidia-and-brookfield-to-expand-koreas-national-ai-factory-infrastructure-buildout"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-90ab6b66c9d85acf5ef8",
+      "label_hash": "f184ca4fab2854a43f67849354d828e0",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-reports-second-quarter-2026-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-9f636f03bcc757e130fa",
+      "label_hash": "c8f4b7f1e3bb13684213035c23fd7c7c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://about.fb.com/news/2026/07/teachers-local-businesses-win-as-meta-expands-louisiana-data-center"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-2a115ae9b7300b523bfb",
+      "label_hash": "be7fae4f8082386c284f2aa4224ad806",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.galaxy.com/newsroom/galaxy-completes-phase-i-of-its-helios-data-center-campus"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-741db17a731b59b7c24f",
+      "label_hash": "4adce6d27d21f2ad4a1fb9dd3fa48c76",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.36kr.com/p/3817305707430790"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-3cb8bece5309a78b633e",
+      "label_hash": "047a3bc74a1ead0fc3925bf2154c4f7a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://yuanchuang.10jqka.com.cn/20260710/c678099376.shtml"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-4b5e17111865985e4a99",
+      "label_hash": "c301a31b8001b29c622bfa70316e5a7d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-7bd5a410d5d8b1e21142",
+      "label_hash": "5ffece2548611654f453b5401e97ca73",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-90e5a6c9aa003eb8f13a",
+      "label_hash": "8be7a68a9852bb839ccc8f2978822a08",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.reuters.com/world/trump-administration-drafting-ban-chinese-data-center-devices-sources-say-2026-08-04"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-33f461670d843067d8f0",
+      "label_hash": "3863bb7f3d142e32d51f342612711e60",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://news.qq.com/rain/a/20260805A0BJJ600"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-61ff5814763b6207ed27",
+      "label_hash": "a92a0f3cac202cd313aa3e2aa39335d4",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://m.nbd.com.cn/articles/2026-08-04/4531262.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-9d3b4b7b988e0299e5ad",
+      "label_hash": "fb491f5f0b64a8a96de1a1f354a8154b",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.reuters.com/world/asia-pacific/cxmt-plans-second-chip-plant-beijing-is-talks-its-funding-sources-say-2026-08-03"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-731f7614543716b56d72",
+      "label_hash": "b7637968fac599a54bed8e495c009b7c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.channelnewsasia.com/business/nvidia-behind-50-billion-lease-texas-data-center-ft-reports-6282306"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-efd94a1e8d7e4e8bae8f",
+      "label_hash": "1941641c083fd1937b83b5cc65e52a7b",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://ca.investing.com/news/stock-market-news/nvidia-in-talks-with-openai-to-guarantee-250-billion-financing-for-data-center-wsj-reports-4753152"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-a7c0ceab75a70d4ae563",
+      "label_hash": "46fe33062c8c2e7a438e8e3e6fb26716",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.investing.com/news/stock-market-news/exclusiveintel-amd-sign-longterm-server-cpu-deals-with-chinese-clients-as-prices-surge-sources-say-4807453"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f63c44a4081491a496c3",
+      "label_hash": "c94d537fbddd6db0a018935f46b08de8",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://m.investing.com/news/stock-market-news/meta-in-talks-for-10-billion-anthropic-compute-deal-nyt-reports-4798826?ampMode=1"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-5e3b753e6d51736dc660",
+      "label_hash": "fc73ea34dd5a0af19b269f0e72a86a95",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://news.bloomberglaw.com/ip-law/meta-is-building-a-cloud-business-to-sell-excess-ai-compute-1"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f432d911e52c25684c65",
+      "label_hash": "74961db3ca95699eb27a31bf5f1a4f19",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.axios.com/2026/08/04/spacex-earnings-elon-musk"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-49f084f9cbd8cefcb97d",
+      "label_hash": "15b1bfaba61926c1a0e3d898e580bf3c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://au.finance.yahoo.com/news/ai-cloud-startup-volta-valued-143851167.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-5674d854745747c2de98",
+      "label_hash": "c786d991d44dac5b333540878024543e",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://news.qq.com/rain/a/20260805A0BJJ600"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-7ce14d69eb88192e589b",
+      "label_hash": "128a59d742d82fa557cbb34389f72b2b",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.reuters.com/legal/litigation/banks-talks-lend-15-billion-anthropic-data-center-backed-by-google-wsj-reports-2026-07-30"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-e05a433666de1a4e6527",
+      "label_hash": "bafea3f04dbee1b1debcaf6eeb2fd0f6",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.trendforce.com.tw/presscenter/news/20260804-13165.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-8385a034b7a5acc94a48",
+      "label_hash": "84f3dda5fde1404653bf27ab1391194b",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.trendforce.com/presscenter/news/20260730-13158.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-2fcdd4d0b0683d0b83c3",
+      "label_hash": "2576ec151fd9003d38e83dd90e99e301",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-3b30278da72fc33b2a6b",
+      "label_hash": "ee1731c2d9e018f947dd55b51eda879b",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.reuters.com/world/trump-administration-drafting-ban-chinese-data-center-devices-sources-say-2026-08-04"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-d358948d30446fb2056a",
+      "label_hash": "f0d5fff462d4d9845e8e7b99c06f5377",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.axios.com/2026/08/04/spacex-earnings-elon-musk"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-4d9c0af30cbea70600fc",
+      "label_hash": "63822593f973d270f15a2141424675c1",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.axios.com/local/san-antonio/2026/08/03/greg-abbott-halts-texas-data-centers-electric-grid"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-479726c24717f3ef4775",
+      "label_hash": "009e5f97e26b9387e4fb8c421a96f45a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.texastribune.org/2026/08/03/texas-data-center-project-audit-greg-abbott"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-3c709a4d58d5ac29a683",
+      "label_hash": "74cbd7b79a644088c8b1f88203556f52",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://apnews.com/article/data-centers-texas-approvals-paused-audits-5cac087049aeae1b51221043972cf631"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-9d2e0ec120007322dff1",
+      "label_hash": "227a83ba9f491bd4936c7700b7f1edf5",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.utilitydive.com/news/texas-hits-pause-data-center-interconnections/827046"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-7c3f9c82e8766e2aba07",
+      "label_hash": "66d36e6cada34d8394e754d83cc07cc7",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.datacenterknowledge.com/energy-power-supply/texas-orders-statewide-audit-of-ai-data-center-projects-in-ercot-queue"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-76c2717bae4ad16d094e",
+      "label_hash": "99b004820abaf8d4049d516888433b98",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.powermag.com/abbott-orders-full-audit-of-texas-data-center-interconnection-queue-threatens-to-deny-grid-access"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-93dd6bc7f918f4c9ebeb",
+      "label_hash": "d3317d19c4b47d6adb226582aac72438",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.axios.com/2026/08/04/spacex-earnings-elon-musk"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-8434a0aa1b398cd4c276",
+      "label_hash": "a485f14e49b8a0505c3302e476fc1c98",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.cnbc.com/2026/08/05/spacex-tesla-megapack-ai-data-centers.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-b25b9910f3617a4da162",
+      "label_hash": "5025233fa023d6bea2b16b59f133254f",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.ithome.com/0/985/747.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-152ed97ad17f7155e22d",
+      "label_hash": "ef7f519eada61a5478bd6d113438c969",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://au.finance.yahoo.com/news/ai-cloud-startup-volta-valued-143851167.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-a1ddeadc8cabbe11361d",
+      "label_hash": "39f5a6a51b171413381ef07f34952089",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://qz.com/anthropic-volta-infra-computing-deal-10-billion-080426"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-b560fca1362aebb3e615",
+      "label_hash": "037581ee8d02f97f6850df81cfceec81",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.reuters.com/legal/litigation/banks-talks-lend-15-billion-anthropic-data-center-backed-by-google-wsj-reports-2026-07-30"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-dc0ca2fd85cf4e027c9b",
+      "label_hash": "8f59d59dc16917c11decfc89b066c070",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://docs.fcc.gov/public/attachments/DOC-422722A1.pdf"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-2d2c7bcf4d34aff4778f",
+      "label_hash": "f523258309677a420797ea9dad3c008d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.whitehouse.gov/releases/2026/07/president-trumps-ratepayer-protection-pledge-secures-american-ai-dominance-protects-consumers"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ef2f093f8cea92ec3a28",
+      "label_hash": "436c0c31ddb51fd9da15408f1955399e",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://budget.lis.virginia.gov/item/2026/2/HB30/Chapter/3/3-5.24"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-4dbae734db0c4c9731f7",
+      "label_hash": "57be3b906c6415270eb7d117a3b2d24a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB00006F.HTM"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ac97897e843ade5c3026",
+      "label_hash": "02af40f8f99511bbc508f85eb21fbce2",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202411/t20241115_3942040.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-33073f27a72b250ab7f0",
+      "label_hash": "0216f021c31d1c92fc7eeb152125b2d2",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://std.samr.gov.cn/gb/search/gbDetailedCNF?id=30A9F6473109728BE06397BE0A0A0EFB"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-1f5c65fc869cafe0b462",
+      "label_hash": "0e3659507e6f1ac36e79d3ae326b60e9",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.sugon.com/x640"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-593831bbf01b8dab6065",
+      "label_hash": "14ede3dd6db985bf45232fab7406f69f",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.businesswire.com/news/home/20260727272502/en/Energy-Vault-Breaks-Ground-on-Powered-AI-Infrastructure-Campus-in-Snyder-Texas-to-Deploy-Crusoe-Spark-Modular-Data-Centers"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-6d5b5d0856139e6f7fae",
+      "label_hash": "d4c54789b13f6eef95cae445431304a0",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://xbj.nea.gov.cn/dtyw/hyxx/202606/t20260626_303639.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f002c7d2d3fb038968d3",
+      "label_hash": "89864ef6a9684cbe50e2bc86b1a631ae",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://jsggzy.jszwfw.gov.cn/jyxx/003001/003001001/20260716/e9c2e43a-d76d-4db4-a6cd-ed711463025d.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-30ee82ff7e0042678c14",
+      "label_hash": "aa5ee285e13035a5fee70598e2963bd0",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-b38983725b6b1c478679",
+      "label_hash": "491e0ebb26a1da60697ac8ad07d867d5",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.vertiv.com/en-us/about/news-and-events/corporate-news/2026/vertiv-infrastructure-helps-bring-nvidia-ai-computing-capability-to-the-naval-postgraduate-school"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c60ecb044916863d0018",
+      "label_hash": "f0d9d2e28cb1f34a29c003501192f5c7",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.vertiv.com/en-us/about/news-and-events/corporate-news/2026/vertiv-expands-global-manufacturing-capacity-for-ai-ready-data-center-cooling-solutions"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-d115f85c3916dd73dae1",
+      "label_hash": "c91eaa9e91ff8f9e5e5b7764f4091631",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.coolermaster.com/en-global/newsroom/cooler-master-advances-global-ai-cooling-infrastructure.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-a9f011f456483151c3fc",
+      "label_hash": "8ae7cb9ac675f62d096441fa9e9373fd",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.odcc.org.cn/news/p-2009441893269463042.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-31f7ec4299aa4ba8d072",
+      "label_hash": "4c65d8684ceef62a389f768b5abbbccb",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.zte.com.cn/china/about/news/20260306C2.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-db9e8dc2268154fbe5f0",
+      "label_hash": "37229cc64c5914c8409d5bfa65873b6d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://finance.sina.com.cn/tech/roll/2026-06-03/doc-iniacnus0910829.shtml"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-10a260cb8e47974c0a66",
+      "label_hash": "ca607f430ae491291fcf3f562832f24c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.nvidia.com/en-gb/data-center/gb200-nvl72"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-2c73409d81fd1184d017",
+      "label_hash": "d35bc6d15c0c94c6d204a607aa09af6c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.nvidia.com/en-us/data-center/dgx-b200"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-8147b5568feb9c5e122e",
+      "label_hash": "326c885bd4fd4da50676c2a5e2b7739b",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/nvidia-vera-rubin-platform"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-8bf3f7c2984477d50a5c",
+      "label_hash": "32184fd7b4f659587c182ece34de920e",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://newsroom.amd.com/press-kits/advancing-ai-2026-all-news"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-e7d5b27014a7cc6d023a",
+      "label_hash": "d0642ff6558e1007fc2045f864e4b4ce",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464969.PDF"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-40a10ef557a4142a300f",
+      "label_hash": "854b559d78a7416776ee7cb8c1ed5c96",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://stcn.com/xinpi/jg-detail.html?id=9272870"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-71814e8e128a66a88364",
+      "label_hash": "1364ea67e9b77c470e126c00bc32dcf4",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.huawei.com/cn/news/2026/7/atlas-950-superpod"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-0772bd4200868b555745",
+      "label_hash": "54a9d177aa5cba870e87b3d18a3a0e71",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.mthreads.com/news/327"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-20c2bc49ee7b5d04087b",
+      "label_hash": "8757c90cd2c92d61ae30c31c3b85244b",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1168165/000186827526000097/ceg-20260806991.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f54660186ad4d1759c57",
+      "label_hash": "93585977aad0b325ad06604f910ef192",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1859392/000185939226000084/glxy-20260630xpressrelease.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-671ff08203036e2d2783",
+      "label_hash": "aa8b5a0591e127b513ed001b9d12a1b5",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.prnewswire.com/news-releases/galaxy-expands-data-center-footprint-with-acquisition-of-500-acre-campus-in-mcgregor-texas-302836014.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-fb2e84c165f1ae1917b5",
+      "label_hash": "a184e7c59a5ad187f9b1eca1c9230824",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.prnewswire.com/news-releases/eqt-to-acquire-copia-power-a-leading-integrated-power-and-ai-infrastructure-platform-302822622.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-3a519c1680b0335e1439",
+      "label_hash": "f2eb084976aa2c58c43d3269cd4787ca",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.blackstone.com/news/press/digital-realty-announces-purchase-of-blackstone-interest-in-three-northern-virginia-data-centers"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-8e9fed0351cbf3acf503",
+      "label_hash": "8e65821c6b44e5139a2b27eb521fbc2a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.singtel.com/about-us/media-centre/news-releases/kkr-led-consortium-with-singtel-group-to-fully-acquire-st-telemedia-global-data-centres"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-20a56b92f91d0f029ce0",
+      "label_hash": "166f5c30a1b28d5d9691ed6267cf8e61",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.prnewswire.com/news-releases/stark-power-to-acquire-sagebrush-infrastructure-partners-securing-5-6-gw-us-data-center-pipeline-302793790.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-4fec716c8f5c66092542",
+      "label_hash": "46dd8514b6c91eb0c509c5b14e9633fd",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-0440eee6a55efe9526e7",
+      "label_hash": "40b8553c013211bf99a824721237546e",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://aligneddc.com/press-release/aip-mgx-and-blackrocks-gip-close-acquisition-of-aligned-data-centers"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-7ca5db5ee4657a3c40d7",
+      "label_hash": "275f20cb71ef0f7532a66a88513d955b",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://mp.weixin.qq.com/s/ObUwbJR2mLpekMh5PX4l3g"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f8a41064ff39583bf14c",
+      "label_hash": "275f20cb71ef0f7532a66a88513d955b",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://mp.weixin.qq.com/s/ObUwbJR2mLpekMh5PX4l3g"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-660e6969cbf665102bec",
+      "label_hash": "2ab3320e5ce010ebcf67469bc037687e",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1168165/000186827526000097/ceg-20260806991.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f81a2d90e9a11601451b",
+      "label_hash": "e2a8d0a6e2c9b35639bd3df2b880a78f",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1507605/000150760526000020/q226shareholderletter.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-edd0fedd545fd8be56d2",
+      "label_hash": "0b127e48451cf339168e066b895d5a24",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1859392/000185939226000084/glxy-20260630xpressrelease.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-61291c4969f0a038e83e",
+      "label_hash": "741514f16a06b4a44dde869d64e3b98a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000162/a_wulfearningsreleaseq22026.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-8a765e91a63d995ffcde",
+      "label_hash": "2472d4710a73f09419f5205e793f278a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://about.fb.com/news/2026/07/meta-announces-new-venture-with-blackrock-to-develop-data-center-in-el-paso"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-78576b9750148d05204d",
+      "label_hash": "950543e28acef38ba7aee2dd78476f3d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/naver-nvidia-and-brookfield-to-expand-koreas-national-ai-factory-infrastructure-buildout"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-a00d52fa8373dcf29453",
+      "label_hash": "8f82df19d1aeb28e2c517118047d4246",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.shanghai.gov.cn/nw15343/20260723/9d9df31d0e4b4a50a3bb16673c55b89b.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-237a779c016e82152819",
+      "label_hash": "d0642ff6558e1007fc2045f864e4b4ce",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464969.PDF"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-121029dbc85050383e94",
+      "label_hash": "1e43779ff074287296dee3cbd795de73",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464909.PDF"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-51ff2007554d3f9ae549",
+      "label_hash": "174d2cf15b144f99c34f5911cffe3089",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464212.PDF"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ecf9f6d96e9ea950c586",
+      "label_hash": "e1f6c04f9989df4d071335bdefe542ad",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1692819/000169281926000017/vistra-20260630xearningsre.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-da8531b739c6455efddb",
+      "label_hash": "2ab3320e5ce010ebcf67469bc037687e",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1168165/000186827526000097/ceg-20260806991.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-286f3ff0c7eb062418fa",
+      "label_hash": "88c82c70f0ac2c1323cb25fe1770e3f4",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/827876/000119312526337999/clsk-ex99_1.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c597546b7f17999eb902",
+      "label_hash": "0b127e48451cf339168e066b895d5a24",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1859392/000185939226000084/glxy-20260630xpressrelease.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-b273989761b5a7af6f95",
+      "label_hash": "741514f16a06b4a44dde869d64e3b98a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000162/a_wulfearningsreleaseq22026.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-6af93a2179ba0e724483",
+      "label_hash": "a8868e84c8e6ff69889b360fccc34500",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000121/amd-20260804.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-6ccdb9962d57d742a959",
+      "label_hash": "293550d4220f2d9a1e04d787dd68cc7c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-04/1225453726.PDF"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-4593faad3f1baf4c15be",
+      "label_hash": "2472d4710a73f09419f5205e793f278a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://about.fb.com/news/2026/07/meta-announces-new-venture-with-blackrock-to-develop-data-center-in-el-paso"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-e1209832686048a5a99c",
+      "label_hash": "69148bcb6dc86a1da245e60439795200",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-2b6a2c80f7a595f6b04d",
+      "label_hash": "14ede3dd6db985bf45232fab7406f69f",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.businesswire.com/news/home/20260727272502/en/Energy-Vault-Breaks-Ground-on-Powered-AI-Infrastructure-Campus-in-Snyder-Texas-to-Deploy-Crusoe-Spark-Modular-Data-Centers"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-5aeaec8f7b90ea54218e",
+      "label_hash": "8f82df19d1aeb28e2c517118047d4246",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.shanghai.gov.cn/nw15343/20260723/9d9df31d0e4b4a50a3bb16673c55b89b.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f149e50f02f096075a45",
+      "label_hash": "c2a1816c01e2e406c51cd2616685b72c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464969.PDF"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ca11ba06506b62fac182",
+      "label_hash": "9cd36a536c1690c18ad942534020095b",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464969.PDF"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-8a1d302cce0e3f1809a4",
+      "label_hash": "9804ace4995c4a0a1a55cb4de268d317",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/922224/000092222426000042/ppl-6302026exhibit991.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-d23bc1ed3a6632e819e0",
+      "label_hash": "cba58a4fadac1ac955127131d59c6a4f",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/922224/000092222426000042/ppl-6302026exhibit991.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-cd95fb1cd0f976174e9b",
+      "label_hash": "e1f6c04f9989df4d071335bdefe542ad",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1692819/000169281926000017/vistra-20260630xearningsre.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ed5c3f4e526555bbde76",
+      "label_hash": "e1f6c04f9989df4d071335bdefe542ad",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1692819/000169281926000017/vistra-20260630xearningsre.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-be5581db0ba3abcdb9a9",
+      "label_hash": "8757c90cd2c92d61ae30c31c3b85244b",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1168165/000186827526000097/ceg-20260806991.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-fc79506ba9f8c80ce151",
+      "label_hash": "2ab3320e5ce010ebcf67469bc037687e",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1168165/000186827526000097/ceg-20260806991.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-375734f931474084f2f2",
+      "label_hash": "e9d32a81589cd8bd80bc83f858d90053",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1507605/000150760526000020/q226shareholderletter.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-4a8bd4d67dd865f84d4b",
+      "label_hash": "0a0241f8c3e975556590e79dbae855ca",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/827876/000119312526337999/clsk-ex99_1.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-5b429d0ad8bba45312ab",
+      "label_hash": "8ef525a497718023d643fa5d5bcb3528",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://ir.tesla.com/press-release/tesla-releases-second-quarter-2026-financial-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-fb836efb8ed26eaccad1",
+      "label_hash": "b85e5e3c2b8d778171efa3e851eda335",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.investing.com/news/transcripts/earnings-call-transcript-alphabet-beats-q2-2026-estimates-shares-fall-on-capex-surge-93CH-4807140"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-3f5c2ad78b07d00037fc",
+      "label_hash": "6a04bf3d4da1dff8447b19447a648d93",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.intc.com/news-events/press-releases/detail/1776/intel-reports-second-quarter-2026-financial-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-17a32341db4fe87738cc",
+      "label_hash": "b6c2f985409b88b7517f11ffedd9de45",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.intc.com/news-events/press-releases/detail/1776/intel-reports-second-quarter-2026-financial-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-e17327a019199d906bba",
+      "label_hash": "b683285d50f1db0f51906b28e3e4daea",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-Second-Quarter-2026-with-Diluted-EPS-Growth-of-53-Adjusted-Diluted-EPS-Growth-of-60-Raises-Full-Year-2026-Guidance-Across-All-Key-Metrics/default.aspx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-6dc2697d773d49288c67",
+      "label_hash": "e7e542842dc74769ac5e2704c72711ce",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://s21.q4cdn.com/399680738/files/doc_financials/2026/q2/META-Q2-2026-Earnings-Call-Transcript.pdf"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-372e900f3d8b8f14919a",
+      "label_hash": "549a3e88e5a281c882fc480e53833835",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://investors.arm.com/financials/quarterly-annual-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-bfa18a402d53c5a54dab",
+      "label_hash": "fb0acf35528323874ddf55d9afa967c1",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://cdn.kscope.io/e784885ee381047a57f1906fc12d4ad4.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-d64b06cc561e67fdd01e",
+      "label_hash": "8ecd37a58d6f56497da32d37b28f304f",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000121/amd-20260804.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-924c75e9dc9d39bf75e2",
+      "label_hash": "7262f81b22428a6ca74d43383938626a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000162/a_wulfearningsreleaseq22026.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-2b4cff45452d1fe66012",
+      "label_hash": "8fea1720202157dd706b0987118cc224",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000162/a_wulfearningsreleaseq22026.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-e41d4ad41af0d85c2cb8",
+      "label_hash": "827568d18fb8c7efcc3986155f10c47d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1859392/000185939226000084/glxy-20260630xpressrelease.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ba49abd0cfe10efa1673",
+      "label_hash": "23687cb678486ec6f7b65f91473f753f",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1859392/000185939226000084/glxy-20260630xpressrelease.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-657e114779e7ed71643c",
+      "label_hash": "2ef892fd2e5cb844ee3ad9e4fd3202d6",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.tencent.com/investors/investor-kit-calendar"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-2d5f19c3021963ace215",
+      "label_hash": "1925629041bd03d823cc3905a82e0111",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.energyvault.com/newsroom/energy-vault-schedules-conference-call-to-discuss-second-quarter-2026-financial-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-5a12a37a56b8c57688d6",
+      "label_hash": "f50952b8bf7767ce886a5e73c5dbe9d9",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-04/1225453726.PDF"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-d8a5b21a8a1063a363d5",
+      "label_hash": "3c48c1da5d004cd6fcc858e008fdc665",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/nvidia-vera-rubin-opens-agentic-ai-frontier"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-192ad82700c437cf5fa5",
+      "label_hash": "62b4180ac9626e97b7c33fb2a731a317",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://ir.supermicro.com/news/news-details/2026/Supermicro-Expands-End-to-End-DCBBS-Liquid-Cooling-Portfolio-with-Rear-Door-Heat-Exchangers-for-High-Density-AI-and-HPC-Infrastructure/default.aspx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-5fe95ec18cbf249746e6",
+      "label_hash": "62b4180ac9626e97b7c33fb2a731a317",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://ir.supermicro.com/news/news-details/2026/Supermicro-Expands-End-to-End-DCBBS-Liquid-Cooling-Portfolio-with-Rear-Door-Heat-Exchangers-for-High-Density-AI-and-HPC-Infrastructure/default.aspx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-23a6d54bc8394bc13e79",
+      "label_hash": "66cf68793ca7f54c84ef44e7fb527a6d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.daikin.com/press/2026/20260706"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-9d5ba7193366ccbfdeb9",
+      "label_hash": "1cc255f587c576b590a13423c6110ee5",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://en-uk.ecolab.com/news/2026/07/ecolab-closes-coolit-acquisition-and-expands-ai-cooling-platform"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-b9e55e00aff0aae0d491",
+      "label_hash": "fac8f5020946efd12c1d62c2e660b49e",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.gov.cn/zhengce/zhengceku/202407/P020240724272072479001.pdf"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f51ee62564c56a36a9b5",
+      "label_hash": "2a1d64c68e92a3bf2c5f852e682df50a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/spcx-20260630.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-11007476ea42e9e7f623",
+      "label_hash": "bfa722c511a7aa9c9c27694aba92d464",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://ir.spacex.com/updates/releases-details/2026/SpaceX-to-Post-Second-Quarter-2026-Results-and-Host-Webcast-on-August-4-2026-2026-g8layJlbFm/default.aspx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-35a169c0d93ca6832e64",
+      "label_hash": "92f5797f2ac1fbd8751826fca552c1f7",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-a30f6278590ab0bdf749",
+      "label_hash": "1979936ee27d4d18bee72a4b777c4044",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://ir.amd.com/news-events/press-releases/detail/1292/amd-and-anthropic-announce-strategic-partnership-to-deploy-up-to-2-gigawatts-of-amd-instinct-mi450-series-gpus"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-3f59906368b12b957339",
+      "label_hash": "6f386424ddedef019d230082e8827c3f",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.epa.gov/newsreleases/president-trump-expands-historic-ratepayer-protection-pledge-protect-american"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-1e008df1d50d7e2c2271",
+      "label_hash": "a2572411b5874998a25a89d4f6c45d66",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.epa.gov/stationary-sources-air-pollution/clean-air-act-resources-data-centers"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ca91ab6cf049a32775e0",
+      "label_hash": "5fb2b859f6daf678e42d1ce82a83e692",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.epa.gov/system/files/documents/2026-07/epa-issues-clarification-on-islanded-power-generators-and-acid-rain-program-provisions.pdf"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c8f2352c4e9463575193",
+      "label_hash": "4b89bec512d4249ab6f9d5acc924c0d9",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.energy.gov/articles/energy-secretary-secures-mid-atlantic-grid-ahead-period-hot-weather"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-5247cab58f6c78dc0846",
+      "label_hash": "baf3e8870afe392e5004243d2d67016d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.apollo.com/insights-news/pressreleases/2026/06/broadcom--apollo--and-blackstone-establish-landmark-strategic-pl"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-6ae97eec9c0450c694b9",
+      "label_hash": "83a104dcac07c270167d6688611b4c7f",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://ir.apollo.com/_assets/_0cf46289135c652dcf5d317982a2f526/apollo/news/2026-06-09_Apollo_Leads_35_Billion_Capital_Solution_for_629.pdf"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-dd0853304fe4a667bdd1",
+      "label_hash": "d1afb234dfc95b6e15ea9ee318872171",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://investors.broadcom.com/node/64396/pdf"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-4849aa79f541e7da027d",
+      "label_hash": "3cea3e5235428fe56b3dc786965b4e20",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.apollo.com/insights-news/insights/2026/07/jim-zelter-on-bloomberg-meeting-europe-s-growing-capital-needs"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-6bd9214932b87db9d9cb",
+      "label_hash": "b570aa96d3719305df5c6ce8c5618025",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://commission.europa.eu/topics/competitiveness/competitiveness-coordination-tool-projects/ai-gigafactories_en"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-72afa8617ad585a6904a",
+      "label_hash": "6f5cfae7bdec605d789ab582a240228b",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.eurohpc-ju.europa.eu/ai-gigafactories_en"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-eeca61a1204a2e2f1b28",
+      "label_hash": "ac7a729b483adf3472019254700de6d5",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://eur-lex.europa.eu/legal-content/en/TXT?uri=CELEX%3A32026R0150"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-714b12dabe338ffa473a",
+      "label_hash": "adb6d776a7b5ddd9b2f6659c53c694d6",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT?uri=COM%3A2025%3A165%3AFIN"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-a88c0a0c8d9a3e0a8c8d",
+      "label_hash": "37a8a626aa0fa0b61735632369c3b28e",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/18230/000001823026000040/ex991toformcat2q2026earnin.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-39de7e273e2852e965de",
+      "label_hash": "712a772c48c356aa85fdf926af41b83b",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/18230/000001823026000040/cat-20260804.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-be3267b1e8f3bf44cde3",
+      "label_hash": "44fa9bb61cdd4a8325ce3ea12e2ce315",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://investors.caterpillar.com/news/news-details/2026/American-Intelligence--Power-Forms-Strategic-Alliance-with-Caterpillar-and-Boyd-CAT-to-Deploy-2-Gigawatts-of-Dedicated-Power-for-Hyperscale-AI-Infrastructure/default.aspx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-7d9982f0660a15bf05d5",
+      "label_hash": "a2572411b5874998a25a89d4f6c45d66",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.epa.gov/stationary-sources-air-pollution/clean-air-act-resources-data-centers"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-a4d2ab209bb718148f47",
+      "label_hash": "c4d70017880b0a7c83fb79407acc28dc",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=80e9420b-67c0-43f1-b298-e0dfa2aba73e"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-52e66cf5bca0b431b0ca",
+      "label_hash": "7d732ef7c7a985180f866deeadf09f8e",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://ir.bitdeer.com/news-releases/news-release-details/bitdeer-announces-47-billion-16-year-aihpc-data-center-lease"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-172be0b9f964535251c4",
+      "label_hash": "613c88af94fadde1d394d262d87f43f5",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://secure.businesswire.com/news/home/20260804493428/en/Volta-Emerges-From-Stealth-With-%2410-Billion-AI-Lab-Partnership-and-%245-Billion-AI-Infrastructure-Program"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-60e43b54e259aa17cbb0",
+      "label_hash": "689bc3f0d86788412c083832a54e1f34",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://qz.com/anthropic-volta-infra-computing-deal-10-billion-080426"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-1c1577cc4732d102ed19",
+      "label_hash": "b86a61ede07e8b6ea07a794d304de474",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://m.nbd.com.cn/articles/2026-08-04/4531262.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-8c263c67b3cfa22525af",
+      "label_hash": "c714f0e4c56481011f304a4c6de149cf",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://s206.q4cdn.com/479360582/files/doc_financials/2026/q2/2026q2-alphabet-earnings-release.pdf"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-d9d74bea618673e596c3",
+      "label_hash": "5605ce4b8234e28497ed35630ca35161",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-4835828eb2d8abb0d476",
+      "label_hash": "98e9726f9de1aa4a6b28f1b6a56eac77",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-0aa6a7453ec9374fae32",
+      "label_hash": "7f2f59eba4d5b78eca9a08f6f6ec08bb",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.intc.com/news-events/press-releases/detail/1776/intel-reports-second-quarter-2026-financial-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-b308deda524f585cde88",
+      "label_hash": "588efe100c9496ec16de022bc43b7817",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://news.skhynix.com/en/q2-2026-business-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-737e1ebc42a32b93e99e",
+      "label_hash": "f593e63fca06ec7bd131bbc003fa7f13",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://investors.vertiv.com/news/news-details/2026/Vertiv-Announces-Date-of-Second-Quarter-2026-Earnings-Release-and-Conference-Call/default.aspx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-0eaff41a63aa393612dd",
+      "label_hash": "23157cc97b448c765eb057dd243b8f04",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://investors.arm.com/financials/quarterly-annual-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-af9b95cd65e1cc53d52b",
+      "label_hash": "39c789ffa4f25d4368ca17cf320f2059",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://docs.fcc.gov/public/attachments/DOC-422722A1.pdf"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c1ac6c92c1305105dc97",
+      "label_hash": "30cc0d83edfe380ab185187de4443a92",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.163.com/dy/article/L3LCEF5Q05568W0A.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-6926ed3e8e0b18244b39",
+      "label_hash": "52f4c210b101c36fcd3d72d95ff914cb",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://news.qq.com/rain/a/20260805A0BJJ600"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-3f7774dcefc8e2ca8c23",
+      "label_hash": "c0b1c7519712fc57f5bd82b6f8997903",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://m.nbd.com.cn/articles/2026-08-04/4531262.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c1905f078a0d8d3dc4a2",
+      "label_hash": "0b3568349fb291ab033d3613bcd9964e",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.trendforce.com.tw/presscenter/news/20260804-13165.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-2d1d35e00e229ad03d0f",
+      "label_hash": "ea5de959817a2f1ad30872edb7d2c639",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=80e9420b-67c0-43f1-b298-e0dfa2aba73e"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ad53c44c962ab1c477fc",
+      "label_hash": "a2c2ac1728207ec1bb13ca1cc37dd425",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.sec.gov/Archives/edgar/data/922224/000092222426000042/ppl-6302026exhibit991.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-d3c1af37cff559e882a5",
+      "label_hash": "1267c3b7a621ac236f937b8193095932",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464969.PDF"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ce177959d4a73c581e77",
+      "label_hash": "7c1f8c9afcb66496b5d6d83de7901aa3",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464909.PDF"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-2798fb7e4643ec545d68",
+      "label_hash": "ca759913d7460ba543dbe28aa74dfa46",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464212.PDF"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-188a9c7400cb91a4aaf2",
+      "label_hash": "65866a212d3550a772745a6108834d10",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.tdlr.texas.gov/TABS/Projects/TABS2026026954"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-d71d550a95b77289506f",
+      "label_hash": "40e405d784be20d61f1f5c1f766f49d0",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c1d2a571af0386b8159b",
+      "label_hash": "33fa9d7f2f969e411875df45861daa68",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.nytimes.com/2026/08/08/climate/amazon-data-center-texas-pollution.html"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-aed544974ec14c1cbd37",
+      "label_hash": "9aabf2c256676b128c92dd12546dad3a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.federalregister.gov/documents/2026/08/10/2026-16224/plan-of-action-under-the-defense-production-act-human-mobilization-committee"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-cbd1fb01e5bcb46fb37c",
+      "label_hash": "428241918d8d55e574b4b390ccdc64d0",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ad1effb97b651159a9e5",
+      "label_hash": "dc0b642892d47e4b53f616e249d66d69",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/ai-storage-fms"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-e29d057f09eda5dbe15b",
+      "label_hash": "61d975b05f957071550e55efb0172b08",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/geforce-now-thursday-back-to-school-2026"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f5012d707bf01ae2c50e",
+      "label_hash": "6dfc81f79a21d3c88449b84aac75e8ad",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-second-quarter-financial-results-6927195"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-69a38224e91e509195a8",
+      "label_hash": "2a08625254ea48d923d947ef513abe1c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/build-ai-with-nvidia-jetson"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f4e4dfff6627db35fbe8",
+      "label_hash": "f812856fd795062d308dd0e6761e867d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/ilya-sutskevers-safe-superintelligence-inc-and-nvidia-announce-long-term-strategic-partnership"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-93485c5259fabfb47684",
+      "label_hash": "eee7b8f414034ae3d490c7046869d80d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/vera-cpu-eda"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-df861254554bf0e8ff7b",
+      "label_hash": "9b83be12c37fbe5c73c1ddbcac7b1ee6",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/sk-group-and-nvidia-expand-strategic-partnership-across-ai-factories-and-next-generation-memory"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-a817af201b914fb62d13",
+      "label_hash": "cd41bf773c85e765cde09b5d3916b2d1",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/naval-postgraduate-school-dgx-ai-supercomputer"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-839141b67e6cb165dd19",
+      "label_hash": "f45b1225bd75b5896192f28b103322ff",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.powermag.com/texas-audit-could-delay-49-8-gw-of-data-center-load-cost-projects-up-to-15-billion-bnef-warns"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-75cab3b6f807be68e6e2",
+      "label_hash": "740071f64d3b18f292009387dc87260c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.powermag.com/rugged-switchgear-a-reliable-data-centers-bedrock"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-42e5c42252cb69400c47",
+      "label_hash": "a676700ca5e1c1aa512a1dd1afe1519d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.powermag.com/curio-nuscale-framatome-join-to-support-fuel-solution-for-advanced-reactors"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-dcb4a5ff9ca1dfc31503",
+      "label_hash": "6140a0fc27fcb65ae77ac9efb7995958",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.powermag.com/ls-power-acquiring-606-mw-texas-gas-fired-plant-from-constellation"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-cff3b60d6a7bf685bbc6",
+      "label_hash": "cecd939e4b6df973e70b0e4d590aeeb4",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.powermag.com/doe-approves-safety-design-of-deep-fissions-underground-smr"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f1532b9e1822e141b375",
+      "label_hash": "14df4290595761ae56efc847aa9d1310",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.powermag.com/oklos-groves-becomes-fifth-doe-pilot-reactor-to-reach-criticality-first-on-private-land"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-729072f9e79b349548a7",
+      "label_hash": "2fc09ac1d5608a46531b212dc06ec137",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.powermag.com/the-power-interview-nrgs-case-for-bring-your-own-power-and-the-labor-to-build-it"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-3a07d0044d8dfb9f6112",
+      "label_hash": "86bd2f172a9a0c53f38595b511ff4e6a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.powermag.com/ais-obstacle-why-the-grid-cant-keep-pace-with-the-data-center-boom"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-e12031d388d518a8ad78",
+      "label_hash": "7fe075d21963cec467f03f61b88fdbde",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.powermag.com/nebraska-public-power-district-breaks-ground-on-694-mw-princeton-road-station"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-5784c95fb2e33599cf5e",
+      "label_hash": "dd25cbf62bb030a51330f0d46f01c5d6",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/abbott-orders-full-audit-of-texas-data-center-interconnection-queue-threatens-to-deny-grid-access"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-3e02b23ba5cb29811778",
+      "label_hash": "9aabf2c256676b128c92dd12546dad3a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.federalregister.gov/documents/2026/08/10/2026-16224/plan-of-action-under-the-defense-production-act-human-mobilization-committee"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-768edf37839030b351ae",
+      "label_hash": "428241918d8d55e574b4b390ccdc64d0",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-2772e96d30200151dcda",
+      "label_hash": "dc0b642892d47e4b53f616e249d66d69",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/ai-storage-fms"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-b4a22eebba9de9823ff8",
+      "label_hash": "61d975b05f957071550e55efb0172b08",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/geforce-now-thursday-back-to-school-2026"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c5b19ba11f7b4a2e82e9",
+      "label_hash": "6dfc81f79a21d3c88449b84aac75e8ad",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-second-quarter-financial-results-6927195"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-21b84e457484dae36e36",
+      "label_hash": "2a08625254ea48d923d947ef513abe1c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/build-ai-with-nvidia-jetson"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-a0776de05d3b7a4cd76a",
+      "label_hash": "f812856fd795062d308dd0e6761e867d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/ilya-sutskevers-safe-superintelligence-inc-and-nvidia-announce-long-term-strategic-partnership"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-09246a6daa6e54ef54a2",
+      "label_hash": "eee7b8f414034ae3d490c7046869d80d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/vera-cpu-eda"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-607e908b7aac2eb52662",
+      "label_hash": "9b83be12c37fbe5c73c1ddbcac7b1ee6",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/sk-group-and-nvidia-expand-strategic-partnership-across-ai-factories-and-next-generation-memory"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-2f8fd43483fcaca35d2f",
+      "label_hash": "90dd53ff8b8ed51a48fb815e62210d4d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/nvidia-and-kaist-launch-joint-ai-research-lab-to-accelerate-ai-innovation-in-korea"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-0a75571f5d4332f22895",
+      "label_hash": "cd41bf773c85e765cde09b5d3916b2d1",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/naval-postgraduate-school-dgx-ai-supercomputer"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-8e722371c43efbfe8a6a",
+      "label_hash": "f45b1225bd75b5896192f28b103322ff",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/texas-audit-could-delay-49-8-gw-of-data-center-load-cost-projects-up-to-15-billion-bnef-warns"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c6850019f64ac8855a11",
+      "label_hash": "740071f64d3b18f292009387dc87260c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/rugged-switchgear-a-reliable-data-centers-bedrock"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c7185094de0bd26a913c",
+      "label_hash": "a676700ca5e1c1aa512a1dd1afe1519d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/curio-nuscale-framatome-join-to-support-fuel-solution-for-advanced-reactors"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c4337290730049761660",
+      "label_hash": "6140a0fc27fcb65ae77ac9efb7995958",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/ls-power-acquiring-606-mw-texas-gas-fired-plant-from-constellation"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-247d1aff345375d53e34",
+      "label_hash": "cecd939e4b6df973e70b0e4d590aeeb4",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/doe-approves-safety-design-of-deep-fissions-underground-smr"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-8ddc82c14da6e479b150",
+      "label_hash": "14df4290595761ae56efc847aa9d1310",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/oklos-groves-becomes-fifth-doe-pilot-reactor-to-reach-criticality-first-on-private-land"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-511a7e696e03e58c5e84",
+      "label_hash": "2fc09ac1d5608a46531b212dc06ec137",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/the-power-interview-nrgs-case-for-bring-your-own-power-and-the-labor-to-build-it"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-0a8b5f2e8c40c2f88d0d",
+      "label_hash": "86bd2f172a9a0c53f38595b511ff4e6a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/ais-obstacle-why-the-grid-cant-keep-pace-with-the-data-center-boom"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f695c02dca656aa75749",
+      "label_hash": "7fe075d21963cec467f03f61b88fdbde",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/nebraska-public-power-district-breaks-ground-on-694-mw-princeton-road-station"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-31f138b8592e6f1352dd",
+      "label_hash": "dd25cbf62bb030a51330f0d46f01c5d6",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/abbott-orders-full-audit-of-texas-data-center-interconnection-queue-threatens-to-deny-grid-access"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-2654ec47967c33c33c5b",
+      "label_hash": "92d933775d072641128a25463aa394be",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.marktechpost.com/2026/08/09/imdb-sentiment-analysis-with-distilbert-lora-tf-idf-baselines-calibration-interpretability-robustness-testing-and-semi-supervised-learning"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-9de178e70ef16a56f4a4",
+      "label_hash": "fefbd368de200b0105d7ce3e9f4660e1",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.ithome.com/0/987/452.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-7505847c699c15ad7422",
+      "label_hash": "682c9e56118eb4ae9bb6b623ab986cbf",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://simonwillison.net/2026/Aug/7/openai-timeline"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-33a31c52cc1c58413906",
+      "label_hash": "361e6ceb52f09ae973eef89cd73ff3b9",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://arstechnica.com/science/2026/08/deepminds-hurricane-model-bought-forecasters-an-extra-day"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-b5fd358761df44faee34",
+      "label_hash": "9aabf2c256676b128c92dd12546dad3a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.federalregister.gov/documents/2026/08/10/2026-16224/plan-of-action-under-the-defense-production-act-human-mobilization-committee"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-a8d1a8b7ac744e4760a2",
+      "label_hash": "428241918d8d55e574b4b390ccdc64d0",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-90c957b3b3c83f6bfdae",
+      "label_hash": "c7d1b44cfac769b9ff3fa9695994510f",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/open-world-models-physical-ai"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-5368014241b04f5fe1c3",
+      "label_hash": "7bb0a1e16d298a2e08c98a38f4781cf1",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/nsf-state-regional-ai-hub-program"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-eda1bde8a2dbe5961a3f",
+      "label_hash": "dc0b642892d47e4b53f616e249d66d69",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/ai-storage-fms"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f8d7a8ad0afe8bf5b81b",
+      "label_hash": "61d975b05f957071550e55efb0172b08",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/geforce-now-thursday-back-to-school-2026"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-47a1b2cb19dfae644389",
+      "label_hash": "6dfc81f79a21d3c88449b84aac75e8ad",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-second-quarter-financial-results-6927195"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-470c82372cb7dc62337d",
+      "label_hash": "2a08625254ea48d923d947ef513abe1c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/build-ai-with-nvidia-jetson"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ca7d1837c2c8d5fb186a",
+      "label_hash": "f812856fd795062d308dd0e6761e867d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/ilya-sutskevers-safe-superintelligence-inc-and-nvidia-announce-long-term-strategic-partnership"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-768980279cbb77434457",
+      "label_hash": "eee7b8f414034ae3d490c7046869d80d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/vera-cpu-eda"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c47e77470b857569b1fe",
+      "label_hash": "77ef2a67334d9614cb5deecf6fee4a12",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/nvidia-expands-nvidia-agent-toolkit-with-nvidia-physicsnemo-and-cuda-x-libraries-to-transform-how-the-world-engineers-designs-and-builds"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-10d875d17af5c15ffed6",
+      "label_hash": "3b51992605b17388c60dc823e8aa1faa",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/naver-nvidia-and-brookfield-to-expand-koreas-national-ai-factory-infrastructure-buildout"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-d94bffe8a3ea6b657ff0",
+      "label_hash": "9b83be12c37fbe5c73c1ddbcac7b1ee6",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/sk-group-and-nvidia-expand-strategic-partnership-across-ai-factories-and-next-generation-memory"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-b921db2014f81577a78d",
+      "label_hash": "d8e85e7a12a94e89845ef0b8446f6a2c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/ai-summit-korea-partners-and-nvidia"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-9c450aff77640219a6c5",
+      "label_hash": "90dd53ff8b8ed51a48fb815e62210d4d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/nvidia-and-kaist-launch-joint-ai-research-lab-to-accelerate-ai-innovation-in-korea"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-953d88467a0fda91aa3f",
+      "label_hash": "cd41bf773c85e765cde09b5d3916b2d1",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/naval-postgraduate-school-dgx-ai-supercomputer"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-2d671ab9869cde1d465c",
+      "label_hash": "0737aea953a465a33d1a6492b63e7ab3",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://news.microsoft.com/2025/04/30/microsoft-earnings-press-release-available-on-investor-relations-website-26"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-7bbc9c37d82401081ea0",
+      "label_hash": "ff1694fc9c6b087fda23a6c33bc6796b",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://news.microsoft.com/2025/04/09/microsoft-announces-quarterly-earnings-release-date-63"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-8f2474cc62e032254daf",
+      "label_hash": "5322f888a6d4fc732c6bbb209ddb9bc5",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ecs-fractional-gpu"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-24977aa13b410d202ed3",
+      "label_hash": "126e58858a8482f5527b38cc15841a68",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-outposts-asia-pacific-mumbai"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-63c4f7ae8f0c7f9545eb",
+      "label_hash": "fab94ffc4f0894d437a20846bbdcb4b5",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://about.fb.com/news/2026/08/why-meta-builds-its-own-data-centers"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-0659d5ddf8859e5c6cfd",
+      "label_hash": "2940b10a93e2b336b1b73c1df8cd9fa9",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://about.fb.com/news/2026/07/meta-announces-new-venture-with-blackrock-to-develop-data-center-in-el-paso"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-3044ac6aa64615760de9",
+      "label_hash": "70e7a8c970ce0dd5ba3cebfd4f3984bc",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-9152b2b319261471323e",
+      "label_hash": "c7ef5df8f24bb4579b60aaa5c6099d0f",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.coreweave.com/news"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-25efca3a34bf007215a9",
+      "label_hash": "299a03bfbbd8935393c9f060306a8c50",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.datacenterdynamics.com/en/marketwatch/how-high-performance-coatings-accelerate-ai-data-center-construction"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-22ddff1fe96edde00073",
+      "label_hash": "04c8bbee785e4895598a798c330ecc42",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.datacenterdynamics.com/en/news/bridge-dc-launches-prefabricated-data-center-power-module"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-b5365b65fa1abe39198d",
+      "label_hash": "4771cbe0a76c46bed3b5a6bb9a87c472",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.datacenterdynamics.com/en/news/ntt-data-reports-half-a-billion-dollars-of-data-center-investment-in-q1-financial-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-460b85833cb5c2b74650",
+      "label_hash": "028840654d05d2977151f577c11f4b03",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.datacenterdynamics.com/en/news/former-employees-sue-prime-data-centers-for-400m-claim-compensation-fraud"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-b8e1b6814a582706e83e",
+      "label_hash": "6052d0b54bd53f8081f022e033cbf402",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.datacenterdynamics.com/en/opinions/efficient-data-center-water-cooling-for-australias-market"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-9762650a0035ca107ca8",
+      "label_hash": "fa133b735620097e602bac95a47033b0",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.datacenterdynamics.com/en/news/tcc-concept-limiteds-data-center-subsidiary-could-develop-60mw-data-center-in-pune-india"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c12a2dd60f336df52cdb",
+      "label_hash": "ebd2217e6c47e93951f6b247d8576c83",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.datacenterdynamics.com/en/news/aussie-ai-cloud-company-firmus-raises-2bn-via-equity-sale"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-62af9093a29fafab1a63",
+      "label_hash": "c23134da748c9a06bfb0c9e8871b0c99",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.datacenterdynamics.com/en/news/indosat-reinforces-ai-push-with-1gw-data-center-play"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-9128b30cd1bb23bf9b39",
+      "label_hash": "4bc58753b11d85615fdcec95234dff79",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.datacenterdynamics.com/en/news/smr-firm-nuclea-inks-mou-with-new-mining-to-evaluate-deployment-of-smrs-at-data-centers-across-us"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-fe32d5e34867a2921191",
+      "label_hash": "b2b4a01db741bed716035fd0a5ab194e",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.datacenterdynamics.com/en/news/deutsche-telekom-trials-drone-mounted-base-stations-to-complement-future-networks"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-bd0e57b0722643f45a6d",
+      "label_hash": "22c0f10566b21fe8fa5f55039aaf4931",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.datacenterdynamics.com/en/news/amazon-files-to-develop-two-new-data-center-campuses-in-texas"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ed63732b89401309a4dd",
+      "label_hash": "e77185228b063ea45178ae056823d74e",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.datacenterdynamics.com/en/news/tampa-electric-picks-ericsson-onelayer-and-burns-mcdonnell-for-private-lte-network-deployment"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-0571bd80f55aa257af30",
+      "label_hash": "fd96047ad421928be074fe620ce15f76",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.datacenterdynamics.com/en/news/en"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-2fbab332bef7b59e8775",
+      "label_hash": "7f7dc8f1b964b5ddf4fa8e78e66439df",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://www.datacenterdynamics.com/en/news/empyrion-tops-out-upcoming-malaysian-data-center-in-johor"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-36c0f4e92209056a71b3",
+      "label_hash": "f45b1225bd75b5896192f28b103322ff",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/texas-audit-could-delay-49-8-gw-of-data-center-load-cost-projects-up-to-15-billion-bnef-warns"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-fb3e5a99713cc8be4a95",
+      "label_hash": "740071f64d3b18f292009387dc87260c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/rugged-switchgear-a-reliable-data-centers-bedrock"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-97d4819882ed37e40e53",
+      "label_hash": "a676700ca5e1c1aa512a1dd1afe1519d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/curio-nuscale-framatome-join-to-support-fuel-solution-for-advanced-reactors"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-d615218c5cda5b53ad44",
+      "label_hash": "6140a0fc27fcb65ae77ac9efb7995958",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/ls-power-acquiring-606-mw-texas-gas-fired-plant-from-constellation"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c78420eafeaed8c08d6f",
+      "label_hash": "cecd939e4b6df973e70b0e4d590aeeb4",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/doe-approves-safety-design-of-deep-fissions-underground-smr"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-010893c5e6849c1c473f",
+      "label_hash": "14df4290595761ae56efc847aa9d1310",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/oklos-groves-becomes-fifth-doe-pilot-reactor-to-reach-criticality-first-on-private-land"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-32aac292973b4d422ae3",
+      "label_hash": "2fc09ac1d5608a46531b212dc06ec137",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/the-power-interview-nrgs-case-for-bring-your-own-power-and-the-labor-to-build-it"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-0c2fa04eda85374dcfc6",
+      "label_hash": "86bd2f172a9a0c53f38595b511ff4e6a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/ais-obstacle-why-the-grid-cant-keep-pace-with-the-data-center-boom"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-0ce5545a305ccdca737b",
+      "label_hash": "7fe075d21963cec467f03f61b88fdbde",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/nebraska-public-power-district-breaks-ground-on-694-mw-princeton-road-station"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-2f36f9ae0b538f8336e0",
+      "label_hash": "dd25cbf62bb030a51330f0d46f01c5d6",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.powermag.com/abbott-orders-full-audit-of-texas-data-center-interconnection-queue-threatens-to-deny-grid-access"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-eb4996301c596d32216a",
+      "label_hash": "92d933775d072641128a25463aa394be",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.marktechpost.com/2026/08/09/imdb-sentiment-analysis-with-distilbert-lora-tf-idf-baselines-calibration-interpretability-robustness-testing-and-semi-supervised-learning"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-3daeae2adeffa131d440",
+      "label_hash": "fefbd368de200b0105d7ce3e9f4660e1",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.ithome.com/0/987/452.htm"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-65aad68678a08a9ea0ae",
+      "label_hash": "682c9e56118eb4ae9bb6b623ab986cbf",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://simonwillison.net/2026/Aug/7/openai-timeline"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-b8b678369948d6b78454",
+      "label_hash": "9aabf2c256676b128c92dd12546dad3a",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://www.federalregister.gov/documents/2026/08/10/2026-16224/plan-of-action-under-the-defense-production-act-human-mobilization-committee"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-026f64d2912871c5249a",
+      "label_hash": "428241918d8d55e574b4b390ccdc64d0",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-50cc4d00890e8b40d593",
+      "label_hash": "c7d1b44cfac769b9ff3fa9695994510f",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/open-world-models-physical-ai"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f928ffda226c3e38fd6b",
+      "label_hash": "7bb0a1e16d298a2e08c98a38f4781cf1",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/nsf-state-regional-ai-hub-program"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-4104511b96bb3339aafd",
+      "label_hash": "dc0b642892d47e4b53f616e249d66d69",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/ai-storage-fms"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-f812fce9485ae45bb462",
+      "label_hash": "61d975b05f957071550e55efb0172b08",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/geforce-now-thursday-back-to-school-2026"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-c3187c4b6fe69cba5448",
+      "label_hash": "6dfc81f79a21d3c88449b84aac75e8ad",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-second-quarter-financial-results-6927195"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-d5602a733724b87afde6",
+      "label_hash": "2a08625254ea48d923d947ef513abe1c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/build-ai-with-nvidia-jetson"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-46587b0e2c60125a131f",
+      "label_hash": "f812856fd795062d308dd0e6761e867d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/ilya-sutskevers-safe-superintelligence-inc-and-nvidia-announce-long-term-strategic-partnership"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-895e83fdd106a42ecf73",
+      "label_hash": "eee7b8f414034ae3d490c7046869d80d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/vera-cpu-eda"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-6d4fd2b0583329cd2275",
+      "label_hash": "77ef2a67334d9614cb5deecf6fee4a12",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/nvidia-expands-nvidia-agent-toolkit-with-nvidia-physicsnemo-and-cuda-x-libraries-to-transform-how-the-world-engineers-designs-and-builds"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ff5ed1c8b7bdd79937d7",
+      "label_hash": "3b51992605b17388c60dc823e8aa1faa",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/naver-nvidia-and-brookfield-to-expand-koreas-national-ai-factory-infrastructure-buildout"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-6997a9645b113493ee06",
+      "label_hash": "9b83be12c37fbe5c73c1ddbcac7b1ee6",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/sk-group-and-nvidia-expand-strategic-partnership-across-ai-factories-and-next-generation-memory"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-35642a9cba9fc3069ba8",
+      "label_hash": "d8e85e7a12a94e89845ef0b8446f6a2c",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/ai-summit-korea-partners-and-nvidia"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-8646d3df8ac1f9926f4c",
+      "label_hash": "90dd53ff8b8ed51a48fb815e62210d4d",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://nvidianews.nvidia.com/news/nvidia-and-kaist-launch-joint-ai-research-lab-to-accelerate-ai-innovation-in-korea"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-9328e91c1607c66d9662",
+      "label_hash": "cd41bf773c85e765cde09b5d3916b2d1",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://blogs.nvidia.com/blog/naval-postgraduate-school-dgx-ai-supercomputer"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-9ef8ff030d51958bcd81",
+      "label_hash": "533ce50f4d035ddc70354e8b96608cbf",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:23:42.076Z",
+      "source_checks": [
+        "https://ir.amd.com/news-events/press-releases/detail/1296/amd-acquires-taalas-to-advance-compute-solutions-for-rapidly-growing-ai-inference-market"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    },
+    {
+      "fixture_id": "history-ddb4e2b017dfa6a34129",
+      "label_hash": "27d227737c18c9a1c54d1dff741a6065",
+      "reviewed_by": "atlas-policy-audit-v1",
+      "reviewed_at": "2026-08-09T14:28:35.044Z",
+      "source_checks": [
+        "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results"
+      ],
+      "review_type": "automated-policy-audit",
+      "decision": "accept"
+    }
+  ]
+}

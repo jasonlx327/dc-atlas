@@ -3,14 +3,14 @@ import type { MetadataRoute } from "next";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: "*", allow: "/" },
-      { userAgent: "OAI-SearchBot", allow: "/" },
-      { userAgent: "GPTBot", allow: "/" },
-      { userAgent: "ChatGPT-User", allow: "/" },
-      { userAgent: "PerplexityBot", allow: "/" },
-      { userAgent: "ClaudeBot", allow: "/" },
-      { userAgent: "Google-Extended", allow: "/" },
-      { userAgent: "Bingbot", allow: "/" },
+      { userAgent: "*", allow: "/", disallow: "/admin/" },
+      { userAgent: "OAI-SearchBot", allow: "/", disallow: "/admin/" },
+      { userAgent: "GPTBot", allow: "/", disallow: "/admin/" },
+      { userAgent: "ChatGPT-User", allow: "/", disallow: "/admin/" },
+      { userAgent: "PerplexityBot", allow: "/", disallow: "/admin/" },
+      { userAgent: "ClaudeBot", allow: "/", disallow: "/admin/" },
+      { userAgent: "Google-Extended", allow: "/", disallow: "/admin/" },
+      { userAgent: "Bingbot", allow: "/", disallow: "/admin/" },
     ],
     sitemap: "https://idc-index.com/sitemap.xml",
   };

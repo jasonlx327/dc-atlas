@@ -58,6 +58,7 @@ export default async function EnglishPage() {
           { "@type": "WebPage", name: "Infrastructure Pulse", url: "https://idc-index.com/en/pulse" },
           { "@type": "WebPage", name: "AI Infrastructure Industry Map", url: "https://idc-index.com/en/industry" },
           { "@type": "WebPage", name: "IDC Atlas Columns", url: "https://idc-index.com/en/columns" },
+          { "@type": "WebPage", name: "Rumor Watch", url: "https://idc-index.com/en/rumors" },
         ],
       },
       {

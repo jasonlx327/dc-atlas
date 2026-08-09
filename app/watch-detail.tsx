@@ -29,8 +29,8 @@ export default function WatchDetail({ lang, kind, item }: Props) {
     ? (isZh ? "政策简报" : "POLICY BRIEF")
     : (isZh ? "媒体报道线索" : "REPORTED DEVELOPMENT");
   const pageLabel = isPolicy
-    ? (isZh ? "政策动态" : "Policy tracker")
-    : (isZh ? "市场传闻" : "Rumor Watch");
+    ? (isZh ? "政策证据存档" : "Policy evidence archive")
+    : (isZh ? "市场情报" : "Rumor Watch");
   const articleSection = isPolicy
     ? (isZh ? "数据中心政策" : "Data-center policy")
     : (isZh ? "基础设施报道监测" : "Infrastructure reporting watch");
@@ -55,7 +55,7 @@ export default function WatchDetail({ lang, kind, item }: Props) {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "IDC Atlas", item: isZh ? "https://idc-index.com/" : "https://idc-index.com/en" },
-          { "@type": "ListItem", position: 2, name: isPolicy ? (isZh ? "政策索引" : "Policy Index") : (isZh ? "Rumor Watch" : "Rumor Watch"), item: `https://idc-index.com${indexHref}` },
+          { "@type": "ListItem", position: 2, name: isPolicy ? (isZh ? "事实脉冲" : "Verified Pulse") : "Rumor Watch", item: `https://idc-index.com${isPolicy ? (isZh ? "/pulse" : "/en/pulse") : indexHref}` },
           { "@type": "ListItem", position: 3, name: title, item: canonical },
         ],
       },
@@ -74,7 +74,7 @@ export default function WatchDetail({ lang, kind, item }: Props) {
     >
       <article className={`watch-detail-page ${isPolicy ? "policy-detail" : "rumor-detail"}`}>
         <header className="watch-detail-hero">
-          <a className="watch-detail-back" href={indexHref}>← {isPolicy ? (isZh ? "返回政策索引" : "Back to policy index") : (isZh ? "返回 Rumor Watch" : "Back to Rumor Watch")}</a>
+          <a className="watch-detail-back" href={isPolicy ? (isZh ? "/pulse" : "/en/pulse") : indexHref}>← {isPolicy ? (isZh ? "返回事实脉冲" : "Back to Verified Pulse") : (isZh ? "返回市场情报" : "Back to Rumor Watch")}</a>
           <div className="watch-detail-kicker"><span>{label}</span><time dateTime={item.publishedAt}>{formatDate(item.publishedAt, lang)}</time></div>
           <h1>{title}</h1>
           <p>{summary}</p>
@@ -86,7 +86,7 @@ export default function WatchDetail({ lang, kind, item }: Props) {
         <aside className="watch-detail-boundary">
           <strong>{isZh ? "阅读边界" : "READING BOUNDARY"}</strong>
           <p>{isPolicy
-            ? (isZh ? "这是对公开政策文件的研究摘要，不构成法律意见；适用范围、执行日期与具体要求以发布机构的正式文本为准。" : "This is a research summary of a public policy record, not legal advice. The issuing authority's text controls scope, timing and implementation.")
+            ? (isZh ? "这是保留的政策证据摘要；IDC Atlas 不再单独运营政策索引。新的重大官方政策变化将进入事实脉冲或研究队列。本页不构成法律意见。" : "This is a retained policy evidence brief. IDC Atlas no longer operates a separate Policy Index; material official changes move to Verified Pulse or the research queue. This page is not legal advice.")
             : (isZh ? "这是一条已公开报道的线索，不等同于已核验事实或投资建议。若出现公司、监管方或其他一手披露，相关信息会转入对应脉冲或公司页面。" : "This is a reported development, not verified fact or investment advice. Company, regulator or other primary disclosures move to the relevant pulse or company page.")}</p>
         </aside>
       </article>
