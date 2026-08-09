@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { publishedColumnArticles } from "./columns/articles";
 import { entityDirectory } from "./entity-directory";
-import { POLICY_BRIEFS, RUMOR_BRIEFS } from "./watch-data";
+import { RUMOR_BRIEFS } from "./watch-data";
 
 export const dynamic = "force-dynamic";
 
@@ -105,10 +105,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...publishedColumnArticles().flatMap((article) => [
       { url: `https://idc-index.com${article.href}`, lastModified: article.publishAt, changeFrequency: "weekly" as const, priority: 0.9 },
       { url: `https://idc-index.com${article.hrefEn}`, lastModified: article.publishAt, changeFrequency: "weekly" as const, priority: 0.9 },
-    ]),
-    ...POLICY_BRIEFS.flatMap((item) => [
-      { url: `https://idc-index.com/policy/${item.id}`, lastModified: item.publishedAt, changeFrequency: "monthly" as const, priority: 0.35 },
-      { url: `https://idc-index.com/en/policy/${item.id}`, lastModified: item.publishedAt, changeFrequency: "monthly" as const, priority: 0.35 },
     ]),
     ...RUMOR_BRIEFS.flatMap((item) => [
       { url: `https://idc-index.com/rumors/${item.id}`, lastModified: item.publishedAt, changeFrequency: "daily" as const, priority: 0.75 },

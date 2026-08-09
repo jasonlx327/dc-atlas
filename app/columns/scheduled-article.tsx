@@ -92,8 +92,12 @@ export function researchStructuredData(slug: string, lang: "zh" | "en"): Record<
     "@graph": [
       {
         "@type": "AnalysisNewsArticle",
+        "@id": `${canonical}#article`,
+        url: canonical,
         headline: english ? article.titleEn : article.title,
         description: english ? article.summaryEn : article.summary,
+        abstract: english ? record.en.thesis : record.zh.thesis,
+        keywords: record.topics,
         image: `https://idc-index.com${article.image}`,
         datePublished: article.publishAt,
         dateModified: article.publishAt,
@@ -102,9 +106,10 @@ export function researchStructuredData(slug: string, lang: "zh" | "en"): Record<
         isAccessibleForFree: true,
         about: record.topics,
         citation: record.sources.map((source) => source.url),
-        author: { "@type": "Organization", name: "IDC Atlas" },
-        publisher: { "@type": "Organization", name: "IDC Atlas" },
-        mainEntityOfPage: canonical,
+        author: { "@type": "Organization", "@id": "https://idc-index.com/#organization", name: "IDC Atlas" },
+        publisher: { "@type": "Organization", "@id": "https://idc-index.com/#organization", name: "IDC Atlas" },
+        isPartOf: { "@type": "CollectionPage", "@id": `https://idc-index.com${english ? "/en/columns" : "/columns"}` },
+        mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
       },
       {
         "@type": "BreadcrumbList",

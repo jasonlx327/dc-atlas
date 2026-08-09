@@ -164,6 +164,7 @@ test("publishes shareable bilingual policy and Rumor Watch brief pages", async (
   const policyHtml = await policy.text();
   assert.match(policyHtml, /FCC拟扩大Covered List组件限制/);
   assert.match(policyHtml, /rel="canonical" href="https:\/\/idc-index\.com\/policy\/us-fcc-covered-list-component-proposal-2026"/i);
+  assert.match(policyHtml, /<meta name="robots" content="noindex, follow"/i);
   assert.match(policyHtml, /"@type":"Article"/);
   assert.match(policyHtml, /"@type":"BreadcrumbList"/);
   assert.match(policyHtml, /直接影响/);
@@ -176,6 +177,7 @@ test("publishes shareable bilingual policy and Rumor Watch brief pages", async (
   assert.match(rumorHtml, /rel="canonical" href="https:\/\/idc-index\.com\/rumors\/spacex-nvidia-ai-infrastructure-call-2026"/i);
   assert.match(rumorHtml, /公开回应/);
   assert.match(rumorHtml, /不等同于已核验事实/);
+  assert.match(rumorHtml, /"mentions":\[\{"@type":"Thing","name":"SpaceX"\}/);
 
   const english = await render("/en/rumors/spacex-nvidia-ai-infrastructure-call-2026");
   assert.equal(english.status, 200);
@@ -186,7 +188,7 @@ test("publishes shareable bilingual policy and Rumor Watch brief pages", async (
 
   const sitemap = await readFile(new URL("../app/sitemap.ts", import.meta.url), "utf8");
   assert.match(sitemap, /publishedColumnArticles/);
-  assert.match(sitemap, /POLICY_BRIEFS\.flatMap/);
+  assert.doesNotMatch(sitemap, /POLICY_BRIEFS\.flatMap/);
   assert.match(sitemap, /RUMOR_BRIEFS\.flatMap/);
   assert.doesNotMatch(sitemap, /url: "https:\/\/idc-index\.com\/policy",/);
 });
@@ -265,6 +267,8 @@ test("exposes bilingual AI-readable discovery manifests", async () => {
   assert.match(chineseText, /## About/);
   assert.match(chineseText, /Languages/);
   assert.match(chineseText, /Verification rule/);
+  assert.match(chineseText, /## Citation guidance/);
+  assert.match(chineseText, /Cite IDC Atlas for its synthesis and interpretation/);
   assert.match(await (await render("/llms.txt")).text(), /data-center-glossary/);
 
   const english = await render("/en/llms.txt");
@@ -274,6 +278,7 @@ test("exposes bilingual AI-readable discovery manifests", async () => {
   assert.match(englishText, /## About/);
   assert.match(englishText, /Languages/);
   assert.match(englishText, /Verification rule/);
+  assert.match(englishText, /## Citation guidance/);
   assert.match(englishText, /Where Hyperscaler AI CapEx Actually Goes/);
   assert.match(englishText, /After SK hynix Earnings/);
   assert.match(englishText, /Data center glossary/);
@@ -474,6 +479,10 @@ test("publishes the deep Microsoft Azure and AI-capex column in both languages",
   assert.match(chineseHtml, /微软 FY2026 Q4 电话会/);
   assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns\/microsoft-ai-capex"/i);
   assert.match(chineseHtml, /"@type":"AnalysisNewsArticle"/);
+  assert.match(chineseHtml, /"abstract":/);
+  assert.match(chineseHtml, /"keywords":\[/);
+  assert.match(chineseHtml, /"@id":"https:\/\/idc-index\.com\/#organization"/);
+  assert.match(chineseHtml, /"isPartOf":\{"@type":"CollectionPage","@id":"https:\/\/idc-index\.com\/columns"\}/);
   assert.match(chineseHtml, /本网站数据与内容仅用于信息展示与研究/);
 
   const english = await render("/en/columns/microsoft-ai-capex");
@@ -993,6 +1002,16 @@ test("makes public intelligence explicitly discoverable to OpenAI search", async
 
   const llms = await render("/en/llms.txt");
   assert.match(await llms.text(), /source-linked post-results conclusions/);
+});
+
+test("adds bilingual topic-guide links to the intelligence console footer", async () => {
+  const chinese = await (await render("/")).text();
+  assert.match(chinese, /href="\/topics\/data-center-intelligence">数据中心指南/);
+  assert.match(chinese, /href="\/topics\/data-center-glossary">术语表/);
+
+  const english = await (await render("/en")).text();
+  assert.match(english, /href="\/en\/topics\/data-center-intelligence">Data center guide/);
+  assert.match(english, /href="\/en\/topics\/data-center-glossary">Glossary/);
 });
 
 test("keeps the unfinished bilingual industry network offline", async () => {

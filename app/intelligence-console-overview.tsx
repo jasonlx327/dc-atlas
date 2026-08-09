@@ -463,7 +463,7 @@ export function IntelligenceConsoleShell({
       {children}
       <footer className="atlas-console-footer">
         <p>{isZh ? "信息仅供专业投资者参考，不构成投资建议。" : "Data for professional research only. Nothing here constitutes investment advice."}</p>
-        <nav><a href={isZh ? "/methodology" : "/en/methodology"}>{isZh ? "方法论" : "Methodology"}</a><a href={isZh ? "/privacy" : "/en/privacy"}>{isZh ? "隐私" : "Privacy"}</a></nav>
+        <nav><a href={isZh ? "/topics/data-center-intelligence" : "/en/topics/data-center-intelligence"}>{isZh ? "数据中心指南" : "Data center guide"}</a><a href={isZh ? "/topics/data-center-glossary" : "/en/topics/data-center-glossary"}>{isZh ? "术语表" : "Glossary"}</a><a href={isZh ? "/methodology" : "/en/methodology"}>{isZh ? "方法论" : "Methodology"}</a><a href={isZh ? "/privacy" : "/en/privacy"}>{isZh ? "隐私" : "Privacy"}</a></nav>
       </footer>
     </div>
   </main>;
@@ -685,7 +685,7 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
 
       <footer className="atlas-console-footer">
         <p>{isZh ? "信息仅供专业投资者参考，不构成投资建议。" : "Data for professional research only. Nothing here constitutes investment advice."}</p>
-        <nav><a href={isZh ? "/methodology" : "/en/methodology"}>{isZh ? "方法论" : "Methodology"}</a><a href={isZh ? "/privacy" : "/en/privacy"}>{isZh ? "隐私" : "Privacy"}</a></nav>
+        <nav><a href={isZh ? "/topics/data-center-intelligence" : "/en/topics/data-center-intelligence"}>{isZh ? "数据中心指南" : "Data center guide"}</a><a href={isZh ? "/topics/data-center-glossary" : "/en/topics/data-center-glossary"}>{isZh ? "术语表" : "Glossary"}</a><a href={isZh ? "/methodology" : "/en/methodology"}>{isZh ? "方法论" : "Methodology"}</a><a href={isZh ? "/privacy" : "/en/privacy"}>{isZh ? "隐私" : "Privacy"}</a></nav>
       </footer>
     </div>
   </main>;

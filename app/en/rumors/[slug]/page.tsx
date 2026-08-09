@@ -17,8 +17,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${item.titleEn} | IDC Atlas Rumor Watch`,
     description: item.summaryEn,
+    keywords: item.entities,
     alternates: { canonical, languages: { "zh-CN": `https://idc-index.com/rumors/${item.id}`, en: canonical, "x-default": canonical } },
-    openGraph: { title: item.titleEn, description: item.summaryEn, url: canonical, type: "article", publishedTime: item.publishedAt },
+    openGraph: { title: item.titleEn, description: item.summaryEn, url: canonical, type: "article", publishedTime: item.publishedAt, modifiedTime: item.publishedAt },
     twitter: { card: "summary", title: item.titleEn, description: item.summaryEn },
   };
 }
