@@ -37,6 +37,14 @@ export type AtlasPayload = {
 };
 
 const titleTranslations: Record<string, string> = {
+  "Firebird 在亚美尼亚启动 AI 工厂，300MW 为 2027 年底规划": "Firebird launches an AI factory in Armenia; 300MW remains an end-2027 plan",
+  "Amazon 在得州 Pecos County 登记三栋数据中心建筑": "Amazon registers three data-center buildings in Pecos County, Texas",
+  "PPL 宾州数据中心管线增至 31.8GW，6.5GW 以上处于建设阶段": "PPL's Pennsylvania data-center pipeline reaches 31.8GW, with more than 6.5GW under construction",
+  "PPL Q2 披露 31.8GW 数据中心管线，Invitium 尚未签署 ESSA": "PPL Q2 reports a 31.8GW data-center pipeline; Invitium has not signed an ESSA",
+  "寒武纪 H1 营收同比增长 108%，云端产品线贡献 59.94 亿元": "Cambricon H1 revenue rises 108%, with RMB5.994B from its cloud product line",
+  "寒武纪上半年营收 59.96 亿元，云端产品线贡献 59.94 亿元": "Cambricon reports RMB5.996B of H1 revenue, led by RMB5.994B from cloud products",
+  "佰维存储控股子公司拟引资不超过 6 亿元扩充晶圆级封装": "Biwin subsidiary seeks up to RMB600M for wafer-level packaging expansion",
+  "依米康披露 1.72 亿元诉讼，1.70 亿元资金被冻结": "Yimikang discloses a RMB171.9M lawsuit and RMB169.7M of frozen funds",
   "Amazon Q2 AWS 增长 37%，AI 基础设施投入继续压低自由现金流": "Amazon Q2: AWS grows 37% as AI infrastructure spending weighs on free cash flow",
   "Meta Q2 资本开支 311 亿美元，全年区间收窄至 1,300–1,450 亿美元": "Meta Q2 capex reaches $31.1B; full-year range narrows to $130B–$145B",
   "Microsoft FY26 Q4 Azure 增长 43%，下一季度资本开支预计超过 500 亿美元": "Microsoft FY26 Q4: Azure grows 43% and next-quarter capex is set to exceed $50B",
@@ -109,6 +117,14 @@ const titleTranslations: Record<string, string> = {
 };
 
 const summaryTranslations: Record<string, string> = {
+  "Firebird 在亚美尼亚启动 AI 工厂，300MW 为 2027 年底规划": "NVIDIA says the Hrazdan AI factory was delivered in just over six months and now has operating capacity. Current scale was not disclosed; more than 70,000 GPUs and 300MW are Firebird's end-2027 plans.",
+  "Amazon 在得州 Pecos County 登记三栋数据中心建筑": "Texas TDLR records list three 189,060-square-foot buildings owned by Amazon Data Services, each with an estimated $300M construction cost. The records disclose no IT load or power contract.",
+  "PPL 宾州数据中心管线增至 31.8GW，6.5GW 以上处于建设阶段": "PPL reports more than 11GW under signed electric-service agreements and over 6.5GW under construction. Invitium will not start generation construction or make material commitments before risk-protected ESSAs are signed.",
+  "PPL Q2 披露 31.8GW 数据中心管线，Invitium 尚未签署 ESSA": "PPL's Pennsylvania pipeline includes more than 11GW under signed service agreements and over 6.5GW under construction. Invitium has sites for 8–14GW of generation but no signed ESSA.",
+  "寒武纪 H1 营收同比增长 108%，云端产品线贡献 59.94 亿元": "Cambricon reported H1 revenue of RMB5.996B and attributable net profit of RMB2.311B. R&D expense rose 29.63% to RMB702M, while the cloud product line contributed nearly all revenue.",
+  "寒武纪上半年营收 59.96 亿元，云端产品线贡献 59.94 亿元": "Cambricon reported H1 revenue of RMB5.996B, up 108.13%, and attributable net profit of RMB2.311B, up 122.61%. R&D expense increased 29.63% to RMB702M.",
+  "佰维存储控股子公司拟引资不超过 6 亿元扩充晶圆级封装": "Guangdong Xincheng Hanqi seeks up to RMB600M at a RMB2.0B pre-money valuation. Investors are not final; Biwin would retain at least 52.5186% and potential repurchase obligations remain.",
+  "依米康披露 1.72 亿元诉讼，1.70 亿元资金被冻结": "The case has been accepted but not heard. Frozen funds include RMB165M of structured deposits purchased with temporarily idle offering proceeds; the earnings impact remains uncertain.",
   "Amazon Q2 AWS 增长 37%，AI 基础设施投入继续压低自由现金流": "AWS revenue rose 37% to $42.2B. Trailing-12-month purchases of property and equipment, net, reached $169.0B, while free cash flow moved to a $7.6B outflow, primarily reflecting higher AI investment.",
   "Meta Q2 资本开支 311 亿美元，全年区间收窄至 1,300–1,450 亿美元": "Meta reported $31.08B of Q2 capital expenditures, including finance-lease principal payments, and narrowed its 2026 capex outlook to $130B–$145B as revenue rose 28%.",
   "Microsoft FY26 Q4 Azure 增长 43%，下一季度资本开支预计超过 500 亿美元": "Azure and other cloud-services revenue rose 43%. Microsoft reported roughly $41B of quarterly capex and expects more than $50B next quarter as demand continues to exceed available supply.",
@@ -181,6 +197,10 @@ const summaryTranslations: Record<string, string> = {
 };
 
 const recordTranslations: Record<string, { title: string; status: string; metric: string; note: string }> = {
+  "firebird-armenia-vertiv-chilled-water-cooling": { title: "Firebird's Armenia AI factory deploys a Vertiv chilled-water cooling architecture", status: "Operational with the Hrazdan AI factory", metric: "TrimCooler · iCOM CWM · chilled-water system", note: "NVIDIA says Vertiv supplied a chilled-water architecture combining TrimCooler heat rejection and iCOM CWM centralized controls. The disclosure confirms project-level cooling deployment but gives no cooling capacity, PUE, CDU count or contract value." },
+  "firebird-armenia-ai-factory-launch": { title: "Firebird launches an AI factory in Hrazdan, Armenia", status: "AI factory launched · 70,000+ GPUs and 300MW are future plans", metric: "Current operating scale undisclosed · 300MW planned by end-2027", note: "NVIDIA says the factory was delivered in just over six months and now provides operating AI capacity, but disclosed no current MW or GPU count. Firebird's 70,000+ Blackwell and Rubin GPUs, 300MW in Armenia and roughly 2GW multi-market roadmap are future plans." },
+  "amazon-pecos-county-tdlr-buildings": { title: "Amazon registers three data-center buildings in Pecos County, Texas", status: "State accessibility-project registration · not completion or operation", metric: "3 × 189,060 square feet · $900M combined registered cost estimate", note: "Texas TDLR records for Buildings A, B and C list Amazon Data Services as owner, with an estimated $300M cost and August-December 2026 schedule for each. These are registration estimates, not proof of completion, power contracting or operating IT capacity; no MW is disclosed." },
+  "ppl-pennsylvania-data-center-pipeline-q2-2026": { title: "PPL updates its Pennsylvania data-center demand pipeline", status: "Customer-project and grid-work pipeline · not operating IT capacity", metric: "31.8GW advanced pipeline · >11GW signed service agreements · >6.5GW under construction", note: "PPL defines the 31.8GW figure as data-center projects in advanced planning. More than 11GW is under signed electric-service agreements and over 6.5GW is under construction; the figures describe customer and grid-development stages, not operating IT capacity." },
   "digital-realty-q2-2026-capacity": { title: "Digital Realty Q2: new Atlanta land and a 288MW Northern Virginia asset interest", status: "Acquisition / expansion", metric: "Atlanta >1GW IT · Northern Virginia 288MW IT", note: "Digital Realty says it secured adjacent Atlanta land supporting more than 1GW of IT capacity, while completing the acquisition of a 64% interest in three leased Northern Virginia data centers representing 288MW of IT capacity." },
   "cleanspark-sandersville-175mw": { title: "CleanSpark Sandersville AI data-center campus", status: "20-year lease signed", metric: "175MW critical IT load", note: "The base lease term represents approximately $6.6 billion of contracted revenue, with phased delivery expected from the fourth quarter of 2027. Construction and financing remain the next execution milestones." },
   "meta-hyperion-5gw-expansion": { title: "Meta Hyperion data-center campus, Louisiana", status: "Under construction / expanding", metric: "5GW target compute capacity", note: "Meta raised the campus target to 5GW and regional investment to more than $50 billion. Construction began in December 2024 and continues in phases." },

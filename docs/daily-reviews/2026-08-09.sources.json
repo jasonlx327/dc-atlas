@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-08-09-full",
+  "sources": [
+    {
+      "ref": "nvidia-firebird-20260808",
+      "tier": "T1",
+      "canonicalUrl": "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx/",
+      "sourceName": "NVIDIA Blog",
+      "publishedAt": "2026-08-08T10:24:54Z",
+      "accessState": "public",
+      "independenceGroup": "nvidia",
+      "sections": ["idc-pulse", "capacity", "cooling", "compute-products", "supply-chain", "power-model-demand", "columns"]
+    },
+    {
+      "ref": "tdlr-amazon-pecos-building-a",
+      "tier": "T0",
+      "canonicalUrl": "https://www.tdlr.texas.gov/TABS/Projects/TABS2026026954",
+      "sourceName": "Texas Department of Licensing and Regulation",
+      "publishedAt": "2026-08-04T00:00:00-05:00",
+      "accessState": "public",
+      "independenceGroup": "texas-tdlr",
+      "sections": ["idc-pulse", "capacity", "rumors"]
+    },
+    {
+      "ref": "tdlr-amazon-pecos-building-b",
+      "tier": "T0",
+      "canonicalUrl": "https://www.tdlr.texas.gov/TABS/Projects/TABS2026026955",
+      "sourceName": "Texas Department of Licensing and Regulation",
+      "publishedAt": "2026-08-04T00:00:00-05:00",
+      "accessState": "public",
+      "independenceGroup": "texas-tdlr",
+      "sections": ["idc-pulse", "capacity"]
+    },
+    {
+      "ref": "tdlr-amazon-pecos-building-c",
+      "tier": "T0",
+      "canonicalUrl": "https://www.tdlr.texas.gov/TABS/Projects/TABS2026026959",
+      "sourceName": "Texas Department of Licensing and Regulation",
+      "publishedAt": "2026-08-04T00:00:00-05:00",
+      "accessState": "public",
+      "independenceGroup": "texas-tdlr",
+      "sections": ["idc-pulse", "capacity"]
+    },
+    {
+      "ref": "ppl-q2-8k-ex991",
+      "tier": "T0",
+      "canonicalUrl": "https://www.sec.gov/Archives/edgar/data/922224/000092222426000042/ppl-6302026exhibit991.htm",
+      "sourceName": "PPL SEC 8-K / Q2 results",
+      "publishedAt": "2026-08-07T08:00:00-04:00",
+      "accessState": "public",
+      "independenceGroup": "sec",
+      "sections": ["idc-pulse", "listed-companies", "capacity", "power-model-demand", "earnings-calendar", "columns"]
+    },
+    {
+      "ref": "ppl-q2-10q",
+      "tier": "T0",
+      "canonicalUrl": "https://www.sec.gov/Archives/edgar/data/922224/000092222426000044/ppl-20260630.htm",
+      "sourceName": "PPL SEC 10-Q",
+      "publishedAt": "2026-08-07T17:00:00Z",
+      "accessState": "public",
+      "independenceGroup": "sec",
+      "sections": ["listed-companies", "earnings-calendar", "columns"]
+    },
+    {
+      "ref": "cambricon-h1-2026",
+      "tier": "T0",
+      "canonicalUrl": "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464969.PDF",
+      "sourceName": "寒武纪 2026 年半年度报告 / 巨潮资讯",
+      "publishedAt": "2026-08-08T00:00:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "cninfo",
+      "sections": ["listed-companies", "china-gpu", "supply-chain", "earnings-calendar", "columns"]
+    },
+    {
+      "ref": "biwin-xincheng-hanqi-financing",
+      "tier": "T0",
+      "canonicalUrl": "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464909.PDF",
+      "sourceName": "佰维存储公告 / 巨潮资讯",
+      "publishedAt": "2026-08-08T00:00:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "cninfo",
+      "sections": ["listed-companies", "mna", "supply-chain", "columns"]
+    },
+    {
+      "ref": "yimikang-litigation-2026",
+      "tier": "T0",
+      "canonicalUrl": "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464212.PDF",
+      "sourceName": "依米康公告 / 巨潮资讯",
+      "publishedAt": "2026-08-08T00:00:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "cninfo",
+      "sections": ["listed-companies", "cooling", "columns"]
+    },
+    {
+      "ref": "nyt-amazon-pecos-power",
+      "tier": "T2",
+      "canonicalUrl": "https://www.nytimes.com/2026/08/08/climate/amazon-data-center-texas-pollution.html",
+      "sourceName": "The New York Times",
+      "publishedAt": "2026-08-08T14:17:02-04:00",
+      "accessState": "paywalled",
+      "independenceGroup": "new-york-times",
+      "sections": ["rumors"]
+    },
+    {
+      "ref": "pacifico-gw-ranch-permit-release",
+      "tier": "T1",
+      "canonicalUrl": "https://www.pacificoenergy.com/post/pacifico-energy-secures-7-65-gw-power-generation-permit-for-gw-ranch-project",
+      "sourceName": "Pacifico Energy",
+      "publishedAt": "2026-01-26T00:00:00-06:00",
+      "accessState": "public",
+      "independenceGroup": "pacifico-energy",
+      "sections": ["capacity", "power-model-demand", "rumors"]
+    },
+    {
+      "ref": "sec-daily-master-20260807",
+      "tier": "T0",
+      "canonicalUrl": "https://www.sec.gov/Archives/edgar/daily-index/2026/QTR3/master.20260807.idx",
+      "sourceName": "SEC EDGAR daily index",
+      "publishedAt": "2026-08-07T23:59:59Z",
+      "accessState": "public",
+      "independenceGroup": "sec",
+      "sections": ["listed-companies", "mna", "earnings-calendar"]
+    },
+    {
+      "ref": "cninfo-disclosure-scan-20260808-09",
+      "tier": "T0",
+      "canonicalUrl": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+      "sourceName": "巨潮资讯公告检索",
+      "publishedAt": "2026-08-09T09:35:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "cninfo",
+      "sections": ["listed-companies", "mna", "cooling", "china-gpu", "supply-chain", "earnings-calendar"]
+    },
+    {
+      "ref": "federal-register-data-center-scan",
+      "tier": "T0",
+      "canonicalUrl": "https://www.federalregister.gov/api/v1/documents.json?per_page=100&conditions%5Bterm%5D=data%20center",
+      "sourceName": "Federal Register API",
+      "publishedAt": "2026-08-09T09:00:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "federal-register",
+      "sections": ["policy"]
+    },
+    {
+      "ref": "virginia-scc-pur-2026-00056",
+      "tier": "T0",
+      "canonicalUrl": "https://www.scc.virginia.gov/docketsearch/docketsearch",
+      "sourceName": "Virginia State Corporation Commission docket search",
+      "publishedAt": "2026-07-31T00:00:00-04:00",
+      "accessState": "unavailable",
+      "independenceGroup": "virginia-scc",
+      "sections": ["policy"]
+    },
+    {
+      "ref": "virginia-business-scc-cost-allocation",
+      "tier": "T3",
+      "canonicalUrl": "https://virginiabusiness.com/scc-orders-dominion-to-develop-policy-shifting-transmission-costs-to-data-centers/",
+      "sourceName": "Virginia Business",
+      "publishedAt": "2026-08-06T00:00:00-04:00",
+      "accessState": "public",
+      "independenceGroup": "virginia-business",
+      "sections": ["policy"]
+    },
+    {
+      "ref": "aihot-daily-20260809",
+      "tier": "D",
+      "canonicalUrl": "https://aihot.virxact.com/api/v1/dailies/latest",
+      "sourceName": "AI HOT public API",
+      "publishedAt": "2026-08-09T00:01:00.653Z",
+      "accessState": "public",
+      "independenceGroup": "aihot",
+      "sections": ["compute-products", "power-model-demand", "columns"]
+    },
+    {
+      "ref": "nvidia-vera-rubin-production",
+      "tier": "T1",
+      "canonicalUrl": "https://nvidianews.nvidia.com/news/vera-rubin-full-production-agentic-ai-factory",
+      "sourceName": "NVIDIA Newsroom",
+      "publishedAt": "2026-05-31T00:00:00-07:00",
+      "accessState": "public",
+      "independenceGroup": "nvidia",
+      "sections": ["compute-products", "supply-chain"]
+    }
+  ]
+}

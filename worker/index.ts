@@ -14,7 +14,7 @@ const AIHOT_USER_AGENT = "aihot-skill/0.3.6 (+https://aihot.virxact.com/aihot-sk
 const CWW_ENDPOINT = "https://cwwindex.today/data/latest.json";
 const OPENROUTER_MODELS_ENDPOINT = "https://openrouter.ai/api/v1/models?sort=top-weekly";
 const ARENA_CODE_ENDPOINT = "https://arena.ai/leaderboard/code/webdev";
-const CONTENT_REVIEWED_AT = "2026-08-08";
+const CONTENT_REVIEWED_AT = "2026-08-09";
 const LLMS_TXT = `# IDC Atlas
 
 > IDC Atlas is a bilingual, source-first intelligence site for global data-center construction, AI infrastructure, power, cooling, networking and China AI silicon. Content is for public-information research and industry observation only, not investment advice.
@@ -609,6 +609,39 @@ function supernodeProducts(): SupernodeProduct[] {
 function capacityRadar(): SourceRecord[] {
   return [
     {
+      id: "firebird-armenia-ai-factory-launch",
+      title: "Firebird 在亚美尼亚 Hrazdan 启动 AI 工厂",
+      subject: "Firebird / NVIDIA / Dell Technologies",
+      metric: "现有运营规模未披露 · 2027 年底规划 300MW",
+      status: "AI 工厂已启动 · 70,000+ GPU 与 300MW 为未来计划",
+      publishedAt: "2026-08-04",
+      sourceName: "NVIDIA",
+      sourceUrl: "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx/",
+      note: "NVIDIA称该工厂在六个多月内交付并已形成运营 AI 容量，但未披露当前 MW 或 GPU 数；Firebird 计划到 2027 年底在亚美尼亚部署超过 70,000 颗 Blackwell 与 Rubin GPU 和 300MW AI 基础设施，约 2GW 多市场路线图同属未来规划。",
+    },
+    {
+      id: "amazon-pecos-county-tdlr-buildings",
+      title: "Amazon 在得州 Pecos County 登记三栋数据中心建筑",
+      subject: "Amazon Data Services / Pecos County",
+      metric: "3 × 189,060 平方英尺 · 登记估算成本合计 $9 亿",
+      status: "州级无障碍项目登记 · 非完工或投运证明",
+      publishedAt: "2026-08-08",
+      sourceName: "Texas Department of Licensing and Regulation",
+      sourceUrl: "https://www.tdlr.texas.gov/TABS/Projects/TABS2026026954",
+      note: "得州 TDLR 的 A、B、C 三栋项目记录均列 Amazon Data Services 为业主，每栋登记估算成本 3 亿美元、面积 189,060 平方英尺，登记工期为 2026 年 8–12 月；该登记不是建筑完工、供电合同或运营 IT 容量证明，记录也未披露 MW。",
+    },
+    {
+      id: "ppl-pennsylvania-data-center-pipeline-q2-2026",
+      title: "PPL 更新宾州数据中心用电项目管线",
+      subject: "PPL Electric / 数据中心客户项目",
+      metric: "31.8GW 高阶段管线 · >11GW 已签服务协议 · >6.5GW 在建",
+      status: "客户项目与配套工程管线 · 非运营 IT 容量",
+      publishedAt: "2026-08-07",
+      sourceName: "PPL SEC 8-K / Q2 results",
+      sourceUrl: "https://www.sec.gov/Archives/edgar/data/922224/000092222426000042/ppl-6302026exhibit991.htm",
+      note: "PPL 把 31.8GW 定义为处于 advanced stages of planning 的数据中心项目，其中超过 11GW 已签电力服务协议、超过 6.5GW 在建；这些数字描述客户及电网建设管线，不能作为已投运数据中心 IT 容量。",
+    },
+    {
       id: "mara-matagorda-2gw-rights",
       title: "MARA 取得德州 Matagorda County 数据中心场址权利",
       subject: "MARA Holdings · Nasdaq: MARA",
@@ -823,6 +856,17 @@ function capacityRadar(): SourceRecord[] {
 function coolingProgress(): SourceRecord[] {
   return [
     {
+      id: "firebird-armenia-vertiv-chilled-water-cooling",
+      title: "Firebird 亚美尼亚 AI 工厂部署 Vertiv 冷冻水制冷架构",
+      subject: "Firebird / Vertiv / NVIDIA DSX",
+      metric: "TrimCooler · iCOM CWM · 冷冻水系统",
+      status: "随 Hrazdan AI 工厂投入运营",
+      publishedAt: "2026-08-08",
+      sourceName: "NVIDIA",
+      sourceUrl: "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx/",
+      note: "NVIDIA披露 Vertiv 为工厂提供冷冻水、TrimCooler 热排散与 iCOM CWM 集中控制组合；这确认了项目级制冷部署，但公告未披露冷量、PUE、CDU 数量或供应金额。",
+    },
+    {
       id: "vertiv-nps-dgx-gb300-liquid-cooling",
       title: "Vertiv 为美国海军研究生院 DGX GB300 部署液冷基础设施",
       subject: "Vertiv · NYSE: VRT / NVIDIA DGX GB300",
@@ -955,6 +999,24 @@ function nvidiaProducts(): NvidiaProduct[] {
 
 function officialChinaChipNews(): NewsItem[] {
   return [
+    {
+      id: "cambricon-h1-2026-results",
+      title: "寒武纪上半年营收 59.96 亿元，云端产品线贡献 59.94 亿元",
+      summary: "公司 2026 年上半年营业收入同比增长 108.13%，归母净利润为 23.11 亿元、同比增长 122.61%；研发投入为 7.02 亿元、同比增长 29.63%。",
+      publishedAt: "2026-08-08T00:00:00+08:00",
+      category: "china-ai-chip",
+      score: null,
+      permalink: "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464969.PDF",
+      sourceUrl: "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464969.PDF",
+      sourceName: "寒武纪 / 巨潮资讯",
+      signal: "hardware",
+      curator: "官方来源",
+      region: "中国",
+      listedTicker: "寒武纪 · 688256.SH",
+      milestone: "2026 半年报",
+      scale: "营收 59.96 亿元 · 归母净利润 23.11 亿元",
+      whyItMatters: "云端产品线几乎贡献全部收入，确认国产 AI 芯片需求已转化为公司级收入；半年报未按客户或具体芯片型号拆分销售，不能据此推算 GPU 数量或数据中心 MW。",
+    },
     {
       id: "cxmt-star-market-listing-2026-07",
       title: "长鑫科技登陆科创板，成为 A 股 DRAM 制造标的",
@@ -1304,6 +1366,70 @@ function positiveIdcNews(liveNews: NewsItem[], records: SourceRecord[]): NewsIte
 
 function constructionPulse(): NewsItem[] {
   const items: NewsItem[] = [
+    {
+      id: "firebird-armenia-ai-factory-launch",
+      title: "Firebird 在亚美尼亚启动 AI 工厂，300MW 为 2027 年底规划",
+      summary: "NVIDIA称 Hrazdan AI 工厂在六个多月内交付并已形成运营容量；当前规模未披露，超过 70,000 颗 GPU 与 300MW 均为 Firebird 到 2027 年底的计划。",
+      publishedAt: "2026-08-08T10:24:54Z",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx/",
+      sourceUrl: "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx/",
+      sourceName: "NVIDIA",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "亚美尼亚",
+      milestone: "AI 工厂启动 / 后续扩容规划",
+      scale: "当前规模未披露 · 2027 年底规划 300MW",
+      listedTicker: "NVIDIA · NVDA",
+      whyItMatters: "项目从建设转为运营是可核验节点，但未来 GPU、MW 与 2GW 多市场路线图仍需按场址、送电和交付进度逐项验证。",
+      lifecycle: [
+        { label: "Hrazdan 工厂启动", state: "done" },
+        { label: "300MW 亚美尼亚扩容", state: "current" },
+        { label: "约 2GW 多市场路线", state: "next" },
+      ],
+    },
+    {
+      id: "amazon-pecos-county-tdlr-buildings",
+      title: "Amazon 在得州 Pecos County 登记三栋数据中心建筑",
+      summary: "得州 TDLR 记录显示三栋 189,060 平方英尺建筑均由 Amazon Data Services 登记，每栋估算成本 3 亿美元；记录未披露 IT 负载或供电合同。",
+      publishedAt: "2026-08-04T00:00:00-05:00",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://www.tdlr.texas.gov/TABS/Projects/TABS2026026954",
+      sourceUrl: "https://www.tdlr.texas.gov/TABS/Projects/TABS2026026954",
+      sourceName: "Texas Department of Licensing and Regulation",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "州级项目登记",
+      scale: "3 栋 · 合计 567,180 平方英尺 · 登记估算成本 $9 亿",
+      listedTicker: "Amazon · AMZN",
+      whyItMatters: "三栋建筑登记确认了 Pecos County 的实体建设线索；登记工期和成本是申报估算，不代表完工、投运或已经取得任何 MW 容量。",
+      lifecycle: [
+        { label: "TDLR 项目登记", state: "done" },
+        { label: "建设与验收", state: "current" },
+        { label: "送电与投运", state: "next" },
+      ],
+    },
+    {
+      id: "ppl-q2-data-center-power-pipeline",
+      title: "PPL 宾州数据中心管线增至 31.8GW，6.5GW 以上处于建设阶段",
+      summary: "PPL Q2 文件披露宾州管线中超过 11GW 已签电力服务协议、超过 6.5GW 在建；Invitium 的发电项目仍以签署风险保护充分的 ESSA 为开工前提。",
+      publishedAt: "2026-08-07T08:00:00-04:00",
+      category: "idc-power",
+      score: null,
+      permalink: "https://www.sec.gov/Archives/edgar/data/922224/000092222426000042/ppl-6302026exhibit991.htm",
+      sourceUrl: "https://www.sec.gov/Archives/edgar/data/922224/000092222426000042/ppl-6302026exhibit991.htm",
+      sourceName: "PPL SEC 8-K / Q2 results",
+      signal: "power",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "客户用电与发电开发管线更新",
+      scale: "31.8GW 高阶段项目 · >11GW 已签服务协议 · >6.5GW 在建",
+      listedTicker: "PPL · PPL",
+      whyItMatters: "签署服务协议与进入建设提高了需求可见度，但客户管线、输配电工程和未来发电容量都不能计作当前运营 IT 容量。",
+    },
     {
       id: "constellation-920mw-ppa-dresden-expansion",
       title: "Constellation 新签 920MW 长期购电协议，推动 Dresden 扩容 30MW",
@@ -1939,6 +2065,78 @@ function constructionPulse(): NewsItem[] {
 
 function listedCompanyPulse(): NewsItem[] {
   const items: NewsItem[] = [
+    {
+      id: "cambricon-h1-2026-results-company-update",
+      title: "寒武纪 H1 营收同比增长 108%，云端产品线贡献 59.94 亿元",
+      summary: "公司实现营业收入 59.96 亿元、归母净利润 23.11 亿元；研发投入 7.02 亿元，同比增长 29.63%，云端产品线收入占绝大部分。",
+      publishedAt: "2026-08-08T00:00:00+08:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464969.PDF",
+      sourceUrl: "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464969.PDF",
+      sourceName: "寒武纪 / 巨潮资讯",
+      signal: "hardware",
+      curator: "官方来源",
+      region: "中国",
+      milestone: "2026 半年报",
+      scale: "营收 59.96 亿元 · 归母净利润 23.11 亿元",
+      listedTicker: "寒武纪 · 688256.SH",
+      whyItMatters: "收入与利润增长确认国产云端 AI 芯片的商业化放量，但未披露客户集中度对应的实际集群规模或数据中心 MW。",
+    },
+    {
+      id: "biwin-xincheng-hanqi-financing-2026",
+      title: "佰维存储控股子公司拟引资不超过 6 亿元扩充晶圆级封装",
+      summary: "广东芯成汉奇本轮投前估值 20 亿元，外部投资者拟取得不超过 23.0769% 股权；投资者名单尚未最终确认，佰维存储增资后持股不低于 52.5186%。",
+      publishedAt: "2026-08-08T00:00:00+08:00",
+      category: "idc-supply-chain",
+      score: null,
+      permalink: "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464909.PDF",
+      sourceUrl: "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464909.PDF",
+      sourceName: "佰维存储 / 巨潮资讯",
+      signal: "hardware",
+      curator: "官方来源",
+      region: "中国",
+      milestone: "董事会批准融资额度 / 投资者待确定",
+      scale: "融资不超过 6 亿元 · 投前估值 20 亿元",
+      listedTicker: "佰维存储 · 688525.SH",
+      whyItMatters: "资金用途覆盖晶圆级先进封测研发、产线扩建和设备采购；本轮尚未完成，且协议包含潜在回购义务，不能把融资上限计作已到账资本。",
+    },
+    {
+      id: "yimikang-litigation-frozen-funds-2026",
+      title: "依米康披露 1.72 亿元诉讼，1.70 亿元资金被冻结",
+      summary: "案件已受理但尚未开庭；被冻结资金中 1.65 亿元为使用暂时闲置募集资金购买的结构性存款，公司称本期及期后利润影响仍不确定。",
+      publishedAt: "2026-08-08T00:00:00+08:00",
+      category: "idc-company-risk",
+      score: null,
+      permalink: "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464212.PDF",
+      sourceUrl: "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464212.PDF",
+      sourceName: "依米康 / 巨潮资讯",
+      signal: "cooling",
+      curator: "官方来源",
+      region: "中国",
+      milestone: "诉讼受理 / 财产保全",
+      scale: "诉讼金额 1.719 亿元 · 冻结资金 1.697 亿元",
+      listedTicker: "依米康 · 300249.SZ",
+      whyItMatters: "冻结资金占最近一期经审计净资产 55.71%，是液冷与数据中心基础设施供应商的现金约束风险；案件结果和损益影响尚未确定。",
+    },
+    {
+      id: "ppl-q2-2026-data-center-pipeline",
+      title: "PPL Q2 披露 31.8GW 数据中心管线，Invitium 尚未签署 ESSA",
+      summary: "宾州管线超过 11GW 已签电力服务协议、超过 6.5GW 在建；Invitium 掌握可支持 8–14GW 新发电的场址，但没有风险保护充分的 ESSA 前不会开工或作出重大财务承诺。",
+      publishedAt: "2026-08-07T08:00:00-04:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://www.sec.gov/Archives/edgar/data/922224/000092222426000042/ppl-6302026exhibit991.htm",
+      sourceUrl: "https://www.sec.gov/Archives/edgar/data/922224/000092222426000042/ppl-6302026exhibit991.htm",
+      sourceName: "PPL SEC 8-K / Q2 results",
+      signal: "power",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "Q2 客户管线与发电开发更新",
+      scale: "31.8GW 项目管线 · $100–120 亿潜在投资上行",
+      listedTicker: "PPL · PPL",
+      whyItMatters: "PPL 的受监管电网与合资发电平台同时面对数据中心负荷，但投资机会、已签服务协议、在建工程和未来运营发电必须分层读取。",
+    },
     {
       id: "vistra-q2-2026-results",
       title: "Vistra Q2 确认 Helix 最高 10 亿美元承诺与优先电力合作角色",
@@ -2580,6 +2778,8 @@ function listedCompanyPulse(): NewsItem[] {
 
 function calendarEvents(): CalendarEvent[] {
   return [
+    { id: "cambricon-h1-2026", startsAt: "2026-08-08T00:00:00.000+08:00", company: "寒武纪", ticker: "688256.SH", sector: "国产 AI 芯片", description: "云端 AI 芯片、板卡与整机收入是国内算力需求的重要公司级读数。", focus: "云端产品线收入、研发投入、现金转换与客户集中度", sourceName: "寒武纪 / 巨潮资讯 · 2026 半年报", sourceUrl: "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464969.PDF", conclusion: { summary: "H1 营收 59.96 亿元，同比增长 108.13%；归母净利润 23.11 亿元，同比增长 122.61%。云端产品线收入 59.94 亿元，研发投入 7.02 亿元；下一项验证是具体产品交付、客户结构与现金转换。", summaryEn: "H1 revenue was RMB5.996B, up 108.13% year over year, and attributable net profit was RMB2.311B, up 122.61%. Cloud-product-line revenue was RMB5.994B and R&D expense was RMB702M; next checks are product delivery, customer mix and cash conversion.", sourceName: "Cambricon 2026 half-year report / CNINFO", sourceUrl: "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464969.PDF" } },
+    { id: "ppl-q2-2026", startsAt: "2026-08-07T12:00:00.000Z", company: "PPL", ticker: "PPL", sector: "公用事业 / 数据中心电力", description: "受监管输配电与 Invitium 发电合资平台共同承接数据中心新增负荷。", focus: "已签服务协议、在建客户管线、ESSA、发电投资与客户保护", sourceName: "PPL SEC 8-K / Q2 results", sourceUrl: "https://www.sec.gov/Archives/edgar/data/922224/000092222426000042/ppl-6302026exhibit991.htm", conclusion: { summary: "宾州数据中心管线为 31.8GW，其中超过 11GW 已签服务协议、超过 6.5GW 在建。Invitium 场址可支持 8–14GW 新发电，但 ESSA 尚未签署，PPL 业务计划也未计入该合资平台的盈利或资本投入。", summaryEn: "PPL's Pennsylvania data-center pipeline reached 31.8GW, including over 11GW under signed service agreements and more than 6.5GW under construction. Invitium has sites capable of 8–14GW of new generation, but has not signed an ESSA; PPL's business plan includes no JV earnings or capex.", sourceName: "PPL SEC 8-K / Q2 results", sourceUrl: "https://www.sec.gov/Archives/edgar/data/922224/000092222426000042/ppl-6302026exhibit991.htm" } },
     { id: "vistra-q2-2026", startsAt: "2026-08-07T12:00:00.000Z", company: "Vistra", ticker: "VST", sector: "电力 / 数据中心基础设施", description: "综合发电商，并通过 Helix 平台参与数据中心电力与资本配置。", focus: "Helix 投资、数据中心供电角色与电源组合", sourceName: "Vistra SEC 8-K / Q2 results", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1692819/000169281926000017/vistra-20260630xearningsre.htm", conclusion: { summary: "Q2 文件确认对 Helix 最高 10 亿美元的既有承诺及优先电力提供方角色，但未披露新的 Helix 园区 MW 或已签数据中心容量。下一项验证是项目、客户和供电合同落地。", summaryEn: "The Q2 filing confirmed Vistra's existing commitment of up to $1B to Helix and its preferred-power-provider role, but disclosed no new Helix campus MW or contracted data-center capacity. Next checks are projects, customers and executed power contracts.", sourceName: "Vistra SEC 8-K / Q2 results", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1692819/000169281926000017/vistra-20260630xearningsre.htm" } },
     { id: "constellation-q2-2026", startsAt: "2026-08-06T12:00:00.000Z", company: "Constellation Energy", ticker: "CEG", sector: "电力 / 核电", description: "美国大型无碳电力供应商，长期 PPA 与电源扩容是 AI 用电需求的上游读数。", focus: "长期 PPA、Dresden 扩容与资产处置", sourceName: "Constellation SEC 8-K / Q2 results", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1168165/000186827526000097/ceg-20260806991.htm", conclusion: { summary: "公司新签 920MW、15–20 年 PPA；其中 176MW Walmart 协议将支持 Dresden 扩容 30MW。另签署 606MW Brazos Valley 电站出售协议，仍待 DOJ 批准。", summaryEn: "Constellation signed 920MW of 15–20 year PPAs, including a 176MW Walmart agreement enabling a 30MW Dresden expansion. It also signed the sale of the 606MW Brazos Valley plant, which remains subject to DOJ approval.", sourceName: "Constellation SEC 8-K / Q2 results", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1168165/000186827526000097/ceg-20260806991.htm" } },
     { id: "mara-q2-2026", startsAt: "2026-08-06T20:00:00.000Z", company: "MARA Holdings", ticker: "MARA", sector: "数字基础设施 / 数据中心", description: "以电力控制和数字基础设施资产扩展 AI 与高性能计算开发管线。", focus: "Matagorda 场址、并网审批与租赁商业化", sourceName: "MARA SEC 8-K / Q2 shareholder letter", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1507605/000150760526000020/q226shareholderletter.htm", conclusion: { summary: "公司取得 Matagorda County 场址权利，披露最高 2GW 潜在容量；该规模仍取决于 ERCOT 和并网审批，且尚未转化为已签约、在建或投运 IT 容量。", summaryEn: "MARA acquired rights to a Matagorda County site with up to 2GW of potential capacity. That scale remains subject to ERCOT and interconnection approvals and has not become contracted, under-construction or operating IT capacity.", sourceName: "MARA SEC 8-K / Q2 shareholder letter", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1507605/000150760526000020/q226shareholderletter.htm" } },
@@ -2927,7 +3127,12 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const chainWindowDays = 30;
   const computeNews = nvidiaNews.filter((item) => /GPU|服务器|机柜|算力芯片|AI\s*工厂|Vera\s*Rubin|Blackwell|Rubin/i.test(item.title));
   const chainNews: Record<ChainKey, NewsItem[]> = {
-    compute: recentNews([...chinaChipNews, ...computeNews, ...fallback.rack.slice(0, 2)], chainWindowDays),
+    compute: recentNews([
+      ...chinaChipNews,
+      ...listedCompanyNews.filter((item) => item.id === "biwin-xincheng-hanqi-financing-2026"),
+      ...computeNews,
+      ...fallback.rack.slice(0, 2),
+    ], chainWindowDays),
     rack: recentNews([...networkNews, ...fallback.rack], chainWindowDays),
     cooling: recentNews([...coolingNews, ...fallback.cooling], chainWindowDays),
     power: recentNews([

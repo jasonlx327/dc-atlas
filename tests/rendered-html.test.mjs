@@ -731,7 +731,13 @@ test("keeps live-data validation in the deployment path", async () => {
   assert.match(liveCheck, /newsStatus !== "ok"/);
   for (const section of ["idcPulse", "listedCompanyNews", "mnaDeals", "capacityRadar", "coolingProgress"]) assert.match(liveCheck, new RegExp(section));
   assert.match(liveCheck, /freshness\.status === "stale"/);
-  assert.match(workerSource, /CONTENT_REVIEWED_AT = "2026-08-08"/);
+  assert.match(workerSource, /CONTENT_REVIEWED_AT = "2026-08-09"/);
+  assert.match(workerSource, /Firebird 在亚美尼亚启动 AI 工厂/);
+  assert.match(workerSource, /Amazon 在得州 Pecos County 登记三栋数据中心建筑/);
+  assert.match(workerSource, /PPL Q2 披露 31\.8GW 数据中心管线/);
+  assert.match(workerSource, /寒武纪 H1 营收同比增长 108%/);
+  assert.match(workerSource, /佰维存储控股子公司拟引资不超过 6 亿元/);
+  assert.match(workerSource, /依米康披露 1\.72 亿元诉讼/);
   assert.match(workerSource, /Constellation 新签 920MW 长期购电协议/);
   assert.match(workerSource, /mara-matagorda-2gw-rights/);
   assert.match(workerSource, /CleanSpark 为 Sandersville 175MW 园区预付长周期设备/);

@@ -1,94 +1,20 @@
 {
   "schema_version": "atlas-watch.v1",
-  "generated_at": "2026-08-09T01:19:18.505492+00:00",
+  "generated_at": "2026-08-09T01:39:10.583711+00:00",
   "stats": {
-    "input_items": 2,
-    "included_items": 2,
+    "input_items": 7,
+    "included_items": 7,
     "excluded_items": 0,
     "duplicate_items": 0,
-    "clusters": 2,
+    "clusters": 7,
     "route_counts": {
       "rumor_watch": 1,
-      "pulse_candidate": 1,
-      "atlas_research_candidate": 0,
+      "pulse_candidate": 6,
+      "atlas_research_candidate": 6,
       "relationship_edges": 0
     }
   },
   "clusters": [
-    {
-      "event_id": "evt-5cc35deb9ed410",
-      "event_key": "firebird|ai-factory-launch|nvidia|hrazdan|2026",
-      "label": "Firebird Launches CIS Region’s Largest AI Factory in Armenia",
-      "first_seen_at": "2026-08-08T19:26:15-04:00",
-      "last_updated_at": "2026-08-08T19:26:15-04:00",
-      "status": "officially-confirmed",
-      "entities": [
-        "Firebird",
-        "NVIDIA"
-      ],
-      "locations": [
-        "Hrazdan, Armenia"
-      ],
-      "event_types": [
-        "ai-factory-launch"
-      ],
-      "topic_hits": [
-        "data-center"
-      ],
-      "materiality_hits": [],
-      "independent_source_count": 1,
-      "observed_source_count": 1,
-      "held_item_count": 0,
-      "source_tiers": [
-        "T1"
-      ],
-      "access_limits": [],
-      "items": [
-        {
-          "item_id": "itm-1d5858cd05144c",
-          "title": "Firebird Launches CIS Region’s Largest AI Factory in Armenia",
-          "url": "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia",
-          "origin_url": "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia",
-          "source_name": "NVIDIA Blog",
-          "source_id": "nvidia",
-          "source_class": "company-source",
-          "evidence_tier": "T1",
-          "independence_group": "nvidia",
-          "access": "public",
-          "author": "",
-          "published_at": "2026-08-08T19:26:15-04:00",
-          "discovered_at": "2026-08-09T09:27:00+08:00",
-          "summary": "NVIDIA published a company-backed announcement about Firebird's AI factory in Hrazdan, Armenia. It is an official disclosure and is retained as a Pulse candidate, not Rumor Watch content.",
-          "language": "en",
-          "entities": [
-            "Firebird",
-            "NVIDIA"
-          ],
-          "locations": [
-            "Hrazdan, Armenia"
-          ],
-          "event_type": "ai-factory-launch",
-          "event_key": "firebird|ai-factory-launch|nvidia|hrazdan|2026",
-          "stance": "confirms",
-          "topic_hits": [
-            "data-center"
-          ],
-          "materiality_hits": [],
-          "exclusion_hits": [],
-          "hold_reasons": []
-        }
-      ],
-      "routes": {
-        "rumor_watch": false,
-        "pulse_candidate": true,
-        "atlas_research_candidate": false,
-        "relationship_edges": false
-      },
-      "relationship_edges": [],
-      "claims_to_verify": [],
-      "atlas_research_handoff_stub": null,
-      "hold_reasons": []
-    },
     {
       "event_id": "evt-b8824625c4f8f1",
       "event_key": "amazon|data-center-onsite-generation|gw-ranch|pecos-county|2026",
@@ -140,8 +66,8 @@
           "access": "paywalled",
           "author": "",
           "published_at": "2026-08-08T14:17:02-04:00",
-          "discovered_at": "2026-08-09T09:27:00+08:00",
-          "summary": "The New York Times reported that Amazon confirmed it acquired a Pecos County site for a planned data center backed by new on-site generation. The report does not disclose Amazon data-center capacity, investment, delivery timing or power-contract terms.",
+          "discovered_at": "2026-08-09T09:05:00+08:00",
+          "summary": "The New York Times reported that Amazon confirmed it acquired a Pecos County site for a planned data center backed by new on-site generation. The report does not disclose Amazon data-center capacity, investment, delivery timing or final power-contract terms.",
           "language": "en",
           "entities": [
             "Amazon",
@@ -177,7 +103,7 @@
       "relationship_edges": [],
       "claims_to_verify": [
         {
-          "claim": "The New York Times reported that Amazon confirmed it acquired a Pecos County site for a planned data center backed by new on-site generation. The report does not disclose Amazon data-center capacity, investment, delivery timing or power-contract terms.",
+          "claim": "The New York Times reported that Amazon confirmed it acquired a Pecos County site for a planned data center backed by new on-site generation. The report does not disclose Amazon data-center capacity, investment, delivery timing or final power-contract terms.",
           "attribution": "The New York Times",
           "source_item_ids": [
             "itm-10dca3623a76d6"
@@ -186,6 +112,552 @@
         }
       ],
       "atlas_research_handoff_stub": null,
+      "hold_reasons": []
+    },
+    {
+      "event_id": "evt-5cc35deb9ed410",
+      "event_key": "firebird|ai-factory-launch|nvidia|hrazdan|2026",
+      "label": "Firebird launches an AI factory in Armenia and sets a 300MW end-2027 deployment plan",
+      "first_seen_at": "2026-08-08T10:24:54+00:00",
+      "last_updated_at": "2026-08-08T10:24:54+00:00",
+      "status": "officially-confirmed",
+      "entities": [
+        "Firebird",
+        "NVIDIA",
+        "Dell Technologies",
+        "CoreWeave",
+        "Schneider Electric",
+        "Vertiv"
+      ],
+      "locations": [
+        "Hrazdan, Armenia"
+      ],
+      "event_types": [
+        "ai-factory-launch"
+      ],
+      "topic_hits": [
+        "capacity-and-projects",
+        "data-center"
+      ],
+      "materiality_hits": [
+        "capacity"
+      ],
+      "independent_source_count": 1,
+      "observed_source_count": 1,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T1"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-9c136c29e6ba40",
+          "title": "Firebird launches an AI factory in Armenia and sets a 300MW end-2027 deployment plan",
+          "url": "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx",
+          "origin_url": "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx",
+          "source_name": "NVIDIA Blog",
+          "source_id": "nvidia",
+          "source_class": "company-source",
+          "evidence_tier": "T1",
+          "independence_group": "nvidia",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-08T10:24:54+00:00",
+          "discovered_at": "2026-08-09T09:12:00+08:00",
+          "summary": "NVIDIA said Firebird launched an operational AI factory in Hrazdan after a six-month delivery cycle. Firebird separately plans more than 70,000 Blackwell and Rubin GPUs and 300MW in Armenia by end-2027, plus an approximately 2GW multi-market roadmap; those are future plans, not current operating capacity.",
+          "language": "en",
+          "entities": [
+            "Firebird",
+            "NVIDIA",
+            "Dell Technologies",
+            "CoreWeave",
+            "Schneider Electric",
+            "Vertiv"
+          ],
+          "locations": [
+            "Hrazdan, Armenia"
+          ],
+          "event_type": "ai-factory-launch",
+          "event_key": "firebird|ai-factory-launch|nvidia|hrazdan|2026",
+          "stance": "confirms",
+          "topic_hits": [
+            "capacity-and-projects",
+            "data-center"
+          ],
+          "materiality_hits": [
+            "capacity"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": false,
+        "pulse_candidate": true,
+        "atlas_research_candidate": true,
+        "relationship_edges": false
+      },
+      "relationship_edges": [],
+      "claims_to_verify": [],
+      "atlas_research_handoff_stub": {
+        "watch_event_id": "evt-5cc35deb9ed410",
+        "research_question": "What do current primary records confirm about “Firebird launches an AI factory in Armenia and sets a 300MW end-2027 deployment plan”, and how does the disclosed scope and timing propagate through AI infrastructure?",
+        "suggested_route": "column",
+        "primary_source_item_ids": [
+          "itm-9c136c29e6ba40"
+        ],
+        "media_claim_item_ids": [],
+        "publication_authority": "draft-only"
+      },
+      "hold_reasons": []
+    },
+    {
+      "event_id": "evt-f6d674176e137f",
+      "event_key": "cambricon|h1-results|cloud-ai-chip|2026",
+      "label": "AI chip vendor Cambricon reports H1 2026 revenue of RMB5.996 billion, led by its cloud product line",
+      "first_seen_at": "2026-08-08T00:00:00+08:00",
+      "last_updated_at": "2026-08-08T00:00:00+08:00",
+      "status": "officially-confirmed",
+      "entities": [
+        "Cambricon"
+      ],
+      "locations": [
+        "China"
+      ],
+      "event_types": [
+        "half-year-results-ai-accelerator"
+      ],
+      "topic_hits": [
+        "compute-and-memory"
+      ],
+      "materiality_hits": [
+        "money"
+      ],
+      "independent_source_count": 1,
+      "observed_source_count": 1,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T0"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-5f51962ae94284",
+          "title": "AI chip vendor Cambricon reports H1 2026 revenue of RMB5.996 billion, led by its cloud product line",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464969.PDF",
+          "origin_url": "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464969.PDF",
+          "source_name": "Cambricon 2026 half-year report / CNINFO",
+          "source_id": "cninfo",
+          "source_class": "exchange",
+          "evidence_tier": "T0",
+          "independence_group": "cninfo",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-08T00:00:00+08:00",
+          "discovered_at": "2026-08-09T09:35:00+08:00",
+          "summary": "Cambricon reported H1 revenue of RMB5.996 billion, up 108.13% year over year, and net profit attributable to shareholders of RMB2.311 billion, up 122.61%. Cloud-line revenue was RMB5.994 billion; R&D expense was RMB702 million, up 29.63%.",
+          "language": "zh",
+          "entities": [
+            "Cambricon"
+          ],
+          "locations": [
+            "China"
+          ],
+          "event_type": "half-year-results-ai-accelerator",
+          "event_key": "cambricon|h1-results|cloud-ai-chip|2026",
+          "stance": "confirms",
+          "topic_hits": [
+            "compute-and-memory"
+          ],
+          "materiality_hits": [
+            "money"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": false,
+        "pulse_candidate": true,
+        "atlas_research_candidate": true,
+        "relationship_edges": false
+      },
+      "relationship_edges": [],
+      "claims_to_verify": [],
+      "atlas_research_handoff_stub": {
+        "watch_event_id": "evt-f6d674176e137f",
+        "research_question": "What do current primary records confirm about “AI chip vendor Cambricon reports H1 2026 revenue of RMB5.996 billion, led by its cloud product line”, and how does the disclosed scope and timing propagate through AI infrastructure?",
+        "suggested_route": "column",
+        "primary_source_item_ids": [
+          "itm-5f51962ae94284"
+        ],
+        "media_claim_item_ids": [],
+        "publication_authority": "draft-only"
+      },
+      "hold_reasons": []
+    },
+    {
+      "event_id": "evt-856dccb91498d4",
+      "event_key": "biwin|xincheng-hanqi-financing|wafer-level-packaging|2026",
+      "label": "DRAM and memory-module vendor Biwin's subsidiary seeks up to RMB600 million for wafer-level chip packaging",
+      "first_seen_at": "2026-08-08T00:00:00+08:00",
+      "last_updated_at": "2026-08-08T00:00:00+08:00",
+      "status": "officially-confirmed",
+      "entities": [
+        "Biwin Storage",
+        "Guangdong Xincheng Hanqi"
+      ],
+      "locations": [
+        "Dongguan, Guangdong, China"
+      ],
+      "event_types": [
+        "semiconductor-packaging-financing"
+      ],
+      "topic_hits": [
+        "compute-and-memory"
+      ],
+      "materiality_hits": [
+        "money"
+      ],
+      "independent_source_count": 1,
+      "observed_source_count": 1,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T0"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-dde6423912cceb",
+          "title": "DRAM and memory-module vendor Biwin's subsidiary seeks up to RMB600 million for wafer-level chip packaging",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464909.PDF",
+          "origin_url": "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464909.PDF",
+          "source_name": "Biwin Storage announcement / CNINFO",
+          "source_id": "cninfo",
+          "source_class": "exchange",
+          "evidence_tier": "T0",
+          "independence_group": "cninfo",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-08T00:00:00+08:00",
+          "discovered_at": "2026-08-09T09:35:00+08:00",
+          "summary": "Biwin's controlled subsidiary Guangdong Xincheng Hanqi plans to raise up to RMB600 million at a RMB2.0 billion pre-money valuation for wafer-level advanced packaging. Outside investors are not final; Biwin would retain at least 52.5186% and the transaction includes potential repurchase obligations.",
+          "language": "zh",
+          "entities": [
+            "Biwin Storage",
+            "Guangdong Xincheng Hanqi"
+          ],
+          "locations": [
+            "Dongguan, Guangdong, China"
+          ],
+          "event_type": "semiconductor-packaging-financing",
+          "event_key": "biwin|xincheng-hanqi-financing|wafer-level-packaging|2026",
+          "stance": "confirms",
+          "topic_hits": [
+            "compute-and-memory"
+          ],
+          "materiality_hits": [
+            "money"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": false,
+        "pulse_candidate": true,
+        "atlas_research_candidate": true,
+        "relationship_edges": false
+      },
+      "relationship_edges": [],
+      "claims_to_verify": [],
+      "atlas_research_handoff_stub": {
+        "watch_event_id": "evt-856dccb91498d4",
+        "research_question": "What do current primary records confirm about “DRAM and memory-module vendor Biwin's subsidiary seeks up to RMB600 million for wafer-level chip packaging”, and how does the disclosed scope and timing propagate through AI infrastructure?",
+        "suggested_route": "column",
+        "primary_source_item_ids": [
+          "itm-dde6423912cceb"
+        ],
+        "media_claim_item_ids": [],
+        "publication_authority": "draft-only"
+      },
+      "hold_reasons": []
+    },
+    {
+      "event_id": "evt-047f855835cb60",
+      "event_key": "yimikang|litigation-frozen-funds|chengdu|2026",
+      "label": "Data-center cooling vendor Yimikang discloses RMB171.9 million lawsuit and RMB169.7 million of frozen funds",
+      "first_seen_at": "2026-08-08T00:00:00+08:00",
+      "last_updated_at": "2026-08-08T00:00:00+08:00",
+      "status": "officially-confirmed",
+      "entities": [
+        "Yimikang"
+      ],
+      "locations": [
+        "Chengdu, Sichuan, China"
+      ],
+      "event_types": [
+        "listed-company-litigation"
+      ],
+      "topic_hits": [
+        "data-center"
+      ],
+      "materiality_hits": [
+        "infrastructure-gate",
+        "money"
+      ],
+      "independent_source_count": 1,
+      "observed_source_count": 1,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T0"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-040ef64bb6c05f",
+          "title": "Data-center cooling vendor Yimikang discloses RMB171.9 million lawsuit and RMB169.7 million of frozen funds",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464212.PDF",
+          "origin_url": "https://static.cninfo.com.cn/finalpage/2026-08-08/1225464212.PDF",
+          "source_name": "Yimikang announcement / CNINFO",
+          "source_id": "cninfo",
+          "source_class": "exchange",
+          "evidence_tier": "T0",
+          "independence_group": "cninfo",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-08T00:00:00+08:00",
+          "discovered_at": "2026-08-09T09:35:00+08:00",
+          "summary": "Yimikang and a subsidiary are defendants in a creditor subrogation dispute involving RMB171.921 million. A court froze RMB169.663 million, including RMB165 million of structured deposits bought with temporarily idle offering proceeds; the case has been accepted but not heard and the earnings impact is uncertain.",
+          "language": "zh",
+          "entities": [
+            "Yimikang"
+          ],
+          "locations": [
+            "Chengdu, Sichuan, China"
+          ],
+          "event_type": "listed-company-litigation",
+          "event_key": "yimikang|litigation-frozen-funds|chengdu|2026",
+          "stance": "confirms",
+          "topic_hits": [
+            "data-center"
+          ],
+          "materiality_hits": [
+            "infrastructure-gate",
+            "money"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": false,
+        "pulse_candidate": true,
+        "atlas_research_candidate": true,
+        "relationship_edges": false
+      },
+      "relationship_edges": [],
+      "claims_to_verify": [],
+      "atlas_research_handoff_stub": {
+        "watch_event_id": "evt-047f855835cb60",
+        "research_question": "What do current primary records confirm about “Data-center cooling vendor Yimikang discloses RMB171.9 million lawsuit and RMB169.7 million of frozen funds”, and how does the disclosed scope and timing propagate through AI infrastructure?",
+        "suggested_route": "column",
+        "primary_source_item_ids": [
+          "itm-040ef64bb6c05f"
+        ],
+        "media_claim_item_ids": [],
+        "publication_authority": "draft-only"
+      },
+      "hold_reasons": []
+    },
+    {
+      "event_id": "evt-264e088c2090ab",
+      "event_key": "ppl|q2-data-center-power-pipeline|pennsylvania-kentucky|2026",
+      "label": "PPL reports a 31.8GW Pennsylvania data-center pipeline and advances Invitium generation sites",
+      "first_seen_at": "2026-08-07T08:00:00-04:00",
+      "last_updated_at": "2026-08-07T08:00:00-04:00",
+      "status": "officially-confirmed",
+      "entities": [
+        "PPL",
+        "Blackstone Infrastructure",
+        "Invitium Energy"
+      ],
+      "locations": [
+        "Pennsylvania, United States",
+        "Kentucky, United States"
+      ],
+      "event_types": [
+        "earnings-and-data-center-power-pipeline"
+      ],
+      "topic_hits": [
+        "capacity-and-projects",
+        "data-center"
+      ],
+      "materiality_hits": [
+        "capacity",
+        "commitment",
+        "infrastructure-gate"
+      ],
+      "independent_source_count": 1,
+      "observed_source_count": 1,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T0"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-347405624f9fb1",
+          "title": "PPL reports a 31.8GW Pennsylvania data-center pipeline and advances Invitium generation sites",
+          "url": "https://sec.gov/Archives/edgar/data/922224/000092222426000042/ppl-6302026exhibit991.htm",
+          "origin_url": "https://sec.gov/Archives/edgar/data/922224/000092222426000042/ppl-6302026exhibit991.htm",
+          "source_name": "PPL SEC 8-K / Q2 results",
+          "source_id": "sec",
+          "source_class": "regulator",
+          "evidence_tier": "T0",
+          "independence_group": "sec",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-07T08:00:00-04:00",
+          "discovered_at": "2026-08-09T08:55:00+08:00",
+          "summary": "PPL reported 31.8GW of Pennsylvania data-center projects in advanced planning, over 11GW under signed electric-service agreements and more than 6.5GW under construction. Its 51%-owned Invitium venture has land capable of 8-14GW of generation, but will not begin construction or make material commitments before signing risk-protected energy supply agreements.",
+          "language": "en",
+          "entities": [
+            "PPL",
+            "Blackstone Infrastructure",
+            "Invitium Energy"
+          ],
+          "locations": [
+            "Pennsylvania, United States",
+            "Kentucky, United States"
+          ],
+          "event_type": "earnings-and-data-center-power-pipeline",
+          "event_key": "ppl|q2-data-center-power-pipeline|pennsylvania-kentucky|2026",
+          "stance": "confirms",
+          "topic_hits": [
+            "capacity-and-projects",
+            "data-center"
+          ],
+          "materiality_hits": [
+            "capacity",
+            "commitment",
+            "infrastructure-gate"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": false,
+        "pulse_candidate": true,
+        "atlas_research_candidate": true,
+        "relationship_edges": false
+      },
+      "relationship_edges": [],
+      "claims_to_verify": [],
+      "atlas_research_handoff_stub": {
+        "watch_event_id": "evt-264e088c2090ab",
+        "research_question": "What do current primary records confirm about “PPL reports a 31.8GW Pennsylvania data-center pipeline and advances Invitium generation sites”, and how does the disclosed scope and timing propagate through AI infrastructure?",
+        "suggested_route": "column",
+        "primary_source_item_ids": [
+          "itm-347405624f9fb1"
+        ],
+        "media_claim_item_ids": [],
+        "publication_authority": "draft-only"
+      },
+      "hold_reasons": []
+    },
+    {
+      "event_id": "evt-4dd93bd598b012",
+      "event_key": "amazon|pecos-county-data-center-buildings|texas|2026",
+      "label": "Amazon registers three Pecos County data-center buildings with estimated construction costs of $300 million each",
+      "first_seen_at": "2026-08-04T00:00:00-05:00",
+      "last_updated_at": "2026-08-04T00:00:00-05:00",
+      "status": "officially-confirmed",
+      "entities": [
+        "Amazon",
+        "Amazon Web Services"
+      ],
+      "locations": [
+        "Pecos County, Texas, United States"
+      ],
+      "event_types": [
+        "data-center-building-registration"
+      ],
+      "topic_hits": [
+        "capacity-and-projects",
+        "data-center",
+        "power"
+      ],
+      "materiality_hits": [
+        "infrastructure-gate",
+        "money"
+      ],
+      "independent_source_count": 1,
+      "observed_source_count": 1,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T0"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-bc366d69142606",
+          "title": "Amazon registers three Pecos County data-center buildings with estimated construction costs of $300 million each",
+          "url": "https://tdlr.texas.gov/TABS/Projects/TABS2026026954",
+          "origin_url": "https://tdlr.texas.gov/TABS/Projects/TABS2026026954",
+          "source_name": "Texas Department of Licensing and Regulation",
+          "source_id": "tdlr.texas.gov",
+          "source_class": "state-regulator",
+          "evidence_tier": "T0",
+          "independence_group": "texas-tdlr",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-04T00:00:00-05:00",
+          "discovered_at": "2026-08-09T09:05:00+08:00",
+          "summary": "Texas accessibility records list Amazon Data Services as owner of three new 189,060-square-foot Pecos County data-center buildings, each with an estimated construction cost of $300 million and registered schedule of August-December 2026. The records do not disclose IT load, power contracts or operating capacity.",
+          "language": "en",
+          "entities": [
+            "Amazon",
+            "Amazon Web Services"
+          ],
+          "locations": [
+            "Pecos County, Texas, United States"
+          ],
+          "event_type": "data-center-building-registration",
+          "event_key": "amazon|pecos-county-data-center-buildings|texas|2026",
+          "stance": "confirms",
+          "topic_hits": [
+            "capacity-and-projects",
+            "data-center",
+            "power"
+          ],
+          "materiality_hits": [
+            "infrastructure-gate",
+            "money"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": false,
+        "pulse_candidate": true,
+        "atlas_research_candidate": true,
+        "relationship_edges": false
+      },
+      "relationship_edges": [],
+      "claims_to_verify": [],
+      "atlas_research_handoff_stub": {
+        "watch_event_id": "evt-4dd93bd598b012",
+        "research_question": "What do current primary records confirm about “Amazon registers three Pecos County data-center buildings with estimated construction costs of $300 million each”, and how does the disclosed scope and timing propagate through AI infrastructure?",
+        "suggested_route": "column",
+        "primary_source_item_ids": [
+          "itm-bc366d69142606"
+        ],
+        "media_claim_item_ids": [],
+        "publication_authority": "draft-only"
+      },
       "hold_reasons": []
     }
   ],
