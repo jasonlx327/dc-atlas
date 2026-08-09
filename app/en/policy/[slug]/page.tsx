@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${item.titleEn} | IDC Atlas Policy Brief`,
     description: item.summaryEn,
-    robots: { index: false, follow: true },
+    robots: { index: false, follow: true, googleBot: { index: false, follow: true } },
     alternates: { canonical, languages: { "zh-CN": `https://idc-index.com/policy/${item.id}`, en: canonical, "x-default": canonical } },
     openGraph: { title: item.titleEn, description: item.summaryEn, url: canonical, type: "article", publishedTime: item.publishedAt },
     twitter: { card: "summary", title: item.titleEn, description: item.summaryEn },

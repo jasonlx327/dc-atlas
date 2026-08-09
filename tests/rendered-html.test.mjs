@@ -165,6 +165,7 @@ test("publishes shareable bilingual policy and Rumor Watch brief pages", async (
   assert.match(policyHtml, /FCC拟扩大Covered List组件限制/);
   assert.match(policyHtml, /rel="canonical" href="https:\/\/idc-index\.com\/policy\/us-fcc-covered-list-component-proposal-2026"/i);
   assert.match(policyHtml, /<meta name="robots" content="noindex, follow"/i);
+  assert.match(policyHtml, /<meta name="googlebot" content="noindex, follow"/i);
   assert.match(policyHtml, /"@type":"Article"/);
   assert.match(policyHtml, /"@type":"BreadcrumbList"/);
   assert.match(policyHtml, /直接影响/);
