@@ -214,6 +214,26 @@ export const POLICY_BRIEFS: PolicyIndexRecord[] = [
 
 export const RUMOR_BRIEFS: RumorWatchItem[] = [
   {
+    id: "amazon-pecos-onsite-gas-data-center-2026",
+    title: "Amazon据报确认在得州Pecos County推进配套现场发电的数据中心项目",
+    titleEn: "Amazon is reported to have confirmed a Pecos County data-center project with on-site generation",
+    summary: "《纽约时报》8月8日报道，Amazon已确认其近期取得得州Pecos County一处场址，计划建设由新增现场发电配套的数据中心。报道所涉Pacifico Energy的GW Ranch此前已获州级空气许可，许可上限为7.65GW燃气发电，但该数值是拟建发电项目的许可上限，不是Amazon已签约、已建成或已投运的数据中心负荷；Amazon未披露数据中心容量、投资额、投运时间或最终供电合同。",
+    summaryEn: "The New York Times reported on August 8 that Amazon confirmed it recently acquired a Pecos County, Texas site for a planned data center backed by new on-site generation. Pacifico Energy's related GW Ranch project previously received a state air permit with a 7.65 GW gas-generation ceiling, but that is a permitted maximum for a proposed power project, not Amazon's contracted, built or operating data-center load; Amazon has not disclosed data-center capacity, investment, delivery timing or final power contracts.",
+    publishedAt: "2026-08-08T14:17:02-04:00",
+    sourceName: "The New York Times",
+    sourceUrl: "https://www.nytimes.com/2026/08/08/climate/amazon-data-center-texas-pollution.html",
+    region: "美国",
+    status: "reported",
+    statusLabel: "单一来源报道 · Amazon经媒体确认场址关联 · 未见项目公告",
+    statusLabelEn: "Single-source report · Amazon confirmed site link to media · no project announcement",
+    sourceCount: 1,
+    entities: ["Amazon", "Amazon Web Services", "Pacifico Energy", "GW Ranch", "Pecos County"],
+    officialResponse: "Amazon向《纽约时报》确认已取得Pecos County场址，并称拟建数据中心将由新增现场发电供电，不会推高得州家庭电费。该回应经媒体转述；截至本轮扫描，未找到Amazon、AWS或Pacifico关于项目容量、投资、供电合同、开工或投运日期的独立公开公告。",
+    officialResponseEn: "Amazon told the New York Times it had acquired the Pecos County site and that the planned data center would use new on-site generation without raising Texas household electricity costs. The statement is media-carried; this scan did not locate an independent public announcement from Amazon, AWS or Pacifico disclosing capacity, investment, power contracts, construction or service dates.",
+    sourceNote: "核心项目关联与Amazon回应仅见《纽约时报》单一来源，原文为付费媒体并保留访问限制。7.65GW是既有公共空气许可对应的拟建燃气发电上限，不能表述为Amazon数据中心的已投运或已锁定容量。",
+    sourceNoteEn: "The project link and Amazon response are carried only by the New York Times, a paywalled source with retained access limits. The 7.65 GW figure is the ceiling in an existing public air permit for proposed gas generation; it is not Amazon's operating or committed data-center capacity.",
+  },
+  {
     id: "us-china-data-center-optics-import-restriction-2026",
     title: "美国据报拟限制新的中国数据中心光模块进口",
     titleEn: "U.S. is reported to be drafting limits on new China-made data-center optical transceivers",

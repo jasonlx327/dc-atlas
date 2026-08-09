@@ -137,6 +137,7 @@ test("publishes bilingual policy index and rumor watch routes", async () => {
   assert.match(rumorsHtml, /市场传闻与待核验线索/);
   assert.match(rumorsHtml, /RUMOR WATCH · SOURCE LINKED/);
   assert.match(rumorsHtml, /长鑫科技据报考虑在北京亦庄建设第二座DRAM晶圆厂/);
+  assert.match(rumorsHtml, /Amazon据报确认在得州Pecos County推进配套现场发电的数据中心项目/);
   assert.match(rumorsHtml, /Hut 8未披露的得州租户/);
   assert.match(rumorsHtml, /公开回应/);
 
@@ -146,6 +147,7 @@ test("publishes bilingual policy index and rumor watch routes", async () => {
   assert.match(englishHtml, /Rumor Watch/);
   assert.match(englishHtml, /Reported market developments/);
   assert.match(englishHtml, /CXMT is reported to be considering a second DRAM fab in Beijing/);
+  assert.match(englishHtml, /Amazon is reported to have confirmed a Pecos County data-center project with on-site generation/);
   assert.match(englishHtml, /Nvidia is reported to be Hut 8/);
   assert.match(englishHtml, /PUBLIC RESPONSE/);
 

@@ -1,0 +1,194 @@
+{
+  "schema_version": "atlas-watch.v1",
+  "generated_at": "2026-08-09T01:19:18.505492+00:00",
+  "stats": {
+    "input_items": 2,
+    "included_items": 2,
+    "excluded_items": 0,
+    "duplicate_items": 0,
+    "clusters": 2,
+    "route_counts": {
+      "rumor_watch": 1,
+      "pulse_candidate": 1,
+      "atlas_research_candidate": 0,
+      "relationship_edges": 0
+    }
+  },
+  "clusters": [
+    {
+      "event_id": "evt-5cc35deb9ed410",
+      "event_key": "firebird|ai-factory-launch|nvidia|hrazdan|2026",
+      "label": "Firebird Launches CIS Region’s Largest AI Factory in Armenia",
+      "first_seen_at": "2026-08-08T19:26:15-04:00",
+      "last_updated_at": "2026-08-08T19:26:15-04:00",
+      "status": "officially-confirmed",
+      "entities": [
+        "Firebird",
+        "NVIDIA"
+      ],
+      "locations": [
+        "Hrazdan, Armenia"
+      ],
+      "event_types": [
+        "ai-factory-launch"
+      ],
+      "topic_hits": [
+        "data-center"
+      ],
+      "materiality_hits": [],
+      "independent_source_count": 1,
+      "observed_source_count": 1,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T1"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-1d5858cd05144c",
+          "title": "Firebird Launches CIS Region’s Largest AI Factory in Armenia",
+          "url": "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia",
+          "origin_url": "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia",
+          "source_name": "NVIDIA Blog",
+          "source_id": "nvidia",
+          "source_class": "company-source",
+          "evidence_tier": "T1",
+          "independence_group": "nvidia",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-08T19:26:15-04:00",
+          "discovered_at": "2026-08-09T09:27:00+08:00",
+          "summary": "NVIDIA published a company-backed announcement about Firebird's AI factory in Hrazdan, Armenia. It is an official disclosure and is retained as a Pulse candidate, not Rumor Watch content.",
+          "language": "en",
+          "entities": [
+            "Firebird",
+            "NVIDIA"
+          ],
+          "locations": [
+            "Hrazdan, Armenia"
+          ],
+          "event_type": "ai-factory-launch",
+          "event_key": "firebird|ai-factory-launch|nvidia|hrazdan|2026",
+          "stance": "confirms",
+          "topic_hits": [
+            "data-center"
+          ],
+          "materiality_hits": [],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": false,
+        "pulse_candidate": true,
+        "atlas_research_candidate": false,
+        "relationship_edges": false
+      },
+      "relationship_edges": [],
+      "claims_to_verify": [],
+      "atlas_research_handoff_stub": null,
+      "hold_reasons": []
+    },
+    {
+      "event_id": "evt-b8824625c4f8f1",
+      "event_key": "amazon|data-center-onsite-generation|gw-ranch|pecos-county|2026",
+      "label": "New Amazon Data Center Stokes Worry It Would Be the Most Polluting Power Plant in the U.S.",
+      "first_seen_at": "2026-08-08T14:17:02-04:00",
+      "last_updated_at": "2026-08-08T14:17:02-04:00",
+      "status": "single-source-report",
+      "entities": [
+        "Amazon",
+        "Amazon Web Services",
+        "Pacifico Energy",
+        "GW Ranch"
+      ],
+      "locations": [
+        "Pecos County, Texas, United States"
+      ],
+      "event_types": [
+        "data-center-power-project"
+      ],
+      "topic_hits": [
+        "corporate-event",
+        "data-center",
+        "power"
+      ],
+      "materiality_hits": [
+        "commitment",
+        "infrastructure-gate"
+      ],
+      "independent_source_count": 1,
+      "observed_source_count": 1,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T2"
+      ],
+      "access_limits": [
+        "paywalled"
+      ],
+      "items": [
+        {
+          "item_id": "itm-10dca3623a76d6",
+          "title": "New Amazon Data Center Stokes Worry It Would Be the Most Polluting Power Plant in the U.S.",
+          "url": "https://nytimes.com/2026/08/08/climate/amazon-data-center-texas-pollution.html",
+          "origin_url": "https://nytimes.com/2026/08/08/climate/amazon-data-center-texas-pollution.html",
+          "source_name": "The New York Times",
+          "source_id": "nytimes.com",
+          "source_class": "major-media",
+          "evidence_tier": "T2",
+          "independence_group": "new-york-times",
+          "access": "paywalled",
+          "author": "",
+          "published_at": "2026-08-08T14:17:02-04:00",
+          "discovered_at": "2026-08-09T09:27:00+08:00",
+          "summary": "The New York Times reported that Amazon confirmed it acquired a Pecos County site for a planned data center backed by new on-site generation. The report does not disclose Amazon data-center capacity, investment, delivery timing or power-contract terms.",
+          "language": "en",
+          "entities": [
+            "Amazon",
+            "Amazon Web Services",
+            "Pacifico Energy",
+            "GW Ranch"
+          ],
+          "locations": [
+            "Pecos County, Texas, United States"
+          ],
+          "event_type": "data-center-power-project",
+          "event_key": "amazon|data-center-onsite-generation|gw-ranch|pecos-county|2026",
+          "stance": "reports",
+          "topic_hits": [
+            "corporate-event",
+            "data-center",
+            "power"
+          ],
+          "materiality_hits": [
+            "commitment",
+            "infrastructure-gate"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": true,
+        "pulse_candidate": false,
+        "atlas_research_candidate": false,
+        "relationship_edges": false
+      },
+      "relationship_edges": [],
+      "claims_to_verify": [
+        {
+          "claim": "The New York Times reported that Amazon confirmed it acquired a Pecos County site for a planned data center backed by new on-site generation. The report does not disclose Amazon data-center capacity, investment, delivery timing or power-contract terms.",
+          "attribution": "The New York Times",
+          "source_item_ids": [
+            "itm-10dca3623a76d6"
+          ],
+          "starting_status": "not-determined"
+        }
+      ],
+      "atlas_research_handoff_stub": null,
+      "hold_reasons": []
+    }
+  ],
+  "excluded": [],
+  "duplicates": []
+}

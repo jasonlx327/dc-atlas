@@ -1,0 +1,42 @@
+{
+  "items": [
+    {
+      "title": "New Amazon Data Center Stokes Worry It Would Be the Most Polluting Power Plant in the U.S.",
+      "url": "https://www.nytimes.com/2026/08/08/climate/amazon-data-center-texas-pollution.html",
+      "source_name": "The New York Times",
+      "published_at": "2026-08-08T14:17:02-04:00",
+      "discovered_at": "2026-08-09T09:27:00+08:00",
+      "summary": "The New York Times reported that Amazon confirmed it acquired a Pecos County site for a planned data center backed by new on-site generation. The report does not disclose Amazon data-center capacity, investment, delivery timing or power-contract terms.",
+      "language": "en",
+      "entities": ["Amazon", "Amazon Web Services", "Pacifico Energy", "GW Ranch"],
+      "locations": ["Pecos County, Texas, United States"],
+      "event_type": "data-center-power-project",
+      "event_key": "amazon|data-center-onsite-generation|gw-ranch|pecos-county|2026",
+      "stance": "reports",
+      "source_class": "major-media",
+      "evidence_tier": "T2",
+      "independence_group": "new-york-times",
+      "access": "paywalled",
+      "origin_url": "https://www.nytimes.com/2026/08/08/climate/amazon-data-center-texas-pollution.html"
+    },
+    {
+      "title": "Firebird Launches CIS Region’s Largest AI Factory in Armenia",
+      "url": "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia/",
+      "source_name": "NVIDIA Blog",
+      "published_at": "2026-08-08T19:26:15-04:00",
+      "discovered_at": "2026-08-09T09:27:00+08:00",
+      "summary": "NVIDIA published a company-backed announcement about Firebird's AI factory in Hrazdan, Armenia. It is an official disclosure and is retained as a Pulse candidate, not Rumor Watch content.",
+      "language": "en",
+      "entities": ["Firebird", "NVIDIA"],
+      "locations": ["Hrazdan, Armenia"],
+      "event_type": "ai-factory-launch",
+      "event_key": "firebird|ai-factory-launch|nvidia|hrazdan|2026",
+      "stance": "confirms",
+      "source_class": "company-source",
+      "evidence_tier": "T1",
+      "independence_group": "nvidia",
+      "access": "public",
+      "origin_url": "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia/"
+    }
+  ]
+}
