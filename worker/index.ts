@@ -7,6 +7,9 @@ import {
   type PolicyIndexRecord,
   type RumorWatchItem,
 } from "../app/watch-data";
+import { verifyAccessJwt } from "./access-auth.ts";
+import { eventRuntimeStatus, runEventIntelligenceShadow } from "./event-intelligence/runtime.ts";
+import { dispatchEventIntelligenceSchedule } from "./event-intelligence/schedule.ts";
 
 const AIHOT_ENDPOINT = "https://aihot.virxact.com/api/public/items";
 const AIHOT_DAILY_ENDPOINT = "https://aihot.virxact.com/api/public/daily";
@@ -3364,6 +3367,24 @@ function shouldPrimeHomepage(request: Request, url: URL): boolean {
 
 const LANGUAGE_COOKIE = "idc_lang";
 
+function isAdminHost(url: URL, env: Env): boolean {
+  return url.hostname === env.ATLAS_ADMIN_HOST;
+}
+
+async function adminAuthorized(request: Request, env: Env): Promise<boolean> {
+  return verifyAccessJwt(request.headers.get("Cf-Access-Jwt-Assertion"), {
+    teamDomain: env.ATLAS_ACCESS_TEAM_DOMAIN,
+    audience: env.ATLAS_ACCESS_AUD,
+    email: env.ATLAS_ADMIN_EMAIL,
+  });
+}
+
+async function adminRuntimeApi(env: Env): Promise<Response> {
+  return Response.json({ status: await eventRuntimeStatus(env) }, {
+    headers: { "cache-control": "private, no-store", "x-robots-tag": "noindex, nofollow" },
+  });
+}
+
 function cookieValue(request: Request, name: string): string | null {
   const cookie = request.headers.get("cookie");
   if (!cookie) return null;
@@ -3419,6 +3440,18 @@ const worker = {
         url.hostname = "idc-index.com";
         return Response.redirect(url, 308);
       }
+      if (url.hostname === "idc-index.com" && url.pathname.startsWith("/admin")) {
+        return new Response("Not found", { status: 404, headers: { "x-robots-tag": "noindex, nofollow" } });
+      }
+      if (isAdminHost(url, env)) {
+        if (!(await adminAuthorized(request, env))) {
+          return new Response("Unauthorized", { status: 401, headers: { "cache-control": "private, no-store", "x-robots-tag": "noindex, nofollow" } });
+        }
+        if (url.pathname === "/api/admin/intelligence") return await adminRuntimeApi(env);
+        if (url.pathname === "/") {
+          return Response.redirect(new URL("/admin/intelligence", url), 302);
+        }
+      }
       const languageResponse = languagePreferenceResponse(request, url);
       if (languageResponse) return languageResponse;
       if (url.pathname === "/api/daily-snapshot") return await dailySnapshotApi(request, env);
@@ -3450,7 +3483,12 @@ const worker = {
     }
   },
   async scheduled(controller: ScheduledController, env: Env, ctx: ExecutionContext): Promise<void> {
-    await createScheduledSnapshot(env, controller.scheduledTime, ctx);
+    const scheduledAt = new Date(controller.scheduledTime);
+    await dispatchEventIntelligenceSchedule(scheduledAt, {
+      "event-night": async () => { await runEventIntelligenceShadow(env, "event-night", controller.scheduledTime); },
+      "snapshot-daily": async () => { await createScheduledSnapshot(env, controller.scheduledTime, ctx); },
+      "event-day": async () => { await runEventIntelligenceShadow(env, "event-day", controller.scheduledTime); },
+    });
   },
 } satisfies ExportedHandler<Env>;
 

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import latestRunJson from "../../../artifacts/event-intelligence/latest-run.json";
 import strategyComparisonJson from "../../../artifacts/event-intelligence/strategy-comparison.json";
 import type { Route, ShadowRunReport } from "../../../worker/event-intelligence/pipeline.ts";
+import { RuntimeStatus } from "./runtime-status";
 
 export const metadata: Metadata = {
   title: "Intelligence Console · IDC Atlas",
@@ -46,23 +46,21 @@ function sourceNames(event: LocalReport["events"][number]): string {
 }
 
 export default function IntelligenceConsolePage() {
-  if (process.env.ATLAS_INTELLIGENCE_ADMIN !== "1") {
-    notFound();
-  }
-
   return (
     <main className="atlas-intelligence-page">
       <header className="atlas-intelligence-header">
         <div>
-          <p className="atlas-intelligence-kicker">IDC ATLAS / LOCAL OPERATIONS</p>
+          <p className="atlas-intelligence-kicker">IDC ATLAS / PRIVATE OPERATIONS</p>
           <h1>事件情报观测台</h1>
-          <p className="atlas-intelligence-lede">观察 source → observation → analysis → event → route 的 shadow 结果。当前页面只读本地 shadow artifact，不代表生产 D1、Worker、Sites 或正式来源切换。</p>
+          <p className="atlas-intelligence-lede">观察 source → observation → analysis → event → route 的影子结果。生产 Worker 只写私有 KV；公开站数据源保持不变，直至 Gate 4 具备独立切换条件。</p>
         </div>
         <div className="atlas-intelligence-run-status">
           <span className={statusClass(report.status)}>{report.status}</span>
           <small>{report.generatedAt} · {report.inputMode ?? "unknown"}</small>
         </div>
       </header>
+
+      <RuntimeStatus />
 
       <nav className="atlas-intelligence-tabs" aria-label="Intelligence views">
         <a href="#overview">Overview</a>

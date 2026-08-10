@@ -8,6 +8,10 @@
     {
       "pattern": "idc-index.com",
       "custom_domain": true
+    },
+    {
+      "pattern": "admin.idc-index.com",
+      "custom_domain": true
     }
   ],
   "kv_namespaces": [
@@ -17,7 +21,13 @@
     }
   ],
   "triggers": {
-    "crons": ["0 22 * * *"]
+    "crons": ["30 21 * * *", "0 22 * * *", "30 9 * * *"]
+  },
+  "vars": {
+    "ATLAS_ADMIN_HOST": "admin.idc-index.com",
+    "ATLAS_ADMIN_EMAIL": "Jasonlix993@gmail.com",
+    "ATLAS_ACCESS_TEAM_DOMAIN": "idc-atlas-admin.cloudflareaccess.com",
+    "ATLAS_ACCESS_AUD": "ea4a26e2b77b58365ab4460aee2fd97e611b60b1ba7820162b7ff3bb102c9310"
   },
   "assets": {
     "directory": "./dist/client",
