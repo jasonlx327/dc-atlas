@@ -35,6 +35,7 @@
     "event:shadow:record": "node --experimental-strip-types scripts/record-event-shadow-slot.ts",
     "event:historical-replay": "node --experimental-strip-types scripts/run-event-historical-replay.ts",
     "event:gate4:readiness": "node --experimental-strip-types scripts/build-event-gate4-readiness.ts",
+    "auth:test": "node --experimental-strip-types scripts/test-access-auth.ts",
     "event:acceptance:shadow": "node --experimental-strip-types scripts/run-event-intelligence-shadow.ts --mode=live --slot=event-night --db=/private/tmp/idc-atlas-event-intelligence-acceptance.sqlite --output=event-night-live-gate3.json && node --experimental-strip-types scripts/run-event-intelligence-shadow.ts --mode=live --slot=event-day --db=/private/tmp/idc-atlas-event-intelligence-acceptance.sqlite --output=event-day-live-gate3.json && npm run event:evaluate && npm run event:acceptance"
   },
   "dependencies": {

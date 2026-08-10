@@ -3,6 +3,7 @@ type AccessClaims = {
   email?: string;
   exp?: number;
   iss?: string;
+  nbf?: number;
 };
 
 type AccessJwk = JsonWebKey & { kid?: string };
@@ -43,7 +44,7 @@ export async function verifyAccessJwt(
     if (header.alg !== "RS256" || !header.kid) return false;
     const now = options.now ?? Math.floor(Date.now() / 1000);
     const audience = Array.isArray(claims.aud) ? claims.aud : [claims.aud];
-    if (!claims.exp || claims.exp <= now || !audience.includes(options.audience)) return false;
+    if (!claims.exp || claims.exp <= now || (claims.nbf !== undefined && claims.nbf > now + 60) || !audience.includes(options.audience)) return false;
     if (claims.iss !== `https://${options.teamDomain}` || claims.email?.toLowerCase() !== options.email.toLowerCase()) return false;
     const key = (await accessKeys(options.teamDomain)).find((candidate) => candidate.kid === header.kid);
     if (!key) return false;

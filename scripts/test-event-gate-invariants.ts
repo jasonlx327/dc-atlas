@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import { execFile as execFileCallback } from "node:child_process";
-import { readFile } from "node:fs/promises";
+import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 
@@ -54,11 +56,17 @@ if (!gate4.gates?.historicalReplay?.pass || !gate4.gates?.liveSmoke?.pass || !ga
 }
 
 let unsafeRecordRejected = false;
+const unsafeFixtureDir = await mkdtemp(join(tmpdir(), "atlas-event-gate-"));
 try {
-  await execFile(process.execPath, ["--experimental-strip-types", "scripts/record-event-shadow-slot.ts", "--slot=event-day", "--input=artifacts/event-intelligence/latest-run.json"], { cwd: projectRoot });
+  const latestRun = await load<Record<string, unknown>>("latest-run.json");
+  const unsafeFixture = join(unsafeFixtureDir, "unsafe-run.json");
+  await writeFile(unsafeFixture, JSON.stringify({ ...latestRun, inputMode: "snapshot", trigger: "event-day" }));
+  await execFile(process.execPath, ["--experimental-strip-types", "scripts/record-event-shadow-slot.ts", "--slot=event-day", `--input=${unsafeFixture}`], { cwd: projectRoot });
 } catch (error) {
   const output = `${(error as { stdout?: string }).stdout ?? ""}\n${(error as { stderr?: string }).stderr ?? ""}`;
   unsafeRecordRejected = /inputMode=live|scheduled-at=.*required/.test(output);
+} finally {
+  await rm(unsafeFixtureDir, { recursive: true, force: true });
 }
 assert.equal(unsafeRecordRejected, true, "unscheduled or non-live reports must not enter the seven-day ledger");
 
