@@ -1,5 +1,17 @@
 export const columnArticles = [
   {
+    href: "/columns/meta-blackrock-el-paso",
+    hrefEn: "/en/columns/meta-blackrock-el-paso",
+    date: "2026-08-10",
+    publishAt: "2026-08-10T00:00:00+08:00",
+    series: "CAPITAL STACK · 19",
+    title: "Meta–BlackRock El Paso：1GW AI 园区如何把建设期风险装进资本结构",
+    titleEn: "Meta–BlackRock El Paso: How a 1GW AI Campus Allocates Construction Risk",
+    summary: "Meta 与 BlackRock 将 El Paso 在建园区放入合资平台：外部资本持有资产，Meta 保留承租、管理与残值担保。1GW 是 2028 年起上线目标；送电、验收与实际使用仍待验证。",
+    summaryEn: "Meta and BlackRock place the under-construction El Paso campus in a venture: outside capital owns most assets while Meta retains the lease, management and residual-value support. The 1GW target begins online in 2028; energization, acceptance and use remain to be verified.",
+    image: "/column-meta-blackrock-el-paso-v1.jpg",
+  },
+  {
     href: "/columns/anthropic-volta-compute",
     hrefEn: "/en/columns/anthropic-volta-compute",
     date: "2026-08-06",

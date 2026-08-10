@@ -47,10 +47,10 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /class="atlas-calendar-group" aria-hidden="true"/);
   assert.match(html, /研究队列/);
   assert.match(html, /src="\/lead-amazon-aws-capex\.png"/);
-  assert.match(html, /100 亿美元、6 年、133MW：Volta 与未具名 AI 实验室的算力协议/);
-  assert.match(html, /column-anthropic-volta-compute-v1\.jpg/);
+  assert.match(html, /Meta–BlackRock El Paso：1GW AI 园区如何把建设期风险装进资本结构/);
+  assert.match(html, /column-meta-blackrock-el-paso-v1\.jpg/);
   assert.match(html, /href="\/columns"/);
-  assert.match(html, /href="\/columns\/anthropic-volta-compute"/);
+  assert.match(html, /href="\/columns\/meta-blackrock-el-paso"/);
   assert.doesNotMatch(html, /情报摘要/);
   assert.match(html, /市场脉搏/);
   assert.match(html, /class="atlas-pulse-wave"/);
@@ -616,6 +616,7 @@ test("publishes the first scheduled research column and keeps later releases tim
 
 test("renders every bilingual column inside the shared console reading layout", async () => {
   const slugs = [
+    "meta-blackrock-el-paso",
     "accelerator-platform-divergence",
     "anthropic-volta-compute",
     "partners-group-avk-power",

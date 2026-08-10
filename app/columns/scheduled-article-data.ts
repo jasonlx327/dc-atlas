@@ -1,3 +1,5 @@
+import { metaBlackrockElPaso } from "./meta-blackrock-el-paso-data";
+
 export type ResearchMetric = {
   label: string;
   value: string;
@@ -53,6 +55,7 @@ export type ScheduledResearchRecord = {
 };
 
 export const scheduledResearchRecords: ScheduledResearchRecord[] = [
+  metaBlackrockElPaso,
   {
     slug: "accelerator-platform-divergence",
     imageAltZh: "两套独立 AI 计算集群通过园区电力与冷却基础设施连接",
