@@ -24,7 +24,7 @@ const AIHOT_USER_AGENT = "aihot-skill/0.3.6 (+https://aihot.virxact.com/aihot-sk
 const CWW_ENDPOINT = "https://cwwindex.today/data/latest.json";
 const OPENROUTER_MODELS_ENDPOINT = "https://openrouter.ai/api/v1/models?sort=top-weekly";
 const ARENA_CODE_ENDPOINT = "https://arena.ai/leaderboard/code/webdev";
-const CONTENT_REVIEWED_AT = "2026-08-09";
+const CONTENT_REVIEWED_AT = "2026-08-11";
 const LLMS_TXT = `# IDC Atlas
 
 > IDC Atlas is a bilingual, source-first intelligence site for global data-center construction, AI infrastructure, power, cooling, networking and China AI silicon. Content is for public-information research and industry observation only, not investment advice.
@@ -629,6 +629,17 @@ function supernodeProducts(): SupernodeProduct[] {
 function capacityRadar(): SourceRecord[] {
   return [
     {
+      id: "riot-rockdale-frontier-ai-lease-191mw",
+      title: "Riot 在 Rockdale 签署 191MW 关键 IT 容量长期租约",
+      subject: "Riot Platforms · Nasdaq: RIOT / 未披露前沿 AI 实验室",
+      metric: "191MW 关键 IT 已签约 · 96MW 预计 2027 年 12 月交付",
+      status: "20 年租约已签 · 尚未交付或投运",
+      publishedAt: "2026-08-10",
+      sourceName: "Riot Platforms SEC 8-K / Q2 results",
+      sourceUrl: "https://www.sec.gov/Archives/edgar/data/1167419/000110465926093406/riot-20260810xex99d1.htm",
+      note: "Riot 披露 Rockdale 的 191MW build-to-suit 关键 IT 容量租约，基础期合同收入约 91 亿美元；首批 96MW 预计 2027 年 12 月交付，全部 191MW 预计 2028 年 6 月交付，因此该数字属于已签约未来容量，不是当前运行容量。",
+    },
+    {
       id: "firebird-armenia-ai-factory-launch",
       title: "Firebird 在亚美尼亚 Hrazdan 启动 AI 工厂",
       subject: "Firebird / NVIDIA / Dell Technologies",
@@ -1173,6 +1184,22 @@ function chinaChipPulse(liveNews: NewsItem[], days = 30): NewsItem[] {
 function mnaDeals(): MnaDeal[] {
   return [
     {
+      id: "nvidia-ai-compute-financing-platform-mous",
+      announcedAt: "2026-08-10",
+      buyer: "NVIDIA / Apollo / BlackRock / Blackstone / Brookfield / Goldman Sachs / KKR",
+      target: "独立 AI 算力基础设施融资平台",
+      value: "目标动员逾 $5,000 亿第三方资本",
+      capacity: "未披露",
+      region: "全球",
+      status: "谅解备忘录已签 · 最终协议待签署",
+      statusAsOf: CONTENT_REVIEWED_AT,
+      valueBasis: "NVIDIA 公告的长期第三方资本动员目标，不是已承诺或已到位资本",
+      capacityBasis: "公告未披露对应 GPU、机柜、MW 或具体项目容量",
+      rationale: "六家大型另类资产管理与投行平台拟分别建立独立融资载体，把外部基础设施资本连接到 NVIDIA 算力生态；最终结构、时点和条款仍取决于正式协议。",
+      sourceName: "NVIDIA Newsroom",
+      sourceUrl: "https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital",
+    },
+    {
       id: "constellation-ls-power-brazos-valley",
       announcedAt: "2026-08-06",
       buyer: "LS Power",
@@ -1386,6 +1413,52 @@ function positiveIdcNews(liveNews: NewsItem[], records: SourceRecord[]): NewsIte
 
 function constructionPulse(): NewsItem[] {
   const items: NewsItem[] = [
+    {
+      id: "riot-rockdale-frontier-ai-lease-191mw",
+      title: "Riot 在 Rockdale 签署 191MW 关键 IT 容量长期租约",
+      summary: "Riot 与未披露的前沿 AI 实验室签署 20 年 build-to-suit 租约，基础期合同收入约 91 亿美元；首批 96MW 预计 2027 年 12 月交付，全部 191MW 预计 2028 年 6 月交付。",
+      publishedAt: "2026-08-10T16:15:00-04:00",
+      category: "idc-construction",
+      score: null,
+      permalink: "https://www.sec.gov/Archives/edgar/data/1167419/000110465926093406/riot-20260810xex99d1.htm",
+      sourceUrl: "https://www.sec.gov/Archives/edgar/data/1167419/000110465926093406/riot-20260810xex99d1.htm",
+      sourceName: "Riot Platforms SEC 8-K / Q2 results",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "20 年租约签署 / 分期交付待完成",
+      scale: "191MW 关键 IT 已签约 · 96MW 预计 2027 年 12 月交付",
+      listedTicker: "Riot Platforms · RIOT",
+      whyItMatters: "长期租约和摩根士丹利 5.73 亿美元过桥融资提高了建设可见度，但收入兑现仍取决于数据厅建设、交付、通电与起租。",
+      lifecycle: [
+        { label: "20 年租约签署", state: "done" },
+        { label: "首批 96MW 交付", state: "current" },
+        { label: "全部 191MW 交付并起租", state: "next" },
+      ],
+    },
+    {
+      id: "energy-vault-texas-1-25gw-power-agreement",
+      title: "Energy Vault 签署得州 1.25GW AI 数据中心电力基础设施协议",
+      summary: "公司将为未披露的 hyperscaler AI 数据中心提供储能、构网型变流器和控制系统；初始部署预计在未来 4 至 12 个月推进。1.25GW 是电力基础设施口径，不是已投运关键 IT 容量。",
+      publishedAt: "2026-08-07T07:30:00-04:00",
+      category: "idc-power",
+      score: null,
+      permalink: "https://investors.energyvault.com/news/press-releases/news-details/2026/Energy-Vault-Announces-Strategic-Agreement-to-Deploy-1-25-GW-of-Integrated-Power-Infrastructure-for-Hyperscaler-AI-Data-Center-with-Leading-Power-Generation-EPC-Deploying-Caterpillar-Gensets/default.aspx",
+      sourceUrl: "https://investors.energyvault.com/news/press-releases/news-details/2026/Energy-Vault-Announces-Strategic-Agreement-to-Deploy-1-25-GW-of-Integrated-Power-Infrastructure-for-Hyperscaler-AI-Data-Center-with-Leading-Power-Generation-EPC-Deploying-Caterpillar-Gensets/default.aspx",
+      sourceName: "Energy Vault Investor Relations",
+      signal: "power",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "战略商业协议签署 / 初始部署待完成",
+      scale: "1.25GW 电力基础设施 · 非运行 IT 容量",
+      listedTicker: "Energy Vault · NRGV / Caterpillar · CAT",
+      whyItMatters: "储能、构网控制与现场发电的组合为大负荷项目提供桥接电力路径；后续仍需核验客户、场址、设备订单、并网安排和实际投运。",
+      lifecycle: [
+        { label: "商业协议签署", state: "done" },
+        { label: "首批系统部署", state: "current" },
+        { label: "项目投运与收入确认", state: "next" },
+      ],
+    },
     {
       id: "firebird-armenia-ai-factory-launch",
       title: "Firebird 在亚美尼亚启动 AI 工厂，300MW 为 2027 年底规划",
@@ -2085,6 +2158,60 @@ function constructionPulse(): NewsItem[] {
 
 function listedCompanyPulse(): NewsItem[] {
   const items: NewsItem[] = [
+    {
+      id: "riot-q2-2026-rockdale-lease",
+      title: "Riot Q2 数据中心收入 2,320 万美元，并签署 Rockdale 191MW 长租",
+      summary: "Q2 数据中心收入包括 490 万美元经营租赁收入和 1,830 万美元租户装修服务收入；AMD 初始 25MW 已全部投运，另有 25MW 扩建在建。191MW 新租约的交付从 2027 年 12 月开始。",
+      publishedAt: "2026-08-10T16:15:00-04:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://www.sec.gov/Archives/edgar/data/1167419/000110465926093406/riot-20260810xex99d1.htm",
+      sourceUrl: "https://www.sec.gov/Archives/edgar/data/1167419/000110465926093406/riot-20260810xex99d1.htm",
+      sourceName: "Riot Platforms SEC 8-K / Q2 results",
+      signal: "capacity",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "Q2 业绩 / 191MW 长租签署",
+      scale: "Q2 数据中心收入 $2,320 万 · 191MW 已签约",
+      listedTicker: "Riot Platforms · RIOT",
+      whyItMatters: "AMD 容量进入收入期，而更大的 191MW 合同仍处建设前期；需要分别跟踪已投运收入和未来交付义务。",
+    },
+    {
+      id: "nvidia-ai-compute-financing-platform-mous",
+      title: "NVIDIA 与六家资本平台拟动员逾 5,000 亿美元建设 AI 基础设施",
+      summary: "Apollo、BlackRock、Blackstone、Brookfield、Goldman Sachs 与 KKR 分别和 NVIDIA 签署谅解备忘录，拟建立独立算力融资平台；最终协议尚未签署。",
+      publishedAt: "2026-08-10T09:00:00-07:00",
+      category: "idc-financing",
+      score: null,
+      permalink: "https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital",
+      sourceUrl: "https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital",
+      sourceName: "NVIDIA Newsroom",
+      signal: "hardware",
+      curator: "官方来源",
+      region: "全球",
+      milestone: "融资平台 MOU 签署 / 最终协议待签",
+      scale: "目标动员第三方资本 $5,000 亿+",
+      listedTicker: "NVIDIA · NVDA",
+      whyItMatters: "资本动员目标显示 AI 算力建设正形成更专业的资产融资层，但该数字不是已到位资金，也没有对应具体 MW、GPU 或项目清单。",
+    },
+    {
+      id: "energy-vault-1-25gw-power-agreement-company-update",
+      title: "Energy Vault 披露 1.25GW 得州 AI 数据中心电力协议",
+      summary: "公司预计该协议在 2026 年下半年与 2027 年带来约 5 亿至 6 亿美元收入影响；客户与 EPC 伙伴未披露，初始系统仍待未来 4 至 12 个月部署。",
+      publishedAt: "2026-08-07T07:30:00-04:00",
+      category: "idc-company",
+      score: null,
+      permalink: "https://investors.energyvault.com/news/press-releases/news-details/2026/Energy-Vault-Announces-Strategic-Agreement-to-Deploy-1-25-GW-of-Integrated-Power-Infrastructure-for-Hyperscaler-AI-Data-Center-with-Leading-Power-Generation-EPC-Deploying-Caterpillar-Gensets/default.aspx",
+      sourceUrl: "https://investors.energyvault.com/news/press-releases/news-details/2026/Energy-Vault-Announces-Strategic-Agreement-to-Deploy-1-25-GW-of-Integrated-Power-Infrastructure-for-Hyperscaler-AI-Data-Center-with-Leading-Power-Generation-EPC-Deploying-Caterpillar-Gensets/default.aspx",
+      sourceName: "Energy Vault Investor Relations",
+      signal: "power",
+      curator: "官方来源",
+      region: "美国",
+      milestone: "战略商业协议 / 部署待执行",
+      scale: "1.25GW 电力基础设施 · 预计收入影响 $5–6 亿",
+      listedTicker: "Energy Vault · NRGV",
+      whyItMatters: "大额商业协议扩大了 AI 电力基础设施收入管线，但匿名客户、部署进度和收入确认仍是关键执行风险。",
+    },
     {
       id: "cambricon-h1-2026-results-company-update",
       title: "寒武纪 H1 营收同比增长 108%，云端产品线贡献 59.94 亿元",
@@ -2816,6 +2943,7 @@ function calendarEvents(): CalendarEvent[] {
     { id: "palantir-q2-2026", startsAt: "2026-08-03T21:00:00.000Z", company: "Palantir", ticker: "PLTR", sector: "企业 AI / 数据平台", description: "企业 AI 平台提供商；其“主权 AI”框架围绕客户对数据、工作流、模型选择和后训练权重的控制。", focus: "美国商业收入、TCV/RDV 转换、受控推理部署与托管算力成本", sourceName: "Palantir Investor Relations · Q2 results", sourceUrl: "https://investors.palantir.com/events.html", conclusion: { summary: "Q2 营收为 19.35 亿美元，同比增 93%；美国商业收入为 7.64 亿美元，同比增 149%，美国商业 TCV 为 21.32 亿美元。电话会强调“主权 AI”，但未披露 GPU、机柜、MW 或数据中心订单；下一步核验合同转收入与生产部署规模。", summaryEn: "Q2 revenue was $1.935B, up 93% year over year; U.S. commercial revenue was $764M, up 149%, and U.S. commercial TCV was $2.132B. The call emphasized sovereign AI but disclosed no GPUs, racks, MW or data-center order; next checks are contract conversion and production-deployment scale.", sourceName: "Palantir Q2 2026 SEC 8-K & call materials", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000039/a2026q2ex991pressrelease.htm" } },
     { id: "hut8-q2-2026", startsAt: "2026-08-04T12:30:00.000Z", company: "Hut 8", ticker: "HUT", sector: "电力 / AI 数据中心", description: "以电力资源、园区开发和长期租约推进 AI 数据中心平台。", focus: "Beacon Point / River Bend 建设、融资、交付与客户集中度", sourceName: "Hut 8 SEC 8-K & Q2 results", sourceUrl: "https://cdn.kscope.io/e784885ee381047a57f1906fc12d4ad4.html", conclusion: { summary: "前两座 AI 园区共有 949MW 已签约 IT 容量；River Bend 与 Beacon Point 合计 1,330MW 公用事业容量处于施工阶段，首个数据厅目标分别于 2027 年二、三季度交付。下一项验证是按计划交付、通电并进入计费。", summaryEn: "The first two AI campuses have 949MW of contracted IT capacity. River Bend and Beacon Point have 1,330MW of utility capacity in active construction, with initial data-hall delivery targeted for Q2 and Q3 2027, respectively. The next test is delivery, energization and billing.", sourceName: "Hut 8 SEC 8-K & Q2 results", sourceUrl: "https://cdn.kscope.io/e784885ee381047a57f1906fc12d4ad4.html" } },
     { id: "amd-q2-2026", startsAt: "2026-08-04T21:00:00.000Z", company: "AMD", ticker: "AMD", sector: "AI 加速器 / CPU", description: "Instinct、EPYC 与 Helios 机架级平台是 NVIDIA 之外的重要开放 AI 基础设施路线。", focus: "数据中心收入、MI350/MI450 交付、Helios 节奏与全年指引", sourceName: "AMD SEC 8-K & Q2 results", sourceUrl: "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000121/amd-20260804.htm", conclusion: { summary: "Q2 数据中心收入为 67 亿美元，同比增长 107%；管理层称 Helios 开始爬坡，并预计 Q3 公司总收入约 130 亿美元，上下浮动 3 亿美元。下一项验证是 MI400 系列与 Helios 的实际交付和客户部署。", summaryEn: "Q2 Data Center revenue was $6.7B, up 107% year over year. Management said Helios is beginning to ramp and guided Q3 company revenue to about $13.0B, plus or minus $0.3B. The next test is actual MI400-series and Helios delivery and customer deployment.", sourceName: "AMD SEC 8-K & Q2 results", sourceUrl: "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000121/amd-20260804.htm" } },
+    { id: "riot-q2-2026", startsAt: "2026-08-10T20:30:00.000Z", company: "Riot Platforms", ticker: "RIOT", sector: "AI 数据中心 / 数字基础设施", description: "Rockdale 从数字资产基础设施向长期 AI 数据中心租赁扩展。", focus: "AMD 已投运收入、191MW 长租融资、建设与交付节奏", sourceName: "Riot Platforms SEC 8-K & Q2 results", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1167419/000110465926093406/riot-20260810xex99d1.htm", conclusion: { summary: "Q2 数据中心收入为 2,320 万美元，AMD 初始 25MW 已全部投运；Riot 另签署 191MW、20 年 build-to-suit 租约，首批 96MW 预计 2027 年 12 月交付。下一项验证是建设融资闭合、按期交付与起租。", summaryEn: "Q2 Data Center revenue was $23.2M and AMD's initial 25MW was fully online. Riot also signed a 20-year, 191MW build-to-suit lease, with the first 96MW expected in December 2027. The next tests are final construction financing, on-time delivery and rent commencement.", sourceName: "Riot Platforms SEC 8-K & Q2 results", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1167419/000110465926093406/riot-20260810xex99d1.htm" } },
     { id: "terawulf-q2-2026", startsAt: "2026-08-05T12:00:00.000Z", company: "TeraWulf", ticker: "WULF", sector: "AI 数据中心 / 电力", description: "以电力控制、长期 AI 租约和分期交付推进多园区 HPC 平台。", focus: "收入容量、在建 MW、HPC 租赁收入与交付节奏", sourceName: "TeraWulf SEC 8-K & Q2 results", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000162/a_wulfearningsreleaseq22026.htm", conclusion: { summary: "Q2 HPC 租赁收入为 3,190 万美元、约占总收入 71%；7 月初 CB-3 交付后，Lake Mariner 收入容量达到 102MW，另有 336MW 在建。下一项验证是 CB-4/CB-5 的分期交付、起租与成本控制。", summaryEn: "Q2 HPC lease revenue was $31.9M, about 71% of total revenue. After CB-3 was delivered in early July, Lake Mariner reached 102MW of revenue-generating capacity, with another 336MW under construction. The next test is phased CB-4/CB-5 delivery, rent commencement and cost control.", sourceName: "TeraWulf SEC 8-K & Q2 results", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000162/a_wulfearningsreleaseq22026.htm" } },
     { id: "galaxy-q2-2026", startsAt: "2026-08-05T12:30:00.000Z", company: "Galaxy Digital", ticker: "GLXY", sector: "AI 数据中心 / 数字资产", description: "Helios 园区从建设转入收入运营，并向多站点、数 GW 电力管线扩展。", focus: "Helios 收入、交付 MW、二期建设与新站点电力审批", sourceName: "Galaxy SEC 8-K & Q2 results", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1859392/000185939226000084/glxy-20260630xpressrelease.htm", conclusion: { summary: "Q2 为数据中心业务首个收入运营季度，板块调整后毛利 2,000 万美元、调整后 EBITDA 1,100 万美元；Helios 一期 133MW IT 已全部在服，二期 260MW 已开工。下一项验证是二期交付和新增站点并网。", summaryEn: "Q2 was the Data Centers segment's first revenue-generating quarter, with $20M of adjusted gross profit and $11M of adjusted EBITDA. All 133MW of Helios Phase I critical IT load was in service, and the 260MW Phase II build had started. Next checks are Phase II delivery and interconnection progress at new sites.", sourceName: "Galaxy SEC 8-K & Q2 results", sourceUrl: "https://www.sec.gov/Archives/edgar/data/1859392/000185939226000084/glxy-20260630xpressrelease.htm" } },
     { id: "tencent-q2-2026", startsAt: "2026-08-12T12:00:00.000Z", company: "腾讯", ticker: "0700.HK", sector: "互联网 / 云计算 / AI", description: "腾讯的企业服务、混元模型与内部 AI 部署共同决定其算力、网络与云资源需求的下一组披露。", focus: "企业服务收入、混元与 AI 应用、云与算力投入、资本开支", sourceName: "Tencent Investor Kit & Calendar · Q2 2026 results", sourceUrl: "https://www.tencent.com/investors/investor-kit-calendar/" },

@@ -141,6 +141,7 @@ test("redirects the retired policy index and publishes bilingual Rumor Watch rou
   assert.match(rumorsHtml, /Amazon据报确认在得州Pecos County推进配套现场发电的数据中心项目/);
   assert.match(rumorsHtml, /Hut 8未披露的得州租户/);
   assert.match(rumorsHtml, /公开回应/);
+  assert.doesNotMatch(rumorsHtml, /得州据报暂停不符合新要求的数据中心并网审批/);
 
   const english = await render("/en/rumors");
   assert.equal(english.status, 200);
@@ -159,6 +160,14 @@ test("redirects the retired policy index and publishes bilingual Rumor Watch rou
 });
 
 test("publishes shareable bilingual policy and Rumor Watch brief pages", async () => {
+  const texasPolicy = await render("/policy/us-texas-data-center-audit-2026");
+  assert.equal(texasPolicy.status, 200);
+  assert.match(await texasPolicy.text(), /得州要求数据中心项目通过全面并网审计/);
+
+  const texasPolicyEn = await render("/en/policy/us-texas-data-center-audit-2026");
+  assert.equal(texasPolicyEn.status, 200);
+  assert.match(await texasPolicyEn.text(), /Texas requires a comprehensive interconnection audit for data-center projects/);
+
   const policy = await render("/policy/us-fcc-covered-list-component-proposal-2026");
   assert.equal(policy.status, 200);
   const policyHtml = await policy.text();
@@ -747,7 +756,10 @@ test("keeps live-data validation in the deployment path", async () => {
   assert.match(liveCheck, /newsStatus !== "ok"/);
   for (const section of ["idcPulse", "listedCompanyNews", "mnaDeals", "capacityRadar", "coolingProgress"]) assert.match(liveCheck, new RegExp(section));
   assert.match(liveCheck, /freshness\.status === "stale"/);
-  assert.match(workerSource, /CONTENT_REVIEWED_AT = "2026-08-09"/);
+  assert.match(workerSource, /CONTENT_REVIEWED_AT = "2026-08-11"/);
+  assert.match(workerSource, /Riot 在 Rockdale 签署 191MW 关键 IT 容量长期租约/);
+  assert.match(workerSource, /1\.25GW 电力基础设施 · 非运行 IT 容量/);
+  assert.match(workerSource, /目标动员逾 \$5,000 亿第三方资本/);
   assert.match(workerSource, /Firebird 在亚美尼亚启动 AI 工厂/);
   assert.match(workerSource, /Amazon 在得州 Pecos County 登记三栋数据中心建筑/);
   assert.match(workerSource, /PPL Q2 披露 31\.8GW 数据中心管线/);

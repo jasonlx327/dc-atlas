@@ -1,0 +1,146 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-08-11-full",
+  "sources": [
+    {
+      "ref": "riot-q2-2026-sec-exhibit",
+      "tier": "T0",
+      "canonicalUrl": "https://www.sec.gov/Archives/edgar/data/1167419/000110465926093406/riot-20260810xex99d1.htm",
+      "sourceName": "Riot Platforms SEC 8-K exhibit / Q2 results",
+      "publishedAt": "2026-08-10T16:15:00-04:00",
+      "accessState": "public",
+      "independenceGroup": "sec",
+      "sections": ["idc-pulse", "listed-companies", "capacity", "power-model-demand", "earnings-calendar", "columns"]
+    },
+    {
+      "ref": "riot-sec-submissions-20260810",
+      "tier": "T0",
+      "canonicalUrl": "https://data.sec.gov/submissions/CIK0001167419.json",
+      "sourceName": "SEC EDGAR company submissions",
+      "publishedAt": "2026-08-10T23:59:59Z",
+      "accessState": "public",
+      "independenceGroup": "sec",
+      "sections": ["listed-companies", "earnings-calendar"]
+    },
+    {
+      "ref": "nvidia-ai-compute-financing-platforms-20260810",
+      "tier": "T1",
+      "canonicalUrl": "https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital",
+      "sourceName": "NVIDIA Newsroom",
+      "publishedAt": "2026-08-10T09:00:00-07:00",
+      "accessState": "public",
+      "independenceGroup": "nvidia",
+      "sections": ["listed-companies", "mna", "compute-products", "supply-chain", "columns"]
+    },
+    {
+      "ref": "energy-vault-texas-1250mw-power-20260807",
+      "tier": "T1",
+      "canonicalUrl": "https://investors.energyvault.com/news/press-releases/news-details/2026/Energy-Vault-Announces-Strategic-Agreement-to-Deploy-1-25-GW-of-Integrated-Power-Infrastructure-for-Hyperscaler-AI-Data-Center-with-Leading-Power-Generation-EPC-Deploying-Caterpillar-Gensets/default.aspx",
+      "sourceName": "Energy Vault Investor Relations",
+      "publishedAt": "2026-08-07T07:30:00-04:00",
+      "accessState": "partial",
+      "independenceGroup": "energy-vault",
+      "sections": ["idc-pulse", "listed-companies", "supply-chain", "power-model-demand", "columns"]
+    },
+    {
+      "ref": "texas-governor-data-center-audit-20260803",
+      "tier": "T0",
+      "canonicalUrl": "https://gov.texas.gov/news/post/governor-abbott-directs-comprehensive-data-center-audit",
+      "sourceName": "Office of the Texas Governor",
+      "publishedAt": "2026-08-03T12:00:00-05:00",
+      "accessState": "public",
+      "independenceGroup": "texas-governor",
+      "sections": ["power-model-demand", "rumors", "policy"]
+    },
+    {
+      "ref": "texas-governor-openai-compliance-20260810",
+      "tier": "T0",
+      "canonicalUrl": "https://gov.texas.gov/news/post/governor-abbott-announces-open-ai-commits-to-comply-with-his-data-center-standards-8-10",
+      "sourceName": "Office of the Texas Governor",
+      "publishedAt": "2026-08-10T12:00:00-05:00",
+      "accessState": "public",
+      "independenceGroup": "texas-governor",
+      "sections": ["power-model-demand", "policy"]
+    },
+    {
+      "ref": "texas-governor-meta-compliance-20260810",
+      "tier": "T0",
+      "canonicalUrl": "https://gov.texas.gov/news/post/governor-abbott-announces-meta-commits-to-comply-with-his-data-center-standards",
+      "sourceName": "Office of the Texas Governor",
+      "publishedAt": "2026-08-10T12:00:00-05:00",
+      "accessState": "public",
+      "independenceGroup": "texas-governor",
+      "sections": ["power-model-demand", "policy"]
+    },
+    {
+      "ref": "federal-register-data-center-scan-20260811",
+      "tier": "T0",
+      "canonicalUrl": "https://www.federalregister.gov/api/v1/documents.json?per_page=100&conditions%5Bterm%5D=data%20center&conditions%5Bpublication_date%5D%5Bgte%5D=2026-08-09&conditions%5Bpublication_date%5D%5Blte%5D=2026-08-11",
+      "sourceName": "Federal Register API",
+      "publishedAt": "2026-08-11T08:34:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "federal-register",
+      "sections": ["policy"]
+    },
+    {
+      "ref": "cninfo-gpu-ai-infrastructure-scan-20260811",
+      "tier": "T0",
+      "canonicalUrl": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+      "sourceName": "巨潮资讯公告检索",
+      "publishedAt": "2026-08-11T08:35:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "cninfo",
+      "sections": ["listed-companies", "mna", "cooling", "china-gpu", "supply-chain", "earnings-calendar"]
+    },
+    {
+      "ref": "nvidia-vera-rubin-production-review",
+      "tier": "T1",
+      "canonicalUrl": "https://nvidianews.nvidia.com/news/vera-rubin-full-production-agentic-ai-factory",
+      "sourceName": "NVIDIA Newsroom",
+      "publishedAt": "2026-05-31T00:00:00-07:00",
+      "accessState": "public",
+      "independenceGroup": "nvidia",
+      "sections": ["compute-products", "supply-chain"]
+    },
+    {
+      "ref": "vertiv-q2-2026-review",
+      "tier": "T1",
+      "canonicalUrl": "https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-Second-Quarter-2026-with-Diluted-EPS-Growth-of-53-Adjusted-Diluted-EPS-Growth-of-60-Raises-Full-Year-2026-Guidance-Across-All-Key-Metrics/default.aspx",
+      "sourceName": "Vertiv Investor Relations",
+      "publishedAt": "2026-07-22T07:00:00-04:00",
+      "accessState": "public",
+      "independenceGroup": "vertiv",
+      "sections": ["listed-companies", "cooling", "supply-chain", "earnings-calendar"]
+    },
+    {
+      "ref": "tencent-q2-calendar-review",
+      "tier": "T1",
+      "canonicalUrl": "https://www.tencent.com/investors/investor-kit-calendar/",
+      "sourceName": "Tencent Investor Relations",
+      "publishedAt": "2026-08-11T08:36:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "tencent",
+      "sections": ["earnings-calendar"]
+    },
+    {
+      "ref": "aihot-daily-health-20260811",
+      "tier": "D",
+      "canonicalUrl": "https://aihot.virxact.com/api/v1/dailies/latest",
+      "sourceName": "AI HOT public API",
+      "publishedAt": "2026-08-10T00:00:52.089Z",
+      "accessState": "public",
+      "independenceGroup": "aihot",
+      "sections": ["compute-products", "power-model-demand", "columns"]
+    },
+    {
+      "ref": "google-news-atlas-discovery-20260811",
+      "tier": "D",
+      "canonicalUrl": "https://news.google.com/rss/search?q=data%20center%20when%3A2d&hl=en-US&gl=US&ceid=US%3Aen",
+      "sourceName": "Google News RSS discovery scan",
+      "publishedAt": "2026-08-11T06:56:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "google-news-discovery",
+      "sections": ["idc-pulse", "listed-companies", "mna", "capacity", "cooling", "compute-products", "china-gpu", "supply-chain", "power-model-demand", "rumors", "policy", "columns"]
+    }
+  ]
+}
