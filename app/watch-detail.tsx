@@ -124,8 +124,6 @@ function RumorDetail({ lang, item }: { lang: "zh" | "en"; item: RumorWatchItem }
     <dl className="watch-detail-facts">
       <div><dt>{isZh ? "涉及主体" : "ENTITIES"}</dt><dd className="watch-detail-entities">{item.entities.map((entity) => <span key={entity}>{entity}</span>)}</dd></div>
       <div><dt>{isZh ? "报道状态" : "REPORTING STATUS"}</dt><dd>{isZh ? item.statusLabel : item.statusLabelEn}</dd></div>
-      <div><dt>{isZh ? "报道来源数" : "SOURCE COUNT"}</dt><dd>{item.sourceCount}</dd></div>
-      <div><dt>{isZh ? "来源边界" : "SOURCE BOUNDARY"}</dt><dd>{isZh ? item.sourceNote : item.sourceNoteEn}</dd></div>
     </dl>
   </section>;
 }
