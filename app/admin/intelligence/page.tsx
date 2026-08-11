@@ -3,9 +3,10 @@ import latestRunJson from "../../../artifacts/event-intelligence/latest-run.json
 import strategyComparisonJson from "../../../artifacts/event-intelligence/strategy-comparison.json";
 import type { Route, ShadowRunReport } from "../../../worker/event-intelligence/pipeline.ts";
 import { RuntimeStatus } from "./runtime-status";
+import { EventInspector, EventStream, IntelligenceWorkspace, SourcesTable } from "./workspace";
 
 export const metadata: Metadata = {
-  title: "Intelligence Console · IDC Atlas",
+  title: "事件情报后台 · IDC Atlas",
   robots: { index: false, follow: false },
 };
 
@@ -25,24 +26,34 @@ const report = latestRunJson as unknown as LocalReport;
 const comparison = strategyComparisonJson as unknown as StrategyComparison;
 
 const routeLabels: Record<Route, string> = {
-  "rumor-watch": "Rumor Watch",
-  pulse: "Pulse",
-  "policy-index": "Policy Evidence (legacy)",
-  "research-queue": "Research Queue",
-  hold: "Hold",
-  rejected: "Rejected",
+  "rumor-watch": "市场传闻",
+  pulse: "事实脉冲",
+  "policy-index": "政策证据（历史）",
+  "research-queue": "研究队列",
+  hold: "暂存",
+  rejected: "排除",
 };
 
 function routeLabel(route: Route | undefined): string {
-  return route ? routeLabels[route] : "Hold";
+  return route ? routeLabels[route] : "暂存";
 }
 
 function statusClass(value: string): string {
   return `atlas-intelligence-badge atlas-intelligence-badge-${value.replaceAll("_", "-")}`;
 }
 
-function sourceNames(event: LocalReport["events"][number]): string {
-  return [...new Set(event.sourceChain.map((item) => item.sourceId))].join(" · ");
+function systemLabel(value: string): string {
+  const labels: Record<string, string> = {
+    succeeded: "运行成功",
+    failed: "运行失败",
+    live: "实时输入",
+    replay: "历史回放",
+    shadow: "影子输入",
+    "verified-no-change": "核验无变化",
+    fresh: "数据新鲜",
+    stale: "数据过期",
+  };
+  return labels[value] ?? value;
 }
 
 export default function IntelligenceConsolePage() {
@@ -50,67 +61,58 @@ export default function IntelligenceConsolePage() {
     <main className="atlas-intelligence-page">
       <header className="atlas-intelligence-header">
         <div>
-          <p className="atlas-intelligence-kicker">IDC ATLAS / PRIVATE OPERATIONS</p>
+          <p className="atlas-intelligence-kicker">IDC ATLAS / 私有情报运营</p>
           <h1>事件情报观测台</h1>
-          <p className="atlas-intelligence-lede">观察 source → observation → analysis → event → route 的影子结果。生产 Worker 只写私有 KV；公开站数据源保持不变，直至 Gate 4 具备独立切换条件。</p>
+          <p className="atlas-intelligence-lede">观察信源 → 原始条目 → 分析 → 事件 → 路由的影子结果。生产 Worker 只写私有 KV；公开站数据源保持不变，直至 Gate 4 具备独立切换条件。</p>
         </div>
         <div className="atlas-intelligence-run-status">
-          <span className={statusClass(report.status)}>{report.status}</span>
-          <small>{report.generatedAt} · {report.inputMode ?? "unknown"}</small>
+          <span className={statusClass(report.status)}>{systemLabel(report.status)}</span>
+          <small>{report.generatedAt} · {systemLabel(report.inputMode ?? "未知输入模式")}</small>
         </div>
       </header>
-
-      <RuntimeStatus />
-
-      <nav className="atlas-intelligence-tabs" aria-label="Intelligence views">
-        <a href="#overview">Overview</a>
-        <a href="#sources">Sources</a>
-        <a href="#event-stream">Event Stream</a>
-        <a href="#event-detail">Event Detail</a>
-        <a href="#pipeline-runs">Pipeline Runs</a>
-        <a href="#strategy-lab">Strategy Lab</a>
-      </nav>
-
+      <IntelligenceWorkspace>
       <section id="overview" className="atlas-intelligence-section">
-        <div className="atlas-intelligence-section-heading"><div><span>01</span><h2>Overview</h2></div><small>strategy {report.strategyVersion} · classifier {report.classifierVersion}</small></div>
+        <div className="atlas-intelligence-section-heading"><div><span>01</span><h2>总览</h2></div><small>策略 {report.strategyVersion} · 分类器 {report.classifierVersion}</small></div>
+        <RuntimeStatus />
         <div className="atlas-intelligence-metrics">
-          {([ ["Fetched", report.stats.fetched], ["Relevant", report.stats.relevant], ["Clusters", report.stats.clusters], ["Public eligible", report.stats.publicEligible], ["Failures", report.stats.errors], ["Model calls", report.cost.modelCalls] ] as Array<[string, number]>).map(([label, value]) => <div className="atlas-intelligence-metric" key={label}><small>{label}</small><strong>{value}</strong></div>)}
+          {([ ["抓取条目", report.stats.fetched], ["相关条目", report.stats.relevant], ["事件簇", report.stats.clusters], ["可公开候选", report.stats.publicEligible], ["失败", report.stats.errors], ["模型调用", report.cost.modelCalls] ] as Array<[string, number]>).map(([label, value]) => <div className="atlas-intelligence-metric" key={label}><small>{label}</small><strong>{value}</strong></div>)}
         </div>
         <div className="atlas-intelligence-grid atlas-intelligence-grid-3">
-          <div className="atlas-intelligence-card"><small>Freshness</small><strong>{report.freshness}</strong><p>Run status is derived from connector results; `verified-no-change` remains a valid state.</p></div>
-          <div className="atlas-intelligence-card"><small>Route split</small><strong>{Object.entries(report.stats.routeCounts).filter(([, count]) => count > 0).map(([route, count]) => `${routeLabel(route as Route)} ${count}`).join(" · ")}</strong><p>Evidence route and priority score are stored separately.</p></div>
-          <div className="atlas-intelligence-card"><small>Storage boundary</small><strong>SQLite shadow</strong><p>{report.shadowDbPath ?? "Local shadow database path not recorded"}; no production binding.</p></div>
+          <div className="atlas-intelligence-card"><small>新鲜度</small><strong>{systemLabel(report.freshness)}</strong><p>运行状态由连接器结果生成；“核验无变化”也是有效结果。</p></div>
+          <div className="atlas-intelligence-card"><small>路由分布</small><strong>{Object.entries(report.stats.routeCounts).filter(([, count]) => count > 0).map(([route, count]) => `${routeLabel(route as Route)} ${count}`).join(" · ")}</strong><p>证据路由与优先级分数分别存储，互不替代。</p></div>
+          <div className="atlas-intelligence-card"><small>存储边界</small><strong>SQLite 影子库</strong><p>{report.shadowDbPath ?? "未记录本地影子数据库路径"}；未绑定生产数据。</p></div>
         </div>
       </section>
 
       <section id="sources" className="atlas-intelligence-section">
-        <div className="atlas-intelligence-section-heading"><div><span>02</span><h2>Sources</h2></div><small>{report.sourceRegistryCount ?? report.sourceHealth.length} registered / {report.sourceHealth.length} sampled</small></div>
-        <div className="atlas-intelligence-table-wrap"><table className="atlas-intelligence-table"><thead><tr><th>Source</th><th>Endpoint</th><th>Tier / group</th><th>Status</th><th>Items</th><th>Error</th></tr></thead><tbody>{report.sourceHealth.map((source) => <tr key={`${source.sourceId}-${source.endpointId}`}><td>{source.sourceId}</td><td>{source.endpointId}</td><td>{source.tier} / {source.independenceGroup}</td><td><span className={statusClass(source.status)}>{source.status}</span></td><td>{source.observations}</td><td>{source.error ?? "—"}</td></tr>)}</tbody></table></div>
-        <p className="atlas-intelligence-note">Access status stays attached to each observation. Media-only inputs remain Rumor Watch; AI HOT is discovery/lead input and does not replace original-source verification.</p>
+        <div className="atlas-intelligence-section-heading"><div><span>02</span><h2>信源</h2></div><small>登记 {report.sourceRegistryCount ?? report.sourceHealth.length} 个 / 本次采样 {report.sourceHealth.length} 个</small></div>
+        <SourcesTable sources={report.sourceHealth} />
+        <p className="atlas-intelligence-note">每条原始条目都保留访问状态。只有媒体报道的线索继续进入市场传闻；AI HOT 只用于发现线索，不能替代原始来源核验。</p>
       </section>
 
       <section id="event-stream" className="atlas-intelligence-section">
-        <div className="atlas-intelligence-section-heading"><div><span>03</span><h2>Event Stream</h2></div><small>{report.events.length} clustered events</small></div>
-        <div className="atlas-intelligence-table-wrap"><table className="atlas-intelligence-table"><thead><tr><th>Event</th><th>Route</th><th>Evidence</th><th>Priority</th><th>Sources</th><th>Updated</th></tr></thead><tbody>{report.events.map((event) => <tr key={event.id}><td><a href={`#detail-${event.id}`}><strong>{event.titleZh}</strong></a><small>{event.eventKey}</small></td><td><span className={statusClass(event.route ?? "hold")}>{routeLabel(event.route)}</span></td><td><span className={statusClass(event.evidenceStatus)}>{event.evidenceStatus}</span></td><td>{event.priorityScore ?? 0}</td><td>{sourceNames(event)}</td><td>{event.lastUpdatedAt}</td></tr>)}</tbody></table></div>
+        <div className="atlas-intelligence-section-heading"><div><span>03</span><h2>事件流</h2></div><small>{report.events.length} 个聚类事件</small></div>
+        <EventStream events={report.events} />
       </section>
 
       <section id="event-detail" className="atlas-intelligence-section">
-        <div className="atlas-intelligence-section-heading"><div><span>04</span><h2>Event Detail</h2></div><small>source chain · facts · selection rationale</small></div>
-        <div className="atlas-intelligence-detail-list">{report.events.map((event) => <article id={`detail-${event.id}`} className="atlas-intelligence-detail" key={event.id}><div className="atlas-intelligence-detail-head"><div><p className="atlas-intelligence-eyebrow">{event.eventType} · {event.region}</p><h3>{event.titleZh}</h3><p>{event.summaryZh}</p></div><span className={statusClass(event.route ?? "hold")}>{routeLabel(event.route)}</span></div><div className="atlas-intelligence-detail-columns"><div><small>Source chain</small><ul>{event.sourceChain.map((source) => <li key={source.observationId}><strong>{source.sourceId}</strong> · {source.tier} · {source.relationship} · {source.accessStatus}</li>)}</ul></div><div><small>Facts</small><ul>{event.facts.length ? event.facts.map((fact, index) => <li key={`${event.id}-fact-${index}`}><strong>{fact.valueText}</strong> · {fact.factType} · {fact.qualifier ?? "qualifier pending"} · {fact.capacityType ?? "—"}</li>) : <li>No extracted facts</li>}</ul></div><div><small>Reason codes</small><ul>{(event.reasonCodes ?? []).map((reason) => <li key={reason}>{reason}</li>)}</ul></div></div></article>)}</div>
+        <div className="atlas-intelligence-section-heading"><div><span>04</span><h2>事件详情</h2></div><small>信源链 · 结构化事实 · 筛选依据</small></div>
+        <EventInspector events={report.events} />
       </section>
 
       <section id="pipeline-runs" className="atlas-intelligence-section">
-        <div className="atlas-intelligence-section-heading"><div><span>05</span><h2>Pipeline Runs</h2></div><small>funnel and source health</small></div>
-        <div className="atlas-intelligence-funnel">{[["Fetched", report.stats.fetched], ["Normalized", report.stats.normalized], ["Relevant", report.stats.relevant], ["Deep scored", report.stats.deepScored], ["Clustered", report.stats.clusters], ["Public eligible", report.stats.publicEligible]].map(([label, value]) => <div key={String(label)}><span>{label}</span><strong>{value}</strong></div>)}</div>
-        <div className="atlas-intelligence-grid atlas-intelligence-grid-3"><div className="atlas-intelligence-card"><small>Failures</small><strong>{report.failures.length || "None"}</strong><p>{report.failures.join(" · ") || "No connector failures in this run."}</p></div><div className="atlas-intelligence-card"><small>Cost</small><strong>${report.cost.estimatedUsd.toFixed(4)}</strong><p>{report.cost.note}</p></div><div className="atlas-intelligence-card"><small>DB migration</small><strong>17 tables / 47 indexes</strong><p>Verified on a blank local SQLite database before this run.</p></div></div>
+        <div className="atlas-intelligence-section-heading"><div><span>05</span><h2>管线运行</h2></div><small>处理漏斗与信源健康</small></div>
+        <div className="atlas-intelligence-funnel">{[["抓取", report.stats.fetched], ["标准化", report.stats.normalized], ["相关", report.stats.relevant], ["深度评分", report.stats.deepScored], ["事件聚类", report.stats.clusters], ["可公开候选", report.stats.publicEligible]].map(([label, value]) => <div key={String(label)}><span>{label}</span><strong>{value}</strong></div>)}</div>
+        <div className="atlas-intelligence-grid atlas-intelligence-grid-3"><div className="atlas-intelligence-card"><small>失败</small><strong>{report.failures.length || "无"}</strong><p>{report.failures.join(" · ") || "本次运行没有连接器失败。"}</p></div><div className="atlas-intelligence-card"><small>成本</small><strong>${report.cost.estimatedUsd.toFixed(4)}</strong><p>影子运行使用确定性规则；本次没有调用模型，也没有写入公开站数据。</p></div><div className="atlas-intelligence-card"><small>数据库迁移</small><strong>17 张表 / 47 个索引</strong><p>本次运行前已在空白本地 SQLite 数据库验证。</p></div></div>
       </section>
 
       <section id="strategy-lab" className="atlas-intelligence-section">
-        <div className="atlas-intelligence-section-heading"><div><span>06</span><h2>Strategy Lab</h2></div><small>fixture replay comparison</small></div>
-        <div className="atlas-intelligence-grid atlas-intelligence-grid-2"><div className="atlas-intelligence-card"><small>Current strategy</small><strong>{comparison.current.labelChecks.passed}/{comparison.current.labelChecks.total} labels passed</strong><p>Media-only → Pulse: {comparison.current.mediaOnlyEscalatedToPulse}; legacy non-T0 policy routes: {comparison.current.nonT0PolicyRoutes}; capacity boundary errors: {comparison.current.capacityBoundaryErrors.length}.</p></div><div className="atlas-intelligence-card"><small>Tier-only baseline</small><strong>Media-only → Pulse: {comparison.legacyTierOnly.mediaOnlyEscalatedToPulse}</strong><p>{comparison.legacyTierOnly.note}</p></div></div>
-        <div className="atlas-intelligence-comparison"><div><span>Fixture observations</span><strong>{comparison.fixture.observations}</strong></div><div><span>Labelled events</span><strong>{comparison.fixture.labelledEvents}</strong></div><div><span>Clustered events</span><strong>{comparison.fixture.clusteredEvents}</strong></div></div>
+        <div className="atlas-intelligence-section-heading"><div><span>06</span><h2>策略实验室</h2></div><small>固定样本回放对比</small></div>
+        <div className="atlas-intelligence-grid atlas-intelligence-grid-2"><div className="atlas-intelligence-card"><small>当前策略</small><strong>{comparison.current.labelChecks.passed}/{comparison.current.labelChecks.total} 个标签通过</strong><p>仅媒体报道 → 事实脉冲：{comparison.current.mediaOnlyEscalatedToPulse}；旧版非 T0 政策路由：{comparison.current.nonT0PolicyRoutes}；容量边界错误：{comparison.current.capacityBoundaryErrors.length}。</p></div><div className="atlas-intelligence-card"><small>仅按层级的基线策略</small><strong>仅媒体报道 → 事实脉冲：{comparison.legacyTierOnly.mediaOnlyEscalatedToPulse}</strong><p>{comparison.legacyTierOnly.note}</p></div></div>
+        <div className="atlas-intelligence-comparison"><div><span>样本条目</span><strong>{comparison.fixture.observations}</strong></div><div><span>已标注事件</span><strong>{comparison.fixture.labelledEvents}</strong></div><div><span>聚类事件</span><strong>{comparison.fixture.clusteredEvents}</strong></div></div>
         <p className="atlas-intelligence-note">{comparison.fixture.scaleCaveat}</p>
       </section>
+      </IntelligenceWorkspace>
     </main>
   );
 }

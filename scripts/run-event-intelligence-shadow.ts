@@ -198,6 +198,15 @@ function persistShadowReport(report: ShadowRunReport, results: ConnectorResult[]
           VALUES (?, ?, ?, ?, ?)`).run(
           event.id, chain.observationId, chain.relationship, chain.relationship === "confirmation" ? 1 : 0, chain.observationId === event.mainObservationId ? 1 : 0,
         );
+        if (chain.observationId !== event.mainObservationId && ["new-detail", "official-response", "contradiction"].includes(chain.noveltyClass)) {
+          database.prepare(`INSERT OR IGNORE INTO event_updates
+            (id, event_id, status_from, status_to, change_type, observed_at, source_observation_id, note)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)`).run(
+            `${runId}-${event.id}-${chain.observationId}-delta`, event.id, event.evidenceStatus, event.evidenceStatus,
+            chain.noveltyClass, chain.publishedAt ?? report.generatedAt, chain.observationId,
+            `${chain.noveltyClass}; new facts ${chain.newFactCount}`,
+          );
+        }
       }
       database.prepare(`INSERT OR REPLACE INTO selection_decisions
         (id, event_id, strategy_version, eligible, priority_score, route, reason_codes_json, decided_at)

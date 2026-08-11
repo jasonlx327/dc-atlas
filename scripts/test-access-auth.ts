@@ -40,7 +40,9 @@ try {
   assert.equal(await verifyAccessJwt(await token({ iss: "https://other.example.com" }), options), false);
   assert.equal(await verifyAccessJwt(await token({ exp: options.now }), options), false);
   assert.equal(await verifyAccessJwt(await token({ nbf: options.now + 61 }), options), false);
-  const tampered = `${(await token()).slice(0, -1)}x`;
+  const tamperedParts = (await token()).split(".");
+  tamperedParts[2] = `${tamperedParts[2][0] === "A" ? "B" : "A"}${tamperedParts[2].slice(1)}`;
+  const tampered = tamperedParts.join(".");
   assert.equal(await verifyAccessJwt(tampered, options), false);
 } finally {
   globalThis.fetch = originalFetch;

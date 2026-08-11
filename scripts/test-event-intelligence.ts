@@ -84,6 +84,38 @@ assert.equal(regression.events.some((event) => event.titleEn.includes("Context O
 assert.equal(regression.events.some((event) => event.titleEn.includes("fractional GPU")), true);
 assert.equal(regression.events.some((event) => event.titleEn === "AMD Newsroom"), false);
 
+const clusteringV2Results: ConnectorResult[] = [{
+  status: "ok",
+  sourceId: "clustering-v2",
+  endpointId: "clustering-v2-endpoint",
+  fetchedAt: "2026-08-08T12:01:00.000Z",
+  observations: [
+    observation({ sourceId: "zh-source-a", endpointId: "zh-a", language: "zh-CN", titleOriginal: "英伟达在俄勒冈签署数据中心长期供电协议", summaryOriginal: "英伟达与园区签订长期数据中心电力供应协议。", entities: ["NVIDIA"], locations: ["Oregon"], publishedAt: "2026-08-08T08:00:00.000Z" }),
+    observation({ sourceId: "zh-source-b", endpointId: "zh-b", language: "zh-CN", titleOriginal: "英伟达与俄勒冈园区签订长期数据中心电力协议", summaryOriginal: "这份供电协议覆盖英伟达在俄勒冈的数据中心园区。", entities: ["NVIDIA"], locations: ["Oregon"], publishedAt: "2026-08-08T09:00:00.000Z" }),
+    observation({ sourceId: "en-source", endpointId: "en-source", titleOriginal: "NVIDIA signs 300MW Texas data-center power agreement", summaryOriginal: "The 300 MW planned campus power agreement covers NVIDIA's Texas site.", rawPayload: { stance: "reports", titleZh: "英伟达签署德州300MW数据中心供电协议", summaryZh: "这份300MW园区供电协议覆盖英伟达的德州场址。" }, entities: ["NVIDIA"], locations: ["Texas"], publishedAt: "2026-08-08T10:00:00.000Z" }),
+    observation({ sourceId: "zh-source-c", endpointId: "zh-c", language: "zh-CN", titleOriginal: "英伟达签署德州300MW数据中心供电协议", summaryOriginal: "英伟达确认德州园区规划300MW供电。", rawPayload: { stance: "reports", titleEn: "NVIDIA signs 300MW Texas data-center power agreement", summaryEn: "NVIDIA confirms 300 MW of planned power for the Texas campus." }, entities: ["NVIDIA"], locations: ["Texas"], publishedAt: "2026-08-08T10:30:00.000Z" }),
+    observation({ sourceId: "chain-a", endpointId: "chain-a", titleOriginal: "NVIDIA signs 100MW Nevada data-center agreement", summaryOriginal: "The contract covers a planned 100 MW Nevada data center.", entities: ["NVIDIA"], locations: ["Nevada"], publishedAt: "2026-08-08T07:00:00.000Z" }),
+    observation({ sourceId: "chain-b", endpointId: "chain-b", titleOriginal: "NVIDIA reaches Nevada data-center agreement", summaryOriginal: "The contract covers a planned Nevada data-center campus.", entities: ["NVIDIA"], locations: ["Nevada"], publishedAt: "2026-08-08T07:30:00.000Z" }),
+    observation({ sourceId: "chain-c", endpointId: "chain-c", titleOriginal: "NVIDIA signs 200MW Nevada data-center agreement", summaryOriginal: "The contract covers a planned 200 MW Nevada data center.", entities: ["NVIDIA"], locations: ["Nevada"], publishedAt: "2026-08-08T08:00:00.000Z" }),
+    observation({ sourceId: "delta-a", endpointId: "delta-a", titleOriginal: "AMD signs 500MW Arizona data-center agreement", summaryOriginal: "AMD signed a planned 500 MW campus agreement.", entities: ["AMD"], locations: ["Arizona"], publishedAt: "2026-08-08T06:00:00.000Z" }),
+    observation({ sourceId: "delta-b", endpointId: "delta-b", titleOriginal: "AMD reaches 500MW Arizona campus deal worth $5 billion", summaryOriginal: "The planned 500 MW agreement carries a reported $5 billion value.", entities: ["AMD"], locations: ["Arizona"], publishedAt: "2026-08-08T07:00:00.000Z" }),
+    observation({ sourceId: "delta-c", endpointId: "delta-c", titleOriginal: "AMD responds to 500MW Arizona data-center agreement report", summaryOriginal: "AMD responded to reporting about the planned 500 MW agreement.", rawPayload: { stance: "responds" }, entities: ["AMD"], locations: ["Arizona"], publishedAt: "2026-08-08T08:00:00.000Z" }),
+  ],
+}];
+const clusteringV2 = await runShadowPipeline(clusteringV2Results, sourceRegistry, { generatedAt: "2026-08-08T14:00:00.000Z" });
+const chineseCluster = clusteringV2.events.find((event) => event.sourceChain.some((source) => source.sourceId === "zh-source-a"));
+assert.equal(chineseCluster?.sourceChain.length, 2, "Chinese near-duplicate headlines should cluster without whitespace tokenization");
+const bilingualCluster = clusteringV2.events.find((event) => event.sourceChain.some((source) => source.sourceId === "en-source"));
+assert.equal(bilingualCluster?.sourceChain.length, 2, "recorded bilingual pairs should support cross-language clustering");
+const chainClusters = clusteringV2.events.filter((event) => event.sourceChain.some((source) => source.sourceId.startsWith("chain-")));
+assert.equal(chainClusters.length, 2, "incompatible capacity anchors must not merge through a bridge observation");
+assert.equal(chainClusters.some((event) => event.sourceChain.some((source) => source.sourceId === "chain-a") && event.sourceChain.some((source) => source.sourceId === "chain-c")), false);
+const deltaCluster = clusteringV2.events.find((event) => event.sourceChain.some((source) => source.sourceId === "delta-a"));
+assert.equal(deltaCluster?.sourceChain.length, 3);
+assert.equal(deltaCluster?.sourceChain.find((source) => source.sourceId === "delta-b")?.noveltyClass, "new-detail");
+assert.ok((deltaCluster?.sourceChain.find((source) => source.sourceId === "delta-b")?.newFactCount ?? 0) > 0);
+assert.equal(deltaCluster?.sourceChain.find((source) => source.sourceId === "delta-c")?.noveltyClass, "official-response");
+
 const scheduleCases = [
   [new Date("2026-08-08T21:30:00Z"), "event-night"],
   [new Date("2026-08-08T22:00:00Z"), "snapshot-daily"],

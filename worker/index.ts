@@ -10,6 +10,13 @@ import {
 import { verifyAccessJwt } from "./access-auth.ts";
 import { eventRuntimeStatus, runEventIntelligenceShadow } from "./event-intelligence/runtime.ts";
 import { dispatchEventIntelligenceSchedule } from "./event-intelligence/schedule.ts";
+import {
+  feedbackHistoryKey,
+  feedbackLatestKey,
+  isEventIdentifier,
+  parseEditorialFeedback,
+  type EditorialFeedbackRecord,
+} from "./event-intelligence/editorial-feedback.ts";
 
 const AIHOT_ENDPOINT = "https://aihot.virxact.com/api/public/items";
 const AIHOT_DAILY_ENDPOINT = "https://aihot.virxact.com/api/public/daily";
@@ -3367,8 +3374,8 @@ function shouldPrimeHomepage(request: Request, url: URL): boolean {
 
 const LANGUAGE_COOKIE = "idc_lang";
 
-function isAdminHost(url: URL, env: Env): boolean {
-  return url.hostname === env.ATLAS_ADMIN_HOST;
+function isAdminHost(url: URL, env?: Env): boolean {
+  return Boolean(env?.ATLAS_ADMIN_HOST && url.hostname === env.ATLAS_ADMIN_HOST);
 }
 
 async function adminAuthorized(request: Request, env: Env): Promise<boolean> {
@@ -3383,6 +3390,64 @@ async function adminRuntimeApi(env: Env): Promise<Response> {
   return Response.json({ status: await eventRuntimeStatus(env) }, {
     headers: { "cache-control": "private, no-store", "x-robots-tag": "noindex, nofollow" },
   });
+}
+
+const ADMIN_API_HEADERS = {
+  "cache-control": "private, no-store",
+  "x-robots-tag": "noindex, nofollow",
+};
+
+function adminJson(payload: unknown, status = 200): Response {
+  return Response.json(payload, { status, headers: ADMIN_API_HEADERS });
+}
+
+async function adminFeedbackApi(request: Request, env: Env): Promise<Response> {
+  const url = new URL(request.url);
+
+  if (request.method === "GET") {
+    const eventId = url.searchParams.get("eventId")?.trim() ?? "";
+    if (!isEventIdentifier(eventId)) return adminJson({ error: "事件 ID 无效。" }, 400);
+    const feedback = await env.IDC_DAILY_SNAPSHOTS.get<EditorialFeedbackRecord>(feedbackLatestKey(eventId), "json");
+    return adminJson({ feedback: feedback ? { ...feedback, actor: "owner" } : null });
+  }
+
+  if (request.method !== "POST") {
+    return new Response("Method not allowed", { status: 405, headers: { ...ADMIN_API_HEADERS, allow: "GET, POST" } });
+  }
+
+  const origin = request.headers.get("origin");
+  if (origin && origin !== url.origin) return adminJson({ error: "跨站请求已拒绝。" }, 403);
+  if (!request.headers.get("content-type")?.toLowerCase().startsWith("application/json")) {
+    return adminJson({ error: "请求必须使用 JSON。" }, 415);
+  }
+
+  const raw = await request.text();
+  if (raw.length > 4_096) return adminJson({ error: "反馈内容过长。" }, 413);
+
+  let input: unknown;
+  try {
+    input = JSON.parse(raw);
+  } catch {
+    return adminJson({ error: "JSON 格式无效。" }, 400);
+  }
+
+  const parsed = parseEditorialFeedback(input);
+  if (!parsed.ok) return adminJson({ error: parsed.error }, 400);
+
+  const record: EditorialFeedbackRecord = {
+    schemaVersion: "atlas-editorial-feedback.v1",
+    id: crypto.randomUUID(),
+    ...parsed.value,
+    actor: env.ATLAS_ADMIN_EMAIL,
+    createdAt: new Date().toISOString(),
+  };
+  const serialized = JSON.stringify(record);
+  await Promise.all([
+    env.IDC_DAILY_SNAPSHOTS.put(feedbackLatestKey(record.eventId), serialized),
+    env.IDC_DAILY_SNAPSHOTS.put(feedbackHistoryKey(record), serialized),
+  ]);
+
+  return adminJson({ feedback: { ...record, actor: "owner" } }, 201);
 }
 
 function cookieValue(request: Request, name: string): string | null {
@@ -3431,6 +3496,11 @@ function languagePreferenceResponse(request: Request, url: URL): Response | null
   return new Response(null, { status: 307, headers });
 }
 
+function isLocalAdminRequest(url: URL): boolean {
+  return (url.hostname === "localhost" || url.hostname === "127.0.0.1")
+    && (url.pathname.startsWith("/admin/") || url.pathname.startsWith("/api/admin/"));
+}
+
 const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
@@ -3443,11 +3513,12 @@ const worker = {
       if (url.hostname === "idc-index.com" && url.pathname.startsWith("/admin")) {
         return new Response("Not found", { status: 404, headers: { "x-robots-tag": "noindex, nofollow" } });
       }
-      if (isAdminHost(url, env)) {
-        if (!(await adminAuthorized(request, env))) {
+      if (isAdminHost(url, env) || isLocalAdminRequest(url)) {
+        if (isAdminHost(url, env) && !(await adminAuthorized(request, env))) {
           return new Response("Unauthorized", { status: 401, headers: { "cache-control": "private, no-store", "x-robots-tag": "noindex, nofollow" } });
         }
         if (url.pathname === "/api/admin/intelligence") return await adminRuntimeApi(env);
+        if (url.pathname === "/api/admin/intelligence/feedback") return await adminFeedbackApi(request, env);
         if (url.pathname === "/") {
           return Response.redirect(new URL("/admin/intelligence", url), 302);
         }

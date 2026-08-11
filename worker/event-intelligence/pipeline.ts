@@ -1,7 +1,7 @@
 import type { ConnectorResult, ObservationEnvelope, SourceDefinition, SourceTier } from "../connectors/types.ts";
 import { recordedTranslationAdapter } from "./provider-contract.ts";
 
-export const STRATEGY_VERSION = "atlas-event-v1";
+export const STRATEGY_VERSION = "atlas-event-v2";
 export const CLASSIFIER_VERSION = "rules-v1";
 
 export type TopicBucket =
@@ -63,6 +63,8 @@ export type AnalyzedObservation = NormalizedObservation & Classification & Analy
 export type ClusterRelationship = {
   observationId: string;
   relationship: "origin" | "confirmation" | "official_response" | "syndication" | "translation" | "follow_up" | "contradiction";
+  noveltyClass: "new-event" | "new-source" | "new-detail" | "official-response" | "contradiction" | "duplicate";
+  newFactCount: number;
   isIndependentConfirmation: boolean;
   isMain: boolean;
 };
@@ -178,6 +180,8 @@ export type ShadowRunReport = {
       tier: SourceTier;
       independenceGroup: string;
       relationship: ClusterRelationship["relationship"];
+      noveltyClass: ClusterRelationship["noveltyClass"];
+      newFactCount: number;
       title: string;
       url: string;
       publishedAt: string | null;
@@ -503,7 +507,9 @@ const clusterStopWords = new Set([
 ]);
 
 function normalizedEventText(observation: AnalyzedObservation): string {
-  return `${observation.normalizedTitle} ${observation.normalizedSummary}`
+  return [observation.normalizedTitle, observation.normalizedSummary, observation.titleZh, observation.titleEn, observation.summaryZh, observation.summaryEn]
+    .filter(Boolean)
+    .join(" ")
     .toLocaleLowerCase()
     .replace(/\b(?:one[-\s]?gigawatt)\b/g, "1gw")
     .replace(/\b(?:one[-\s]?megawatt)\b/g, "1mw")
@@ -532,10 +538,17 @@ function capacityAnchors(observation: AnalyzedObservation): string[] {
 }
 
 function significantTokens(observation: AnalyzedObservation): Set<string> {
-  return new Set(normalizedEventText(observation)
-    .replace(/[^a-z0-9\u4e00-\u9fff]+/g, " ")
+  const text = normalizedEventText(observation);
+  const latin = text
+    .replace(/[^a-z0-9]+/g, " ")
     .split(/\s+/)
-    .filter((token) => token.length >= 3 && !clusterStopWords.has(token) && !/^\d+(?:\.\d+)?(?:gw|mw|kw)$/.test(token)));
+    .filter((token) => token.length >= 3 && !clusterStopWords.has(token) && !/^\d+(?:\.\d+)?(?:gw|mw|kw)$/.test(token));
+  const cjk = [...text.matchAll(/[\u3400-\u9fff]+/g)].flatMap(([run]) => {
+    const terms: string[] = [];
+    for (let index = 0; index < run.length - 1; index += 1) terms.push(run.slice(index, index + 2));
+    return terms;
+  });
+  return new Set([...latin, ...cjk]);
 }
 
 function tokenSimilarity(left: AnalyzedObservation, right: AnalyzedObservation): number {
@@ -546,6 +559,13 @@ function tokenSimilarity(left: AnalyzedObservation, right: AnalyzedObservation):
   let shared = 0;
   for (const token of leftTokens) if (rightTokens.has(token)) shared += 1;
   return shared / union.size;
+}
+
+function factIdentity(fact: FactCandidate): string | null {
+  if (fact.factType === "date") return null;
+  return [fact.factType, fact.valueNumber ?? fact.valueText, fact.unit ?? "", fact.qualifier ?? "", fact.capacityType ?? ""]
+    .join("|")
+    .toLocaleLowerCase();
 }
 
 function sameNamedEntity(left: AnalyzedObservation, right: AnalyzedObservation): boolean {
@@ -573,6 +593,11 @@ function observationsDescribeSameEvent(left: AnalyzedObservation, right: Analyze
   return tokenSimilarity(left, right) >= 0.16 || (leftCapacity.length > 0 && rightCapacity.length > 0);
 }
 
+function candidateBlockKeys(observation: AnalyzedObservation): string[] {
+  const action = actionBucket(observation);
+  return [...new Set((observation.entities ?? []).map((entity) => `${entity.toLocaleLowerCase()}|${action}`))];
+}
+
 function automaticClusterKey(group: AnalyzedObservation[]): string {
   const first = group[0];
   const entity = (first.entities?.[0] ?? first.sourceId).toLocaleLowerCase();
@@ -596,18 +621,40 @@ function buildObservationGroups(observations: AnalyzedObservation[]): Map<string
     const rightRoot = find(right);
     if (leftRoot !== rightRoot) parent[rightRoot] = leftRoot;
   };
-  for (let left = 0; left < automatic.length; left += 1) {
-    for (let right = left + 1; right < automatic.length; right += 1) {
-      if (observationsDescribeSameEvent(automatic[left], automatic[right])) union(left, right);
+  const candidateBlocks = new Map<string, number[]>();
+  for (const [index, observation] of automatic.entries()) {
+    for (const key of candidateBlockKeys(observation)) candidateBlocks.set(key, [...(candidateBlocks.get(key) ?? []), index]);
+  }
+  const compared = new Set<string>();
+  for (const indices of candidateBlocks.values()) {
+    for (let leftIndex = 0; leftIndex < indices.length; leftIndex += 1) {
+      for (let rightIndex = leftIndex + 1; rightIndex < indices.length; rightIndex += 1) {
+        const left = indices[leftIndex];
+        const right = indices[rightIndex];
+        const pairKey = `${Math.min(left, right)}|${Math.max(left, right)}`;
+        if (compared.has(pairKey)) continue;
+        compared.add(pairKey);
+        if (observationsDescribeSameEvent(automatic[left], automatic[right])) union(left, right);
+      }
     }
   }
-  const autoGroups = new Map<number, AnalyzedObservation[]>();
+  const connected = new Map<number, AnalyzedObservation[]>();
   for (let index = 0; index < automatic.length; index += 1) {
     const root = find(index);
-    autoGroups.set(root, [...(autoGroups.get(root) ?? []), automatic[index]]);
+    connected.set(root, [...(connected.get(root) ?? []), automatic[index]]);
+  }
+  const autoGroups: AnalyzedObservation[][] = [];
+  for (const component of connected.values()) {
+    const partitions: AnalyzedObservation[][] = [];
+    for (const observation of component) {
+      const compatible = partitions.find((partition) => partition.every((member) => observationsDescribeSameEvent(member, observation)));
+      if (compatible) compatible.push(observation);
+      else partitions.push([observation]);
+    }
+    autoGroups.push(...partitions);
   }
   const groups = new Map(explicit);
-  for (const group of autoGroups.values()) groups.set(automaticClusterKey(group), group);
+  for (const group of autoGroups) groups.set(automaticClusterKey(group), group);
   return groups;
 }
 
@@ -631,6 +678,27 @@ export async function clusterObservations(observations: AnalyzedObservation[]): 
     const media = group.filter((item) => ["T2", "T3"].includes(item.sourceTier));
     const main = official ?? group.find((item) => !["responds", "denies", "questions"].includes(stanceOf(item))) ?? ordered[0];
     const evidenceStatus: EventCluster["evidenceStatus"] = response && !official ? "official_response" : official ? "officially_confirmed" : media.length > 0 ? "reported" : "lead";
+    const chronological = [...group].sort((left, right) => new Date(left.publishedAt ?? left.discoveredAt).getTime() - new Date(right.publishedAt ?? right.discoveredAt).getTime());
+    const seenFacts = new Set<string>();
+    const noveltyByObservation = new Map<string, Pick<ClusterRelationship, "noveltyClass" | "newFactCount">>();
+    for (const [index, item] of chronological.entries()) {
+      const factKeys = item.facts.map(factIdentity).filter((key): key is string => Boolean(key));
+      const newFactCount = factKeys.filter((key) => !seenFacts.has(key)).length;
+      const stance = stanceOf(item);
+      const noveltyClass: ClusterRelationship["noveltyClass"] = index === 0
+        ? "new-event"
+        : stance === "denies" || stance === "questions"
+          ? "contradiction"
+          : stance === "responds"
+            ? "official-response"
+            : newFactCount > 0
+              ? "new-detail"
+              : chronological.slice(0, index).some((prior) => prior.independenceGroup === item.independenceGroup)
+                ? "duplicate"
+                : "new-source";
+      noveltyByObservation.set(item.id, { noveltyClass, newFactCount });
+      for (const key of factKeys) seenFacts.add(key);
+    }
     const relationships: ClusterRelationship[] = group.map((item) => {
       const stance = stanceOf(item);
       const relationship = item.id === main.id
@@ -638,7 +706,8 @@ export async function clusterObservations(observations: AnalyzedObservation[]): 
         : ["responds", "denies", "questions"].includes(stance)
           ? (stance === "denies" || stance === "questions" ? "contradiction" : "official_response")
           : item.independenceGroup === main.independenceGroup ? "syndication" : item.language.split("-")[0] !== main.language.split("-")[0] ? "translation" : "confirmation";
-      return { observationId: item.id, relationship, isIndependentConfirmation: relationship === "confirmation", isMain: item.id === main.id };
+      const novelty = noveltyByObservation.get(item.id) ?? { noveltyClass: "new-source" as const, newFactCount: 0 };
+      return { observationId: item.id, relationship, ...novelty, isIndependentConfirmation: relationship === "confirmation", isMain: item.id === main.id };
     });
     const dateValues = group.map((item) => item.publishedAt ?? item.discoveredAt).sort();
     const locations = [...new Set(group.flatMap((item) => item.locations ?? []))];
@@ -820,6 +889,8 @@ export async function runShadowPipeline(
         tier: observation.sourceTier,
         independenceGroup: observation.independenceGroup,
         relationship: relation?.relationship ?? "follow_up",
+        noveltyClass: relation?.noveltyClass ?? "new-source",
+        newFactCount: relation?.newFactCount ?? 0,
         title: observation.titleOriginal,
         url: observation.originalUrl,
         publishedAt: observation.publishedAt ?? null,
