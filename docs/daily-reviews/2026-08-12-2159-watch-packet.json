@@ -1,0 +1,122 @@
+{
+  "schema_version": "atlas-watch.v1",
+  "generated_at": "2026-08-12T14:00:58.849060+00:00",
+  "stats": {
+    "input_items": 1,
+    "included_items": 1,
+    "excluded_items": 0,
+    "duplicate_items": 0,
+    "clusters": 1,
+    "route_counts": {
+      "rumor_watch": 1,
+      "pulse_candidate": 0,
+      "atlas_research_candidate": 0,
+      "relationship_edges": 0
+    }
+  },
+  "clusters": [
+    {
+      "event_id": "evt-62470b03cd283f",
+      "event_key": "bank-of-america|infrastructure-financing-plan|ai-and-energy|united-states|2026-2027",
+      "label": "Bank of America is reported to be planning a $250B AI and energy-infrastructure initiative",
+      "first_seen_at": "2026-08-12T09:00:00+00:00",
+      "last_updated_at": "2026-08-12T09:00:00+00:00",
+      "status": "single-source-report",
+      "entities": [
+        "Bank of America",
+        "data centers",
+        "semiconductors",
+        "power generation",
+        "energy storage"
+      ],
+      "locations": [
+        "United States"
+      ],
+      "event_types": [
+        "infrastructure-financing-plan"
+      ],
+      "topic_hits": [
+        "corporate-event",
+        "data-center",
+        "power"
+      ],
+      "materiality_hits": [
+        "infrastructure-gate",
+        "money"
+      ],
+      "independent_source_count": 1,
+      "observed_source_count": 1,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T2"
+      ],
+      "access_limits": [
+        "paywalled"
+      ],
+      "items": [
+        {
+          "item_id": "itm-93ce0311eb0650",
+          "title": "Bank of America is reported to be planning a $250B AI and energy-infrastructure initiative",
+          "url": "https://wsj.com/finance/banking/bank-of-america-to-deploy-250-billion-to-bolster-ai-and-energy-infrastructure-d8471732",
+          "origin_url": "",
+          "source_name": "The Wall Street Journal",
+          "source_id": "wsj",
+          "source_class": "major-media",
+          "evidence_tier": "T2",
+          "independence_group": "wall-street-journal",
+          "access": "paywalled",
+          "author": "",
+          "published_at": "2026-08-12T09:00:00+00:00",
+          "discovered_at": "2026-08-12T21:54:47+08:00",
+          "summary": "The Wall Street Journal reported that Bank of America plans to support $250 billion of U.S. infrastructure activity from early 2026 through mid-2027 across lending, investment, capital-markets, banking and advisory work. The stated scope includes data centers, semiconductors, equipment, generation and energy storage; no project allocation, financing agreement or data-center capacity is disclosed.",
+          "language": "en",
+          "entities": [
+            "Bank of America",
+            "data centers",
+            "semiconductors",
+            "power generation",
+            "energy storage"
+          ],
+          "locations": [
+            "United States"
+          ],
+          "event_type": "infrastructure-financing-plan",
+          "event_key": "bank-of-america|infrastructure-financing-plan|ai-and-energy|united-states|2026-2027",
+          "stance": "reports",
+          "topic_hits": [
+            "corporate-event",
+            "data-center",
+            "power"
+          ],
+          "materiality_hits": [
+            "infrastructure-gate",
+            "money"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": true,
+        "pulse_candidate": false,
+        "atlas_research_candidate": false,
+        "relationship_edges": false
+      },
+      "relationship_edges": [],
+      "claims_to_verify": [
+        {
+          "claim": "The Wall Street Journal reported that Bank of America plans to support $250 billion of U.S. infrastructure activity from early 2026 through mid-2027 across lending, investment, capital-markets, banking and advisory work. The stated scope includes data centers, semiconductors, equipment, generation and energy storage; no project allocation, financing agreement or data-center capacity is disclosed.",
+          "attribution": "The Wall Street Journal",
+          "source_item_ids": [
+            "itm-93ce0311eb0650"
+          ],
+          "starting_status": "not-determined"
+        }
+      ],
+      "atlas_research_handoff_stub": null,
+      "hold_reasons": []
+    }
+  ],
+  "excluded": [],
+  "duplicates": []
+}

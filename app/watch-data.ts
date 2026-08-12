@@ -235,6 +235,26 @@ export const POLICY_BRIEFS: PolicyIndexRecord[] = [
 
 export const RUMOR_BRIEFS: RumorWatchItem[] = [
   {
+    id: "bank-of-america-ai-energy-infrastructure-plan-2026",
+    title: "美国银行据报拟推动2500亿美元AI与能源基础设施融资计划",
+    titleEn: "Bank of America is reported to be planning a $250B AI and energy-infrastructure initiative",
+    summary: "《华尔街日报》8月12日报道，美国银行计划在2026年初至2027年年中，通过贷款、投资、资本市场、银行与顾问服务，推动2500亿美元规模的美国基础设施活动；覆盖数据中心、半导体、设备、传统与可再生发电、储能等领域。报道未披露已签约的数据中心或能源项目清单、各领域分配金额或单笔融资条款；该数字是跨多种金融服务的计划规模，不应视为美国银行已承诺的自有资本或已落地的数据中心容量。",
+    summaryEn: "The Wall Street Journal reported on August 12 that Bank of America plans to support $250 billion of U.S. infrastructure activity from early 2026 through mid-2027 through lending, investment, capital-markets, banking and advisory work. The stated scope includes data centers, semiconductors, equipment, conventional and renewable generation, and energy storage. No signed data-center or energy-project list, sector allocation or individual financing terms were disclosed; the figure is a cross-service initiative target, not disclosed Bank of America balance-sheet capital or completed data-center capacity.",
+    publishedAt: "2026-08-12T09:00:00Z",
+    sourceName: "The Wall Street Journal",
+    sourceUrl: "https://www.wsj.com/finance/banking/bank-of-america-to-deploy-250-billion-to-bolster-ai-and-energy-infrastructure-d8471732",
+    region: "美国",
+    status: "reported",
+    statusLabel: "单一媒体报道 · 资金计划未细分",
+    statusLabelEn: "Single-source report · funding plan not allocated",
+    sourceCount: 1,
+    entities: ["Bank of America", "数据中心", "半导体", "发电", "储能"],
+    officialResponse: "《华尔街日报》将该计划归因于美国银行；截至本轮扫描截止时间，未找到美国银行公开新闻稿、项目清单、融资协议或监管文件，用以确认计划中具体数据中心、能源资产、融资形式或已承诺金额。",
+    officialResponseEn: "The Wall Street Journal attributes the initiative to Bank of America. By this scan's cutoff, no Bank of America public release, project list, financing agreement or regulatory filing was located to confirm specific data centers, energy assets, funding structures or committed amounts within the plan.",
+    sourceNote: "核心金额、范围和期限来自《华尔街日报》的单一报道，原文受访问限制。本条仅记录报道中的计划，不将其延伸为已签约融资、已落实资本开支或可用电力/算力容量。",
+    sourceNoteEn: "The amount, scope and timeframe come from a single Wall Street Journal report with access limitations. This item records the reported plan only; it does not establish signed financing, committed capital expenditure, available power or compute capacity.",
+  },
+  {
     id: "amazon-pecos-onsite-gas-data-center-2026",
     title: "Amazon据报确认在得州Pecos County推进配套现场发电的数据中心项目",
     titleEn: "Amazon is reported to have confirmed a Pecos County data-center project with on-site generation",

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Bank of America is reported to be planning a $250B AI and energy-infrastructure initiative",
+    "url": "https://www.wsj.com/finance/banking/bank-of-america-to-deploy-250-billion-to-bolster-ai-and-energy-infrastructure-d8471732",
+    "source_name": "The Wall Street Journal",
+    "published_at": "2026-08-12T09:00:00Z",
+    "discovered_at": "2026-08-12T21:54:47+08:00",
+    "summary": "The Wall Street Journal reported that Bank of America plans to support $250 billion of U.S. infrastructure activity from early 2026 through mid-2027 across lending, investment, capital-markets, banking and advisory work. The stated scope includes data centers, semiconductors, equipment, generation and energy storage; no project allocation, financing agreement or data-center capacity is disclosed.",
+    "language": "en",
+    "entities": ["Bank of America", "data centers", "semiconductors", "power generation", "energy storage"],
+    "locations": ["United States"],
+    "event_type": "infrastructure-financing-plan",
+    "event_key": "bank-of-america|infrastructure-financing-plan|ai-and-energy|united-states|2026-2027",
+    "stance": "reports",
+    "source_class": "major-media",
+    "evidence_tier": "T2",
+    "independence_group": "wall-street-journal",
+    "access": "paywalled"
+  }
+]
