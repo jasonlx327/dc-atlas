@@ -14,6 +14,7 @@ for (const observation of observations) {
 }
 const results: ConnectorResult[] = [...groups.entries()].map(([key, items]) => {
   const [sourceId, endpointId] = key.split("/");
+  assert.ok(sourceId && endpointId);
   return { status: "ok", sourceId, endpointId, fetchedAt: "2026-08-08T14:00:00.000Z", httpStatus: 200, responseMs: 1, observations: items };
 });
 const report = await runShadowPipeline(results, sourceRegistry, { generatedAt: "2026-08-08T14:00:00.000Z" });
@@ -24,7 +25,7 @@ assert.equal(report.stats.duplicates, 1);
 assert.equal(report.stats.clusters, 7);
 assert.equal(report.events.find((event) => event.eventKey.startsWith("cloud-company|"))?.route, "rumor-watch");
 assert.equal(report.events.find((event) => event.eventKey.startsWith("us-policy|"))?.route, "pulse");
-assert.ok(report.events.find((event) => event.eventKey.startsWith("us-policy|"))?.reasonCodes.includes("material-official-policy-routes-to-pulse"));
+assert.equal(report.events.find((event) => event.eventKey.startsWith("us-policy|"))?.reasonCodes?.includes("material-official-policy-routes-to-pulse"), true);
 assert.equal(report.events.filter((event) => event.route === "pulse" && event.sourceTiers.every((tier) => tier !== "T0" && tier !== "T1")).length, 0);
 assert.equal(report.events.filter((event) => event.eligible).flatMap((event) => event.facts).filter((fact) => fact.factType === "capacity" && (!fact.qualifier || !fact.capacityType)).length, 0);
 assert.equal(report.events.find((event) => event.eventKey.startsWith("nvidia|capacity-plan|other-campus"))?.route, "hold");
@@ -118,23 +119,27 @@ assert.equal(deltaCluster?.sourceChain.find((source) => source.sourceId === "del
 
 const scheduleCases = [
   [new Date("2026-08-08T21:30:00Z"), "event-night"],
+  [new Date("2026-08-08T04:30:00Z"), "event-midday"],
   [new Date("2026-08-08T22:00:00Z"), "snapshot-daily"],
-  [new Date("2026-08-08T09:30:00Z"), "event-day"],
+  [new Date("2026-08-08T22:30:00Z"), "daily-closure"],
+  [new Date("2026-08-08T12:30:00Z"), "event-day"],
 ] as const;
 for (const [date, expected] of scheduleCases) assert.equal(jobForUtcSlot(date), expected);
 assert.equal(jobForUtcSlot(new Date("2026-08-08T12:00:00Z")), null);
-assert.equal(new Set(eventIntelligenceSchedule.map((item) => item.job)).size, 3);
+assert.equal(new Set(eventIntelligenceSchedule.map((item) => item.job)).size, 5);
 assert.match(beijingLabel(new Date("2026-08-08T21:30:00Z")), /08\/09|8\/9/);
 assert.match(newYorkLabel(new Date("2026-01-15T15:00:00Z")), /10:00/);
 assert.match(newYorkLabel(new Date("2026-07-15T15:00:00Z")), /11:00/);
 const dispatched: string[] = [];
 const handlers = {
   "event-night": async () => { dispatched.push("event-night"); },
+  "event-midday": async () => { dispatched.push("event-midday"); },
   "snapshot-daily": async () => { dispatched.push("snapshot-daily"); },
+  "daily-closure": async () => { dispatched.push("daily-closure"); },
   "event-day": async () => { dispatched.push("event-day"); },
 };
 for (const [date] of scheduleCases) await dispatchEventIntelligenceSchedule(date, handlers);
-assert.deepEqual(dispatched, ["event-night", "snapshot-daily", "event-day"]);
+assert.deepEqual(dispatched, ["event-night", "event-midday", "snapshot-daily", "daily-closure", "event-day"]);
 
 const originalFetch = globalThis.fetch;
 try {

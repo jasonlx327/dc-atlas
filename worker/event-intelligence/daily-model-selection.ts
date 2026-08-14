@@ -1,0 +1,346 @@
+import type { SourceTier } from "../connectors/types.ts";
+import type { Route, ShadowRunReport } from "./pipeline.ts";
+import { matchCoreCompanies } from "./core-company-watchlist.ts";
+import {
+  modelMaterialBand,
+  modelScoringStatus,
+  modelUsageKey,
+  scoreWithOpenAiCompatible,
+  type ModelMaterialBand,
+  type ModelScoringInput,
+  type ModelScoringResult,
+} from "./model-scoring.ts";
+
+type EventRecord = ShadowRunReport["events"][number];
+export type DailySelectionSlot = "event-night" | "event-midday" | "event-day";
+
+export type DailyMaterialSelectionItem = {
+  eventId: string;
+  titleZh: string;
+  titleEn: string;
+  summaryZh: string;
+  summaryEn: string;
+  route: Route;
+  routeCandidates: Route[];
+  priorityScore: number;
+  band: ModelMaterialBand;
+  publicationReadiness: "eligible-by-rules" | "needs-source-verification";
+  evidenceStatus: EventRecord["evidenceStatus"];
+  sourceTiers: SourceTier[];
+  independentSourceCount: number;
+  coreCompanies: string[];
+  sourceChain: EventRecord["sourceChain"];
+  firstSeenAt: string;
+  lastUpdatedAt: string;
+  sourceLastUpdatedAt: string;
+  result: ModelScoringResult;
+};
+
+export type DailyMaterialSelectionReport = {
+  schemaVersion: "atlas-daily-model-selection.v1";
+  day: string;
+  generatedAt: string;
+  sourceSlots: DailySelectionSlot[];
+  status: "completed" | "partial" | "skipped";
+  model: string;
+  candidateCount: number;
+  newCandidateCount: number;
+  alreadyScoredCount: number;
+  attemptedCount: number;
+  selectedCount: number;
+  watchCount: number;
+  droppedCount: number;
+  packetKey: string;
+  items: DailyMaterialSelectionItem[];
+  errors: string[];
+};
+
+export type DailyEditorialCandidatePacket = {
+  schemaVersion: "atlas-daily-candidate-packet.v1";
+  day: string;
+  generatedAt: string;
+  sourceSlots: DailySelectionSlot[];
+  model: string;
+  status: DailyMaterialSelectionReport["status"];
+  candidateCount: number;
+  selectedCount: number;
+  watchCount: number;
+  publicationReadyCount: number;
+  selected: DailyMaterialSelectionItem[];
+  watch: DailyMaterialSelectionItem[];
+  errors: string[];
+};
+
+export const DAILY_MODEL_SELECTION_LATEST_KEY = "event-intelligence:model-selection:latest";
+export const DAILY_CANDIDATE_PACKET_LATEST_KEY = "event-intelligence:daily-candidates:latest";
+
+function beijingDay(date: Date): string {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Shanghai" }).format(date);
+}
+
+function selectionDayKey(day: string): string {
+  return `event-intelligence:model-selection:${day}`;
+}
+
+function candidatePacketKey(day: string): string {
+  return `event-intelligence:daily-candidates:${day}`;
+}
+
+function eventRunKey(slot: DailySelectionSlot, day: string): string {
+  return `event-intelligence:run:${slot}:${day}`;
+}
+
+function strongestTier(tiers: SourceTier[]): SourceTier {
+  const order: SourceTier[] = ["T0", "T1", "T2", "T3", "T4", "T5", "D"];
+  return order.find((tier) => tiers.includes(tier)) ?? "D";
+}
+
+function isEditorialCandidate(event: EventRecord): boolean {
+  if (event.route === "rejected") return false;
+  const routed = event.routeCandidates?.some((route) => route === "pulse" || route === "rumor-watch" || route === "research-queue");
+  const discoveryLead = event.route === "hold"
+    && event.sourceTiers.includes("D")
+    && (event.priorityScore ?? 0) >= 45
+    && event.scoring.topicRelevanceScore >= 3.5;
+  return Boolean(routed || discoveryLead);
+}
+
+export function dailySelectionCandidates(
+  reports: ShadowRunReport[],
+  scheduledTime: number,
+): EventRecord[] {
+  const cutoff = scheduledTime - 48 * 60 * 60 * 1_000;
+  const merged = new Map<string, EventRecord>();
+  for (const report of reports) {
+    for (const event of report.events) {
+      if (!isEditorialCandidate(event)) continue;
+      const updatedAt = Date.parse(event.lastUpdatedAt);
+      if (!Number.isFinite(updatedAt) || updatedAt < cutoff || updatedAt > scheduledTime + 5 * 60 * 1_000) continue;
+      const prior = merged.get(event.id);
+      if (!prior || Date.parse(prior.lastUpdatedAt) < updatedAt) merged.set(event.id, event);
+    }
+  }
+  return [...merged.values()].sort((left, right) =>
+    Number(matchCoreCompanies([right.titleZh, right.titleEn, ...right.entities]).length > 0)
+      - Number(matchCoreCompanies([left.titleZh, left.titleEn, ...left.entities]).length > 0)
+      || (right.priorityScore ?? 0) - (left.priorityScore ?? 0)
+      || new Date(right.lastUpdatedAt).getTime() - new Date(left.lastUpdatedAt).getTime());
+}
+
+function input(event: EventRecord): ModelScoringInput {
+  return {
+    eventId: event.id,
+    title: event.titleZh,
+    summary: event.summaryZh,
+    sourceTier: strongestTier(event.sourceTiers),
+    evidenceStatus: event.evidenceStatus,
+    independentSourceCount: event.independentSourceCount,
+    coreCompanies: matchCoreCompanies([event.titleZh, event.titleEn, ...event.entities]).map((company) => company.name),
+    sourceChain: event.sourceChain,
+    routeCandidates: event.routeCandidates,
+    entities: event.entities,
+    facts: event.facts.map((fact) => ({
+      factType: fact.factType,
+      valueText: fact.valueText,
+      qualifier: fact.qualifier,
+      capacityType: fact.capacityType,
+    })),
+    lastUpdatedAt: event.lastUpdatedAt,
+  };
+}
+
+function selectionItem(event: EventRecord, result: ModelScoringResult): DailyMaterialSelectionItem {
+  return {
+    eventId: event.id,
+    titleZh: event.titleZh,
+    titleEn: event.titleEn,
+    summaryZh: event.summaryZh,
+    summaryEn: event.summaryEn,
+    route: event.route ?? "research-queue",
+    routeCandidates: event.routeCandidates ?? [],
+    priorityScore: event.priorityScore ?? 0,
+    band: modelMaterialBand(result),
+    publicationReadiness: event.eligible && event.route !== "hold"
+      ? "eligible-by-rules"
+      : "needs-source-verification",
+    evidenceStatus: event.evidenceStatus,
+    sourceTiers: event.sourceTiers,
+    independentSourceCount: event.independentSourceCount,
+    coreCompanies: matchCoreCompanies([event.titleZh, event.titleEn, ...event.entities]).map((company) => company.name),
+    sourceChain: event.sourceChain,
+    firstSeenAt: event.firstSeenAt,
+    lastUpdatedAt: event.lastUpdatedAt,
+    sourceLastUpdatedAt: event.lastUpdatedAt,
+    result,
+  };
+}
+
+function sortItems(items: DailyMaterialSelectionItem[]): DailyMaterialSelectionItem[] {
+  return items.sort((left, right) =>
+    right.result.semanticScore - left.result.semanticScore
+      || right.priorityScore - left.priorityScore
+      || Date.parse(right.lastUpdatedAt) - Date.parse(left.lastUpdatedAt));
+}
+
+export function dailyCandidatePacket(report: DailyMaterialSelectionReport): DailyEditorialCandidatePacket {
+  const selected = report.items.filter((item) => item.band === "selected");
+  const watch = report.items.filter((item) => item.band === "watch");
+  return {
+    schemaVersion: "atlas-daily-candidate-packet.v1",
+    day: report.day,
+    generatedAt: report.generatedAt,
+    sourceSlots: report.sourceSlots,
+    model: report.model,
+    status: report.status,
+    candidateCount: report.candidateCount,
+    selectedCount: selected.length,
+    watchCount: watch.length,
+    publicationReadyCount: selected.filter((item) => item.publicationReadiness === "eligible-by-rules").length,
+    selected,
+    watch,
+    errors: report.errors,
+  };
+}
+
+async function eventReports(env: Env, day: string): Promise<Array<{ slot: DailySelectionSlot; report: ShadowRunReport }>> {
+  const slots: DailySelectionSlot[] = ["event-night", "event-midday", "event-day"];
+  const reports = await Promise.all(slots.map(async (slot) => ({
+    slot,
+    report: await env.IDC_DAILY_SNAPSHOTS.get<ShadowRunReport>(eventRunKey(slot, day), "json"),
+  })));
+  return reports.flatMap(({ slot, report }) => report ? [{ slot, report }] : []);
+}
+
+export async function runDailyModelSelection(
+  env: Env,
+  scheduledTime: number,
+  slot: DailySelectionSlot,
+  options: { fetcher?: typeof fetch } = {},
+): Promise<DailyMaterialSelectionReport> {
+  const scheduledDate = new Date(scheduledTime);
+  const day = beijingDay(scheduledDate);
+  const generatedAt = scheduledDate.toISOString();
+  const status = modelScoringStatus(env);
+  const reportEntries = await eventReports(env, day);
+  const packetKey = candidatePacketKey(day);
+  if (!status.ready || !reportEntries.length) {
+    const skipped: DailyMaterialSelectionReport = {
+      schemaVersion: "atlas-daily-model-selection.v1",
+      day,
+      generatedAt,
+      sourceSlots: reportEntries.map((entry) => entry.slot),
+      status: "skipped",
+      model: status.model,
+      candidateCount: 0,
+      newCandidateCount: 0,
+      alreadyScoredCount: 0,
+      attemptedCount: 0,
+      selectedCount: 0,
+      watchCount: 0,
+      droppedCount: 0,
+      packetKey,
+      items: [],
+      errors: [!status.ready ? "DeepSeek Worker Secret 尚未配置。" : "当日事件管线尚无可用结果。"],
+    };
+    const packet = dailyCandidatePacket(skipped);
+    await Promise.all([
+      env.IDC_DAILY_SNAPSHOTS.put(DAILY_MODEL_SELECTION_LATEST_KEY, JSON.stringify(skipped)),
+      env.IDC_DAILY_SNAPSHOTS.put(DAILY_CANDIDATE_PACKET_LATEST_KEY, JSON.stringify(packet)),
+    ]);
+    return skipped;
+  }
+
+  const candidateList = dailySelectionCandidates(reportEntries.map((entry) => entry.report), scheduledTime);
+  const [sameDay, priorDay] = await Promise.all([
+    env.IDC_DAILY_SNAPSHOTS.get<DailyMaterialSelectionReport>(selectionDayKey(day), "json"),
+    env.IDC_DAILY_SNAPSHOTS.get<DailyMaterialSelectionReport>(selectionDayKey(beijingDay(new Date(scheduledTime - 86_400_000))), "json"),
+  ]);
+  const sameDayById = new Map((sameDay?.items ?? []).map((item) => [item.eventId, item]));
+  const priorDayById = new Map((priorDay?.items ?? []).map((item) => [item.eventId, item]));
+  const unchangedSameDay: DailyMaterialSelectionItem[] = [];
+  const queue: EventRecord[] = [];
+  let alreadyScoredCount = 0;
+  for (const event of candidateList) {
+    const same = sameDayById.get(event.id);
+    if (same?.sourceLastUpdatedAt === event.lastUpdatedAt) {
+      unchangedSameDay.push(same);
+      alreadyScoredCount += 1;
+      continue;
+    }
+    const prior = priorDayById.get(event.id);
+    if (prior?.sourceLastUpdatedAt === event.lastUpdatedAt) {
+      alreadyScoredCount += 1;
+      continue;
+    }
+    queue.push(event);
+  }
+
+  const usageKey = modelUsageKey(scheduledDate);
+  const callsToday = Number.parseInt(await env.IDC_DAILY_SNAPSHOTS.get(usageKey) ?? "0", 10) || 0;
+  const remaining = Math.max(0, status.dailyCallLimit - callsToday);
+  const perSlotLimit = Math.ceil(status.dailyCallLimit / 3);
+  const slotLimit = slot === "event-day" ? remaining : Math.min(remaining, perSlotLimit);
+  const scoreQueue = queue.slice(0, slotLimit);
+  const scoredItems: DailyMaterialSelectionItem[] = [];
+  const errors: string[] = [];
+  let attemptedCount = 0;
+  for (let offset = 0; offset < scoreQueue.length && errors.length < 2; offset += 4) {
+    const chunk = scoreQueue.slice(offset, offset + 4);
+    attemptedCount += chunk.length;
+    const results = await Promise.allSettled(chunk.map(async (event) => ({
+      event,
+      result: await scoreWithOpenAiCompatible(env, input(event), options.fetcher),
+    })));
+    results.forEach((settled, index) => {
+      if (settled.status === "fulfilled") {
+        scoredItems.push(selectionItem(settled.value.event, settled.value.result));
+      } else {
+        const message = settled.reason instanceof Error ? settled.reason.message : "评分失败";
+        errors.push(`${chunk[index]?.id ?? "unknown"}: ${message}`);
+      }
+    });
+  }
+
+  const items = sortItems([...unchangedSameDay, ...scoredItems]);
+  const output: DailyMaterialSelectionReport = {
+    schemaVersion: "atlas-daily-model-selection.v1",
+    day,
+    generatedAt,
+    sourceSlots: reportEntries.map((entry) => entry.slot),
+    status: errors.length ? "partial" : "completed",
+    model: status.model,
+    candidateCount: candidateList.length,
+    newCandidateCount: scoreQueue.length,
+    alreadyScoredCount,
+    attemptedCount,
+    selectedCount: items.filter((item) => item.band === "selected").length,
+    watchCount: items.filter((item) => item.band === "watch").length,
+    droppedCount: items.filter((item) => item.band === "dropped").length,
+    packetKey,
+    items,
+    errors,
+  };
+  const packet = dailyCandidatePacket(output);
+  await Promise.all([
+    env.IDC_DAILY_SNAPSHOTS.put(DAILY_MODEL_SELECTION_LATEST_KEY, JSON.stringify(output)),
+    env.IDC_DAILY_SNAPSHOTS.put(selectionDayKey(day), JSON.stringify(output)),
+    env.IDC_DAILY_SNAPSHOTS.put(DAILY_CANDIDATE_PACKET_LATEST_KEY, JSON.stringify(packet)),
+    env.IDC_DAILY_SNAPSHOTS.put(packetKey, JSON.stringify(packet)),
+    env.IDC_DAILY_SNAPSHOTS.put(usageKey, String(callsToday + attemptedCount), { expirationTtl: 172_800 }),
+  ]);
+  console.log(JSON.stringify({
+    message: "Daily model material selection saved",
+    day,
+    slot,
+    sourceSlots: output.sourceSlots,
+    status: output.status,
+    candidates: output.candidateCount,
+    newCandidates: output.newCandidateCount,
+    alreadyScored: output.alreadyScoredCount,
+    attempted: output.attemptedCount,
+    selected: output.selectedCount,
+    publicationReady: packet.publicationReadyCount,
+    errors: errors.length,
+  }));
+  return output;
+}

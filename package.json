@@ -36,6 +36,12 @@
     "event:historical-replay": "node --experimental-strip-types scripts/run-event-historical-replay.ts",
     "event:gate4:readiness": "node --experimental-strip-types scripts/build-event-gate4-readiness.ts",
     "event:feedback:test": "node --experimental-strip-types scripts/test-editorial-feedback.ts",
+    "event:model:test": "node --experimental-strip-types scripts/test-model-scoring.ts",
+    "event:daily-selection:test": "node --experimental-strip-types scripts/test-daily-model-selection.ts",
+    "event:daily-closure:test": "node --experimental-strip-types scripts/test-daily-section-closure.ts",
+    "event:company-watch:test": "node --experimental-strip-types scripts/test-core-company-watchlist.ts",
+    "event:candidates:show": "wrangler kv key get event-intelligence:daily-candidates:latest --binding IDC_DAILY_SNAPSHOTS --remote",
+    "event:closure:show": "wrangler kv key get atlas-daily-update:closure:latest --binding IDC_DAILY_SNAPSHOTS --remote",
     "auth:test": "node --experimental-strip-types scripts/test-access-auth.ts",
     "event:acceptance:shadow": "node --experimental-strip-types scripts/run-event-intelligence-shadow.ts --mode=live --slot=event-night --db=/private/tmp/idc-atlas-event-intelligence-acceptance.sqlite --output=event-night-live-gate3.json && node --experimental-strip-types scripts/run-event-intelligence-shadow.ts --mode=live --slot=event-day --db=/private/tmp/idc-atlas-event-intelligence-acceptance.sqlite --output=event-day-live-gate3.json && npm run event:evaluate && npm run event:acceptance"
   },

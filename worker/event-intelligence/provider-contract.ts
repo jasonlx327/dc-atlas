@@ -145,8 +145,8 @@ export const recordedResponseProvider: AnalysisProvider = {
 
 export const providerDecision = {
   selectedProvider: deterministicShadowProvider.id,
-  externalProvider: null,
-  externalDecision: "external-decision-required",
-  reason: "No external provider was selected without an explicit model, privacy, retention, latency, and cost decision. Local deterministic and recorded adapters cover this gate.",
+  externalProvider: "openai-compatible-shadow-v1",
+  externalDecision: "implemented-disabled-by-default",
+  reason: "The optional external adapter is restricted to owner-triggered shadow scoring. It cannot change evidence status, routing, eligibility, or public data, and remains disabled until a secret and deployment variables are explicitly configured.",
   candidateResponsibilities: ["classification", "entity-and-fact extraction", "cluster support", "translation only when a recorded pair exists"],
 };

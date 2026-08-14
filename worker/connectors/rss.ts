@@ -30,7 +30,7 @@ function link(block: string): string | null {
 
 function inferEntities(text: string): string[] {
   const known = [
-    "OpenAI", "Anthropic", "Google", "Microsoft", "Amazon", "Meta", "NVIDIA", "AMD", "Intel", "Micron", "SK hynix", "Samsung",
+    "OpenAI", "Anthropic", "Google", "Microsoft", "Amazon", "Meta", "NVIDIA", "AMD", "Intel", "Micron", "SK hynix", "Samsung", "xAI", "Grok", "SpaceXAI",
     "CoreWeave", "Galaxy Digital", "Digital Realty", "Hut 8", "TeraWulf", "MARA", "ERCOT", "PJM", "FERC", "FCC", "DOE", "EPA",
   ];
   return known.filter((name) => new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i").test(text));

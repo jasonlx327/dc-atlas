@@ -1,9 +1,11 @@
-export type EventIntelligenceJob = "event-night" | "snapshot-daily" | "event-day";
+export type EventIntelligenceJob = "event-night" | "event-midday" | "snapshot-daily" | "daily-closure" | "event-day";
 
 export const eventIntelligenceSchedule = [
   { job: "event-night" as const, utc: "30 21 * * *", beijing: "05:30", purpose: "nightly event ingest, cluster and route" },
+  { job: "event-midday" as const, utc: "30 4 * * *", beijing: "12:30", purpose: "midday event ingest, cluster and route" },
   { job: "snapshot-daily" as const, utc: "0 22 * * *", beijing: "06:00", purpose: "existing formal Atlas snapshot" },
-  { job: "event-day" as const, utc: "30 9 * * *", beijing: "17:30", purpose: "daytime event ingest, cluster and route" },
+  { job: "daily-closure" as const, utc: "30 22 * * *", beijing: "06:30", purpose: "DeepSeek selection, 13-section closure and refreshed snapshot" },
+  { job: "event-day" as const, utc: "30 12 * * *", beijing: "20:30", purpose: "evening event ingest, cluster and route" },
 ];
 
 export function jobForUtcSlot(date: Date): EventIntelligenceJob | null {

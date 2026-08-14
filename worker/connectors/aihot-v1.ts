@@ -15,7 +15,7 @@ function stringValue(value: unknown): string | null {
 }
 
 function inferEntities(text: string): string[] {
-  const known = ["OpenAI", "Anthropic", "Google", "Microsoft", "Amazon", "Meta", "NVIDIA", "AMD", "Intel", "Micron", "DeepSeek", "阿里云", "华为", "百度", "腾讯", "字节跳动"];
+  const known = ["OpenAI", "Anthropic", "Google", "Microsoft", "Amazon", "Meta", "NVIDIA", "AMD", "Intel", "Micron", "DeepSeek", "xAI", "Grok", "SpaceX", "SpaceXAI", "阿里云", "华为", "百度", "腾讯", "字节跳动"];
   return known.filter((name) => text.toLocaleLowerCase().includes(name.toLocaleLowerCase()));
 }
 
@@ -69,11 +69,11 @@ function parseAihotItems(source: SourceDefinition, items: unknown[], fetchedAt: 
 
 export async function fetchAihotItems(
   source: SourceDefinition,
-  options: ConnectorFetchOptions & { window?: "24h" | "7d"; query?: string; limit?: number } = {},
+  options: ConnectorFetchOptions & { mode?: "selected" | "all"; window?: "24h" | "7d"; query?: string; limit?: number } = {},
 ): Promise<ConnectorResult> {
   const fetchedAt = new Date().toISOString();
   const url = new URL(`${AIHOT_BASE}/api/v1/items`);
-  url.searchParams.set("mode", "selected");
+  url.searchParams.set("mode", options.mode ?? "selected");
   url.searchParams.set("window", options.window ?? "24h");
   url.searchParams.set("limit", String(options.limit ?? 50));
   if (options.query) url.searchParams.set("q", options.query);

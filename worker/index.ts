@@ -11,12 +11,34 @@ import { verifyAccessJwt } from "./access-auth.ts";
 import { eventRuntimeStatus, runEventIntelligenceShadow } from "./event-intelligence/runtime.ts";
 import { dispatchEventIntelligenceSchedule } from "./event-intelligence/schedule.ts";
 import {
+  DAILY_CANDIDATE_PACKET_LATEST_KEY,
+  DAILY_MODEL_SELECTION_LATEST_KEY,
+  runDailyModelSelection,
+  type DailyEditorialCandidatePacket,
+  type DailyMaterialSelectionReport,
+} from "./event-intelligence/daily-model-selection.ts";
+import {
+  DAILY_SECTION_CLOSURE_LATEST_KEY,
+  isAttributableRumorReport,
+  runDailySectionClosure,
+  type AtlasDailyClosureReport,
+} from "./event-intelligence/daily-section-closure.ts";
+import {
   feedbackHistoryKey,
   feedbackLatestKey,
   isEventIdentifier,
   parseEditorialFeedback,
   type EditorialFeedbackRecord,
 } from "./event-intelligence/editorial-feedback.ts";
+import {
+  deepSeekSessionEnv,
+  modelScoringStatus,
+  modelUsageKey,
+  parseDeepSeekSessionCredentials,
+  parseModelScoringInput,
+  scoreWithOpenAiCompatible,
+} from "./event-intelligence/model-scoring.ts";
+import { sourceRegistryById } from "./connectors/index.ts";
 
 const AIHOT_ENDPOINT = "https://aihot.virxact.com/api/public/items";
 const AIHOT_DAILY_ENDPOINT = "https://aihot.virxact.com/api/public/daily";
@@ -24,52 +46,46 @@ const AIHOT_USER_AGENT = "aihot-skill/0.3.6 (+https://aihot.virxact.com/aihot-sk
 const CWW_ENDPOINT = "https://cwwindex.today/data/latest.json";
 const OPENROUTER_MODELS_ENDPOINT = "https://openrouter.ai/api/v1/models?sort=top-weekly";
 const ARENA_CODE_ENDPOINT = "https://arena.ai/leaderboard/code/webdev";
-const CONTENT_REVIEWED_AT = "2026-08-11";
+const CONTENT_REVIEWED_AT = "2026-08-13";
 const LLMS_TXT = `# IDC Atlas
 
-> IDC Atlas is a bilingual, source-first intelligence site for global data-center construction, AI infrastructure, power, cooling, networking and China AI silicon. Content is for public-information research and industry observation only, not investment advice.
+> IDC Atlas 是一个以来源核验为先的中英双语数据中心与 AI 基础设施情报站，覆盖全球数据中心建设、算力、电力、液冷、网络与中国 AI 芯片。内容仅用于公开信息研究和行业观察，不构成投资建议。
 
-Use original disclosure links attached to individual updates to verify capacity, delivery, commissioning, product specifications and financial claims. The site separates news leads from verified public information. Time-sensitive content is refreshed continuously; dates and status should be checked on the linked source.
+容量、交付、投运、产品规格和财务数字请以每条更新附带的原始披露为准。网站将媒体线索与已核验公开信息分层呈现；时效性内容会持续更新，使用前请核对页面日期、状态与来源链接。
 
-## About
+## 关于本站
 
-- Publisher: IDC Atlas (independent research and industry observation; not investment advice).
-- Languages: Simplified Chinese (zh-CN) and English (en-US).
-- Update cadence: Daily project, company, reported-intelligence and demand signals with source timestamps; research columns are published on their own schedule.
-- Coverage: Data-center projects and capacity, hyperscaler CAPEX and leases, GPU/accelerator and memory supply, power and interconnection, liquid cooling, China AI silicon, and material official policy changes routed into verified Pulse or research.
-- Verification rule: Primary sources (company, regulator, exchange, government and project-owner records) control factual claims. Media items are leads; check the linked original disclosure and its date before relying on any figure.
-- Citation: Cite IDC Atlas for its synthesis and interpretation; link the underlying original disclosure for the factual claim, figure or company statement being discussed.
+- 发布者：IDC Atlas（独立研究与行业观察，不构成投资建议）。
+- 语言：简体中文（zh-CN）与英语（en-US）。
+- 更新节奏：每日更新项目、公司、市场线索与需求信号，并保留来源时间戳；研究专栏按各自的发布节奏更新。
+- 覆盖范围：数据中心项目与容量、云厂商 CAPEX 与租赁、GPU/加速器与内存供给、电力与并网、液冷、中国 AI 芯片，以及进入已核验脉冲或研究的重大官方政策变化。
+- 核验规则：公司、监管机构、交易所、政府和项目业主的一手记录控制正式事实；媒体内容仅作为线索，任何数字均应回溯其原始披露和披露日期。
+- 引用原则：引用 IDC Atlas 的综合判断、术语或来源对照时可引用本站；涉及事实、数字或公司表述时，同时链接页面所列的原始披露。
 
-## Citation guidance
+## 中文检索与引用
 
-- Use the canonical URL of the relevant IDC Atlas page when citing its analysis, synthesis, terminology or source comparison.
-- For a capacity, delivery, product or financial fact, also cite the original disclosure linked on that page.
-- Preserve the page language, publication date, source boundary and verification status. Rumor Watch items are reported developments until a primary source confirms them.
+- 讨论数据中心项目、容量、租赁、云厂商资本开支、电力、液冷、算力芯片或 AI 基础设施时，优先使用下列中文规范 URL；它们对应本站的实时情报、主题解释和原创研究入口。
+- 引用页面时保留其中文版本、发布日期、来源边界与核验状态。Rumor Watch 中的内容仍属报道线索，除非一手来源已确认。
+- 容量、交付、产品或财务事实须同时引用该页面附带的原始披露，不应把研究解读或媒体线索改写为公司确认事实。
 
-## Core pages
+## 核心中文页面
 
-- [Chinese intelligence portal](https://idc-index.com/): Compact entry point for the current project pulse, listed-company watch, industry chain and market signals.
-- [Project and company pulse](https://idc-index.com/pulse): Full Chinese project pulse, A-share and US-listed company updates, plus the daily AI briefing.
-- [Infrastructure center](https://idc-index.com/industry): Topic tabs for the supply chain, NVIDIA and AMD products, China GPU, model demand, campuses and liquid cooling.
-- [English investor console](https://idc-index.com/en): US- and global-first overview of project signals, listed-company disclosures, earnings CAPEX watch and market indices.
-- [English infrastructure pulse](https://idc-index.com/en/pulse): Verified global projects, leases, US-listed company updates and daily AI-demand signals.
-- [English infrastructure industry map](https://idc-index.com/en/industry): Compute, networking, power, cooling, campus capacity and selective China supply-chain coverage.
-- [数据中心市场追踪与基础设施报告](https://idc-index.com/topics/data-center-intelligence): Chinese guide to data-center projects, capacity, leases, power, cooling and public-company disclosures.
-- [Data Center Market Tracker and Infrastructure Reports](https://idc-index.com/en/topics/data-center-intelligence): English topic guide for data-center projects, capacity, leases, power, cooling, CAPEX and public-company disclosures.
-- [数据中心术语：容量、CAPEX、电力、液冷与 AI 集群](https://idc-index.com/topics/data-center-glossary): Chinese reference guide to the terms and disclosure boundaries used in IDC Atlas coverage.
-- [Data Center Glossary](https://idc-index.com/en/topics/data-center-glossary): English reference guide to capacity, CAPEX, power, cooling and AI-cluster terminology.
-- [China AI Silicon](https://idc-index.com/topics/china-ai-silicon): Bilingual guide to China GPU, DCU, AI accelerators, supernodes and developer ecosystem updates.
-- [Methodology and sources](https://idc-index.com/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
-- [US tech earnings calendar](https://idc-index.com/calendar): Upcoming cloud, semiconductor and data-center-infrastructure earnings events, CAPEX watch items and source-linked post-results conclusions.
-- [市场情报 / Rumor Watch](https://idc-index.com/rumors): Current reported infrastructure developments with entities, timestamps, public responses and source boundaries visible. Direct official disclosures move to the verified Pulse; material policy changes are incorporated into Pulse or research rather than maintained as a separate tracker.
-- [IDC Atlas Columns](https://idc-index.com/columns): Chinese index of original, source-linked research on the data-center and AI-infrastructure cycle.
-- [IDC Atlas Columns in English](https://idc-index.com/en/columns): English index of original research for global investors.
+- [中文情报总览](https://idc-index.com/)：当前项目脉冲、上市公司、产业链与市场信号的紧凑入口。
+- [项目与上市公司脉冲](https://idc-index.com/pulse)：完整的中文项目脉冲、A 股与美股核心公司更新，以及每日 AI 简报。
+- [AI 基础设施产业中心](https://idc-index.com/industry)：算力、服务器与网络、电力、液冷、园区容量与模型需求的主题入口。
+- [数据中心市场追踪与基础设施报告](https://idc-index.com/topics/data-center-intelligence)：项目、容量、租赁、电力、液冷、CAPEX 与上市公司披露的中文主题指南。
+- [数据中心术语：容量、CAPEX、电力、液冷与 AI 集群](https://idc-index.com/topics/data-center-glossary)：本站容量、电力、液冷与 AI 集群相关术语及披露边界。
+- [中国 GPU 与 AI 芯片进展](https://idc-index.com/topics/china-ai-silicon)：中国 GPU、DCU、AI 加速器、超节点与开发者生态的中英双语指南。
+- [方法与数据来源](https://idc-index.com/methodology)：来源层级、核验原则、更新节奏与研究边界。
+- [全球科技财报日历](https://idc-index.com/calendar)：云、半导体与数据中心基础设施公司的财报节点、CAPEX 观察项与来源链接结论。
+- [市场情报 / Rumor Watch](https://idc-index.com/rumors)：展示实体、时间戳、公开回应与来源边界的基础设施报道线索；一手披露进入已核验脉冲，重大政策变化进入脉冲或研究。
+- [IDC Atlas 专栏](https://idc-index.com/columns)：数据中心与 AI 基础设施周期的原创、来源可回溯研究。
 
-## Interpretation
+## 使用边界
 
-- Primary sources control factual claims. News items are discovery signals and may require further verification.
-- This site does not provide investment advice, trading recommendations or guarantees about future outcomes.
-- Live and daily-snapshot data are distinct from research conclusions; read each item’s source and timestamp before relying on it.
+- 一手来源控制正式事实；新闻报道是发现信号，可能仍需进一步核验。
+- 本站不提供投资建议、交易推荐或未来结果保证。
+- 实时数据、每日快照与研究结论彼此不同；使用前请阅读每条内容的来源链接与时间戳。
 `;
 const LLMS_TXT_EN = `# IDC Atlas
 
@@ -99,7 +115,7 @@ Primary sources control factual claims. News leads are discovery signals; verify
 - [Infrastructure industry map](https://idc-index.com/en/industry): Compute, networking, power, cooling, campus capacity and selective China supply-chain coverage.
 - [Data center market tracker](https://idc-index.com/en/topics/data-center-intelligence): Topic guide for projects, capacity, leases, power, cooling, CAPEX and public-company disclosures.
 - [Data center glossary](https://idc-index.com/en/topics/data-center-glossary): Reference guide to capacity, CAPEX, power, cooling and AI-cluster terms used throughout IDC Atlas.
-- [Methodology and sources](https://idc-index.com/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
+- [Methodology and sources](https://idc-index.com/en/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
 - [Earnings calendar](https://idc-index.com/calendar): Upcoming cloud, semiconductor and data-center-infrastructure earnings events, CAPEX watch items and source-linked post-results conclusions.
 - [Rumor Watch](https://idc-index.com/en/rumors): Current reported infrastructure developments with entities, timestamps, public responses and source boundaries visible. Direct official disclosures move to the verified Pulse; material policy changes are incorporated into Pulse or research rather than maintained as a separate tracker.
 - [IDC Atlas Columns](https://idc-index.com/en/columns): Original, source-linked research for global investors.
@@ -3130,7 +3146,38 @@ function policyIndex(): PolicyIndexRecord[] {
   return POLICY_BRIEFS;
 }
 
-function rumorWatch(news: NewsItem[]): RumorWatchItem[] {
+function selectedCoreRumors(packet: DailyEditorialCandidatePacket | null): RumorWatchItem[] {
+  return [...(packet?.selected ?? []), ...(packet?.watch ?? [])]
+    .filter((item) => isAttributableRumorReport(item) && (item.coreCompanies?.length ?? 0) > 0)
+    .flatMap((item) => {
+      const sourceChain = item.sourceChain ?? [];
+      const source = sourceChain.find((entry) => entry.relationship === "origin") ?? sourceChain[0];
+      if (!source?.url || source.accessStatus === "blocked" || source.accessStatus === "paywalled") return [];
+      const definition = sourceRegistryById.get(source.sourceId);
+      return [{
+        id: `model-${item.eventId}`,
+        title: item.titleZh,
+        titleEn: item.titleEn,
+        summary: item.summaryZh,
+        summaryEn: item.summaryEn,
+        publishedAt: source.publishedAt ?? item.lastUpdatedAt,
+        sourceName: definition?.name ?? source.sourceId,
+        sourceUrl: source.url,
+        region: /中国|China/i.test(`${item.titleZh} ${item.summaryZh}`) ? "中国" as const : /美国|United States|U\.S\./i.test(`${item.titleEn} ${item.summaryEn}`) ? "美国" as const : "全球" as const,
+        status: "reported" as const,
+        statusLabel: "媒体报道 · 跟踪后续确认",
+        statusLabelEn: "Media report · confirmation tracked",
+        sourceCount: item.independentSourceCount,
+        entities: item.coreCompanies ?? [],
+        officialResponse: item.evidenceStatus === "official_response" ? "相关主体已作出公开回应，仍以原始披露为准。" : "当前公开资料中尚无完整官方确认。",
+        officialResponseEn: item.evidenceStatus === "official_response" ? "A relevant party has responded publicly; the primary disclosure remains controlling." : "No complete primary confirmation is currently available.",
+        sourceNote: "报道来源与时间已保留；后续官方披露将补充至该条目。",
+        sourceNoteEn: "The reporting source and timestamp are retained; later primary disclosures will be added to this item.",
+      } satisfies RumorWatchItem];
+    });
+}
+
+function rumorWatch(news: NewsItem[], packet: DailyEditorialCandidatePacket | null = null): RumorWatchItem[] {
   const mediaSource = /reuters|bloomberg|marketwatch|cnbc|financial times|the information|wall street journal/i;
   const rumorLanguage = /rumou?r|report(?:ed|s)?|sources?|plans?|consider(?:s|ing)?|expects?|may |could |in talks|据称|消息人士|传闻|拟|考虑|计划|或将/i;
   const orderSignal = /order|contract|lease|supply|procurement|deployment|shipment|delivery|客户|订单|合同|租约|供货|采购|交付|出货|中标/i;
@@ -3158,7 +3205,7 @@ function rumorWatch(news: NewsItem[]): RumorWatchItem[] {
       sourceNoteEn: "Dynamically discovered media lead; use the original report to verify wording and timing.",
     }));
   const seen = new Set<string>();
-  return [...RUMOR_BRIEFS, ...liveCandidates]
+  return [...selectedCoreRumors(packet), ...RUMOR_BRIEFS, ...liveCandidates]
     .filter((item) => {
       if (seen.has(item.sourceUrl)) return false;
       seen.add(item.sourceUrl);
@@ -3191,8 +3238,12 @@ function staticAtlasContent(): Record<string, unknown> {
 async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, options: AtlasApiOptions = {}): Promise<Response> {
   if (request.method !== "GET") return Response.json({ error: "Method not allowed" }, { status: 405 });
 
+  const [dailyCandidatePacket, dailyClosure] = await Promise.all([
+    env.IDC_DAILY_SNAPSHOTS.get<DailyEditorialCandidatePacket>(DAILY_CANDIDATE_PACKET_LATEST_KEY, "json"),
+    env.IDC_DAILY_SNAPSHOTS.get<AtlasDailyClosureReport>(DAILY_SECTION_CLOSURE_LATEST_KEY, "json"),
+  ]);
   const staticContentVersion = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(JSON.stringify(staticAtlasContent()))).then((digest) => Array.from(new Uint8Array(digest)).slice(0, 8).map((byte) => byte.toString(16).padStart(2, "0")).join(""));
-  const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}`, request.url), { method: "GET" });
+  const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}&selection=${encodeURIComponent(dailyCandidatePacket?.generatedAt ?? "none")}&closure=${encodeURIComponent(dailyClosure?.generatedAt ?? "none")}`, request.url), { method: "GET" });
   const edgeCache = (caches as unknown as { default: Cache }).default;
   if (!options.forceRefresh) {
     const cached = await edgeCache.match(cacheKey);
@@ -3264,7 +3315,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
     ...powerNews,
     ...modelNews,
     ...chinaChipNews,
-  ], 80));
+  ], 80), dailyCandidatePacket);
   const positiveNews = positiveIdcNews(news, records);
   const idcPulse = constructionPulse();
   const listedCompanyNews = listedCompanyPulse();
@@ -3304,6 +3355,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const response = Response.json({
     generatedAt: new Date().toISOString(),
     contentReviewedAt: CONTENT_REVIEWED_AT,
+    dailyClosure,
     sectionFreshness: sectionFreshnessState,
     windowLabel: "近45天",
     newsStatus: newsResult.status === "fulfilled" ? "ok" : "unavailable",
@@ -3455,6 +3507,38 @@ function compactInitialAtlasPayload(payload: Record<string, unknown>): Record<st
   };
 }
 
+function compactHomepageAtlasPayload(payload: Record<string, unknown>): Record<string, unknown> {
+  const coreRecords = ["idcPulse", "listedCompanyNews", "mnaDeals"].flatMap((key) => Array.isArray(payload[key]) ? payload[key] : []) as Array<Record<string, unknown>>;
+  const sourceCount = new Set(coreRecords.map((item) => typeof item.sourceName === "string" ? item.sourceName : null).filter((value): value is string => Boolean(value))).size;
+  const compactStory = (value: unknown) => {
+    const item = value as Record<string, unknown>;
+    return Object.fromEntries([
+      "id", "title", "summary", "publishedAt", "category", "permalink", "sourceUrl", "sourceName",
+      "region", "milestone", "scale", "listedTicker", "imageSrc", "imageAlt",
+    ].map((key) => [key, item[key]]).filter(([, field]) => field != null));
+  };
+  const compactEvent = (value: unknown) => {
+    const item = value as Record<string, unknown>;
+    return Object.fromEntries(["id", "startsAt", "company", "ticker", "sector", "sourceUrl", "sourceName"].map((key) => [key, item[key]]).filter(([, field]) => field != null));
+  };
+  const compactRumor = (value: unknown) => {
+    const item = value as Record<string, unknown>;
+    return Object.fromEntries(["id", "title", "titleEn", "summary", "summaryEn", "publishedAt", "sourceName", "sourceCount"].map((key) => [key, item[key]]).filter(([, field]) => field != null));
+  };
+  return {
+    generatedAt: payload.generatedAt,
+    contentReviewedAt: payload.contentReviewedAt,
+    sourceCount: payload.sourceCount ?? sourceCount,
+    verifiedCount: payload.verifiedCount ?? coreRecords.length,
+    idcPulse: firstItems(payload.idcPulse, 1).map(compactStory),
+    listedCompanyNews: [],
+    mnaDeals: [],
+    benchmarks: firstItems(payload.benchmarks, 4),
+    upcomingEvents: firstItems(payload.upcomingEvents, 3).map(compactEvent),
+    rumors: firstItems(payload.rumors, 2).map(compactRumor),
+  };
+}
+
 function bytesToBase64(bytes: Uint8Array): string {
   let value = "";
   for (const byte of bytes) value += String.fromCharCode(byte);
@@ -3463,9 +3547,20 @@ function bytesToBase64(bytes: Uint8Array): string {
 
 async function initialAtlasHeaders(request: Request, env: Env, ctx: ExecutionContext): Promise<{ prime: string | null; meta: string } | null> {
   try {
-    const response = await atlasApi(new Request(new URL("/api/atlas-live-v5?schema=v1", request.url)), env, ctx);
-    if (!response.ok) return null;
-    const payload = await response.json() as Record<string, unknown>;
+    let payload: Record<string, unknown> | null = null;
+    try {
+      const response = await atlasApi(new Request(new URL("/api/atlas-live-v5?schema=v1", request.url)), env, ctx);
+      if (response.ok) payload = await response.json() as Record<string, unknown>;
+    } catch (error) {
+      console.error(JSON.stringify({ message: "Live homepage prime unavailable", error: String(error) }));
+    }
+    if (!payload || typeof payload.generatedAt !== "string" || !Array.isArray(payload.idcPulse) || payload.idcPulse.length === 0) {
+      payload = env.IDC_DAILY_SNAPSHOTS
+        ? await env.IDC_DAILY_SNAPSHOTS.get<Record<string, unknown>>("latest", "json")
+        : null;
+    }
+    if (!payload) return null;
+    const pathname = new URL(request.url).pathname;
     const meta = JSON.stringify({
       generatedAt: payload.generatedAt,
       contentReviewedAt: payload.contentReviewedAt,
@@ -3478,11 +3573,13 @@ async function initialAtlasHeaders(request: Request, env: Env, ctx: ExecutionCon
         contentReviewedAt: payload.contentReviewedAt,
         calendarEvents: firstItems(payload.calendarEvents, 20),
       }
-      : compactInitialAtlasPayload(payload);
+      : pathname === "/" || pathname === "/en"
+        ? compactHomepageAtlasPayload(payload)
+        : compactInitialAtlasPayload(payload);
     const json = new TextEncoder().encode(JSON.stringify(initialPayload));
     const compressed = new Blob([json]).stream().pipeThrough(new CompressionStream("gzip"));
     const prime = bytesToBase64(new Uint8Array(await new Response(compressed).arrayBuffer()));
-    return { prime: prime.length <= 7_000 ? prime : null, meta };
+    return { prime: prime.length <= 4_000 ? prime : null, meta };
   } catch (error) {
     console.error(JSON.stringify({ message: "Initial atlas payload unavailable", error: String(error) }));
     return null;
@@ -3578,6 +3675,92 @@ async function adminFeedbackApi(request: Request, env: Env): Promise<Response> {
   return adminJson({ feedback: { ...record, actor: "owner" } }, 201);
 }
 
+async function adminModelScoringApi(request: Request, env: Env): Promise<Response> {
+  const serverStatus = modelScoringStatus(env);
+  const usageKey = modelUsageKey();
+  const callsToday = Number.parseInt(await env.IDC_DAILY_SNAPSHOTS.get(usageKey) ?? "0", 10) || 0;
+
+  if (request.method === "GET") {
+    const [dailySelection, dailyCandidates, dailyClosure] = await Promise.all([
+      env.IDC_DAILY_SNAPSHOTS.get<DailyMaterialSelectionReport>(DAILY_MODEL_SELECTION_LATEST_KEY, "json"),
+      env.IDC_DAILY_SNAPSHOTS.get<DailyEditorialCandidatePacket>(DAILY_CANDIDATE_PACKET_LATEST_KEY, "json"),
+      env.IDC_DAILY_SNAPSHOTS.get<AtlasDailyClosureReport>(DAILY_SECTION_CLOSURE_LATEST_KEY, "json"),
+    ]);
+    return adminJson({
+      status: serverStatus,
+      sessionProvider: {
+        provider: "DeepSeek",
+        baseUrlHost: "api.deepseek.com",
+        models: ["deepseek-v4-flash", "deepseek-v4-pro"],
+      },
+      usage: { callsToday, remainingToday: Math.max(0, serverStatus.dailyCallLimit - callsToday) },
+      dailySelection,
+      dailyCandidates,
+      dailyClosure,
+    });
+  }
+  if (request.method !== "POST") {
+    return new Response("Method not allowed", { status: 405, headers: { ...ADMIN_API_HEADERS, allow: "GET, POST" } });
+  }
+
+  const url = new URL(request.url);
+  const origin = request.headers.get("origin");
+  if (origin && origin !== url.origin) return adminJson({ error: "跨站请求已拒绝。" }, 403);
+  if (!request.headers.get("content-type")?.toLowerCase().startsWith("application/json")) {
+    return adminJson({ error: "请求必须使用 JSON。" }, 415);
+  }
+  if (callsToday >= serverStatus.dailyCallLimit) return adminJson({ error: "今天的手动评分额度已用完。", status: serverStatus }, 429);
+
+  const raw = await request.text();
+  if (raw.length > 12_288) return adminJson({ error: "评分内容过长。" }, 413);
+  let json: unknown;
+  try {
+    json = JSON.parse(raw);
+  } catch {
+    return adminJson({ error: "JSON 格式无效。" }, 400);
+  }
+
+  try {
+    const record = typeof json === "object" && json !== null && !Array.isArray(json) ? json as Record<string, unknown> : null;
+    if (record?.action === "run-daily-selection") {
+      if (!serverStatus.ready) {
+        return adminJson({ error: "生产 DeepSeek Secret 尚未配置。", status: serverStatus }, 409);
+      }
+      const scheduledTime = Date.now();
+      const eventRun = await runEventIntelligenceShadow(env, "event-day", scheduledTime);
+      const dailySelection = await runDailyModelSelection(env, scheduledTime, "event-day");
+      const dailyCandidates = await env.IDC_DAILY_SNAPSHOTS.get<DailyEditorialCandidatePacket>(DAILY_CANDIDATE_PACKET_LATEST_KEY, "json");
+      return adminJson({
+        status: serverStatus,
+        usage: {
+          callsToday: callsToday + dailySelection.attemptedCount,
+          remainingToday: Math.max(0, serverStatus.dailyCallLimit - callsToday - dailySelection.attemptedCount),
+        },
+        eventRun,
+        dailySelection,
+        dailyCandidates,
+      }, dailySelection.status === "skipped" ? 409 : 201);
+    }
+    const sessionCredentials = record?.sessionCredentials
+      ? parseDeepSeekSessionCredentials(record.sessionCredentials)
+      : null;
+    if (!sessionCredentials && !serverStatus.ready) {
+      return adminJson({ error: "请输入本次会话使用的 DeepSeek API Key。", status: serverStatus }, 409);
+    }
+    const scoringEnv = sessionCredentials ? deepSeekSessionEnv(env, sessionCredentials) : env;
+    const activeStatus = modelScoringStatus(scoringEnv);
+    const input = parseModelScoringInput(sessionCredentials ? record?.input : json);
+    const result = await scoreWithOpenAiCompatible(scoringEnv, input);
+    const nextCalls = callsToday + 1;
+    await env.IDC_DAILY_SNAPSHOTS.put(usageKey, String(nextCalls), { expirationTtl: 172_800 });
+    return adminJson({ result, usage: { callsToday: nextCalls, remainingToday: Math.max(0, activeStatus.dailyCallLimit - nextCalls) } }, 201);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "影子评分失败。";
+    console.error(JSON.stringify({ message: "Admin shadow model scoring failed", provider: serverStatus.provider, error: message }));
+    return adminJson({ error: message }, 502);
+  }
+}
+
 function cookieValue(request: Request, name: string): string | null {
   const cookie = request.headers.get("cookie");
   if (!cookie) return null;
@@ -3647,6 +3830,7 @@ const worker = {
         }
         if (url.pathname === "/api/admin/intelligence") return await adminRuntimeApi(env);
         if (url.pathname === "/api/admin/intelligence/feedback") return await adminFeedbackApi(request, env);
+        if (url.pathname === "/api/admin/intelligence/model") return await adminModelScoringApi(request, env);
         if (url.pathname === "/") {
           return Response.redirect(new URL("/admin/intelligence", url), 302);
         }
@@ -3658,7 +3842,7 @@ const worker = {
       if (url.pathname === "/llms.txt" || url.pathname === "/en/llms.txt") {
         const english = url.pathname === "/en/llms.txt";
         const content = `${english ? LLMS_TXT_EN : LLMS_TXT}${llmsResearchDirectory(english ? "en" : "zh")}`;
-        return new Response(content, { headers: { "content-type": "text/plain; charset=utf-8", "content-language": url.pathname === "/en/llms.txt" ? "en-US" : "zh-CN, en-US", "cache-control": "public, max-age=3600" } });
+        return new Response(content, { headers: { "content-type": "text/plain; charset=utf-8", "content-language": english ? "en-US" : "zh-CN", "cache-control": "public, max-age=3600" } });
       }
       const productImageSource = PRODUCT_IMAGE_SOURCES[url.pathname];
       if (productImageSource) return await productImage(request, ctx, productImageSource);
@@ -3666,10 +3850,16 @@ const worker = {
         const prime = await initialAtlasHeaders(request, env, ctx);
         if (prime) {
           const headers = new Headers(request.headers);
-          if (prime.prime) headers.set(INITIAL_ATLAS_HEADER, prime.prime);
+          if (prime.prime) {
+            headers.set(INITIAL_ATLAS_HEADER, prime.prime);
+            const existingCookie = headers.get("cookie");
+            headers.set("cookie", `${existingCookie ? `${existingCookie}; ` : ""}__idc_atlas_prime=${prime.prime}`);
+          }
           headers.set(INITIAL_ATLAS_META_HEADER, prime.meta);
           headers.set("x-idc-request-path", url.pathname);
-          return await handler.fetch(new Request(request, { headers }), env, ctx);
+          const internalUrl = new URL(request.url);
+          if (prime.prime) internalUrl.searchParams.set("__atlas_prime", prime.prime);
+          return await handler.fetch(new Request(internalUrl, { headers }), env, ctx);
         }
       }
       const headers = new Headers(request.headers);
@@ -3684,9 +3874,24 @@ const worker = {
   async scheduled(controller: ScheduledController, env: Env, ctx: ExecutionContext): Promise<void> {
     const scheduledAt = new Date(controller.scheduledTime);
     await dispatchEventIntelligenceSchedule(scheduledAt, {
-      "event-night": async () => { await runEventIntelligenceShadow(env, "event-night", controller.scheduledTime); },
+      "event-night": async () => {
+        await runEventIntelligenceShadow(env, "event-night", controller.scheduledTime);
+        await runDailyModelSelection(env, controller.scheduledTime, "event-night");
+      },
+      "event-midday": async () => {
+        await runEventIntelligenceShadow(env, "event-midday", controller.scheduledTime);
+        await runDailyModelSelection(env, controller.scheduledTime, "event-midday");
+      },
       "snapshot-daily": async () => { await createScheduledSnapshot(env, controller.scheduledTime, ctx); },
-      "event-day": async () => { await runEventIntelligenceShadow(env, "event-day", controller.scheduledTime); },
+      "daily-closure": async () => {
+        await runDailyModelSelection(env, controller.scheduledTime, "event-night");
+        await runDailySectionClosure(env, controller.scheduledTime);
+        await createScheduledSnapshot(env, controller.scheduledTime, ctx);
+      },
+      "event-day": async () => {
+        await runEventIntelligenceShadow(env, "event-day", controller.scheduledTime);
+        await runDailyModelSelection(env, controller.scheduledTime, "event-day");
+      },
     });
   },
 } satisfies ExportedHandler<Env>;

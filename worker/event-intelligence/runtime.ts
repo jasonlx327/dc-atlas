@@ -2,8 +2,14 @@ import { fetchRegisteredSource, sourceRegistryById } from "../connectors/index.t
 import type { ConnectorRequestState, ConnectorResult, SourceDefinition } from "../connectors/types.ts";
 import { runShadowPipeline, type ShadowRunReport } from "./pipeline.ts";
 import type { EventIntelligenceJob } from "./schedule.ts";
+import {
+  CORE_COMPANY_SOURCE_IDS,
+  CORE_COMPANY_WATCH_STATE_KEY,
+  buildCoreCompanyWatchState,
+  type CoreCompanyWatchState,
+} from "./core-company-watchlist.ts";
 
-const LIVE_SMOKE_SOURCE_IDS = [
+const LIVE_SMOKE_GATE_SOURCE_IDS = [
   "aihot-discovery",
   "federal-register",
   "sec-edgar",
@@ -20,7 +26,17 @@ const LIVE_SMOKE_SOURCE_IDS = [
   "the-register",
 ] as const;
 
-const LIVE_SMOKE_JOBS = new Set<EventIntelligenceJob>(["event-night", "event-day"]);
+const LIVE_SMOKE_SOURCE_IDS = [
+  ...LIVE_SMOKE_GATE_SOURCE_IDS,
+  ...CORE_COMPANY_SOURCE_IDS,
+  "nvidia-developer",
+  "openai-news",
+  "xai-news",
+  "google-ai-blog",
+  "meta-engineering",
+] as const;
+
+const LIVE_SMOKE_JOBS = new Set<EventIntelligenceJob>(["event-night", "event-midday", "event-day"]);
 const PASSING_CONNECTOR_STATES = new Set<ConnectorResult["status"]>(["ok", "empty", "not-modified"]);
 
 export type EventRuntimeStatus = {
@@ -40,7 +56,7 @@ export type EventRuntimeStatus = {
     clusters: number;
     errors: number;
   };
-  liveSmoke: Record<"event-night" | "event-day", { passed: boolean; generatedAt: string } | null>;
+  liveSmoke: Record<"event-night" | "event-midday" | "event-day", { passed: boolean; generatedAt: string } | null>;
 };
 
 function sourceStateKey(source: SourceDefinition): string {
@@ -61,9 +77,11 @@ async function fetchSource(env: Env, source: SourceDefinition): Promise<Connecto
 }
 
 function smokePassed(results: ConnectorResult[]): boolean {
-  if (!results.length) return false;
-  const passing = results.filter((result) => PASSING_CONNECTOR_STATES.has(result.status)).length;
-  return passing / results.length >= 0.95;
+  const gateSources = new Set<string>(LIVE_SMOKE_GATE_SOURCE_IDS);
+  const required = results.filter((result) => gateSources.has(result.sourceId));
+  if (!required.length) return false;
+  const passing = required.filter((result) => PASSING_CONNECTOR_STATES.has(result.status)).length;
+  return passing / required.length >= 0.95;
 }
 
 async function priorSmoke(
@@ -71,6 +89,7 @@ async function priorSmoke(
 ): Promise<EventRuntimeStatus["liveSmoke"]> {
   return (await env.IDC_DAILY_SNAPSHOTS.get<EventRuntimeStatus["liveSmoke"]>("event-intelligence:live-smoke", "json")) ?? {
     "event-night": null,
+    "event-midday": null,
     "event-day": null,
   };
 }
@@ -81,16 +100,19 @@ export async function runEventIntelligenceShadow(
   scheduledTime: number,
 ): Promise<EventRuntimeStatus | null> {
   if (!LIVE_SMOKE_JOBS.has(job)) return null;
-  const sources = LIVE_SMOKE_SOURCE_IDS.flatMap((id) => {
+  const sources = [...new Set<string>(LIVE_SMOKE_SOURCE_IDS)].flatMap((id) => {
     const source = sourceRegistryById.get(id);
     return source ? [source] : [];
   });
   const results = await Promise.all(sources.map((source) => fetchSource(env, source)));
   const generatedAt = new Date(scheduledTime).toISOString();
   const report = await runShadowPipeline(results, sources, { generatedAt });
+  const priorCompanyWatch = await env.IDC_DAILY_SNAPSHOTS.get<CoreCompanyWatchState>(CORE_COMPANY_WATCH_STATE_KEY, "json");
+  const companyWatch = buildCoreCompanyWatchState(report.events, generatedAt, priorCompanyWatch);
   const passingSources = results.filter((result) => PASSING_CONNECTOR_STATES.has(result.status)).length;
   const liveSmoke = await priorSmoke(env);
-  liveSmoke[job] = { passed: smokePassed(results), generatedAt };
+  const smokeJob = job as "event-night" | "event-midday" | "event-day";
+  liveSmoke[smokeJob] = { passed: smokePassed(results), generatedAt };
   const gateStatus = liveSmoke["event-night"]?.passed && liveSmoke["event-day"]?.passed
     ? "gate4-ready"
     : "waiting-live-smoke";
@@ -119,6 +141,7 @@ export async function runEventIntelligenceShadow(
     env.IDC_DAILY_SNAPSHOTS.put(`event-intelligence:run:${job}:${day}`, JSON.stringify(report)),
     env.IDC_DAILY_SNAPSHOTS.put("event-intelligence:live-smoke", JSON.stringify(liveSmoke)),
     env.IDC_DAILY_SNAPSHOTS.put("event-intelligence:runtime-status", JSON.stringify(status)),
+    env.IDC_DAILY_SNAPSHOTS.put(CORE_COMPANY_WATCH_STATE_KEY, JSON.stringify(companyWatch)),
   ]);
   console.log(JSON.stringify({ message: "Event intelligence shadow run saved", ...status }));
   return status;

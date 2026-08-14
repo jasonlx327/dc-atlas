@@ -9,8 +9,8 @@ export { CONNECTOR_CONTRACT_VERSION } from "./types.ts";
 export type * from "./types.ts";
 
 export async function fetchRegisteredSource(source: SourceDefinition, options: ConnectorFetchOptions = {}): Promise<ConnectorResult> {
-  if (source.endpoint.type === "aihot") return fetchAihotItems(source, { ...options, window: "24h", limit: 100 });
-  if (source.id === "aihot-discovery" && source.endpoint.type !== "rss") return fetchAihotItems(source, { ...options, window: "24h", limit: 100 });
+  if (source.endpoint.type === "aihot") return fetchAihotItems(source, { ...options, mode: "all", window: "24h", limit: 100 });
+  if (source.id === "aihot-discovery" && source.endpoint.type !== "rss") return fetchAihotItems(source, { ...options, mode: "all", window: "24h", limit: 100 });
   if (source.endpoint.type === "json-api") {
     if (source.id === "federal-register") {
       return fetchJsonApi(source, {
