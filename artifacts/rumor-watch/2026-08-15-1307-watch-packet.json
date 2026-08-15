@@ -1,0 +1,318 @@
+{
+  "schema_version": "atlas-watch.v1",
+  "generated_at": "2026-08-15T05:08:16.432078+00:00",
+  "stats": {
+    "input_items": 3,
+    "included_items": 3,
+    "excluded_items": 0,
+    "duplicate_items": 0,
+    "clusters": 3,
+    "route_counts": {
+      "rumor_watch": 2,
+      "pulse_candidate": 0,
+      "atlas_research_candidate": 0,
+      "relationship_edges": 0
+    }
+  },
+  "clusters": [
+    {
+      "event_id": "evt-255f5b16c79c7b",
+      "event_key": "nvidia|financing-backstop|openai-sb-energy|ohio|2026",
+      "label": "Nvidia scales back funding guarantee for Ohio OpenAI data center, WSJ reports",
+      "first_seen_at": "2026-08-14T23:43:56+00:00",
+      "last_updated_at": "2026-08-14T23:43:56+00:00",
+      "status": "single-source-report",
+      "entities": [
+        "Nvidia",
+        "OpenAI",
+        "SoftBank",
+        "SB Energy"
+      ],
+      "locations": [
+        "Ohio",
+        "United States"
+      ],
+      "event_types": [
+        "financing-backstop"
+      ],
+      "topic_hits": [
+        "capacity-and-projects",
+        "data-center",
+        "power"
+      ],
+      "materiality_hits": [
+        "commitment",
+        "infrastructure-gate",
+        "money"
+      ],
+      "independent_source_count": 1,
+      "observed_source_count": 1,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T2"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-183772c8e576f1",
+          "title": "Nvidia scales back funding guarantee for Ohio OpenAI data center, WSJ reports",
+          "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-scales-back-250-billion-234356524.html",
+          "origin_url": "https://reuters.com/",
+          "source_name": "Reuters (Yahoo Finance syndicated rendering)",
+          "source_id": "yahoo-finance",
+          "source_class": "major-media",
+          "evidence_tier": "T2",
+          "independence_group": "wsj",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-14T23:43:56+00:00",
+          "discovered_at": "2026-08-15T13:07:47+08:00",
+          "summary": "Reuters, citing the Wall Street Journal, reported that Nvidia may initially guarantee under $120 billion for the first phase of an SB Energy-developed Ohio project for OpenAI, versus roughly $250 billion previously reported. Reuters said Nvidia did not immediately respond and OpenAI declined comment; no executed guarantee, full lease, permit or power-delivery record was located.",
+          "language": "en",
+          "entities": [
+            "Nvidia",
+            "OpenAI",
+            "SoftBank",
+            "SB Energy"
+          ],
+          "locations": [
+            "Ohio",
+            "United States"
+          ],
+          "event_type": "financing-backstop",
+          "event_key": "nvidia|financing-backstop|openai-sb-energy|ohio|2026",
+          "stance": "reports",
+          "topic_hits": [
+            "capacity-and-projects",
+            "data-center",
+            "power"
+          ],
+          "materiality_hits": [
+            "commitment",
+            "infrastructure-gate",
+            "money"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": true,
+        "pulse_candidate": false,
+        "atlas_research_candidate": false,
+        "relationship_edges": false
+      },
+      "relationship_edges": [],
+      "claims_to_verify": [
+        {
+          "claim": "Reuters, citing the Wall Street Journal, reported that Nvidia may initially guarantee under $120 billion for the first phase of an SB Energy-developed Ohio project for OpenAI, versus roughly $250 billion previously reported. Reuters said Nvidia did not immediately respond and OpenAI declined comment; no executed guarantee, full lease, permit or power-delivery record was located.",
+          "attribution": "Reuters (Yahoo Finance syndicated rendering)",
+          "source_item_ids": [
+            "itm-183772c8e576f1"
+          ],
+          "starting_status": "not-determined"
+        }
+      ],
+      "atlas_research_handoff_stub": null,
+      "hold_reasons": []
+    },
+    {
+      "event_id": "evt-64d5cb8412b527",
+      "event_key": "naver|infrastructure-investment|panthalassa|united-states|2026",
+      "label": "Naver invests in US offshore wave powered data center company Panthalassa",
+      "first_seen_at": "2026-08-14T13:28:56+00:00",
+      "last_updated_at": "2026-08-14T13:28:56+00:00",
+      "status": "single-source-report",
+      "entities": [
+        "Naver",
+        "Panthalassa"
+      ],
+      "locations": [
+        "United States"
+      ],
+      "event_types": [
+        "infrastructure-investment"
+      ],
+      "topic_hits": [
+        "capacity-and-projects",
+        "corporate-event",
+        "data-center",
+        "power"
+      ],
+      "materiality_hits": [
+        "infrastructure-gate"
+      ],
+      "independent_source_count": 0,
+      "observed_source_count": 1,
+      "held_item_count": 1,
+      "source_tiers": [
+        "T3"
+      ],
+      "access_limits": [
+        "unavailable"
+      ],
+      "items": [
+        {
+          "item_id": "itm-0850fea839effd",
+          "title": "Naver invests in US offshore wave powered data center company Panthalassa",
+          "url": "https://datacenterdynamics.com/en/news/naver-invests-in-us-offshore-wave-powered-data-center-company-panthalassa",
+          "origin_url": "",
+          "source_name": "Data Center Dynamics",
+          "source_id": "dcd",
+          "source_class": "trade-media",
+          "evidence_tier": "T3",
+          "independence_group": "dcd",
+          "access": "unavailable",
+          "author": "",
+          "published_at": "2026-08-14T13:28:56+00:00",
+          "discovered_at": "2026-08-15T13:07:47+08:00",
+          "summary": "Data Center Dynamics reported that Naver invested in U.S. offshore wave-powered data-center company Panthalassa. The article body was access-restricted during this run, and no primary announcement, investment amount, ownership stake, site, MW, grid arrangement or construction schedule was located.",
+          "language": "en",
+          "entities": [
+            "Naver",
+            "Panthalassa"
+          ],
+          "locations": [
+            "United States"
+          ],
+          "event_type": "infrastructure-investment",
+          "event_key": "naver|infrastructure-investment|panthalassa|united-states|2026",
+          "stance": "reports",
+          "topic_hits": [
+            "capacity-and-projects",
+            "corporate-event",
+            "data-center",
+            "power"
+          ],
+          "materiality_hits": [
+            "infrastructure-gate"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": [
+            "source-unavailable"
+          ]
+        }
+      ],
+      "routes": {
+        "rumor_watch": false,
+        "pulse_candidate": false,
+        "atlas_research_candidate": false,
+        "relationship_edges": false
+      },
+      "relationship_edges": [],
+      "claims_to_verify": [
+        {
+          "claim": "Data Center Dynamics reported that Naver invested in U.S. offshore wave-powered data-center company Panthalassa. The article body was access-restricted during this run, and no primary announcement, investment amount, ownership stake, site, MW, grid arrangement or construction schedule was located.",
+          "attribution": "Data Center Dynamics",
+          "source_item_ids": [
+            "itm-0850fea839effd"
+          ],
+          "starting_status": "not-determined"
+        }
+      ],
+      "atlas_research_handoff_stub": null,
+      "hold_reasons": [
+        "source-unavailable"
+      ]
+    },
+    {
+      "event_id": "evt-111484f8c14211",
+      "event_key": "kio|data-center-project-plan|qro3|queretaro|2026",
+      "label": "KIO Plans US$1.3 Billion Data Center in Queretaro",
+      "first_seen_at": "2026-08-14T12:26:00-06:00",
+      "last_updated_at": "2026-08-14T12:26:00-06:00",
+      "status": "single-source-report",
+      "entities": [
+        "KIO Data Centers",
+        "QRO3"
+      ],
+      "locations": [
+        "Querétaro",
+        "Mexico"
+      ],
+      "event_types": [
+        "data-center-project-plan"
+      ],
+      "topic_hits": [
+        "capacity-and-projects",
+        "data-center",
+        "power"
+      ],
+      "materiality_hits": [
+        "capacity",
+        "commitment",
+        "money"
+      ],
+      "independent_source_count": 1,
+      "observed_source_count": 1,
+      "held_item_count": 0,
+      "source_tiers": [
+        "T3"
+      ],
+      "access_limits": [],
+      "items": [
+        {
+          "item_id": "itm-1cabfde44083b9",
+          "title": "KIO Plans US$1.3 Billion Data Center in Queretaro",
+          "url": "https://mexicobusiness.news/trade-and-investment/news/kio-plans-us13-billion-data-center-queretaro",
+          "origin_url": "",
+          "source_name": "Mexico Business News",
+          "source_id": "mexicobusiness.news",
+          "source_class": "trade-media",
+          "evidence_tier": "T3",
+          "independence_group": "mexico-business-news",
+          "access": "public",
+          "author": "",
+          "published_at": "2026-08-14T12:26:00-06:00",
+          "discovered_at": "2026-08-15T13:07:47+08:00",
+          "summary": "Mexico Business News reported that KIO Data Centers plans QRO3 at El Marqués Industrial Park in Querétaro, with about $1.3 billion of investment and approximately 100MW of capacity. The outlet quoted KIO's CEO; no standalone company announcement, permit, interconnection, PPA or construction record was located in this run.",
+          "language": "en",
+          "entities": [
+            "KIO Data Centers",
+            "QRO3"
+          ],
+          "locations": [
+            "Querétaro",
+            "Mexico"
+          ],
+          "event_type": "data-center-project-plan",
+          "event_key": "kio|data-center-project-plan|qro3|queretaro|2026",
+          "stance": "reports",
+          "topic_hits": [
+            "capacity-and-projects",
+            "data-center",
+            "power"
+          ],
+          "materiality_hits": [
+            "capacity",
+            "commitment",
+            "money"
+          ],
+          "exclusion_hits": [],
+          "hold_reasons": []
+        }
+      ],
+      "routes": {
+        "rumor_watch": true,
+        "pulse_candidate": false,
+        "atlas_research_candidate": false,
+        "relationship_edges": false
+      },
+      "relationship_edges": [],
+      "claims_to_verify": [
+        {
+          "claim": "Mexico Business News reported that KIO Data Centers plans QRO3 at El Marqués Industrial Park in Querétaro, with about $1.3 billion of investment and approximately 100MW of capacity. The outlet quoted KIO's CEO; no standalone company announcement, permit, interconnection, PPA or construction record was located in this run.",
+          "attribution": "Mexico Business News",
+          "source_item_ids": [
+            "itm-1cabfde44083b9"
+          ],
+          "starting_status": "not-determined"
+        }
+      ],
+      "atlas_research_handoff_stub": null,
+      "hold_reasons": []
+    }
+  ],
+  "excluded": [],
+  "duplicates": []
+}
