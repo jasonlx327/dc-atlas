@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "atlas-event-strategy-comparison.v1",
+  "generatedAt": "2026-08-08T14:00:00.000Z",
+  "strategyVersion": "atlas-event-v1",
+  "classifierVersion": "rules-v1",
+  "fixture": {
+    "observations": 12,
+    "labelledEvents": 7,
+    "clusteredEvents": 7,
+    "scaleCaveat": "这是可审计的核心边界 fixture，不等同于计划要求的 200–500 条历史回放；真实 shadow 运行后需再次观察该指标。"
+  },
+  "current": {
+    "routeCounts": {
+      "rumor-watch": 1,
+      "pulse": 2,
+      "policy-index": 0,
+      "research-queue": 0,
+      "hold": 4,
+      "rejected": 0
+    },
+    "labelChecks": {
+      "total": 7,
+      "passed": 7,
+      "failed": 0,
+      "failures": []
+    },
+    "mediaOnlyEscalatedToPulse": 0,
+    "nonT0PolicyRoutes": 0,
+    "capacityBoundaryErrors": []
+  },
+  "legacyTierOnly": {
+    "routeCounts": {
+      "pulse": 6,
+      "rumor-watch": 0,
+      "hold": 1
+    },
+    "mediaOnlyEscalatedToPulse": 1,
+    "policyNotSeparated": 1,
+    "note": "对照组只按来源 tier 粗分，并故意不建事件簇、不区分官方回应、不区分 policy-index；仅用于展示边界回归，不代表生产旧 Worker 的完整逻辑。"
+  },
+  "cost": {
+    "modelCalls": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "estimatedUsd": 0,
+    "note": "Shadow uses deterministic rules; no model or production write was invoked."
+  }
+}
