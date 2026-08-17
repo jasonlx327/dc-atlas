@@ -7,7 +7,7 @@
     "zh": "Asia/Shanghai",
     "en": "America/New_York"
   },
-  "status": "ready-for-release",
+  "status": "blocked",
   "projectPath": "/Users/xlarge/Desktop/数据中心/data-center-site-work",
   "sourceLedgerPath": "/Users/xlarge/Desktop/数据中心/data-center-site-work/docs/daily-reviews/2026-08-17-columns.sources.json",
   "host": "XlargedeMacBook-Air.local",
@@ -174,17 +174,19 @@
     "tests": "passed",
     "build": "passed",
     "cloudflare": "passed",
-    "formalReadback": "pending",
-    "dailySnapshot": "pending",
-    "sites": "pending",
-    "sitesReadback": "pending",
-    "commit": null,
-    "workerCommit": null,
+    "formalReadback": "failed",
+    "dailySnapshot": "failed",
+    "sites": "failed",
+    "sitesReadback": "failed",
+    "commit": "4dcbe2f",
+    "workerCommit": "4dcbe2f",
     "sitesCommit": null,
-    "cloudflareVersion": null,
+    "cloudflareVersion": "b80fcd6f-7c26-4e4d-8e17-57f2ac25bc98 (rolled back to 15a3ec76-4f8b-43f9-a2a3-642d0860f8e9)",
     "sitesVersion": null,
-    "formalUrl": null,
+    "formalUrl": "https://idc-index.com",
     "sitesUrl": null
   },
-  "blockers": []
+  "blockers": [
+    "Sites source branch diverged from the release candidate after fb9501e; reconciling it requires a 143-file merge with conflicts, while force-pushing would overwrite existing Sites history. The same-HEAD Cloudflare/Sites gate therefore remains blocked."
+  ]
 }
