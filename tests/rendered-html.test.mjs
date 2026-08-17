@@ -273,12 +273,12 @@ test("exposes bilingual AI-readable discovery manifests", async () => {
   assert.equal(chinese.status, 200);
   assert.match(chinese.headers.get("content-type") ?? "", /^text\/plain/i);
   const chineseText = await chinese.text();
-  assert.match(chineseText, /## Core pages/);
-  assert.match(chineseText, /## About/);
-  assert.match(chineseText, /Languages/);
-  assert.match(chineseText, /Verification rule/);
-  assert.match(chineseText, /## Citation guidance/);
-  assert.match(chineseText, /Cite IDC Atlas for its synthesis and interpretation/);
+  assert.match(chineseText, /## 核心中文页面/);
+  assert.match(chineseText, /## 关于本站/);
+  assert.match(chineseText, /简体中文（zh-CN）/);
+  assert.match(chineseText, /一手记录控制正式事实/);
+  assert.match(chineseText, /## 中文检索与引用/);
+  assert.match(chineseText, /数据中心项目、容量、租赁、云厂商资本开支/);
   assert.match(await (await render("/llms.txt")).text(), /data-center-glossary/);
 
   const english = await render("/en/llms.txt");
