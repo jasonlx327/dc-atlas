@@ -46,7 +46,7 @@ const AIHOT_USER_AGENT = "aihot-skill/0.3.6 (+https://aihot.virxact.com/aihot-sk
 const CWW_ENDPOINT = "https://cwwindex.today/data/latest.json";
 const OPENROUTER_MODELS_ENDPOINT = "https://openrouter.ai/api/v1/models?sort=top-weekly";
 const ARENA_CODE_ENDPOINT = "https://arena.ai/leaderboard/code/webdev";
-const CONTENT_REVIEWED_AT = "2026-08-13";
+const CONTENT_REVIEWED_AT = "2026-08-17";
 const LLMS_TXT = `# IDC Atlas
 
 > IDC Atlas 是一个以来源核验为先的中英双语数据中心与 AI 基础设施情报站，覆盖全球数据中心建设、算力、电力、液冷、网络与中国 AI 芯片。内容仅用于公开信息研究和行业观察，不构成投资建议。

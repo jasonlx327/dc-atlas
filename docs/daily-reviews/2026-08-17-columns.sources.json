@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-08-17-full",
+  "sources": [
+    {
+      "ref": "atlas-daily-closure-2026-08-17",
+      "sourceName": "IDC Atlas daily closure and public snapshot",
+      "tier": "D",
+      "canonicalUrl": "https://idc-index.com/api/daily-snapshot?date=latest",
+      "publishedAt": "2026-08-17T06:30:45+08:00",
+      "accessState": "public",
+      "independenceGroup": "idc-atlas-scheduler",
+      "sections": ["idc-pulse", "listed-companies", "mna", "capacity", "cooling", "compute-products", "china-gpu", "supply-chain", "power-model-demand", "earnings-calendar", "rumors", "policy"]
+    },
+    {
+      "ref": "nvidia-financing-platforms-2026-08-10",
+      "sourceName": "NVIDIA Newsroom",
+      "tier": "T1",
+      "canonicalUrl": "https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital",
+      "publishedAt": "2026-08-10T00:00:00-07:00",
+      "accessState": "public",
+      "independenceGroup": "nvidia",
+      "sections": ["columns"]
+    },
+    {
+      "ref": "ercot-batch-zero-2026-06-18",
+      "sourceName": "ERCOT",
+      "tier": "T1",
+      "canonicalUrl": "https://www.ercot.com/news/release/06182026-puct-approves-ercots",
+      "publishedAt": "2026-06-18T00:00:00-05:00",
+      "accessState": "public",
+      "independenceGroup": "ercot",
+      "sections": ["columns"]
+    },
+    {
+      "ref": "coreweave-q2-2026",
+      "sourceName": "CoreWeave SEC filing",
+      "tier": "T0",
+      "canonicalUrl": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000362/coreweave2q26earningspress.htm",
+      "publishedAt": "2026-08-11T00:00:00-04:00",
+      "accessState": "public",
+      "independenceGroup": "sec",
+      "sections": ["columns"]
+    },
+    {
+      "ref": "micron-fq3-2026",
+      "sourceName": "Micron SEC filing",
+      "tier": "T0",
+      "canonicalUrl": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000013/a2026q3ex991-pressrelease.htm",
+      "publishedAt": "2026-06-24T00:00:00-04:00",
+      "accessState": "public",
+      "independenceGroup": "sec",
+      "sections": ["columns"]
+    },
+    {
+      "ref": "china-mobile-h1-2026",
+      "sourceName": "China Mobile",
+      "tier": "T1",
+      "canonicalUrl": "https://www.chinamobileltd.com/sc/media/press/p260813.pdf",
+      "publishedAt": "2026-08-13T00:00:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "china-mobile",
+      "sections": ["columns"]
+    },
+    {
+      "ref": "glm53-docs-2026",
+      "sourceName": "Z.ai GLM-5.3 documentation",
+      "tier": "T1",
+      "canonicalUrl": "https://docs.z.ai/guides/llm/glm-5.3",
+      "publishedAt": "2026-08-14T09:54:45.404Z",
+      "accessState": "public",
+      "independenceGroup": "z-ai",
+      "sections": ["columns"]
+    },
+    {
+      "ref": "deepseek-harness-architecture-2026",
+      "sourceName": "DeepSeek Harness architecture",
+      "tier": "T1",
+      "canonicalUrl": "https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md",
+      "publishedAt": "2026-08-13T03:55:38Z",
+      "accessState": "public",
+      "independenceGroup": "deepseek",
+      "sections": ["columns"]
+    },
+    {
+      "ref": "anthropic-series-h-2026",
+      "sourceName": "Anthropic Series H announcement",
+      "tier": "T1",
+      "canonicalUrl": "https://www.anthropic.com/news/series-h",
+      "publishedAt": "2026-05-28T00:00:00-07:00",
+      "accessState": "public",
+      "independenceGroup": "anthropic",
+      "sections": ["columns"]
+    }
+  ]
+}

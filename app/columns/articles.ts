@@ -1,5 +1,23 @@
 export const columnArticles = [
   {
+    href: "/columns/agent-runtime-demand", hrefEn: "/en/columns/agent-runtime-demand", date: "2026-08-17", publishAt: "2026-08-17T09:30:00+08:00", series: "AGENT ECONOMICS · 20", title: "从 GLM-5.3 到 Claude：长任务代理如何改变推理需求", titleEn: "From GLM-5.3 to Claude: How Long-Running Agents Change Inference Demand", summary: "拆解 GLM-5.3、DeepSeek Harness 与 Anthropic 商业化信号，区分能力、运行时和收入之间尚未被证实的因果链。", summaryEn: "GLM-5.3, DeepSeek Harness and Anthropic commercial signals separated into capability, runtime and an unproven causal chain.", image: "/column-agent-runtime-demand-v1.jpg",
+  },
+  {
+    href: "/columns/ercot-batch-zero", hrefEn: "/en/columns/ercot-batch-zero", date: "2026-08-18", publishAt: "2026-08-18T09:30:00+08:00", series: "POWER POLICY · 21", title: "438GW 排队之后：德州数据中心真正的接电门槛", titleEn: "After 438GW of Requests: Texas' Real Data-Center Power Gate", summary: "ERCOT 的 Batch Zero 将资格、工程证明与系统可靠性写进大负荷接入。", summaryEn: "ERCOT's Batch Zero puts eligibility, project evidence and system reliability inside large-load interconnection.", image: "/column-ercot-batch-zero-v1.jpg",
+  },
+  {
+    href: "/columns/neocloud-conversion", hrefEn: "/en/columns/neocloud-conversion", date: "2026-08-19", publishAt: "2026-08-19T09:30:00+08:00", series: "CLOUD ECONOMICS · 22", title: "新云财报的转换链：从签约 MW 到已确认收入", titleEn: "The Neocloud Conversion Chain: From Contracted MW to Recognized Revenue", summary: "比较 CoreWeave、Nebius 与 Bitdeer，拆开收入、ARR、积压、服务就绪容量与现金转换。", summaryEn: "CoreWeave, Nebius and Bitdeer compared by revenue, ARR, backlog, service-ready capacity and cash conversion.", image: "/column-neocloud-conversion-v1.jpg",
+  },
+  {
+    href: "/columns/hbm4-system-cadence", hrefEn: "/en/columns/hbm4-system-cadence", date: "2026-08-20", publishAt: "2026-08-20T09:30:00+08:00", series: "MEMORY WATCH · 23", title: "HBM4 的系统节奏：量产不是平台出货", titleEn: "HBM4's System Cadence: Production Is Not Platform Delivery", summary: "从供应商量产披露追踪到封装、服务器认证与客户配置，拆解下一代 AI 平台的同步交付。", summaryEn: "Tracing supplier ramps through packaging, server qualification and customer configuration to map synchronized delivery of next-generation AI platforms.", image: "/column-hbm4-system-cadence-v1.jpg",
+  },
+  {
+    href: "/columns/china-mobile-aidc", hrefEn: "/en/columns/china-mobile-aidc", date: "2026-08-21", publishAt: "2026-08-21T09:30:00+08:00", series: "CHINA COMPUTE · 24", title: "AIDC 增长 486% 之后：中国移动如何把算力做成服务", titleEn: "After 486% AIDC Growth: China Mobile's Compute-as-a-Service Test", summary: "以中国移动中报为样本，拆解 AIDC、算力服务、数据中心、资源利用率与收入质量。", summaryEn: "China Mobile's interim results unpacked across AIDC, compute services, data centers, utilization and revenue quality.", image: "/column-china-mobile-aidc-v1.jpg",
+  },
+  {
+    href: "/columns/ai-financing-platforms", hrefEn: "/en/columns/ai-financing-platforms", date: "2026-08-22", publishAt: "2026-08-22T09:30:00+08:00", series: "CAPITAL STACK · 25", title: "5000 亿美元不是一笔交易：AI 融资平台的五个缺口", titleEn: "$500 Billion Is Not a Transaction: Five Gaps in AI Financing Platforms", summary: "拆解 NVIDIA 的第三方资本动员目标与项目级融资、送电、抵押和客户现金流之间的缺口。", summaryEn: "Separating NVIDIA's third-party capital objective from project finance, energization, collateral and customer cash flow.", image: "/column-ai-financing-platforms-v1.jpg",
+  },
+  {
     href: "/columns/meta-blackrock-el-paso",
     hrefEn: "/en/columns/meta-blackrock-el-paso",
     date: "2026-08-10",

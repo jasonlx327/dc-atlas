@@ -1,4 +1,5 @@
 import { metaBlackrockElPaso } from "./meta-blackrock-el-paso-data";
+import { nextWeekResearchRecords } from "./next-week-research-data";
 
 export type ResearchMetric = {
   label: string;
@@ -55,6 +56,7 @@ export type ScheduledResearchRecord = {
 };
 
 export const scheduledResearchRecords: ScheduledResearchRecord[] = [
+  ...nextWeekResearchRecords,
   metaBlackrockElPaso,
   {
     slug: "accelerator-platform-divergence",
