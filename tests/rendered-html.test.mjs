@@ -25,6 +25,12 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>全球数据中心与 AI 基础设施情报｜IDC Atlas<\/title>/i);
+  assert.match(html, /"@type":"Organization"/);
+  assert.match(html, /"@id":"https:\/\/idc-index\.com\/#organization"/);
+  assert.match(html, /"@type":"WebSite"/);
+  assert.match(html, /"@type":"CollectionPage"/);
+  assert.match(html, /"@type":"BreadcrumbList"/);
+  assert.match(html, /<meta name="content-language" content="zh-CN"\/>/);
   assert.match(html, /超大规模云厂商 CAPEX/);
   assert.match(html, /hrefLang="x-default" href="https:\/\/dc-atlas\.example\/en"/);
   assert.match(html, /class="atlas-console-overview"/);
@@ -199,8 +205,31 @@ test("publishes shareable bilingual policy and Rumor Watch brief pages", async (
   const sitemap = await readFile(new URL("../app/sitemap.ts", import.meta.url), "utf8");
   assert.match(sitemap, /publishedColumnArticles/);
   assert.doesNotMatch(sitemap, /POLICY_BRIEFS\.flatMap/);
-  assert.match(sitemap, /RUMOR_BRIEFS\.flatMap/);
+  assert.doesNotMatch(sitemap, /RUMOR_BRIEFS\.flatMap/);
   assert.doesNotMatch(sitemap, /url: "https:\/\/idc-index\.com\/policy",/);
+});
+
+test("serves current crawler and AI-reader metadata through the Worker", async () => {
+  const robots = await render("/robots.txt");
+  assert.equal(robots.status, 200);
+  assert.match(await robots.text(), /User-agent: OAI-SearchBot/i);
+
+  const sitemap = await render("/sitemap.xml");
+  assert.equal(sitemap.status, 200);
+  const sitemapXml = await sitemap.text();
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/topics\/data-center-glossary/);
+  assert.match(sitemapXml, /https:\/\/idc-index\.com\/columns\/meta-blackrock-el-paso/);
+  assert.doesNotMatch(sitemapXml, /https:\/\/idc-index\.com\/rumors\//);
+
+  const llms = await render("/llms.txt");
+  assert.equal(llms.status, 200);
+  assert.equal(llms.headers.get("content-language"), "zh-CN");
+  assert.match(await llms.text(), /中文检索与引用/);
+
+  const wrangler = await readFile(new URL("../wrangler.jsonc", import.meta.url), "utf8");
+  for (const route of ["/robots.txt", "/sitemap.xml", "/feed.xml", "/en/feed.xml", "/llms.txt", "/en/llms.txt"]) {
+    assert.match(wrangler, new RegExp(`"${route.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"`));
+  }
 });
 
 test("renders the English research console and focused content routes", async () => {
@@ -272,13 +301,14 @@ test("exposes bilingual AI-readable discovery manifests", async () => {
   const chinese = await render("/llms.txt");
   assert.equal(chinese.status, 200);
   assert.match(chinese.headers.get("content-type") ?? "", /^text\/plain/i);
+  assert.equal(chinese.headers.get("content-language"), "zh-CN");
   const chineseText = await chinese.text();
-  assert.match(chineseText, /## Core pages/);
-  assert.match(chineseText, /## About/);
-  assert.match(chineseText, /Languages/);
-  assert.match(chineseText, /Verification rule/);
-  assert.match(chineseText, /## Citation guidance/);
-  assert.match(chineseText, /Cite IDC Atlas for its synthesis and interpretation/);
+  assert.match(chineseText, /## 核心中文页面/);
+  assert.match(chineseText, /## 关于本站/);
+  assert.match(chineseText, /简体中文（zh-CN）/);
+  assert.match(chineseText, /一手记录控制正式事实/);
+  assert.match(chineseText, /## 中文检索与引用/);
+  assert.match(chineseText, /数据中心项目、容量、租赁、云厂商资本开支/);
   assert.match(await (await render("/llms.txt")).text(), /data-center-glossary/);
 
   const english = await render("/en/llms.txt");
@@ -292,6 +322,7 @@ test("exposes bilingual AI-readable discovery manifests", async () => {
   assert.match(englishText, /Where Hyperscaler AI CapEx Actually Goes/);
   assert.match(englishText, /After SK hynix Earnings/);
   assert.match(englishText, /Data center glossary/);
+  assert.match(englishText, /https:\/\/idc-index\.com\/en\/methodology/);
 
   const chineseGlossary = await render("/topics/data-center-glossary");
   assert.equal(chineseGlossary.status, 200);
@@ -700,13 +731,37 @@ test("server-primes the bilingual homepages with the live first-screen payload",
   const englishPage = await readFile(new URL("../app/en/page.tsx", import.meta.url), "utf8");
 
   assert.match(initialAtlas, /x-idc-atlas-prime/);
+  assert.match(initialAtlas, /requestCookieValue\(requestHeaders\.get\("cookie"\), "__idc_atlas_prime"\)/);
   assert.match(initialAtlas, /DecompressionStream\("gzip"\)/);
   assert.match(workerSource, /const INITIAL_ATLAS_HEADER = "x-idc-atlas-prime"/);
+  assert.match(workerSource, /__idc_atlas_prime=\$\{prime\.prime\}/);
+  assert.match(workerSource, /internalUrl\.searchParams\.set\("__atlas_prime", prime\.prime\)/);
   assert.match(workerSource, /function compactInitialAtlasPayload/);
+  assert.match(workerSource, /function compactHomepageAtlasPayload/);
+  assert.match(workerSource, /IDC_DAILY_SNAPSHOTS[\s\S]*\.get<Record<string, unknown>>\("latest", "json"\)/);
+  assert.match(workerSource, /firstItems\(payload\.idcPulse, 1\)\.map\(compactStory\)/);
+  assert.match(workerSource, /firstItems\(payload\.rumors, 2\)\.map\(compactRumor\)/);
+  assert.match(workerSource, /pathname === "\/" \|\| pathname === "\/en"/);
   assert.match(workerSource, /new CompressionStream\("gzip"\)/);
   for (const key of ["idcPulse", "listedCompanyNews", "upcomingEvents", "aiDaily"]) assert.match(workerSource, new RegExp(key));
+  assert.match(homePage, /params\?\.__atlas_prime/);
   assert.match(homePage, /<Home initialPayload=\{initialPayload\}/);
+  assert.match(englishPage, /params\?\.__atlas_prime/);
   assert.match(englishPage, /<EnglishHome initialPayload=\{initialPayload\}/);
+});
+
+test("keeps homepage status timestamps distinct and hides internal category slugs", async () => {
+  const source = await readFile(new URL("../app/intelligence-console-overview.tsx", import.meta.url), "utf8");
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(source, /系统扫描/);
+  assert.match(source, /内容核验/);
+  assert.match(source, /System scan/);
+  assert.match(source, /Content reviewed/);
+  assert.match(source, /"idc-construction": \["数据中心项目", "Data-center project"\]/);
+  assert.match(source, /categoryLabel\(lead\.category\)/);
+  assert.match(source, /categoryLabel\(story\.category\)/);
+  assert.match(css, /\.atlas-statusbar dl \{[^}]*repeat\(4,/);
 });
 
 test("uses source-linked earnings conclusions instead of stock-direction voting", async () => {
@@ -754,6 +809,9 @@ test("keeps live-data validation in the deployment path", async () => {
   assert.match(packageJson.scripts.deploy, /check:live/);
   assert.match(packageJson.scripts.build, /prepare-sites-build/);
   assert.match(liveCheck, /newsStatus !== "ok"/);
+  assert.match(liveCheck, /Pulse editorial UI marker missing/);
+  assert.match(liveCheck, /\.atlas-pulse-shell \.news-card/);
+  assert.match(liveCheck, /border-top:3px solid var\(--atlas-terracotta\)/);
   for (const section of ["idcPulse", "listedCompanyNews", "mnaDeals", "capacityRadar", "coolingProgress"]) assert.match(liveCheck, new RegExp(section));
   assert.match(liveCheck, /freshness\.status === "stale"/);
   assert.match(workerSource, /CONTENT_REVIEWED_AT = "2026-08-17"/);
@@ -914,6 +972,9 @@ test("publishes the source methodology and includes it in the sitemap", async ()
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/topics\/data-center-glossary/);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/topics\/data-center-glossary/);
   assert.match(sitemapXml, /https:\/\/idc-index\.com\/en\/methodology/);
+  assert.match(sitemapXml, /xhtml:link rel="alternate" hreflang="en" href="https:\/\/idc-index\.com\/en"/);
+  assert.match(sitemapXml, /xhtml:link rel="alternate" hreflang="zh-CN" href="https:\/\/idc-index\.com\/topics\/data-center-intelligence"/);
+  assert.match(sitemapXml, /xhtml:link rel="alternate" hreflang="x-default" href="https:\/\/idc-index\.com\/en\/columns"/);
   assert.doesNotMatch(sitemapXml, /https:\/\/idc-index\.com\/privacy/);
 });
 
