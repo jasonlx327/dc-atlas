@@ -38,6 +38,7 @@
     "event:feedback:test": "node --experimental-strip-types scripts/test-editorial-feedback.ts",
     "event:model:test": "node --experimental-strip-types scripts/test-model-scoring.ts",
     "event:daily-selection:test": "node --experimental-strip-types scripts/test-daily-model-selection.ts",
+    "event:auto-editor:test": "node --experimental-strip-types scripts/test-atlas-auto-editor.ts",
     "event:daily-closure:test": "node --experimental-strip-types scripts/test-daily-section-closure.ts",
     "event:company-watch:test": "node --experimental-strip-types scripts/test-core-company-watchlist.ts",
     "event:candidates:show": "wrangler kv key get event-intelligence:daily-candidates:latest --binding IDC_DAILY_SNAPSHOTS --remote",

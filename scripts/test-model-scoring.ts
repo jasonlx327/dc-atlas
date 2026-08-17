@@ -21,10 +21,17 @@ const validPayload = {
   },
   rationale: "该事件与数据中心基础设施直接相关，并包含可继续核验的容量信息。",
   reasonCodes: ["core-infrastructure", "specific-capacity"],
+  publicCopy: {
+    titleZh: "Firebird 规划建设 300MW AI 数据中心",
+    titleEn: "Firebird plans a 300MW AI data center",
+    summaryZh: "公司披露 300MW 规划容量。",
+    summaryEn: "The company disclosed 300MW of planned capacity.",
+  },
 };
 
 const parsed = parseModelScorePayload(validPayload);
 assert.equal(parsed.scores.topicRelevanceScore, 5);
+assert.equal(parsed.publicCopy?.titleEn, "Firebird plans a 300MW AI data center");
 assert.equal(semanticScore(parsed.scores), 4.11);
 const numericStringPayload = parseModelScorePayload({
   ...validPayload,
@@ -95,6 +102,8 @@ assert.equal(authorization, "Bearer test-secret");
 const messages = requestedMessages;
 assert.ok(Array.isArray(messages));
 assert.match(String((messages[0] as { content?: unknown }).content), /JSON number from 0 to 5/);
+assert.match(String((messages[0] as { content?: unknown }).content), /recall-oriented standard/);
+assert.match(String((messages[0] as { content?: unknown }).content), /publicCopy/);
 assert.equal(result.mode, "shadow");
 assert.equal(result.routeImpact, false);
 assert.equal(result.semanticScore, 4.11);
@@ -102,8 +111,11 @@ const selectedResult = { ...result, scores: { ...result.scores, researchValueSco
 assert.equal(modelMaterialBand(selectedResult), "selected");
 assert.equal(result.usage.totalTokens, 168);
 
-assert.equal(modelMaterialBand({ ...selectedResult, semanticScore: 3.6 }), "watch");
-assert.equal(modelMaterialBand({ ...result, semanticScore: 2.9 }), "dropped");
+assert.equal(modelMaterialBand({ ...selectedResult, semanticScore: 3.6 }), "selected");
+assert.equal(modelMaterialBand({ ...result, semanticScore: 3 }), "watch");
+assert.equal(modelMaterialBand({ ...result, semanticScore: 2.5 }), "dropped");
+assert.equal(modelMaterialBand({ ...result, semanticScore: 3 }, { sourceTier: "T1" }), "selected");
+assert.equal(modelMaterialBand({ ...result, semanticScore: 3.2 }, { sourceTier: "T2", independentSourceCount: 2 }), "selected");
 
 requestedUrl = "";
 authorization = "";

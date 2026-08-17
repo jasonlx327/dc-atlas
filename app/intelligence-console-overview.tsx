@@ -6,11 +6,14 @@ import { ChainIcon, type ChainKey } from "./chain-icon";
 import { publishedColumnArticles } from "./columns/articles";
 import { deriveConsoleMeta, type ConsoleMeta } from "./console-meta";
 import { entityDirectory } from "./entity-directory";
+import { RUMOR_BRIEFS } from "./watch-data";
 
 export type ConsoleStory = {
   id: string;
   title: string;
+  titleEn?: string;
   summary?: string;
+  summaryEn?: string;
   publishedAt?: string | null;
   sourceUrl?: string | null;
   permalink?: string;
@@ -66,6 +69,7 @@ export type ConsoleRumor = {
   summaryEn: string;
   publishedAt: string;
   sourceName: string;
+  sourceUrl?: string;
   region: "中国" | "美国" | "全球";
   statusLabel: string;
   statusLabelEn: string;
@@ -73,6 +77,12 @@ export type ConsoleRumor = {
   officialResponse: string;
   officialResponseEn: string;
 };
+
+function rumorLink(item: ConsoleRumor, isZh: boolean): string {
+  const hasDetail = RUMOR_BRIEFS.some((record) => record.id === item.id);
+  if (hasDetail) return `${isZh ? "/rumors" : "/en/rumors"}/${item.id}`;
+  return item.sourceUrl ?? (isZh ? "/rumors" : "/en/rumors");
+}
 
 export type ConsoleOverviewData = {
   generatedAt?: string;
@@ -409,9 +419,10 @@ function ConsoleStatusbar({
     <a className="atlas-language" href={contextStatus.languageHref}>{isZh ? "EN" : "中文"}</a>
   </header>;
   return <header className="atlas-statusbar">
-    <div><strong>{dateLabel(generatedAt, lang, false, timezone)}</strong><span>{pageLabel ?? (isZh ? "每日产业情报" : "Daily industrial intelligence")}{reviewedAt ? ` · ${isZh ? "核验至" : "Verified through"} ${dateLabel(reviewedAt, lang, false, timezone)}` : ""}</span></div>
+    <div><strong>{dateLabel(generatedAt, lang, false, timezone)}</strong><span>{pageLabel ?? (isZh ? "每日产业情报" : "Daily industrial intelligence")}</span></div>
     <dl>
-      <div><dt>{isZh ? "数据刷新" : "Data refreshed"}</dt><dd><i />{dateLabel(generatedAt, lang, true, timezone)}</dd></div>
+      <div><dt>{isZh ? "系统扫描" : "System scan"}</dt><dd><i />{dateLabel(generatedAt, lang, true, timezone)}</dd></div>
+      <div><dt>{isZh ? "内容核验" : "Content reviewed"}</dt><dd>{dateLabel(reviewedAt, lang, false, timezone)}</dd></div>
       <div><dt>{isZh ? "来源覆盖" : "Source coverage"}</dt><dd>{sourceCount == null ? "—" : `${sourceCount} ${isZh ? "个公开来源" : "public sources"}`}</dd></div>
       <div><dt>{isZh ? "已核验记录" : "Verified records"}</dt><dd>{verifiedCount == null ? "—" : verifiedCount}</dd></div>
     </dl>
@@ -490,6 +501,26 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
   const leadImage = lead?.imageSrc ?? "/lead-amazon-aws-capex.png";
   const contextualImages = ["/column-hyperscale-leases-v2.jpg", "/column-sk-hynix-hbm-v2.jpg", "/products/nvidia-dgx-b200.jpg", "/column-ai-capex-grid-v2.jpg", "/column-microsoft-ai-capex-v2.jpg"];
 
+  function categoryLabel(value?: string | null): string {
+    if (!value) return isZh ? "项目" : "Project";
+    const labels: Record<string, [string, string]> = {
+      "idc-construction": ["数据中心项目", "Data-center project"],
+      "idc-project": ["数中心项目", "Data-center project"],
+      "idc-company": ["上市公司", "Listed company"],
+      "idc-company-risk": ["公司风险", "Company risk"],
+      "idc-financing": ["融资与资本", "Financing & capital"],
+      "idc-power": ["电力与能源", "Power & energy"],
+      "idc-cooling": ["液冷与温控", "Cooling"],
+      "idc-network": ["网络与互联", "Networking"],
+      "idc-rack": ["机柜与互联", "Racks & interconnect"],
+      "idc-supply-chain": ["产业链", "Supply chain"],
+      "china-ai-chip": ["中国 AI 芯片", "China AI silicon"],
+      "model-demand-watch": ["模型需求", "Model demand"],
+    };
+    const label = labels[value];
+    return label ? label[isZh ? 0 : 1] : value;
+  }
+
   useEffect(() => {
     const sectionIds = ["overview", "calendar", "columns", "pulse", "companies", "industry", "market"];
     const observer = new IntersectionObserver((entries) => {
@@ -533,7 +564,7 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
       <time>{dateLabel(story.publishedAt, lang)}</time>
       <b>{index < 2 ? (isZh ? "新增" : "NEW") : (isZh ? "更新" : "UPD")}</b>
       <strong>{storyTitle(story)}</strong>
-      <span>{story.category ?? (isZh ? "项目" : "Project")}</span>
+      <span>{categoryLabel(story.category)}</span>
       <span>{story.region ?? (isZh ? "全球" : "Global")}</span>
       <em>{disclosedMetric(story, lang)}</em>
       <span>{story.sourceName ?? "—"}</span>
@@ -550,7 +581,7 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
           <span>{isZh ? "今日首要信号" : "LEAD SIGNAL"}</span>
           <h1 id="atlas-lead-title"><a href={lead ? storyLink(lead) : "#"} target="_blank" rel="noreferrer">{lead ? storyTitle(lead) : isZh ? "正在连接最新基础设施信号" : "Connecting to the latest infrastructure signal"}</a></h1>
           <p>{lead ? storySummary(lead, lang) : isZh ? "数据连接后将显示最新已核验项目。" : "The latest verified project will appear when data connects."}</p>
-          {lead && <div className="atlas-lead-meta"><span>{lead.region ?? (isZh ? "全球" : "Global")}</span><span>{lead.category ?? (isZh ? "项目脉冲" : "Project pulse")}</span><time>{dateLabel(lead.publishedAt, lang)}</time></div>}
+          {lead && <div className="atlas-lead-meta"><span>{lead.region ?? (isZh ? "全球" : "Global")}</span><span>{categoryLabel(lead.category)}</span><time>{dateLabel(lead.publishedAt, lang)}</time></div>}
         </div>
         <figure className="atlas-lead-image">
           <img className={leadImage.startsWith("/column-") ? "contain-art" : ""} src={leadImage} alt={lead?.imageAlt ?? (isZh ? "数据中心基础设施项目" : "Data-center infrastructure project")} />
@@ -567,10 +598,10 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
       <section className="atlas-rumor-desk" id="rumors" aria-labelledby="atlas-rumor-desk-title">
         <header>
           <div><span>RUMOR WATCH · INTELLIGENCE DESK</span><strong id="atlas-rumor-desk-title">{isZh ? "市场情报" : "Reported intelligence"}</strong></div>
-          <p>{isZh ? "追踪主流媒体报道、后续进展与公开回应；官方披露出现后转入事实脉冲。" : "Tracks reported developments, follow-ups and public responses. Primary disclosures move to Verified Pulse."}</p>
+          <p>{isZh ? "并购、融资、算力采购与重大项目报道。" : "Reported M&A, financing, compute procurement and major projects."}</p>
           <a href={isZh ? "/rumors" : "/en/rumors"}>{isZh ? "进入情报台" : "Open Rumor Watch"} →</a>
         </header>
-        {rumors.length ? <div className="atlas-rumor-desk-grid">{rumors.map((item, index) => <a href={`${isZh ? "/rumors" : "/en/rumors"}/${item.id}`} key={item.id}>
+        {rumors.length ? <div className="atlas-rumor-desk-grid">{rumors.map((item, index) => <a href={rumorLink(item, isZh)} key={item.id} target={RUMOR_BRIEFS.some((record) => record.id === item.id) ? undefined : "_blank"} rel={RUMOR_BRIEFS.some((record) => record.id === item.id) ? undefined : "noreferrer"}>
           <div><span>{String(index + 1).padStart(2, "0")}</span><time>{dateLabel(item.publishedAt, lang)}</time></div>
           <strong>{isZh ? item.title : item.titleEn}</strong>
           <p>{isZh ? item.summary : item.summaryEn}</p>

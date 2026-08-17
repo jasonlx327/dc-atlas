@@ -208,8 +208,8 @@ export const scoringConfig = {
   },
   tierWeight: { T0: 12, T1: 10, T2: 7, T3: 5, T4: 3, T5: 1, D: 0 } satisfies Record<SourceTier, number>,
   thresholds: {
-    public: 45,
-    research: 58,
+    public: 40,
+    research: 52,
   },
 };
 

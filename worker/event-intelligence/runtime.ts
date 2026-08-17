@@ -1,9 +1,8 @@
-import { fetchRegisteredSource, sourceRegistryById } from "../connectors/index.ts";
+import { fetchRegisteredSource, shadowSources } from "../connectors/index.ts";
 import type { ConnectorRequestState, ConnectorResult, SourceDefinition } from "../connectors/types.ts";
 import { runShadowPipeline, type ShadowRunReport } from "./pipeline.ts";
 import type { EventIntelligenceJob } from "./schedule.ts";
 import {
-  CORE_COMPANY_SOURCE_IDS,
   CORE_COMPANY_WATCH_STATE_KEY,
   buildCoreCompanyWatchState,
   type CoreCompanyWatchState,
@@ -24,16 +23,6 @@ const LIVE_SMOKE_GATE_SOURCE_IDS = [
   "power-magazine",
   "utility-dive",
   "the-register",
-] as const;
-
-const LIVE_SMOKE_SOURCE_IDS = [
-  ...LIVE_SMOKE_GATE_SOURCE_IDS,
-  ...CORE_COMPANY_SOURCE_IDS,
-  "nvidia-developer",
-  "openai-news",
-  "xai-news",
-  "google-ai-blog",
-  "meta-engineering",
 ] as const;
 
 const LIVE_SMOKE_JOBS = new Set<EventIntelligenceJob>(["event-night", "event-midday", "event-day"]);
@@ -76,6 +65,14 @@ async function fetchSource(env: Env, source: SourceDefinition): Promise<Connecto
   return result;
 }
 
+async function fetchSources(env: Env, sources: SourceDefinition[]): Promise<ConnectorResult[]> {
+  const results: ConnectorResult[] = [];
+  for (let offset = 0; offset < sources.length; offset += 8) {
+    results.push(...await Promise.all(sources.slice(offset, offset + 8).map((source) => fetchSource(env, source))));
+  }
+  return results;
+}
+
 function smokePassed(results: ConnectorResult[]): boolean {
   const gateSources = new Set<string>(LIVE_SMOKE_GATE_SOURCE_IDS);
   const required = results.filter((result) => gateSources.has(result.sourceId));
@@ -100,11 +97,8 @@ export async function runEventIntelligenceShadow(
   scheduledTime: number,
 ): Promise<EventRuntimeStatus | null> {
   if (!LIVE_SMOKE_JOBS.has(job)) return null;
-  const sources = [...new Set<string>(LIVE_SMOKE_SOURCE_IDS)].flatMap((id) => {
-    const source = sourceRegistryById.get(id);
-    return source ? [source] : [];
-  });
-  const results = await Promise.all(sources.map((source) => fetchSource(env, source)));
+  const sources = shadowSources();
+  const results = await fetchSources(env, sources);
   const generatedAt = new Date(scheduledTime).toISOString();
   const report = await runShadowPipeline(results, sources, { generatedAt });
   const priorCompanyWatch = await env.IDC_DAILY_SNAPSHOTS.get<CoreCompanyWatchState>(CORE_COMPANY_WATCH_STATE_KEY, "json");

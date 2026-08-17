@@ -137,6 +137,21 @@ assert.deepEqual(
   dailySelectionCandidates([report(new Date(scheduledTime).toISOString(), [verified, discovery, grokBotOfficial, old])], scheduledTime).map((item) => item.id),
   ["grok-bot-official", "nvidia-official", "grok-discovery"],
 );
+const distributorLead = event({
+  id: "distributor-lead",
+  titleZh: "公司在新闻稿分发平台宣布新算力项目",
+  lastUpdatedAt: updatedAt,
+  route: "rejected",
+  routeCandidates: ["rejected"],
+  eligible: false,
+  sourceTiers: ["T4"],
+  priorityScore: 40,
+});
+assert.deepEqual(
+  dailySelectionCandidates([report(new Date(scheduledTime).toISOString(), [distributorLead])], scheduledTime).map((item) => item.id),
+  ["distributor-lead"],
+  "attributable announcement leads should reach Atlas Editor instead of being dropped",
+);
 
 const kv = new MemoryKv();
 kv.values.set("event-intelligence:run:event-night:2026-08-12", JSON.stringify(report("2026-08-12T00:00:00.000Z", [verified, discovery, grokBotOfficial])));
@@ -190,5 +205,53 @@ const packet = JSON.parse(kv.values.get(DAILY_CANDIDATE_PACKET_LATEST_KEY) ?? "n
 assert.equal(packet.selectedCount, 4);
 assert.equal(packet.publicationReadyCount, 3);
 assert.deepEqual(packet.sourceSlots, ["event-night", "event-midday", "event-day"]);
+
+const limitedKv = new MemoryKv();
+const limitedEvents = [
+  event({ id: "limit-one", titleZh: "NVIDIA 发布新数据中心系统", lastUpdatedAt: updatedAt }),
+  event({ id: "limit-two", titleZh: "AMD 公布新服务器平台", lastUpdatedAt: updatedAt, entities: ["AMD"] }),
+  event({ id: "limit-three", titleZh: "CoreWeave 宣布新算力合同", lastUpdatedAt: updatedAt, entities: ["CoreWeave"] }),
+];
+limitedKv.values.set("event-intelligence:run:event-night:2026-08-12", JSON.stringify(report("2026-08-12T00:00:00.000Z", limitedEvents)));
+const limitedEnv = {
+  ...env,
+  IDC_DAILY_SNAPSHOTS: limitedKv,
+  ATLAS_SCORING_DAILY_CALL_LIMIT: "1",
+} as unknown as Env;
+let limitedCalls = 0;
+const limited = await runDailyModelSelection(limitedEnv, scheduledTime, "event-night", {
+  fetcher: (async (...args: Parameters<typeof fetch>) => {
+    limitedCalls += 1;
+    return mockFetch(...args);
+  }) as typeof fetch,
+});
+assert.equal(limitedCalls, 1);
+assert.equal(limited.items.length, 3, "call-limit fallback must retain every editorial candidate");
+assert.equal(limited.fallbackCount, 2);
+assert.equal(limited.items.filter((item) => item.result.provider === "deterministic-fallback").length, 2);
+
+const failureKv = new MemoryKv();
+failureKv.values.set("event-intelligence:run:event-night:2026-08-12", JSON.stringify(report("2026-08-12T00:00:00.000Z", limitedEvents)));
+const failureEnv = { ...env, IDC_DAILY_SNAPSHOTS: failureKv } as unknown as Env;
+const failed = await runDailyModelSelection(failureEnv, scheduledTime, "event-night", {
+  fetcher: (async () => new Response("rate limited", { status: 429 })) as typeof fetch,
+});
+assert.equal(failed.status, "partial");
+assert.equal(failed.items.length, 3, "model failures must fall back instead of dropping candidates");
+assert.equal(failed.fallbackCount, 3);
+assert.equal(failed.items.every((item) => item.result.provider === "deterministic-fallback"), true);
+
+const unavailableKv = new MemoryKv();
+unavailableKv.values.set("event-intelligence:run:event-night:2026-08-12", JSON.stringify(report("2026-08-12T00:00:00.000Z", limitedEvents)));
+const unavailable = await runDailyModelSelection({
+  ...env,
+  IDC_DAILY_SNAPSHOTS: unavailableKv,
+  ATLAS_SCORING_ENABLED: "false",
+  ATLAS_SCORING_API_KEY: undefined,
+} as unknown as Env, scheduledTime, "event-night");
+assert.equal(unavailable.status, "partial");
+assert.equal(unavailable.attemptedCount, 0);
+assert.equal(unavailable.items.length, 3, "provider outages must retain deterministic candidates");
+assert.equal(unavailable.fallbackCount, 3);
 
 console.log("daily model selection tests passed");

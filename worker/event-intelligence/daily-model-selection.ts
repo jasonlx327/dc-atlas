@@ -6,6 +6,7 @@ import {
   modelScoringStatus,
   modelUsageKey,
   scoreWithOpenAiCompatible,
+  semanticScore,
   type ModelMaterialBand,
   type ModelScoringInput,
   type ModelScoringResult,
@@ -29,6 +30,9 @@ export type DailyMaterialSelectionItem = {
   sourceTiers: SourceTier[];
   independentSourceCount: number;
   coreCompanies: string[];
+  entities: string[];
+  region: string;
+  facts: EventRecord["facts"];
   sourceChain: EventRecord["sourceChain"];
   firstSeenAt: string;
   lastUpdatedAt: string;
@@ -50,6 +54,7 @@ export type DailyMaterialSelectionReport = {
   selectedCount: number;
   watchCount: number;
   droppedCount: number;
+  fallbackCount?: number;
   packetKey: string;
   items: DailyMaterialSelectionItem[];
   errors: string[];
@@ -66,6 +71,7 @@ export type DailyEditorialCandidatePacket = {
   selectedCount: number;
   watchCount: number;
   publicationReadyCount: number;
+  fallbackCount?: number;
   selected: DailyMaterialSelectionItem[];
   watch: DailyMaterialSelectionItem[];
   errors: string[];
@@ -96,13 +102,12 @@ function strongestTier(tiers: SourceTier[]): SourceTier {
 }
 
 function isEditorialCandidate(event: EventRecord): boolean {
-  if (event.route === "rejected") return false;
   const routed = event.routeCandidates?.some((route) => route === "pulse" || route === "rumor-watch" || route === "research-queue");
-  const discoveryLead = event.route === "hold"
-    && event.sourceTiers.includes("D")
-    && (event.priorityScore ?? 0) >= 45
-    && event.scoring.topicRelevanceScore >= 3.5;
-  return Boolean(routed || discoveryLead);
+  const attributableLead = (event.route === "hold" || event.route === "rejected")
+    && event.sourceTiers.some((tier) => tier === "T4" || tier === "T5" || tier === "D")
+    && (event.priorityScore ?? 0) >= 38
+    && event.scoring.topicRelevanceScore >= 3;
+  return Boolean(routed || attributableLead);
 }
 
 export function dailySelectionCandidates(
@@ -150,6 +155,7 @@ function input(event: EventRecord): ModelScoringInput {
 }
 
 function selectionItem(event: EventRecord, result: ModelScoringResult): DailyMaterialSelectionItem {
+  const coreCompanies = matchCoreCompanies([event.titleZh, event.titleEn, ...event.entities]).map((company) => company.name);
   return {
     eventId: event.id,
     titleZh: event.titleZh,
@@ -159,19 +165,51 @@ function selectionItem(event: EventRecord, result: ModelScoringResult): DailyMat
     route: event.route ?? "research-queue",
     routeCandidates: event.routeCandidates ?? [],
     priorityScore: event.priorityScore ?? 0,
-    band: modelMaterialBand(result),
-    publicationReadiness: event.eligible && event.route !== "hold"
+    band: modelMaterialBand(result, {
+      sourceTier: strongestTier(event.sourceTiers),
+      independentSourceCount: event.independentSourceCount,
+      coreCompanyCount: coreCompanies.length,
+    }),
+    publicationReadiness: event.route !== "hold"
+      && event.route !== "rejected"
+      && (event.priorityScore ?? 0) >= (event.route === "rumor-watch" ? 38 : 40)
       ? "eligible-by-rules"
       : "needs-source-verification",
     evidenceStatus: event.evidenceStatus,
     sourceTiers: event.sourceTiers,
     independentSourceCount: event.independentSourceCount,
-    coreCompanies: matchCoreCompanies([event.titleZh, event.titleEn, ...event.entities]).map((company) => company.name),
+    coreCompanies,
+    entities: event.entities,
+    region: event.region,
+    facts: event.facts,
     sourceChain: event.sourceChain,
     firstSeenAt: event.firstSeenAt,
     lastUpdatedAt: event.lastUpdatedAt,
     sourceLastUpdatedAt: event.lastUpdatedAt,
     result,
+  };
+}
+
+function fallbackResult(event: EventRecord, scoredAt: string, reason: string): ModelScoringResult {
+  const scores = {
+    topicRelevanceScore: event.scoring.topicRelevanceScore,
+    mechanismDepthScore: event.scoring.mechanismDepthScore,
+    specificityScore: event.scoring.specificityScore,
+    researchValueScore: event.scoring.researchValueScore,
+    readerValueScore: event.scoring.readerValueScore,
+  };
+  return {
+    schemaVersion: "atlas-model-score.v1",
+    mode: "shadow",
+    routeImpact: false,
+    provider: "deterministic-fallback",
+    model: "atlas-deterministic-fallback-v1",
+    scoredAt,
+    scores,
+    semanticScore: semanticScore(scores),
+    rationale: "外部模型未完成评分，保留确定性候选，交由 Atlas Editor 继续筛选。",
+    reasonCodes: ["model-scoring-fallback", reason],
+    usage: { promptTokens: 0, completionTokens: 0, totalTokens: 0 },
   };
 }
 
@@ -196,6 +234,7 @@ export function dailyCandidatePacket(report: DailyMaterialSelectionReport): Dail
     selectedCount: selected.length,
     watchCount: watch.length,
     publicationReadyCount: selected.filter((item) => item.publicationReadiness === "eligible-by-rules").length,
+    fallbackCount: report.fallbackCount ?? report.items.filter((item) => item.result.provider === "deterministic-fallback").length,
     selected,
     watch,
     errors: report.errors,
@@ -223,7 +262,7 @@ export async function runDailyModelSelection(
   const status = modelScoringStatus(env);
   const reportEntries = await eventReports(env, day);
   const packetKey = candidatePacketKey(day);
-  if (!status.ready || !reportEntries.length) {
+  if (!reportEntries.length) {
     const skipped: DailyMaterialSelectionReport = {
       schemaVersion: "atlas-daily-model-selection.v1",
       day,
@@ -238,9 +277,10 @@ export async function runDailyModelSelection(
       selectedCount: 0,
       watchCount: 0,
       droppedCount: 0,
+      fallbackCount: 0,
       packetKey,
       items: [],
-      errors: [!status.ready ? "DeepSeek Worker Secret 尚未配置。" : "当日事件管线尚无可用结果。"],
+      errors: ["当日事件管线尚无可用结果。"],
     };
     const packet = dailyCandidatePacket(skipped);
     await Promise.all([
@@ -251,6 +291,36 @@ export async function runDailyModelSelection(
   }
 
   const candidateList = dailySelectionCandidates(reportEntries.map((entry) => entry.report), scheduledTime);
+  if (!status.ready) {
+    const items = sortItems(candidateList.map((event) => selectionItem(event, fallbackResult(event, generatedAt, "model-provider-unavailable"))));
+    const output: DailyMaterialSelectionReport = {
+      schemaVersion: "atlas-daily-model-selection.v1",
+      day,
+      generatedAt,
+      sourceSlots: reportEntries.map((entry) => entry.slot),
+      status: "partial",
+      model: status.model,
+      candidateCount: candidateList.length,
+      newCandidateCount: candidateList.length,
+      alreadyScoredCount: 0,
+      attemptedCount: 0,
+      selectedCount: items.filter((item) => item.band === "selected").length,
+      watchCount: items.filter((item) => item.band === "watch").length,
+      droppedCount: items.filter((item) => item.band === "dropped").length,
+      fallbackCount: items.length,
+      packetKey,
+      items,
+      errors: ["DeepSeek Worker Secret 尚未配置；已使用确定性评分保留候选。"],
+    };
+    const packet = dailyCandidatePacket(output);
+    await Promise.all([
+      env.IDC_DAILY_SNAPSHOTS.put(DAILY_MODEL_SELECTION_LATEST_KEY, JSON.stringify(output)),
+      env.IDC_DAILY_SNAPSHOTS.put(selectionDayKey(day), JSON.stringify(output)),
+      env.IDC_DAILY_SNAPSHOTS.put(DAILY_CANDIDATE_PACKET_LATEST_KEY, JSON.stringify(packet)),
+      env.IDC_DAILY_SNAPSHOTS.put(packetKey, JSON.stringify(packet)),
+    ]);
+    return output;
+  }
   const [sameDay, priorDay] = await Promise.all([
     env.IDC_DAILY_SNAPSHOTS.get<DailyMaterialSelectionReport>(selectionDayKey(day), "json"),
     env.IDC_DAILY_SNAPSHOTS.get<DailyMaterialSelectionReport>(selectionDayKey(beijingDay(new Date(scheduledTime - 86_400_000))), "json"),
@@ -282,6 +352,9 @@ export async function runDailyModelSelection(
   const slotLimit = slot === "event-day" ? remaining : Math.min(remaining, perSlotLimit);
   const scoreQueue = queue.slice(0, slotLimit);
   const scoredItems: DailyMaterialSelectionItem[] = [];
+  const fallbackItems: DailyMaterialSelectionItem[] = queue.slice(slotLimit)
+    .map((event) => selectionItem(event, fallbackResult(event, generatedAt, "daily-model-call-limit")));
+  const handledEventIds = new Set<string>();
   const errors: string[] = [];
   let attemptedCount = 0;
   for (let offset = 0; offset < scoreQueue.length && errors.length < 2; offset += 4) {
@@ -294,14 +367,26 @@ export async function runDailyModelSelection(
     results.forEach((settled, index) => {
       if (settled.status === "fulfilled") {
         scoredItems.push(selectionItem(settled.value.event, settled.value.result));
+        handledEventIds.add(settled.value.event.id);
       } else {
         const message = settled.reason instanceof Error ? settled.reason.message : "评分失败";
         errors.push(`${chunk[index]?.id ?? "unknown"}: ${message}`);
+        const failedEvent = chunk[index];
+        if (failedEvent) {
+          handledEventIds.add(failedEvent.id);
+          fallbackItems.push(selectionItem(failedEvent, fallbackResult(failedEvent, generatedAt, "model-request-failed")));
+        }
       }
     });
   }
 
-  const items = sortItems([...unchangedSameDay, ...scoredItems]);
+  for (const event of scoreQueue) {
+    if (!handledEventIds.has(event.id)) {
+      fallbackItems.push(selectionItem(event, fallbackResult(event, generatedAt, "model-circuit-breaker")));
+    }
+  }
+
+  const items = sortItems([...unchangedSameDay, ...scoredItems, ...fallbackItems]);
   const output: DailyMaterialSelectionReport = {
     schemaVersion: "atlas-daily-model-selection.v1",
     day,
@@ -310,12 +395,13 @@ export async function runDailyModelSelection(
     status: errors.length ? "partial" : "completed",
     model: status.model,
     candidateCount: candidateList.length,
-    newCandidateCount: scoreQueue.length,
+    newCandidateCount: queue.length,
     alreadyScoredCount,
     attemptedCount,
     selectedCount: items.filter((item) => item.band === "selected").length,
     watchCount: items.filter((item) => item.band === "watch").length,
     droppedCount: items.filter((item) => item.band === "dropped").length,
+    fallbackCount: fallbackItems.length,
     packetKey,
     items,
     errors,
@@ -340,6 +426,7 @@ export async function runDailyModelSelection(
     attempted: output.attemptedCount,
     selected: output.selectedCount,
     publicationReady: packet.publicationReadyCount,
+    fallback: output.fallbackCount,
     errors: errors.length,
   }));
   return output;

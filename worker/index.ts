@@ -19,10 +19,15 @@ import {
 } from "./event-intelligence/daily-model-selection.ts";
 import {
   DAILY_SECTION_CLOSURE_LATEST_KEY,
-  isAttributableRumorReport,
   runDailySectionClosure,
   type AtlasDailyClosureReport,
 } from "./event-intelligence/daily-section-closure.ts";
+import {
+  ATLAS_EDITOR_DECISION_LATEST_KEY,
+  runAtlasAutoEditor,
+  type AtlasEditorDecision,
+  type AtlasEditorDecisionPacket,
+} from "./event-intelligence/atlas-auto-editor.ts";
 import {
   feedbackHistoryKey,
   feedbackLatestKey,
@@ -150,7 +155,9 @@ type LifecycleStage = { label: string; state: "done" | "current" | "next" };
 type NewsItem = {
   id: string;
   title: string;
+  titleEn?: string;
   summary: string;
+  summaryEn?: string;
   publishedAt: string | null;
   category: string | null;
   score: number | null;
@@ -165,6 +172,7 @@ type NewsItem = {
   weeklyHighlight?: boolean;
   listedTicker?: string;
   whyItMatters?: string;
+  whyItMattersEn?: string;
   verifiedAt?: string;
   lifecycle?: LifecycleStage[];
   imageSrc?: string;
@@ -200,13 +208,18 @@ type Benchmark = {
 type SourceRecord = {
   id: string;
   title: string;
+  titleEn?: string;
   subject: string;
+  subjectEn?: string;
   metric: string;
+  metricEn?: string;
   status: string;
+  statusEn?: string;
   publishedAt: string;
   sourceName: string;
   sourceUrl: string;
   note: string;
+  noteEn?: string;
 };
 
 type SectionFreshness = {
@@ -1380,6 +1393,10 @@ function officialProjectNews(records: SourceRecord[]): NewsItem[] {
 
 function uniqueNews(items: NewsItem[], take = 8): NewsItem[] {
   return Array.from(new Map(items.map((item) => [item.id, item])).values()).slice(0, take);
+}
+
+function uniqueRecords<T extends { id: string }>(items: T[]): T[] {
+  return Array.from(new Map(items.map((item) => [item.id, item])).values());
 }
 
 function trackedSources(): TrackedSource[] {
@@ -3118,7 +3135,7 @@ type AtlasApiOptions = {
   snapshotMeta?: DailySnapshotMeta;
 };
 
-function sectionFreshness<T>(items: T[], dateOf: (item: T) => string | null, contentWindowDays: number): SectionFreshness {
+function sectionFreshness<T>(items: T[], dateOf: (item: T) => string | null, contentWindowDays: number, verifiedDate = CONTENT_REVIEWED_AT): SectionFreshness {
   const timestamps = items
     .map(dateOf)
     .filter((value): value is string => Boolean(value))
@@ -3128,7 +3145,7 @@ function sectionFreshness<T>(items: T[], dateOf: (item: T) => string | null, con
   const latest = timestamps[0] ?? null;
   const day = 24 * 60 * 60 * 1_000;
   const now = Date.now();
-  const reviewedAt = new Date(`${CONTENT_REVIEWED_AT}T23:59:59+08:00`).getTime();
+  const reviewedAt = new Date(`${verifiedDate}T23:59:59+08:00`).getTime();
   const status: SectionFreshness["status"] = latest && now - latest.time <= contentWindowDays * day
     ? "current"
     : now - reviewedAt <= 3 * day
@@ -3137,7 +3154,7 @@ function sectionFreshness<T>(items: T[], dateOf: (item: T) => string | null, con
   return {
     count: items.length,
     latestContentAt: latest?.value ?? null,
-    latestVerifiedAt: CONTENT_REVIEWED_AT,
+    latestVerifiedAt: verifiedDate,
     status,
   };
 }
@@ -3146,38 +3163,106 @@ function policyIndex(): PolicyIndexRecord[] {
   return POLICY_BRIEFS;
 }
 
-function selectedCoreRumors(packet: DailyEditorialCandidatePacket | null): RumorWatchItem[] {
-  return [...(packet?.selected ?? []), ...(packet?.watch ?? [])]
-    .filter((item) => isAttributableRumorReport(item) && (item.coreCompanies?.length ?? 0) > 0)
-    .flatMap((item) => {
-      const sourceChain = item.sourceChain ?? [];
-      const source = sourceChain.find((entry) => entry.relationship === "origin") ?? sourceChain[0];
-      if (!source?.url || source.accessStatus === "blocked" || source.accessStatus === "paywalled") return [];
-      const definition = sourceRegistryById.get(source.sourceId);
-      return [{
-        id: `model-${item.eventId}`,
-        title: item.titleZh,
-        titleEn: item.titleEn,
-        summary: item.summaryZh,
-        summaryEn: item.summaryEn,
-        publishedAt: source.publishedAt ?? item.lastUpdatedAt,
-        sourceName: definition?.name ?? source.sourceId,
-        sourceUrl: source.url,
-        region: /中国|China/i.test(`${item.titleZh} ${item.summaryZh}`) ? "中国" as const : /美国|United States|U\.S\./i.test(`${item.titleEn} ${item.summaryEn}`) ? "美国" as const : "全球" as const,
-        status: "reported" as const,
-        statusLabel: "媒体报道 · 跟踪后续确认",
-        statusLabelEn: "Media report · confirmation tracked",
-        sourceCount: item.independentSourceCount,
-        entities: item.coreCompanies ?? [],
-        officialResponse: item.evidenceStatus === "official_response" ? "相关主体已作出公开回应，仍以原始披露为准。" : "当前公开资料中尚无完整官方确认。",
-        officialResponseEn: item.evidenceStatus === "official_response" ? "A relevant party has responded publicly; the primary disclosure remains controlling." : "No complete primary confirmation is currently available.",
-        sourceNote: "报道来源与时间已保留；后续官方披露将补充至该条目。",
-        sourceNoteEn: "The reporting source and timestamp are retained; later primary disclosures will be added to this item.",
-      } satisfies RumorWatchItem];
-    });
+function editorSource(decision: AtlasEditorDecision): { name: string; url: string } | null {
+  const url = decision.canonicalUrls[0];
+  if (!url) return null;
+  return { name: decision.sourceId ? sourceRegistryById.get(decision.sourceId)?.name ?? decision.sourceId : "公开来源", url };
 }
 
-function rumorWatch(news: NewsItem[], packet: DailyEditorialCandidatePacket | null = null): RumorWatchItem[] {
+function editorRegion(region: string): "中国" | "美国" | "全球" {
+  if (/中国|China/i.test(region)) return "中国";
+  if (/美国|United States|U\.S\./i.test(region)) return "美国";
+  return "全球";
+}
+
+function editorNewsItems(packet: AtlasEditorDecisionPacket | null, sections: string[]): NewsItem[] {
+  return (packet?.decisions ?? []).flatMap((decision) => {
+    if (decision.action !== "publish" || decision.route !== "formal-section" || !decision.section || !sections.includes(decision.section) || !decision.publicCopy) return [];
+    const source = editorSource(decision);
+    if (!source) return [];
+    const signal: SignalKey = decision.section === "cooling" ? "cooling"
+      : decision.section === "power-model-demand" ? "power"
+        : decision.section === "supply-chain" ? "network"
+          : decision.section === "compute-products" || decision.section === "china-gpu" ? "hardware"
+            : "capacity";
+    const scale = decision.publicClaims.map((claim) => claim.claim).filter(Boolean).slice(0, 2).join(" · ").slice(0, 240);
+    return [{
+      id: `editor-${decision.eventId}`,
+      title: decision.publicCopy.titleZh,
+      titleEn: decision.publicCopy.titleEn,
+      summary: decision.publicCopy.summaryZh,
+      summaryEn: decision.publicCopy.summaryEn,
+      publishedAt: decision.publishedAt,
+      category: `atlas-${decision.section}`,
+      score: null,
+      permalink: source.url,
+      sourceUrl: source.url,
+      sourceName: source.name,
+      signal,
+      curator: "官方来源",
+      region: editorRegion(decision.region),
+      milestone: decision.evidenceStatus === "official_response" ? "官方回应" : "一手披露",
+      scale: scale || undefined,
+      weeklyHighlight: Date.now() - Date.parse(decision.publishedAt) <= 7 * 24 * 60 * 60 * 1_000,
+      verifiedAt: packet?.day,
+    } satisfies NewsItem];
+  });
+}
+
+function editorSourceRecords(packet: AtlasEditorDecisionPacket | null, section: "capacity" | "cooling"): SourceRecord[] {
+  return (packet?.decisions ?? []).flatMap((decision) => {
+    if (decision.action !== "publish" || decision.route !== "formal-section" || decision.section !== section || !decision.publicCopy) return [];
+    const source = editorSource(decision);
+    if (!source) return [];
+    const metric = decision.publicClaims.map((claim) => claim.claim).filter(Boolean).slice(0, 2).join(" · ").slice(0, 240) || "规模以原始披露为准";
+    return [{
+      id: `editor-${decision.eventId}`,
+      title: decision.publicCopy.titleZh,
+      titleEn: decision.publicCopy.titleEn,
+      subject: decision.entities.join(" / ") || "公开披露主体",
+      subjectEn: decision.entities.join(" / ") || "Disclosing entity",
+      metric,
+      metricEn: metric,
+      status: decision.evidenceStatus === "official_response" ? "官方回应" : "一手披露",
+      statusEn: decision.evidenceStatus === "official_response" ? "Official response" : "Primary disclosure",
+      publishedAt: decision.publishedAt,
+      sourceName: source.name,
+      sourceUrl: source.url,
+      note: decision.publicCopy.summaryZh,
+      noteEn: decision.publicCopy.summaryEn,
+    } satisfies SourceRecord];
+  });
+}
+
+function selectedCoreRumors(packet: AtlasEditorDecisionPacket | null): RumorWatchItem[] {
+  return (packet?.decisions ?? []).flatMap((decision) => {
+    if (decision.action !== "publish" || decision.route !== "rumor-watch" || !decision.publicCopy) return [];
+    const source = editorSource(decision);
+    if (!source) return [];
+    return [{
+      id: `editor-${decision.eventId}`,
+      title: decision.publicCopy.titleZh,
+      titleEn: decision.publicCopy.titleEn,
+      summary: decision.publicCopy.summaryZh,
+      summaryEn: decision.publicCopy.summaryEn,
+      publishedAt: decision.publishedAt,
+      sourceName: source.name,
+      sourceUrl: source.url,
+      region: editorRegion(decision.region),
+      status: "reported" as const,
+      statusLabel: "媒体报道 · 跟踪后续确认",
+      statusLabelEn: "Media report · confirmation tracked",
+      sourceCount: Math.max(1, decision.canonicalUrls.length),
+      entities: decision.entities,
+      officialResponse: decision.evidenceStatus === "official_response" ? "相关主体已公开回应；报道中的其余主张仍按来源归属呈现。" : "当前未见对报道核心主张的完整一手确认。",
+      officialResponseEn: decision.evidenceStatus === "official_response" ? "A relevant party has responded publicly; remaining reported claims stay attributed." : "No complete primary confirmation of the report's core claim is currently available.",
+      sourceNote: `${source.name} 报道；相关主张按报道口径呈现。`,
+      sourceNoteEn: `Reported by ${source.name}; the claims remain attributed to that report.`,
+    } satisfies RumorWatchItem];
+  });
+}
+
+function rumorWatch(news: NewsItem[], packet: AtlasEditorDecisionPacket | null = null): RumorWatchItem[] {
   const mediaSource = /reuters|bloomberg|marketwatch|cnbc|financial times|the information|wall street journal/i;
   const rumorLanguage = /rumou?r|report(?:ed|s)?|sources?|plans?|consider(?:s|ing)?|expects?|may |could |in talks|据称|消息人士|传闻|拟|考虑|计划|或将/i;
   const orderSignal = /order|contract|lease|supply|procurement|deployment|shipment|delivery|客户|订单|合同|租约|供货|采购|交付|出货|中标/i;
@@ -3238,12 +3323,12 @@ function staticAtlasContent(): Record<string, unknown> {
 async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, options: AtlasApiOptions = {}): Promise<Response> {
   if (request.method !== "GET") return Response.json({ error: "Method not allowed" }, { status: 405 });
 
-  const [dailyCandidatePacket, dailyClosure] = await Promise.all([
-    env.IDC_DAILY_SNAPSHOTS.get<DailyEditorialCandidatePacket>(DAILY_CANDIDATE_PACKET_LATEST_KEY, "json"),
+  const [editorDecision, dailyClosure] = await Promise.all([
+    env.IDC_DAILY_SNAPSHOTS.get<AtlasEditorDecisionPacket>(ATLAS_EDITOR_DECISION_LATEST_KEY, "json"),
     env.IDC_DAILY_SNAPSHOTS.get<AtlasDailyClosureReport>(DAILY_SECTION_CLOSURE_LATEST_KEY, "json"),
   ]);
   const staticContentVersion = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(JSON.stringify(staticAtlasContent()))).then((digest) => Array.from(new Uint8Array(digest)).slice(0, 8).map((byte) => byte.toString(16).padStart(2, "0")).join(""));
-  const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}&selection=${encodeURIComponent(dailyCandidatePacket?.generatedAt ?? "none")}&closure=${encodeURIComponent(dailyClosure?.generatedAt ?? "none")}`, request.url), { method: "GET" });
+  const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}&editor=${encodeURIComponent(editorDecision?.generatedAt ?? "none")}&closure=${encodeURIComponent(dailyClosure?.generatedAt ?? "none")}`, request.url), { method: "GET" });
   const edgeCache = (caches as unknown as { default: Cache }).default;
   if (!options.forceRefresh) {
     const cached = await edgeCache.match(cacheKey);
@@ -3293,11 +3378,17 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const benchmark = benchmarkResult.status === "fulfilled"
     ? benchmarkResult.value
     : { benchmarks: [], date: null, methodology: null };
-  const records = capacityRadar();
-  const coolingRecords = coolingProgress();
+  const records = uniqueRecords([...editorSourceRecords(editorDecision, "capacity"), ...capacityRadar()]);
+  const coolingRecords = uniqueRecords([...editorSourceRecords(editorDecision, "cooling"), ...coolingProgress()]);
   const news = newsResult.status === "fulfilled" ? newsResult.value : [];
-  const nvidiaNews = nvidiaResult.status === "fulfilled" ? nvidiaResult.value : [];
-  const coolingNews = coolingResult.status === "fulfilled" ? coolingResult.value : [];
+  const nvidiaNews = uniqueNews([
+    ...editorNewsItems(editorDecision, ["compute-products"]),
+    ...(nvidiaResult.status === "fulfilled" ? nvidiaResult.value : []),
+  ], 8);
+  const coolingNews = uniqueNews([
+    ...editorNewsItems(editorDecision, ["cooling"]),
+    ...(coolingResult.status === "fulfilled" ? coolingResult.value : []),
+  ], 8);
   const networkNews = networkResult.status === "fulfilled" ? networkResult.value : [];
   const powerNews = powerResult.status === "fulfilled" ? powerResult.value : [];
   const modelNews = uniqueNews([
@@ -3306,7 +3397,10 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
       ? modelResult.value.filter((item) => /发布|推出|上线|开源|更新|开放权重|登顶|release|introduc|checkpoint/i.test(`${item.title} ${item.summary}`))
       : []),
   ], 6);
-  const chinaChipNews = chinaChipPulse(chinaChipResult.status === "fulfilled" ? chinaChipResult.value : []);
+  const chinaChipNews = uniqueNews([
+    ...editorNewsItems(editorDecision, ["china-gpu"]),
+    ...chinaChipPulse(chinaChipResult.status === "fulfilled" ? chinaChipResult.value : []),
+  ], 10);
   const rumors = rumorWatch(uniqueNews([
     ...news,
     ...nvidiaNews,
@@ -3315,10 +3409,16 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
     ...powerNews,
     ...modelNews,
     ...chinaChipNews,
-  ], 80), dailyCandidatePacket);
+  ], 80), editorDecision);
   const positiveNews = positiveIdcNews(news, records);
-  const idcPulse = constructionPulse();
-  const listedCompanyNews = listedCompanyPulse();
+  const idcPulse = uniqueNews([
+    ...editorNewsItems(editorDecision, ["idc-pulse", "capacity"]),
+    ...constructionPulse(),
+  ], 48);
+  const listedCompanyNews = uniqueNews([
+    ...editorNewsItems(editorDecision, ["listed-companies"]),
+    ...listedCompanyPulse(),
+  ], 48);
   const deals = mnaDeals();
   const allCalendarEvents = calendarEvents();
   const upcomingEvents = featuredCalendar();
@@ -3327,34 +3427,39 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const computeNews = nvidiaNews.filter((item) => /GPU|服务器|机柜|算力芯片|AI\s*工厂|Vera\s*Rubin|Blackwell|Rubin/i.test(item.title));
   const chainNews: Record<ChainKey, NewsItem[]> = {
     compute: recentNews([
+      ...editorNewsItems(editorDecision, ["compute-products", "china-gpu"]),
       ...chinaChipNews,
       ...listedCompanyNews.filter((item) => item.id === "biwin-xincheng-hanqi-financing-2026"),
       ...computeNews,
       ...fallback.rack.slice(0, 2),
     ], chainWindowDays),
-    rack: recentNews([...networkNews, ...fallback.rack], chainWindowDays),
-    cooling: recentNews([...coolingNews, ...fallback.cooling], chainWindowDays),
+    rack: recentNews([...editorNewsItems(editorDecision, ["supply-chain"]), ...networkNews, ...fallback.rack], chainWindowDays),
+    cooling: recentNews([...editorNewsItems(editorDecision, ["cooling"]), ...coolingNews, ...fallback.cooling], chainWindowDays),
     power: recentNews([
+      ...editorNewsItems(editorDecision, ["power-model-demand"]),
       ...powerNews,
       ...idcPulse.filter((item) => item.signal === "power" || /GW|MW|电力|供电|绿电/i.test(`${item.title} ${item.summary} ${item.scale ?? ""}`)),
       ...fallback.power,
     ], chainWindowDays),
     campus: recentNews([...idcPulse, ...positiveNews, ...news], chainWindowDays),
-    model: recentNews(modelNews, chainWindowDays),
+    model: recentNews([...editorNewsItems(editorDecision, ["power-model-demand"]), ...modelNews], chainWindowDays),
   };
 
   const latestSnapshot = await env.IDC_DAILY_SNAPSHOTS.get<DailySnapshotMeta>("latest-meta", "json");
   const coreSourcesHealthy = newsResult.status === "fulfilled" && benchmarkResult.status === "fulfilled";
+  const verifiedDateFor = (section: string) => dailyClosure?.sections.find((entry) => entry.section === section)?.status !== "blocked"
+    && dailyClosure?.day ? dailyClosure.day : CONTENT_REVIEWED_AT;
+  const contentReviewedAt = dailyClosure?.status === "completed" ? dailyClosure.day : CONTENT_REVIEWED_AT;
   const sectionFreshnessState = {
-    idcPulse: sectionFreshness(idcPulse, (item) => item.publishedAt, 14),
-    listedCompanyNews: sectionFreshness(listedCompanyNews, (item) => item.publishedAt, 14),
-    mnaDeals: sectionFreshness(deals, (item) => item.announcedAt, 45),
-    capacityRadar: sectionFreshness(records, (item) => item.publishedAt, 30),
-    coolingProgress: sectionFreshness(coolingRecords, (item) => item.publishedAt, 45),
+    idcPulse: sectionFreshness(idcPulse, (item) => item.publishedAt, 14, verifiedDateFor("idc-pulse")),
+    listedCompanyNews: sectionFreshness(listedCompanyNews, (item) => item.publishedAt, 14, verifiedDateFor("listed-companies")),
+    mnaDeals: sectionFreshness(deals, (item) => item.announcedAt, 45, verifiedDateFor("mna")),
+    capacityRadar: sectionFreshness(records, (item) => item.publishedAt, 30, verifiedDateFor("capacity")),
+    coolingProgress: sectionFreshness(coolingRecords, (item) => item.publishedAt, 45, verifiedDateFor("cooling")),
   };
   const response = Response.json({
     generatedAt: new Date().toISOString(),
-    contentReviewedAt: CONTENT_REVIEWED_AT,
+    contentReviewedAt,
     dailyClosure,
     sectionFreshness: sectionFreshnessState,
     windowLabel: "近45天",
@@ -3523,7 +3628,7 @@ function compactHomepageAtlasPayload(payload: Record<string, unknown>): Record<s
   };
   const compactRumor = (value: unknown) => {
     const item = value as Record<string, unknown>;
-    return Object.fromEntries(["id", "title", "titleEn", "summary", "summaryEn", "publishedAt", "sourceName", "sourceCount"].map((key) => [key, item[key]]).filter(([, field]) => field != null));
+    return Object.fromEntries(["id", "title", "titleEn", "summary", "summaryEn", "publishedAt", "sourceName", "sourceUrl", "sourceCount"].map((key) => [key, item[key]]).filter(([, field]) => field != null));
   };
   return {
     generatedAt: payload.generatedAt,
@@ -3681,9 +3786,10 @@ async function adminModelScoringApi(request: Request, env: Env): Promise<Respons
   const callsToday = Number.parseInt(await env.IDC_DAILY_SNAPSHOTS.get(usageKey) ?? "0", 10) || 0;
 
   if (request.method === "GET") {
-    const [dailySelection, dailyCandidates, dailyClosure] = await Promise.all([
+    const [dailySelection, dailyCandidates, editorDecision, dailyClosure] = await Promise.all([
       env.IDC_DAILY_SNAPSHOTS.get<DailyMaterialSelectionReport>(DAILY_MODEL_SELECTION_LATEST_KEY, "json"),
       env.IDC_DAILY_SNAPSHOTS.get<DailyEditorialCandidatePacket>(DAILY_CANDIDATE_PACKET_LATEST_KEY, "json"),
+      env.IDC_DAILY_SNAPSHOTS.get<AtlasEditorDecisionPacket>(ATLAS_EDITOR_DECISION_LATEST_KEY, "json"),
       env.IDC_DAILY_SNAPSHOTS.get<AtlasDailyClosureReport>(DAILY_SECTION_CLOSURE_LATEST_KEY, "json"),
     ]);
     return adminJson({
@@ -3696,6 +3802,7 @@ async function adminModelScoringApi(request: Request, env: Env): Promise<Respons
       usage: { callsToday, remainingToday: Math.max(0, serverStatus.dailyCallLimit - callsToday) },
       dailySelection,
       dailyCandidates,
+      editorDecision,
       dailyClosure,
     });
   }
@@ -3729,6 +3836,8 @@ async function adminModelScoringApi(request: Request, env: Env): Promise<Respons
       const scheduledTime = Date.now();
       const eventRun = await runEventIntelligenceShadow(env, "event-day", scheduledTime);
       const dailySelection = await runDailyModelSelection(env, scheduledTime, "event-day");
+      const editorDecision = await runAtlasAutoEditor(env, scheduledTime);
+      const dailyClosure = await runDailySectionClosure(env, scheduledTime);
       const dailyCandidates = await env.IDC_DAILY_SNAPSHOTS.get<DailyEditorialCandidatePacket>(DAILY_CANDIDATE_PACKET_LATEST_KEY, "json");
       return adminJson({
         status: serverStatus,
@@ -3739,7 +3848,9 @@ async function adminModelScoringApi(request: Request, env: Env): Promise<Respons
         eventRun,
         dailySelection,
         dailyCandidates,
-      }, dailySelection.status === "skipped" ? 409 : 201);
+        editorDecision,
+        dailyClosure,
+      }, dailySelection.status === "skipped" || dailyClosure.retryRequired ? 409 : 201);
     }
     const sessionCredentials = record?.sessionCredentials
       ? parseDeepSeekSessionCredentials(record.sessionCredentials)
@@ -3877,20 +3988,24 @@ const worker = {
       "event-night": async () => {
         await runEventIntelligenceShadow(env, "event-night", controller.scheduledTime);
         await runDailyModelSelection(env, controller.scheduledTime, "event-night");
+        await runAtlasAutoEditor(env, controller.scheduledTime);
       },
       "event-midday": async () => {
         await runEventIntelligenceShadow(env, "event-midday", controller.scheduledTime);
         await runDailyModelSelection(env, controller.scheduledTime, "event-midday");
+        await runAtlasAutoEditor(env, controller.scheduledTime);
       },
       "snapshot-daily": async () => { await createScheduledSnapshot(env, controller.scheduledTime, ctx); },
       "daily-closure": async () => {
         await runDailyModelSelection(env, controller.scheduledTime, "event-night");
+        await runAtlasAutoEditor(env, controller.scheduledTime);
         await runDailySectionClosure(env, controller.scheduledTime);
         await createScheduledSnapshot(env, controller.scheduledTime, ctx);
       },
       "event-day": async () => {
         await runEventIntelligenceShadow(env, "event-day", controller.scheduledTime);
         await runDailyModelSelection(env, controller.scheduledTime, "event-day");
+        await runAtlasAutoEditor(env, controller.scheduledTime);
       },
     });
   },

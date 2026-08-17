@@ -18,6 +18,14 @@ async function render(pathname = "/", host = "dc-atlas.example", country = null,
   );
 }
 
+async function currentFeaturedColumnImage() {
+  const source = await readFile(new URL("../app/columns/articles.ts", import.meta.url), "utf8");
+  for (const match of source.matchAll(/publishAt:\s*"([^"]+)"[\s\S]*?image:\s*"([^"]+)"/g)) {
+    if (Date.parse(match[1]) <= Date.now()) return match[2];
+  }
+  throw new Error("No published column cover found");
+}
+
 test("server-renders the bilingual intelligence-console homepage", async () => {
   const response = await render();
   assert.equal(response.status, 200);
@@ -48,7 +56,7 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /研究队列/);
   assert.match(html, /src="\/lead-amazon-aws-capex\.png"/);
   assert.match(html, /Meta–BlackRock El Paso：1GW AI 园区如何把建设期风险装进资本结构/);
-  assert.match(html, /column-meta-blackrock-el-paso-v1\.jpg/);
+  assert.match(html, new RegExp((await currentFeaturedColumnImage()).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   assert.match(html, /href="\/columns"/);
   assert.match(html, /href="\/columns\/meta-blackrock-el-paso"/);
   assert.doesNotMatch(html, /情报摘要/);

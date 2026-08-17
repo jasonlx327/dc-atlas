@@ -7,7 +7,7 @@ import type { RumorWatchItem } from "../watch-data";
 
 type Story = ConsoleStory & { whyItMatters?: string };
 type CalendarEvent = { id: string; startsAt: string; company: string; ticker: string; sector: string; sourceUrl: string; sourceName: string; focus?: string; conclusion?: { summary: string; summaryEn?: string; sourceName: string; sourceUrl: string } };
-type CapacityRecord = { id: string; title: string; subject: string; metric: string; status: string; publishedAt: string; sourceName: string; sourceUrl: string; note: string };
+type CapacityRecord = { id: string; title: string; titleEn?: string; subject: string; subjectEn?: string; metric: string; metricEn?: string; status: string; statusEn?: string; publishedAt: string; sourceName: string; sourceUrl: string; note: string; noteEn?: string };
 type Product = { id: string; vendor: string; name: string; model?: string; form?: string; spec?: string; summary?: string; headlineMetric?: string; sourceName: string; sourceUrl: string; imageSrc?: string; imageAlt?: string };
 type Deal = { id: string; announcedAt: string; buyer: string; target: string; value: string; capacity: string; region: string; status: string; rationale: string; sourceName: string; sourceUrl: string };
 type EnglishView = "home" | "pulse" | "industry";
@@ -396,18 +396,20 @@ function englishDeal(deal: Deal): Deal {
     rationale: /[一-鿿]/.test(deal.rationale) ? "Source-linked transaction update." : deal.rationale,
   };
 }
-function recordCopy(record: CapacityRecord) { return recordTranslations[record.id] ?? { title: record.title, status: record.status, metric: record.metric, note: record.note }; }
+function recordCopy(record: CapacityRecord) { return recordTranslations[record.id] ?? { title: record.titleEn ?? record.title, status: record.statusEn ?? record.status, metric: record.metricEn ?? record.metric, note: record.noteEn ?? record.note }; }
 function supernodeCopy(node: Product) { return supernodeTranslations[node.id] ?? { status: "Public update", summary: node.summary ?? "Source-linked product update." }; }
 
 function StoryCard({ item, eyebrow = "SOURCE-LINKED SIGNAL" }: { item: Story; eyebrow?: string }) {
   const translated = titleTranslations[item.title];
+  const title = item.titleEn ?? englishTitle(item.title);
+  const summary = item.summaryEn ?? (translated ? summaryTranslations[item.title] ?? "Source-linked editorial signal." : "A new source-linked update is being reviewed for English editorial coverage.");
   const source = item.sourceUrl ?? item.permalink ?? "#";
   const image = storyImages[item.title];
   return <article className="english-story-card">
     {image && <img className="english-story-card-image" src={image.src} alt={image.alt} loading="lazy" />}
     <div><span>{eyebrow}</span><time>{formatDate(item.publishedAt)}</time></div>
-    <h3><a href={source} target="_blank" rel="noreferrer">{englishTitle(item.title)}</a></h3>
-    <p>{translated ? summaryTranslations[item.title] ?? "Source-linked editorial signal." : "A new source-linked update is being reviewed for English editorial coverage."}</p>
+    <h3><a href={source} target="_blank" rel="noreferrer">{title}</a></h3>
+    <p>{summary}</p>
     {(item.milestone || item.scale) && <dl><div><dt>STAGE</dt><dd>{englishField(item.milestone, "Public update")}</dd></div><div><dt>SCALE</dt><dd>{englishField(item.scale, "Not disclosed")}</dd></div></dl>}
     <a className="english-source" href={source} target="_blank" rel="noreferrer">{item.sourceName ?? "Open source"} ↗</a>
   </article>;
@@ -416,14 +418,16 @@ function StoryCard({ item, eyebrow = "SOURCE-LINKED SIGNAL" }: { item: Story; ey
 function ConsoleStoryRow({ item, index, eyebrow }: { item: Story; index: number; eyebrow: string }) {
   const source = item.sourceUrl ?? item.permalink ?? "#";
   const translated = titleTranslations[item.title];
+  const title = item.titleEn ?? englishTitle(item.title);
+  const summary = item.summaryEn ?? (translated ? summaryTranslations[item.title] ?? "Source-linked editorial signal." : "A new source-linked update is being reviewed for English editorial coverage.");
   return <article className="console-story-row">
     <span>{String(index + 1).padStart(2, "0")}</span>
     <div>
       <div><b>{eyebrow}</b><time>{formatDate(item.publishedAt)}</time></div>
-      <h3><a href={source} target="_blank" rel="noreferrer">{englishTitle(item.title)}</a></h3>
-      <p>{translated ? summaryTranslations[item.title] ?? "Source-linked editorial signal." : "A new source-linked update is being reviewed for English editorial coverage."}</p>
+      <h3><a href={source} target="_blank" rel="noreferrer">{title}</a></h3>
+      <p>{summary}</p>
     </div>
-    <a href={source} target="_blank" rel="noreferrer" aria-label={`Open source for ${englishTitle(item.title)}`}>↗</a>
+    <a href={source} target="_blank" rel="noreferrer" aria-label={`Open source for ${title}`}>↗</a>
   </article>;
 }
 
@@ -441,16 +445,24 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
 
   useEffect(() => {
     const controller = new AbortController();
-    void fetch("/api/atlas-live-v5?schema=v1", { signal: controller.signal, cache: "no-store", headers: { "cache-control": "no-cache" } })
-      .then((response) => response.ok ? response.json() : Promise.reject(new Error("Atlas unavailable")))
-      .then((data: unknown) => {
-        const nextPayload = data as AtlasPayload;
-        setPayload(nextPayload);
+    void (async () => {
+      try {
+        const response = await fetch("/api/atlas-live-v5?schema=v1", { signal: controller.signal, cache: "no-store", headers: { "cache-control": "no-cache" } });
+        if (!response.ok) throw new Error("Atlas unavailable");
+        setPayload(await response.json() as AtlasPayload);
         setLoadError(false);
-      })
-      .catch((error: unknown) => {
-        if (!(error instanceof DOMException && error.name === "AbortError")) setLoadError(true);
-      });
+      } catch (error) {
+        if (error instanceof DOMException && error.name === "AbortError") return;
+        try {
+          const snapshot = await fetch("/api/daily-snapshot", { signal: controller.signal, cache: "no-store" });
+          if (!snapshot.ok) throw new Error("Snapshot unavailable");
+          setPayload(await snapshot.json() as AtlasPayload);
+          setLoadError(false);
+        } catch (snapshotError) {
+          if (!(snapshotError instanceof DOMException && snapshotError.name === "AbortError")) setLoadError(true);
+        }
+      }
+    })();
     return () => controller.abort();
   }, []);
 
@@ -496,7 +508,7 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
     className="atlas-industry-shell"
   ><div className="english-console-workspace atlas-console-content-page atlas-english-content-page atlas-industry-page">
       <section className="console-page-hero"><span>INFRASTRUCTURE CENTER</span><h1>From silicon to grid,{" "}<br /><em>AI turns physical.</em></h1><p>Compute, networking, power, cooling and campus capacity — with selective China coverage where it affects global competition.</p><div><b>6</b><span>supply-chain nodes</span><b>{capacity.length}</b><span>campus updates</span></div></section>
-      <section className="console-section console-section-dark"><ConsoleSectionHead label="01 · SUPPLY CHAIN" title="Six infrastructure nodes" copy="The latest source-linked signal at each point in the AI infrastructure stack." /><div className="english-chain-grid">{chainGroups.map(([stage, items]) => { const meta = chainMeta[stage as ChainKey] ?? { no: "—", title: stage, detail: "Source-linked infrastructure signals" }; return <article key={stage}><header><span className="english-chain-icon"><ChainIcon type={stage as ChainKey} /></span><div><small>{meta.no} · SUPPLY CHAIN NODE</small><h3>{meta.title}</h3><p>{meta.detail}</p></div></header><div>{items.map((item) => <a href={item.sourceUrl ?? item.permalink ?? "#"} target="_blank" rel="noreferrer" key={item.id}>{englishTitle(item.title)} <small>↗</small></a>)}</div></article>; })}</div></section>
+      <section className="console-section console-section-dark"><ConsoleSectionHead label="01 · SUPPLY CHAIN" title="Six infrastructure nodes" copy="The latest source-linked signal at each point in the AI infrastructure stack." /><div className="english-chain-grid">{chainGroups.map(([stage, items]) => { const meta = chainMeta[stage as ChainKey] ?? { no: "—", title: stage, detail: "Source-linked infrastructure signals" }; return <article key={stage}><header><span className="english-chain-icon"><ChainIcon type={stage as ChainKey} /></span><div><small>{meta.no} · SUPPLY CHAIN NODE</small><h3>{meta.title}</h3><p>{meta.detail}</p></div></header><div>{items.map((item) => <a href={item.sourceUrl ?? item.permalink ?? "#"} target="_blank" rel="noreferrer" key={item.id}>{item.titleEn ?? englishTitle(item.title)} <small>↗</small></a>)}</div></article>; })}</div></section>
       <section className="console-section"><ConsoleSectionHead label="02 · COMPUTE" title="NVIDIA product radar" copy="Current product form factors and infrastructure read-throughs." /><div className="english-product-grid">{nvidiaProducts.map((product) => <article key={product.id}>{product.imageSrc && <img src={product.imageSrc} alt={product.imageAlt ?? product.model ?? "NVIDIA product"} loading="lazy" />}<span>NVIDIA PRODUCT</span><h3>{product.model}</h3><strong>{product.form}</strong><p>{product.spec}</p><a href={product.sourceUrl} target="_blank" rel="noreferrer">{product.sourceName} ↗</a></article>)}</div><div className="english-story-grid english-compact-grid">{nvidiaNews.map((item) => <StoryCard key={item.id} item={item} eyebrow="NVIDIA NOW" />)}</div></section>
       <section className="console-section console-section-muted"><ConsoleSectionHead label="03 · SELECTIVE COVERAGE" title="China watch" copy="Only developments with a material global supply-chain or competitive read-through." /><div className="english-supernode-grid">{supernodes.map((node) => { const copy = supernodeCopy(node); return <article key={node.id}>{node.imageSrc && <img src={node.imageSrc} alt={node.imageAlt ?? node.name} loading="lazy" />}<span>CHINA SUPERNODE · {copy.status}</span><h3>{node.name}</h3><strong>{node.headlineMetric}</strong><p>{copy.summary}</p><a href={node.sourceUrl} target="_blank" rel="noreferrer">{node.sourceName} ↗</a></article>; })}</div><div className="english-story-grid">{silicon.map((item) => <StoryCard key={item.id} item={item} eyebrow="SELECTIVE CHINA WATCH" />)}</div></section>
       <section className="console-section console-section-dark"><ConsoleSectionHead label="04 · MODEL DEMAND" title="Usage and capability signals" /><div className="english-model-overview"><article><span>GLOBAL AI DIFFUSION</span><strong>{payload?.aiAdoption?.sharePct ?? "—"}%</strong><h3>Generative-AI adoption</h3><p>{payload?.aiAdoption?.note ?? "Quarterly public adoption indicator."}</p><a href={payload?.aiAdoption?.sourceUrl ?? "#"} target="_blank" rel="noreferrer">Source ↗</a></article><article><span>OPENROUTER · WEEKLY USAGE</span><h3>{payload?.openRouterUsage?.period ?? "Loading"}</h3><div className="english-rank-list">{(payload?.openRouterUsage?.models ?? []).slice(0, 6).map((model) => <a key={model.id} href={model.url} target="_blank" rel="noreferrer"><b>#{model.rank}</b><span>{model.name}</span><i style={{ width: `${model.heat}%` }} /></a>)}</div></article><article><span>ARENA · CODE / WEBDEV</span><h3>Public evaluation</h3><div className="english-rank-list">{(payload?.arenaCodeLeaderboard?.models ?? []).slice(0, 6).map((model) => <a key={`${model.rank}-${model.name}`} href={payload?.arenaCodeLeaderboard?.sourceUrl ?? "#"} target="_blank" rel="noreferrer"><b>#{model.rank}</b><span>{model.name}</span></a>)}</div></article></div><div className="english-story-grid">{models.slice(0, 6).map((item) => <StoryCard key={item.id} item={item} eyebrow="MODEL RELEASE" />)}</div></section>

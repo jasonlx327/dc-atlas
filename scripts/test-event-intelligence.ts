@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { canonicalizeUrl, runShadowPipeline } from "../worker/event-intelligence/pipeline.ts";
 import { beijingLabel, dispatchEventIntelligenceSchedule, eventIntelligenceSchedule, jobForUtcSlot, newYorkLabel } from "../worker/event-intelligence/schedule.ts";
-import { fetchRegisteredSource, sourceRegistry, sourceRegistryById } from "../worker/connectors/index.ts";
+import { fetchRegisteredSource, shadowSources, sourceRegistry, sourceRegistryById } from "../worker/connectors/index.ts";
 import type { ConnectorResult, ObservationEnvelope } from "../worker/connectors/types.ts";
 
 const fixtureUrl = new URL("./fixtures/event-intelligence/core-cases.json", import.meta.url);
@@ -18,6 +18,11 @@ const results: ConnectorResult[] = [...groups.entries()].map(([key, items]) => {
   return { status: "ok", sourceId, endpointId, fetchedAt: "2026-08-08T14:00:00.000Z", httpStatus: 200, responseMs: 1, observations: items };
 });
 const report = await runShadowPipeline(results, sourceRegistry, { generatedAt: "2026-08-08T14:00:00.000Z" });
+const enabledSources = shadowSources();
+assert.ok(enabledSources.length >= 50, "runtime source coverage should use the broad enabled registry");
+for (const sourceId of ["cninfo", "sse", "ndrc", "semi-analysis", "capacity-media", "google-news-data-center", "google-news-cn-infrastructure"]) {
+  assert.ok(enabledSources.some((source) => source.id === sourceId), `${sourceId} should be enabled for runtime collection`);
+}
 
 assert.equal(canonicalizeUrl("https://example.com/story?utm_source=x&b=2&a=1#fragment"), "https://example.com/story?a=1&b=2");
 assert.equal(report.stats.fetched, 12);
