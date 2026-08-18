@@ -13,7 +13,6 @@ import { dispatchEventIntelligenceSchedule } from "./event-intelligence/schedule
 import {
   DAILY_CANDIDATE_PACKET_LATEST_KEY,
   DAILY_MODEL_SELECTION_LATEST_KEY,
-  runDailyModelSelection,
   type DailyEditorialCandidatePacket,
   type DailyMaterialSelectionReport,
 } from "./event-intelligence/daily-model-selection.ts";
@@ -24,7 +23,6 @@ import {
 } from "./event-intelligence/daily-section-closure.ts";
 import {
   ATLAS_EDITOR_DECISION_LATEST_KEY,
-  runAtlasAutoEditor,
   type AtlasEditorDecision,
   type AtlasEditorDecisionPacket,
 } from "./event-intelligence/atlas-auto-editor.ts";
@@ -3833,27 +3831,7 @@ async function adminModelScoringApi(request: Request, env: Env): Promise<Respons
   try {
     const record = typeof json === "object" && json !== null && !Array.isArray(json) ? json as Record<string, unknown> : null;
     if (record?.action === "run-daily-selection") {
-      if (!serverStatus.ready) {
-        return adminJson({ error: "生产 DeepSeek Secret 尚未配置。", status: serverStatus }, 409);
-      }
-      const scheduledTime = Date.now();
-      const eventRun = await runEventIntelligenceShadow(env, "event-day", scheduledTime);
-      const dailySelection = await runDailyModelSelection(env, scheduledTime, "event-day");
-      const editorDecision = await runAtlasAutoEditor(env, scheduledTime);
-      const dailyClosure = await runDailySectionClosure(env, scheduledTime);
-      const dailyCandidates = await env.IDC_DAILY_SNAPSHOTS.get<DailyEditorialCandidatePacket>(DAILY_CANDIDATE_PACKET_LATEST_KEY, "json");
-      return adminJson({
-        status: serverStatus,
-        usage: {
-          callsToday: callsToday + dailySelection.attemptedCount,
-          remainingToday: Math.max(0, serverStatus.dailyCallLimit - callsToday - dailySelection.attemptedCount),
-        },
-        eventRun,
-        dailySelection,
-        dailyCandidates,
-        editorDecision,
-        dailyClosure,
-      }, dailySelection.status === "skipped" || dailyClosure.retryRequired ? 409 : 201);
+      return adminJson({ error: "每日编辑判定已迁移到 Codex gpt-5.6-luna 自动任务；Worker 不再触发 DeepSeek。" }, 409);
     }
     const sessionCredentials = record?.sessionCredentials
       ? parseDeepSeekSessionCredentials(record.sessionCredentials)
@@ -3990,25 +3968,17 @@ const worker = {
     await dispatchEventIntelligenceSchedule(scheduledAt, {
       "event-night": async () => {
         await runEventIntelligenceShadow(env, "event-night", controller.scheduledTime);
-        await runDailyModelSelection(env, controller.scheduledTime, "event-night");
-        await runAtlasAutoEditor(env, controller.scheduledTime);
       },
       "event-midday": async () => {
         await runEventIntelligenceShadow(env, "event-midday", controller.scheduledTime);
-        await runDailyModelSelection(env, controller.scheduledTime, "event-midday");
-        await runAtlasAutoEditor(env, controller.scheduledTime);
       },
       "snapshot-daily": async () => { await createScheduledSnapshot(env, controller.scheduledTime, ctx); },
       "daily-closure": async () => {
-        await runDailyModelSelection(env, controller.scheduledTime, "event-night");
-        await runAtlasAutoEditor(env, controller.scheduledTime);
         await runDailySectionClosure(env, controller.scheduledTime);
         await createScheduledSnapshot(env, controller.scheduledTime, ctx);
       },
       "event-day": async () => {
         await runEventIntelligenceShadow(env, "event-day", controller.scheduledTime);
-        await runDailyModelSelection(env, controller.scheduledTime, "event-day");
-        await runAtlasAutoEditor(env, controller.scheduledTime);
       },
     });
   },
