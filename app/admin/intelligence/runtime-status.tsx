@@ -5,6 +5,8 @@ import type { EventRuntimeStatus } from "../../../worker/event-intelligence/runt
 
 export function RuntimeStatus() {
   const [status, setStatus] = useState<EventRuntimeStatus | null>(null);
+  const [running, setRunning] = useState(false);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     fetch("/api/admin/intelligence", { cache: "no-store" })
@@ -15,6 +17,25 @@ export function RuntimeStatus() {
       .then((payload) => setStatus(payload.status))
       .catch(() => setStatus(null));
   }, []);
+
+  async function runDailySelection() {
+    setRunning(true);
+    setMessage("正在重跑今日评分与收口…");
+    try {
+      const response = await fetch("/api/admin/intelligence/model", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ action: "run-daily-selection" }),
+      });
+      const payload = await response.json() as { dailyClosure?: { status?: string }; error?: string };
+      if (!response.ok) throw new Error(payload.error ?? `HTTP ${response.status}`);
+      setMessage(`收口已完成：${payload.dailyClosure?.status ?? "unknown"}`);
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "收口失败。");
+    } finally {
+      setRunning(false);
+    }
+  }
 
   const gateLabel = status?.gateStatus === "gate4-ready"
     ? "Gate 4 已就绪"
@@ -27,6 +48,7 @@ export function RuntimeStatus() {
       <div className="atlas-intelligence-card"><small>生产模式</small><strong>仅影子运行</strong><p>公开数据切换保持关闭。</p></div>
       <div className="atlas-intelligence-card"><small>Gate 4 上线门槛</small><strong>{gateLabel}</strong><p>{status ? `${status.latestJob} · ${status.latestRun.passingSources}/${status.latestRun.sources} 个信源通过` : "等待首次定时 Worker 运行。"}</p></div>
       <div className="atlas-intelligence-card"><small>实时烟雾测试槽位</small><strong>{status ? `${status.liveSmoke["event-night"]?.passed ? "夜间 ✓" : "夜间 —"} · ${status.liveSmoke["event-day"]?.passed ? "日间 ✓" : "日间 —"}` : "夜间 — · 日间 —"}</strong><p>{status?.generatedAt ?? "暂无生产心跳"}</p></div>
+      <div className="atlas-intelligence-card"><small>今日编辑收口</small><strong>{message || "等待手动触发"}</strong><p><button disabled={running} onClick={runDailySelection} type="button">{running ? "正在运行…" : "补跑今日完整引擎"}</button></p></div>
     </div>
   );
 }
