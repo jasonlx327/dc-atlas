@@ -50,7 +50,8 @@ export async function verifyAccessJwt(
     if (!key) return false;
     const cryptoKey = await crypto.subtle.importKey("jwk", key, { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" }, false, ["verify"]);
     const signed = new TextEncoder().encode(`${parts[0]}.${parts[1]}`);
-    return await crypto.subtle.verify("RSASSA-PKCS1-v1_5", cryptoKey, decodeBase64Url(parts[2]), signed);
+    const signature = Uint8Array.from(decodeBase64Url(parts[2]));
+    return await crypto.subtle.verify("RSASSA-PKCS1-v1_5", cryptoKey, signature, signed);
   } catch {
     return false;
   }

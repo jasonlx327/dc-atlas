@@ -8,8 +8,11 @@ export function RuntimeStatus() {
 
   useEffect(() => {
     fetch("/api/admin/intelligence", { cache: "no-store" })
-      .then((response) => response.ok ? response.json() : Promise.reject(new Error(`HTTP ${response.status}`)))
-      .then((payload: { status: EventRuntimeStatus | null }) => setStatus(payload.status))
+      .then(async (response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return await response.json() as { status: EventRuntimeStatus | null };
+      })
+      .then((payload) => setStatus(payload.status))
       .catch(() => setStatus(null));
   }, []);
 
