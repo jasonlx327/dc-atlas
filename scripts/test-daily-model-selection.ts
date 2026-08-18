@@ -122,10 +122,12 @@ const grokBotOfficial = event({
   sourceChain: [{
     observationId: "grok-bot-official-observation",
     sourceId: "xai-news",
-    endpointId: "xai-news-endpoint",
     tier: "T1",
     independenceGroup: "xai",
     relationship: "origin",
+    noveltyClass: "new-event",
+    newFactCount: 0,
+    title: "SpaceXAI introduces Grok Bot in early beta",
     url: "https://x.ai/news/grok-bot",
     publishedAt: updatedAt,
     accessStatus: "public",
@@ -203,6 +205,7 @@ assert.equal(kv.values.get("event-intelligence:model-usage:2026-08-12"), "4");
 
 const packet = JSON.parse(kv.values.get(DAILY_CANDIDATE_PACKET_LATEST_KEY) ?? "null") as DailyEditorialCandidatePacket;
 assert.equal(packet.selectedCount, 4);
+assert.equal(packet.ruleEligibleCount, 3);
 assert.equal(packet.publicationReadyCount, 3);
 assert.deepEqual(packet.sourceSlots, ["event-night", "event-midday", "event-day"]);
 
@@ -228,7 +231,18 @@ const limited = await runDailyModelSelection(limitedEnv, scheduledTime, "event-n
 assert.equal(limitedCalls, 1);
 assert.equal(limited.items.length, 3, "call-limit fallback must retain every editorial candidate");
 assert.equal(limited.fallbackCount, 2);
+assert.equal(limited.status, "partial", "fallback scoring must stay visible as a partial run");
+assert.match(limited.errors.join(" "), /daily-model-call-limit/);
 assert.equal(limited.items.filter((item) => item.result.provider === "deterministic-fallback").length, 2);
+
+const retried = await runDailyModelSelection({
+  ...limitedEnv,
+  ATLAS_SCORING_DAILY_CALL_LIMIT: "3",
+} as unknown as Env, scheduledTime, "event-night", { fetcher: mockFetch });
+assert.equal(retried.attemptedCount, 2, "same-day fallback candidates must be retried when model budget returns");
+assert.equal(retried.alreadyScoredCount, 1);
+assert.equal(retried.fallbackCount, 0);
+assert.equal(retried.status, "completed");
 
 const failureKv = new MemoryKv();
 failureKv.values.set("event-intelligence:run:event-night:2026-08-12", JSON.stringify(report("2026-08-12T00:00:00.000Z", limitedEvents)));

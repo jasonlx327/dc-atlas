@@ -21,7 +21,7 @@ function item(overrides: Partial<DailyMaterialSelectionItem> = {}): DailyMateria
     entities: ["NVIDIA"],
     region: "美国",
     facts: [{ factType: "capacity", valueText: "300MW", qualifier: "planned", capacityType: "total_power", confidenceState: "source-stated", sourceObservationId: "obs-1" }],
-    sourceChain: [{ sourceId: "nvidia", url: "https://nvidia.com/news/example", tier: "T1", relationship: "origin", accessStatus: "ok", publishedAt: "2026-08-17T01:00:00.000Z" }],
+    sourceChain: [{ observationId: "obs-nvidia", sourceId: "nvidia", tier: "T1", independenceGroup: "nvidia", relationship: "origin", noveltyClass: "new-event", newFactCount: 1, title: "NVIDIA announces a campus", url: "https://nvidia.com/news/example", accessStatus: "public", publishedAt: "2026-08-17T01:00:00.000Z" }],
     firstSeenAt: "2026-08-17T01:00:00.000Z",
     lastUpdatedAt: "2026-08-17T01:00:00.000Z",
     sourceLastUpdatedAt: "2026-08-17T01:00:00.000Z",
@@ -59,6 +59,7 @@ function packet(items: DailyMaterialSelectionItem[]): DailyEditorialCandidatePac
     candidateCount: items.length,
     selectedCount: items.filter((candidate) => candidate.band === "selected").length,
     watchCount: items.filter((candidate) => candidate.band === "watch").length,
+    ruleEligibleCount: items.filter((candidate) => candidate.publicationReadiness === "eligible-by-rules").length,
     publicationReadyCount: items.filter((candidate) => candidate.publicationReadiness === "eligible-by-rules").length,
     selected: items.filter((candidate) => candidate.band === "selected"),
     watch: items.filter((candidate) => candidate.band === "watch"),
@@ -80,7 +81,7 @@ const rumor = item({
   evidenceStatus: "reported",
   sourceTiers: ["T3"],
   facts: [],
-  sourceChain: [{ sourceId: "dcd", url: "https://www.datacenterdynamics.com/example", tier: "T3", relationship: "origin", accessStatus: "public", publishedAt: "2026-08-17T01:00:00.000Z" }],
+  sourceChain: [{ observationId: "obs-dcd", sourceId: "dcd", tier: "T3", independenceGroup: "dcd", relationship: "origin", noveltyClass: "new-event", newFactCount: 0, title: "Amazon reportedly plans a campus", url: "https://www.datacenterdynamics.com/example", accessStatus: "public", publishedAt: "2026-08-17T01:00:00.000Z" }],
   entities: ["Amazon"],
   coreCompanies: ["Amazon"],
   result: {
@@ -101,18 +102,42 @@ const inaccessiblePrimary = item({
   eventId: "event-inaccessible-primary",
   sourceTiers: ["T1", "T3"],
   sourceChain: [
-    { sourceId: "issuer", url: "https://issuer.example/news", tier: "T1", relationship: "origin", accessStatus: "blocked", publishedAt: "2026-08-17T01:00:00.000Z" },
-    { sourceId: "media", url: "https://media.example/report", tier: "T3", relationship: "coverage", accessStatus: "ok", publishedAt: "2026-08-17T01:10:00.000Z" },
+    { observationId: "obs-issuer", sourceId: "issuer", tier: "T1", independenceGroup: "issuer", relationship: "origin", noveltyClass: "new-event", newFactCount: 1, title: "Issuer update", url: "https://issuer.example/news", accessStatus: "unavailable", publishedAt: "2026-08-17T01:00:00.000Z" },
+    { observationId: "obs-media", sourceId: "media", tier: "T3", independenceGroup: "media", relationship: "follow_up", noveltyClass: "new-source", newFactCount: 0, title: "Media report", url: "https://media.example/report", accessStatus: "public", publishedAt: "2026-08-17T01:10:00.000Z" },
   ],
 });
+const ordinaryWatchHold = item({
+  eventId: "event-media-follow-up",
+  titleZh: "媒体跟进一项尚待核验的 AI 产业事件",
+  titleEn: "Media follows an AI industry event that still needs verification",
+  summaryZh: "报道提供了新的线索，但尚未形成正式发布所需的一手证据。",
+  summaryEn: "The report adds a lead but not the primary evidence required for formal publication.",
+  route: "pulse",
+  routeCandidates: ["pulse"],
+  band: "watch",
+  publicationReadiness: "needs-source-verification",
+  evidenceStatus: "reported",
+  sourceTiers: ["T3"],
+  facts: [],
+  sourceChain: [{ observationId: "obs-follow-up", sourceId: "media", tier: "T3", independenceGroup: "media", relationship: "origin", noveltyClass: "new-event", newFactCount: 0, title: "Media follow-up", url: "https://media.example/follow-up", accessStatus: "public", publishedAt: "2026-08-17T01:00:00.000Z" }],
+  result: { ...formal.result, publicCopy: undefined },
+});
 
-const decision = buildAtlasEditorDecision(packet([formal, rumor, fallback, inaccessiblePrimary]), Date.parse("2026-08-17T01:30:00.000Z"));
+const decision = buildAtlasEditorDecision(packet([formal, rumor, fallback, inaccessiblePrimary, ordinaryWatchHold]), Date.parse("2026-08-17T01:30:00.000Z"));
 assert.equal(decision.decisions.find((entry) => entry.eventId === formal.eventId)?.route, "formal-section");
 assert.equal(decision.decisions.find((entry) => entry.eventId === rumor.eventId)?.route, "rumor-watch");
 assert.equal(decision.decisions.find((entry) => entry.eventId === fallback.eventId)?.action, "publish", "fallback scoring must not discard valid primary evidence");
 assert.equal(decision.decisions.find((entry) => entry.eventId === inaccessiblePrimary.eventId)?.action, "hold", "accessible media must not stand in for an inaccessible primary source");
+assert.equal(decision.decisions.find((entry) => entry.eventId === inaccessiblePrimary.eventId)?.holdClass, "blocking");
+assert.equal(decision.decisions.find((entry) => entry.eventId === ordinaryWatchHold.eventId)?.holdClass, "watch");
+assert.equal(decision.summary.adapterReady, 3);
+assert.equal(decision.summary.blockingHold, 1);
+assert.equal(decision.decisions.find((entry) => entry.eventId === fallback.eventId)?.reasonCodes.filter((reason) => reason === "model-scoring-fallback").length, 1);
 assert.ok(decision.decisions.every((entry) => entry.reasonCodes.length > 0));
 assert.ok(decision.decisions.filter((entry) => entry.action === "publish").every((entry) => entry.publicClaims.every((claim) => claim.sourceRefs.every((url) => entry.canonicalUrls.includes(url)))));
+
+const watchOnlyDecision = buildAtlasEditorDecision(packet([ordinaryWatchHold]), Date.parse("2026-08-17T01:30:00.000Z"));
+assert.equal(watchOnlyDecision.status, "completed", "ordinary watch holds must not make the whole editor run partial");
 
 if (process.argv.includes("--packet")) {
   process.stdout.write(JSON.stringify(decision));

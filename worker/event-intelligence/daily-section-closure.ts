@@ -98,6 +98,7 @@ export function buildDailySectionClosure(
     const decisions = editorPacket.decisions.filter((decision) => decision.section === section);
     const published = decisions.filter((decision) => decision.action === "publish");
     const held = decisions.filter((decision) => decision.action === "hold");
+    const blockingHeld = held.filter((decision) => decision.holdClass === "blocking");
     const research = decisions.filter((decision) => decision.action === "watch" && decision.route === "research-queue");
     const candidateEventIds = decisions.map((decision) => decision.eventId);
     if (published.length) {
@@ -107,21 +108,21 @@ export function buildDailySectionClosure(
         publicationMode: "auto-published",
         candidateEventIds,
         eligibleEventIds: published.map((decision) => decision.eventId),
-        blockedEventIds: held.map((decision) => decision.eventId),
+        blockedEventIds: blockingHeld.map((decision) => decision.eventId),
         sourceCoverage: sectionCoverage,
-        reason: held.length
-          ? "合格条目已写入公开发布覆盖层；其余候选保留在异常队列。"
+        reason: blockingHeld.length
+          ? "合格条目已写入公开发布覆盖层；其余阻断候选保留在异常队列。"
           : "合格条目已通过一手或媒体分流、双语与声明来源校验，并写入公开发布覆盖层。",
       };
     }
-    if (held.length) {
+    if (blockingHeld.length) {
       return {
         section,
         status: "blocked",
         publicationMode: "needs-review",
         candidateEventIds,
         eligibleEventIds: [],
-        blockedEventIds: held.map((decision) => decision.eventId),
+        blockedEventIds: blockingHeld.map((decision) => decision.eventId),
         sourceCoverage: sectionCoverage,
         reason: "存在相关候选，但来源、双语、结构化字段或公开适配器尚未通过确定性发布门槛。",
       };
@@ -129,13 +130,15 @@ export function buildDailySectionClosure(
     return {
       section,
       status: "verified-no-change",
-      publicationMode: research.length ? "internal-only" : "no-change",
+      publicationMode: research.length || held.length ? "internal-only" : "no-change",
       candidateEventIds,
       eligibleEventIds: [],
       blockedEventIds: [],
       sourceCoverage: sectionCoverage,
       reason: research.length
         ? `已完成板块信源检查；${research.length} 个机制性选题进入研究队列，本次没有达到专栏发布条件的稿件。`
+        : held.length
+          ? `已完成板块信源检查；${held.length} 个低优先级或待追踪候选保留在观察队列，不构成发布阻断。`
         : "已完成板块必查信源覆盖，未发现满足新增或实质变化条件的公开条目。",
     };
   });

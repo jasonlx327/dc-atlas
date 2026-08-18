@@ -2,6 +2,7 @@ import { fetchRegisteredSource, shadowSources } from "../connectors/index.ts";
 import type { ConnectorRequestState, ConnectorResult, SourceDefinition } from "../connectors/types.ts";
 import { runShadowPipeline, type ShadowRunReport } from "./pipeline.ts";
 import type { EventIntelligenceJob } from "./schedule.ts";
+import { codexRunKey, type CodexEventSlot, validateCodexIngestReport } from "./codex-ingest.ts";
 import {
   CORE_COMPANY_WATCH_STATE_KEY,
   buildCoreCompanyWatchState,
@@ -73,7 +74,7 @@ async function fetchSources(env: Env, sources: SourceDefinition[]): Promise<Conn
   return results;
 }
 
-function smokePassed(results: ConnectorResult[]): boolean {
+function smokePassed(results: Array<{ sourceId: string; status: ConnectorResult["status"] }>): boolean {
   const gateSources = new Set<string>(LIVE_SMOKE_GATE_SOURCE_IDS);
   const required = results.filter((result) => gateSources.has(result.sourceId));
   if (!required.length) return false;
@@ -97,16 +98,31 @@ export async function runEventIntelligenceShadow(
   scheduledTime: number,
 ): Promise<EventRuntimeStatus | null> {
   if (!LIVE_SMOKE_JOBS.has(job)) return null;
-  const sources = shadowSources();
-  const results = await fetchSources(env, sources);
+  const allSources = shadowSources();
   const generatedAt = new Date(scheduledTime).toISOString();
-  const report = await runShadowPipeline(results, sources, { generatedAt });
+  const day = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Shanghai" }).format(new Date(scheduledTime));
+  const smokeJob = job as CodexEventSlot;
+  const codexReport = await env.IDC_DAILY_SNAPSHOTS.get<ShadowRunReport>(codexRunKey(smokeJob, day), "json");
+  let report: ShadowRunReport | null = null;
+  if (codexReport) {
+    try {
+      validateCodexIngestReport(codexReport, allSources, day);
+      report = codexReport;
+    } catch (error) {
+      console.warn(JSON.stringify({ message: "Codex event run rejected; using Worker emergency scan", job, day, error: String(error) }));
+    }
+  }
+  if (!report) {
+    const fallbackIds = new Set<string>(LIVE_SMOKE_GATE_SOURCE_IDS);
+    const fallbackSources = allSources.filter((source) => fallbackIds.has(source.id));
+    const results = await fetchSources(env, fallbackSources);
+    report = await runShadowPipeline(results, fallbackSources, { generatedAt });
+  }
   const priorCompanyWatch = await env.IDC_DAILY_SNAPSHOTS.get<CoreCompanyWatchState>(CORE_COMPANY_WATCH_STATE_KEY, "json");
   const companyWatch = buildCoreCompanyWatchState(report.events, generatedAt, priorCompanyWatch);
-  const passingSources = results.filter((result) => PASSING_CONNECTOR_STATES.has(result.status)).length;
+  const passingSources = report.sourceHealth.filter((result) => PASSING_CONNECTOR_STATES.has(result.status)).length;
   const liveSmoke = await priorSmoke(env);
-  const smokeJob = job as "event-night" | "event-midday" | "event-day";
-  liveSmoke[smokeJob] = { passed: smokePassed(results), generatedAt };
+  liveSmoke[smokeJob] = { passed: smokePassed(report.sourceHealth), generatedAt };
   const gateStatus = liveSmoke["event-night"]?.passed && liveSmoke["event-day"]?.passed
     ? "gate4-ready"
     : "waiting-live-smoke";
@@ -120,16 +136,15 @@ export async function runEventIntelligenceShadow(
     latestRun: {
       status: report.status,
       freshness: report.freshness,
-      sources: results.length,
+      sources: report.sourceHealth.length,
       passingSources,
-      successRate: results.length ? passingSources / results.length : 0,
+      successRate: report.sourceHealth.length ? passingSources / report.sourceHealth.length : 0,
       observations: report.stats.fetched,
       clusters: report.stats.clusters,
       errors: report.stats.errors,
     },
     liveSmoke,
   };
-  const day = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Shanghai" }).format(new Date(scheduledTime));
   await Promise.all([
     env.IDC_DAILY_SNAPSHOTS.put("event-intelligence:latest-run", JSON.stringify(report)),
     env.IDC_DAILY_SNAPSHOTS.put(`event-intelligence:run:${job}:${day}`, JSON.stringify(report)),
@@ -137,7 +152,7 @@ export async function runEventIntelligenceShadow(
     env.IDC_DAILY_SNAPSHOTS.put("event-intelligence:runtime-status", JSON.stringify(status)),
     env.IDC_DAILY_SNAPSHOTS.put(CORE_COMPANY_WATCH_STATE_KEY, JSON.stringify(companyWatch)),
   ]);
-  console.log(JSON.stringify({ message: "Event intelligence shadow run saved", ...status }));
+  console.log(JSON.stringify({ message: codexReport === report ? "Codex event run accepted by Worker" : "Worker emergency event scan saved", ...status }));
   return status;
 }
 

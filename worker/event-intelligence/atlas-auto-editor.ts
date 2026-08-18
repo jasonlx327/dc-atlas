@@ -31,6 +31,7 @@ export type AtlasEditorDecision = {
   publicClaims: AtlasEditorPublicClaim[];
   internalNotes: string[];
   fallbackScored: boolean;
+  holdClass: "blocking" | "watch" | null;
   entities: string[];
   region: string;
   publishedAt: string;
@@ -53,6 +54,8 @@ export type AtlasEditorDecisionPacket = {
     hold: number;
     reject: number;
     fallbackScored: number;
+    adapterReady: number;
+    blockingHold: number;
   };
 };
 
@@ -70,6 +73,10 @@ const FORMAL_ADAPTER_SECTIONS = new Set<AtlasDailySectionId>([
 ]);
 
 const tierOrder: SourceTier[] = ["T0", "T1", "T2", "T3", "T4", "T5", "D"];
+
+function unique(values: string[]): string[] {
+  return [...new Set(values)];
+}
 
 function strongestTier(tiers: SourceTier[]): SourceTier {
   return tierOrder.find((tier) => tiers.includes(tier)) ?? "D";
@@ -150,6 +157,7 @@ function decisionFor(item: DailyMaterialSelectionItem): AtlasEditorDecision {
     evidenceStatus: item.evidenceStatus,
     canonicalUrls,
     fallbackScored,
+    holdClass: null,
     entities: item.entities,
     region: item.region,
     publishedAt: canonicalSources[0]?.publishedAt ?? item.lastUpdatedAt,
@@ -165,7 +173,7 @@ function decisionFor(item: DailyMaterialSelectionItem): AtlasEditorDecision {
       ...common(primarySources, primaryUrls),
       action: "publish",
       route: "formal-section",
-      reasonCodes: [...item.result.reasonCodes, ...(fallbackScored ? ["model-scoring-fallback"] : []), "formal-primary-source", "bilingual-copy-valid", "public-adapter-ready"],
+      reasonCodes: unique([...item.result.reasonCodes, ...(fallbackScored ? ["model-scoring-fallback"] : []), "formal-primary-source", "bilingual-copy-valid", "public-adapter-ready"]),
       publicCopy: copy,
       publicClaims: publicClaims(item, copy, primaryUrls),
       internalNotes: [],
@@ -181,7 +189,7 @@ function decisionFor(item: DailyMaterialSelectionItem): AtlasEditorDecision {
       ...common(reportingSources, reportingUrls),
       action: "publish",
       route: "rumor-watch",
-      reasonCodes: [...item.result.reasonCodes, ...(fallbackScored ? ["model-scoring-fallback"] : []), "attributable-media-report", "bilingual-copy-valid"],
+      reasonCodes: unique([...item.result.reasonCodes, ...(fallbackScored ? ["model-scoring-fallback"] : []), "attributable-media-report", "bilingual-copy-valid"]),
       publicCopy: copy,
       publicClaims: publicClaims(item, copy, reportingUrls).map((claim) => ({ ...claim, state: "reported" })),
       internalNotes: [],
@@ -192,7 +200,7 @@ function decisionFor(item: DailyMaterialSelectionItem): AtlasEditorDecision {
       ...common(sources, urls),
       action: "watch",
       route: "research-queue",
-      reasonCodes: [...item.result.reasonCodes, "research-mechanism-review"],
+      reasonCodes: unique([...item.result.reasonCodes, "research-mechanism-review"]),
       publicCopy: null,
       publicClaims: [],
       internalNotes: [fallbackScored ? "model-scoring-fallback" : "research packet required before article publication"],
@@ -200,16 +208,25 @@ function decisionFor(item: DailyMaterialSelectionItem): AtlasEditorDecision {
   }
   const holdReasons = [
     ...(urls.length ? [] : ["canonical-source-unavailable"]),
+    ...((tier === "T0" || tier === "T1") && primaryUrls.length === 0 ? ["primary-source-inaccessible"] : []),
     ...(copy ? [] : ["bilingual-copy-invalid-or-incomplete"]),
     ...(formalEvidence && !FORMAL_ADAPTER_SECTIONS.has(section) ? ["structured-public-adapter-unavailable"] : []),
-    ...(fallbackScored ? ["model-scoring-fallback"] : []),
   ];
   if (!holdReasons.length) holdReasons.push("publication-gate-not-met");
+  const materialCandidate = item.band === "selected" && item.publicationReadiness === "eligible-by-rules";
+  const evidenceCandidate = tier === "T0" || tier === "T1" || (section === "rumors" && (tier === "T2" || tier === "T3"));
+  const holdClass = materialCandidate && evidenceCandidate && holdReasons.some((reason) => [
+    "canonical-source-unavailable",
+    "primary-source-inaccessible",
+    "bilingual-copy-invalid-or-incomplete",
+    "structured-public-adapter-unavailable",
+  ].includes(reason)) ? "blocking" : "watch";
   return {
     ...common(sources, urls),
     action: "hold",
     route: "internal",
-    reasonCodes: [...item.result.reasonCodes, ...holdReasons],
+    holdClass,
+    reasonCodes: unique([...item.result.reasonCodes, ...holdReasons]),
     publicCopy: null,
     publicClaims: [],
     internalNotes: holdReasons,
@@ -239,6 +256,8 @@ export function buildAtlasEditorDecision(
     hold: decisions.filter((decision) => decision.action === "hold").length,
     reject: decisions.filter((decision) => decision.action === "reject").length,
     fallbackScored: decisions.filter((decision) => decision.fallbackScored).length,
+    adapterReady: decisions.filter((decision) => decision.action === "publish").length,
+    blockingHold: decisions.filter((decision) => decision.action === "hold" && decision.holdClass === "blocking").length,
   };
   return {
     schemaVersion: "atlas-editor-decision.v1",
@@ -246,7 +265,7 @@ export function buildAtlasEditorDecision(
     cutoffAt: now.toISOString(),
     timezone: "Asia/Shanghai",
     day,
-    status: !current ? "blocked" : summary.hold ? "partial" : "completed",
+    status: !current ? "blocked" : summary.blockingHold ? "partial" : "completed",
     sourcePacketGeneratedAt: packet?.generatedAt ?? null,
     decisions,
     summary,

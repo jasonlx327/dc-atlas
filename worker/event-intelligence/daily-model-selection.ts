@@ -70,6 +70,8 @@ export type DailyEditorialCandidatePacket = {
   candidateCount: number;
   selectedCount: number;
   watchCount: number;
+  ruleEligibleCount: number;
+  /** @deprecated Use ruleEligibleCount. Publication authority belongs to Atlas Auto Editor. */
   publicationReadyCount: number;
   fallbackCount?: number;
   selected: DailyMaterialSelectionItem[];
@@ -141,7 +143,13 @@ function input(event: EventRecord): ModelScoringInput {
     evidenceStatus: event.evidenceStatus,
     independentSourceCount: event.independentSourceCount,
     coreCompanies: matchCoreCompanies([event.titleZh, event.titleEn, ...event.entities]).map((company) => company.name),
-    sourceChain: event.sourceChain,
+    sourceChain: event.sourceChain.map((source) => ({
+      sourceId: source.sourceId,
+      url: source.url,
+      relationship: source.relationship,
+      accessStatus: source.accessStatus,
+      ...(source.publishedAt ? { publishedAt: source.publishedAt } : {}),
+    })),
     routeCandidates: event.routeCandidates,
     entities: event.entities,
     facts: event.facts.map((fact) => ({
@@ -223,6 +231,7 @@ function sortItems(items: DailyMaterialSelectionItem[]): DailyMaterialSelectionI
 export function dailyCandidatePacket(report: DailyMaterialSelectionReport): DailyEditorialCandidatePacket {
   const selected = report.items.filter((item) => item.band === "selected");
   const watch = report.items.filter((item) => item.band === "watch");
+  const ruleEligibleCount = selected.filter((item) => item.publicationReadiness === "eligible-by-rules").length;
   return {
     schemaVersion: "atlas-daily-candidate-packet.v1",
     day: report.day,
@@ -233,8 +242,9 @@ export function dailyCandidatePacket(report: DailyMaterialSelectionReport): Dail
     candidateCount: report.candidateCount,
     selectedCount: selected.length,
     watchCount: watch.length,
-    publicationReadyCount: selected.filter((item) => item.publicationReadiness === "eligible-by-rules").length,
-    fallbackCount: report.fallbackCount ?? report.items.filter((item) => item.result.provider === "deterministic-fallback").length,
+    ruleEligibleCount,
+    publicationReadyCount: ruleEligibleCount,
+    fallbackCount: report.items.filter((item) => item.result.provider === "deterministic-fallback").length,
     selected,
     watch,
     errors: report.errors,
@@ -332,13 +342,13 @@ export async function runDailyModelSelection(
   let alreadyScoredCount = 0;
   for (const event of candidateList) {
     const same = sameDayById.get(event.id);
-    if (same?.sourceLastUpdatedAt === event.lastUpdatedAt) {
+    if (same?.sourceLastUpdatedAt === event.lastUpdatedAt && same.result.provider !== "deterministic-fallback") {
       unchangedSameDay.push(same);
       alreadyScoredCount += 1;
       continue;
     }
     const prior = priorDayById.get(event.id);
-    if (prior?.sourceLastUpdatedAt === event.lastUpdatedAt) {
+    if (prior?.sourceLastUpdatedAt === event.lastUpdatedAt && prior.result.provider !== "deterministic-fallback") {
       alreadyScoredCount += 1;
       continue;
     }
@@ -348,8 +358,13 @@ export async function runDailyModelSelection(
   const usageKey = modelUsageKey(scheduledDate);
   const callsToday = Number.parseInt(await env.IDC_DAILY_SNAPSHOTS.get(usageKey) ?? "0", 10) || 0;
   const remaining = Math.max(0, status.dailyCallLimit - callsToday);
-  const perSlotLimit = Math.ceil(status.dailyCallLimit / 3);
-  const slotLimit = slot === "event-day" ? remaining : Math.min(remaining, perSlotLimit);
+  const morningClosureLimit = Math.ceil(status.dailyCallLimit * 0.75);
+  const perLaterSlotLimit = Math.ceil(status.dailyCallLimit * 0.25);
+  const slotLimit = slot === "event-night"
+    ? Math.min(remaining, morningClosureLimit)
+    : slot === "event-day"
+      ? remaining
+      : Math.min(remaining, perLaterSlotLimit);
   const scoreQueue = queue.slice(0, slotLimit);
   const scoredItems: DailyMaterialSelectionItem[] = [];
   const fallbackItems: DailyMaterialSelectionItem[] = queue.slice(slotLimit)
@@ -387,12 +402,20 @@ export async function runDailyModelSelection(
   }
 
   const items = sortItems([...unchangedSameDay, ...scoredItems, ...fallbackItems]);
+  const fallbackCount = items.filter((item) => item.result.provider === "deterministic-fallback").length;
+  const outputErrors = [...errors];
+  if (fallbackCount) {
+    const categories = [...new Set(items
+      .filter((item) => item.result.provider === "deterministic-fallback")
+      .flatMap((item) => item.result.reasonCodes.filter((reason) => reason !== "model-scoring-fallback")))];
+    outputErrors.push(`fallback-scoring:${fallbackCount}:${categories.join(",") || "unknown"}`);
+  }
   const output: DailyMaterialSelectionReport = {
     schemaVersion: "atlas-daily-model-selection.v1",
     day,
     generatedAt,
     sourceSlots: reportEntries.map((entry) => entry.slot),
-    status: errors.length ? "partial" : "completed",
+    status: outputErrors.length ? "partial" : "completed",
     model: status.model,
     candidateCount: candidateList.length,
     newCandidateCount: queue.length,
@@ -401,10 +424,10 @@ export async function runDailyModelSelection(
     selectedCount: items.filter((item) => item.band === "selected").length,
     watchCount: items.filter((item) => item.band === "watch").length,
     droppedCount: items.filter((item) => item.band === "dropped").length,
-    fallbackCount: fallbackItems.length,
+    fallbackCount,
     packetKey,
     items,
-    errors,
+    errors: outputErrors,
   };
   const packet = dailyCandidatePacket(output);
   await Promise.all([
@@ -425,9 +448,9 @@ export async function runDailyModelSelection(
     alreadyScored: output.alreadyScoredCount,
     attempted: output.attemptedCount,
     selected: output.selectedCount,
-    publicationReady: packet.publicationReadyCount,
+    ruleEligible: packet.ruleEligibleCount,
     fallback: output.fallbackCount,
-    errors: errors.length,
+    errors: output.errors.length,
   }));
   return output;
 }

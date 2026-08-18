@@ -24,7 +24,7 @@ function item(overrides: Partial<DailyMaterialSelectionItem> = {}): DailyMateria
     entities: ["NVIDIA"],
     region: "美国",
     facts: [{ factType: "capacity", valueText: "300MW", qualifier: "planned", capacityType: "total_power", confidenceState: "source-stated", sourceObservationId: "obs-1" }],
-    sourceChain: [{ sourceId: "nvidia", url: "https://nvidia.com/news/example", tier: "T1", relationship: "origin", accessStatus: "ok", publishedAt: "2026-08-13T01:00:00.000Z" }],
+    sourceChain: [{ observationId: "obs-nvidia", sourceId: "nvidia", tier: "T1", independenceGroup: "nvidia", relationship: "origin", noveltyClass: "new-event", newFactCount: 1, title: "NVIDIA announces a campus", url: "https://nvidia.com/news/example", accessStatus: "public", publishedAt: "2026-08-13T01:00:00.000Z" }],
     firstSeenAt: "2026-08-13T01:00:00.000Z",
     lastUpdatedAt: "2026-08-13T01:00:00.000Z",
     sourceLastUpdatedAt: "2026-08-13T01:00:00.000Z",
@@ -61,6 +61,7 @@ const packet: DailyEditorialCandidatePacket = {
   candidateCount: 1,
   selectedCount: 1,
   watchCount: 0,
+  ruleEligibleCount: 1,
   publicationReadyCount: 1,
   selected: [item()],
   watch: [],
@@ -101,6 +102,7 @@ const mediaOnlyRumor: DailyEditorialCandidatePacket = {
   ...packet,
   selectedCount: 0,
   watchCount: 1,
+  ruleEligibleCount: 0,
   publicationReadyCount: 0,
   selected: [],
   watch: [item({
@@ -119,7 +121,7 @@ const mediaOnlyRumor: DailyEditorialCandidatePacket = {
     entities: ["Amazon"],
     region: "美国",
     facts: [],
-    sourceChain: [{ sourceId: "data-center-dynamics", url: "https://www.datacenterdynamics.com/example", tier: "T3", relationship: "origin", accessStatus: "public", publishedAt: "2026-08-13T16:02:51.000Z" }],
+    sourceChain: [{ observationId: "obs-dcd", sourceId: "data-center-dynamics", tier: "T3", independenceGroup: "dcd", relationship: "origin", noveltyClass: "new-event", newFactCount: 0, title: "Amazon reportedly plans a campus", url: "https://www.datacenterdynamics.com/example", accessStatus: "public", publishedAt: "2026-08-13T16:02:51.000Z" }],
     result: {
       ...item().result,
       publicCopy: {
@@ -150,5 +152,30 @@ const incompleteSources: ShadowRunReport = {
 const incompleteCoverage = buildDailySectionClosure(packet, scheduledTime, incompleteSources, editor);
 assert.equal(incompleteCoverage.sections.find((section) => section.section === "capacity")?.status, "blocked");
 assert.match(incompleteCoverage.sections.find((section) => section.section === "capacity")?.reason ?? "", /信源覆盖不足/);
+
+const ordinaryHoldPacket: DailyEditorialCandidatePacket = {
+  ...packet,
+  selectedCount: 0,
+  watchCount: 1,
+  ruleEligibleCount: 0,
+  publicationReadyCount: 0,
+  selected: [],
+  watch: [item({
+    eventId: "event-watch-only",
+    route: "pulse",
+    routeCandidates: ["pulse"],
+    band: "watch",
+    publicationReadiness: "needs-source-verification",
+    evidenceStatus: "reported",
+    sourceTiers: ["T3"],
+    facts: [],
+    result: { ...item().result, publicCopy: undefined },
+  })],
+};
+const ordinaryHoldEditor = buildAtlasEditorDecision(ordinaryHoldPacket, scheduledTime);
+const ordinaryHoldClosure = buildDailySectionClosure(ordinaryHoldPacket, scheduledTime, sources, ordinaryHoldEditor);
+assert.equal(ordinaryHoldEditor.summary.blockingHold, 0);
+assert.equal(ordinaryHoldClosure.sections.find((section) => section.section === "capacity")?.status, "verified-no-change");
+assert.equal(ordinaryHoldClosure.retryRequired, false);
 
 console.log(JSON.stringify({ message: "Daily section closure tests passed", sections: report.sections.length, counts: report.counts }));

@@ -5,6 +5,7 @@ import { dirname, isAbsolute, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { fetchRegisteredSource, shadowSources, sourceRegistry } from "../worker/connectors/index.ts";
 import type { ConnectorResult, ObservationEnvelope, SourceDefinition } from "../worker/connectors/types.ts";
+import { fetchSourcesBatched } from "../worker/event-intelligence/source-fetch-batches.ts";
 import { runShadowPipeline, scoringConfig, type ShadowRunReport } from "../worker/event-intelligence/pipeline.ts";
 
 const artifactDir = new URL("../artifacts/event-intelligence/", import.meta.url);
@@ -46,7 +47,13 @@ function loadRequestStates(dbPath: string): Map<string, { etag: string | null; l
 async function loadLiveResults(dbPath: string): Promise<ConnectorResult[]> {
   const sources = shadowSources();
   const states = loadRequestStates(dbPath);
-  return Promise.all(sources.map((source) => fetchRegisteredSource(source, { requestState: states.get(source.endpoint.id) })));
+  const concurrency = Number.parseInt(arg("concurrency") ?? "6", 10);
+  const retries = Number.parseInt(arg("retries") ?? "2", 10);
+  return fetchSourcesBatched(
+    sources,
+    (source) => fetchRegisteredSource(source, { requestState: states.get(source.endpoint.id) }),
+    { concurrency, retries },
+  );
 }
 
 function applyMigration(database: DatabaseSync, migration: string) {
@@ -271,8 +278,8 @@ async function run() {
       ? resolve(projectRoot, outputName)
       : resolve(fileURLToPath(artifactDir), outputName);
   await mkdir(dirname(outputPath), { recursive: true });
-  await writeFile(outputPath, `${JSON.stringify({ ...report, inputMode: mode, trigger, shadowDbPath: dbPath, sourceRegistryCount: sourceRegistry.length }, null, 2)}\n`);
-  console.log(JSON.stringify({ message: "Event intelligence shadow run complete", mode, trigger, status: report.status, freshness: report.freshness, stats: report.stats, output: outputPath, shadowDbPath: dbPath }));
+  await writeFile(outputPath, `${JSON.stringify({ ...report, inputMode: mode, executionMode: "codex-local", trigger, shadowDbPath: dbPath, sourceRegistryCount: sourceRegistry.length }, null, 2)}\n`);
+  console.log(JSON.stringify({ message: "Event intelligence Codex run complete", mode, trigger, status: report.status, freshness: report.freshness, stats: report.stats, output: outputPath, shadowDbPath: dbPath }));
 }
 
 void run();
