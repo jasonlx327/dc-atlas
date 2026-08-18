@@ -223,7 +223,7 @@ test("renders the English research console and focused content routes", async ()
   assert.match(html, /href="\/en\/columns"/);
   assert.match(html, /Research queue/);
   assert.match(html, /\$10 Billion, Six Years, 133MW: Volta/);
-  assert.match(html, /From \$15B Loans to Bonds: Refinancing the Nexus Campus and Its Risk/);
+  assert.match(html, /From GLM-5\.3 to Claude: How Long-Running Agents Change Inference Demand/);
   assert.equal((html.match(/href="\/en\/columns\/(?!microsoft-ai-capex)[^"]+"/g) ?? []).length >= 4, true);
   assert.match(html, /CapEx &amp; earnings watch/);
   assert.doesNotMatch(html, /Atlas intelligence brief/);
