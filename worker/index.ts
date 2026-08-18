@@ -3327,8 +3327,11 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
     env.IDC_DAILY_SNAPSHOTS.get<AtlasEditorDecisionPacket>(ATLAS_EDITOR_DECISION_LATEST_KEY, "json"),
     env.IDC_DAILY_SNAPSHOTS.get<AtlasDailyClosureReport>(DAILY_SECTION_CLOSURE_LATEST_KEY, "json"),
   ]);
+  const publicEditorDecision = dailyClosure?.status === "completed" && editorDecision?.day === dailyClosure.day
+    ? editorDecision
+    : null;
   const staticContentVersion = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(JSON.stringify(staticAtlasContent()))).then((digest) => Array.from(new Uint8Array(digest)).slice(0, 8).map((byte) => byte.toString(16).padStart(2, "0")).join(""));
-  const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}&editor=${encodeURIComponent(editorDecision?.generatedAt ?? "none")}&closure=${encodeURIComponent(dailyClosure?.generatedAt ?? "none")}`, request.url), { method: "GET" });
+  const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}&editor=${encodeURIComponent(publicEditorDecision?.generatedAt ?? "none")}&closure=${encodeURIComponent(dailyClosure?.generatedAt ?? "none")}`, request.url), { method: "GET" });
   const edgeCache = (caches as unknown as { default: Cache }).default;
   if (!options.forceRefresh) {
     const cached = await edgeCache.match(cacheKey);
@@ -3378,15 +3381,15 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const benchmark = benchmarkResult.status === "fulfilled"
     ? benchmarkResult.value
     : { benchmarks: [], date: null, methodology: null };
-  const records = uniqueRecords([...editorSourceRecords(editorDecision, "capacity"), ...capacityRadar()]);
-  const coolingRecords = uniqueRecords([...editorSourceRecords(editorDecision, "cooling"), ...coolingProgress()]);
+  const records = uniqueRecords([...editorSourceRecords(publicEditorDecision, "capacity"), ...capacityRadar()]);
+  const coolingRecords = uniqueRecords([...editorSourceRecords(publicEditorDecision, "cooling"), ...coolingProgress()]);
   const news = newsResult.status === "fulfilled" ? newsResult.value : [];
   const nvidiaNews = uniqueNews([
-    ...editorNewsItems(editorDecision, ["compute-products"]),
+    ...editorNewsItems(publicEditorDecision, ["compute-products"]),
     ...(nvidiaResult.status === "fulfilled" ? nvidiaResult.value : []),
   ], 8);
   const coolingNews = uniqueNews([
-    ...editorNewsItems(editorDecision, ["cooling"]),
+    ...editorNewsItems(publicEditorDecision, ["cooling"]),
     ...(coolingResult.status === "fulfilled" ? coolingResult.value : []),
   ], 8);
   const networkNews = networkResult.status === "fulfilled" ? networkResult.value : [];
@@ -3398,7 +3401,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
       : []),
   ], 6);
   const chinaChipNews = uniqueNews([
-    ...editorNewsItems(editorDecision, ["china-gpu"]),
+    ...editorNewsItems(publicEditorDecision, ["china-gpu"]),
     ...chinaChipPulse(chinaChipResult.status === "fulfilled" ? chinaChipResult.value : []),
   ], 10);
   const rumors = rumorWatch(uniqueNews([
@@ -3409,14 +3412,14 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
     ...powerNews,
     ...modelNews,
     ...chinaChipNews,
-  ], 80), editorDecision);
+  ], 80), publicEditorDecision);
   const positiveNews = positiveIdcNews(news, records);
   const idcPulse = uniqueNews([
-    ...editorNewsItems(editorDecision, ["idc-pulse", "capacity"]),
+    ...editorNewsItems(publicEditorDecision, ["idc-pulse", "capacity"]),
     ...constructionPulse(),
   ], 48);
   const listedCompanyNews = uniqueNews([
-    ...editorNewsItems(editorDecision, ["listed-companies"]),
+    ...editorNewsItems(publicEditorDecision, ["listed-companies"]),
     ...listedCompanyPulse(),
   ], 48);
   const deals = mnaDeals();
@@ -3427,22 +3430,22 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const computeNews = nvidiaNews.filter((item) => /GPU|服务器|机柜|算力芯片|AI\s*工厂|Vera\s*Rubin|Blackwell|Rubin/i.test(item.title));
   const chainNews: Record<ChainKey, NewsItem[]> = {
     compute: recentNews([
-      ...editorNewsItems(editorDecision, ["compute-products", "china-gpu"]),
+      ...editorNewsItems(publicEditorDecision, ["compute-products", "china-gpu"]),
       ...chinaChipNews,
       ...listedCompanyNews.filter((item) => item.id === "biwin-xincheng-hanqi-financing-2026"),
       ...computeNews,
       ...fallback.rack.slice(0, 2),
     ], chainWindowDays),
-    rack: recentNews([...editorNewsItems(editorDecision, ["supply-chain"]), ...networkNews, ...fallback.rack], chainWindowDays),
-    cooling: recentNews([...editorNewsItems(editorDecision, ["cooling"]), ...coolingNews, ...fallback.cooling], chainWindowDays),
+    rack: recentNews([...editorNewsItems(publicEditorDecision, ["supply-chain"]), ...networkNews, ...fallback.rack], chainWindowDays),
+    cooling: recentNews([...editorNewsItems(publicEditorDecision, ["cooling"]), ...coolingNews, ...fallback.cooling], chainWindowDays),
     power: recentNews([
-      ...editorNewsItems(editorDecision, ["power-model-demand"]),
+      ...editorNewsItems(publicEditorDecision, ["power-model-demand"]),
       ...powerNews,
       ...idcPulse.filter((item) => item.signal === "power" || /GW|MW|电力|供电|绿电/i.test(`${item.title} ${item.summary} ${item.scale ?? ""}`)),
       ...fallback.power,
     ], chainWindowDays),
     campus: recentNews([...idcPulse, ...positiveNews, ...news], chainWindowDays),
-    model: recentNews([...editorNewsItems(editorDecision, ["power-model-demand"]), ...modelNews], chainWindowDays),
+    model: recentNews([...editorNewsItems(publicEditorDecision, ["power-model-demand"]), ...modelNews], chainWindowDays),
   };
 
   const latestSnapshot = await env.IDC_DAILY_SNAPSHOTS.get<DailySnapshotMeta>("latest-meta", "json");
