@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { buildAtlasEditorDecision } from "../worker/event-intelligence/atlas-auto-editor.ts";
+import { buildAtlasEditorDecision, editorSectionFor } from "../worker/event-intelligence/atlas-auto-editor.ts";
 import type { DailyEditorialCandidatePacket, DailyMaterialSelectionItem } from "../worker/event-intelligence/daily-model-selection.ts";
 
 function item(overrides: Partial<DailyMaterialSelectionItem> = {}): DailyMaterialSelectionItem {
@@ -122,6 +122,16 @@ const ordinaryWatchHold = item({
   sourceChain: [{ observationId: "obs-follow-up", sourceId: "media", tier: "T3", independenceGroup: "media", relationship: "origin", noveltyClass: "new-event", newFactCount: 0, title: "Media follow-up", url: "https://media.example/follow-up", accessStatus: "public", publishedAt: "2026-08-17T01:00:00.000Z" }],
   result: { ...formal.result, publicCopy: undefined },
 });
+const releasedSoftware = item({
+  eventId: "event-released-software",
+  titleZh: "Google 发布开源 C++ 内容凭证库",
+  titleEn: "Google released an open-source C++ content-credentials library",
+  summaryZh: "该库在客户端和服务器应用中本地验证内容凭证。",
+  summaryEn: "The released library validates content credentials locally in client and server applications.",
+  facts: [],
+  entities: ["Google"],
+  coreCompanies: ["Alphabet"],
+});
 
 const decision = buildAtlasEditorDecision(packet([formal, rumor, fallback, inaccessiblePrimary, ordinaryWatchHold]), Date.parse("2026-08-17T01:30:00.000Z"));
 assert.equal(decision.decisions.find((entry) => entry.eventId === formal.eventId)?.route, "formal-section");
@@ -135,6 +145,7 @@ assert.equal(decision.summary.blockingHold, 1);
 assert.equal(decision.decisions.find((entry) => entry.eventId === fallback.eventId)?.reasonCodes.filter((reason) => reason === "model-scoring-fallback").length, 1);
 assert.ok(decision.decisions.every((entry) => entry.reasonCodes.length > 0));
 assert.ok(decision.decisions.filter((entry) => entry.action === "publish").every((entry) => entry.publicClaims.every((claim) => claim.sourceRefs.every((url) => entry.canonicalUrls.includes(url)))));
+assert.notEqual(editorSectionFor(releasedSoftware), "capacity", "the word released must not be mistaken for a capacity lease");
 
 const watchOnlyDecision = buildAtlasEditorDecision(packet([ordinaryWatchHold]), Date.parse("2026-08-17T01:30:00.000Z"));
 assert.equal(watchOnlyDecision.status, "completed", "ordinary watch holds must not make the whole editor run partial");

@@ -95,7 +95,7 @@ export function editorSectionFor(item: DailyMaterialSelectionItem): AtlasDailySe
   if (/财报|业绩|营收|利润|指引|earnings|results|revenue|guidance|quarter/i.test(text)) return "listed-companies";
   if (/液冷|冷板|浸没|散热|cooling|liquid cool|cold plate|immersion|thermal/i.test(text)) return "cooling";
   if (/华为|海光|沐曦|摩尔线程|壁仞|燧原|寒武纪|天数智芯|昆仑芯|国产.{0,8}(?:GPU|算力|芯片)|China.{0,12}(?:GPU|accelerator)/i.test(text)) return "china-gpu";
-  if (/数据中心|园区|机房|容量|租约|AI 工厂|data cent(?:er|re)|campus|capacity|lease|AI factory|GW|MW/i.test(text)) return "capacity";
+  if (/数据中心|园区|机房|容量|租约|AI 工厂|data cent(?:er|re)|campus|capacity|\bleas(?:e|ed|es|ing)\b|AI factory|\b(?:GW|MW)\b/i.test(text)) return "capacity";
   if (/NVIDIA|AMD|英伟达|GPU|CPU|NPU|accelerator|Blackwell|Rubin|MI\d|rack.?scale|superpod/i.test(text)) return "compute-products";
   if (/服务器|机柜|交换机|光模块|网络|变压器|UPS|母线|内存|HBM|server|rack|switch|optical|network|transformer|memory/i.test(text)) return "supply-chain";
   if (/电力|电网|并网|PPA|供电|模型|推理|训练|token|power|grid|interconnect|model|inference|training|cloud/i.test(text)) return "power-model-demand";
