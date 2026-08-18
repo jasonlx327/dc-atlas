@@ -39,7 +39,7 @@ export type ModelScoringResult = {
   schemaVersion: "atlas-model-score.v1";
   mode: "shadow";
   routeImpact: false;
-  provider: "openai-compatible" | "deterministic-fallback";
+  provider: "openai-compatible" | "codex-automation" | "deterministic-fallback";
   model: string;
   scoredAt: string;
   scores: ModelDimensionScores;

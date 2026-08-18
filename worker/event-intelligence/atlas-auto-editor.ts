@@ -237,7 +237,7 @@ function beijingDay(date: Date): string {
   return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Shanghai" }).format(date);
 }
 
-function decisionKey(day: string): string {
+export function decisionKey(day: string): string {
   return `atlas-editor:decision:${day}`;
 }
 

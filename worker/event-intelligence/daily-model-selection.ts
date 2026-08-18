@@ -12,7 +12,7 @@ import {
   type ModelScoringResult,
 } from "./model-scoring.ts";
 
-type EventRecord = ShadowRunReport["events"][number];
+export type EventRecord = ShadowRunReport["events"][number];
 export type DailySelectionSlot = "event-night" | "event-midday" | "event-day";
 
 export type DailyMaterialSelectionItem = {
@@ -86,11 +86,11 @@ function beijingDay(date: Date): string {
   return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Shanghai" }).format(date);
 }
 
-function selectionDayKey(day: string): string {
+export function selectionDayKey(day: string): string {
   return `event-intelligence:model-selection:${day}`;
 }
 
-function candidatePacketKey(day: string): string {
+export function candidatePacketKey(day: string): string {
   return `event-intelligence:daily-candidates:${day}`;
 }
 
@@ -162,7 +162,7 @@ function input(event: EventRecord): ModelScoringInput {
   };
 }
 
-function selectionItem(event: EventRecord, result: ModelScoringResult): DailyMaterialSelectionItem {
+export function selectionItem(event: EventRecord, result: ModelScoringResult): DailyMaterialSelectionItem {
   const coreCompanies = matchCoreCompanies([event.titleZh, event.titleEn, ...event.entities]).map((company) => company.name);
   return {
     eventId: event.id,
