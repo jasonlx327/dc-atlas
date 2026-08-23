@@ -1,6 +1,8 @@
 const endpoint = "https://idc-index.com/api/atlas-live-v5?schema=v1&deploy_check=";
 const pulsePage = "https://idc-index.com/pulse?deploy_check=";
 const expectedPulseMarkers = (process.env.ATLAS_EXPECTED_PULSE_CSS_MARKERS ?? "").split("|").map((value) => value.trim()).filter(Boolean);
+const minimumPulseCount = Number(process.env.ATLAS_MIN_PULSE_COUNT ?? "0");
+const minimumListedCount = Number(process.env.ATLAS_MIN_LISTED_COUNT ?? "0");
 let lastError = null;
 
 for (let attempt = 0; attempt < 4; attempt += 1) {
@@ -19,6 +21,8 @@ for (let attempt = 0; attempt < 4; attempt += 1) {
         throw new Error(`${section} freshness invalid: ${freshness?.status ?? "missing"}`);
       }
     }
+    if (payload.idcPulse.length < minimumPulseCount) throw new Error(`idcPulse count regressed: ${payload.idcPulse.length} < ${minimumPulseCount}`);
+    if (payload.listedCompanyNews.length < minimumListedCount) throw new Error(`listedCompanyNews count regressed: ${payload.listedCompanyNews.length} < ${minimumListedCount}`);
     if (payload.benchmarks.length === 0) throw new Error("benchmarks is empty");
     if (expectedPulseMarkers.length) {
       const pulseResponse = await fetch(`${pulsePage}${Date.now()}-${attempt}`, { headers: { Accept: "text/html" }, cache: "no-store" });

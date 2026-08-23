@@ -798,6 +798,29 @@ test("uses source-linked earnings conclusions instead of stock-direction voting"
   assert.doesNotMatch(pageSource, /预测上涨|预测下跌|earningsPolls|earnings-vote/);
 });
 
+test("keeps formally released records in versioned content and cache identity", async () => {
+  const workerSource = await readFile(new URL("../worker/index.ts", import.meta.url), "utf8");
+  const supplementSource = await readFile(new URL("../worker/formal-content-supplement.ts", import.meta.url), "utf8");
+
+  for (const marker of [
+    "singapore-dc-cfa2-200mw",
+    "cerebras-cs4-rack-scale-2026",
+    "lumentum-fy2026-cpo-els-1-6t",
+    "credo-omniconnect-ocp-scale-in-2026",
+    "arista-q2-2026-1-6t-lpo",
+    "ciena-toshiba-1-6t-quantum-safe-dci-2026",
+    "celestica-q2-2026-800g-1-6t-programs",
+    "singapore-dc-cfa2-200mw-listed-operators",
+    "micron-research-labs-10b-2026",
+    "biren-h1-2026-profit-alert-listed",
+  ]) assert.match(supplementSource, new RegExp(marker));
+  assert.match(workerSource, /formalPulseSupplement: FORMAL_PULSE_SUPPLEMENT/);
+  assert.match(workerSource, /formalListedSupplement: FORMAL_LISTED_SUPPLEMENT/);
+  assert.match(workerSource, /const idcPulse = uniqueNews\(\[[\s\S]*FORMAL_PULSE_SUPPLEMENT[\s\S]*constructionPulse\(\)/);
+  assert.match(workerSource, /const listedCompanyNews = uniqueNews\(\[[\s\S]*FORMAL_LISTED_SUPPLEMENT[\s\S]*listedCompanyPulse\(\)/);
+  assert.match(workerSource, /relationSchemaVersion = "entity-brief-v3"/);
+});
+
 test("keeps the large-campus radar current and source-backed", async () => {
   const workerSource = await readFile(new URL("../worker/index.ts", import.meta.url), "utf8");
   const pageSource = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");

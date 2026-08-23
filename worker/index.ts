@@ -36,6 +36,7 @@ import {
   type EditorialFeedbackRecord,
 } from "./event-intelligence/editorial-feedback.ts";
 import { sourceRegistryById } from "./connectors/index.ts";
+import { FORMAL_LISTED_SUPPLEMENT, FORMAL_PULSE_SUPPLEMENT } from "./formal-content-supplement.ts";
 
 const AIHOT_ENDPOINT = "https://aihot.virxact.com/api/public/items";
 const AIHOT_DAILY_ENDPOINT = "https://aihot.virxact.com/api/public/daily";
@@ -3348,6 +3349,8 @@ function staticAtlasContent(): Record<string, unknown> {
     rumors: RUMOR_BRIEFS,
     aiAdoption: aiAdoption(),
     trackedSources: trackedSources(),
+    formalPulseSupplement: FORMAL_PULSE_SUPPLEMENT,
+    formalListedSupplement: FORMAL_LISTED_SUPPLEMENT,
   };
 }
 
@@ -3359,7 +3362,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   // content and released through the normal same-HEAD deployment gates.
   const publicEditorDecision: AtlasEditorDecisionPacket | null = null;
   const staticContentVersion = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(JSON.stringify(staticAtlasContent()))).then((digest) => Array.from(new Uint8Array(digest)).slice(0, 8).map((byte) => byte.toString(16).padStart(2, "0")).join(""));
-  const relationSchemaVersion = "entity-brief-v2";
+  const relationSchemaVersion = "entity-brief-v3";
   const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}&relations=${relationSchemaVersion}`, request.url), { method: "GET" });
   const edgeCache = (caches as unknown as { default: Cache }).default;
   if (!options.forceRefresh) {
@@ -3445,10 +3448,12 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const positiveNews = positiveIdcNews(news, records);
   const idcPulse = uniqueNews([
     ...editorNewsItems(publicEditorDecision, ["idc-pulse", "capacity"]),
+    ...FORMAL_PULSE_SUPPLEMENT,
     ...constructionPulse(),
   ], 48).map(withEntityRelations);
   const listedCompanyNews = uniqueNews([
     ...editorNewsItems(publicEditorDecision, ["listed-companies"]),
+    ...FORMAL_LISTED_SUPPLEMENT,
     ...listedCompanyPulse(),
   ], 48).map(withEntityRelations);
   const deals = mnaDeals();
