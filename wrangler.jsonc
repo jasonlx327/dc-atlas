@@ -27,13 +27,7 @@
     "ATLAS_ADMIN_HOST": "admin.idc-index.com",
     "ATLAS_ADMIN_EMAIL": "Jasonlix993@gmail.com",
     "ATLAS_ACCESS_TEAM_DOMAIN": "idc-atlas-admin.cloudflareaccess.com",
-    "ATLAS_ACCESS_AUD": "ea4a26e2b77b58365ab4460aee2fd97e611b60b1ba7820162b7ff3bb102c9310",
-    "ATLAS_SCORING_ENABLED": "false",
-    "ATLAS_SCORING_PROVIDER": "openai-compatible",
-    "ATLAS_SCORING_BASE_URL": "https://api.deepseek.com",
-    "ATLAS_SCORING_MODEL": "deepseek-v4-flash",
-    "ATLAS_SCORING_TIMEOUT_MS": "20000",
-    "ATLAS_SCORING_DAILY_CALL_LIMIT": "36"
+    "ATLAS_ACCESS_AUD": "ea4a26e2b77b58365ab4460aee2fd97e611b60b1ba7820162b7ff3bb102c9310"
   },
   "assets": {
     "directory": "./dist/client",

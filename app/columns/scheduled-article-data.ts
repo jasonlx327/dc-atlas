@@ -1,5 +1,6 @@
 import { metaBlackrockElPaso } from "./meta-blackrock-el-paso-data";
 import { nextWeekResearchRecords } from "./next-week-research-data";
+import { nextCycleResearchRecords } from "./next-cycle-research-data";
 
 export type ResearchMetric = {
   label: string;
@@ -56,6 +57,7 @@ export type ScheduledResearchRecord = {
 };
 
 export const scheduledResearchRecords: ScheduledResearchRecord[] = [
+  ...nextCycleResearchRecords,
   ...nextWeekResearchRecords,
   metaBlackrockElPaso,
   {

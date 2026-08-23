@@ -74,12 +74,12 @@ export function modelMaterialBand(
   const scores = result.scores;
   const official = context.sourceTier === "T0" || context.sourceTier === "T1";
   const attentionSignal = (context.independentSourceCount ?? 0) >= 2 || (context.coreCompanyCount ?? 0) > 0;
-  if (official && result.semanticScore >= 3 && scores.topicRelevanceScore >= 3) return "selected";
-  if (attentionSignal && result.semanticScore >= 3.2 && scores.topicRelevanceScore >= 3) return "selected";
-  if (result.semanticScore >= 3.5
-    && scores.topicRelevanceScore >= 3.2
-    && (scores.researchValueScore >= 2.5 || scores.readerValueScore >= 3)) return "selected";
-  if (result.semanticScore >= 2.6 && scores.topicRelevanceScore >= 2.8) return "watch";
+  if (official && result.semanticScore >= 2.6 && scores.topicRelevanceScore >= 2.5) return "selected";
+  if (attentionSignal && result.semanticScore >= 2.8 && scores.topicRelevanceScore >= 2.5) return "selected";
+  if (result.semanticScore >= 3.1
+    && scores.topicRelevanceScore >= 2.8
+    && (scores.researchValueScore >= 2.3 || scores.readerValueScore >= 2.5)) return "selected";
+  if (result.semanticScore >= 2.2 && scores.topicRelevanceScore >= 2.2) return "watch";
   return "dropped";
 }
 

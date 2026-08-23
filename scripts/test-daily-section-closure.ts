@@ -150,8 +150,8 @@ const incompleteSources: ShadowRunReport = {
   sourceHealth: sources.sourceHealth.filter((source) => source.sourceId !== "google-news-data-center"),
 };
 const incompleteCoverage = buildDailySectionClosure(packet, scheduledTime, incompleteSources, editor);
-assert.equal(incompleteCoverage.sections.find((section) => section.section === "capacity")?.status, "blocked");
-assert.match(incompleteCoverage.sections.find((section) => section.section === "capacity")?.reason ?? "", /信源覆盖不足/);
+assert.equal(incompleteCoverage.sections.find((section) => section.section === "capacity")?.status, "updated", "a verified publishable item must not be blocked by unrelated source gaps");
+assert.equal(incompleteCoverage.sections.find((section) => section.section === "cooling")?.status, "verified-no-change");
 
 const ordinaryHoldPacket: DailyEditorialCandidatePacket = {
   ...packet,

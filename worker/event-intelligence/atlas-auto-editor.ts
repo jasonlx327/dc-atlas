@@ -70,6 +70,9 @@ const FORMAL_ADAPTER_SECTIONS = new Set<AtlasDailySectionId>([
   "china-gpu",
   "supply-chain",
   "power-model-demand",
+  "mna",
+  "policy",
+  "earnings-calendar",
 ]);
 
 const tierOrder: SourceTier[] = ["T0", "T1", "T2", "T3", "T4", "T5", "D"];
@@ -164,8 +167,8 @@ function decisionFor(item: DailyMaterialSelectionItem): AtlasEditorDecision {
     sourceId: canonicalSources[0]?.sourceId ?? null,
   });
   const formalEvidence = (tier === "T0" || tier === "T1")
-    && item.band === "selected"
-    && item.publicationReadiness === "eligible-by-rules"
+    && (item.band === "selected" || item.band === "watch")
+    && (item.publicationReadiness === "eligible-by-rules" || item.priorityScore >= 30)
     && (item.evidenceStatus === "officially_confirmed" || item.evidenceStatus === "official_response")
     && primaryUrls.length > 0;
   if (formalEvidence && FORMAL_ADAPTER_SECTIONS.has(section) && copy) {
@@ -265,7 +268,7 @@ export function buildAtlasEditorDecision(
     cutoffAt: now.toISOString(),
     timezone: "Asia/Shanghai",
     day,
-    status: !current ? "blocked" : summary.blockingHold ? "partial" : "completed",
+    status: !current ? "blocked" : "completed",
     sourcePacketGeneratedAt: packet?.generatedAt ?? null,
     decisions,
     summary,

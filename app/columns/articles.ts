@@ -1,5 +1,20 @@
 export const columnArticles = [
   {
+    href: "/columns/singapore-200mw-allocation", hrefEn: "/en/columns/singapore-200mw-allocation", date: "2026-08-24", publishAt: "2026-08-24T09:30:00+08:00", series: "SOVEREIGN CAPACITY · 26", title: "新加坡只放出 200MW：稀缺电力如何重写数据中心竞争", titleEn: "Singapore Releases Just 200MW: How Scarce Power Rewrites Data-Center Competition", summary: "四家运营商各获暂定 50MW。真正的门槛不只是拿到容量，而是把绿色电力、IT 能效、AI 价值与项目兑现放进同一份许可。", summaryEn: "Four operators received provisional 50MW allocations. The real gate combines green power, IT efficiency, AI value and project execution.", image: "/column-singapore-200mw-allocation-v1.jpg",
+  },
+  {
+    href: "/columns/ports-pike-8gw-risk-stack", hrefEn: "/en/columns/ports-pike-8gw-risk-stack", date: "2026-08-25", publishAt: "2026-08-25T09:30:00+08:00", series: "PROJECT FINANCE · 27", title: "PORTS-Pike 的 8GW：NVIDIA 如何替 OpenAI 锁定土地、电力与信用", titleEn: "PORTS-Pike's 8GW: How NVIDIA Locks Land, Power and Credit for OpenAI", summary: "把 8 IT-GW 拆成 NVIDIA 的信用支持、SB Energy 的土地电力外壳、OpenAI 的需求承诺与仍待完成的送电工程。", summaryEn: "The 8 IT-GW plan separated into NVIDIA credit support, SB Energy land-power-shell, OpenAI demand and unfinished energization.", image: "/column-ports-pike-8gw-risk-stack-v1.jpg",
+  },
+  {
+    href: "/columns/nvidia-fy27-q2-five-tests", hrefEn: "/en/columns/nvidia-fy27-q2-five-tests", date: "2026-08-26", publishAt: "2026-08-26T09:30:00+08:00", series: "EARNINGS PREVIEW · 28", title: "NVIDIA 财报前夜：比收入更重要的五个验证", titleEn: "Before NVIDIA Earnings: Five Tests That Matter More Than Revenue", summary: "以 Q1 的 816 亿美元收入为基线，检验 Blackwell 转换、网络增速、毛利率、客户融资与电力约束是否仍能同步。", summaryEn: "Starting from Q1 revenue of $81.6B, five tests cover Blackwell conversion, networking, margins, customer finance and power constraints.", image: "/column-nvidia-fy27-q2-five-tests-v1.jpg",
+  },
+  {
+    href: "/columns/anthropic-compute-commitment-gap", hrefEn: "/en/columns/anthropic-compute-commitment-gap", date: "2026-08-27", publishAt: "2026-08-27T09:30:00+08:00", series: "MODEL ECONOMICS · 29", title: "Claude 收入与十余 GW 算力之间，还差一张现金流量表", titleEn: "Between Claude Revenue and 10+GW of Compute, a Cash-Flow Bridge Is Missing", summary: "把 Anthropic 的 470 亿美元运行率与 AWS、Google、Broadcom、SpaceX 算力安排放到同一条时间轴，区分需求、合同、上线与现金消耗。", summaryEn: "Anthropic's $47B run-rate and AWS, Google, Broadcom and SpaceX capacity are mapped across demand, contract, delivery and cash burn.", image: "/column-anthropic-compute-commitment-gap-v1.jpg",
+  },
+  {
+    href: "/columns/nebius-asset-light-factory", hrefEn: "/en/columns/nebius-asset-light-factory", date: "2026-08-28", publishAt: "2026-08-28T09:30:00+08:00", series: "NEOCLOUD CAPITAL · 30", title: "Nebius 不再只建自己的云：新云公司的资本效率实验", titleEn: "Nebius Is No Longer Building Only Its Own Cloud: A Neocloud Capital-Efficiency Test", summary: "从自建园区、合作伙伴持有资产、GPU 抵押贷款到背表电源，拆解 Nebius 如何把容量增长与资产负担分开。", summaryEn: "Owned campuses, partner-owned assets, GPU-backed debt and behind-the-meter power show how Nebius separates capacity growth from balance-sheet burden.", image: "/column-nebius-asset-light-factory-v1.jpg",
+  },
+  {
     href: "/columns/agent-runtime-demand", hrefEn: "/en/columns/agent-runtime-demand", date: "2026-08-17", publishAt: "2026-08-17T09:30:00+08:00", series: "AGENT ECONOMICS · 20", title: "从 GLM-5.3 到 Claude：长任务代理如何改变推理需求", titleEn: "From GLM-5.3 to Claude: How Long-Running Agents Change Inference Demand", summary: "拆解 GLM-5.3、DeepSeek Harness 与 Anthropic 商业化信号，区分能力、运行时和收入之间尚未被证实的因果链。", summaryEn: "GLM-5.3, DeepSeek Harness and Anthropic commercial signals separated into capability, runtime and an unproven causal chain.", image: "/column-agent-runtime-demand-v1.jpg",
   },
   {
