@@ -44,7 +44,7 @@ const AIHOT_USER_AGENT = "aihot-skill/0.3.6 (+https://aihot.virxact.com/aihot-sk
 const CWW_ENDPOINT = "https://cwwindex.today/data/latest.json";
 const OPENROUTER_MODELS_ENDPOINT = "https://openrouter.ai/api/v1/models?sort=top-weekly";
 const ARENA_CODE_ENDPOINT = "https://arena.ai/leaderboard/code/webdev";
-const CONTENT_REVIEWED_AT = "2026-08-17";
+const CONTENT_REVIEWED_AT = "2026-08-23";
 
 function containsEntityTerm(text: string, term: string): boolean {
   const needle = term.trim().toLocaleLowerCase();
