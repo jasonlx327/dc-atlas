@@ -93,10 +93,10 @@ const report = buildDailySectionClosure(packet, scheduledTime, sources, editor);
 assert.equal(report.day, "2026-08-13");
 assert.equal(report.scheduledForBeijing, "06:30");
 assert.equal(report.sections.length, 13);
-assert.equal(report.sections.find((section) => section.section === "capacity")?.status, "updated");
+assert.equal(report.sections.find((section) => section.section === "capacity")?.status, "blocked");
 assert.equal(report.sections.find((section) => section.section === "columns")?.status, "verified-no-change");
 assert.equal(report.sections.find((section) => section.section === "cooling")?.status, "verified-no-change");
-assert.equal(report.retryRequired, false);
+assert.equal(report.retryRequired, true);
 
 const mediaOnlyRumor: DailyEditorialCandidatePacket = {
   ...packet,
@@ -135,11 +135,19 @@ const mediaOnlyRumor: DailyEditorialCandidatePacket = {
 };
 const rumorEditor = buildAtlasEditorDecision(mediaOnlyRumor, scheduledTime);
 const rumorReport = buildDailySectionClosure(mediaOnlyRumor, scheduledTime, sources, rumorEditor);
-assert.equal(rumorReport.status, "completed");
-assert.equal(rumorReport.sections.find((section) => section.section === "rumors")?.status, "updated");
+assert.equal(rumorReport.status, "partial");
+assert.equal(rumorReport.sections.find((section) => section.section === "rumors")?.status, "blocked");
 assert.equal(rumorReport.sections.find((section) => section.section === "listed-companies")?.status, "verified-no-change");
 assert.equal(rumorReport.sections.find((section) => section.section === "capacity")?.status, "verified-no-change");
-assert.equal(rumorReport.retryRequired, false);
+assert.equal(rumorReport.retryRequired, true);
+
+const partialEditorClosure = buildDailySectionClosure(packet, scheduledTime, sources, { ...editor, status: "partial" });
+assert.equal(partialEditorClosure.status, "blocked");
+assert.equal(partialEditorClosure.counts.blocked, 13);
+
+const partialCandidateClosure = buildDailySectionClosure({ ...packet, status: "partial" }, scheduledTime, sources, editor);
+assert.equal(partialCandidateClosure.status, "blocked");
+assert.equal(partialCandidateClosure.counts.blocked, 13);
 
 const stale = buildDailySectionClosure({ ...packet, day: "2026-08-12" }, scheduledTime, sources, editor);
 assert.equal(stale.status, "blocked");

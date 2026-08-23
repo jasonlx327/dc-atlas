@@ -1,9 +1,12 @@
 import type { DailyEditorialCandidatePacket, DailyMaterialSelectionItem } from "./daily-model-selection.ts";
 import {
-  ATLAS_EDITOR_DECISION_LATEST_KEY,
   type AtlasEditorDecisionPacket,
 } from "./atlas-auto-editor.ts";
 import type { ShadowRunReport } from "./pipeline.ts";
+import {
+  ATLAS_EDITORIAL_COMMIT_LATEST_KEY,
+  type AtlasEditorialCommit,
+} from "./editorial-commit.ts";
 import {
   ATLAS_DAILY_SECTION_IDS,
   buildSectionSourceCoverage,
@@ -79,12 +82,12 @@ export function buildDailySectionClosure(
 ): AtlasDailyClosureReport {
   const generatedAt = new Date(scheduledTime).toISOString();
   const day = beijingDay(new Date(scheduledTime));
-  const packetCurrent = packet?.day === day && packet.sourceSlots.includes("event-night") && packet.status !== "skipped";
+  const packetCurrent = packet?.day === day && packet.sourceSlots.includes("event-night") && packet.status === "completed";
   const sourceCurrent = sourceReport !== null
     && beijingDay(new Date(sourceReport.generatedAt)) === day
     && sourceReport.status !== "failed"
     && sourceReport.status !== "blocked";
-  const editorCurrent = editorPacket?.day === day && editorPacket.status !== "blocked";
+  const editorCurrent = editorPacket?.day === day && editorPacket.status === "completed";
   const coverage = buildSectionSourceCoverage(sourceCurrent ? sourceReport : null);
   const coverageBySection = new Map(coverage.map((entry) => [entry.section, entry]));
 
@@ -104,15 +107,13 @@ export function buildDailySectionClosure(
     if (published.length) {
       return {
         section,
-        status: "updated",
-        publicationMode: "auto-published",
+        status: "blocked",
+        publicationMode: "needs-review",
         candidateEventIds,
         eligibleEventIds: published.map((decision) => decision.eventId),
-        blockedEventIds: blockingHeld.map((decision) => decision.eventId),
+        blockedEventIds: [...published, ...blockingHeld].map((decision) => decision.eventId),
         sourceCoverage: sectionCoverage,
-        reason: blockingHeld.length
-          ? "合格条目已写入公开发布覆盖层；其余阻断候选保留在异常队列。"
-          : "合格条目已通过一手或媒体分流、双语与声明来源校验，并写入公开发布覆盖层。",
+        reason: "候选已通过编辑分流，但尚无正式双语内容记录、同一 HEAD 发布与生产回读凭证；保留现有生产并转交发布复核。",
       };
     }
     if (blockingHeld.length) {
@@ -166,10 +167,16 @@ export function buildDailySectionClosure(
 
 export async function runDailySectionClosure(env: Env, scheduledTime: number): Promise<AtlasDailyClosureReport> {
   const day = beijingDay(new Date(scheduledTime));
+  const commit = await env.IDC_DAILY_SNAPSHOTS.get<AtlasEditorialCommit>(ATLAS_EDITORIAL_COMMIT_LATEST_KEY, "json");
+  const committedKeys = commit?.schemaVersion === "atlas-editorial-commit.v1" && commit.day === day ? commit.keys : null;
   const [packet, sourceReport, editorPacket] = await Promise.all([
-    env.IDC_DAILY_SNAPSHOTS.get<DailyEditorialCandidatePacket>("event-intelligence:daily-candidates:latest", "json"),
+    committedKeys
+      ? env.IDC_DAILY_SNAPSHOTS.get<DailyEditorialCandidatePacket>(committedKeys.candidates, "json")
+      : Promise.resolve(null),
     env.IDC_DAILY_SNAPSHOTS.get<ShadowRunReport>(`event-intelligence:run:event-night:${day}`, "json"),
-    env.IDC_DAILY_SNAPSHOTS.get<AtlasEditorDecisionPacket>(ATLAS_EDITOR_DECISION_LATEST_KEY, "json"),
+    committedKeys
+      ? env.IDC_DAILY_SNAPSHOTS.get<AtlasEditorDecisionPacket>(committedKeys.editor, "json")
+      : Promise.resolve(null),
   ]);
   const report = buildDailySectionClosure(packet, scheduledTime, sourceReport, editorPacket);
   await Promise.all([
