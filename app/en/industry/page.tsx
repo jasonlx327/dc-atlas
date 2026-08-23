@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import EnglishHome, { type AtlasPayload } from "../english-home";
 import { loadInitialAtlasPayload } from "../../initial-atlas";
+import { deriveConsoleMeta } from "../../console-meta";
 
 const canonical = "https://idc-index.com/en/industry";
 
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
 
 export default async function EnglishIndustryPage() {
   const initialPayload = await loadInitialAtlasPayload() as Partial<AtlasPayload> | null;
+  const contentMeta = deriveConsoleMeta(initialPayload);
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -29,7 +31,7 @@ export default async function EnglishIndustryPage() {
         url: canonical,
         inLanguage: "en-US",
         description: metadata.description,
-        dateModified: initialPayload?.generatedAt,
+        dateModified: contentMeta.lastContentChangedAt ?? contentMeta.reviewedAt,
         isPartOf: { "@type": "WebSite", name: "IDC Atlas", url: "https://idc-index.com/en" },
         about: ["AI accelerators", "Data center networking", "Grid access", "Liquid cooling", "Campus capacity"],
       },

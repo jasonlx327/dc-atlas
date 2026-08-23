@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Home, { type AtlasPayload } from "../home-client";
 import { loadInitialAtlasPayload } from "../initial-atlas";
+import { deriveConsoleMeta } from "../console-meta";
 
 export const metadata: Metadata = {
   title: "IDC 最新脉冲｜项目、上市公司与 AI 日报",
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
 
 export default async function PulsePage() {
   const initialPayload = await loadInitialAtlasPayload() as Partial<AtlasPayload> | null;
+  const contentMeta = deriveConsoleMeta(initialPayload);
   const canonical = "https://idc-index.com/pulse";
   const structuredData = {
     "@context": "https://schema.org",
@@ -36,7 +38,7 @@ export default async function PulsePage() {
         url: canonical,
         inLanguage: "zh-CN",
         description: metadata.description,
-        dateModified: initialPayload?.generatedAt,
+        dateModified: contentMeta.lastContentChangedAt ?? contentMeta.reviewedAt,
         isPartOf: { "@type": "WebSite", name: "IDC Atlas", url: "https://idc-index.com/" },
         about: ["数据中心项目", "IDC 上市公司", "AI 基础设施", "数据中心租赁与投运"],
       },

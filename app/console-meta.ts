@@ -1,6 +1,13 @@
+import { deriveContentVersion, latestContentChangedAt } from "./intelligence-model";
+
 export type ConsoleMeta = {
   generatedAt?: string;
   reviewedAt?: string;
+  contentVersion?: string;
+  lastContentChangedAt?: string;
+  factChangedAt?: string;
+  researchPublishedAt?: string;
+  briefPublishedAt?: string;
   sourceCount?: number;
   verifiedCount?: number;
 };
@@ -25,6 +32,11 @@ export function deriveConsoleMeta(payload: unknown): ConsoleMeta {
   return {
     generatedAt: text(data.generatedAt) ?? undefined,
     reviewedAt: text(data.contentReviewedAt) ?? undefined,
+    contentVersion: deriveContentVersion(data),
+    lastContentChangedAt: latestContentChangedAt(data),
+    factChangedAt: text(data.factChangedAt) ?? latestContentChangedAt(data),
+    researchPublishedAt: text(data.researchPublishedAt) ?? undefined,
+    briefPublishedAt: text(data.briefPublishedAt) ?? undefined,
     sourceCount: declaredSourceCount ?? sources.size,
     verifiedCount: declaredVerifiedCount ?? tracked.length,
   };

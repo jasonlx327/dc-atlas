@@ -10,7 +10,7 @@ const bilingual = (zh: string, en: string) => ({
 });
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const entries: MetadataRoute.Sitemap = [
     {
       url: "https://idc-index.com/",
       changeFrequency: "daily",
@@ -28,6 +28,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.9,
       alternates: bilingual("https://idc-index.com/industry", "https://idc-index.com/en/industry"),
+    },
+    {
+      url: "https://idc-index.com/companies",
+      changeFrequency: "daily",
+      priority: 0.9,
+      alternates: bilingual("https://idc-index.com/companies", "https://idc-index.com/en/companies"),
     },
     {
       url: "https://idc-index.com/topics/data-center-intelligence",
@@ -107,6 +113,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: bilingual("https://idc-index.com/industry", "https://idc-index.com/en/industry"),
     },
     {
+      url: "https://idc-index.com/en/companies",
+      changeFrequency: "daily",
+      priority: 0.9,
+      alternates: bilingual("https://idc-index.com/companies", "https://idc-index.com/en/companies"),
+    },
+    {
       url: "https://idc-index.com/en/rumors",
       changeFrequency: "daily",
       priority: 0.95,
@@ -137,4 +149,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { url: `https://idc-index.com/en/companies/${entity.slug}`, changeFrequency: "daily" as const, priority: 0.8, alternates: bilingual(`https://idc-index.com/companies/${entity.slug}`, `https://idc-index.com/en/companies/${entity.slug}`) },
     ]),
   ];
+  return [...new Map(entries.map((entry) => [entry.url, entry])).values()];
 }

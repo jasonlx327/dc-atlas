@@ -7,6 +7,29 @@ import "./globals.css";
 const googleAnalyticsId = "G-XRKL96W42Q";
 const siteUrl = "https://idc-index.com";
 const siteDescription = "每日追踪全球数据中心项目、超大规模云厂商 CAPEX、IDC 租赁、电力、液冷与算力硬件，保留公开来源和更新时间。";
+const siteStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "IDC Atlas",
+      alternateName: "IDC Atlas Data Center Intelligence",
+      url: `${siteUrl}/`,
+      description: "Bilingual, source-first intelligence and original research on global data-center and AI infrastructure.",
+      publishingPrinciples: `${siteUrl}/methodology`,
+      knowsAbout: ["Data centers", "AI infrastructure", "Cloud CAPEX", "Power and interconnection", "Liquid cooling", "AI accelerators"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: "IDC Atlas",
+      url: `${siteUrl}/`,
+      inLanguage: ["zh-CN", "en-US"],
+      publisher: { "@id": `${siteUrl}/#organization` },
+    },
+  ],
+};
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -44,7 +67,10 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
   return (
     <html lang={requestPath === "/en" || requestPath.startsWith("/en/") ? "en" : "zh-CN"}>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteStructuredData) }} />
+        {children}
+      </body>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">
         {`window.dataLayer = window.dataLayer || [];

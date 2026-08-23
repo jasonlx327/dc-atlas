@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Home, { type AtlasPayload } from "../home-client";
 import { loadInitialAtlasPayload } from "../initial-atlas";
+import { deriveConsoleMeta } from "../console-meta";
 
 export const metadata: Metadata = {
   title: "IDC 产业中心｜算力、园区、电力与液冷",
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
 
 export default async function IndustryPage() {
   const initialPayload = await loadInitialAtlasPayload() as Partial<AtlasPayload> | null;
+  const contentMeta = deriveConsoleMeta(initialPayload);
   const canonical = "https://idc-index.com/industry";
   const structuredData = {
     "@context": "https://schema.org",
@@ -36,7 +38,7 @@ export default async function IndustryPage() {
         url: canonical,
         inLanguage: "zh-CN",
         description: metadata.description,
-        dateModified: initialPayload?.generatedAt,
+        dateModified: contentMeta.lastContentChangedAt ?? contentMeta.reviewedAt,
         isPartOf: { "@type": "WebSite", name: "IDC Atlas", url: "https://idc-index.com/" },
         about: ["AI 芯片", "服务器与网络", "数据中心电力", "液冷", "大型数据中心园区"],
       },

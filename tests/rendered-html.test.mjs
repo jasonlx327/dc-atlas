@@ -20,9 +20,11 @@ async function render(pathname = "/", host = "dc-atlas.example", country = null,
 
 async function currentFeaturedColumnImage() {
   const source = await readFile(new URL("../app/columns/articles.ts", import.meta.url), "utf8");
-  for (const match of source.matchAll(/publishAt:\s*"([^"]+)"[\s\S]*?image:\s*"([^"]+)"/g)) {
-    if (Date.parse(match[1]) <= Date.now()) return match[2];
-  }
+  const published = [...source.matchAll(/publishAt:\s*"([^"]+)"[\s\S]*?image:\s*"([^"]+)"/g)]
+    .map((match) => ({ publishAt: match[1], image: match[2] }))
+    .filter((article) => Date.parse(article.publishAt) <= Date.now())
+    .sort((a, b) => Date.parse(b.publishAt) - Date.parse(a.publishAt));
+  if (published[0]) return published[0].image;
   throw new Error("No published column cover found");
 }
 
@@ -44,21 +46,26 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /href="\/privacy"/);
   assert.match(html, /googletagmanager\.com\/gtag\/js\?id=G-XRKL96W42Q/);
   assert.match(html, /gtag\('config', 'G-XRKL96W42Q'\)/);
-  assert.match(html, /href="\/rumors"><span>02<\/span><strong>市场情报/);
-  assert.match(html, /href="\/pulse"><span>03<\/span><strong>事实脉冲/);
-  assert.match(html, /href="\/columns"><span>04<\/span><strong>深度研究/);
-  assert.match(html, /href="\/#calendar"><span>05<\/span><strong>财报 \/ 资本支出/);
-  assert.match(html, /href="\/industry"><span>07<\/span><strong>产业链地图/);
+  assert.match(html, /href="\/#overview"><span>01<\/span><strong>今日/);
+  assert.match(html, /href="\/pulse"><span>02<\/span><strong>事实/);
+  assert.match(html, /href="\/companies"><span>03<\/span><strong>公司/);
+  assert.match(html, /href="\/industry"><span>04<\/span><strong>产业链/);
+  assert.match(html, /href="\/columns"><span>05<\/span><strong>研究/);
+  assert.match(html, /href="\/rumors"><span>06<\/span><strong>情报/);
   assert.match(html, /资本支出与财报日历/);
   assert.match(html, /class="atlas-calendar-viewport"/);
   assert.match(html, /class="atlas-calendar-track"/);
   assert.match(html, /class="atlas-calendar-group" aria-hidden="true"/);
   assert.match(html, /研究队列/);
-  assert.match(html, /src="\/lead-amazon-aws-capex\.png"/);
-  assert.match(html, /Meta–BlackRock El Paso：1GW AI 园区如何把建设期风险装进资本结构/);
+  assert.match(html, /今日重点研究/);
+  assert.match(html, /5000 亿美元不是一笔交易：AI 融资平台的五个缺口/);
+  assert.match(html, /证据摘要/);
+  assert.match(html, /尚未确认/);
+  assert.match(html, /下一验证点/);
+  assert.match(html, /为何今天读它/);
   assert.match(html, new RegExp((await currentFeaturedColumnImage()).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   assert.match(html, /href="\/columns"/);
-  assert.match(html, /href="\/columns\/meta-blackrock-el-paso"/);
+  assert.match(html, /href="\/columns\/ai-financing-platforms"/);
   assert.doesNotMatch(html, /情报摘要/);
   assert.match(html, /市场脉搏/);
   assert.match(html, /class="atlas-pulse-wave"/);
@@ -222,8 +229,8 @@ test("renders the English research console and focused content routes", async ()
   assert.match(html, /class="atlas-console-rail(?: |")/);
   assert.match(html, /href="\/en\/columns"/);
   assert.match(html, /Research queue/);
-  assert.match(html, /\$10 Billion, Six Years, 133MW: Volta/);
-  assert.match(html, /From GLM-5\.3 to Claude: How Long-Running Agents Change Inference Demand/);
+  assert.match(html, /HBM4&#x27;s System Cadence: Production Is Not Platform Delivery/);
+  assert.match(html, /\$500 Billion Is Not a Transaction: Five Gaps in AI Financing Platforms/);
   assert.equal((html.match(/href="\/en\/columns\/(?!microsoft-ai-capex)[^"]+"/g) ?? []).length >= 4, true);
   assert.match(html, /CapEx &amp; earnings watch/);
   assert.doesNotMatch(html, /Atlas intelligence brief/);
@@ -261,7 +268,8 @@ test("publishes searchable bilingual entity profiles", async () => {
   assert.match(chineseHtml, /搜索公司 \/ 项目/);
   assert.match(chineseHtml, /canonical" href="https:\/\/idc-index\.com\/companies\/microsoft"/);
   assert.match(chineseHtml, /"@type":"ProfilePage"/);
-  assert.match(chineseHtml, /"mainEntity":\{"@type":"Organization"/);
+  assert.match(chineseHtml, /"mainEntity":\{"@id":"https:\/\/idc-index\.com\/companies\/microsoft#company"/);
+  assert.match(chineseHtml, /"@type":"BreadcrumbList"/);
   assert.match(chineseHtml, /tickerSymbol/);
 
   const english = await render("/en/companies/microsoft");
@@ -272,7 +280,8 @@ test("publishes searchable bilingual entity profiles", async () => {
   assert.match(englishHtml, /Find company \/ project/);
   assert.match(englishHtml, /canonical" href="https:\/\/idc-index\.com\/en\/companies\/microsoft"/);
   assert.match(englishHtml, /"@type":"ProfilePage"/);
-  assert.match(englishHtml, /"mainEntity":\{"@type":"Organization"/);
+  assert.match(englishHtml, /"mainEntity":\{"@id":"https:\/\/idc-index\.com\/en\/companies\/microsoft#company"/);
+  assert.match(englishHtml, /"@type":"BreadcrumbList"/);
   assert.match(englishHtml, /tickerSymbol/);
 });
 
@@ -451,10 +460,66 @@ test("keeps console navigation in the same order as the home-page reading sequen
   const overviewStart = overview.indexOf("export function IntelligenceConsoleOverview");
   const layout = overview.slice(overviewStart, overview.indexOf('<footer className="atlas-console-footer"', overviewStart));
 
-  for (const [first, second] of [["市场情报", "事实脉冲"], ["事实脉冲", "深度研究"], ["深度研究", "财报 / 资本支出"], ["公司", "产业链地图"], ["产业链地图", 'zh: "市场", en: "Markets"']]) assert.ok(nav.indexOf(first) < nav.indexOf(second));
+  for (const [first, second] of [['zh: "今日"', 'zh: "事实"'], ['zh: "事实"', 'zh: "公司"'], ['zh: "公司"', 'zh: "产业链"'], ['zh: "产业链"', 'zh: "研究"'], ['zh: "研究"', 'zh: "情报"']]) assert.ok(nav.indexOf(first) < nav.indexOf(second));
+  assert.equal((nav.match(/\{ key:/g) ?? []).length, 6);
   for (const [first, second] of [['id="rumors"', 'id="pulse"'], ['id="pulse"', 'className="atlas-decision-grid"'], ['id="companies"', 'id="industry"'], ['id="industry"', 'id="market"']]) assert.ok(layout.indexOf(first) < layout.indexOf(second));
   assert.match(css, /\.atlas-research-queue \{ order: 1;/);
   assert.match(css, /\.atlas-calendar \{ order: 2;/);
+});
+
+test("publishes a first-class bilingual company library and complete entity graph", async () => {
+  const chinese = await render("/companies");
+  assert.equal(chinese.status, 200);
+  const chineseHtml = await chinese.text();
+  assert.match(chineseHtml, /AI 基础设施公司的事实、研究与下一节点/);
+  assert.match(chineseHtml, /"@type":"ItemList"/);
+  assert.match(chineseHtml, /href="\/companies\/microsoft"/);
+  assert.match(chineseHtml, /关注公司/);
+  assert.match(chineseHtml, /按事件强度筛选/);
+  assert.match(chineseHtml, /按更新时间筛选/);
+
+  const english = await render("/en/companies");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /Companies behind the AI infrastructure buildout/);
+  assert.match(englishHtml, /"@type":"ItemList"/);
+  assert.match(englishHtml, /href="\/en\/companies\/nvidia"/);
+
+  const sitemap = await readFile(new URL("../app/sitemap.ts", import.meta.url), "utf8");
+  assert.match(sitemap, /https:\/\/idc-index\.com\/companies/);
+  assert.match(sitemap, /new Map\(entries\.map/);
+});
+
+test("keeps English stories semantic and the content version stable across hydration", async () => {
+  const english = await readFile(new URL("../app/en/english-home.tsx", import.meta.url), "utf8");
+  const model = await readFile(new URL("../app/intelligence-model.ts", import.meta.url), "utf8");
+  const worker = await readFile(new URL("../worker/index.ts", import.meta.url), "utf8");
+  assert.doesNotMatch(english, /Source-linked infrastructure update/);
+  assert.doesNotMatch(english, /A new source-linked update is being reviewed/);
+  assert.match(english, /story\.titleEn \?\? englishTitle\(story\.title\)/);
+  assert.match(model, /shouldAdoptPayload/);
+  assert.match(worker, /contentVersion/);
+  assert.match(worker, /lastContentChangedAt/);
+  assert.match(worker, /withEntityRelations/);
+  assert.match(worker, /entityIds/);
+  assert.match(model, /story\.entityIds/);
+  assert.match(worker, /prime\.prime\.length <= 3_500/);
+});
+
+test("turns the columns index into a relationship-aware research library", async () => {
+  const chinese = await render("/columns");
+  assert.equal(chinese.status, 200);
+  const chineseHtml = await chinese.text();
+  assert.match(chineseHtml, /搜索判断、公司或主题/);
+  assert.match(chineseHtml, /按主题筛选/);
+  assert.match(chineseHtml, /按公司筛选/);
+  assert.match(chineseHtml, /今日重点/);
+
+  const english = await render("/en/columns");
+  assert.equal(english.status, 200);
+  const englishHtml = await english.text();
+  assert.match(englishHtml, /Search thesis, company or topic/);
+  assert.match(englishHtml, /Company-linked/);
 });
 
 test("keeps lightweight RSS and canonical QR sharing in the shared console footer", async () => {
@@ -789,6 +854,9 @@ test("keeps live-data validation in the deployment path", async () => {
   assert.match(workerSource, /Core Scientific Q2 已签约容量约 1\.1GW/);
   assert.match(workerSource, /中国移动将于 8 月 13 日披露半年报/);
   assert.match(workerSource, /sectionFreshnessState/);
+  assert.match(workerSource, /const publicEditorDecision: AtlasEditorDecisionPacket \| null = null/);
+  assert.match(workerSource, /dailyClosure: null/);
+  assert.doesNotMatch(workerSource, /dailyClosure\?\.status === "completed" && editorDecision/);
   for (const marker of ["galaxy-mcgregor-campus-2026", "energy-vault-snyder-ai-groundbreaking", "hut8-beacon-point-second-352mw-lease", "eqt-copia-power"]) assert.match(workerSource, new RegExp(marker));
 });
 

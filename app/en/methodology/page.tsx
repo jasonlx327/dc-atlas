@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     canonical,
     languages: {
       "en": canonical,
+      "x-default": canonical,
       "zh-CN": "https://idc-index.com/methodology",
     },
   },

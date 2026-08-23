@@ -235,6 +235,26 @@ export const POLICY_BRIEFS: PolicyIndexRecord[] = [
 
 export const RUMOR_BRIEFS: RumorWatchItem[] = [
   {
+    id: "together-ai-ibm-cloud-240m-inference-cluster-2026",
+    title: "Together AI 据报与 IBM Cloud 签署 2.4 亿美元算力协议",
+    titleEn: "Together AI is reported to have signed a $240M compute agreement with IBM Cloud",
+    summary: "The Register 8 月 11 日报道称，Together AI 与 IBM Cloud 签署多年期、2.4 亿美元协议，拟在 IBM Cloud 上部署 NVIDIA HGX B300 与 Spectrum-X 组成的大型推理集群，计划于 2027 年第一季度上线。当前公开线索未披露机柜、GPU 数量、MW、地域或分期付款安排，也未找到双方对应的完整公开公告；本条只记录媒体报道，不把金额换算为已交付容量或已确认资本开支。",
+    summaryEn: "The Register reported on August 11 that Together AI signed a multi-year, $240 million agreement with IBM Cloud for a large inference cluster based on NVIDIA HGX B300 systems and Spectrum-X networking, targeted for launch in Q1 2027. The public lead does not disclose rack count, GPU count, megawatts, location or payment milestones, and no complete corresponding public announcement from both parties was located. This item records the media report only; it does not convert the contract value into delivered capacity or confirmed capital expenditure.",
+    publishedAt: "2026-08-11T18:51:26Z",
+    sourceName: "The Register",
+    sourceUrl: "https://www.theregister.com/off-prem/2026/08/11/together-ai-embraces-the-competition-with-240m-ibm-cloud-deal/5286400",
+    region: "美国",
+    status: "reported",
+    statusLabel: "单一媒体报道 · 部署规模待披露",
+    statusLabelEn: "Single-source report · deployment scale undisclosed",
+    sourceCount: 1,
+    entities: ["Together AI", "IBM Cloud", "NVIDIA", "HGX B300", "Spectrum-X"],
+    officialResponse: "截至本轮扫描截止时间，未找到 Together AI、IBM 或 NVIDIA 对该 2.4 亿美元协议发布的完整公开公告，也没有可核验的 GPU、机柜、MW、地域或交付批次信息。",
+    officialResponseEn: "By this scan's cutoff, no complete public announcement of the reported $240 million agreement was located from Together AI, IBM or NVIDIA, and no verifiable GPU, rack, megawatt, location or delivery-tranche details were available.",
+    sourceNote: "核心金额、硬件路线和 2027 年第一季度目标来自 The Register 单一报道。条目保留为 Rumor Watch 线索，等待合同主体或其他独立来源确认。",
+    sourceNoteEn: "The amount, hardware route and Q1 2027 target come from a single report by The Register. The item remains a Rumor Watch lead pending confirmation by a contracting party or another independent source.",
+  },
+  {
     id: "bank-of-america-ai-energy-infrastructure-plan-2026",
     title: "美国银行据报拟推动2500亿美元AI与能源基础设施融资计划",
     titleEn: "Bank of America is reported to be planning a $250B AI and energy-infrastructure initiative",

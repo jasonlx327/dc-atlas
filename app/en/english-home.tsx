@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { ChainIcon, type ChainKey } from "../chain-icon";
 import { IntelligenceConsoleOverview, IntelligenceConsoleShell, type ConsoleStory } from "../intelligence-console-overview";
+import { shouldAdoptPayload } from "../intelligence-model";
 import type { RumorWatchItem } from "../watch-data";
 
 type Story = ConsoleStory & { whyItMatters?: string };
@@ -15,6 +16,11 @@ type EnglishView = "home" | "pulse" | "industry";
 export type AtlasPayload = {
   generatedAt: string;
   contentReviewedAt?: string;
+  contentVersion?: string;
+  lastContentChangedAt?: string;
+  factChangedAt?: string;
+  researchPublishedAt?: string;
+  briefPublishedAt?: string;
   sourceCount?: number;
   verifiedCount?: number;
   weeklyHighlightCount?: number;
@@ -333,7 +339,7 @@ function formatDate(value?: string | null) {
   return Number.isFinite(date.getTime()) ? new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", month: "short", day: "numeric", year: "numeric" }).format(date) : value;
 }
 
-function englishTitle(title: string) { return titleTranslations[title] ?? "Source-linked infrastructure update"; }
+function englishTitle(title: string) { return titleTranslations[title] ?? title; }
 function englishField(value: string | null | undefined, fallback: string) {
   if (!value) return fallback;
   return storyFieldTranslations[value] ?? (/[一-鿿]/.test(value) ? fallback : value);
@@ -400,9 +406,8 @@ function recordCopy(record: CapacityRecord) { return recordTranslations[record.i
 function supernodeCopy(node: Product) { return supernodeTranslations[node.id] ?? { status: "Public update", summary: node.summary ?? "Source-linked product update." }; }
 
 function StoryCard({ item, eyebrow = "SOURCE-LINKED SIGNAL" }: { item: Story; eyebrow?: string }) {
-  const translated = titleTranslations[item.title];
   const title = item.titleEn ?? englishTitle(item.title);
-  const summary = item.summaryEn ?? (translated ? summaryTranslations[item.title] ?? "Source-linked editorial signal." : "A new source-linked update is being reviewed for English editorial coverage.");
+  const summary = item.summaryEn ?? summaryTranslations[item.title] ?? item.summary ?? "Open the primary source for the full disclosure.";
   const source = item.sourceUrl ?? item.permalink ?? "#";
   const image = storyImages[item.title];
   return <article className="english-story-card">
@@ -417,9 +422,8 @@ function StoryCard({ item, eyebrow = "SOURCE-LINKED SIGNAL" }: { item: Story; ey
 
 function ConsoleStoryRow({ item, index, eyebrow }: { item: Story; index: number; eyebrow: string }) {
   const source = item.sourceUrl ?? item.permalink ?? "#";
-  const translated = titleTranslations[item.title];
   const title = item.titleEn ?? englishTitle(item.title);
-  const summary = item.summaryEn ?? (translated ? summaryTranslations[item.title] ?? "Source-linked editorial signal." : "A new source-linked update is being reviewed for English editorial coverage.");
+  const summary = item.summaryEn ?? summaryTranslations[item.title] ?? item.summary ?? "Open the primary source for the full disclosure.";
   return <article className="console-story-row">
     <span>{String(index + 1).padStart(2, "0")}</span>
     <div>
@@ -449,14 +453,16 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
       try {
         const response = await fetch("/api/atlas-live-v5?schema=v1", { signal: controller.signal, cache: "no-store", headers: { "cache-control": "no-cache" } });
         if (!response.ok) throw new Error("Atlas unavailable");
-        setPayload(await response.json() as AtlasPayload);
+        const nextPayload = await response.json() as AtlasPayload;
+        setPayload((current) => shouldAdoptPayload(current, nextPayload) ? nextPayload : current);
         setLoadError(false);
       } catch (error) {
         if (error instanceof DOMException && error.name === "AbortError") return;
         try {
           const snapshot = await fetch("/api/daily-snapshot", { signal: controller.signal, cache: "no-store" });
           if (!snapshot.ok) throw new Error("Snapshot unavailable");
-          setPayload(await snapshot.json() as AtlasPayload);
+          const nextPayload = await snapshot.json() as AtlasPayload;
+          setPayload((current) => shouldAdoptPayload(current, nextPayload) ? nextPayload : current);
           setLoadError(false);
         } catch (snapshotError) {
           if (!(snapshotError instanceof DOMException && snapshotError.name === "AbortError")) setLoadError(true);
@@ -467,18 +473,16 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
   }, []);
 
   const dailyItems = useMemo(() => payload?.aiDaily ? [payload.aiDaily.lead, ...payload.aiDaily.sections.flatMap((section) => section.items), ...payload.aiDaily.flashes].filter((item): item is Story => Boolean(item)).slice(0, 6) : [], [payload]);
-  const chainGroups = Object.entries(payload?.chainNews ?? {}).map(([stage, items]) => [stage, items.filter((item) => item.region !== "中国").slice(0, 2)] as const);
+  const chainGroups = Object.entries(payload?.chainNews ?? {}).map(([stage, items]) => [stage, items.slice(0, 2)] as const);
   const eventList = payload?.upcomingEvents ?? [];
-  // Selective-coverage exception: keep the English pulse U.S./global-focused, but surface this
-  // globally material China milestone (2GW planned, green-powered domestic-compute cluster).
-  const pulse = (payload?.idcPulse ?? []).filter((item) => item.region !== "中国" || item.id === "envision-ulaanqab-xinghe-2gw-commissioning");
-  const listed = (payload?.listedCompanyNews ?? []).filter((item) => !/\.(SH|SZ)\b/.test(item.listedTicker ?? ""));
+  const pulse = payload?.idcPulse ?? [];
+  const listed = payload?.listedCompanyNews ?? [];
   const nvidiaProducts = payload?.nvidiaProducts ?? [];
   const nvidiaNews = payload?.nvidiaNews ?? [];
   const silicon = (payload?.chinaChipNews ?? []).slice(0, 3);
   const supernodes = (payload?.supernodes ?? []).slice(0, 1);
   const models = payload?.modelNews ?? [];
-  const capacity = (payload?.capacityRadar ?? []).filter((record) => !/中国|北京|上海|广州|青海|宁夏|中卫|内蒙古|长三角|京津冀|吉林|白城|乌兰察布/.test(`${record.title} ${record.subject}`));
+  const capacity = payload?.capacityRadar ?? [];
   const cooling = payload?.coolingProgress ?? [];
   const market = payload?.benchmarks ?? [];
   if (view === "pulse") return <IntelligenceConsoleShell
@@ -520,6 +524,11 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
     data={{
       generatedAt: payload?.generatedAt,
       reviewedAt: payload?.contentReviewedAt,
+      contentVersion: payload?.contentVersion,
+      lastContentChangedAt: payload?.lastContentChangedAt,
+      factChangedAt: payload?.factChangedAt,
+      researchPublishedAt: payload?.researchPublishedAt,
+      briefPublishedAt: payload?.briefPublishedAt,
       sourceCount: payload?.sourceCount,
       verifiedCount: payload?.verifiedCount,
       pulse,
@@ -531,8 +540,8 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
     }}
     translateStory={(story) => ({
       ...story,
-      displayTitle: englishTitle(story.title),
-      displaySummary: summaryTranslations[story.title] ?? "Source-linked infrastructure update.",
+      displayTitle: story.titleEn ?? englishTitle(story.title),
+      displaySummary: story.summaryEn ?? summaryTranslations[story.title] ?? story.summary ?? "Open the primary source for the full disclosure.",
       region: englishField(story.region, "Global"),
       category: englishField(story.category, "Infrastructure"),
       milestone: englishField(story.milestone, "Public update"),

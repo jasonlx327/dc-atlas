@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { IntelligenceConsoleShell } from "./intelligence-console-overview";
+import { shouldAdoptPayload, sortNewest } from "./intelligence-model";
 import {
   POLICY_BRIEFS,
   RUMOR_BRIEFS,
@@ -42,6 +43,10 @@ function formatDate(value: string | null | undefined, lang: "zh" | "en") {
   }).format(date);
 }
 
+function hasOfficialResponse(item: RumorWatchItem): boolean {
+  return !/未找到|未披露|没有|no (?:complete |corresponding )?public|not (?:found|disclosed)|has not/i.test(`${item.officialResponse} ${item.officialResponseEn}`);
+}
+
 function WatchIndex({ lang, kind, initialPayload = null }: Props) {
   const isZh = lang === "zh";
   const [payload, setPayload] = useState<Partial<WatchPayload> | null>(initialPayload);
@@ -51,11 +56,11 @@ function WatchIndex({ lang, kind, initialPayload = null }: Props) {
     : kind === "policy"
       ? POLICY_BRIEFS
       : EMPTY_POLICY;
-  const rumors = payload?.rumors?.length
+  const rumors = sortNewest(payload?.rumors?.length
     ? payload.rumors
     : kind === "rumors"
       ? RUMOR_BRIEFS
-      : EMPTY_RUMORS;
+      : EMPTY_RUMORS);
   const visiblePolicy = useMemo(() => {
     if (filter === "all") return policy;
     if (filter === "中国") return policy.filter((item) => item.jurisdiction === "中国");
@@ -74,7 +79,7 @@ function WatchIndex({ lang, kind, initialPayload = null }: Props) {
     const controller = new AbortController();
     void fetch("/api/atlas-live-v5?schema=v1", { signal: controller.signal, cache: "no-store" })
       .then((response) => response.ok ? response.json() as Promise<WatchPayload> : Promise.reject(new Error("Atlas unavailable")))
-      .then((next) => setPayload(next))
+      .then((next) => setPayload((current) => shouldAdoptPayload(current, next) ? next : current))
       .catch(() => undefined);
     return () => controller.abort();
   }, []);
@@ -171,6 +176,11 @@ function WatchIndex({ lang, kind, initialPayload = null }: Props) {
             <p>{isZh ? item.officialResponse : item.officialResponseEn}</p>
           </div>
           <p className="watch-source-note">{isZh ? item.sourceNote : item.sourceNoteEn}</p>
+          <ol className="watch-status-track" aria-label={isZh ? "情报状态" : "Intelligence status"}>
+            <li className="active"><span>1</span>{isZh ? "公开报道" : "Reported"}</li>
+            <li className={hasOfficialResponse(item) ? "active" : ""}><span>2</span>{isZh ? "官方回应" : "Official response"}</li>
+            <li><span>3</span>{isZh ? "转入正式事实" : "Formal record"}</li>
+          </ol>
           <div className="watch-card-foot"><strong>{isZh ? item.statusLabel : item.statusLabelEn}</strong><a href={item.sourceUrl} target="_blank" rel="noreferrer">{item.sourceName} ↗</a></div>
         </article>)}</section> : <section className="watch-empty" aria-live="polite"><span>NO CURRENT MATCH</span><h2>{kind === "policy" ? (isZh ? "当前筛选下没有政策更新。" : "No policy update matches this filter.") : (isZh ? "当前筛选下没有公开报道。" : "No public report matches this filter.")}</h2><p>{kind === "policy" ? (isZh ? "政策简报只收录可回溯到官方文件、且能说明执行状态与直接影响的条目。" : "Policy briefs require an official document plus a clear implementation status and direct effect.") : (payload?.rumorNote ?? (isZh ? "不会用旧内容或未注明来源的消息填充当前列表。" : "The list is not backfilled with stale or unsourced items."))}</p></section>}
 

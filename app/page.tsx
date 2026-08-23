@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import Home, { type AtlasPayload } from "./home-client";
 import { loadInitialAtlasPayload } from "./initial-atlas";
+import { deriveConsoleMeta } from "./console-meta";
+import { entityDirectory } from "./entity-directory";
+import { publishedColumnArticles } from "./columns/articles";
+import { buildDailyBrief } from "./intelligence-model";
 
 export const metadata: Metadata = {
   title: "全球数据中心与 AI 基础设施情报｜IDC Atlas",
@@ -10,6 +14,7 @@ export const metadata: Metadata = {
     languages: { "zh-CN": "/", en: "/en", "x-default": "/en" },
     types: { "application/rss+xml": "/feed.xml" },
   },
+  other: { "content-language": "zh-CN" },
   openGraph: {
     title: "全球数据中心与 AI 基础设施情报｜IDC Atlas",
     description: "每日追踪全球数据中心项目、超大规模云厂商 CAPEX、IDC 租赁、电力、液冷与 AI 算力硬件，保留公开来源与更新时间。",
@@ -25,8 +30,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Page() {
-  const initialPayload = await loadInitialAtlasPayload() as Partial<AtlasPayload> | null;
+export default async function Page({ searchParams }: { searchParams?: Promise<Record<string, string | string[] | undefined>> }) {
+  const params = await searchParams;
+  const initialPayload = await loadInitialAtlasPayload(typeof params?.__atlas_prime === "string" ? params.__atlas_prime : null) as Partial<AtlasPayload> | null;
+  const contentMeta = deriveConsoleMeta(initialPayload);
+  const dailyBrief = buildDailyBrief(publishedColumnArticles());
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -48,7 +56,9 @@ export default async function Page() {
         name: "全球数据中心与 AI 基础设施情报",
         url: "https://idc-index.com/",
         inLanguage: "zh-CN",
-        dateModified: initialPayload?.generatedAt,
+        description: metadata.description,
+        dateModified: contentMeta.lastContentChangedAt ?? contentMeta.reviewedAt,
+        publisher: { "@type": "Organization", name: "IDC Atlas", url: "https://idc-index.com/" },
         about: [
           { "@type": "Thing", name: "数据中心基础设施" },
           { "@type": "Thing", name: "超大规模云厂商资本开支" },
@@ -60,6 +70,32 @@ export default async function Page() {
           { "@type": "WebPage", name: "IDC Atlas 专栏", url: "https://idc-index.com/columns" },
           { "@type": "WebPage", name: "全球科技财报日历", url: "https://idc-index.com/calendar" },
           { "@type": "WebPage", name: "市场情报与报道线索", url: "https://idc-index.com/rumors" },
+          { "@type": "CollectionPage", name: "AI 基础设施公司库", url: "https://idc-index.com/companies" },
+        ],
+      },
+      {
+        "@type": "ItemList",
+        name: "IDC Atlas 重点公司",
+        numberOfItems: entityDirectory.length,
+        itemListElement: entityDirectory.map((entity, index) => ({ "@type": "ListItem", position: index + 1, url: `https://idc-index.com/companies/${entity.slug}`, name: entity.name })),
+      },
+      ...(dailyBrief ? [{
+        "@type": "AnalysisNewsArticle",
+        "@id": `https://idc-index.com${dailyBrief.article.href}#article`,
+        headline: dailyBrief.article.title,
+        description: dailyBrief.article.summary,
+        url: `https://idc-index.com${dailyBrief.article.href}`,
+        inLanguage: "zh-CN",
+        datePublished: dailyBrief.article.publishAt,
+        dateModified: dailyBrief.publishedAt,
+        image: `https://idc-index.com${dailyBrief.article.image}`,
+        publisher: { "@type": "Organization", name: "IDC Atlas", url: "https://idc-index.com/" },
+        about: dailyBrief.relatedEntities.map((entity) => ({ "@id": `https://idc-index.com/companies/${entity.slug}#company` })),
+      }] : []),
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "IDC Atlas", item: "https://idc-index.com/" },
         ],
       },
     ],

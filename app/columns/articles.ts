@@ -251,7 +251,9 @@ export type ColumnArticle = typeof columnArticles[number];
 
 export function publishedColumnArticles(now = new Date()): ColumnArticle[] {
   const timestamp = now.getTime();
-  return columnArticles.filter((article) => new Date(article.publishAt).getTime() <= timestamp);
+  return columnArticles
+    .filter((article) => new Date(article.publishAt).getTime() <= timestamp)
+    .sort((a, b) => new Date(b.publishAt).getTime() - new Date(a.publishAt).getTime());
 }
 
 export function columnArticleBySlug(slug: string): ColumnArticle | undefined {

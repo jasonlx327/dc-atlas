@@ -5,6 +5,7 @@ import QRCode from "qrcode";
 import { ChainIcon, type ChainKey } from "./chain-icon";
 import { publishedColumnArticles } from "./columns/articles";
 import { IntelligenceConsoleOverview, IntelligenceConsoleShell } from "./intelligence-console-overview";
+import { shouldAdoptPayload } from "./intelligence-model";
 import { PulseTrace } from "./pulse-trace";
 import type { RumorWatchItem } from "./watch-data";
 
@@ -71,6 +72,11 @@ type CalendarEvent = { id: string; startsAt: string; company: string; ticker: st
 export type AtlasPayload = {
   generatedAt: string;
   contentReviewedAt: string;
+  contentVersion?: string;
+  lastContentChangedAt?: string;
+  factChangedAt?: string;
+  researchPublishedAt?: string;
+  briefPublishedAt?: string;
   sourceCount?: number;
   verifiedCount?: number;
   sectionFreshness: Record<"idcPulse" | "listedCompanyNews" | "mnaDeals" | "capacityRadar" | "coolingProgress", SectionFreshness>;
@@ -311,7 +317,8 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
           try {
             const response = await fetch("/api/atlas-live-v5?schema=v1", { signal: controller.signal, cache: "no-store" });
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            setPayload(await response.json() as AtlasPayload);
+            const nextPayload = await response.json() as AtlasPayload;
+            setPayload((current) => shouldAdoptPayload(current, nextPayload) ? nextPayload : current);
             setLoadError(false);
             return;
           } catch (error) {
@@ -319,6 +326,13 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
             if (error instanceof DOMException && error.name === "AbortError") throw error;
             if (attempt < 2) await new Promise((resolve) => window.setTimeout(resolve, 900 * (attempt + 1)));
           }
+        }
+        const snapshot = await fetch("/api/daily-snapshot", { signal: controller.signal, cache: "no-store" });
+        if (snapshot.ok) {
+          const nextPayload = await snapshot.json() as AtlasPayload;
+          setPayload((current) => shouldAdoptPayload(current, nextPayload) ? nextPayload : current);
+          setLoadError(false);
+          return;
         }
         throw lastError ?? new Error("Data source unavailable");
       } catch (error) {
@@ -370,6 +384,11 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
     data={{
       generatedAt: payload?.generatedAt,
       reviewedAt: payload?.contentReviewedAt,
+      contentVersion: payload?.contentVersion,
+      lastContentChangedAt: payload?.lastContentChangedAt,
+      factChangedAt: payload?.factChangedAt,
+      researchPublishedAt: payload?.researchPublishedAt,
+      briefPublishedAt: payload?.briefPublishedAt,
       sourceCount: payload?.sourceCount,
       verifiedCount: payload?.verifiedCount,
       pulse: news,

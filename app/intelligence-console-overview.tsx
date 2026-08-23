@@ -2,10 +2,12 @@
 
 import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import QRCode from "qrcode";
+import { trackAtlasEvent } from "./atlas-analytics";
 import { ChainIcon, type ChainKey } from "./chain-icon";
-import { publishedColumnArticles } from "./columns/articles";
+import { publishedColumnArticles, type ColumnArticle } from "./columns/articles";
 import { deriveConsoleMeta, type ConsoleMeta } from "./console-meta";
 import { entityDirectory } from "./entity-directory";
+import { buildDailyBrief, researchStateForStory, sortNewest, storyEntities } from "./intelligence-model";
 import { RUMOR_BRIEFS } from "./watch-data";
 
 export type ConsoleStory = {
@@ -27,6 +29,7 @@ export type ConsoleStory = {
   verifiedAt?: string;
   imageSrc?: string;
   imageAlt?: string;
+  entityIds?: string[];
 };
 
 export type ConsoleEvent = {
@@ -87,6 +90,11 @@ function rumorLink(item: ConsoleRumor, isZh: boolean): string {
 export type ConsoleOverviewData = {
   generatedAt?: string;
   reviewedAt?: string;
+  contentVersion?: string;
+  lastContentChangedAt?: string;
+  factChangedAt?: string;
+  researchPublishedAt?: string;
+  briefPublishedAt?: string;
   sourceCount?: number;
   verifiedCount?: number;
   pulse: ConsoleStory[];
@@ -110,6 +118,11 @@ type ShellProps = {
   activeSection?: string;
   generatedAt?: string;
   reviewedAt?: string;
+  contentVersion?: string;
+  lastContentChangedAt?: string;
+  factChangedAt?: string;
+  researchPublishedAt?: string;
+  briefPublishedAt?: string;
   sourceCount?: number;
   verifiedCount?: number;
   contextStatus?: {
@@ -159,14 +172,12 @@ const stages: Array<{
 ];
 
 const navItems = [
-  { key: "overview", zh: "概览", en: "Overview", hrefZh: "/#overview", hrefEn: "/en#overview" },
-  { key: "rumors", zh: "市场情报", en: "Rumor Watch", hrefZh: "/rumors", hrefEn: "/en/rumors" },
-  { key: "pulse", zh: "事实脉冲", en: "Verified Pulse", hrefZh: "/pulse", hrefEn: "/en/pulse" },
-  { key: "columns", zh: "深度研究", en: "Research", hrefZh: "/columns", hrefEn: "/en/columns" },
-  { key: "calendar", zh: "财报 / 资本支出", en: "Earnings / CapEx", hrefZh: "/#calendar", hrefEn: "/en#calendar" },
-  { key: "companies", zh: "公司", en: "Companies", hrefZh: "/#companies", hrefEn: "/en#companies" },
-  { key: "industry", zh: "产业链地图", en: "Industry Map", hrefZh: "/industry", hrefEn: "/en/industry" },
-  { key: "market", zh: "市场", en: "Markets", hrefZh: "/#market", hrefEn: "/en#market" },
+  { key: "overview", zh: "今日", en: "Today", hrefZh: "/#overview", hrefEn: "/en#overview" },
+  { key: "pulse", zh: "事实", en: "Facts", hrefZh: "/pulse", hrefEn: "/en/pulse" },
+  { key: "companies", zh: "公司", en: "Companies", hrefZh: "/companies", hrefEn: "/en/companies" },
+  { key: "industry", zh: "产业链", en: "Industry", hrefZh: "/industry", hrefEn: "/en/industry" },
+  { key: "columns", zh: "研究", en: "Research", hrefZh: "/columns", hrefEn: "/en/columns" },
+  { key: "rumors", zh: "情报", en: "Intelligence", hrefZh: "/rumors", hrefEn: "/en/rumors" },
 ] as const;
 
 function dateLabel(value: string | null | undefined, lang: "zh" | "en", includeTime = false, timezone?: string) {
@@ -224,6 +235,56 @@ function storySummary(story: LocalizedStory, lang: "zh" | "en") {
   return story.displaySummary ?? story.summary ?? (lang === "zh" ? "打开来源查看完整披露。" : "Open the source for the full disclosure.");
 }
 
+type ColumnEvidenceBrief = {
+  thesisZh: string;
+  thesisEn: string;
+  confirmedZh: string;
+  confirmedEn: string;
+  unknownZh: string;
+  unknownEn: string;
+  nextZh: string;
+  nextEn: string;
+  sourceZh: string;
+  sourceEn: string;
+  cutoff: string;
+};
+
+const columnEvidenceByHref: Partial<Record<ColumnArticle["href"], ColumnEvidenceBrief>> = {
+  "/columns/ai-financing-platforms": {
+    thesisZh: "资本平台扩大的是可融资项目的边界；真正决定容量兑现的，仍是项目合同、抵押结构、送电节点与客户现金流。",
+    thesisEn: "The platform can widen the financeable project set; project contracts, collateral, energization and customer cash flow still decide delivery.",
+    confirmedZh: "NVIDIA 与六家金融机构签署谅解备忘录，目标是长期动员超过 5,000 亿美元第三方资本。",
+    confirmedEn: "NVIDIA and six financial institutions signed MOUs targeting more than $500B of third-party capital over time.",
+    unknownZh: "基金规模、已承诺资金、项目清单、对应 MW 与已交割金额均未披露。",
+    unknownEn: "Fund size, committed capital, project list, associated MW and closed funding remain undisclosed.",
+    nextZh: "等待项目级客户合同、资产所有权、完工支持、首次送电与现金流安排。",
+    nextEn: "Watch for project contracts, asset ownership, completion support, first energization and cash-flow terms.",
+    sourceZh: "NVIDIA 与 Apollo 官方公告",
+    sourceEn: "NVIDIA and Apollo announcements",
+    cutoff: "2026-08-16",
+  },
+};
+
+function columnEvidence(article: ColumnArticle, lang: "zh" | "en") {
+  const specific = columnEvidenceByHref[article.href];
+  if (specific) return {
+    thesis: lang === "zh" ? specific.thesisZh : specific.thesisEn,
+    confirmed: lang === "zh" ? specific.confirmedZh : specific.confirmedEn,
+    unknown: lang === "zh" ? specific.unknownZh : specific.unknownEn,
+    next: lang === "zh" ? specific.nextZh : specific.nextEn,
+    source: lang === "zh" ? specific.sourceZh : specific.sourceEn,
+    cutoff: specific.cutoff,
+  };
+  return {
+    thesis: lang === "zh" ? article.summary : article.summaryEn,
+    confirmed: lang === "zh" ? "文章以公开、可追溯材料建立已披露事实。" : "The article establishes disclosed facts from public, traceable records.",
+    unknown: lang === "zh" ? "公开材料未披露的条款、容量与交付节点保持未知。" : "Undisclosed terms, capacity and delivery milestones remain unknown.",
+    next: lang === "zh" ? "以后续一手公告、监管文件和项目记录更新判断。" : "The next judgment will follow primary announcements, filings and project records.",
+    source: lang === "zh" ? "文章来源台账" : "Article source ledger",
+    cutoff: article.date,
+  };
+}
+
 function ShellNav({
   lang,
   mobileOpen,
@@ -242,7 +303,7 @@ function ShellNav({
   setActiveSection: (section: string) => void;
 }) {
   const isZh = lang === "zh";
-  const scrollKeys = new Set(["overview", "calendar", "companies", "market"]);
+  const scrollKeys = new Set(["overview"]);
   const [shareOpen, setShareOpen] = useState(false);
   const [shareQr, setShareQr] = useState("");
   const [shareUrl, setShareUrl] = useState("https://idc-index.com");
@@ -359,6 +420,7 @@ function ShellNav({
           <button type="button" className="atlas-console-rss-copy" onClick={copyRssUrl}>{rssCopied ? (isZh ? "RSS 地址已复制" : "RSS address copied") : (isZh ? "复制订阅地址" : "Copy RSS address")}</button>
           <a href={`https://feedly.com/i/subscription/feed/${encodeURIComponent(rssUrl)}`} target="_blank" rel="noreferrer">{isZh ? "在 Feedly 中添加 ↗" : "Add to Feedly ↗"}</a>
           <a href={rssUrl} target="_blank" rel="noreferrer">{isZh ? "直接打开 RSS XML ↗" : "Open RSS XML ↗"}</a>
+          <a href={isZh ? "/companies" : "/en/companies"}>{isZh ? "关注公司与下一验证点 →" : "Follow companies and checkpoints →"}</a>
         </section>}
         {shareOpen && <section className="atlas-console-share" role="dialog" aria-label={isZh ? "二维码分享当前页面" : "Share this page with a QR code"}>
           <button type="button" onClick={() => setShareOpen(false)}>{isZh ? "关闭" : "Close"}</button>
@@ -398,6 +460,11 @@ function ConsoleStatusbar({
   lang,
   generatedAt,
   reviewedAt,
+  contentVersion,
+  lastContentChangedAt,
+  factChangedAt,
+  researchPublishedAt,
+  briefPublishedAt,
   sourceCount,
   verifiedCount,
   pageLabel,
@@ -406,6 +473,11 @@ function ConsoleStatusbar({
   lang: "zh" | "en";
   generatedAt?: string;
   reviewedAt?: string;
+  contentVersion?: string;
+  lastContentChangedAt?: string;
+  factChangedAt?: string;
+  researchPublishedAt?: string;
+  briefPublishedAt?: string;
   sourceCount?: number;
   verifiedCount?: number;
   pageLabel?: string;
@@ -418,13 +490,15 @@ function ConsoleStatusbar({
     <dl>{contextStatus.items.map((item) => <div key={item.label}><dt>{item.label}</dt><dd>{item.value}</dd></div>)}</dl>
     <a className="atlas-language" href={contextStatus.languageHref}>{isZh ? "EN" : "中文"}</a>
   </header>;
-  return <header className="atlas-statusbar">
-    <div><strong>{dateLabel(generatedAt, lang, false, timezone)}</strong><span>{pageLabel ?? (isZh ? "每日产业情报" : "Daily industrial intelligence")}</span></div>
+  const hasEdition = Boolean(lastContentChangedAt ?? researchPublishedAt ?? briefPublishedAt ?? factChangedAt ?? reviewedAt ?? generatedAt);
+  return <header className="atlas-statusbar" data-state={hasEdition ? "ready" : "syncing"}>
+    <div><strong>{hasEdition ? dateLabel(lastContentChangedAt ?? reviewedAt ?? generatedAt, lang, false, timezone) : (isZh ? "正在同步" : "Syncing")}</strong><span>{pageLabel ?? (isZh ? "最新内容版本" : "Latest content edition")}</span></div>
     <dl>
+      <div><dt>{isZh ? "事实变更" : "Fact change"}</dt><dd>{dateLabel(factChangedAt, lang, false, timezone)}</dd></div>
+      <div><dt>{isZh ? "研究发布" : "Research published"}</dt><dd>{dateLabel(researchPublishedAt, lang, false, timezone)}</dd></div>
+      <div><dt>{isZh ? "日报版本" : "Brief edition"}</dt><dd>{dateLabel(briefPublishedAt, lang, false, timezone)}</dd></div>
       <div><dt>{isZh ? "系统扫描" : "System scan"}</dt><dd><i />{dateLabel(generatedAt, lang, true, timezone)}</dd></div>
-      <div><dt>{isZh ? "内容核验" : "Content reviewed"}</dt><dd>{dateLabel(reviewedAt, lang, false, timezone)}</dd></div>
-      <div><dt>{isZh ? "来源覆盖" : "Source coverage"}</dt><dd>{sourceCount == null ? "—" : `${sourceCount} ${isZh ? "个公开来源" : "public sources"}`}</dd></div>
-      <div><dt>{isZh ? "已核验记录" : "Verified records"}</dt><dd>{verifiedCount == null ? "—" : verifiedCount}</dd></div>
+      <div><dt>{isZh ? "核验覆盖" : "Verification"}</dt><dd data-content-version={contentVersion}>{verifiedCount == null ? "—" : verifiedCount}<small>{sourceCount == null ? "" : ` · ${sourceCount} ${isZh ? "源" : "sources"}`}</small></dd></div>
     </dl>
     <a className="atlas-language" href={isZh ? "/en?lang=en" : "/?lang=zh"}>{isZh ? "EN" : "中文"}</a>
   </header>;
@@ -435,6 +509,11 @@ export function IntelligenceConsoleShell({
   activeSection = "",
   generatedAt,
   reviewedAt,
+  contentVersion,
+  lastContentChangedAt,
+  factChangedAt,
+  researchPublishedAt,
+  briefPublishedAt,
   sourceCount,
   verifiedCount,
   contextStatus,
@@ -446,9 +525,14 @@ export function IntelligenceConsoleShell({
   const [navCollapsed, setNavCollapsed] = useState(false);
   const [currentSection, setCurrentSection] = useState(activeSection);
   const isZh = lang === "zh";
-  const liveMeta = useLiveConsoleMeta(!contextStatus && (!generatedAt || !reviewedAt || sourceCount == null || verifiedCount == null));
+  const liveMeta = useLiveConsoleMeta(!contextStatus && (!generatedAt || !reviewedAt || !factChangedAt || !researchPublishedAt || !briefPublishedAt || sourceCount == null || verifiedCount == null));
   const resolvedGeneratedAt = generatedAt ?? liveMeta.generatedAt;
   const resolvedReviewedAt = reviewedAt ?? liveMeta.reviewedAt;
+  const resolvedContentVersion = contentVersion ?? liveMeta.contentVersion;
+  const resolvedLastContentChangedAt = lastContentChangedAt ?? liveMeta.lastContentChangedAt;
+  const resolvedFactChangedAt = factChangedAt ?? liveMeta.factChangedAt;
+  const resolvedResearchPublishedAt = researchPublishedAt ?? liveMeta.researchPublishedAt;
+  const resolvedBriefPublishedAt = briefPublishedAt ?? liveMeta.briefPublishedAt;
   const resolvedSourceCount = sourceCount ?? liveMeta.sourceCount;
   const resolvedVerifiedCount = verifiedCount ?? liveMeta.verifiedCount;
   return <main className={["atlas-console-overview", "atlas-console-page", navCollapsed ? "rail-collapsed" : "", className].filter(Boolean).join(" ")} lang={isZh ? "zh-CN" : "en"}>
@@ -466,6 +550,11 @@ export function IntelligenceConsoleShell({
         lang={lang}
         generatedAt={resolvedGeneratedAt}
         reviewedAt={resolvedReviewedAt}
+        contentVersion={resolvedContentVersion}
+        lastContentChangedAt={resolvedLastContentChangedAt}
+        factChangedAt={resolvedFactChangedAt}
+        researchPublishedAt={resolvedResearchPublishedAt}
+        briefPublishedAt={resolvedBriefPublishedAt}
         sourceCount={resolvedSourceCount}
         verifiedCount={resolvedVerifiedCount}
         pageLabel={pageLabel}
@@ -494,10 +583,29 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
   const lead = [...pulse, ...companies].sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime())[0];
   const events = data.events.slice(0, 6);
   const deals = data.deals.slice(0, 5);
-  const rumors = (data.rumors ?? []).slice(0, 3);
+  const rumors = sortNewest(data.rumors ?? []).slice(0, 2);
   const articles = publishedColumnArticles().slice(0, 5);
+  const dailyBrief = buildDailyBrief(articles);
+  const featuredResearch = dailyBrief?.article;
+  const featuredEvidence = featuredResearch ? columnEvidence(featuredResearch, lang) : null;
+  const keyChanges = Array.from(new Map([...pulse, ...companies].map((story) => [story.sourceUrl ?? story.id, story])).values())
+    .sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime())
+    .slice(0, 3);
+  const companyResearch = companies.slice(0, 3).map((story) => {
+    const entity = storyEntities(story)[0];
+    const article = entity ? articles.find((candidate) => entity.columnSlugs.some((slug) => candidate.href.endsWith(`/${slug}`))) : undefined;
+    return {
+      story,
+      entity,
+      article,
+      state: researchStateForStory(story, articles),
+      name: entity ? (isZh ? entity.name : entity.nameEn) : story.sourceName ?? (isZh ? "重点公司" : "Priority company"),
+      ticker: entity?.ticker ?? story.listedTicker ?? "IDC",
+    };
+  });
   const uniqueSources = new Set([...data.pulse, ...data.companies, ...data.deals].map((item) => item.sourceName).filter(Boolean));
   const verifiedCount = data.pulse.length + data.companies.length + data.deals.length;
+  const dataConnected = Boolean(data.generatedAt || data.reviewedAt || verifiedCount);
   const leadImage = lead?.imageSrc ?? "/lead-amazon-aws-capex.png";
   const contextualImages = ["/column-hyperscale-leases-v2.jpg", "/column-sk-hynix-hbm-v2.jpg", "/products/nvidia-dgx-b200.jpg", "/column-ai-capex-grid-v2.jpg", "/column-microsoft-ai-capex-v2.jpg"];
 
@@ -522,10 +630,19 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
   }
 
   useEffect(() => {
-    const sectionIds = ["overview", "calendar", "columns", "pulse", "companies", "industry", "market"];
+    const sectionMap: Record<string, string> = {
+      overview: "overview",
+      pulse: "pulse",
+      calendar: "pulse",
+      columns: "columns",
+      companies: "companies",
+      industry: "industry",
+      market: "pulse",
+    };
+    const sectionIds = Object.keys(sectionMap);
     const observer = new IntersectionObserver((entries) => {
       const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (visible?.target.id) setActiveSection(visible.target.id);
+      if (visible?.target.id) setActiveSection(sectionMap[visible.target.id]);
     }, { rootMargin: "-12% 0px -70% 0px", threshold: [0, 0.2, 0.5] });
     sectionIds.forEach((id) => {
       const section = document.getElementById(id);
@@ -574,25 +691,59 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
   return <main className={navCollapsed ? "atlas-console-overview rail-collapsed" : "atlas-console-overview"} lang={isZh ? "zh-CN" : "en"}>
     <ShellNav lang={lang} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} collapsed={navCollapsed} setCollapsed={setNavCollapsed} activeSection={activeSection} setActiveSection={setActiveSection} />
     <div className="atlas-console-canvas">
-      <div id="overview"><ConsoleStatusbar lang={lang} generatedAt={data.generatedAt} reviewedAt={data.reviewedAt} sourceCount={data.sourceCount ?? uniqueSources.size} verifiedCount={data.verifiedCount ?? verifiedCount} /></div>
+      <div id="overview"><ConsoleStatusbar lang={lang} generatedAt={data.generatedAt} reviewedAt={data.reviewedAt} contentVersion={data.contentVersion} lastContentChangedAt={data.lastContentChangedAt} factChangedAt={data.factChangedAt} researchPublishedAt={data.researchPublishedAt} briefPublishedAt={data.briefPublishedAt} sourceCount={data.sourceCount ?? (dataConnected ? uniqueSources.size : undefined)} verifiedCount={data.verifiedCount ?? (dataConnected ? verifiedCount : undefined)} /></div>
 
-      <section className="atlas-lead" aria-labelledby="atlas-lead-title">
+      {featuredResearch && featuredEvidence ? <section className="atlas-research-lead" aria-labelledby="atlas-lead-title">
+        <div className="atlas-research-lead-copy">
+          <span>{isZh ? "今日重点研究" : "TODAY'S LEAD RESEARCH"}</span>
+          <h1 id="atlas-lead-title"><a href={isZh ? featuredResearch.href : featuredResearch.hrefEn}>{isZh ? featuredResearch.title : featuredResearch.titleEn}</a></h1>
+          <p><strong>{isZh ? "核心判断" : "ATLAS VIEW"}</strong>{featuredEvidence.thesis}</p>
+          {dailyBrief && <div className="atlas-brief-selection"><strong>{isZh ? `${dailyBrief.editionDate} 日报版本 · 为何今天读它` : `${dailyBrief.editionDate} EDITION · WHY THIS TODAY`}</strong><span>{isZh ? dailyBrief.selectedBecauseZh : dailyBrief.selectedBecauseEn}</span>{dailyBrief.relatedEntities.length > 0 && <nav>{dailyBrief.relatedEntities.slice(0, 4).map((entity) => <a href={isZh ? `/companies/${entity.slug}` : `/en/companies/${entity.slug}`} key={entity.slug}>{isZh ? entity.name : entity.nameEn}</a>)}</nav>}</div>}
+          <div className="atlas-research-lead-actions">
+            <a href={isZh ? featuredResearch.href : featuredResearch.hrefEn} onClick={() => trackAtlasEvent("daily_brief_open", { article_path: featuredResearch.href, language: lang })}>{isZh ? "阅读完整分析" : "Read the full analysis"} →</a>
+            <time dateTime={featuredResearch.publishAt}>{isZh ? "发布于 " : "Published "}{dateLabel(featuredResearch.publishAt, lang)}</time>
+          </div>
+        </div>
+        <figure className="atlas-research-lead-image">
+          <img src={featuredResearch.image} alt={isZh ? featuredResearch.title : featuredResearch.titleEn} />
+          <figcaption>{featuredResearch.series}</figcaption>
+        </figure>
+        <div className="atlas-evidence-summary">
+          <header><strong>{isZh ? "证据摘要" : "EVIDENCE SUMMARY"}</strong><span>{isZh ? "把事实、未知与下一步分开" : "Facts, unknowns and the next test"}</span></header>
+          <dl>
+            <div><dt>01 · {isZh ? "已确认" : "CONFIRMED"}</dt><dd>{featuredEvidence.confirmed}</dd></div>
+            <div><dt>02 · {isZh ? "尚未确认" : "NOT DISCLOSED"}</dt><dd>{featuredEvidence.unknown}</dd></div>
+            <div><dt>03 · {isZh ? "下一验证点" : "NEXT CHECKPOINT"}</dt><dd>{featuredEvidence.next}</dd></div>
+          </dl>
+          <div className="atlas-evidence-source"><span>{isZh ? "主要来源" : "PRIMARY SOURCES"} · {featuredEvidence.source}</span><time>{isZh ? "资料截止" : "Cutoff"} · {featuredEvidence.cutoff}</time></div>
+        </div>
+      </section> : <section className="atlas-lead" aria-labelledby="atlas-lead-title">
         <div className="atlas-lead-copy">
           <span>{isZh ? "今日首要信号" : "LEAD SIGNAL"}</span>
           <h1 id="atlas-lead-title"><a href={lead ? storyLink(lead) : "#"} target="_blank" rel="noreferrer">{lead ? storyTitle(lead) : isZh ? "正在连接最新基础设施信号" : "Connecting to the latest infrastructure signal"}</a></h1>
           <p>{lead ? storySummary(lead, lang) : isZh ? "数据连接后将显示最新已核验项目。" : "The latest verified project will appear when data connects."}</p>
-          {lead && <div className="atlas-lead-meta"><span>{lead.region ?? (isZh ? "全球" : "Global")}</span><span>{categoryLabel(lead.category)}</span><time>{dateLabel(lead.publishedAt, lang)}</time></div>}
         </div>
-        <figure className="atlas-lead-image">
-          <img className={leadImage.startsWith("/column-") ? "contain-art" : ""} src={leadImage} alt={lead?.imageAlt ?? (isZh ? "数据中心基础设施项目" : "Data-center infrastructure project")} />
-          <figcaption>{lead?.sourceName ?? (isZh ? "IDC Atlas 研究图示" : "IDC Atlas research visual")}</figcaption>
-        </figure>
-        <dl className="atlas-lead-facts">
-          <div><dt>{isZh ? "披露指标" : "Disclosed metric"}</dt><dd>{lead ? disclosedMetric(lead, lang) : "—"}</dd></div>
-          <div><dt>{isZh ? "项目状态" : "Status"}</dt><dd>{lead?.milestone ?? (isZh ? "公开披露" : "Public update")}</dd></div>
-          <div><dt>{isZh ? "主要来源" : "Primary source"}</dt><dd>{lead?.sourceName ?? "—"}<small>{dateLabel(lead?.publishedAt, lang)}</small></dd></div>
-          <div><dt>{isZh ? "核验状态" : "Verification"}</dt><dd className="verified">{isZh ? "已核验" : "Verified"}<i><b /><b /><b /><b /></i></dd></div>
-        </dl>
+        <figure className="atlas-lead-image"><img src={leadImage} alt={lead?.imageAlt ?? (isZh ? "数据中心基础设施项目" : "Data-center infrastructure project")} /></figure>
+      </section>}
+
+      <section className="atlas-editorial-desk" aria-label={isZh ? "今日关键变化与公司研究" : "Key changes and company research"}>
+        <div className="atlas-key-changes">
+          <header><strong>{isZh ? "今日关键变化" : "KEY CHANGES"}</strong><a href={isZh ? "/pulse" : "/en/pulse"}>{isZh ? "查看全部" : "View all"} →</a></header>
+          <div>{keyChanges.map((story, index) => <a href={storyLink(story)} target="_blank" rel="noreferrer" key={story.id}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <div><strong>{storyTitle(story)}</strong><small>{story.sourceName ?? (isZh ? "公开来源" : "Public source")} · {dateLabel(story.publishedAt, lang)}</small></div>
+            <b>{index === 0 ? (isZh ? "最新" : "LATEST") : (isZh ? "已核验" : "VERIFIED")}</b>
+          </a>)}</div>
+        </div>
+        <div className="atlas-company-research">
+          <header><strong>{isZh ? "公司热点 → 深度研究" : "COMPANY CHANGE → RESEARCH"}</strong><a href={isZh ? "/columns" : "/en/columns"}>{isZh ? "研究中心" : "Research"} →</a></header>
+          <div>{companyResearch.map(({ story, entity, name, ticker, state }) => <a href={entity ? (isZh ? `/companies/${entity.slug}` : `/en/companies/${entity.slug}`) : storyLink(story)} target={entity ? undefined : "_blank"} rel={entity ? undefined : "noreferrer"} key={story.id}>
+            <span>{ticker}</span>
+            <div><strong>{name}</strong><small>{storyTitle(story)}</small></div>
+            <b className={state === "published" ? "published" : "queued"}>{state === "published" ? (isZh ? "分析已发布" : "ANALYSIS LIVE") : state === "needs-follow-up" ? (isZh ? "待跟进" : "FOLLOW-UP") : (isZh ? "研究排期" : "SCHEDULED")}</b>
+          </a>)}</div>
+          <p>{isZh ? "专栏优先级由公司重要性、事实变化幅度与一手材料完整度共同决定。" : "Research priority follows company importance, the size of the change and primary-source completeness."}</p>
+        </div>
       </section>
 
       <section className="atlas-rumor-desk" id="rumors" aria-labelledby="atlas-rumor-desk-title">
@@ -687,13 +838,17 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
       </section>
 
       <section className="atlas-company-watch" id="companies">
-        <header><strong>{isZh ? "上市公司动态" : "Listed-company watch"}</strong><a href={isZh ? "/pulse" : "/en/pulse"}>{isZh ? "进入公司脉冲" : "Open company watch"} →</a></header>
-        <div>{companies.map((story, index) => <a href={storyLink(story)} target="_blank" rel="noreferrer" key={story.id}>
-          <span>{story.listedTicker ?? String(index + 1).padStart(2, "0")}</span>
-          <strong>{storyTitle(story)}</strong>
-          <p>{storySummary(story, lang)}</p>
-          <time>{dateLabel(story.publishedAt, lang)}</time>
-        </a>)}</div>
+        <header><strong>{isZh ? "上市公司动态" : "Listed-company watch"}</strong><a href={isZh ? "/companies" : "/en/companies"}>{isZh ? "打开公司库" : "Open company library"} →</a></header>
+        <div>{companies.map((story, index) => {
+          const entity = storyEntities(story)[0];
+          const href = entity ? `${isZh ? "/companies" : "/en/companies"}/${entity.slug}` : storyLink(story);
+          return <a href={href} target={entity ? undefined : "_blank"} rel={entity ? undefined : "noreferrer"} key={story.id}>
+            <span>{story.listedTicker ?? String(index + 1).padStart(2, "0")}</span>
+            <strong>{storyTitle(story)}</strong>
+            <p>{storySummary(story, lang)}</p>
+            <time>{dateLabel(story.publishedAt, lang)}</time>
+          </a>;
+        })}</div>
       </section>
 
       <section className="atlas-industry-chain" id="industry">

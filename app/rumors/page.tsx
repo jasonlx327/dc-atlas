@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import WatchIndex, { type WatchPayload } from "../watch-index";
 import { loadInitialAtlasPayload } from "../initial-atlas";
+import { deriveConsoleMeta } from "../console-meta";
 import { RUMOR_BRIEFS } from "../watch-data";
 
 const canonical = "https://idc-index.com/rumors";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 
 export default async function RumorsPage() {
   const initialPayload = await loadInitialAtlasPayload() as Partial<WatchPayload> | null;
+  const contentMeta = deriveConsoleMeta(initialPayload);
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -22,7 +24,7 @@ export default async function RumorsPage() {
     url: canonical,
     inLanguage: "zh-CN",
     description: metadata.description,
-    dateModified: initialPayload?.generatedAt,
+    dateModified: contentMeta.lastContentChangedAt ?? contentMeta.reviewedAt,
     isPartOf: { "@type": "WebSite", name: "IDC Atlas", url: "https://idc-index.com/" },
     mainEntity: {
       "@type": "ItemList",

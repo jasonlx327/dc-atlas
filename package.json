@@ -11,6 +11,7 @@
     "cf:check": "wrangler deploy --dry-run",
     "cf:types": "wrangler types",
     "check:live": "node scripts/check-live-data.mjs",
+    "check:seo": "node scripts/check-seo-geo.mjs",
     "deploy": "npm run build && wrangler deploy && npm run check:live",
     "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
     "test": "npm run build && node --test tests/rendered-html.test.mjs",

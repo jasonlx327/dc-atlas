@@ -1,6 +1,8 @@
 /** Cloudflare Worker entry point for IDC Atlas. */
 import handler from "vinext/server/app-router-entry";
 import { publishedColumnArticles } from "../app/columns/articles";
+import { currentDailyBriefRecord } from "../app/daily-briefs";
+import { entityDirectory } from "../app/entity-directory";
 import {
   POLICY_BRIEFS,
   RUMOR_BRIEFS,
@@ -33,14 +35,6 @@ import {
   parseEditorialFeedback,
   type EditorialFeedbackRecord,
 } from "./event-intelligence/editorial-feedback.ts";
-import {
-  deepSeekSessionEnv,
-  modelScoringStatus,
-  modelUsageKey,
-  parseDeepSeekSessionCredentials,
-  parseModelScoringInput,
-  scoreWithOpenAiCompatible,
-} from "./event-intelligence/model-scoring.ts";
 import { sourceRegistryById } from "./connectors/index.ts";
 
 const AIHOT_ENDPOINT = "https://aihot.virxact.com/api/public/items";
@@ -50,6 +44,27 @@ const CWW_ENDPOINT = "https://cwwindex.today/data/latest.json";
 const OPENROUTER_MODELS_ENDPOINT = "https://openrouter.ai/api/v1/models?sort=top-weekly";
 const ARENA_CODE_ENDPOINT = "https://arena.ai/leaderboard/code/webdev";
 const CONTENT_REVIEWED_AT = "2026-08-17";
+
+function containsEntityTerm(text: string, term: string): boolean {
+  const needle = term.trim().toLocaleLowerCase();
+  if (!needle) return false;
+  if (/^[a-z0-9.]{2,12}$/.test(needle)) {
+    const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return new RegExp(`(?:^|[^a-z0-9])${escaped}(?:$|[^a-z0-9])`).test(text);
+  }
+  return text.includes(needle);
+}
+
+function withEntityRelations<T extends { title?: string; titleEn?: string; summary?: string; summaryEn?: string; listedTicker?: string }>(item: T): T & { entityIds: string[] } {
+  const ticker = (item.listedTicker ?? "").toLocaleLowerCase();
+  const text = `${item.title ?? ""} ${item.titleEn ?? ""} ${item.summary ?? ""} ${item.summaryEn ?? ""} ${item.listedTicker ?? ""}`.toLocaleLowerCase();
+  const tickerMatches = entityDirectory.filter((entity) => entity.ticker && ticker.includes(entity.ticker.toLocaleLowerCase()));
+  const entityIds = (tickerMatches.length ? tickerMatches : entityDirectory.filter((entity) => [entity.name, entity.nameEn, ...entity.aliases]
+    .filter((term) => term.length >= 3)
+    .some((term) => containsEntityTerm(text, term))))
+    .map((entity) => entity.slug);
+  return { ...item, entityIds };
+}
 const LLMS_TXT = `# IDC Atlas
 
 > IDC Atlas 是一个以来源核验为先的中英双语数据中心与 AI 基础设施情报站，覆盖全球数据中心建设、算力、电力、液冷、网络与中国 AI 芯片。内容仅用于公开信息研究和行业观察，不构成投资建议。
@@ -82,6 +97,7 @@ const LLMS_TXT = `# IDC Atlas
 - [方法与数据来源](https://idc-index.com/methodology)：来源层级、核验原则、更新节奏与研究边界。
 - [全球科技财报日历](https://idc-index.com/calendar)：云、半导体与数据中心基础设施公司的财报节点、CAPEX 观察项与来源链接结论。
 - [市场情报 / Rumor Watch](https://idc-index.com/rumors)：展示实体、时间戳、公开回应与来源边界的基础设施报道线索；一手披露进入已核验脉冲，重大政策变化进入脉冲或研究。
+- [AI 基础设施公司库](https://idc-index.com/companies)：按公司汇总正式披露、报道线索、关联研究与下一验证点；可在浏览器中保存关注公司。
 - [IDC Atlas 专栏](https://idc-index.com/columns)：数据中心与 AI 基础设施周期的原创、来源可回溯研究。
 
 ## 使用边界
@@ -121,6 +137,7 @@ Primary sources control factual claims. News leads are discovery signals; verify
 - [Methodology and sources](https://idc-index.com/en/methodology): Source hierarchy, verification principles, update cadence and research boundaries.
 - [Earnings calendar](https://idc-index.com/calendar): Upcoming cloud, semiconductor and data-center-infrastructure earnings events, CAPEX watch items and source-linked post-results conclusions.
 - [Rumor Watch](https://idc-index.com/en/rumors): Current reported infrastructure developments with entities, timestamps, public responses and source boundaries visible. Direct official disclosures move to the verified Pulse; material policy changes are incorporated into Pulse or research rather than maintained as a separate tracker.
+- [AI Infrastructure Company Library](https://idc-index.com/en/companies): Company-level formal disclosures, reported intelligence, related research and the next checkpoint, with a browser-saved watchlist.
 - [IDC Atlas Columns](https://idc-index.com/en/columns): Original, source-linked research for global investors.
 
 ## Interpretation
@@ -655,6 +672,22 @@ function supernodeProducts(): SupernodeProduct[] {
 
 function capacityRadar(): SourceRecord[] {
   return [
+    {
+      id: "ports-pike-ohio-openai-nvidia-sb-energy",
+      title: "OpenAI、NVIDIA 与 SB Energy 公告俄亥俄 PORTS-Pike AI 园区安排",
+      titleEn: "OpenAI, NVIDIA and SB Energy announce the PORTS-Pike AI campus arrangement in Ohio",
+      subject: "OpenAI / NVIDIA / SB Energy · Pike County, Ohio",
+      subjectEn: "OpenAI / NVIDIA / SB Energy · Pike County, Ohio",
+      metric: "OpenAI 约 8 IT-GW 协议容量 · 首期设计 4.25 IT-GW · 首批 800MW 预计 2028 年起",
+      metricEn: "OpenAI agreement for approximately 8 IT-GW · initial deployment designed for 4.25 IT-GW · first 800MW expected from 2028",
+      status: "协议、投资与园区规划已公告 · 容量、供电和交付均未投运",
+      statusEn: "Agreement, investment and campus plan announced · capacity, power and delivery are not operating",
+      publishedAt: "2026-08-17",
+      sourceName: "NVIDIA Newsroom",
+      sourceUrl: "https://nvidianews.nvidia.com/news/nvidia-guarantees-sb-energy-s-ports-pike-technology-campus-in-ohio-to-exclusively-host-nvidia-ai-compute",
+      note: "NVIDIA 公告其将向 SB Energy 投资 15 亿美元，并为 PORTS-Pike 首期 4.25 IT-GW 的土地、电力和厂房建设提供信用支持；OpenAI 为约 8 IT-GW 的客户。公告称项目将自 2028 年起分期上线，SB Energy 与 SoftBank 计划建设至少 10GW 新发电和至少 42 亿美元区域电网基础设施。上述均为公司披露的协议、设计或计划口径，不是已获全部许可、已融资、已建成、已送电、已调试或已运行的容量；OpenAI 公告与 NVIDIA 8-K 在本轮来源台账中作交叉佐证。",
+      noteEn: "NVIDIA announced a $1.5B investment in SB Energy and credit support for the initial 4.25 IT-GW land, power and shell buildout at PORTS-Pike; OpenAI is the customer for approximately 8 IT-GW. The company said capacity is expected to come online in phases from 2028, while SB Energy and SoftBank plan at least 10GW of new generation and $4.2B of regional-grid investment. These are disclosed agreement, design or plan figures—not proof that all capacity is permitted, financed, built, energized, commissioned or operating. The OpenAI announcement and NVIDIA's 8-K are retained as corroboration in the review ledger.",
+    },
     {
       id: "riot-rockdale-frontier-ai-lease-191mw",
       title: "Riot 在 Rockdale 签署 191MW 关键 IT 容量长期租约",
@@ -3321,15 +3354,13 @@ function staticAtlasContent(): Record<string, unknown> {
 async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, options: AtlasApiOptions = {}): Promise<Response> {
   if (request.method !== "GET") return Response.json({ error: "Method not allowed" }, { status: 405 });
 
-  const [editorDecision, dailyClosure] = await Promise.all([
-    env.IDC_DAILY_SNAPSHOTS.get<AtlasEditorDecisionPacket>(ATLAS_EDITOR_DECISION_LATEST_KEY, "json"),
-    env.IDC_DAILY_SNAPSHOTS.get<AtlasDailyClosureReport>(DAILY_SECTION_CLOSURE_LATEST_KEY, "json"),
-  ]);
-  const publicEditorDecision = dailyClosure?.status === "completed" && editorDecision?.day === dailyClosure.day
-    ? editorDecision
-    : null;
+  // Editorial packets and daily closures are internal workflow state. Formal
+  // records reach this API only after they are written to the versioned site
+  // content and released through the normal same-HEAD deployment gates.
+  const publicEditorDecision: AtlasEditorDecisionPacket | null = null;
   const staticContentVersion = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(JSON.stringify(staticAtlasContent()))).then((digest) => Array.from(new Uint8Array(digest)).slice(0, 8).map((byte) => byte.toString(16).padStart(2, "0")).join(""));
-  const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}&editor=${encodeURIComponent(publicEditorDecision?.generatedAt ?? "none")}&closure=${encodeURIComponent(dailyClosure?.generatedAt ?? "none")}`, request.url), { method: "GET" });
+  const relationSchemaVersion = "entity-brief-v2";
+  const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}&relations=${relationSchemaVersion}`, request.url), { method: "GET" });
   const edgeCache = (caches as unknown as { default: Cache }).default;
   if (!options.forceRefresh) {
     const cached = await edgeCache.match(cacheKey);
@@ -3415,11 +3446,11 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const idcPulse = uniqueNews([
     ...editorNewsItems(publicEditorDecision, ["idc-pulse", "capacity"]),
     ...constructionPulse(),
-  ], 48);
+  ], 48).map(withEntityRelations);
   const listedCompanyNews = uniqueNews([
     ...editorNewsItems(publicEditorDecision, ["listed-companies"]),
     ...listedCompanyPulse(),
-  ], 48);
+  ], 48).map(withEntityRelations);
   const deals = mnaDeals();
   const allCalendarEvents = calendarEvents();
   const upcomingEvents = featuredCalendar();
@@ -3448,20 +3479,42 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
 
   const latestSnapshot = await env.IDC_DAILY_SNAPSHOTS.get<DailySnapshotMeta>("latest-meta", "json");
   const coreSourcesHealthy = newsResult.status === "fulfilled" && benchmarkResult.status === "fulfilled";
-  const verifiedDateFor = (section: string) => dailyClosure?.sections.find((entry) => entry.section === section)?.status !== "blocked"
-    && dailyClosure?.day ? dailyClosure.day : CONTENT_REVIEWED_AT;
-  const contentReviewedAt = dailyClosure?.status === "completed" ? dailyClosure.day : CONTENT_REVIEWED_AT;
+  const contentReviewedAt = CONTENT_REVIEWED_AT;
   const sectionFreshnessState = {
-    idcPulse: sectionFreshness(idcPulse, (item) => item.publishedAt, 14, verifiedDateFor("idc-pulse")),
-    listedCompanyNews: sectionFreshness(listedCompanyNews, (item) => item.publishedAt, 14, verifiedDateFor("listed-companies")),
-    mnaDeals: sectionFreshness(deals, (item) => item.announcedAt, 45, verifiedDateFor("mna")),
-    capacityRadar: sectionFreshness(records, (item) => item.publishedAt, 30, verifiedDateFor("capacity")),
-    coolingProgress: sectionFreshness(coolingRecords, (item) => item.publishedAt, 45, verifiedDateFor("cooling")),
+    idcPulse: sectionFreshness(idcPulse, (item) => item.publishedAt, 14, CONTENT_REVIEWED_AT),
+    listedCompanyNews: sectionFreshness(listedCompanyNews, (item) => item.publishedAt, 14, CONTENT_REVIEWED_AT),
+    mnaDeals: sectionFreshness(deals, (item) => item.announcedAt, 45, CONTENT_REVIEWED_AT),
+    capacityRadar: sectionFreshness(records, (item) => item.publishedAt, 30, CONTENT_REVIEWED_AT),
+    coolingProgress: sectionFreshness(coolingRecords, (item) => item.publishedAt, 45, CONTENT_REVIEWED_AT),
   };
+  const factChangedAt = [
+    ...idcPulse.map((item) => item.publishedAt),
+    ...listedCompanyNews.map((item) => item.publishedAt),
+    ...deals.map((item) => item.announcedAt),
+    ...rumors.map((item) => item.publishedAt),
+  ].filter((value): value is string => Boolean(value)).sort((a, b) => Date.parse(b) - Date.parse(a))[0] ?? contentReviewedAt;
+  const researchPublishedAt = publishedColumnArticles()[0]?.publishAt ?? null;
+  const dailyBrief = currentDailyBriefRecord();
+  const briefPublishedAt = dailyBrief?.publishedAt ?? null;
+  const latestContentChangedAt = [factChangedAt, researchPublishedAt, briefPublishedAt]
+    .filter((value): value is string => Boolean(value))
+    .sort((a, b) => Date.parse(b) - Date.parse(a))[0] ?? factChangedAt;
+  const contentVersion = `${latestContentChangedAt}::${idcPulse.length}-${listedCompanyNews.length}-${deals.length}-${rumors.length}-${publishedColumnArticles().length}-${dailyBrief?.id ?? "no-brief"}`;
   const response = Response.json({
     generatedAt: new Date().toISOString(),
     contentReviewedAt,
-    dailyClosure,
+    contentVersion,
+    lastContentChangedAt: latestContentChangedAt,
+    factChangedAt,
+    researchPublishedAt,
+    briefPublishedAt,
+    dailyBrief: dailyBrief ? {
+      id: dailyBrief.id,
+      editionDate: dailyBrief.editionDate,
+      publishedAt: dailyBrief.publishedAt,
+      articleHref: dailyBrief.articleHref,
+    } : null,
+    dailyClosure: null,
     sectionFreshness: sectionFreshnessState,
     windowLabel: "近45天",
     newsStatus: newsResult.status === "fulfilled" ? "ok" : "unavailable",
@@ -3592,6 +3645,12 @@ function compactInitialAtlasPayload(payload: Record<string, unknown>): Record<st
   return {
     generatedAt: payload.generatedAt,
     contentReviewedAt: payload.contentReviewedAt,
+    contentVersion: payload.contentVersion,
+    lastContentChangedAt: payload.lastContentChangedAt,
+    factChangedAt: payload.factChangedAt,
+    researchPublishedAt: payload.researchPublishedAt,
+    briefPublishedAt: payload.briefPublishedAt,
+    dailyBrief: payload.dailyBrief,
     sectionFreshness: payload.sectionFreshness,
     sourceCount,
     verifiedCount: coreRecords.length,
@@ -3609,6 +3668,7 @@ function compactInitialAtlasPayload(payload: Record<string, unknown>): Record<st
     modelNews: firstItems(payload.modelNews, 4),
     capacityRadar: firstItems(payload.capacityRadar, 4),
     coolingProgress: firstItems(payload.coolingProgress, 3),
+    rumors: firstItems(payload.rumors, 6),
     aiDaily: daily ? { ...daily, sections, flashes: [] } : null,
   };
 }
@@ -3619,8 +3679,8 @@ function compactHomepageAtlasPayload(payload: Record<string, unknown>): Record<s
   const compactStory = (value: unknown) => {
     const item = value as Record<string, unknown>;
     return Object.fromEntries([
-      "id", "title", "summary", "publishedAt", "category", "permalink", "sourceUrl", "sourceName",
-      "region", "milestone", "scale", "listedTicker", "imageSrc", "imageAlt",
+      "id", "title", "titleEn", "summary", "summaryEn", "publishedAt", "category", "permalink", "sourceUrl", "sourceName",
+      "region", "milestone", "scale", "listedTicker", "entityIds", "imageSrc", "imageAlt",
     ].map((key) => [key, item[key]]).filter(([, field]) => field != null));
   };
   const compactEvent = (value: unknown) => {
@@ -3629,16 +3689,22 @@ function compactHomepageAtlasPayload(payload: Record<string, unknown>): Record<s
   };
   const compactRumor = (value: unknown) => {
     const item = value as Record<string, unknown>;
-    return Object.fromEntries(["id", "title", "titleEn", "summary", "summaryEn", "publishedAt", "sourceName", "sourceUrl", "sourceCount"].map((key) => [key, item[key]]).filter(([, field]) => field != null));
+    return Object.fromEntries(["id", "title", "titleEn", "summary", "summaryEn", "publishedAt", "sourceName", "sourceUrl", "sourceCount", "region", "statusLabel", "statusLabelEn", "officialResponse", "officialResponseEn"].map((key) => [key, item[key]]).filter(([, field]) => field != null));
   };
   return {
     generatedAt: payload.generatedAt,
     contentReviewedAt: payload.contentReviewedAt,
+    contentVersion: payload.contentVersion,
+    lastContentChangedAt: payload.lastContentChangedAt,
+    factChangedAt: payload.factChangedAt,
+    researchPublishedAt: payload.researchPublishedAt,
+    briefPublishedAt: payload.briefPublishedAt,
+    dailyBrief: payload.dailyBrief,
     sourceCount: payload.sourceCount ?? sourceCount,
     verifiedCount: payload.verifiedCount ?? coreRecords.length,
-    idcPulse: firstItems(payload.idcPulse, 1).map(compactStory),
-    listedCompanyNews: [],
-    mnaDeals: [],
+    idcPulse: firstItems(payload.idcPulse, 8).map(compactStory),
+    listedCompanyNews: firstItems(payload.listedCompanyNews, 4).map(compactStory),
+    mnaDeals: firstItems(payload.mnaDeals, 3),
     benchmarks: firstItems(payload.benchmarks, 4),
     upcomingEvents: firstItems(payload.upcomingEvents, 3).map(compactEvent),
     rumors: firstItems(payload.rumors, 2).map(compactRumor),
@@ -3670,6 +3736,11 @@ async function initialAtlasHeaders(request: Request, env: Env, ctx: ExecutionCon
     const meta = JSON.stringify({
       generatedAt: payload.generatedAt,
       contentReviewedAt: payload.contentReviewedAt,
+      contentVersion: payload.contentVersion,
+      lastContentChangedAt: payload.lastContentChangedAt,
+      factChangedAt: payload.factChangedAt,
+      researchPublishedAt: payload.researchPublishedAt,
+      briefPublishedAt: payload.briefPublishedAt,
       sourceCount: payload.sourceCount ?? new Set([...(Array.isArray(payload.idcPulse) ? payload.idcPulse : []), ...(Array.isArray(payload.listedCompanyNews) ? payload.listedCompanyNews : []), ...(Array.isArray(payload.mnaDeals) ? payload.mnaDeals : [])].map((item) => typeof item === "object" && item && "sourceName" in item && typeof item.sourceName === "string" ? item.sourceName : null).filter(Boolean)).size,
       verifiedCount: payload.verifiedCount ?? (Array.isArray(payload.idcPulse) ? payload.idcPulse.length : 0) + (Array.isArray(payload.listedCompanyNews) ? payload.listedCompanyNews.length : 0) + (Array.isArray(payload.mnaDeals) ? payload.mnaDeals.length : 0),
     });
@@ -3685,7 +3756,7 @@ async function initialAtlasHeaders(request: Request, env: Env, ctx: ExecutionCon
     const json = new TextEncoder().encode(JSON.stringify(initialPayload));
     const compressed = new Blob([json]).stream().pipeThrough(new CompressionStream("gzip"));
     const prime = bytesToBase64(new Uint8Array(await new Response(compressed).arrayBuffer()));
-    return { prime: prime.length <= 4_000 ? prime : null, meta };
+    return { prime: prime.length <= 24_000 ? prime : null, meta };
   } catch (error) {
     console.error(JSON.stringify({ message: "Initial atlas payload unavailable", error: String(error) }));
     return null;
@@ -3696,8 +3767,12 @@ function shouldPrimeHomepage(request: Request, url: URL): boolean {
   return request.method === "GET"
     && (["/", "/en", "/pulse", "/industry", "/en/pulse", "/en/industry"].includes(url.pathname)
       || url.pathname === "/calendar"
+      || url.pathname === "/rumors"
+      || url.pathname === "/en/rumors"
       || url.pathname.startsWith("/columns")
       || url.pathname.startsWith("/en/columns")
+      || url.pathname === "/companies"
+      || url.pathname === "/en/companies"
       || url.pathname.startsWith("/companies/")
       || url.pathname.startsWith("/en/companies/"))
     && request.headers.get("accept")?.includes("text/html") === true;
@@ -3782,10 +3857,6 @@ async function adminFeedbackApi(request: Request, env: Env): Promise<Response> {
 }
 
 async function adminModelScoringApi(request: Request, env: Env): Promise<Response> {
-  const serverStatus = modelScoringStatus(env);
-  const usageKey = modelUsageKey();
-  const callsToday = Number.parseInt(await env.IDC_DAILY_SNAPSHOTS.get(usageKey) ?? "0", 10) || 0;
-
   if (request.method === "GET") {
     const [dailySelection, dailyCandidates, editorDecision, dailyClosure] = await Promise.all([
       env.IDC_DAILY_SNAPSHOTS.get<DailyMaterialSelectionReport>(DAILY_MODEL_SELECTION_LATEST_KEY, "json"),
@@ -3794,13 +3865,12 @@ async function adminModelScoringApi(request: Request, env: Env): Promise<Respons
       env.IDC_DAILY_SNAPSHOTS.get<AtlasDailyClosureReport>(DAILY_SECTION_CLOSURE_LATEST_KEY, "json"),
     ]);
     return adminJson({
-      status: serverStatus,
-      sessionProvider: {
-        provider: "DeepSeek",
-        baseUrlHost: "api.deepseek.com",
-        models: ["deepseek-v4-flash", "deepseek-v4-pro"],
+      editorialRuntime: {
+        provider: "Codex",
+        model: "gpt-5.6-luna",
+        workflow: "scheduled-codex-task",
+        workerScoringEnabled: false,
       },
-      usage: { callsToday, remainingToday: Math.max(0, serverStatus.dailyCallLimit - callsToday) },
       dailySelection,
       dailyCandidates,
       editorDecision,
@@ -3811,46 +3881,10 @@ async function adminModelScoringApi(request: Request, env: Env): Promise<Respons
     return new Response("Method not allowed", { status: 405, headers: { ...ADMIN_API_HEADERS, allow: "GET, POST" } });
   }
 
-  const url = new URL(request.url);
-  const origin = request.headers.get("origin");
-  if (origin && origin !== url.origin) return adminJson({ error: "跨站请求已拒绝。" }, 403);
-  if (!request.headers.get("content-type")?.toLowerCase().startsWith("application/json")) {
-    return adminJson({ error: "请求必须使用 JSON。" }, 415);
-  }
-  if (callsToday >= serverStatus.dailyCallLimit) return adminJson({ error: "今天的手动评分额度已用完。", status: serverStatus }, 429);
-
-  const raw = await request.text();
-  if (raw.length > 12_288) return adminJson({ error: "评分内容过长。" }, 413);
-  let json: unknown;
-  try {
-    json = JSON.parse(raw);
-  } catch {
-    return adminJson({ error: "JSON 格式无效。" }, 400);
-  }
-
-  try {
-    const record = typeof json === "object" && json !== null && !Array.isArray(json) ? json as Record<string, unknown> : null;
-    if (record?.action === "run-daily-selection") {
-      return adminJson({ error: "每日编辑判定已迁移到 Codex gpt-5.6-luna 自动任务；Worker 不再触发 DeepSeek。" }, 409);
-    }
-    const sessionCredentials = record?.sessionCredentials
-      ? parseDeepSeekSessionCredentials(record.sessionCredentials)
-      : null;
-    if (!sessionCredentials && !serverStatus.ready) {
-      return adminJson({ error: "请输入本次会话使用的 DeepSeek API Key。", status: serverStatus }, 409);
-    }
-    const scoringEnv = sessionCredentials ? deepSeekSessionEnv(env, sessionCredentials) : env;
-    const activeStatus = modelScoringStatus(scoringEnv);
-    const input = parseModelScoringInput(sessionCredentials ? record?.input : json);
-    const result = await scoreWithOpenAiCompatible(scoringEnv, input);
-    const nextCalls = callsToday + 1;
-    await env.IDC_DAILY_SNAPSHOTS.put(usageKey, String(nextCalls), { expirationTtl: 172_800 });
-    return adminJson({ result, usage: { callsToday: nextCalls, remainingToday: Math.max(0, activeStatus.dailyCallLimit - nextCalls) } }, 201);
-  } catch (error) {
-    const message = error instanceof Error ? error.message : "影子评分失败。";
-    console.error(JSON.stringify({ message: "Admin shadow model scoring failed", provider: serverStatus.provider, error: message }));
-    return adminJson({ error: message }, 502);
-  }
+  return adminJson({
+    error: "Worker 评分已永久停用；每日编辑判定仅由 Codex gpt-5.6-luna 定时任务执行。",
+    editorialRuntime: { provider: "Codex", model: "gpt-5.6-luna", workflow: "scheduled-codex-task", workerScoringEnabled: false },
+  }, 409);
 }
 
 function cookieValue(request: Request, name: string): string | null {
@@ -3944,13 +3978,15 @@ const worker = {
           const headers = new Headers(request.headers);
           if (prime.prime) {
             headers.set(INITIAL_ATLAS_HEADER, prime.prime);
-            const existingCookie = headers.get("cookie");
-            headers.set("cookie", `${existingCookie ? `${existingCookie}; ` : ""}__idc_atlas_prime=${prime.prime}`);
+            if (prime.prime.length <= 3_500) {
+              const existingCookie = headers.get("cookie");
+              headers.set("cookie", `${existingCookie ? `${existingCookie}; ` : ""}__idc_atlas_prime=${prime.prime}`);
+            }
           }
           headers.set(INITIAL_ATLAS_META_HEADER, prime.meta);
           headers.set("x-idc-request-path", url.pathname);
           const internalUrl = new URL(request.url);
-          if (prime.prime) internalUrl.searchParams.set("__atlas_prime", prime.prime);
+          if (prime.prime && prime.prime.length <= 3_500) internalUrl.searchParams.set("__atlas_prime", prime.prime);
           return await handler.fetch(new Request(internalUrl, { headers }), env, ctx);
         }
       }
