@@ -208,8 +208,8 @@ export const scoringConfig = {
   },
   tierWeight: { T0: 12, T1: 10, T2: 7, T3: 5, T4: 3, T5: 1, D: 0 } satisfies Record<SourceTier, number>,
   thresholds: {
-    public: 40,
-    research: 52,
+    public: 34,
+    research: 44,
   },
 };
 
@@ -288,8 +288,8 @@ export async function normalizeObservation(
 
 const topicSignals: Array<[TopicBucket, string[]]> = [
   ["core-infrastructure", ["data center", "数据中心", "datacenter", "campus", "园区", "capacity", "容量", "lease", "租约", "commission", "投运", "power", "电力", "grid", "电网", "cooling", "液冷", "network", "网络"]],
-  ["upstream-compute-demand", ["gpu", "nvidia", "amd", "accelerator", "加速卡", "hbm", "memory", "内存", "server", "服务器", "model", "模型", "inference", "推理", "training", "训练"]],
-  ["material-policy-capital", ["regulation", "policy", "permit", "approval", "law", "rule", "政策", "监管", "许可", "审批", "法规", "capex", "资本开支", "financing", "融资", "acquisition", "收购", "merger", "并购"]],
+  ["upstream-compute-demand", ["artificial intelligence", "ai ", " AI", "人工智能", "大模型", "agent", "智能体", "gpu", "nvidia", "amd", "accelerator", "加速卡", "hbm", "memory", "内存", "server", "服务器", "model", "模型", "inference", "推理", "training", "训练", "token", "cloud", "云", "robotics", "具身智能"]],
+  ["material-policy-capital", ["regulation", "policy", "permit", "approval", "law", "rule", "政策", "监管", "许可", "审批", "法规", "capex", "资本开支", "financing", "funding", "融资", "revenue", "营收", "earnings", "财报", "guidance", "指引", "contract", "合同", "partnership", "合作", "acquisition", "收购", "merger", "并购", "ipo", "上市"]],
 ];
 
 function hasAtlasSignal(text: string): boolean {
@@ -307,8 +307,7 @@ export function classifyObservation(observation: NormalizedObservation): Classif
   const measurable = /\b\d+(?:[.,]\d+)?\s?(?:mw|gw|kw|tb|gb|million|billion|亿元|亿美元|%|万平方)/i.test(text);
   const mechanism = /(?:contract|lease|permit|approval|commission|construction|interconnect|power|cooling|capacity|capex|融资|租约|许可|投运|建设|并网|电力|液冷|容量|资本开支)/i.test(text);
   const uncertain = !observation.publishedAt && !observation.discoveredAt || (observation.sourceTier === "T0" && !mechanism);
-  const routineCloudUpdate = /(?:generally available|now available|availability zone|console|dashboard|observability|identity|security hub|cloudwatch|feature update|preview region|现已可用|控制台|仪表盘|可观测性)/i.test(text);
-  const materialEvent = /(?:contract|lease|permit|approval|commission|construction|interconnect|capex|financing|acquisition|merger|earnings|guidance|model release|launches? (?:a )?(?:new )?(?:gpu|accelerator|server|model)|融资|签约|租约|许可|审批|投运|建设|并网|资本开支|收购|并购|财报|指引|模型发布)/i.test(text);
+  const materialEvent = /(?:contract|lease|permit|approval|commission|construction|interconnect|capex|financing|funding|investment|partnership|acquisition|merger|earnings|revenue|guidance|model release|product launch|open.?source|launches? (?:a )?(?:new )?(?:gpu|accelerator|server|model|agent)|融资|投资|签约|合作|租约|许可|审批|投运|建设|并网|资本开支|收购|并购|财报|营收|指引|模型发布|产品发布|开源)/i.test(text);
   const materialAwsInfrastructure = /(?:data\s*cent(?:er|re)|campus|capex|capital expenditure|lease|contract|construction|power purchase|\b(?:mw|gw)\b|gpu|trainium|inferentia|outposts? rack|acquisition|investment|earnings|guidance)/i.test(observation.normalizedTitle);
   const genericHtmlLandingPage = observation.eventType === "html-update"
     && !observation.publishedAt
@@ -317,8 +316,7 @@ export function classifyObservation(observation: NormalizedObservation): Classif
   if (observation.sourceTier === "T0" && !hasConcretePolicySignal(text)) return { topicBucket: "irrelevant", isRelevant: false, uncertain: false, reasonCodes: ["t0-out-of-scope"] };
   if (observation.sourceId === "sec-edgar" && /^8-k(?:\/a)?\b/i.test(observation.titleOriginal) && !/(?:data\s*cent(?:er|re)|datacenter|AI|GPU|accelerator|capacity|power|energy|grid|cloud|server|semiconductor|chip|acquisition|merger|capital expenditure|CAPEX|并购|收购|数据中心|电力|能源|云|服务器|芯片)/i.test(observation.summaryOriginal)) return { topicBucket: "irrelevant", isRelevant: false, uncertain: false, reasonCodes: ["sec-filing-out-of-scope"] };
   if (bucket === "irrelevant") return { topicBucket: "irrelevant", isRelevant: false, uncertain: false, reasonCodes: ["no-atlas-topic"] };
-  if (observation.sourceId === "aws-news" && !materialAwsInfrastructure) return { topicBucket: "irrelevant", isRelevant: false, uncertain: false, reasonCodes: ["routine-aws-product-update"] };
-  if (routineCloudUpdate && !materialEvent) return { topicBucket: "irrelevant", isRelevant: false, uncertain: false, reasonCodes: ["routine-cloud-product-update"] };
+  if (observation.sourceId === "aws-news" && !materialAwsInfrastructure && !materialEvent) return { topicBucket: "keyword-only", isRelevant: false, uncertain: false, reasonCodes: ["routine-aws-product-update"] };
   if (!entityFound && !measurable) return { topicBucket: "keyword-only", isRelevant: false, uncertain: false, reasonCodes: ["keyword-only", "missing-entity-or-measure"] };
   if (!hasAtlasSignal(text)) return { topicBucket: "keyword-only", isRelevant: false, uncertain: false, reasonCodes: ["keyword-only"] };
   return {

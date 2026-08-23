@@ -18,7 +18,7 @@ assert.deepEqual(matchCoreCompanies(["微软 Azure 新增 AI capacity"]).map((co
 assert.deepEqual(matchCoreCompanies(["DeepSeek 发布新模型"]).map((company) => company.id), ["deepseek"]);
 assert.deepEqual(matchCoreCompanies(["万国数据获得新订单"]).map((company) => company.id), ["gds"]);
 assert.ok(CORE_COMPANY_SOURCE_IDS.includes("nvidia"));
-assert.ok(CORE_COMPANY_SOURCE_IDS.includes("apple"));
+assert.ok(CORE_COMPANY_SOURCE_IDS.includes("apple-newsroom"));
 const state = buildCoreCompanyWatchState([{
   id: "deepseek-model",
   titleZh: "DeepSeek 发布新模型",

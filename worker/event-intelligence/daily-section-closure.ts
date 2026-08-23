@@ -19,7 +19,7 @@ export type { AtlasDailySectionId } from "./source-coverage.ts";
 export type AtlasDailySectionOutcome = {
   section: AtlasDailySectionId;
   status: "updated" | "verified-no-change" | "blocked";
-  publicationMode: "auto-published" | "internal-only" | "no-change" | "needs-review";
+  publicationMode: "release-ready" | "internal-only" | "no-change" | "needs-review";
   candidateEventIds: string[];
   eligibleEventIds: string[];
   blockedEventIds: string[];
@@ -94,8 +94,7 @@ export function buildDailySectionClosure(
   const sections = ATLAS_DAILY_SECTION_IDS.map((section): AtlasDailySectionOutcome => {
     const sectionCoverage = coverageBySection.get(section)!;
     if (!packetCurrent) return blockedOutcome(section, sectionCoverage, "当日事件候选包缺失、过期或未包含 05:30 夜间扫描。");
-    if (!sourceCurrent) return blockedOutcome(section, sectionCoverage, "当日 59 信源运行结果缺失、过期或失败，不能据此判定无变化。");
-    if (sectionCoverage.status === "blocked") return blockedOutcome(section, sectionCoverage, sectionCoverage.reason);
+    if (!sourceCurrent) return blockedOutcome(section, sectionCoverage, "当日信源运行结果缺失、过期或失败，不能据此判定无变化。");
     if (!editorCurrent) return blockedOutcome(section, sectionCoverage, "Atlas Auto Editor 决策包缺失或未完成，候选不能进入公开数据源。");
 
     const decisions = editorPacket.decisions.filter((decision) => decision.section === section);
@@ -107,13 +106,15 @@ export function buildDailySectionClosure(
     if (published.length) {
       return {
         section,
-        status: "blocked",
-        publicationMode: "needs-review",
+        status: "updated",
+        publicationMode: "release-ready",
         candidateEventIds,
         eligibleEventIds: published.map((decision) => decision.eventId),
-        blockedEventIds: [...published, ...blockingHeld].map((decision) => decision.eventId),
+        blockedEventIds: blockingHeld.map((decision) => decision.eventId),
         sourceCoverage: sectionCoverage,
-        reason: "候选已通过编辑分流，但尚无正式双语内容记录、同一 HEAD 发布与生产回读凭证；保留现有生产并转交发布复核。",
+        reason: blockingHeld.length
+          ? "合格条目已通过来源、双语与声明校验；其余缺口保留在 handoff，不拖累本板块可发布条目。"
+          : "合格条目已通过一手或媒体分流、双语与声明来源校验，进入版本化发布队列。",
       };
     }
     if (blockingHeld.length) {
@@ -128,6 +129,7 @@ export function buildDailySectionClosure(
         reason: "存在相关候选，但来源、双语、结构化字段或公开适配器尚未通过确定性发布门槛。",
       };
     }
+    if (sectionCoverage.status === "blocked") return blockedOutcome(section, sectionCoverage, sectionCoverage.reason);
     return {
       section,
       status: "verified-no-change",

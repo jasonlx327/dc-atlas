@@ -106,10 +106,14 @@ function strongestTier(tiers: SourceTier[]): SourceTier {
 function isEditorialCandidate(event: EventRecord): boolean {
   const routed = event.routeCandidates?.some((route) => route === "pulse" || route === "rumor-watch" || route === "research-queue");
   const attributableLead = (event.route === "hold" || event.route === "rejected")
-    && event.sourceTiers.some((tier) => tier === "T4" || tier === "T5" || tier === "D")
-    && (event.priorityScore ?? 0) >= 38
-    && event.scoring.topicRelevanceScore >= 3;
-  return Boolean(routed || attributableLead);
+    && event.sourceTiers.some((tier) => tier !== "D")
+    && (event.priorityScore ?? 0) >= 24
+    && event.scoring.topicRelevanceScore >= 2;
+  const discoveryLead = (event.route === "hold" || event.route === "rejected")
+    && event.sourceTiers.includes("D")
+    && (event.priorityScore ?? 0) >= 30
+    && event.scoring.topicRelevanceScore >= 2.4;
+  return Boolean(routed || attributableLead || discoveryLead);
 }
 
 export function dailySelectionCandidates(
@@ -180,7 +184,7 @@ export function selectionItem(event: EventRecord, result: ModelScoringResult): D
     }),
     publicationReadiness: event.route !== "hold"
       && event.route !== "rejected"
-      && (event.priorityScore ?? 0) >= (event.route === "rumor-watch" ? 38 : 40)
+      && (event.priorityScore ?? 0) >= (event.route === "rumor-watch" ? 30 : 34)
       ? "eligible-by-rules"
       : "needs-source-verification",
     evidenceStatus: event.evidenceStatus,

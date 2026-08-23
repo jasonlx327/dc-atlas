@@ -40,6 +40,7 @@ export type AtlasSectionSourceCoverage = {
   checkedSourceIds: string[];
   passingSourceIds: string[];
   failedSourceIds: string[];
+  uncheckedSourceIds: string[];
   primaryPassing: number;
   reportingPassing: number;
   discoveryPassing: number;
@@ -96,27 +97,26 @@ export function buildSectionSourceCoverage(
     const checked = expected.filter((source) => healthBySource.has(source.id));
     const passing = checked.filter((source) => PASSING.has(healthBySource.get(source.id)!.status));
     const failed = checked.filter((source) => !PASSING.has(healthBySource.get(source.id)!.status));
+    const unchecked = expected.filter((source) => !healthBySource.has(source.id));
     const primaryPassing = passing.filter((source) => isPrimary(source.tier)).length;
     const reportingPassing = passing.filter((source) => source.tier === "T2" || source.tier === "T3").length;
     const discoveryPassing = passing.filter((source) => source.tier === "D").length;
-    const successRate = expected.length ? passing.length / expected.length : 0;
-    const primaryRequirement = section === "rumors" ? true : section === "policy" ? primaryPassing >= 2 : primaryPassing >= 1;
+    const successRate = checked.length ? passing.length / checked.length : 0;
+    const primaryRequirement = section === "rumors" || section === "columns" ? true : primaryPassing >= 1;
     const breadthRequirement = section === "rumors"
-      ? reportingPassing >= 1 && discoveryPassing >= 1
-      : section === "policy"
-        ? true
-        : reportingPassing + discoveryPassing >= 1;
+      ? reportingPassing + discoveryPassing >= 1
+      : reportingPassing + discoveryPassing >= 1 || primaryPassing >= 2;
     const status = Boolean(report)
-      && expected.length >= 2
-      && checked.length === expected.length
-      && successRate >= 0.6
+      && checked.length >= Math.min(3, expected.length)
+      && passing.length >= Math.min(2, checked.length)
+      && successRate >= 0.4
       && primaryRequirement
       && breadthRequirement
       ? "passed"
       : "blocked";
     const reason = status === "passed"
-      ? `已检查 ${checked.length}/${expected.length} 个板块信源，${passing.length} 个成功，包含 ${primaryPassing} 个一手来源。`
-      : `信源覆盖不足：检查 ${checked.length}/${expected.length}，成功 ${passing.length}，一手 ${primaryPassing}，媒体 ${reportingPassing}，发现源 ${discoveryPassing}。`;
+      ? `已检查 ${checked.length}/${expected.length} 个板块信源，${passing.length} 个成功，包含 ${primaryPassing} 个一手来源；${unchecked.length + failed.length} 个访问缺口转入 handoff，不阻断已核验条目。`
+      : `信源覆盖不足：检查 ${checked.length}/${expected.length}，成功 ${passing.length}，一手 ${primaryPassing}，媒体 ${reportingPassing}，发现源 ${discoveryPassing}；缺口仅阻断本板块无变化判断。`;
     return {
       section,
       status,
@@ -124,6 +124,7 @@ export function buildSectionSourceCoverage(
       checkedSourceIds: checked.map((source) => source.id),
       passingSourceIds: passing.map((source) => source.id),
       failedSourceIds: failed.map((source) => source.id),
+      uncheckedSourceIds: unchecked.map((source) => source.id),
       primaryPassing,
       reportingPassing,
       discoveryPassing,
