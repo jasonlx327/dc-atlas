@@ -83,6 +83,16 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
+test("fills the three-column intelligence desk without truncating summaries", async () => {
+  const overview = await readFile(new URL("../app/intelligence-console-overview.tsx", import.meta.url), "utf8");
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  const summaryRule = css.match(/\.atlas-rumor-desk-grid > a > p \{[^}]+\}/)?.[0] ?? "";
+
+  assert.match(overview, /sortNewest\(data\.rumors \?\? \[\]\)\.slice\(0, 3\)/);
+  assert.match(css, /\.atlas-rumor-desk-grid \{[^}]*grid-template-columns: repeat\(3,/);
+  assert.doesNotMatch(summaryRule, /line-clamp|overflow:\s*hidden/);
+});
+
 test("keeps mobile pages readable without forced horizontal layouts", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   assert.match(css, /\/\* Mobile readability and overflow guardrails \*\//);

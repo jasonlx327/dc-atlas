@@ -583,7 +583,7 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
   const lead = [...pulse, ...companies].sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime())[0];
   const events = data.events.slice(0, 6);
   const deals = data.deals.slice(0, 5);
-  const rumors = sortNewest(data.rumors ?? []).slice(0, 2);
+  const rumors = sortNewest(data.rumors ?? []).slice(0, 3);
   const articles = publishedColumnArticles().slice(0, 5);
   const dailyBrief = buildDailyBrief(articles);
   const featuredResearch = dailyBrief?.article;
