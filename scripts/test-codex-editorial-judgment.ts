@@ -130,6 +130,10 @@ assert.throws(() => buildCodexEditorialPackets(report, { ...verdict, model: "dee
 assert.throws(() => buildCodexEditorialPackets(report, { ...verdict, verdicts: [] }), /缺少 1 个候选/);
 assert.throws(() => buildCodexEditorialPackets(report, {
   ...verdict,
+  verdicts: [{ ...verdict.verdicts[0], publicCopy: undefined }],
+}), /缺少公开路由所需的双语 publicCopy/);
+assert.throws(() => buildCodexEditorialPackets(report, {
+  ...verdict,
   verdicts: [{ ...verdict.verdicts[0], band: "dropped" }],
 }), /band=dropped/);
 

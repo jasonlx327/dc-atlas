@@ -138,6 +138,14 @@ export function buildCodexEditorialPackets(
 
   const items = candidates.map((event) => {
     const verdict = verdictById.get(event.id)!;
+    const publicRoute = event.route === "pulse" || event.route === "rumor-watch";
+    const hasAccessiblePublishSource = event.sourceChain.some((source) =>
+      ["T0", "T1", "T2", "T3"].includes(source.tier)
+      && Boolean(source.url)
+      && !["blocked", "paywalled", "unavailable", "login-required"].includes(source.accessStatus));
+    if (verdict.band !== "dropped" && publicRoute && hasAccessiblePublishSource && !verdict.publicCopy) {
+      throw new Error(`Codex verdict ${event.id} 缺少公开路由所需的双语 publicCopy。`);
+    }
     const result: ModelScoringResult = {
       schemaVersion: "atlas-model-score.v1",
       mode: "shadow",

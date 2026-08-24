@@ -53,6 +53,8 @@ async function run() {
       model: "gpt-5.6-luna",
       status: "completed",
       verdicts: "exactly one verdict for every candidate; no unknown or duplicate eventId",
+      publicCopy: "required for every selected/watch candidate routed to pulse or rumor-watch when an accessible T0-T3 source exists; T2/T3 copy must use natural source attribution and must not claim official confirmation",
+      rumorPolicy: "presume publication for current accessible reader-relevant T2/T3 reporting; one independent source is enough for single-source-report; missing T0/T1 confirmation blocks formal promotion, not Rumor Watch",
       errors: [],
     },
   };
