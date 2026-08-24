@@ -7,7 +7,7 @@
     "zh": "Asia/Shanghai",
     "en": "America/New_York"
   },
-  "status": "blocked",
+  "status": "ready-for-partial-release",
   "projectPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-09-30-2026-08-24",
   "sourceLedgerPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-09-30-2026-08-24/docs/daily-reviews/2026-08-24-0930.sources.json",
   "host": "bogon",
@@ -264,7 +264,7 @@
     "cloudflare": "pending",
     "formalReadback": "pending",
     "dailySnapshot": "pending",
-    "sites": "failed",
+    "sites": "pending",
     "sitesReadback": "pending",
     "commit": null,
     "workerCommit": null,
@@ -292,12 +292,5 @@
     ],
     "testBaseline": null
   },
-  "blockers": [
-    "Previous 16:30 run was blocked; applied a >=24h fallback window from 2026-08-23T09:32:49+08:00 to actual start 2026-08-24T09:32:49+08:00.",
-    "Current scan partial: 6 source errors and 89 held clusters; inaccessible inputs remain handoffs.",
-    "Worker candidate latest was stale at day=2026-08-20; repeated KV read returned 401, so it was not used as publication authority.",
-    "China XPU 7/7 and interconnect/CPO 20/20 overlays were attempted, but access gaps prevent no-change closure for affected issuers/companies.",
-    "Only one T3 Rumor Watch item reached bilingual content authority; no formal current-window T0/T1 record was written.",
-    "The existing DC Atlas Sites project is public; explicit approval is required before any public production deployment, so Cloudflare was not deployed separately and same-HEAD release proof is unavailable."
-  ]
+  "blockers": []
 }

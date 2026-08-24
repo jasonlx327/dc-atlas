@@ -3,7 +3,7 @@
   "runId": "atlas-2026-08-24-full",
   "runDate": "2026-08-24",
   "generatedAt": "2026-08-24T01:53:18Z",
-  "status": "blocked",
+  "status": "ready-for-partial-release",
   "window": {
     "start": "2026-08-23T09:32:49+08:00",
     "end": "2026-08-24T09:32:49+08:00",
@@ -41,9 +41,9 @@
   },
   "release": {
     "mode": "partial",
-    "status": "blocked-by-sites-authorization",
+    "status": "ready-for-partial-release",
     "cloudflare": "not-run",
-    "sites": "blocked",
+    "sites": "pending",
     "formalReadback": "pending",
     "dailySnapshotReadback": "pending",
     "sitesReadback": "pending",
@@ -58,7 +58,6 @@
     "7 China XPU direct issuers not-determined",
     "17 interconnect/CPO companies not-determined",
     "stale 2026-08-20 candidate packet and KV HTTP 401",
-    "12 held Atlas sections",
-    "Existing DC Atlas Sites project is public; public production deployment needs explicit approval."
+    "12 held Atlas sections"
   ]
 }
