@@ -776,6 +776,9 @@ test("server-primes the bilingual homepages with the live first-screen payload",
   assert.match(initialAtlas, /DecompressionStream\("gzip"\)/);
   assert.match(workerSource, /const INITIAL_ATLAS_HEADER = "x-idc-atlas-prime"/);
   assert.match(workerSource, /function compactInitialAtlasPayload/);
+  assert.match(workerSource, /compactHomepageAtlasPayload\(payload, pathname === "\/en" \? "en" : "zh"\)/);
+  assert.match(workerSource, /idcPulse: firstItems\(payload\.idcPulse, 4\)/);
+  assert.match(workerSource, /rumors: firstItems\(payload\.rumors, 1\)/);
   assert.match(workerSource, /new CompressionStream\("gzip"\)/);
   assert.match(workerSource, /if \(prime\.prime\) internalUrl\.searchParams\.set\("__atlas_prime", prime\.prime\)/);
   for (const key of ["idcPulse", "listedCompanyNews", "upcomingEvents", "aiDaily"]) assert.match(workerSource, new RegExp(key));

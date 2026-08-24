@@ -3678,23 +3678,23 @@ function compactInitialAtlasPayload(payload: Record<string, unknown>): Record<st
   };
 }
 
-function compactHomepageAtlasPayload(payload: Record<string, unknown>): Record<string, unknown> {
+function compactHomepageAtlasPayload(payload: Record<string, unknown>, language: "zh" | "en"): Record<string, unknown> {
   const coreRecords = ["idcPulse", "listedCompanyNews", "mnaDeals"].flatMap((key) => Array.isArray(payload[key]) ? payload[key] : []) as Array<Record<string, unknown>>;
   const sourceCount = new Set(coreRecords.map((item) => typeof item.sourceName === "string" ? item.sourceName : null).filter((value): value is string => Boolean(value))).size;
   const compactStory = (value: unknown) => {
     const item = value as Record<string, unknown>;
+    const localizedFields = language === "zh" ? ["title"] : ["titleEn"];
     return Object.fromEntries([
-      "id", "title", "titleEn", "summary", "summaryEn", "publishedAt", "category", "permalink", "sourceUrl", "sourceName",
+      "id", ...localizedFields, "publishedAt", "category", "permalink", "sourceUrl", "sourceName",
       "region", "milestone", "scale", "listedTicker", "entityIds", "imageSrc", "imageAlt",
     ].map((key) => [key, item[key]]).filter(([, field]) => field != null));
   };
-  const compactEvent = (value: unknown) => {
-    const item = value as Record<string, unknown>;
-    return Object.fromEntries(["id", "startsAt", "company", "ticker", "sector", "sourceUrl", "sourceName"].map((key) => [key, item[key]]).filter(([, field]) => field != null));
-  };
   const compactRumor = (value: unknown) => {
     const item = value as Record<string, unknown>;
-    return Object.fromEntries(["id", "title", "titleEn", "summary", "summaryEn", "publishedAt", "sourceName", "sourceUrl", "sourceCount", "region", "statusLabel", "statusLabelEn", "officialResponse", "officialResponseEn"].map((key) => [key, item[key]]).filter(([, field]) => field != null));
+    const localizedFields = language === "zh"
+      ? ["title", "summary", "statusLabel"]
+      : ["titleEn", "summaryEn", "statusLabelEn"];
+    return Object.fromEntries(["id", ...localizedFields, "publishedAt", "sourceName", "sourceUrl", "sourceCount", "region"].map((key) => [key, item[key]]).filter(([, field]) => field != null));
   };
   return {
     generatedAt: payload.generatedAt,
@@ -3707,12 +3707,15 @@ function compactHomepageAtlasPayload(payload: Record<string, unknown>): Record<s
     dailyBrief: payload.dailyBrief,
     sourceCount: payload.sourceCount ?? sourceCount,
     verifiedCount: payload.verifiedCount ?? coreRecords.length,
-    idcPulse: firstItems(payload.idcPulse, 8).map(compactStory),
-    listedCompanyNews: firstItems(payload.listedCompanyNews, 4).map(compactStory),
-    mnaDeals: firstItems(payload.mnaDeals, 3),
-    benchmarks: firstItems(payload.benchmarks, 4),
-    upcomingEvents: firstItems(payload.upcomingEvents, 3).map(compactEvent),
-    rumors: firstItems(payload.rumors, 2).map(compactRumor),
+    // Keep the server-rendered homepage payload below the reliable 3.5 KB
+    // internal-query threshold. The client adopts the complete live payload
+    // immediately after hydration.
+    idcPulse: firstItems(payload.idcPulse, 4).map(compactStory),
+    listedCompanyNews: [],
+    mnaDeals: [],
+    benchmarks: [],
+    upcomingEvents: [],
+    rumors: firstItems(payload.rumors, 1).map(compactRumor),
   };
 }
 
@@ -3756,7 +3759,7 @@ async function initialAtlasHeaders(request: Request, env: Env, ctx: ExecutionCon
         calendarEvents: firstItems(payload.calendarEvents, 20),
       }
       : pathname === "/" || pathname === "/en"
-        ? compactHomepageAtlasPayload(payload)
+        ? compactHomepageAtlasPayload(payload, pathname === "/en" ? "en" : "zh")
         : compactInitialAtlasPayload(payload);
     const json = new TextEncoder().encode(JSON.stringify(initialPayload));
     const compressed = new Blob([json]).stream().pipeThrough(new CompressionStream("gzip"));
