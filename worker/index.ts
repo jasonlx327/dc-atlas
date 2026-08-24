@@ -3991,7 +3991,11 @@ const worker = {
           headers.set(INITIAL_ATLAS_META_HEADER, prime.meta);
           headers.set("x-idc-request-path", url.pathname);
           const internalUrl = new URL(request.url);
-          if (prime.prime && prime.prime.length <= 3_500) internalUrl.searchParams.set("__atlas_prime", prime.prime);
+          // Vinext does not reliably expose Worker-added request headers to
+          // server components. Keep the small cookie optimization, but always
+          // pass the bounded compressed payload through the internal request
+          // URL so the first server render cannot collapse to an empty shell.
+          if (prime.prime) internalUrl.searchParams.set("__atlas_prime", prime.prime);
           return await handler.fetch(new Request(internalUrl, { headers }), env, ctx);
         }
       }
