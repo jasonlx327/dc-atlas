@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "atlas-daily-remediation.v1",
+  "runId": "atlas-2026-08-24-full",
+  "runDate": "2026-08-24",
+  "generatedAt": "2026-08-24T01:53:18Z",
+  "status": "blocked",
+  "window": {
+    "start": "2026-08-23T09:32:49+08:00",
+    "end": "2026-08-24T09:32:49+08:00",
+    "fallback": true,
+    "reason": "Recent 16:30 run was blocked and no trusted successful cutoff was available."
+  },
+  "pipeline": {
+    "scan": {"fetched": 2536, "normalized": 2496, "duplicates": 40, "relevant": 1641, "clusters": 561, "held": 89, "errors": 6},
+    "brief": {"candidates": 88},
+    "judgment": {"judged": 88, "selected": 68, "watch": 20, "publishFormal": 0, "publishRumor": 0, "missingEventIds": 0},
+    "remoteKvWrite": false,
+    "remoteKvReason": "No automatic judgment qualified a formal or rumor KV publication write."
+  },
+  "overlays": {
+    "coreCompanies": {"checked": 50, "hits": 20, "newOrChanged": 20, "noChange": 15, "notDetermined": 15},
+    "chinaXpuDirectIssuers": {"checked": 7, "hits": 0, "newOrChanged": 0, "noChange": 0, "notDetermined": 7},
+    "interconnectCpo": {"checked": 20, "hits": 2, "newOrChanged": 2, "noChange": 1, "notDetermined": 17}
+  },
+  "sections": {
+    "included": ["rumors"],
+    "held": ["idc-pulse", "listed-companies", "mna", "capacity", "cooling", "compute-products", "china-gpu", "supply-chain", "power-model-demand", "earnings-calendar", "policy", "columns"],
+    "rumors": {"disposition": "publish", "newIds": ["terranova-campinas-300mw-rumor-2026"], "evidence": "T3 single-source-report; no owner/utility/regulator confirmation"}
+  },
+  "checks": {
+    "eventCodex": "passed",
+    "companyWatch": "passed",
+    "autoEditor": "passed",
+    "dailyClosure": "passed",
+    "tests": "passed",
+    "lint": "passed-with-27-warnings",
+    "build": "passed",
+    "cloudflareDryRun": "passed",
+    "live": "passed",
+    "seo": "passed"
+  },
+  "release": {
+    "mode": "partial",
+    "status": "blocked-by-sites-authorization",
+    "cloudflare": "not-run",
+    "sites": "blocked",
+    "formalReadback": "pending",
+    "dailySnapshotReadback": "pending",
+    "sitesReadback": "pending",
+    "sameHead": false,
+    "commit": null,
+    "workerCommit": null,
+    "sitesCommit": null
+  },
+  "handoffs": [
+    "6 scan source errors and 89 held clusters",
+    "15 core companies not-determined",
+    "7 China XPU direct issuers not-determined",
+    "17 interconnect/CPO companies not-determined",
+    "stale 2026-08-20 candidate packet and KV HTTP 401",
+    "12 held Atlas sections",
+    "Existing DC Atlas Sites project is public; public production deployment needs explicit approval."
+  ]
+}

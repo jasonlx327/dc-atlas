@@ -235,6 +235,26 @@ export const POLICY_BRIEFS: PolicyIndexRecord[] = [
 
 export const RUMOR_BRIEFS: RumorWatchItem[] = [
   {
+    id: "terranova-campinas-300mw-rumor-2026",
+    title: "巴西 Terranova 据报道启动 Campinas 数据中心园区首期建设",
+    titleEn: "Terranova reportedly starts work on a 300MW data-center campus near São Paulo",
+    summary: "Data Center Dynamics 8 月 22 日报道称，拉美运营商 Terranova 已启动巴西 Campinas 园区首期建设：首期变电站容量为 300MW，预计 2027 年 12 月投运，并可扩展至 1GW；报道称首期投资将超过 5 亿美元，项目采用闭环液冷。上述为单一行业媒体报道，报道未提供项目方、并网主体或监管文件的完整一手确认，因此 300MW、1GW 和投运时间均不等同于已获批、已送电、已调试或已运营容量。",
+    summaryEn: "Data Center Dynamics reported on August 22 that Latin American operator Terranova had started the first phase of its Campinas campus in Brazil. The report says the initial substation is designed for 300MW, targeted for December 2027, with a potential expansion to 1GW; it also describes more than $500M of initial investment and a closed-loop liquid-cooling system. This remains a single-source industry-media report: no complete project-owner, interconnection or regulatory confirmation was located, so the 300MW, 1GW and timing figures are not evidence of permitted, energized, commissioned or operating capacity.",
+    publishedAt: "2026-08-22T11:00:30Z",
+    sourceName: "Data Center Dynamics",
+    sourceUrl: "https://www.datacenterdynamics.com/en/news/terranova-boosts-technology-infrastructure-with-the-construction-of-one-of-latin-americas-first-ai-data-centers/",
+    region: "全球",
+    status: "reported",
+    statusLabel: "单一行业媒体报道 · 项目与容量待一手确认",
+    statusLabelEn: "Single-source trade report · project and capacity await primary confirmation",
+    sourceCount: 1,
+    entities: ["Terranova", "Actis", "Campus Campinas", "São Paulo", "Brazil"],
+    officialResponse: "截至本轮扫描，没有找到 Terranova、Actis、供电主体或监管机构对该园区建设、并网和容量阶段的完整公开确认。",
+    officialResponseEn: "By this scan, no complete public confirmation of the campus construction, interconnection or capacity stage was located from Terranova, Actis, a power provider or a regulator.",
+    sourceNote: "核心项目、300MW 首期、1GW 潜在扩展、投资额和闭环液冷信息来自 Data Center Dynamics 单一报道；保留为 Rumor Watch，等待项目方或电力/许可记录确认。",
+    sourceNoteEn: "The project, initial 300MW, potential 1GW expansion, investment and closed-loop cooling details come from a single Data Center Dynamics report; the item remains in Rumor Watch pending project-owner or power/permit confirmation.",
+  },
+  {
     id: "together-ai-ibm-cloud-240m-inference-cluster-2026",
     title: "Together AI 据报与 IBM Cloud 签署 2.4 亿美元算力协议",
     titleEn: "Together AI is reported to have signed a $240M compute agreement with IBM Cloud",

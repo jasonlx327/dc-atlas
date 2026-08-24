@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-08-24-full",
+  "sources": [
+    {
+      "ref": "global-scan-2026-08-24-event-night",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "Current Codex global source scan",
+      "observedAt": "2026-08-24T01:35:50.999Z",
+      "details": {
+        "fetched": 2536,
+        "normalized": 2496,
+        "duplicates": 40,
+        "clusters": 561,
+        "sourceCount": 76,
+        "passingSourceCount": 70,
+        "errors": 6,
+        "windowFrom": "2026-08-23T09:32:49+08:00",
+        "windowTo": "2026-08-24T09:32:49+08:00"
+      },
+      "sections": [
+        "*"
+      ]
+    },
+    {
+      "ref": "previous-candidate-packet-2026-08-20",
+      "evidenceKind": "workflow-state",
+      "sourceName": "Worker daily candidate packet latest (stale discovery handoff)",
+      "observedAt": "2026-08-24T01:34:00Z",
+      "details": {
+        "day": "2026-08-20",
+        "candidateCount": 81,
+        "selectedCount": 50,
+        "watchCount": 21,
+        "publicationReadyCount": 21,
+        "remoteReadback": "401 on repeat attempt; first npm run read recorded"
+      },
+      "sections": [
+        "*"
+      ]
+    },
+    {
+      "ref": "core-company-checks-2026-08-24",
+      "evidenceKind": "workflow-state",
+      "sourceName": "50-company official-entry audit",
+      "observedAt": "2026-08-24T01:46:17.559Z",
+      "details": {
+        "checked": 50,
+        "hitCount": 20,
+        "results": {
+          "new/changed": 20,
+          "no-change": 15,
+          "not-determined": 15
+        },
+        "accessGaps": 27
+      },
+      "sections": [
+        "*"
+      ]
+    },
+    {
+      "ref": "china-xpu-listed-checks-2026-08-24",
+      "evidenceKind": "workflow-state",
+      "sourceName": "China XPU direct-issuer exchange plus IR overlay",
+      "observedAt": "2026-08-24T01:46:17.559Z",
+      "details": {
+        "checked": 7,
+        "hitCount": 0,
+        "results": {
+          "new/changed": 0,
+          "no-change": 0,
+          "not-determined": 7
+        }
+      },
+      "sections": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ]
+    },
+    {
+      "ref": "interconnect-cpo-checks-2026-08-24",
+      "evidenceKind": "workflow-state",
+      "sourceName": "Interconnect/CPO forced overlay",
+      "observedAt": "2026-08-24T01:46:17.559Z",
+      "details": {
+        "checked": 20,
+        "hitCount": 2,
+        "results": {
+          "new/changed": 2,
+          "no-change": 1,
+          "not-determined": 17
+        }
+      },
+      "sections": [
+        "compute-products",
+        "listed-companies",
+        "supply-chain",
+        "earnings-calendar"
+      ]
+    },
+    {
+      "ref": "rumor-terranova-dcd-2026-08-22",
+      "evidenceKind": "public-source",
+      "sourceName": "Data Center Dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/terranova-boosts-technology-infrastructure-with-the-construction-of-one-of-latin-americas-first-ai-data-centers/",
+      "publishedAt": "2026-08-22T11:00:30Z",
+      "accessState": "public",
+      "independenceGroup": "datacenter-dynamics",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "google-credentio-t1-2026-08-13",
+      "evidenceKind": "public-source",
+      "sourceName": "Google Developers Blog",
+      "tier": "T1",
+      "canonicalUrl": "https://developers.googleblog.com/introducing-credentio-open-source-c-library-for-c2pa-content-credentials-from-google/",
+      "publishedAt": "2026-08-13T00:00:00Z",
+      "accessState": "public",
+      "independenceGroup": "google",
+      "sections": [
+        "compute-products"
+      ]
+    },
+    {
+      "ref": "google-agent-plugins-t1-2026-08-06",
+      "evidenceKind": "public-source",
+      "sourceName": "Google Developers Blog",
+      "tier": "T1",
+      "canonicalUrl": "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/",
+      "publishedAt": "2026-08-06T00:00:00Z",
+      "accessState": "public",
+      "independenceGroup": "google",
+      "sections": [
+        "compute-products"
+      ]
+    },
+    {
+      "ref": "google-qwen-ironwood-t1-2026-07-14",
+      "evidenceKind": "public-source",
+      "sourceName": "Google Developers Blog",
+      "tier": "T1",
+      "canonicalUrl": "https://developers.googleblog.com/systems-engineering-playbook-optimizing-qwen-35-397b-moe-on-ironwood-tpu7x/",
+      "publishedAt": "2026-07-14T00:00:00Z",
+      "accessState": "public",
+      "independenceGroup": "google",
+      "sections": [
+        "compute-products",
+        "power-model-demand"
+      ]
+    },
+    {
+      "ref": "google-prompt-transpilation-t1-2026-08-01",
+      "evidenceKind": "public-source",
+      "sourceName": "Google Developers Blog",
+      "tier": "T1",
+      "canonicalUrl": "https://developers.googleblog.com/building-scalable-ai-agents-with-modular-prompt-transpilation/",
+      "publishedAt": "2026-08-01T00:00:00Z",
+      "accessState": "public",
+      "independenceGroup": "google",
+      "sections": [
+        "compute-products"
+      ]
+    }
+  ]
+}

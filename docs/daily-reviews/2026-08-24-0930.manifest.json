@@ -1,0 +1,303 @@
+{
+  "schemaVersion": "1.1",
+  "runId": "atlas-2026-08-24-full",
+  "runDate": "2026-08-24",
+  "cutoff": "2026-08-24T09:32:49+08:00",
+  "displayTimezones": {
+    "zh": "Asia/Shanghai",
+    "en": "America/New_York"
+  },
+  "status": "blocked",
+  "projectPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-09-30-2026-08-24",
+  "sourceLedgerPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-09-30-2026-08-24/docs/daily-reviews/2026-08-24-0930.sources.json",
+  "host": "bogon",
+  "headBefore": "2484b45089e9e1a749fb05e5acbcf41b5efcd258",
+  "sections": {
+    "idc-pulse": {
+      "status": "blocked",
+      "checkedAt": "2026-08-24T01:46:17.559Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-24-event-night",
+        "core-company-checks-2026-08-24"
+      ],
+      "accessGaps": [
+        "Current-window evidence or mandatory source coverage is incomplete; retain affected events as editor handoff."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Independent source-led scan completed, but no current-window T0/T1 bilingual record reached publication authority for this section."
+    },
+    "listed-companies": {
+      "status": "blocked",
+      "checkedAt": "2026-08-24T01:46:17.559Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-24-event-night",
+        "core-company-checks-2026-08-24",
+        "china-xpu-listed-checks-2026-08-24",
+        "interconnect-cpo-checks-2026-08-24"
+      ],
+      "accessGaps": [
+        "Current-window evidence or mandatory source coverage is incomplete; retain affected events as editor handoff."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Independent source-led scan completed, but no current-window T0/T1 bilingual record reached publication authority for this section."
+    },
+    "mna": {
+      "status": "blocked",
+      "checkedAt": "2026-08-24T01:46:17.559Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-24-event-night",
+        "core-company-checks-2026-08-24"
+      ],
+      "accessGaps": [
+        "Current-window evidence or mandatory source coverage is incomplete; retain affected events as editor handoff."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Independent source-led scan completed, but no current-window T0/T1 bilingual record reached publication authority for this section."
+    },
+    "capacity": {
+      "status": "blocked",
+      "checkedAt": "2026-08-24T01:46:17.559Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-24-event-night",
+        "core-company-checks-2026-08-24"
+      ],
+      "accessGaps": [
+        "Current-window evidence or mandatory source coverage is incomplete; retain affected events as editor handoff."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Independent source-led scan completed, but no current-window T0/T1 bilingual record reached publication authority for this section."
+    },
+    "cooling": {
+      "status": "blocked",
+      "checkedAt": "2026-08-24T01:46:17.559Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-24-event-night",
+        "core-company-checks-2026-08-24"
+      ],
+      "accessGaps": [
+        "Current-window evidence or mandatory source coverage is incomplete; retain affected events as editor handoff."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Independent source-led scan completed, but no current-window T0/T1 bilingual record reached publication authority for this section."
+    },
+    "compute-products": {
+      "status": "blocked",
+      "checkedAt": "2026-08-24T01:46:17.559Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 4,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-24-event-night",
+        "interconnect-cpo-checks-2026-08-24",
+        "google-credentio-t1-2026-08-13",
+        "google-agent-plugins-t1-2026-08-06",
+        "google-qwen-ironwood-t1-2026-07-14",
+        "google-prompt-transpilation-t1-2026-08-01"
+      ],
+      "accessGaps": [
+        "Current-window evidence or mandatory source coverage is incomplete; retain affected events as editor handoff."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Independent source-led scan completed, but no current-window T0/T1 bilingual record reached publication authority for this section."
+    },
+    "china-gpu": {
+      "status": "blocked",
+      "checkedAt": "2026-08-24T01:46:17.559Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-24-event-night",
+        "core-company-checks-2026-08-24",
+        "china-xpu-listed-checks-2026-08-24"
+      ],
+      "accessGaps": [
+        "Current-window evidence or mandatory source coverage is incomplete; retain affected events as editor handoff."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Independent source-led scan completed, but no current-window T0/T1 bilingual record reached publication authority for this section."
+    },
+    "supply-chain": {
+      "status": "blocked",
+      "checkedAt": "2026-08-24T01:46:17.559Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-24-event-night",
+        "interconnect-cpo-checks-2026-08-24"
+      ],
+      "accessGaps": [
+        "Current-window evidence or mandatory source coverage is incomplete; retain affected events as editor handoff."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Independent source-led scan completed, but no current-window T0/T1 bilingual record reached publication authority for this section."
+    },
+    "power-model-demand": {
+      "status": "blocked",
+      "checkedAt": "2026-08-24T01:46:17.559Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-24-event-night",
+        "core-company-checks-2026-08-24"
+      ],
+      "accessGaps": [
+        "Current-window evidence or mandatory source coverage is incomplete; retain affected events as editor handoff."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Independent source-led scan completed, but no current-window T0/T1 bilingual record reached publication authority for this section."
+    },
+    "earnings-calendar": {
+      "status": "blocked",
+      "checkedAt": "2026-08-24T01:46:17.559Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-24-event-night",
+        "core-company-checks-2026-08-24"
+      ],
+      "accessGaps": [
+        "Current-window evidence or mandatory source coverage is incomplete; retain affected events as editor handoff."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Independent source-led scan completed, but no current-window T0/T1 bilingual record reached publication authority for this section."
+    },
+    "policy": {
+      "status": "blocked",
+      "checkedAt": "2026-08-24T01:46:17.559Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-24-event-night",
+        "core-company-checks-2026-08-24"
+      ],
+      "accessGaps": [
+        "Current-window evidence or mandatory source coverage is incomplete; retain affected events as editor handoff."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Independent source-led scan completed, but no current-window T0/T1 bilingual record reached publication authority for this section."
+    },
+    "columns": {
+      "status": "blocked",
+      "checkedAt": "2026-08-24T01:46:17.559Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-24-event-night",
+        "core-company-checks-2026-08-24"
+      ],
+      "accessGaps": [
+        "Current-window evidence or mandatory source coverage is incomplete; retain affected events as editor handoff."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Independent source-led scan completed, but no current-window T0/T1 bilingual record reached publication authority for this section."
+    },
+    "rumors": {
+      "status": "updated",
+      "checkedAt": "2026-08-24T01:46:17.559Z",
+      "newIds": [
+        "terranova-campinas-300mw-rumor-2026"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 1,
+      "sourceRefs": [
+        "global-scan-2026-08-24-event-night",
+        "rumor-terranova-dcd-2026-08-22"
+      ],
+      "accessGaps": [
+        "No project-owner, utility or regulator confirmation located; item is intentionally attributed as single-source-report."
+      ],
+      "releaseDisposition": "publish",
+      "notes": "Added one bilingual Rumor Watch item from an accessible T3 report; 300MW/1GW remain reported plan-stage figures, not operating capacity."
+    }
+  },
+  "release": {
+    "mode": "partial",
+    "tests": "passed",
+    "build": "passed",
+    "cloudflare": "pending",
+    "formalReadback": "pending",
+    "dailySnapshot": "pending",
+    "sites": "failed",
+    "sitesReadback": "pending",
+    "commit": null,
+    "workerCommit": null,
+    "sitesCommit": null,
+    "cloudflareVersion": null,
+    "sitesVersion": null,
+    "formalUrl": null,
+    "sitesUrl": null,
+    "includedSections": [
+      "rumors"
+    ],
+    "heldSections": [
+      "idc-pulse",
+      "listed-companies",
+      "mna",
+      "capacity",
+      "cooling",
+      "compute-products",
+      "china-gpu",
+      "supply-chain",
+      "power-model-demand",
+      "earnings-calendar",
+      "policy",
+      "columns"
+    ],
+    "testBaseline": null
+  },
+  "blockers": [
+    "Previous 16:30 run was blocked; applied a >=24h fallback window from 2026-08-23T09:32:49+08:00 to actual start 2026-08-24T09:32:49+08:00.",
+    "Current scan partial: 6 source errors and 89 held clusters; inaccessible inputs remain handoffs.",
+    "Worker candidate latest was stale at day=2026-08-20; repeated KV read returned 401, so it was not used as publication authority.",
+    "China XPU 7/7 and interconnect/CPO 20/20 overlays were attempted, but access gaps prevent no-change closure for affected issuers/companies.",
+    "Only one T3 Rumor Watch item reached bilingual content authority; no formal current-window T0/T1 record was written.",
+    "The existing DC Atlas Sites project is public; explicit approval is required before any public production deployment, so Cloudflare was not deployed separately and same-HEAD release proof is unavailable."
+  ]
+}

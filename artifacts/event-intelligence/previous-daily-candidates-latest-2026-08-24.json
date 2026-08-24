@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "atlas-event-candidates-audit.v1",
+  "retrievedAt": "2026-08-24T01:35:50.999Z",
+  "source": "event-intelligence:candidates:latest",
+  "status": "stale-discovery-handoff",
+  "day": "2026-08-20",
+  "generatedAt": "2026-08-19T22:31:44.844Z",
+  "sourceSlots": ["event-night"],
+  "model": "gpt-5.6-luna",
+  "candidateCount": 81,
+  "selectedCount": 50,
+  "watchCount": 21,
+  "ruleEligibleCount": 21,
+  "publicationReadyCount": 21,
+  "fallbackCount": 0,
+  "authority": "discovery-only; not used as publication authority",
+  "accessNote": "A subsequent direct KV read returned HTTP 401; the stale metadata above is retained as an audit handoff."
+}

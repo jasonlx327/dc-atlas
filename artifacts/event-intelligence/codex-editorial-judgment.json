@@ -1,0 +1,1595 @@
+{
+  "schemaVersion": "atlas-codex-editorial-judgment.v1",
+  "day": "2026-08-24",
+  "generatedAt": "2026-08-24T01:37:28.851Z",
+  "sourceGeneratedAt": "2026-08-24T01:35:50.999Z",
+  "model": "gpt-5.6-luna",
+  "status": "completed",
+  "verdicts": [
+    {
+      "eventId": "evt-03b191d69a26e1e8c222",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 1.5,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T1一手来源，主题相关性与具体性按当前来源链评分；pulse 路由仍需 Atlas 正式来源、双语和结构门禁。",
+      "reasonCodes": [
+        "primary-source",
+        "officially-confirmed",
+        "formal-route-candidate",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-264a4852ac01f8e38222",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-7e6c48df8a1b8422675c",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-90ad149f8f21a41a0ce0",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T2可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-48cb8b4ef70f568d4997",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-a7c12863f9087f5eaf8e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-13bdf71dafc63cc26683",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-731022286a582f9e1da4",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 1.5,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T1一手来源，主题相关性与具体性按当前来源链评分；pulse 路由仍需 Atlas 正式来源、双语和结构门禁。",
+      "reasonCodes": [
+        "primary-source",
+        "officially-confirmed",
+        "formal-route-candidate",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-24c820ebeb8151ad3e26",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-77bdc07c35f083aaabaa",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 1.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-8a364bafe52cb6ee17cd",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-f861bcf54abd8b063b5a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-cd93e2cec0883583609a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-56c8cce7b113f143fe0e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-96272c1d55b45e3814c7",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-b889d2a8924c8a9dbfdb",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-bcbf9c2f8d4efa407226",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-d38f1cb8622dfc6319e9",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-505108b50bd6c826e206",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-ae9145ebcdcc44609c3f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-5931b8073815a1ce8c4d",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-d4e92e2b526b0ed27029",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-adeb206f59d98b0c0dd6",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-ddf07c3b5ca229cd3aa3",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-7ea153bd2f78f86e5b66",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-f8da9516daf5285b0273",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-9f56e6c36375b3c43052",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-a7aa7608071a7f8ba92d",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-4e07c5b3ed362c2c1e79",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-17b2dced354c9e108cf8",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-9fa243472759fafd944f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-d27934f4a35c40da596e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-4ea6fd0fbd8355bcae3e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-8e0e27c0e6553eb69bae",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-46107c5746a02562433a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-a80ae45549d1fe7b69d5",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-9ec5e7e1b5adc0b54630",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-1099a3785724b8625c77",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-2138bfea415ae5b2d0ec",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-534c64e36aa800bb7204",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-46081078ce2e6d23e35d",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-22fa182646dbb6a97ad7",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-0387901e0817adf46711",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-51ed07f2058582fbc484",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T2可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-3935c0856ac8fa5c2049",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-4f4b28f4741cf00d41de",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-9cfe2af2733ced4a48fd",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-fcab8282174fbf0ca9b0",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 2,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-f5eac130af632803f670",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T2可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-9fe5085d8324f739128f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T2可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-017cab3bea0230fff371",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T2可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-2833dff0c57845e05010",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-6ef72480e29632e93b0e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-2caee09f0eaafa0454d2",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-5109e5e459ea2f47989f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-a081ac66158bc69799aa",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 2,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-26f0e9038cec04544cc9",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-f5d5887184e5ecd0fadb",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 0,
+        "researchValueScore": 4.4,
+        "readerValueScore": 2.5
+      },
+      "rationale": "逐项复核：T1一手来源，主题相关性与具体性按当前来源链评分；pulse 路由仍需 Atlas 正式来源、双语和结构门禁。",
+      "reasonCodes": [
+        "primary-source",
+        "officially-confirmed",
+        "formal-route-candidate",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-3307b456001abeeffe8d",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 0,
+        "researchValueScore": 4.4,
+        "readerValueScore": 2.5
+      },
+      "rationale": "逐项复核：T1一手来源，主题相关性与具体性按当前来源链评分；pulse 路由仍需 Atlas 正式来源、双语和结构门禁。",
+      "reasonCodes": [
+        "primary-source",
+        "officially-confirmed",
+        "formal-route-candidate",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-73d38a338ee4edc182af",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-b246095ddf1339557c5f",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 1.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-f86d690a61da8d526f0d",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-9163beaca94739074f0f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-8e31955228116e7575a9",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-551018935e5c0849313f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-57ceacb6efcb3a652f97",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-90c8d60cacf60d6911b0",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-542622bd507c8d87a76f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-bba40285c7581ce83f87",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-28bb2a48be36d1fc4387",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-b67c3271174a2156a913",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-b0005ab5e48ec4fc8395",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 0,
+        "researchValueScore": 3.5,
+        "readerValueScore": 2.5
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-572de08442428e29bba8",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 0,
+        "researchValueScore": 3.5,
+        "readerValueScore": 2.5
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-cd7bc88f04dd79a02ead",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "materiality-selected"
+      ]
+    },
+    {
+      "eventId": "evt-edbd4cbbd353bc652621",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-fd408badada67c77a6a8",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-f504fa94ab9869a977cd",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-ee35274520567e37e35e",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-87703c0d345d80d495e8",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-0deb913bba1c26a2e053",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-79f8b5d43f51b0dc3047",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-49aaacd99c8eaaf72ebd",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-84b75cee3926d0be2111",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-960736f7704e903bc6df",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-4ad2cd363d1e6503fcf0",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-b6bac88a072b079ad4be",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-46125e54dc093099a03d",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "逐项复核：当前仅有发现索引或弱来源，保留来源链与 handoff，不能作为正式内容或 no-change 证据。",
+      "reasonCodes": [
+        "discovery-lead",
+        "source-verification-needed",
+        "internal-handoff",
+        "retain-for-review"
+      ]
+    },
+    {
+      "eventId": "evt-a57bd3a075c60c225bac",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 0,
+        "researchValueScore": 3.5,
+        "readerValueScore": 2.5
+      },
+      "rationale": "逐项复核：T3可归因报道但未形成一手确认，保留为 Rumor Watch/编辑复核，不改写为正式事实。",
+      "reasonCodes": [
+        "attributable-media",
+        "reported-not-confirmed",
+        "rumor-watch-route",
+        "retain-for-review"
+      ]
+    }
+  ],
+  "errors": []
+}

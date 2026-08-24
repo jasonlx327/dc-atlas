@@ -1,0 +1,1123 @@
+{
+  "schemaVersion": "atlas-interconnect-cpo-checks.v1",
+  "runId": "atlas-2026-08-24-full",
+  "checkedAt": "2026-08-24T01:42:19.881Z",
+  "window": {
+    "from": "2026-08-23T09:32:49+08:00",
+    "to": "2026-08-24T09:32:49+08:00",
+    "cutoffBasis": "previous 16:30 run blocked; >=24h fallback"
+  },
+  "requiredKeywords": [
+    "CPO",
+    "silicon photonics",
+    "optical engine",
+    "ELS",
+    "OCS",
+    "NPO",
+    "LPO",
+    "pluggable optics",
+    "800G/1.6T/3.2T",
+    "AEC/ACC",
+    "retimer",
+    "switch ASIC",
+    "SuperNIC/DPU",
+    "scale-up/scale-out/scale-across",
+    "rack-scale"
+  ],
+  "companyCount": 20,
+  "checkedCount": 20,
+  "hitCount": 2,
+  "results": {
+    "new/changed": 2,
+    "no-change": 1,
+    "not-determined": 17
+  },
+  "companies": [
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "aliases": [
+        "NVIDIA",
+        "英伟达"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": false,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://nvidianews.nvidia.com/",
+            "role": "official-newsroom"
+          },
+          {
+            "url": "https://investor.nvidia.com/financial-info/quarterly-results/default.aspx",
+            "role": "IR/earnings"
+          }
+        ],
+        "publicSources": 1,
+        "accessGaps": [
+          {
+            "url": "https://investor.nvidia.com/financial-info/quarterly-results/default.aspx",
+            "role": "IR/earnings",
+            "status": "restricted",
+            "httpStatus": 403
+          }
+        ]
+      },
+      "accessStatus": "partial",
+      "attempts": [
+        {
+          "url": "https://nvidianews.nvidia.com/",
+          "role": "official-newsroom",
+          "finalUrl": "https://nvidianews.nvidia.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 933
+        },
+        {
+          "url": "https://investor.nvidia.com/financial-info/quarterly-results/default.aspx",
+          "role": "IR/earnings",
+          "finalUrl": "https://investor.nvidia.com/financial-info/quarterly-results/default.aspx",
+          "httpStatus": 403,
+          "accessStatus": "restricted",
+          "durationMs": 686
+        }
+      ],
+      "result": "new/changed",
+      "eventIds": [
+        "evt-48cb8b4ef70f568d4997",
+        "evt-5931b8073815a1ce8c4d",
+        "evt-8e0e27c0e6553eb69bae",
+        "evt-46107c5746a02562433a",
+        "evt-90ad149f8f21a41a0ce0",
+        "evt-0387901e0817adf46711"
+      ],
+      "originalUrls": [
+        "https://www.ithome.com/0/993/342.htm",
+        "https://x.com/omarsar0/status/2091558158439182738",
+        "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1TSnhXeWpsVVNFejhOTTJqTDY1NkhXTWtqTFVsOXctUGU3dFVkWENwNnJ4cElfNlVPWGZtRVd5REtXaVBjdFRCb0FqdU8tZWR0LTFIOFgtNA?oc=5",
+        "https://www.ithome.com/0/993/313.htm",
+        "https://www.marketwatch.com/story/nvidia-is-the-beating-heart-of-the-ai-boom-and-the-stock-market-which-sets-up-a-big-test-bed36f98?mod=mw_rss_topstories",
+        "https://news.google.com/rss/articles/CBMickFVX3lxTE9pdGtnTXZKR0Z0QUx3YktocFpxOWNHM1lzTlpfUFZTTEI2SmlTaWVQeVdxRW9HazZzTUxvU0dld2pDcEdRNUN1dFo3amx2V2hKaUs1RzhCUC1OR09SSmtIWnlhVnpuSExPSkxVMWNyM2lzZw?oc=5"
+      ],
+      "notes": "Material current-window event matched overlay terms; route to supply-chain and listed-companies where applicable. Current-window filter applied."
+    },
+    {
+      "id": "broadcom",
+      "name": "Broadcom",
+      "aliases": [
+        "Broadcom",
+        "博通"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": false,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://investors.broadcom.com/news-releases",
+            "role": "IR/newsroom"
+          },
+          {
+            "url": "https://investors.broadcom.com/financial-information/quarterly-results",
+            "role": "IR/earnings"
+          }
+        ],
+        "publicSources": 1,
+        "accessGaps": [
+          {
+            "url": "https://investors.broadcom.com/news-releases",
+            "role": "IR/newsroom",
+            "status": "not-found",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "accessStatus": "partial",
+      "attempts": [
+        {
+          "url": "https://investors.broadcom.com/news-releases",
+          "role": "IR/newsroom",
+          "finalUrl": "https://investors.broadcom.com/news-releases",
+          "httpStatus": 404,
+          "accessStatus": "not-found",
+          "durationMs": 1180
+        },
+        {
+          "url": "https://investors.broadcom.com/financial-information/quarterly-results",
+          "role": "IR/earnings",
+          "finalUrl": "https://investors.broadcom.com/financial-information/quarterly-results",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 929
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Material current-window event matched overlay terms; route to supply-chain and listed-companies where applicable."
+    },
+    {
+      "id": "marvell",
+      "name": "Marvell",
+      "aliases": [
+        "Marvell",
+        "美满电子"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": false,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://investor.marvell.com/news-releases",
+            "role": "IR/newsroom"
+          },
+          {
+            "url": "https://investor.marvell.com/financial-information/quarterly-results",
+            "role": "IR/earnings"
+          }
+        ],
+        "publicSources": 1,
+        "accessGaps": [
+          {
+            "url": "https://investor.marvell.com/financial-information/quarterly-results",
+            "role": "IR/earnings",
+            "status": "not-found",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "accessStatus": "partial",
+      "attempts": [
+        {
+          "url": "https://investor.marvell.com/news-releases",
+          "role": "IR/newsroom",
+          "finalUrl": "https://investor.marvell.com/news-events/press-releases",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1652
+        },
+        {
+          "url": "https://investor.marvell.com/financial-information/quarterly-results",
+          "role": "IR/earnings",
+          "finalUrl": "https://investor.marvell.com/financial-information/quarterly-results",
+          "httpStatus": 404,
+          "accessStatus": "not-found",
+          "durationMs": 743
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Official entry/IR or listed-company exchange coverage did not fully resolve; no no-change inference."
+    },
+    {
+      "id": "arista",
+      "name": "Arista Networks",
+      "aliases": [
+        "Arista",
+        "Arista Networks"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": false,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://investors.arista.com/news-releases",
+            "role": "IR/newsroom"
+          },
+          {
+            "url": "https://investors.arista.com/financial-information/quarterly-results",
+            "role": "IR/earnings"
+          }
+        ],
+        "publicSources": 0,
+        "accessGaps": [
+          {
+            "url": "https://investors.arista.com/news-releases",
+            "role": "IR/newsroom",
+            "status": "restricted",
+            "httpStatus": 403
+          },
+          {
+            "url": "https://investors.arista.com/financial-information/quarterly-results",
+            "role": "IR/earnings",
+            "status": "restricted",
+            "httpStatus": 403
+          }
+        ]
+      },
+      "accessStatus": "unavailable",
+      "attempts": [
+        {
+          "url": "https://investors.arista.com/news-releases",
+          "role": "IR/newsroom",
+          "finalUrl": "https://investors.arista.com/news-releases/",
+          "httpStatus": 403,
+          "accessStatus": "restricted",
+          "durationMs": 1681
+        },
+        {
+          "url": "https://investors.arista.com/financial-information/quarterly-results",
+          "role": "IR/earnings",
+          "finalUrl": "https://investors.arista.com/financial-information/quarterly-results",
+          "httpStatus": 403,
+          "accessStatus": "restricted",
+          "durationMs": 680
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Official entry/IR or listed-company exchange coverage did not fully resolve; no no-change inference."
+    },
+    {
+      "id": "coherent",
+      "name": "Coherent",
+      "aliases": [
+        "Coherent"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": false,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://investor.coherent.com/news-releases",
+            "role": "IR/newsroom"
+          },
+          {
+            "url": "https://investor.coherent.com/financial-information/quarterly-results",
+            "role": "IR/earnings"
+          }
+        ],
+        "publicSources": 0,
+        "accessGaps": [
+          {
+            "url": "https://investor.coherent.com/news-releases",
+            "role": "IR/newsroom",
+            "status": "unavailable",
+            "httpStatus": null
+          },
+          {
+            "url": "https://investor.coherent.com/financial-information/quarterly-results",
+            "role": "IR/earnings",
+            "status": "unavailable",
+            "httpStatus": null
+          }
+        ]
+      },
+      "accessStatus": "unavailable",
+      "attempts": [
+        {
+          "url": "https://investor.coherent.com/news-releases",
+          "role": "IR/newsroom",
+          "httpStatus": null,
+          "accessStatus": "unavailable",
+          "error": "fetch failed",
+          "durationMs": 496
+        },
+        {
+          "url": "https://investor.coherent.com/financial-information/quarterly-results",
+          "role": "IR/earnings",
+          "httpStatus": null,
+          "accessStatus": "unavailable",
+          "error": "fetch failed",
+          "durationMs": 517
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Material current-window event matched overlay terms; route to supply-chain and listed-companies where applicable."
+    },
+    {
+      "id": "lumentum",
+      "name": "Lumentum",
+      "aliases": [
+        "Lumentum"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": false,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://investor.lumentum.com/news-releases",
+            "role": "IR/newsroom"
+          },
+          {
+            "url": "https://investor.lumentum.com/financial-information/quarterly-results",
+            "role": "IR/earnings"
+          }
+        ],
+        "publicSources": 0,
+        "accessGaps": [
+          {
+            "url": "https://investor.lumentum.com/news-releases",
+            "role": "IR/newsroom",
+            "status": "not-found",
+            "httpStatus": 404
+          },
+          {
+            "url": "https://investor.lumentum.com/financial-information/quarterly-results",
+            "role": "IR/earnings",
+            "status": "not-found",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "accessStatus": "unavailable",
+      "attempts": [
+        {
+          "url": "https://investor.lumentum.com/news-releases",
+          "role": "IR/newsroom",
+          "finalUrl": "https://investor.lumentum.com/news-releases/",
+          "httpStatus": 404,
+          "accessStatus": "not-found",
+          "durationMs": 1685
+        },
+        {
+          "url": "https://investor.lumentum.com/financial-information/quarterly-results",
+          "role": "IR/earnings",
+          "finalUrl": "https://investor.lumentum.com/financial-information/quarterly-results/",
+          "httpStatus": 404,
+          "accessStatus": "not-found",
+          "durationMs": 2036
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Official entry/IR or listed-company exchange coverage did not fully resolve; no no-change inference."
+    },
+    {
+      "id": "credo",
+      "name": "Credo",
+      "aliases": [
+        "Credo",
+        "Credo Semiconductor"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": false,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://investors.credosemi.com/news-releases",
+            "role": "IR/newsroom"
+          },
+          {
+            "url": "https://investors.credosemi.com/financial-information/quarterly-results",
+            "role": "IR/earnings"
+          }
+        ],
+        "publicSources": 0,
+        "accessGaps": [
+          {
+            "url": "https://investors.credosemi.com/news-releases",
+            "role": "IR/newsroom",
+            "status": "restricted",
+            "httpStatus": 403
+          },
+          {
+            "url": "https://investors.credosemi.com/financial-information/quarterly-results",
+            "role": "IR/earnings",
+            "status": "restricted",
+            "httpStatus": 403
+          }
+        ]
+      },
+      "accessStatus": "unavailable",
+      "attempts": [
+        {
+          "url": "https://investors.credosemi.com/news-releases",
+          "role": "IR/newsroom",
+          "finalUrl": "https://investors.credosemi.com/news-events/news/default.aspx",
+          "httpStatus": 403,
+          "accessStatus": "restricted",
+          "durationMs": 1977
+        },
+        {
+          "url": "https://investors.credosemi.com/financial-information/quarterly-results",
+          "role": "IR/earnings",
+          "finalUrl": "https://investors.credosemi.com/financial-information/quarterly-results",
+          "httpStatus": 403,
+          "accessStatus": "restricted",
+          "durationMs": 749
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Official entry/IR or listed-company exchange coverage did not fully resolve; no no-change inference."
+    },
+    {
+      "id": "cerebras",
+      "name": "Cerebras",
+      "aliases": [
+        "Cerebras"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": false,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://www.cerebras.ai/press",
+            "role": "official-newsroom"
+          },
+          {
+            "url": "https://www.cerebras.ai/",
+            "role": "official-product"
+          }
+        ],
+        "publicSources": 1,
+        "accessGaps": [
+          {
+            "url": "https://www.cerebras.ai/press",
+            "role": "official-newsroom",
+            "status": "not-found",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "accessStatus": "partial",
+      "attempts": [
+        {
+          "url": "https://www.cerebras.ai/press",
+          "role": "official-newsroom",
+          "finalUrl": "https://www.cerebras.ai/press",
+          "httpStatus": 404,
+          "accessStatus": "not-found",
+          "durationMs": 1182
+        },
+        {
+          "url": "https://www.cerebras.ai/",
+          "role": "official-product",
+          "finalUrl": "https://www.cerebras.ai/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1245
+        }
+      ],
+      "result": "new/changed",
+      "eventIds": [
+        "evt-5931b8073815a1ce8c4d"
+      ],
+      "originalUrls": [
+        "https://x.com/omarsar0/status/2091558158439182738"
+      ],
+      "notes": "Material current-window event matched overlay terms; route to supply-chain and listed-companies where applicable. Current-window filter applied."
+    },
+    {
+      "id": "celestica",
+      "name": "Celestica",
+      "aliases": [
+        "Celestica"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": false,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://corporate.celestica.com/news-releases",
+            "role": "IR/newsroom"
+          },
+          {
+            "url": "https://corporate.celestica.com/financial-information/quarterly-results",
+            "role": "IR/earnings"
+          }
+        ],
+        "publicSources": 2,
+        "accessGaps": []
+      },
+      "accessStatus": "public",
+      "attempts": [
+        {
+          "url": "https://corporate.celestica.com/news-releases",
+          "role": "IR/newsroom",
+          "finalUrl": "https://corporate.celestica.com/news-releases",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1176
+        },
+        {
+          "url": "https://corporate.celestica.com/financial-information/quarterly-results",
+          "role": "IR/earnings",
+          "finalUrl": "https://corporate.celestica.com/quarterly-results",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1859
+        }
+      ],
+      "result": "no-change",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "All checked official sources returned public with no material current-window overlay event."
+    },
+    {
+      "id": "ciena",
+      "name": "Ciena",
+      "aliases": [
+        "Ciena"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": false,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://investor.ciena.com/news-releases",
+            "role": "IR/newsroom"
+          },
+          {
+            "url": "https://investor.ciena.com/financial-information/quarterly-results",
+            "role": "IR/earnings"
+          }
+        ],
+        "publicSources": 0,
+        "accessGaps": [
+          {
+            "url": "https://investor.ciena.com/news-releases",
+            "role": "IR/newsroom",
+            "status": "not-found",
+            "httpStatus": 404
+          },
+          {
+            "url": "https://investor.ciena.com/financial-information/quarterly-results",
+            "role": "IR/earnings",
+            "status": "restricted",
+            "httpStatus": 403
+          }
+        ]
+      },
+      "accessStatus": "unavailable",
+      "attempts": [
+        {
+          "url": "https://investor.ciena.com/news-releases",
+          "role": "IR/newsroom",
+          "finalUrl": "https://investor.ciena.com/news-releases/",
+          "httpStatus": 404,
+          "accessStatus": "not-found",
+          "durationMs": 1762
+        },
+        {
+          "url": "https://investor.ciena.com/financial-information/quarterly-results",
+          "role": "IR/earnings",
+          "finalUrl": "https://investor.ciena.com/financial-information/quarterly-results",
+          "httpStatus": 403,
+          "accessStatus": "restricted",
+          "durationMs": 774
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Official entry/IR or listed-company exchange coverage did not fully resolve; no no-change inference."
+    },
+    {
+      "id": "innolight",
+      "name": "中际旭创",
+      "aliases": [
+        "中际旭创",
+        "Innolight",
+        "InnoLight"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": true,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300308",
+            "role": "exchange/CNINFO"
+          },
+          {
+            "url": "https://www.innolight.com/",
+            "role": "IR/newsroom"
+          }
+        ],
+        "publicSources": 2,
+        "accessGaps": []
+      },
+      "accessStatus": "public",
+      "attempts": [
+        {
+          "url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300308",
+          "role": "exchange/CNINFO",
+          "finalUrl": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300308",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 4875
+        },
+        {
+          "url": "https://www.innolight.com/",
+          "role": "IR/newsroom",
+          "finalUrl": "https://www.innolight.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1668
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Official entry/IR or listed-company exchange coverage did not fully resolve; no no-change inference."
+    },
+    {
+      "id": "eoptolink",
+      "name": "新易盛",
+      "aliases": [
+        "新易盛",
+        "Eoptolink"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": true,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300502",
+            "role": "exchange/CNINFO"
+          },
+          {
+            "url": "https://www.eoptolink.com/",
+            "role": "IR/newsroom"
+          }
+        ],
+        "publicSources": 2,
+        "accessGaps": []
+      },
+      "accessStatus": "public",
+      "attempts": [
+        {
+          "url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300502",
+          "role": "exchange/CNINFO",
+          "finalUrl": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300502",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1569
+        },
+        {
+          "url": "https://www.eoptolink.com/",
+          "role": "IR/newsroom",
+          "finalUrl": "https://www.eoptolink.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 868
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Official entry/IR or listed-company exchange coverage did not fully resolve; no no-change inference."
+    },
+    {
+      "id": "accelink",
+      "name": "光迅科技",
+      "aliases": [
+        "光迅科技",
+        "Accelink"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": true,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=002281",
+            "role": "exchange/CNINFO"
+          },
+          {
+            "url": "https://www.accelink.com/",
+            "role": "IR/newsroom"
+          }
+        ],
+        "publicSources": 2,
+        "accessGaps": []
+      },
+      "accessStatus": "public",
+      "attempts": [
+        {
+          "url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=002281",
+          "role": "exchange/CNINFO",
+          "finalUrl": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=002281",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 4663
+        },
+        {
+          "url": "https://www.accelink.com/",
+          "role": "IR/newsroom",
+          "finalUrl": "https://www.accelink.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1075
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Official entry/IR or listed-company exchange coverage did not fully resolve; no no-change inference."
+    },
+    {
+      "id": "tfc",
+      "name": "天孚通信",
+      "aliases": [
+        "天孚通信",
+        "TFC"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": true,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300394",
+            "role": "exchange/CNINFO"
+          },
+          {
+            "url": "https://www.tfc.com.cn/",
+            "role": "IR/newsroom"
+          }
+        ],
+        "publicSources": 1,
+        "accessGaps": [
+          {
+            "url": "https://www.tfc.com.cn/",
+            "role": "IR/newsroom",
+            "status": "unavailable",
+            "httpStatus": null
+          }
+        ]
+      },
+      "accessStatus": "partial",
+      "attempts": [
+        {
+          "url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300394",
+          "role": "exchange/CNINFO",
+          "finalUrl": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300394",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1957
+        },
+        {
+          "url": "https://www.tfc.com.cn/",
+          "role": "IR/newsroom",
+          "httpStatus": null,
+          "accessStatus": "unavailable",
+          "error": "fetch failed",
+          "durationMs": 1172
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Official entry/IR or listed-company exchange coverage did not fully resolve; no no-change inference."
+    },
+    {
+      "id": "eoptolink-upstream",
+      "name": "源杰科技",
+      "aliases": [
+        "源杰科技",
+        "Eoptolink upstream"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": true,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "role": "exchange/SSE"
+          },
+          {
+            "url": "https://www.eoptolink.com/",
+            "role": "IR/newsroom"
+          }
+        ],
+        "publicSources": 2,
+        "accessGaps": []
+      },
+      "accessStatus": "public",
+      "attempts": [
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "role": "exchange/SSE",
+          "finalUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 2129
+        },
+        {
+          "url": "https://www.eoptolink.com/",
+          "role": "IR/newsroom",
+          "finalUrl": "https://www.eoptolink.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 818
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Official entry/IR or listed-company exchange coverage did not fully resolve; no no-change inference."
+    },
+    {
+      "id": "siglent",
+      "name": "仕佳光子",
+      "aliases": [
+        "仕佳光子"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": true,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "role": "exchange/SSE"
+          },
+          {
+            "url": "https://www.sjphoton.com/",
+            "role": "IR/newsroom"
+          }
+        ],
+        "publicSources": 1,
+        "accessGaps": [
+          {
+            "url": "https://www.sjphoton.com/",
+            "role": "IR/newsroom",
+            "status": "timeout",
+            "httpStatus": null
+          }
+        ]
+      },
+      "accessStatus": "partial",
+      "attempts": [
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "role": "exchange/SSE",
+          "finalUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1845
+        },
+        {
+          "url": "https://www.sjphoton.com/",
+          "role": "IR/newsroom",
+          "httpStatus": null,
+          "accessStatus": "timeout",
+          "error": "This operation was aborted",
+          "durationMs": 8002
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Official entry/IR or listed-company exchange coverage did not fully resolve; no no-change inference."
+    },
+    {
+      "id": "cambridge-tech",
+      "name": "剑桥科技",
+      "aliases": [
+        "剑桥科技",
+        "Cambridge Technology"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": true,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "role": "exchange/SSE"
+          },
+          {
+            "url": "https://www.cambridge-tech.com/",
+            "role": "IR/newsroom"
+          }
+        ],
+        "publicSources": 1,
+        "accessGaps": [
+          {
+            "url": "https://www.cambridge-tech.com/",
+            "role": "IR/newsroom",
+            "status": "restricted",
+            "httpStatus": 403
+          }
+        ]
+      },
+      "accessStatus": "partial",
+      "attempts": [
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "role": "exchange/SSE",
+          "finalUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1920
+        },
+        {
+          "url": "https://www.cambridge-tech.com/",
+          "role": "IR/newsroom",
+          "finalUrl": "https://www.cambridge-tech.com/",
+          "httpStatus": 403,
+          "accessStatus": "restricted",
+          "durationMs": 916
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Official entry/IR or listed-company exchange coverage did not fully resolve; no no-change inference."
+    },
+    {
+      "id": "taichen",
+      "name": "太辰光",
+      "aliases": [
+        "太辰光"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": true,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300570",
+            "role": "exchange/CNINFO"
+          },
+          {
+            "url": "https://www.tcs.com.cn/",
+            "role": "IR/newsroom"
+          }
+        ],
+        "publicSources": 1,
+        "accessGaps": [
+          {
+            "url": "https://www.tcs.com.cn/",
+            "role": "IR/newsroom",
+            "status": "unavailable",
+            "httpStatus": null
+          }
+        ]
+      },
+      "accessStatus": "partial",
+      "attempts": [
+        {
+          "url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300570",
+          "role": "exchange/CNINFO",
+          "finalUrl": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300570",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1425
+        },
+        {
+          "url": "https://www.tcs.com.cn/",
+          "role": "IR/newsroom",
+          "httpStatus": null,
+          "accessStatus": "unavailable",
+          "error": "fetch failed",
+          "durationMs": 2240
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Official entry/IR or listed-company exchange coverage did not fully resolve; no no-change inference."
+    },
+    {
+      "id": "broadex",
+      "name": "博创科技",
+      "aliases": [
+        "博创科技",
+        "Broadex"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": true,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300548",
+            "role": "exchange/CNINFO"
+          },
+          {
+            "url": "https://www.broadex-tech.com/",
+            "role": "IR/newsroom"
+          }
+        ],
+        "publicSources": 2,
+        "accessGaps": []
+      },
+      "accessStatus": "public",
+      "attempts": [
+        {
+          "url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300548",
+          "role": "exchange/CNINFO",
+          "finalUrl": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300548",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1355
+        },
+        {
+          "url": "https://www.broadex-tech.com/",
+          "role": "IR/newsroom",
+          "finalUrl": "https://everprox.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 3562
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Official entry/IR or listed-company exchange coverage did not fully resolve; no no-change inference."
+    },
+    {
+      "id": "hg-tech",
+      "name": "华工科技",
+      "aliases": [
+        "华工科技",
+        "HGTECH"
+      ],
+      "lastCheckedAt": "2026-08-24T01:42:19.881Z",
+      "isListed": true,
+      "sourceCoverage": {
+        "attemptedSources": [
+          {
+            "url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=000988",
+            "role": "exchange/CNINFO"
+          },
+          {
+            "url": "https://www.hgtech.com/",
+            "role": "IR/newsroom"
+          }
+        ],
+        "publicSources": 1,
+        "accessGaps": [
+          {
+            "url": "https://www.hgtech.com/",
+            "role": "IR/newsroom",
+            "status": "unavailable",
+            "httpStatus": null
+          }
+        ]
+      },
+      "accessStatus": "partial",
+      "attempts": [
+        {
+          "url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=000988",
+          "role": "exchange/CNINFO",
+          "finalUrl": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=000988",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1360
+        },
+        {
+          "url": "https://www.hgtech.com/",
+          "role": "IR/newsroom",
+          "httpStatus": null,
+          "accessStatus": "unavailable",
+          "error": "fetch failed",
+          "durationMs": 1420
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "originalUrls": [],
+      "notes": "Official entry/IR or listed-company exchange coverage did not fully resolve; no no-change inference."
+    }
+  ],
+  "windowEventsConsidered": 46,
+  "cutoffVerification": {
+    "from": "2026-08-23T01:32:49.000Z",
+    "to": "2026-08-24T01:32:49.000Z",
+    "excludedOutOfWindowEvents": 515
+  }
+}
