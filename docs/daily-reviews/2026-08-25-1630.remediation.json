@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "atlas-daily-remediation.v2",
+  "runId": "atlas-2026-08-25-full",
+  "date": "2026-08-25",
+  "slot": "16:30",
+  "status": "ready-for-release",
+  "scope": "global-full-site-update",
+  "cutoff": "2026-08-25T09:30:00+08:00",
+  "window": { "start": "2026-08-25T09:30:00+08:00", "actualStart": "2026-08-25T14:49:00+08:00", "fallback24h": false },
+  "companyWatch": { "checked": 50, "layers": ["demand-platform", "model-application", "compute-silicon", "capacity-power"], "hits": "company and source-led candidates recorded separately from no-change and access handoff" },
+  "editorial": { "model": "deterministic-atlas-fallback-v1", "candidates": 139, "selected": 112, "watch": 27, "publicCopy": 56, "rumorPublishCandidates": 35, "localHolds": 6 },
+  "policySourceFallback": "news discovery enabled; formal claims use independently opened official Beijing and Shanghai records",
+  "scan": { "fetched": 2817, "normalized": 2783, "clusters": 632, "sourceErrors": 6, "googleNewsCnPolicyObservations": 13 },
+  "sections": { "publish": ["listed-companies", "rumors", "policy"], "noChange": ["idc-pulse", "mna", "capacity", "cooling", "compute-products", "china-gpu", "supply-chain", "power-model-demand", "earnings-calendar", "columns"], "holdEvents": 6 },
+  "release": { "tests": "passed", "build": "passed", "cloudflare": "pending", "sites": "pending", "sameHead": false, "commit": null, "workerCommit": null, "sitesCommit": null, "formalReadback": "pending", "sitesReadback": "pending" },
+  "accessHandoffs": ["ndrc", "miit", "mep-china", "beijing-gov", "shanghai-gov", "xai-403"],
+  "next": "commit tested isolated HEAD, deploy Worker, formal readback, then save/deploy matching private Sites version and verify both URLs"
+}
