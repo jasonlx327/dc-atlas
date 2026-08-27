@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "atlas-policy-source-fallback.v1",
+  "runId": "atlas-2026-08-25-policy-source-fallback",
+  "checkedAt": "2026-08-25T09:45:00+08:00",
+  "cutoff": "2026-08-25T09:22:19+08:00",
+  "scope": "中国政策源失败时的新闻发现 fallback；不替代政策原文",
+  "fallbackSource": {
+    "sourceId": "google-news-cn-policy",
+    "tier": "D",
+    "independenceGroup": "google-news",
+    "httpStatus": 200,
+    "observations": 13,
+    "role": "discovery-only",
+    "accessStatus": "public",
+    "canonicalRule": "必须从新闻线索回到政府、监管、交易所、项目方或原始发布者 canonical URL"
+  },
+  "officialReadbacks": [
+    {
+      "sourceId": "beijing-etdz",
+      "tier": "T0",
+      "jurisdiction": "北京经济技术开发区",
+      "title": "北京经济技术开发区关于支持词元驱动智能经济高质量发展的若干措施（试行）",
+      "url": "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202608/t20260805_4809951.html",
+      "publishedDate": "2026-08-05",
+      "status": "in-force",
+      "changeType": "new",
+      "liveSourceVerified": true,
+      "verificationMethod": "live web readback",
+      "relevantFacts": ["支持高能效硬件、液冷散热及异构算力调度", "目标到2030年算力规模突破10万P", "政策有效期至2030-12-31"]
+    },
+    {
+      "sourceId": "shanghai-gov",
+      "tier": "T0",
+      "jurisdiction": "上海市",
+      "title": "上海市“数字上海”建设“十五五”规划",
+      "url": "https://www.shanghai.gov.cn/nw12344/20260819/6cf80b0875f1465c94886f0b1a4a4f35.html",
+      "publishedDate": "2026-08-19",
+      "status": "adopted",
+      "changeType": "new",
+      "liveSourceVerified": true,
+      "verificationMethod": "live web readback",
+      "relevantFacts": ["2030年新建智算中心PUE目标低于1.2", "推进临港、虹桥、东方枢纽国际数据中心和跨境存算设施"]
+    },
+    {
+      "sourceId": "ndrc",
+      "tier": "T0",
+      "jurisdiction": "中国国家层面",
+      "title": "人工智能合作发展行动计划",
+      "url": "https://www.ndrc.gov.cn/fggz/202607/t20260717_1406573_ext.html",
+      "publishedDate": "2026-07-17",
+      "status": "unknown",
+      "changeType": "new",
+      "liveSourceVerified": true,
+      "verificationMethod": "live web readback",
+      "relevantFacts": ["推动智能算力设施联通", "联合建设绿色能源驱动基础设施，推动智算设施绿色低碳发展"]
+    },
+    {
+      "sourceId": "miit",
+      "tier": "T0",
+      "jurisdiction": "中国国家层面",
+      "title": "关于开展普惠算力赋能中小企业发展专项行动的通知",
+      "url": "https://www.miit.gov.cn/jgsj/txs/wjfb/art/2026/art_e5c990d4ec924dbc9da5818da97940ac.html",
+      "publishedDate": "2026-03-27",
+      "status": "unknown",
+      "changeType": "new",
+      "liveSourceVerified": true,
+      "verificationMethod": "live web readback",
+      "relevantFacts": ["按需建设部署边缘数据中心和训推一体机", "建设先进存力中心并推动算网融合"]
+    }
+  ],
+  "newsAssessment": {
+    "currentWindowChinaPolicyEvent": false,
+    "result": "新闻 fallback 已恢复并保留来源链；本轮没有将新闻摘要升级为正式政策记录。",
+    "routing": "official records may enter policy-index after bilingual editorial review; media-only items remain discovery or Rumor Watch"
+  },
+  "sourceCoverage": {
+    "status": "passed",
+    "checked": 19,
+    "passing": 14,
+    "primaryPassing": 10,
+    "reportingPassing": 3,
+    "discoveryPassing": 1,
+    "failedOfficialSources": ["ndrc", "miit", "mep-china", "beijing-gov", "shanghai-gov"],
+    "failureScope": "item/section handoff; not a run-level blocker"
+  },
+  "releaseDisposition": "hold",
+  "releaseReason": "源覆盖阻塞已降级为可审计 handoff，但当前 2026-08-25 全局候选仍缺完整 gpt-5.6-luna judgment 与正式双语写入；未改内容、未提交、未部署。"
+}

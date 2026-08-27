@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-08-25-full",
+  "sources": [
+    {
+      "ref": "scan-2026-08-25-1630-global",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "Fresh global event-intelligence scan",
+      "observedAt": "2026-08-25T06:50:00Z",
+      "details": { "fetched": 2817, "normalized": 2783, "clusters": 632, "errors": 6 },
+      "sections": ["*"]
+    },
+    {
+      "ref": "policy-beijing-etown-20260805",
+      "evidenceKind": "public-source",
+      "sourceName": "北京经济技术开发区管理委员会",
+      "tier": "T1",
+      "canonicalUrl": "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202608/t20260805_4809951.html",
+      "publishedAt": "2026-08-05T00:00:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "beijing-etown-government",
+      "sections": ["policy", "compute-products", "cooling", "power-model-demand"]
+    },
+    {
+      "ref": "policy-shanghai-digital-20260819",
+      "evidenceKind": "public-source",
+      "sourceName": "上海市人民政府办公厅",
+      "tier": "T1",
+      "canonicalUrl": "https://www.shanghai.gov.cn/nw12344/20260819/6cf80b0875f1465c94886f0b1a4a4f35.html",
+      "publishedAt": "2026-08-19T00:00:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "shanghai-government",
+      "sections": ["policy", "capacity", "cooling", "power-model-demand"]
+    },
+    {
+      "ref": "nvidia-vera-rubin-20260824",
+      "evidenceKind": "public-source",
+      "sourceName": "NVIDIA Technical Blog",
+      "tier": "T1",
+      "canonicalUrl": "https://developer.nvidia.com/blog/nvidia-vera-rubin-and-blackwell-set-a-new-standard-for-agentic-ai-performance-per-watt/",
+      "publishedAt": "2026-08-24T00:00:00-07:00",
+      "accessState": "public",
+      "independenceGroup": "nvidia",
+      "sections": ["listed-companies", "compute-products", "supply-chain", "power-model-demand"]
+    },
+    {
+      "ref": "ibm-processor-20260824",
+      "evidenceKind": "public-source",
+      "sourceName": "IBM Newsroom",
+      "tier": "T1",
+      "canonicalUrl": "https://newsroom.ibm.com/2026-08-24-ibm-unveils-next-generation-dual-architecture-processor-for-ibm-z-and-linuxone",
+      "publishedAt": "2026-08-24T00:00:00-04:00",
+      "accessState": "public",
+      "independenceGroup": "ibm",
+      "sections": ["listed-companies", "compute-products", "supply-chain"]
+    },
+    {
+      "ref": "google-credentio-20260813",
+      "evidenceKind": "public-source",
+      "sourceName": "Google Developers Blog",
+      "tier": "T1",
+      "canonicalUrl": "https://developers.googleblog.com/introducing-credentio-open-source-c-library-for-c2pa-content-credentials-from-google/",
+      "publishedAt": "2026-08-13T00:00:00-07:00",
+      "accessState": "public",
+      "independenceGroup": "google",
+      "sections": ["listed-companies", "supply-chain"]
+    },
+    {
+      "ref": "marketwatch-spacex-ai-satellites-20260824",
+      "evidenceKind": "public-source",
+      "sourceName": "MarketWatch",
+      "tier": "T2",
+      "canonicalUrl": "https://www.marketwatch.com/story/spacex-plans-to-put-nvidia-powered-ai-satellites-in-orbit-next-year-ab57083c?mod=mw_rss_topstories",
+      "publishedAt": "2026-08-24T21:26:00Z",
+      "accessState": "public",
+      "independenceGroup": "marketwatch",
+      "sections": ["rumors"]
+    },
+    {
+      "ref": "cn-policy-news-fallback-20260825",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "Google News 中国政策 fallback",
+      "observedAt": "2026-08-25T03:07:19Z",
+      "details": { "observations": 13, "use": "discovery-only; canonical official/original source chase required" },
+      "sections": ["policy"]
+    }
+  ]
+}

@@ -20,7 +20,7 @@ const results: ConnectorResult[] = [...groups.entries()].map(([key, items]) => {
 const report = await runShadowPipeline(results, sourceRegistry, { generatedAt: "2026-08-08T14:00:00.000Z" });
 const enabledSources = shadowSources();
 assert.ok(enabledSources.length >= 50, "runtime source coverage should use the broad enabled registry");
-for (const sourceId of ["cninfo", "sse", "ndrc", "semi-analysis", "capacity-media", "google-news-data-center", "google-news-cn-infrastructure"]) {
+for (const sourceId of ["cninfo", "sse", "ndrc", "semi-analysis", "capacity-media", "google-news-data-center", "google-news-cn-infrastructure", "google-news-cn-policy"]) {
   assert.ok(enabledSources.some((source) => source.id === sourceId), `${sourceId} should be enabled for runtime collection`);
 }
 

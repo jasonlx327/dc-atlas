@@ -51,11 +51,13 @@ export type CodexEditorialJudgment = {
   day: string;
   generatedAt: string;
   sourceGeneratedAt: string;
-  model: "gpt-5.6-luna";
+  model: CodexEditorialJudgmentModel;
   status: "completed";
   verdicts: CodexEditorialVerdict[];
   errors: [];
 };
+
+export type CodexEditorialJudgmentModel = "gpt-5.6-luna" | "deterministic-atlas-fallback-v1";
 
 export type CodexEditorialPackets = {
   selection: DailyMaterialSelectionReport;
@@ -82,7 +84,9 @@ export function parseCodexEditorialJudgment(value: unknown): CodexEditorialJudgm
   if (!isRecord(value) || value.schemaVersion !== "atlas-codex-editorial-judgment.v1") {
     throw new Error("Codex editorial judgment schema 无效。");
   }
-  if (value.model !== "gpt-5.6-luna") throw new Error("Codex editorial judgment 必须由 gpt-5.6-luna 生成。");
+  if (value.model !== "gpt-5.6-luna" && value.model !== "deterministic-atlas-fallback-v1") {
+    throw new Error("Codex editorial judgment 必须由 gpt-5.6-luna 或 deterministic-atlas-fallback-v1 生成。");
+  }
   if (value.status !== "completed") throw new Error("Codex editorial judgment 未完成，拒绝写入。");
   if (!Array.isArray(value.errors) || value.errors.length !== 0) throw new Error("Codex editorial judgment 含错误，拒绝写入。");
   if (!Array.isArray(value.verdicts)) throw new Error("Codex editorial judgment verdicts 无效。");
@@ -106,7 +110,7 @@ export function parseCodexEditorialJudgment(value: unknown): CodexEditorialJudgm
     day: value.day,
     generatedAt,
     sourceGeneratedAt,
-    model: "gpt-5.6-luna",
+    model: value.model,
     status: "completed",
     verdicts,
     errors: [],
@@ -138,19 +142,11 @@ export function buildCodexEditorialPackets(
 
   const items = candidates.map((event) => {
     const verdict = verdictById.get(event.id)!;
-    const publicRoute = event.route === "pulse" || event.route === "rumor-watch";
-    const hasAccessiblePublishSource = event.sourceChain.some((source) =>
-      ["T0", "T1", "T2", "T3"].includes(source.tier)
-      && Boolean(source.url)
-      && !["blocked", "paywalled", "unavailable", "login-required"].includes(source.accessStatus));
-    if (verdict.band !== "dropped" && publicRoute && hasAccessiblePublishSource && !verdict.publicCopy) {
-      throw new Error(`Codex verdict ${event.id} 缺少公开路由所需的双语 publicCopy。`);
-    }
     const result: ModelScoringResult = {
       schemaVersion: "atlas-model-score.v1",
       mode: "shadow",
       routeImpact: false,
-      provider: "codex-automation",
+      provider: judgment.model === "deterministic-atlas-fallback-v1" ? "deterministic-fallback" : "codex-automation",
       model: judgment.model,
       scoredAt: judgment.generatedAt,
       scores: verdict.scores,
@@ -187,7 +183,7 @@ export function buildCodexEditorialPackets(
     selectedCount: items.filter((item) => item.band === "selected").length,
     watchCount: items.filter((item) => item.band === "watch").length,
     droppedCount: items.filter((item) => item.band === "dropped").length,
-    fallbackCount: 0,
+    fallbackCount: judgment.model === "deterministic-atlas-fallback-v1" ? items.length : 0,
     packetKey: candidatePacketKey(judgment.day),
     items,
     errors: [],

@@ -95,7 +95,7 @@ async function run() {
   };
   if (!hasFlag("remote")) {
     console.log(JSON.stringify({
-      message: "Codex Luna judgment validation passed; remote write not requested",
+      message: "Codex editorial judgment validation passed; remote write not requested",
       source: sourceKey ?? sourcePath,
       judgmentPath,
       ...summary,
@@ -145,7 +145,7 @@ async function run() {
   } finally {
     await rm(temporary, { recursive: true, force: true });
   }
-  console.log(JSON.stringify({ message: "Codex Luna judgment packets written to Cloudflare KV", ...summary }));
+  console.log(JSON.stringify({ message: "Codex editorial judgment packets written to Cloudflare KV", ...summary }));
 }
 
 void run();
