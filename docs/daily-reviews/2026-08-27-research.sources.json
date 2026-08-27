@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-research-2026-08-27-nvidia-glm53",
+  "sources": [
+    {
+      "ref": "nvidia-fy27-q2-results",
+      "sourceName": "NVIDIA SEC earnings release",
+      "tier": "T0",
+      "canonicalUrl": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm",
+      "publishedAt": "2026-08-26T16:00:00-04:00",
+      "accessState": "public",
+      "independenceGroup": "nvidia-sec",
+      "sections": ["columns", "listed-companies"]
+    },
+    {
+      "ref": "nvidia-fy27-q2-cfo-commentary",
+      "sourceName": "NVIDIA SEC CFO commentary",
+      "tier": "T0",
+      "canonicalUrl": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm",
+      "publishedAt": "2026-08-26T16:00:00-04:00",
+      "accessState": "public",
+      "independenceGroup": "nvidia-sec",
+      "sections": ["columns", "listed-companies"]
+    },
+    {
+      "ref": "nvidia-fy27-q2-10q",
+      "sourceName": "NVIDIA Form 10-Q",
+      "tier": "T0",
+      "canonicalUrl": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+      "publishedAt": "2026-08-26T16:00:00-04:00",
+      "accessState": "public",
+      "independenceGroup": "nvidia-sec",
+      "sections": ["columns", "listed-companies"]
+    },
+    {
+      "ref": "nvidia-fy27-q2-call",
+      "sourceName": "NVIDIA investor relations call and replay",
+      "tier": "T1",
+      "canonicalUrl": "https://investor.nvidia.com/events-and-presentations/events-and-presentations/event-details/2026/NVIDIA-2nd-Quarter-FY27-Financial-Results/default.aspx",
+      "publishedAt": "2026-08-26T14:00:00-07:00",
+      "accessState": "public",
+      "independenceGroup": "nvidia",
+      "sections": ["columns", "earnings-call"]
+    },
+    {
+      "ref": "nvidia-fy27-q2-call-record",
+      "sourceName": "MarketBeat NVIDIA Q2 call highlights",
+      "tier": "T3",
+      "canonicalUrl": "https://www.marketbeat.com/instant-alerts/transcript-nvidia-q2-earnings-call-highlights-2026-08-26/",
+      "publishedAt": "2026-08-26T00:00:00-04:00",
+      "accessState": "public",
+      "independenceGroup": "marketbeat",
+      "sections": ["columns", "earnings-call"]
+    },
+    {
+      "ref": "zai-glm53-flash-launch",
+      "sourceName": "Z.ai GLM-5.3-Flash launch",
+      "tier": "T1",
+      "canonicalUrl": "https://z.ai/blog/glm-5.3-flash",
+      "publishedAt": "2026-08-26T00:00:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "z-ai",
+      "sections": ["columns", "china-gpu", "model-demand"]
+    },
+    {
+      "ref": "zai-glm53-flash-model-card",
+      "sourceName": "Z.ai GLM-5.3-Flash model card",
+      "tier": "T1",
+      "canonicalUrl": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "publishedAt": "2026-08-26T00:00:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "z-ai",
+      "sections": ["columns", "model-demand"]
+    },
+    {
+      "ref": "zai-glm53-flash-docs",
+      "sourceName": "Z.ai GLM-5.3-Flash API documentation",
+      "tier": "T1",
+      "canonicalUrl": "https://docs.z.ai/guides/llm/glm-5.3-flash",
+      "publishedAt": "2026-08-26T00:00:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "z-ai",
+      "sections": ["columns", "model-demand"]
+    },
+    {
+      "ref": "wallstreetcn-ox-alpha-confirmation",
+      "sourceName": "Wallstreetcn Ox Alpha confirmation report",
+      "tier": "T3",
+      "canonicalUrl": "https://wallstreetcn.com/articles/3780350",
+      "publishedAt": "2026-08-26T18:51:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "wallstreetcn-bloomberg",
+      "sections": ["columns", "model-demand"]
+    },
+    {
+      "ref": "wallstreetcn-latepost-glm53-chips",
+      "sourceName": "Wallstreetcn republication of LatePost GLM-5.3-Flash chip report",
+      "tier": "T3",
+      "canonicalUrl": "https://wallstreetcn.com/articles/3780371",
+      "publishedAt": "2026-08-27T01:28:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "latepost",
+      "sections": ["columns", "china-gpu"]
+    }
+  ]
+}

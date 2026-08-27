@@ -18,16 +18,6 @@ async function render(pathname = "/", host = "dc-atlas.example", country = null,
   );
 }
 
-async function currentFeaturedColumnImage() {
-  const source = await readFile(new URL("../app/columns/articles.ts", import.meta.url), "utf8");
-  const published = [...source.matchAll(/publishAt:\s*"([^"]+)"[\s\S]*?image:\s*"([^"]+)"/g)]
-    .map((match) => ({ publishAt: match[1], image: match[2] }))
-    .filter((article) => Date.parse(article.publishAt) <= Date.now())
-    .sort((a, b) => Date.parse(b.publishAt) - Date.parse(a.publishAt));
-  if (published[0]) return published[0].image;
-  throw new Error("No published column cover found");
-}
-
 test("server-renders the bilingual intelligence-console homepage", async () => {
   const response = await render();
   assert.equal(response.status, 200);
@@ -58,14 +48,14 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /class="atlas-calendar-group" aria-hidden="true"/);
   assert.match(html, /研究队列/);
   assert.match(html, /今日重点研究/);
-  assert.match(html, /5000 亿美元不是一笔交易：AI 融资平台的五个缺口/);
+  assert.match(html, /NVIDIA Q2：962 亿美元收入之后，风险表扩到了电力与信用/);
   assert.match(html, /证据摘要/);
   assert.match(html, /尚未确认/);
   assert.match(html, /下一验证点/);
   assert.match(html, /为何今天读它/);
-  assert.match(html, new RegExp((await currentFeaturedColumnImage()).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  assert.match(html, /column-nvidia-fy27-q2-five-tests-v1\.jpg/);
   assert.match(html, /href="\/columns"/);
-  assert.match(html, /href="\/columns\/ai-financing-platforms"/);
+  assert.match(html, /href="\/columns\/nvidia-fy27-q2-five-tests"/);
   assert.doesNotMatch(html, /情报摘要/);
   assert.match(html, /市场脉搏/);
   assert.match(html, /class="atlas-pulse-wave"/);
@@ -239,8 +229,8 @@ test("renders the English research console and focused content routes", async ()
   assert.match(html, /class="atlas-console-rail(?: |")/);
   assert.match(html, /href="\/en\/columns"/);
   assert.match(html, /Research queue/);
-  assert.match(html, /HBM4&#x27;s System Cadence: Production Is Not Platform Delivery/);
-  assert.match(html, /\$500 Billion Is Not a Transaction: Five Gaps in AI Financing Platforms/);
+  assert.match(html, /NVIDIA Q2: After \$96\.2B of Revenue, the Risk Perimeter Reaches Power and Credit/);
+  assert.match(html, /After Ox Alpha: How GLM-5\.3-Flash Pushes Chinese-Chip Inference Toward Scale/);
   assert.equal((html.match(/href="\/en\/columns\/(?!microsoft-ai-capex)[^"]+"/g) ?? []).length >= 4, true);
   assert.match(html, /CapEx &amp; earnings watch/);
   assert.doesNotMatch(html, /Atlas intelligence brief/);
@@ -706,8 +696,44 @@ test("publishes the first scheduled research column and keeps later releases tim
   assert.match(feedSource, /publishedColumnArticles\(\)/);
 });
 
+test("publishes the NVIDIA Q2 and GLM-5.3-Flash research in both languages", async () => {
+  const nvidiaZh = await render("/columns/nvidia-fy27-q2-five-tests");
+  assert.equal(nvidiaZh.status, 200);
+  const nvidiaZhHtml = await nvidiaZh.text();
+  assert.match(nvidiaZhHtml, /NVIDIA Q2：962 亿美元收入之后，风险表扩到了电力与信用/);
+  assert.match(nvidiaZhHtml, /数据中心收入达到 890\.23 亿美元/);
+  assert.match(nvidiaZhHtml, /供应和产能承诺从上一季度的 1,190 亿美元升至 2,790 亿美元/);
+  assert.match(nvidiaZhHtml, /担保最大敞口达到 1,085 亿美元/);
+  assert.match(nvidiaZhHtml, /NVIDIA FY2027 Q2 业绩公告/);
+
+  const nvidiaEn = await render("/en/columns/nvidia-fy27-q2-five-tests");
+  assert.equal(nvidiaEn.status, 200);
+  const nvidiaEnHtml = await nvidiaEn.text();
+  assert.match(nvidiaEnHtml, /NVIDIA Q2: After \$96\.2B of Revenue, the Risk Perimeter Reaches Power and Credit/);
+  assert.match(nvidiaEnHtml, /Data Center revenue reached \$89\.023 billion/);
+  assert.match(nvidiaEnHtml, /maximum guarantee exposure reached \$108\.5 billion/);
+
+  const glmZh = await render("/columns/glm-5-3-flash-china-chips");
+  assert.equal(glmZh.status, 200);
+  const glmZhHtml = await glmZh.text();
+  assert.match(glmZhHtml, /Ox Alpha 之后：GLM-5\.3-Flash 如何把国产卡推理推向规模化/);
+  assert.match(glmZhHtml, /数万颗国产加速器/);
+  assert.match(glmZhHtml, /具体芯片厂商和训练硬件未披露/);
+  assert.match(glmZhHtml, /Z\.ai：GLM-5\.3-Flash 官方发布与国产芯片服务说明/);
+  assert.match(glmZhHtml, /华尔街见闻/);
+
+  const glmEn = await render("/en/columns/glm-5-3-flash-china-chips");
+  assert.equal(glmEn.status, 200);
+  const glmEnHtml = await glmEn.text();
+  assert.match(glmEnHtml, /After Ox Alpha: How GLM-5\.3-Flash Pushes Chinese-Chip Inference Toward Scale/);
+  assert.match(glmEnHtml, /tens of thousands of domestically developed accelerators/);
+  assert.match(glmEnHtml, /Chip suppliers and training hardware are not disclosed/);
+});
+
 test("renders every bilingual column inside the shared console reading layout", async () => {
   const slugs = [
+    "nvidia-fy27-q2-five-tests",
+    "glm-5-3-flash-china-chips",
     "meta-blackrock-el-paso",
     "accelerator-platform-divergence",
     "anthropic-volta-compute",
