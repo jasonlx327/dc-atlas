@@ -1,0 +1,872 @@
+{
+  "schemaVersion": "atlas-interconnect-cpo-checks.v1",
+  "runId": "atlas-2026-08-28-fresh",
+  "checkedAt": "2026-08-28T02:34:04.024Z",
+  "window": {
+    "from": "2026-08-27T02:33:01.000Z",
+    "to": "2026-08-28T02:34:04.024Z",
+    "timeZone": "UTC",
+    "reason": "09:30 handoff blocked; last trusted 16:30 fallback"
+  },
+  "requiredKeywords": [
+    "CPO",
+    "co-packaged optics",
+    "1.6T",
+    "optical interconnect",
+    "scale-in fabric",
+    "AEC",
+    "LPO",
+    "AI fabric"
+  ],
+  "companyCount": 20,
+  "checkedCount": 20,
+  "hitCount": 0,
+  "results": {
+    "new/changed": 0,
+    "no-change": 0,
+    "not-determined": 20
+  },
+  "companies": [
+    {
+      "id": "arista",
+      "name": "Arista Networks",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": [
+          "https://investors.arista.com/: 403"
+        ]
+      },
+      "attempts": [
+        {
+          "url": "https://investors.arista.com/",
+          "finalUrl": "https://investors.arista.com/",
+          "httpStatus": 403,
+          "accessStatus": "unavailable",
+          "durationMs": 366,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.arista.com/en/company/news",
+          "finalUrl": "https://www.arista.com/en/company/news",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 377,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    },
+    {
+      "id": "broadcom",
+      "name": "Broadcom",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 2,
+        "accessGaps": []
+      },
+      "attempts": [
+        {
+          "url": "https://investors.broadcom.com/",
+          "finalUrl": "https://investors.broadcom.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 538,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.broadcom.com/company/news",
+          "finalUrl": "https://www.broadcom.com/company/news",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 410,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    },
+    {
+      "id": "marvell",
+      "name": "Marvell",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 2,
+        "accessGaps": []
+      },
+      "attempts": [
+        {
+          "url": "https://investor.marvell.com/",
+          "finalUrl": "https://investor.marvell.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 417,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.marvell.com/company/newsroom.html",
+          "finalUrl": "https://www.marvell.com/company/newsroom.html",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 748,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [
+        "evt-814cbd1bc3f9fde53c6f",
+        "evt-22fa182646dbb6a97ad7"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-814cbd1bc3f9fde53c6f",
+          "title": "Marvell CEO projects 45% revenue growth to $12B in FY27 as AI demand accelerates - Crypto Briefing",
+          "lastUpdatedAt": "2026-08-27T21:20:47.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zenI1bW5aczhsSGhGMHVIT2NrZnZ2enFmZW1CQmh0dlhrYmR0MnFhR1Z1dUtEckZxNEZBX0FyMlFkWkVmN2pSRFZ5VjBKekY3REVIYVdOaHN6RXVneWZSbjhaQTZUQlJ4Q3ktYTZVcWp1aTA?oc=5"
+          ]
+        },
+        {
+          "eventId": "evt-22fa182646dbb6a97ad7",
+          "title": "Marvell财报即将公布：谷歌合作能否推动AI芯片业务加速增长？ 提供者 Investing.com - 英为财情 Investing.com",
+          "lastUpdatedAt": "2026-08-27T13:50:00.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMia0FVX3lxTE9FUzgtemYzemF3VlhNWnpqeklZTmJnY2VCelNtSlZSeEV0ZS1pREhFWDR6T0lQX3dXVm9GR2x0TnJTVFJ2STZ4Q0JLM3BDMUNRWnB4M1hXQmlLLTA5ZkNKVGNCRldUNzE3VnhN?oc=5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cerebras",
+      "name": "Cerebras",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 1,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "https://www.cerebras.ai/press: 404"
+        ]
+      },
+      "attempts": [
+        {
+          "url": "https://www.cerebras.ai/press",
+          "finalUrl": "https://www.cerebras.ai/press",
+          "httpStatus": 404,
+          "accessStatus": "not-found",
+          "durationMs": 1002,
+          "role": "exchange/IR"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 2,
+        "accessGaps": []
+      },
+      "attempts": [
+        {
+          "url": "https://nvidianews.nvidia.com/",
+          "finalUrl": "https://nvidianews.nvidia.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 534,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://developer.nvidia.com/blog/",
+          "finalUrl": "https://developer.nvidia.com/blog/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1502,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [
+        "evt-48cb8b4ef70f568d4997",
+        "evt-3390af672edb46c794d7",
+        "evt-7853c7e1d7e61f0fa6bd",
+        "evt-a434850abeadb653e14a",
+        "evt-daf68654e3d7ef7f1a21",
+        "evt-b0e242b75a184d5f04e5",
+        "evt-d5e83d9e1c80c91e3e65",
+        "evt-77bdc07c35f083aaabaa",
+        "evt-d1fac7e4dff047c47582",
+        "evt-90ad149f8f21a41a0ce0",
+        "evt-3ab06c2287e7f595a8eb",
+        "evt-6a260cf0615a58e68a43",
+        "evt-960736f7704e903bc6df",
+        "evt-977dd2e6e4984ecf4b9e",
+        "evt-be3eb9901a8e7e7f28c3",
+        "evt-8e31955228116e7575a9"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-48cb8b4ef70f568d4997",
+          "title": "Analysts split on whether rumored Nvidia-Hugging Face deal is a good thing",
+          "lastUpdatedAt": "2026-08-28T02:34:00.895Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.fierce-network.com/cloud/analysts-split-whether-rumored-nvidia-hugging-face-deal-good-thing"
+          ]
+        },
+        {
+          "eventId": "evt-3390af672edb46c794d7",
+          "title": "450 亿美元算力订单落地，Anthropic 持续扩张AI 算力储备|彭博社|芯片系统|微软|英伟达|人工智能_手机新浪网 - 新浪财经",
+          "lastUpdatedAt": "2026-08-28T00:11:17.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVjRHc28zdUhIcE8yT1loVGt0bHFaQkJUWC1tSXJQNXlPZEhnandBclNhMUYxWDl0S3ZvbDltVEpFN0dNbGlfekJxMUVON3g1VHBVZ1NxQ1pCMjZMTXZ6eHRuRnBjcDgwRTE4VUVWRFNpQ094bjNDdmNXU2NiUkRuNnpNMEpaa05hLVhPUW1sZFo4YTkxZ0tsYWFmZ09sNjNZV2NnWDVZSQ?oc=5",
+            "https://news.google.com/rss/articles/CBMieEFVX3lxTFB3LUc2RFFBa19HM08tUzBia3ZsaXI4YVdVNVU4eUhUMnd6TFp4RVVLbENDTmtuUjlCa1J2ZDRYa1N0dmp1amxOcVJHNjd2aTNRT3E0VmRHRm9ZT0N3a1RFcEwxYXZWVkJmQTJTWTA3d1FCQmxsYlJzZA?oc=5"
+          ]
+        },
+        {
+          "eventId": "evt-7853c7e1d7e61f0fa6bd",
+          "title": "作者将赴柏林GTC，聚焦智能体与开源模型",
+          "lastUpdatedAt": "2026-08-27T20:16:24.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/kimmonismus/status/2093070145208152261"
+          ]
+        },
+        {
+          "eventId": "evt-a434850abeadb653e14a",
+          "title": "NVIDIA 开源 srt-slurm 编排推理部署",
+          "lastUpdatedAt": "2026-08-27T20:00:47.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/SemiAnalysis_/status/2093066214771679716"
+          ]
+        },
+        {
+          "eventId": "evt-daf68654e3d7ef7f1a21",
+          "title": "报道：英伟达拟以130亿美元收购AI模型库Hugging Face",
+          "lastUpdatedAt": "2026-08-27T19:55:22.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://arstechnica.com/ai/2026/08/report-nvidia-to-acquire-ai-model-repository-hugging-face-for-13-billion"
+          ]
+        },
+        {
+          "eventId": "evt-b0e242b75a184d5f04e5",
+          "title": "英伟达季度营收5%或来自SpaceX",
+          "lastUpdatedAt": "2026-08-27T18:28:29.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/cb_doge/status/2093042986934546485"
+          ]
+        },
+        {
+          "eventId": "evt-d5e83d9e1c80c91e3e65",
+          "title": "英伟达收购Hugging Face交易接近达成，估值约130亿美元 - 至顶网",
+          "lastUpdatedAt": "2026-08-27T18:18:35.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9ibkN0aGhMUDR6d2lkektLRDNpZ2Z3Vmp4UkxhVk16MzRjd0g5MEdiVTlGWVhNZUJ1SHJLMW1aajZ6YlZWLVpmeVB1T0Y2UngtRmc?oc=5"
+          ]
+        },
+        {
+          "eventId": "evt-77bdc07c35f083aaabaa",
+          "title": "Qualcomm Bets Open-Source AI Software Can Break Nvidia’s Lock-In",
+          "lastUpdatedAt": "2026-08-27T18:09:20.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.eetimes.com/qualcomm-bets-open-source-ai-software-can-break-nvidias-lock-in/"
+          ]
+        },
+        {
+          "eventId": "evt-d1fac7e4dff047c47582",
+          "title": "Nvidia agrees to buy Hugging Face for $12.9 billion, report says",
+          "lastUpdatedAt": "2026-08-27T17:49:53.000Z",
+          "sourceTiers": [
+            "T2"
+          ],
+          "sourceUrls": [
+            "https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html"
+          ]
+        },
+        {
+          "eventId": "evt-90ad149f8f21a41a0ce0",
+          "title": "Jensen Huang says Nvidia achieved AGI, again — not that it matters",
+          "lastUpdatedAt": "2026-08-27T16:15:52.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.theverge.com/ai-artificial-intelligence/985597/jensen-huang-says-nvidia-achieved-senseless-agi"
+          ]
+        },
+        {
+          "eventId": "evt-3ab06c2287e7f595a8eb",
+          "title": "《共鸣：瘟疫传说传承》正式推出：《瘟疫传说》系列前传，199 元",
+          "lastUpdatedAt": "2026-08-27T16:12:46.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.ithome.com/0/995/327.htm"
+          ]
+        },
+        {
+          "eventId": "evt-6a260cf0615a58e68a43",
+          "title": "Nvidia&apos;s revenue outlook, Meta&apos;s $16.7B settlement, mail-in voting and more in Morning Squawk",
+          "lastUpdatedAt": "2026-08-27T12:44:01.000Z",
+          "sourceTiers": [
+            "T2"
+          ],
+          "sourceUrls": [
+            "https://www.cnbc.com/2026/08/27/5-things-to-know-before-the-stock-market-opens.html"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lumentum",
+      "name": "Lumentum",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 2,
+        "accessGaps": []
+      },
+      "attempts": [
+        {
+          "url": "https://investor.lumentum.com/",
+          "finalUrl": "https://investor.lumentum.com/overview/default.aspx",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1344,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.lumentum.com/en/news",
+          "finalUrl": "https://www.lumentum.com/en/news",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 915,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    },
+    {
+      "id": "celestica",
+      "name": "Celestica",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "https://www.celestica.com/investors: 404",
+          "https://www.celestica.com/news: fetch-failed"
+        ]
+      },
+      "attempts": [
+        {
+          "url": "https://www.celestica.com/investors",
+          "finalUrl": "https://www.celestica.com/investors",
+          "httpStatus": 404,
+          "accessStatus": "not-found",
+          "durationMs": 1105,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.celestica.com/news",
+          "finalUrl": null,
+          "httpStatus": null,
+          "accessStatus": "unavailable",
+          "durationMs": 458,
+          "error": "fetch failed",
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    },
+    {
+      "id": "ciena",
+      "name": "Ciena",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "https://investor.ciena.com/: 403",
+          "https://www.ciena.com/about/newsroom: 403"
+        ]
+      },
+      "attempts": [
+        {
+          "url": "https://investor.ciena.com/",
+          "finalUrl": "https://investor.ciena.com/",
+          "httpStatus": 403,
+          "accessStatus": "unavailable",
+          "durationMs": 457,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.ciena.com/about/newsroom",
+          "finalUrl": "https://www.ciena.com/about/newsroom",
+          "httpStatus": 403,
+          "accessStatus": "unavailable",
+          "durationMs": 414,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [
+        "evt-693221b4554c20000efa",
+        "evt-bba40285c7581ce83f87"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-693221b4554c20000efa",
+          "title": "Ciena: CSPs expect AI services and MOFN for revenue growth but they need network upgrades",
+          "lastUpdatedAt": "2026-08-28T02:34:00.895Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.fierce-network.com/newswire/ciena-csps-expect-ai-services-and-mofn-revenue-growth-they-need-network-upgrades"
+          ]
+        },
+        {
+          "eventId": "evt-bba40285c7581ce83f87",
+          "title": "Ciena survey: AI revenue & quantum-safe encryption - datacenter.news",
+          "lastUpdatedAt": "2026-08-27T15:00:00.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMigwFBVV95cUxQd2JuTzJvWHcwaFB4eTY2c3RKTHlsNUFOdEhOMFlLLTlIMF9waWZGSlFobTZHdUlkZi1vNEcxVmJPMERfTTFMbDN6RnV0cHYzb0JkR2xaRXJkSXRLZ0RJUnlwOVRUa0J3eVlLcGlhMXhyZGJ6RmdSQ08xdENwLUlZTk9xUQ?oc=5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "innolight",
+      "name": "中际旭创",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 2,
+        "accessGaps": []
+      },
+      "attempts": [
+        {
+          "url": "https://www.szse.cn/disclosure/listed/notice/",
+          "finalUrl": "https://www.szse.cn/disclosure/listed/notice/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 491,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.innolight.com/",
+          "finalUrl": "https://www.innolight.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1125,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    },
+    {
+      "id": "eoptolink",
+      "name": "新易盛",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 2,
+        "accessGaps": []
+      },
+      "attempts": [
+        {
+          "url": "https://www.szse.cn/disclosure/listed/notice/",
+          "finalUrl": "https://www.szse.cn/disclosure/listed/notice/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 841,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.eoptolink.com/",
+          "finalUrl": "https://www.eoptolink.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 902,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    },
+    {
+      "id": "coherent",
+      "name": "Coherent",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 2,
+        "accessGaps": []
+      },
+      "attempts": [
+        {
+          "url": "https://investors.coherent.com/",
+          "finalUrl": "https://www.coherent.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 3318,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.coherent.com/news",
+          "finalUrl": "https://www.coherent.com/news",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1111,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    },
+    {
+      "id": "accelink",
+      "name": "光迅科技",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 2,
+        "accessGaps": []
+      },
+      "attempts": [
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "finalUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1104,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.accelink.com/",
+          "finalUrl": "https://www.accelink.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 911,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    },
+    {
+      "id": "credo",
+      "name": "Credo",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": [
+          "https://investors.credosemi.com/: 403"
+        ]
+      },
+      "attempts": [
+        {
+          "url": "https://investors.credosemi.com/",
+          "finalUrl": "https://investors.credosemi.com/",
+          "httpStatus": 403,
+          "accessStatus": "unavailable",
+          "durationMs": 415,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.credosemi.com/news",
+          "finalUrl": "https://credosemi.com/newsroom/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 3595,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    },
+    {
+      "id": "sijia",
+      "name": "仕佳光子",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": [
+          "https://www.sijia.com/: fetch-failed"
+        ]
+      },
+      "attempts": [
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "finalUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 448,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.sijia.com/",
+          "finalUrl": null,
+          "httpStatus": null,
+          "accessStatus": "unavailable",
+          "durationMs": 546,
+          "error": "fetch failed",
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    },
+    {
+      "id": "eoptolink-source",
+      "name": "源杰科技",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 2,
+        "accessGaps": []
+      },
+      "attempts": [
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "finalUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1024,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.eoptolink.com/",
+          "finalUrl": "https://www.eoptolink.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 413,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    },
+    {
+      "id": "taiping",
+      "name": "太辰光",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": [
+          "https://www.tcsuntech.com/: fetch-failed"
+        ]
+      },
+      "attempts": [
+        {
+          "url": "https://www.szse.cn/disclosure/listed/notice/",
+          "finalUrl": "https://www.szse.cn/disclosure/listed/notice/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 168,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.tcsuntech.com/",
+          "finalUrl": null,
+          "httpStatus": null,
+          "accessStatus": "unavailable",
+          "durationMs": 238,
+          "error": "fetch failed",
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    },
+    {
+      "id": "cambridge-tech",
+      "name": "剑桥科技",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 2,
+        "accessGaps": []
+      },
+      "attempts": [
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "finalUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 903,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.cambridge.com.cn/",
+          "finalUrl": "https://www.cambridge.com.cn/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 931,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    },
+    {
+      "id": "hg-tech",
+      "name": "华工科技",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 2,
+        "accessGaps": []
+      },
+      "attempts": [
+        {
+          "url": "https://www.szse.cn/disclosure/listed/notice/",
+          "finalUrl": "https://www.szse.cn/disclosure/listed/notice/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 178,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.hgtech.com.cn/",
+          "finalUrl": "https://www.hgtech.com.cn/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1584,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    },
+    {
+      "id": "sunyopt",
+      "name": "天孚通信",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 2,
+        "accessGaps": []
+      },
+      "attempts": [
+        {
+          "url": "https://www.szse.cn/disclosure/listed/notice/",
+          "finalUrl": "https://www.szse.cn/disclosure/listed/notice/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 166,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.tfcable.com/",
+          "finalUrl": "https://www.tele-fonika.us/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 4557,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    },
+    {
+      "id": "boc",
+      "name": "博创科技",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "sourceCoverage": {
+        "attempted": 2,
+        "publicAccessibleAttempts": 2,
+        "accessGaps": []
+      },
+      "attempts": [
+        {
+          "url": "https://www.szse.cn/disclosure/listed/notice/",
+          "finalUrl": "https://www.szse.cn/disclosure/listed/notice/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 239,
+          "role": "exchange/IR"
+        },
+        {
+          "url": "https://www.broadex-tech.com/",
+          "finalUrl": "https://everprox.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 3417,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": []
+    }
+  ],
+  "windowEventsConsidered": 115,
+  "cutoffVerification": {
+    "status": "fallback",
+    "previousCutoff": "2026-08-28T09:31:07+08:00",
+    "reason": "09:30 manifest was blocked before source review; this overlay is independent",
+    "fallbackFrom": "2026-08-27T02:33:01.000Z"
+  }
+}

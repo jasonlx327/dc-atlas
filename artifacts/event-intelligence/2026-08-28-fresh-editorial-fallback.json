@@ -1,0 +1,3378 @@
+{
+  "schemaVersion": "atlas-codex-editorial-judgment.v1",
+  "day": "2026-08-28",
+  "generatedAt": "2026-08-28T02:34:56.453Z",
+  "sourceGeneratedAt": "2026-08-28T02:34:04.024Z",
+  "model": "deterministic-atlas-fallback-v1",
+  "status": "completed",
+  "verdicts": [
+    {
+      "eventId": "evt-264a4852ac01f8e38222",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "OpenAI releases sweeping report on Hugging Face AI agent hack",
+        "titleEn": "OpenAI releases sweeping report on Hugging Face AI agent hack",
+        "summaryZh": "据CNBC Technology报道，The 37-page report walks through the actions that OpenAI's models took during a series of evaluations prior to and during the Hugging Face breach.该信息目前未获一手来源确认。",
+        "summaryEn": "According to CNBC Technology, The 37-page report walks through the actions that OpenAI's models took during a series of evaluations prior to and during the Hugging Face breach. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-b05176deb9e214e58671",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "撼讯推出《共鸣：瘟疫传说传承》联名款 RX 9070 XT 暗黑犬显卡",
+        "titleEn": "撼讯推出《共鸣：瘟疫传说传承》联名款 RX 9070 XT 暗黑犬显卡",
+        "summaryZh": "据IT之家报道，IT之家 8 月 28 日消息，撼讯 (PowerColor) 今日宣布携手 AMD 和游戏发行商 Focus Entertainment 推出《共鸣：瘟疫传说传承》联名款 RX 9070 XT 暗黑犬显卡。这一显卡 捆绑游戏兑换码和专属主题鼠标垫 。 PowerColor Hellhound AMD Radeon RX 9070 XT GPU Resonance Edition 拥有重新设计的《共鸣：瘟疫传说遗产》主题背板 ：本作主角索菲亚和游戏世界以浓郁而饱经风霜的金色渲染在卡面上，使每一张显卡都成为故事的一部分。此外，暗黑犬家族的标志性 尾灯可切换为符合游戏主题的琥珀夕阳色调 。该信息目前未获一手来源确认。",
+        "summaryEn": "According to IT之家, IT之家 8 月 28 日消息，撼讯 (PowerColor) 今日宣布携手 AMD 和游戏发行商 Focus Entertainment 推出《共鸣：瘟疫传说传承》联名款 RX 9070 XT 暗黑犬显卡。这一显卡 捆绑游戏兑换码和专属主题鼠标垫 。 PowerColor Hellhound AMD Radeon RX 9070 XT GPU Resonance Edition 拥有重新设计的《共鸣：瘟疫传说遗产》主题背板 ：本作主角索菲亚和游戏世界以浓郁而饱经风霜的金色渲染在卡面上，使每一张显卡都成为故事的一部分。此外，暗黑犬家族的标志性 尾灯可切换为符合游戏主题的琥珀夕阳色调 。 The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-eec6928c7be25109dbaa",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Verge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Meta addresses ‘pervert glasses’ reputation with a privacy fix and a new marketing campaign",
+        "titleEn": "Meta addresses ‘pervert glasses’ reputation with a privacy fix and a new marketing campaign",
+        "summaryZh": "据The Verge报道，Meta is updating its AI-powered smart glasses to close a loophole that allowed wearers to keep recording after covering the front-facing LED. Alex Himel, Meta's vice president of augmented reality, writes in a post on Threads that \"the camera will now stop working if the light is covered during a recording.\" The company's line of […]该信息目前未获一手来源确认。",
+        "summaryEn": "According to The Verge, Meta is updating its AI-powered smart glasses to close a loophole that allowed wearers to keep recording after covering the front-facing LED. Alex Himel, Meta's vice president of augmented reality, writes in a post on Threads that \"the camera will now stop working if the light is covered during a recording.\" The company's line of […] The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-321d989cab5410def95a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 SK hynix Newsroom。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "SK hynix Holds Groundbreaking Ceremony for HBM Production Base in Indiana, “Beginning a New Future for US-Korea AI”",
+        "titleEn": "SK hynix Holds Groundbreaking Ceremony for HBM Production Base in Indiana, “Beginning a New Future for US-Korea AI”",
+        "summaryZh": "▲ Rendering of the AI memory advanced packaging production base being constructed by SK hynix in West Lafayette, Indiana, U.S",
+        "summaryEn": "▲ Rendering of the AI memory advanced packaging production base being constructed by SK hynix in West Lafayette, Indiana, U.S"
+      }
+    },
+    {
+      "eventId": "evt-93aee5fa118f550bb338",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 TechCrunch。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "YouTube now lets creators tag Amazon products and earn commissions from purchases",
+        "titleEn": "YouTube now lets creators tag Amazon products and earn commissions from purchases",
+        "summaryZh": "据TechCrunch报道，The update turns product recommendations into a more direct revenue stream for creators, and for Amazon, the move puts its massive online marketplace inside one of the most popular video platforms.该信息目前未获一手来源确认。",
+        "summaryEn": "According to TechCrunch, The update turns product recommendations into a more direct revenue stream for creators, and for Amazon, the move puts its massive online marketplace inside one of the most popular video platforms. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-3ab06c2287e7f595a8eb",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "《共鸣：瘟疫传说传承》正式推出：《瘟疫传说》系列前传，199 元",
+        "titleEn": "《共鸣：瘟疫传说传承》正式推出：《瘟疫传说》系列前传，199 元",
+        "summaryZh": "据IT之家报道，IT之家 8 月 28 日消息，由 Asobo Studio 开发、Focus Entertainment 发行的知名动作冒险游戏《瘟疫传说》系列前传新作 《共鸣：瘟疫传说传承》(Resonance: A Plague Tale Legacy) 现已正式推出 。 本作目前在 Metacritic 评分达到 85 分，媒体评价整体优异。其 国区标准版定价 199 元 ，另有 Heritage Pack（传承礼包）DLC 定价 15.90 元。游戏完整支持简体中文界面、字幕与音频，无需额外语言补丁。 IT之家上附游戏商品页： https://store.steampowered.com/app/2713000 。 故事发生在《瘟疫传说：安魂曲》十五年前，索菲亚年纪尚轻，心狠手辣，四处抢掠，奔走逃亡，同时下定决心查清自己身世的众多秘密。原创剧情与战斗融汇，神话与宿命交织，以新的方式展现《瘟疫传说》的宇宙。索菲亚一路来到米诺陶岛，与穷追不舍的军队周旋之余，还要走过凶险的小路，动脑破解谜题，直面决定生死的险恶考验。不过，真正的考验还在后面 —— 隐于神话之中的那可怖生物，即将与她产生共鸣…… 游戏核心特色如下： 玩家将操控意志坚定、身经百战的索菲亚，在近身激战中自由游走，依靠身手、计谋和反应智取敌人，通过格挡技术和猛烈攻击击退强敌 本作时间线早于《瘟疫传说》正传故事，深入拓展系列世界观，揭晓古老诅咒的起源秘密 融合动作战斗与解谜探索玩法，玩家需要在开放岛屿中周旋于敌军，破解谜题直面神话生物 本作支持 Steam 成就、集换式卡牌、云存档、HDR 显示与完整控制器适配，包含 36 项 Steam 成就，推荐玩家使用控制器游玩。 最低配置： 需要 64 位处理器和操作系统，Windows 10/11 64-bit 系统，AMD Ryzen 3 3100 / Intel Core i3-1该信息目前未获一手来源确认。",
+        "summaryEn": "According to IT之家, IT之家 8 月 28 日消息，由 Asobo Studio 开发、Focus Entertainment 发行的知名动作冒险游戏《瘟疫传说》系列前传新作 《共鸣：瘟疫传说传承》(Resonance: A Plague Tale Legacy) 现已正式推出 。 本作目前在 Metacritic 评分达到 85 分，媒体评价整体优异。其 国区标准版定价 199 元 ，另有 Heritage Pack（传承礼包）DLC 定价 15.90 元。游戏完整支持简体中文界面、字幕与音频，无需额外语言补丁。 IT之家上附游戏商品页： https://store.steampowered.com/app/2713000 。 故事发生在《瘟疫传说：安魂曲》十五年前，索菲亚年纪尚轻，心狠手辣，四处抢掠，奔走逃亡，同时下定决心查清自己身世的众多秘密。原创剧情与战斗融汇，神话与宿命交织，以新的方式展现《瘟疫传说》的宇宙。索菲亚一路来到米诺陶岛，与穷追不舍的军队周旋之余，还要走过凶险的小路，动脑破解谜题，直面决定生死的险恶考验。不过，真正的考验还在后面 —— 隐于神话之中的那可怖生物，即将与她产生共鸣…… 游戏核心特色如下： 玩家将操控意志坚定、身经百战的索菲亚，在近身激战中自由游走，依靠身手、计谋和反应智取敌人，通过格挡技术和猛烈攻击击退强敌 本作时间线早于《瘟疫传说》正传故事，深入拓展系列世界观，揭晓古老诅咒的起源秘密 融合动作战斗与解谜探索玩法，玩家需要在开放岛屿中周旋于敌军，破解谜题直面神话生物 本作支持 Steam 成就、集换式卡牌、云存档、HDR 显示与完整控制器适配，包含 36 项 Steam 成就，推荐玩家使用控制器游玩。 最低配置： 需要 64 位处理器和操作系统，Windows 10/11 64-bit 系统，AMD Ryzen 3 3100 / Intel Core i3-1 The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-d6e9cd0367beb36d1d0d",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Knowledge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "How Data Centers Are Using AI to Run Cooler and Smarter",
+        "titleEn": "How Data Centers Are Using AI to Run Cooler and Smarter",
+        "summaryZh": "据Data Center Knowledge报道，Analysts weigh in on where the industry is headed, as Digital Realty, AWS, DPR Construction, and Schneider Electric demonstrate how they’re leveraging AI.该信息目前未获一手来源确认。",
+        "summaryEn": "According to Data Center Knowledge, Analysts weigh in on where the industry is headed, as Digital Realty, AWS, DPR Construction, and Schneider Electric demonstrate how they’re leveraging AI. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-35bc27db37957f13e462",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Anthropic pushes into physical world with new standard to help AI agents operate machines",
+        "titleEn": "Anthropic pushes into physical world with new standard to help AI agents operate machines",
+        "summaryZh": "据CNBC Technology报道，The Model Hardware Standard is initially available in a research preview, but Anthropic plans to open source it in the future.该信息目前未获一手来源确认。",
+        "summaryEn": "According to CNBC Technology, The Model Hardware Standard is initially available in a research preview, but Anthropic plans to open source it in the future. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-03b191d69a26e1e8c222",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 1.5,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Google Developers Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Introducing Credentio: Open Source C++ Library for C2PA Content Credentials from Google",
+        "titleEn": "Introducing Credentio: Open Source C++ Library for C2PA Content Credentials from Google",
+        "summaryZh": "Credentio is a newly released, open-source C++ library from Google that allows developers to integrate high-performance, local-first validation of C2PA Content Credentials into their client and server applications. By processing assets entirely locally with a highly optimized memory footprint, the library delivers instant validation verdicts for multi-gigabyte media files without incurring cloud latency, bandwidth costs, or data privacy risks. The library currently features deep manifest parsing alongside configurable trust list integration, and is available now on Google Source with future plans to support full credential generation and embedding.",
+        "summaryEn": "Credentio is a newly released, open-source C++ library from Google that allows developers to integrate high-performance, local-first validation of C2PA Content Credentials into their client and server applications. By processing assets entirely locally with a highly optimized memory footprint, the library delivers instant validation verdicts for multi-gigabyte media files without incurring cloud latency, bandwidth costs, or data privacy risks. The library currently features deep manifest parsing alongside configurable trust list integration, and is available now on Google Source with future plans to support full credential generation and embedding."
+      }
+    },
+    {
+      "eventId": "evt-3580e756bc477f1d88eb",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 Data Center Dynamics。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Anthropic signs $45bn compute capacity agreement with Nscale - report",
+        "titleEn": "Anthropic signs $45bn compute capacity agreement with Nscale - report",
+        "summaryZh": "据Data Center Dynamics报道，Deal is for 460MW at Nscale's data center campus in West Virginia该信息目前未获一手来源确认。",
+        "summaryEn": "According to Data Center Dynamics, Deal is for 460MW at Nscale's data center campus in West Virginia The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-d5c87998efcc11668b7a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Samsung Global Newsroom。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "[Video] No Unfolding Needed: A Day With Galaxy Z Flip8’s FlexWindow",
+        "titleEn": "[Video] No Unfolding Needed: A Day With Galaxy Z Flip8’s FlexWindow",
+        "summaryZh": "The thinnest and lightest Galaxy Z Flip yet, Galaxy Z Flip8 delivers greater convenience anytime, anywhere in a compact form factor that fits comfortably in one hand. A standout feature of Galaxy Z Flip8 is its upgraded cover display, FlexWindow. Users can take photos, access frequently used apps, and experience agentic AI — all without […]",
+        "summaryEn": "The thinnest and lightest Galaxy Z Flip yet, Galaxy Z Flip8 delivers greater convenience anytime, anywhere in a compact form factor that fits comfortably in one hand. A standout feature of Galaxy Z Flip8 is its upgraded cover display, FlexWindow. Users can take photos, access frequently used apps, and experience agentic AI — all without […]"
+      }
+    },
+    {
+      "eventId": "evt-505108b50bd6c826e206",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 Financial Times Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Anthropic launches AI tool that can conduct scientific experiments",
+        "titleEn": "Anthropic launches AI tool that can conduct scientific experiments",
+        "summaryZh": "据Financial Times Technology报道，Claude chatbot maker unveils a system that autonomously operates a wide range of devices in laboratories该信息目前未获一手来源确认。",
+        "summaryEn": "According to Financial Times Technology, Claude chatbot maker unveils a system that autonomously operates a wide range of devices in laboratories The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-d1fac7e4dff047c47582",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Nvidia agrees to buy Hugging Face for $12.9 billion, report says",
+        "titleEn": "Nvidia agrees to buy Hugging Face for $12.9 billion, report says",
+        "summaryZh": "据CNBC Technology报道，Nvidia reportedly agreed to buy open source AI platform Hugging Face for $12.9 billion as the chipmaker expands deeper into the AI ecosystem.该信息目前未获一手来源确认。",
+        "summaryEn": "According to CNBC Technology, Nvidia reportedly agreed to buy open source AI platform Hugging Face for $12.9 billion as the chipmaker expands deeper into the AI ecosystem. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-6a260cf0615a58e68a43",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Nvidia&apos;s revenue outlook, Meta&apos;s $16.7B settlement, mail-in voting and more in Morning Squawk",
+        "titleEn": "Nvidia&apos;s revenue outlook, Meta&apos;s $16.7B settlement, mail-in voting and more in Morning Squawk",
+        "summaryZh": "据CNBC Technology报道，Here are five key things investors need to know to start the trading day.该信息目前未获一手来源确认。",
+        "summaryEn": "According to CNBC Technology, Here are five key things investors need to know to start the trading day. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-1872dc06e5aa5e914b28",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Dell Technologies Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "The Best Dell Systems for OpenClaw",
+        "titleEn": "The Best Dell Systems for OpenClaw",
+        "summaryZh": "Discover the best Dell AI PC for OpenClaw, from cloud AI exploration to enterprise-scale agentic AI deployments.",
+        "summaryEn": "Discover the best Dell AI PC for OpenClaw, from cloud AI exploration to enterprise-scale agentic AI deployments."
+      }
+    },
+    {
+      "eventId": "evt-281988a807e55edc2dfa",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Knowledge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "OpenAI Moves Energy Planning Inside Data Center Organization",
+        "titleEn": "OpenAI Moves Energy Planning Inside Data Center Organization",
+        "summaryZh": "据Data Center Knowledge报道，OpenAI is adding an energy-technology role as it expands flexible load, generation, and storage strategies across its growing AI data center portfolio.该信息目前未获一手来源确认。",
+        "summaryEn": "According to Data Center Knowledge, OpenAI is adding an energy-technology role as it expands flexible load, generation, and storage strategies across its growing AI data center portfolio. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-9020e012bb49fbf0f5d1",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Jensen Huang defends Nvidia&apos;s growing financial support for AI ecosystem, says &apos;the risk is low&apos;",
+        "titleEn": "Jensen Huang defends Nvidia&apos;s growing financial support for AI ecosystem, says &apos;the risk is low&apos;",
+        "summaryZh": "据CNBC Technology报道，Nvidia CEO Jensen Huang defended the chipmaker’s growing role in financing AI companies, calling its investments a “once in a generation” opportunity.该信息目前未获一手来源确认。",
+        "summaryEn": "According to CNBC Technology, Nvidia CEO Jensen Huang defended the chipmaker’s growing role in financing AI companies, calling its investments a “once in a generation” opportunity. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-4ea6fd0fbd8355bcae3e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Salesforce, Anthropic expand partnership as Benioff responds to ‘SaaSpocalypse’ concerns",
+        "titleEn": "Salesforce, Anthropic expand partnership as Benioff responds to ‘SaaSpocalypse’ concerns",
+        "summaryZh": "据CNBC Technology报道，\"We're delivering a dynamic interface that thinks, reasons, and acts,\" Salesforce CEO Marc Benioff said in a statement.该信息目前未获一手来源确认。",
+        "summaryEn": "According to CNBC Technology, \"We're delivering a dynamic interface that thinks, reasons, and acts,\" Salesforce CEO Marc Benioff said in a statement. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-655aeff8aa186563fade",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "《微软模拟飞行》游戏免费更新意大利 9 城，10 月 13 日启动 5 类空中竞速",
+        "titleEn": "《微软模拟飞行》游戏免费更新意大利 9 城，10 月 13 日启动 5 类空中竞速",
+        "summaryZh": "据IT之家报道，IT之家 8 月 28 日消息，科技媒体 NeoWin 昨日（8 月 27 日）发布博文， 报道称微软为《微软飞行模拟》（Microsoft Flight Simulator）游戏，推送“城市更新 16：意大利”更新。 本次更新已同步上线《微软飞行模拟》以及《微软飞行模拟 2024》，免费提升意大利 9 座城市的地形、建筑与地表表现，覆盖北部至南部，以及撒丁岛和西西里岛。 IT之家附上本次更新的 9 个意大利城市如下： 博尔扎诺（Bolzano） 卡利亚里（Cagliari） 热那亚（Genoa） 墨西拿（Messina） 比萨（Pisa） 雷焦卡拉布里亚（Reggio di Calabria） 里米尼（Rimini） 的里雅斯特（Trieste） 乌迪内（Udine） 开发团队称，更新采用高保真 TIN 地表纹理、数字高程模型、数字地形模型，以及近期高分辨率航拍图，改善上述城市及周边区域的地形与地表表现。覆盖区域包含沿海城市、内陆都市区，以及以自然景观为背景的城区。 开发团队同日向两代《微软模拟飞行》商城推出 Heinkel He 70 Blitz，定价 14.99 美元 （IT之家注：现汇率约合 101 元人民币） 。该机为德国亨克尔公司在 1930 年代研制的单发高速飞机，曾用于邮政、客运和军用侦察等任务；此次作为 Local Legend 25 加入游戏。 National Championship Air Races 将于 2026 年 10 月 13 日登陆《微软模拟飞行 2024》游戏，新内容整合经典 Reno Air Races 与 Roswell Air Races，采用多圈比赛形式，并加入飞机“磨损系统”，使持续高速飞行和比赛过程中的机体状态管理成为玩法变量。 比赛将包括五个不同的级别： Unlimited Class（P-51 野马战斗机） T-6 级该信息目前未获一手来源确认。",
+        "summaryEn": "According to IT之家, IT之家 8 月 28 日消息，科技媒体 NeoWin 昨日（8 月 27 日）发布博文， 报道称微软为《微软飞行模拟》（Microsoft Flight Simulator）游戏，推送“城市更新 16：意大利”更新。 本次更新已同步上线《微软飞行模拟》以及《微软飞行模拟 2024》，免费提升意大利 9 座城市的地形、建筑与地表表现，覆盖北部至南部，以及撒丁岛和西西里岛。 IT之家附上本次更新的 9 个意大利城市如下： 博尔扎诺（Bolzano） 卡利亚里（Cagliari） 热那亚（Genoa） 墨西拿（Messina） 比萨（Pisa） 雷焦卡拉布里亚（Reggio di Calabria） 里米尼（Rimini） 的里雅斯特（Trieste） 乌迪内（Udine） 开发团队称，更新采用高保真 TIN 地表纹理、数字高程模型、数字地形模型，以及近期高分辨率航拍图，改善上述城市及周边区域的地形与地表表现。覆盖区域包含沿海城市、内陆都市区，以及以自然景观为背景的城区。 开发团队同日向两代《微软模拟飞行》商城推出 Heinkel He 70 Blitz，定价 14.99 美元 （IT之家注：现汇率约合 101 元人民币） 。该机为德国亨克尔公司在 1930 年代研制的单发高速飞机，曾用于邮政、客运和军用侦察等任务；此次作为 Local Legend 25 加入游戏。 National Championship Air Races 将于 2026 年 10 月 13 日登陆《微软模拟飞行 2024》游戏，新内容整合经典 Reno Air Races 与 Roswell Air Races，采用多圈比赛形式，并加入飞机“磨损系统”，使持续高速飞行和比赛过程中的机体状态管理成为玩法变量。 比赛将包括五个不同的级别： Unlimited Class（P-51 野马战斗机） T-6 级 The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-2c08cf0995e86b5370cd",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 TechCrunch。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Buried in Meta’s $18B settlement is a legal pass on kids’ data",
+        "titleEn": "Buried in Meta’s $18B settlement is a legal pass on kids’ data",
+        "summaryZh": "据TechCrunch报道，Meta’s settlement with 29 states allows it to retain certain data from children under 13 to train and test age-detection models, highlighting a privacy trade-off built into the deal.该信息目前未获一手来源确认。",
+        "summaryEn": "According to TechCrunch, Meta’s settlement with 29 states allows it to retain certain data from children under 13 to train and test age-detection models, highlighting a privacy trade-off built into the deal. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-8a364bafe52cb6ee17cd",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Verge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Google tells Android app developers to cool it on memory use, or else",
+        "titleEn": "Google tells Android app developers to cool it on memory use, or else",
+        "summaryZh": "据The Verge报道，Google will start policing memory-hungry Android apps as a direct response to the RAM crisis. Spotted by TechCrunch, the company yesterday published a memo addressing the Play Store's role in enforcing new memory-usage restrictions. The post emphasizes the importance of meeting new memory usage limits for apps, in order \"to help developers navigate industry-wide hardware […]该信息目前未获一手来源确认。",
+        "summaryEn": "According to The Verge, Google will start policing memory-hungry Android apps as a direct response to the RAM crisis. Spotted by TechCrunch, the company yesterday published a memo addressing the Play Store's role in enforcing new memory-usage restrictions. The post emphasizes the importance of meeting new memory usage limits for apps, in order \"to help developers navigate industry-wide hardware […] The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-77bdc07c35f083aaabaa",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 EE Times。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Qualcomm Bets Open-Source AI Software Can Break Nvidia’s Lock-In",
+        "titleEn": "Qualcomm Bets Open-Source AI Software Can Break Nvidia’s Lock-In",
+        "summaryZh": "据EE Times报道，Modular aims to separate AI software from silicon choice, giving Qualcomm and other challengers a shot at Nvidia-dominated workloads. The post Qualcomm Bets Open-Source AI Software Can Break Nvidia’s Lock-In appeared first on EE Times .该信息目前未获一手来源确认。",
+        "summaryEn": "According to EE Times, Modular aims to separate AI software from silicon choice, giving Qualcomm and other challengers a shot at Nvidia-dominated workloads. The post Qualcomm Bets Open-Source AI Software Can Break Nvidia’s Lock-In appeared first on EE Times . The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-90ad149f8f21a41a0ce0",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Verge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Jensen Huang says Nvidia achieved AGI, again — not that it matters",
+        "titleEn": "Jensen Huang says Nvidia achieved AGI, again — not that it matters",
+        "summaryZh": "据The Verge报道，On Nvidia's earnings call Wednesday, CEO Jensen Huang casually announced the company had \"achieved AGI,\" one of the tech industry's ultimate goals some of its biggest players have spent years chasing. Almost immediately, Huang dismissed the coveted milestone as \"senseless.\" He's right. For the supposed finish line of the AI race, there is no consensus […]该信息目前未获一手来源确认。",
+        "summaryEn": "According to The Verge, On Nvidia's earnings call Wednesday, CEO Jensen Huang casually announced the company had \"achieved AGI,\" one of the tech industry's ultimate goals some of its biggest players have spent years chasing. Almost immediately, Huang dismissed the coveted milestone as \"senseless.\" He's right. For the supposed finish line of the AI race, there is no consensus […] The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-24c820ebeb8151ad3e26",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 TechCrunch。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Here’s all the times AI has gone rogue and hacked other companies",
+        "titleEn": "Here’s all the times AI has gone rogue and hacked other companies",
+        "summaryZh": "据TechCrunch报道，A recap of all the incidents involving LLMs made by Anthropic, Meta, and OpenAI, which went rogue and attacked real companies and individuals on the internet.该信息目前未获一手来源确认。",
+        "summaryEn": "According to TechCrunch, A recap of all the incidents involving LLMs made by Anthropic, Meta, and OpenAI, which went rogue and attacked real companies and individuals on the internet. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-04bef27c87fecc59328d",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Georgia Power deal to power OpenAI data center is approved, with some fine print - AJC.com",
+        "titleEn": "Georgia Power deal to power OpenAI data center is approved, with some fine print - AJC.com",
+        "summaryZh": "据Data Center Dynamics报道，Georgia Power deal to power OpenAI data center is approved, with some fine print &nbsp;&nbsp; AJC.com该信息目前未获一手来源确认。",
+        "summaryEn": "According to Data Center Dynamics, Georgia Power deal to power OpenAI data center is approved, with some fine print &nbsp;&nbsp; AJC.com The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-4d9ddfed30db153c14dd",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 0,
+        "researchValueScore": 4.4,
+        "readerValueScore": 2.5
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 CoreWeave。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "News and Press Releases | CoreWeave",
+        "titleEn": "News and Press Releases | CoreWeave",
+        "summaryZh": "Hear the latest CoreWeave news, trends, and updates in the tech world at large from leading industry voices.",
+        "summaryEn": "Hear the latest CoreWeave news, trends, and updates in the tech world at large from leading industry voices."
+      }
+    },
+    {
+      "eventId": "evt-731022286a582f9e1da4",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 1.5,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Google Developers Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Agent Plugins package your skills, tools, and more",
+        "titleEn": "Agent Plugins package your skills, tools, and more",
+        "summaryZh": "Agent Plugins 1.0.0 is a new, vendor-neutral directory specification—backed by Google, Amazon, Microsoft, and others—for packaging Agent Skills and MCP servers into a single portable unit. By standardizing the manifest (plugin.json) and utilizing a fixed directory layout, it eliminates the need for developers to maintain separate wrappers or configurations to support different AI coding agents and IDEs. Google has officially joined as a Core Maintainer and already rolled out support in the Agents CLI and Data Agent Kit, allowing developers to start building and distributing interoperable plugins today.",
+        "summaryEn": "Agent Plugins 1.0.0 is a new, vendor-neutral directory specification—backed by Google, Amazon, Microsoft, and others—for packaging Agent Skills and MCP servers into a single portable unit. By standardizing the manifest (plugin.json) and utilizing a fixed directory layout, it eliminates the need for developers to maintain separate wrappers or configurations to support different AI coding agents and IDEs. Google has officially joined as a Core Maintainer and already rolled out support in the Agents CLI and Data Agent Kit, allowing developers to start building and distributing interoperable plugins today."
+      }
+    },
+    {
+      "eventId": "evt-701f303257ac06756fc6",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-2da657f9cc3662768914",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 MarketWatch Top Stories。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Salesforce’s stock rockets 20% and gives the software sector a major lift",
+        "titleEn": "Salesforce’s stock rockets 20% and gives the software sector a major lift",
+        "summaryZh": "据MarketWatch Top Stories报道，Salesforce’s earnings showed that AI isn’t killing traditional software, and that the operators of major AI models are willing to strike partnerships with legacy vendors.该信息目前未获一手来源确认。",
+        "summaryEn": "According to MarketWatch Top Stories, Salesforce’s earnings showed that AI isn’t killing traditional software, and that the operators of major AI models are willing to strike partnerships with legacy vendors. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-4734d170268a8cb2f0b1",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "苹果 M6 Mac mini 细节：支持 Thread 智能家居协议，预装 macOS 27 系统",
+        "titleEn": "苹果 M6 Mac mini 细节：支持 Thread 智能家居协议，预装 macOS 27 系统",
+        "summaryZh": "据IT之家报道，IT之家 8 月 28 日消息，科技媒体 9to5Mac 昨日（8 月 27 日）发布博文，针对近期有购买苹果 M6 Mac mini 的用户，分享了 3 个苹果并未在新闻稿中提及的细节。 内存带宽 根据苹果官方公布的技术规格，基础版 16GB 统一内存的带宽为 153GB/s；当用户将内存升级至 24GB 或 32GB 时，带宽才提升至 170GB/s。 该媒体认为在大模型推理、高分辨率视频处理等对内存带宽敏感的工作负载场景下，如果放在一起对比，用户能明显感知低配与高配之间的差异。 N1 芯片带来 Thread 支持 苹果在宣传中重点聚焦 Wi-Fi 7 和蓝牙 6 升级，未突出说明 M6 Mac mini 内置苹果自研 N1 芯片。 由于 N1 芯片的加入， M6 Mac mini 额外支持 Thread 协议，可更原生地接入智能家居设备与 Matter 生态。 对普通用户而言，这意味着在家庭自动化场景中，Mac mini 可作为更稳定的中枢节点。 出厂预装 macOS 27 &nbsp;Golden Gate 苹果官网与发布会材料未明确标注 M6 Mac mini 的出厂系统版本，IT之家援引博文介绍，苹果已向媒体确认新机预装 macOS 27 Golden Gate。对习惯延后升级系统的用户而言，新机直接以最新系统交付。 搭载 M6 芯片的 Mac mini 价格为 6999 元起，教育版售价为 6199 元。具体如下： 16GB 内存 +256GB 存储：6999 元 16GB 内存 +512GB 存储：8499 元 16GB 内存 +1TB 存储：10749 元 叠加国补后实付 5949.2 元，再叠教育优惠后仅需 5269.2 元，京东自营于昨日 8 月 27 日 9 点开售： 京东 苹果 Mac mini M6 还有教育优惠版可选 国补后 5949.2 元起该信息目前未获一手来源确认。",
+        "summaryEn": "According to IT之家, IT之家 8 月 28 日消息，科技媒体 9to5Mac 昨日（8 月 27 日）发布博文，针对近期有购买苹果 M6 Mac mini 的用户，分享了 3 个苹果并未在新闻稿中提及的细节。 内存带宽 根据苹果官方公布的技术规格，基础版 16GB 统一内存的带宽为 153GB/s；当用户将内存升级至 24GB 或 32GB 时，带宽才提升至 170GB/s。 该媒体认为在大模型推理、高分辨率视频处理等对内存带宽敏感的工作负载场景下，如果放在一起对比，用户能明显感知低配与高配之间的差异。 N1 芯片带来 Thread 支持 苹果在宣传中重点聚焦 Wi-Fi 7 和蓝牙 6 升级，未突出说明 M6 Mac mini 内置苹果自研 N1 芯片。 由于 N1 芯片的加入， M6 Mac mini 额外支持 Thread 协议，可更原生地接入智能家居设备与 Matter 生态。 对普通用户而言，这意味着在家庭自动化场景中，Mac mini 可作为更稳定的中枢节点。 出厂预装 macOS 27 &nbsp;Golden Gate 苹果官网与发布会材料未明确标注 M6 Mac mini 的出厂系统版本，IT之家援引博文介绍，苹果已向媒体确认新机预装 macOS 27 Golden Gate。对习惯延后升级系统的用户而言，新机直接以最新系统交付。 搭载 M6 芯片的 Mac mini 价格为 6999 元起，教育版售价为 6199 元。具体如下： 16GB 内存 +256GB 存储：6999 元 16GB 内存 +512GB 存储：8499 元 16GB 内存 +1TB 存储：10749 元 叠加国补后实付 5949.2 元，再叠教育优惠后仅需 5269.2 元，京东自营于昨日 8 月 27 日 9 点开售： 京东 苹果 Mac mini M6 还有教育优惠版可选 国补后 5949.2 元起 The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-71940ecc77a994a4a339",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Salesforce stock jumps 18% on AI growth and Anthropic investment gain - CNBC",
+        "titleEn": "Salesforce stock jumps 18% on AI growth and Anthropic investment gain - CNBC",
+        "summaryZh": "据CNBC Technology报道，Salesforce stock jumps 18% on AI growth and Anthropic investment gain &nbsp;&nbsp; CNBC该信息目前未获一手来源确认。",
+        "summaryEn": "According to CNBC Technology, Salesforce stock jumps 18% on AI growth and Anthropic investment gain &nbsp;&nbsp; CNBC The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-83d6ec97d581f4a0cadf",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 ServeTheHome。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Apple Mac Studio M5 Ultra and Mac Mini M6 Launched",
+        "titleEn": "Apple Mac Studio M5 Ultra and Mac Mini M6 Launched",
+        "summaryZh": "据ServeTheHome报道，Apple launched the Apple Mac Mini M6 and Mac Studio M5 Ultra for those looking to do local AI with Apple's unified memory The post Apple Mac Studio M5 Ultra and Mac Mini M6 Launched appeared first on ServeTheHome .该信息目前未获一手来源确认。",
+        "summaryEn": "According to ServeTheHome, Apple launched the Apple Mac Mini M6 and Mac Studio M5 Ultra for those looking to do local AI with Apple's unified memory The post Apple Mac Studio M5 Ultra and Mac Mini M6 Launched appeared first on ServeTheHome . The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-a434850abeadb653e14a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-48cb8b4ef70f568d4997",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 1.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Fierce Network。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Analysts split on whether rumored Nvidia-Hugging Face deal is a good thing",
+        "titleEn": "Analysts split on whether rumored Nvidia-Hugging Face deal is a good thing",
+        "summaryZh": "据Fierce Network报道，Nvidia may be eyeing Hugging Face, but analysts are divided on whether the deal would boost open source or compromise its neutrality.该信息目前未获一手来源确认。",
+        "summaryEn": "According to Fierce Network, Nvidia may be eyeing Hugging Face, but analysts are divided on whether the deal would boost open source or compromise its neutrality. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-76f6fb282a3e9b8a569d",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f06e28e676b97fa592e1",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-0b3c2731400465412495",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-849be4516ec5b6585795",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-63b7ebde4173168782b0",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-81608ba2a034f226602c",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-27e73060d5300aacd0c4",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-7853c7e1d7e61f0fa6bd",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-775b5c6b6ff8e56fffe7",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f8da9516daf5285b0273",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-3b3f34552c3bf4d54964",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-d4e92e2b526b0ed27029",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-b74866ea5876162640e4",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-b0e242b75a184d5f04e5",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-3390af672edb46c794d7",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a4ad89a89cd0f61014ab",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Interconnect。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-0e0e7084e6d5088378e3",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国 AI 产业链。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-122b9613445ea9b218fa",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-814cbd1bc3f9fde53c6f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Interconnect。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f504fa94ab9869a977cd",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-daf68654e3d7ef7f1a21",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c542dbd1af168a43e75f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Neocloud。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-d5e83d9e1c80c91e3e65",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国 AI 产业链。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-22fa182646dbb6a97ad7",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国 AI 产业链。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-960736f7704e903bc6df",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国 AI 产业链。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-977dd2e6e4984ecf4b9e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国 AI 产业链。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-28bb2a48be36d1fc4387",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Interconnect。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-2138bfea415ae5b2d0ec",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-be3eb9901a8e7e7f28c3",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国 AI 产业链。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-8e31955228116e7575a9",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-1a2326a8f0a1b922e3b5",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-15d2c4c73d395e47fa7f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c2e621297e8652175ac0",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T0；首个可访问来源 Federal Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Notice of Award of a Sole Source Cooperative Agreement To Fund Vietnam Administration of Medical Services, National Institute of Medical Research, and ASEAN-Plus Field Epidemiology Training Network Foundation",
+        "titleEn": "Notice of Award of a Sole Source Cooperative Agreement To Fund Vietnam Administration of Medical Services, National Institute of Medical Research, and ASEAN-Plus Field Epidemiology Training Network Foundation",
+        "summaryZh": "The Centers for Disease Control and Prevention (CDC), located within the Department of Health and Human Services (HHS), announces three separate awards to fund Vietnam Administration of Medical Services (VAMS), National Institute of Medical Research (NIMR), and ASEAN+3 FETN Foundation. For Vietnam Administration of Medical Services (VAMS), the award is approximately $2,000,000 for Federal Fiscal Year (FFY) 2026, with an expected total funding of approximately $10,000,000. For National Institute of Medical Research (NIMR), the award is approximately $2,000,000 for FFY 2026, with an expected total funding of approximately $10,000,000. For ASEAN+3 FETN Foundation, the award is approximately $500,000 in FFY 2026, with an expected total funding of approximately $2,500,000. The total 5-year peri",
+        "summaryEn": "The Centers for Disease Control and Prevention (CDC), located within the Department of Health and Human Services (HHS), announces three separate awards to fund Vietnam Administration of Medical Services (VAMS), National Institute of Medical Research (NIMR), and ASEAN+3 FETN Foundation. For Vietnam Administration of Medical Services (VAMS), the award is approximately $2,000,000 for Federal Fiscal Year (FFY) 2026, with an expected total funding of approximately $10,000,000. For National Institute of Medical Research (NIMR), the award is approximately $2,000,000 for FFY 2026, with an expected total funding of approximately $10,000,000. For ASEAN+3 FETN Foundation, the award is approximately $500,000 in FFY 2026, with an expected total funding of approximately $2,500,000. The total 5-year peri"
+      }
+    },
+    {
+      "eventId": "evt-1bc7ffd39ab8433e8ca7",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T0；首个可访问来源 Federal Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Agency Information Collection Activities; Submission to the Office of Management and Budget for Review and Approval; Comment Request; Performance Evaluation Studies on Wastewater Laboratories (Renewal)",
+        "titleEn": "Agency Information Collection Activities; Submission to the Office of Management and Budget for Review and Approval; Comment Request; Performance Evaluation Studies on Wastewater Laboratories (Renewal)",
+        "summaryZh": "The Environmental Protection Agency (EPA) has submitted an information collection request (ICR), Performance Evaluation Studies on Wastewater Laboratories (EPA ICR Number 0234.15, OMB Control Number 2080-0021) to the Office of Management and Budget (OMB) for review and approval in accordance with the Paperwork Reduction Act. This is a proposed extension of the ICR, which is currently approved through August 31, 2026. Public comments were previously requested via the Federal Register on May 21, 2026 during a 60-day comment period. This notice allows for an additional 30 days for public comments.",
+        "summaryEn": "The Environmental Protection Agency (EPA) has submitted an information collection request (ICR), Performance Evaluation Studies on Wastewater Laboratories (EPA ICR Number 0234.15, OMB Control Number 2080-0021) to the Office of Management and Budget (OMB) for review and approval in accordance with the Paperwork Reduction Act. This is a proposed extension of the ICR, which is currently approved through August 31, 2026. Public comments were previously requested via the Federal Register on May 21, 2026 during a 60-day comment period. This notice allows for an additional 30 days for public comments."
+      }
+    },
+    {
+      "eventId": "evt-3d536e4b3985f74a8f43",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 POWER Magazine。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Hull Street Acquires Two PJM-Based Power Stations from Rockland Capital",
+        "titleEn": "Hull Street Acquires Two PJM-Based Power Stations from Rockland Capital",
+        "summaryZh": "据POWER Magazine报道，Maryland-based investment firm Hull Street Energy announced it has completed its acquisition of two Midwestern power plants that provide electricity in the PJM Interconnection. The post Hull Street Acquires Two PJM-Based Power Stations from Rockland Capital appeared first on POWER Magazine .该信息目前未获一手来源确认。",
+        "summaryEn": "According to POWER Magazine, Maryland-based investment firm Hull Street Energy announced it has completed its acquisition of two Midwestern power plants that provide electricity in the PJM Interconnection. The post Hull Street Acquires Two PJM-Based Power Stations from Rockland Capital appeared first on POWER Magazine . The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-199e061f2b13d7010953",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Cisco Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "vPC and ESI-based multi-homing: The dynamic duo powering scalable, resilient data centers",
+        "titleEn": "vPC and ESI-based multi-homing: The dynamic duo powering scalable, resilient data centers",
+        "summaryZh": "Stop choosing between simplicity and scale. Learn how the dynamic duo of vPC and enhanced ESI builds a resilient, fabric-native network that accelerates your data center for the AI era with the sub-second convergence your business demands.",
+        "summaryEn": "Stop choosing between simplicity and scale. Learn how the dynamic duo of vPC and enhanced ESI builds a resilient, fabric-native network that accelerates your data center for the AI era with the sub-second convergence your business demands."
+      }
+    },
+    {
+      "eventId": "evt-8734701af160b8d045da",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Dell Technologies Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Activate More Data. Spend Less.",
+        "titleEn": "Activate More Data. Spend Less.",
+        "summaryZh": "Introducing the new ultra-dense storage engine of the Dell AI Data Platform: Dell ObjectScale X7700 with release 4.4.",
+        "summaryEn": "Introducing the new ultra-dense storage engine of the Dell AI Data Platform: Dell ObjectScale X7700 with release 4.4."
+      }
+    },
+    {
+      "eventId": "evt-437c54e1c9d45acf4472",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "新疆建成全国规模最大超高压电力骨干网，覆盖面积约 160 万平方公里",
+        "titleEn": "新疆建成全国规模最大超高压电力骨干网，覆盖面积约 160 万平方公里",
+        "summaryZh": "据IT之家报道，IT之家 8 月 28 日消息，据央视新闻从国家电网了解到，截至昨天（8 月 27 日）， 新疆 750 千伏超高压输电线路总长度超过 15,000 千米 ，建成全国规模最大的超高压电力骨干网。 随着新疆喀什 750 千伏送出工程顺利投运，新疆 750 千伏超高压电网总长度达到 15,030.05 公里，建成全国规模最大的超高压电力骨干网， 覆盖面积约 160 万平方公里 。 国网新疆电力调度控制中心调控处副处长蔡鹏程介绍，这张骨干电网不仅实现新疆本地电力稳定供应，更搭建起西电东送国家级大通道。依托这套网架，新疆清洁电力跨省输送能力持续领跑全国。 IT之家从报道获悉，截至今年 7 月底， 新疆累计外送电量突破 11,058 亿千瓦时 ，送至全国 23 个省区市，强力支撑了中东部地区用电高峰电力保供。 “十五五”期间，新疆将持续加快电网建设。 预计至 2030 年，疆电外送能力将达到 6,000 万千瓦 ，为全国能源电力保供以及新疆新能源大规模开发、高效率消纳筑牢稳固的电力保障基础。该信息目前未获一手来源确认。",
+        "summaryEn": "According to IT之家, IT之家 8 月 28 日消息，据央视新闻从国家电网了解到，截至昨天（8 月 27 日）， 新疆 750 千伏超高压输电线路总长度超过 15,000 千米 ，建成全国规模最大的超高压电力骨干网。 随着新疆喀什 750 千伏送出工程顺利投运，新疆 750 千伏超高压电网总长度达到 15,030.05 公里，建成全国规模最大的超高压电力骨干网， 覆盖面积约 160 万平方公里 。 国网新疆电力调度控制中心调控处副处长蔡鹏程介绍，这张骨干电网不仅实现新疆本地电力稳定供应，更搭建起西电东送国家级大通道。依托这套网架，新疆清洁电力跨省输送能力持续领跑全国。 IT之家从报道获悉，截至今年 7 月底， 新疆累计外送电量突破 11,058 亿千瓦时 ，送至全国 23 个省区市，强力支撑了中东部地区用电高峰电力保供。 “十五五”期间，新疆将持续加快电网建设。 预计至 2030 年，疆电外送能力将达到 6,000 万千瓦 ，为全国能源电力保供以及新疆新能源大规模开发、高效率消纳筑牢稳固的电力保障基础。 The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-005387062de7da619208",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 POWER Magazine。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Revolve Renewable Power Secures $24 Million from Mexico Bank for Project Financing",
+        "titleEn": "Revolve Renewable Power Secures $24 Million from Mexico Bank for Project Financing",
+        "summaryZh": "据POWER Magazine报道，Canada-headquartered Revolve Renewable Power Corp., a North American owner, operator and developer of power generation and digital infrastructure projects, announced it has entered into a MXN$450 million ($24 million) project-level, non-recourse-style financing facility with Banco Multiva, S.A., Institución de Banca Múltiple, Grupo Financiero Multiva. The facility is secured by project cash flows and contracted revenues […] The post Revolve Renewable Power Secures $24 Million from Mexico Bank for Project Financing appeared first on POWER Magazine .该信息目前未获一手来源确认。",
+        "summaryEn": "According to POWER Magazine, Canada-headquartered Revolve Renewable Power Corp., a North American owner, operator and developer of power generation and digital infrastructure projects, announced it has entered into a MXN$450 million ($24 million) project-level, non-recourse-style financing facility with Banco Multiva, S.A., Institución de Banca Múltiple, Grupo Financiero Multiva. The facility is secured by project cash flows and contracted revenues […] The post Revolve Renewable Power Secures $24 Million from Mexico Bank for Project Financing appeared first on POWER Magazine . The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-45732fd11570ced3d411",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Dynamics。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "LG CNS deploys direct-to-chip cooling for Naver Cloud at data center in Goyang City, South Korea",
+        "titleEn": "LG CNS deploys direct-to-chip cooling for Naver Cloud at data center in Goyang City, South Korea",
+        "summaryZh": "据Data Center Dynamics报道，Naver signed lease agreement at site in April该信息目前未获一手来源确认。",
+        "summaryEn": "According to Data Center Dynamics, Naver signed lease agreement at site in April The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-61e6dd7234b78880ce7a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Knowledge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "PJM’s Power Shortfall Puts Data Center Growth in Focus",
+        "titleEn": "PJM’s Power Shortfall Puts Data Center Growth in Focus",
+        "summaryZh": "据Data Center Knowledge报道，PJM’s first large load process produced 12 proposals and no consensus. Now an accelerated procurement is addressing a 6.8 GW capacity shortfall.该信息目前未获一手来源确认。",
+        "summaryEn": "According to Data Center Knowledge, PJM’s first large load process produced 12 proposals and no consensus. Now an accelerated procurement is addressing a 6.8 GW capacity shortfall. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-9fe5085d8324f739128f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 Financial Times Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Reform UK pledges to cut data rules and curb liabilities for non-executives",
+        "titleEn": "Reform UK pledges to cut data rules and curb liabilities for non-executives",
+        "summaryZh": "据Financial Times Technology报道，Nigel Farage’s party woos business by promising to scrap the General Data Protection Regulation if it wins power该信息目前未获一手来源确认。",
+        "summaryEn": "According to Financial Times Technology, Nigel Farage’s party woos business by promising to scrap the General Data Protection Regulation if it wins power The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-3935c0856ac8fa5c2049",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Verge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "GTA VI: all the news on Rockstar’s next entry in the Grand Theft Auto series",
+        "titleEn": "GTA VI: all the news on Rockstar’s next entry in the Grand Theft Auto series",
+        "summaryZh": "据The Verge报道，It’s been over a decade and two console generations since GTA V came out, and its sequel is still a work in progress. GTA VI has faced multiple delays, with developer Rockstar Games bumping back its predicted release date twice, eventually shifting to November 19th, 2026, a full year after its originally planned fall 2025 […]该信息目前未获一手来源确认。",
+        "summaryEn": "According to The Verge, It’s been over a decade and two console generations since GTA V came out, and its sequel is still a work in progress. GTA VI has faced multiple delays, with developer Rockstar Games bumping back its predicted release date twice, eventually shifting to November 19th, 2026, a full year after its originally planned fall 2025 […] The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-3eee07d220c70fa1bd0b",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Utility Dive。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "US Army selects 5 companies to deploy microreactors at military installations",
+        "titleEn": "US Army selects 5 companies to deploy microreactors at military installations",
+        "summaryZh": "据Utility Dive报道，The $2.2B in federal funding is intended to boost the sites&rsquo; resilience and the commercial viability of next-generation nuclear power.该信息目前未获一手来源确认。",
+        "summaryEn": "According to Utility Dive, The $2.2B in federal funding is intended to boost the sites&rsquo; resilience and the commercial viability of next-generation nuclear power. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-8b4e7aa53b01be491b70",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Cisco Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "The “U.S. vs. China” AI Trap: An Incomplete Proxy for AI Security",
+        "titleEn": "The “U.S. vs. China” AI Trap: An Incomplete Proxy for AI Security",
+        "summaryZh": "When you look at an AI model’s repository page, you see the name of the model and an associated publisher. In policy and industry conversations, the publisher often gets collapsed into a country label—a “U.S. model” or a “Chinese model”—used as.....",
+        "summaryEn": "When you look at an AI model’s repository page, you see the name of the model and an associated publisher. In policy and industry conversations, the publisher often gets collapsed into a country label—a “U.S. model” or a “Chinese model”—used as....."
+      }
+    },
+    {
+      "eventId": "evt-f2b067680f10a192c571",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 EE Times。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "NewPower Worldwide Expands Credit Facility to $750 Million to Support Global Growth and Customer Demand",
+        "titleEn": "NewPower Worldwide Expands Credit Facility to $750 Million to Support Global Growth and Customer Demand",
+        "summaryZh": "据EE Times报道，NASHUA, New Hampshire – NewPower Worldwide, one of the electronics industry’s fastest-growing distributors, today announced it has expanded its committed credit facility to $750 million, further enhancing its ability to invest in inventory, support customer growth, and capitalize on opportunities across the global supply chain. The increase follows a period of exceptional growth for NewPower Worldwide. […] The post NewPower Worldwide Expands Credit Facility to $750 Million to Support Global Growth and Customer Demand appeared first on EE Times .该信息目前未获一手来源确认。",
+        "summaryEn": "According to EE Times, NASHUA, New Hampshire – NewPower Worldwide, one of the electronics industry’s fastest-growing distributors, today announced it has expanded its committed credit facility to $750 million, further enhancing its ability to invest in inventory, support customer growth, and capitalize on opportunities across the global supply chain. The increase follows a period of exceptional growth for NewPower Worldwide. […] The post NewPower Worldwide Expands Credit Facility to $750 Million to Support Global Growth and Customer Demand appeared first on EE Times . The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-dac94e8ebf69cbae985f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Light Reading。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "USTelecom, NTCA back Lumos in Ohio permitting dispute",
+        "titleEn": "USTelecom, NTCA back Lumos in Ohio permitting dispute",
+        "summaryZh": "据Light Reading报道，USTelecom and NTCA filed comments to the FCC supporting Lumos' petition for the agency to preempt some permitting fees and requirements imposed by two Ohio counties. But the counties dispute Lumos' claims.该信息目前未获一手来源确认。",
+        "summaryEn": "According to Light Reading, USTelecom and NTCA filed comments to the FCC supporting Lumos' petition for the agency to preempt some permitting fees and requirements imposed by two Ohio counties. But the counties dispute Lumos' claims. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-c43fa8918441973e4faa",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Dynamics。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "VCI Global announces launch of Galatron AI",
+        "titleEn": "VCI Global announces launch of Galatron AI",
+        "summaryZh": "据Data Center Dynamics报道，Company launches prefabricated modular AI data center platform, targeting up to 500MW aggregate AI compute capacity该信息目前未获一手来源确认。",
+        "summaryEn": "According to Data Center Dynamics, Company launches prefabricated modular AI data center platform, targeting up to 500MW aggregate AI compute capacity The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-ffd87cb164545c018fa9",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "New proposal from grid operator PJM would require data centers to bring their own power - Virginia Mercury",
+        "titleEn": "New proposal from grid operator PJM would require data centers to bring their own power - Virginia Mercury",
+        "summaryZh": "据Utility Dive报道，New proposal from grid operator PJM would require data centers to bring their own power &nbsp;&nbsp; Virginia Mercury该信息目前未获一手来源确认。",
+        "summaryEn": "According to Utility Dive, New proposal from grid operator PJM would require data centers to bring their own power &nbsp;&nbsp; Virginia Mercury The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-507e7728ad8e04ba0a5b",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "FBI seizes hacking tools it says China used to attack NASA, DOE, US Senate and other critical networks",
+        "titleEn": "FBI seizes hacking tools it says China used to attack NASA, DOE, US Senate and other critical networks",
+        "summaryZh": "据The Register报道，Beijing's botnets busted该信息目前未获一手来源确认。",
+        "summaryEn": "According to The Register, Beijing's botnets busted The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-d64196866c91f7e9df6a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 NVIDIA Technical Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "How to Train a Cross-Embodiment Robot Navigation Policy with AI Agents",
+        "titleEn": "How to Train a Cross-Embodiment Robot Navigation Policy with AI Agents",
+        "summaryZh": "Navigation enables a robot to turn perception and motion into purposeful autonomy. Unlike locomotion, which produces stable movement, navigation must be used to...",
+        "summaryEn": "Navigation enables a robot to turn perception and motion into purposeful autonomy. Unlike locomotion, which produces stable movement, navigation must be used to..."
+      }
+    },
+    {
+      "eventId": "evt-2363a2f6319af09dfa27",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 POWER Magazine。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "U.S. Army Mobilizes $2.2B Janus Program to Deploy More Than 20 Commercial Microreactors",
+        "titleEn": "U.S. Army Mobilizes $2.2B Janus Program to Deploy More Than 20 Commercial Microreactors",
+        "summaryZh": "据POWER Magazine报道，The U.S. Army has mobilized up to $2.2 billion for a five-year effort to build and operate more than 20 commercial nuclear microreactors across military installations, selecting five reactor developers and five initial sites for a program designed to push advanced nuclear systems beyond federal test programs and into sustained operation by a Sept. 30, […] The post U.S. Army Mobilizes $2.2B Janus Program to Deploy More Than 20 Commercial Microreactors appeared first on POWER Magazine .该信息目前未获一手来源确认。",
+        "summaryEn": "According to POWER Magazine, The U.S. Army has mobilized up to $2.2 billion for a five-year effort to build and operate more than 20 commercial nuclear microreactors across military installations, selecting five reactor developers and five initial sites for a program designed to push advanced nuclear systems beyond federal test programs and into sustained operation by a Sept. 30, […] The post U.S. Army Mobilizes $2.2B Janus Program to Deploy More Than 20 Commercial Microreactors appeared first on POWER Magazine . The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-76c61c2f95c13cb24733",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Cisco Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Cisco IQ: Engineering Sovereignty in the AI Era",
+        "titleEn": "Cisco IQ: Engineering Sovereignty in the AI Era",
+        "summaryZh": "Cisco IQ Air-gapped Virtual Appliance for on-premises deployments is now generally available. Read through the latest blog from Bhaskar Jayakrishnan to learn more about what that means for Cisco customers.",
+        "summaryEn": "Cisco IQ Air-gapped Virtual Appliance for on-premises deployments is now generally available. Read through the latest blog from Bhaskar Jayakrishnan to learn more about what that means for Cisco customers."
+      }
+    },
+    {
+      "eventId": "evt-4825188083bd5b971bfc",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "UAE ‘spy sheikh’ backs 49% stake in Trump family’s crypto bank venture, WSJ reports",
+        "titleEn": "UAE ‘spy sheikh’ backs 49% stake in Trump family’s crypto bank venture, WSJ reports",
+        "summaryZh": "据CNBC Technology报道，World Liberty’s proposed trust bank has preliminary federal approval as the Trump-backed crypto venture deepens its ties to a senior UAE official.该信息目前未获一手来源确认。",
+        "summaryEn": "According to CNBC Technology, World Liberty’s proposed trust bank has preliminary federal approval as the Trump-backed crypto venture deepens its ties to a senior UAE official. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-82b1ea90c3b0c66e6b38",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Utility Dive。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Nevada ‘misses an opportunity’ in performance-based DER tariffs: advocate",
+        "titleEn": "Nevada ‘misses an opportunity’ in performance-based DER tariffs: advocate",
+        "summaryZh": "据Utility Dive报道，The new demand response frameworks bring the state in line with other pay-for-performance virtual power plants while keeping NV Energy in the driver&rsquo;s seat.该信息目前未获一手来源确认。",
+        "summaryEn": "According to Utility Dive, The new demand response frameworks bring the state in line with other pay-for-performance virtual power plants while keeping NV Energy in the driver&rsquo;s seat. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-9f92d3586741b55e8e31",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Utility Dive。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Harbert acquires cogenerating heat, power plant in Georgia",
+        "titleEn": "Harbert acquires cogenerating heat, power plant in Georgia",
+        "summaryZh": "据Utility Dive报道，In addition to acting as a peaker plant for Georgia Power under a long-term power purchase agreement, Mid-Georgia Cogen also supplies thermal output to an adjacent Frito-Lay manufacturing facility for frying and cooking food.该信息目前未获一手来源确认。",
+        "summaryEn": "According to Utility Dive, In addition to acting as a peaker plant for Georgia Power under a long-term power purchase agreement, Mid-Georgia Cogen also supplies thermal output to an adjacent Frito-Lay manufacturing facility for frying and cooking food. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-5dd68c061518df9e9cf9",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 POWER Magazine。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Westinghouse eVinci Reaches Criticality Milestone at Nevada Test Site",
+        "titleEn": "Westinghouse eVinci Reaches Criticality Milestone at Nevada Test Site",
+        "summaryZh": "据POWER Magazine报道，Westinghouse’s eVinci microreactor has completed zero-power criticality testing at the National Criticality Experiments Research Center (NCERC), a National Nuclear Security Administration (NNSA) facility at the Nevada National Security Site (NNSS). The company said the milestone, achieved at 10:39 a.m. PT on Aug. 24 in partnership with Los Alamos National Laboratory (LANL) and Idaho National Laboratory […] The post Westinghouse eVinci Reaches Criticality Milestone at Nevada Test Site appeared first on POWER Magazine .该信息目前未获一手来源确认。",
+        "summaryEn": "According to POWER Magazine, Westinghouse’s eVinci microreactor has completed zero-power criticality testing at the National Criticality Experiments Research Center (NCERC), a National Nuclear Security Administration (NNSA) facility at the Nevada National Security Site (NNSS). The company said the milestone, achieved at 10:39 a.m. PT on Aug. 24 in partnership with Los Alamos National Laboratory (LANL) and Idaho National Laboratory […] The post Westinghouse eVinci Reaches Criticality Milestone at Nevada Test Site appeared first on POWER Magazine . The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-a478e69bdff2a334b90c",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 EE Times。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Accelerating Silicon Design for Physical AI",
+        "titleEn": "Accelerating Silicon Design for Physical AI",
+        "summaryZh": "据EE Times报道，Physical AI systems must perceive, reason, and act at once, under tight real-time latency and power budgets. That workload diversity breaks the one-processor model, widens the gap between trained models and deployable silicon code, and turns security from a point-in-time feature into a full-lifecycle requirement spanning safety-critical operation and multi-vendor supply chains. Engineering teams also […] The post Accelerating Silicon Design for Physical AI appeared first on EE Times .该信息目前未获一手来源确认。",
+        "summaryEn": "According to EE Times, Physical AI systems must perceive, reason, and act at once, under tight real-time latency and power budgets. That workload diversity breaks the one-processor model, widens the gap between trained models and deployable silicon code, and turns security from a point-in-time feature into a full-lifecycle requirement spanning safety-critical operation and multi-vendor supply chains. Engineering teams also […] The post Accelerating Silicon Design for Physical AI appeared first on EE Times . The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-7a3cceb9cc7f6fe1145a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Capacity Media。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "What is a DFI, and how does it finance Africa’s digital infrastructure?",
+        "titleEn": "What is a DFI, and how does it finance Africa’s digital infrastructure?",
+        "summaryZh": "据Capacity Media报道，Development finance institutions, or DFIs, are specialised finance bodies, usually multilateral or bilateral development banks, that provide long-term financing for economic, environmental and social development projects. The post What is a DFI, and how does it finance Africa’s digital infrastructure? appeared first on Capacity .该信息目前未获一手来源确认。",
+        "summaryEn": "According to Capacity Media, Development finance institutions, or DFIs, are specialised finance bodies, usually multilateral or bilateral development banks, that provide long-term financing for economic, environmental and social development projects. The post What is a DFI, and how does it finance Africa’s digital infrastructure? appeared first on Capacity . The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-d580742b14c65f9f4a6d",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 IBM Newsroom。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "IBM Completes Acquisition of HRL Laboratories to Accelerate the Future of Quantum",
+        "titleEn": "IBM Completes Acquisition of HRL Laboratories to Accelerate the Future of Quantum",
+        "summaryZh": "The combination brings together complementary expertise in quantum computing, sensing, materials science, and advanced technologies to accelerate future innovation",
+        "summaryEn": "The combination brings together complementary expertise in quantum computing, sensing, materials science, and advanced technologies to accelerate future innovation"
+      }
+    },
+    {
+      "eventId": "evt-42f5061b290e1db1634f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Memory crunch: Cloud operators may be pushed to splurge 68% of capex on DRAM and NAND",
+        "titleEn": "Memory crunch: Cloud operators may be pushed to splurge 68% of capex on DRAM and NAND",
+        "summaryZh": "据The Register报道，Rising costs of new kit due to soaring memory prices likely to feed into cloud service bills该信息目前未获一手来源确认。",
+        "summaryEn": "According to The Register, Rising costs of new kit due to soaring memory prices likely to feed into cloud service bills The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-a80ae45549d1fe7b69d5",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-751b2551be09131083cc",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Sopra Steria's £370M Capita spat heads for 2028 courtroom showdown",
+        "titleEn": "Sopra Steria's £370M Capita spat heads for 2028 courtroom showdown",
+        "summaryZh": "据The Register报道，French SI still crying foul over shared services contract, alleges bid was 42% under DWP's own cost model该信息目前未获一手来源确认。",
+        "summaryEn": "According to The Register, French SI still crying foul over shared services contract, alleges bid was 42% under DWP's own cost model The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-c1054d8c3be2a79939e9",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Dynamics。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Nexspace breaks ground on data center in Graz, Austria",
+        "titleEn": "Nexspace breaks ground on data center in Graz, Austria",
+        "summaryZh": "据Data Center Dynamics报道，Company expanding footprint in city with second facility该信息目前未获一手来源确认。",
+        "summaryEn": "According to Data Center Dynamics, Company expanding footprint in city with second facility The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-6303c7a40cfaa58da29b",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Dynamics。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "New German operator Data Center Capital launches",
+        "titleEn": "New German operator Data Center Capital launches",
+        "summaryZh": "据Data Center Dynamics报道，Former Nexspace CEO back with venture该信息目前未获一手来源确认。",
+        "summaryEn": "According to Data Center Dynamics, Former Nexspace CEO back with venture The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-f9439deff4f9899c0b37",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Dynamics。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Delaware enacts clean energy mandate for hyperscale data centers",
+        "titleEn": "Delaware enacts clean energy mandate for hyperscale data centers",
+        "summaryZh": "据Data Center Dynamics报道，As well as several new laws targeting the sector该信息目前未获一手来源确认。",
+        "summaryEn": "According to Data Center Dynamics, As well as several new laws targeting the sector The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-cd86faa1d0ff6e623ba9",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-488b7ae3b89bf5569fde",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "CrowdStrike posts best day ever, Okta&apos;s stock pops nearly 29% as rising AI threat lifts earnings",
+        "titleEn": "CrowdStrike posts best day ever, Okta&apos;s stock pops nearly 29% as rising AI threat lifts earnings",
+        "summaryZh": "据CNBC Technology报道，AI adoption is pushing customers to spend more on cybersecurity tools from companies such as CrowdStrike and Okta该信息目前未获一手来源确认。",
+        "summaryEn": "According to CNBC Technology, AI adoption is pushing customers to spend more on cybersecurity tools from companies such as CrowdStrike and Okta The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-c7b8f9af59348e977145",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 Fortune。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "The AI Odyssey: How a primal fear from the Ancient Greek world has been awakened by new technology",
+        "titleEn": "The AI Odyssey: How a primal fear from the Ancient Greek world has been awakened by new technology",
+        "summaryZh": "据Fortune报道，Long before chatbots, the Greeks built an entire philosophy around the anxiety that rules 2026. We are all Odysseus, sailing through the the sirens' call.该信息目前未获一手来源确认。",
+        "summaryEn": "According to Fortune, Long before chatbots, the Greeks built an entire philosophy around the anxiety that rules 2026. We are all Odysseus, sailing through the the sirens' call. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-9056d2163b4074932d62",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Okta pops 20% after topping estimates as AI threat spikes demand for identity security",
+        "titleEn": "Okta pops 20% after topping estimates as AI threat spikes demand for identity security",
+        "summaryZh": "据CNBC Technology报道，New products accounted for 30% of total bookings and Okta said it closed dozens of AI deals during the period该信息目前未获一手来源确认。",
+        "summaryEn": "According to CNBC Technology, New products accounted for 30% of total bookings and Okta said it closed dozens of AI deals during the period The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-1510074381ae56b9ee42",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 MarketWatch Top Stories。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Good Good Golf ad fallout deepens as Callaway ends partnership, retailers pull gear and Golf Channel delays show",
+        "titleEn": "Good Good Golf ad fallout deepens as Callaway ends partnership, retailers pull gear and Golf Channel delays show",
+        "summaryZh": "据MarketWatch Top Stories报道，A controversial ad from Callaway Golf that was made by Good Good Golf has caused a firestorm online for showing a male player shoving a female golfer to the ground after she attempts to use his driver.该信息目前未获一手来源确认。",
+        "summaryEn": "According to MarketWatch Top Stories, A controversial ad from Callaway Golf that was made by Good Good Golf has caused a firestorm online for showing a male player shoving a female golfer to the ground after she attempts to use his driver. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-dd56f9a6b25d25ff7cf7",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Capacity Media。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "MTN targets 150MW of AI data centre capacity in Nigeria and South Africa with Tarek Al Ashram’s UAE-based investment platform",
+        "titleEn": "MTN targets 150MW of AI data centre capacity in Nigeria and South Africa with Tarek Al Ashram’s UAE-based investment platform",
+        "summaryZh": "据Capacity Media报道，MTN Group is targeting 150MW of AI-ready data centre capacity in a first phase spanning South Africa and Nigeria, group CEO Ralph Mupita told a media roundtable this week. The post MTN targets 150MW of AI data centre capacity in Nigeria and South Africa with Tarek Al Ashram’s UAE-based investment platform appeared first on Capacity .该信息目前未获一手来源确认。",
+        "summaryEn": "According to Capacity Media, MTN Group is targeting 150MW of AI-ready data centre capacity in a first phase spanning South Africa and Nigeria, group CEO Ralph Mupita told a media roundtable this week. The post MTN targets 150MW of AI data centre capacity in Nigeria and South Africa with Tarek Al Ashram’s UAE-based investment platform appeared first on Capacity . The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-7689467252e3dd436599",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 Financial Times Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Bill Gates calls for ‘human reserved’ jobs to protect labour force from AI",
+        "titleEn": "Bill Gates calls for ‘human reserved’ jobs to protect labour force from AI",
+        "summaryZh": "据Financial Times Technology报道，Tech billionaire publishes 6,000-word essay warning the technology will usher in ‘one of the most turbulent times in human history’该信息目前未获一手来源确认。",
+        "summaryEn": "According to Financial Times Technology, Tech billionaire publishes 6,000-word essay warning the technology will usher in ‘one of the most turbulent times in human history’ The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-2d74ff4c900ff5f457de",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 TechCrunch。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Hoomanely’s building a smart feeding bowl and an AI platform to help owners spot when their pup is sick",
+        "titleEn": "Hoomanely’s building a smart feeding bowl and an AI platform to help owners spot when their pup is sick",
+        "summaryZh": "据TechCrunch报道，Hoomanely has developed a smart bowl to measure and record dogs' feeding data, then tells owners if behaviors change.该信息目前未获一手来源确认。",
+        "summaryEn": "According to TechCrunch, Hoomanely has developed a smart bowl to measure and record dogs' feeding data, then tells owners if behaviors change. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-04e05a819df9f7a166fd",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "《GTA6》26 分钟加长版官方实机演示公布，系列沉浸感最强进化",
+        "titleEn": "《GTA6》26 分钟加长版官方实机演示公布，系列沉浸感最强进化",
+        "summaryZh": "据IT之家报道，IT之家 8 月 28 日消息，Rockstar Games 于北京时间今日（8 月 28 日）凌晨 3 点在 Netflix 平台独家首播了《GTA6》全新加长版实机预告《 GTA 6：分量十足的一瞥 》，今日上午 9 点官方公开了该预告内容。 根据 Netflix 的说法，《GTA 6：分量十足的一瞥》全部采用 PlayStation 5 实机游戏画面，将呈现 GTA 系列迄今规模最大、沉浸感最强的一次进化。 综合IT之家此前报道， 《GTA6》定于 2026 年 11 月 19 日发售 ，Rockstar 母公司 Take-Two 今年 8 月的财报数据显示，《GTA5》游戏截至目前全球销量已突破 2.3 亿份，所有《GTA》系列游戏的微交易收入增长 3%。作为参考，《GTA5》目前是全球销量第二高的电子游戏，仅次于《我的世界》。 Take-Two 在财报中表示：“全球玩家对《GTA6》的热情持续增长，该作的预购开局十分出色。”该信息目前未获一手来源确认。",
+        "summaryEn": "According to IT之家, IT之家 8 月 28 日消息，Rockstar Games 于北京时间今日（8 月 28 日）凌晨 3 点在 Netflix 平台独家首播了《GTA6》全新加长版实机预告《 GTA 6：分量十足的一瞥 》，今日上午 9 点官方公开了该预告内容。 根据 Netflix 的说法，《GTA 6：分量十足的一瞥》全部采用 PlayStation 5 实机游戏画面，将呈现 GTA 系列迄今规模最大、沉浸感最强的一次进化。 综合IT之家此前报道， 《GTA6》定于 2026 年 11 月 19 日发售 ，Rockstar 母公司 Take-Two 今年 8 月的财报数据显示，《GTA5》游戏截至目前全球销量已突破 2.3 亿份，所有《GTA》系列游戏的微交易收入增长 3%。作为参考，《GTA5》目前是全球销量第二高的电子游戏，仅次于《我的世界》。 Take-Two 在财报中表示：“全球玩家对《GTA6》的热情持续增长，该作的预购开局十分出色。” The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-96272c1d55b45e3814c7",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Omdia 报告：2026 年 Q2 东南亚智能手机市场出货量下降 23%，创 2014 年以来最低水平",
+        "titleEn": "Omdia 报告：2026 年 Q2 东南亚智能手机市场出货量下降 23%，创 2014 年以来最低水平",
+        "summaryZh": "据IT之家报道，IT之家 8 月 28 日消息，Omdia 最新研究，2026 年第二季度东南亚智能手机市场出货量同比下降 23%，至 1,930 万部， 创 2014 年以来最低季度出货水平 。尽管出货量大幅下滑，但市场规模表现相对更具韧性，达到 66 亿美元 （IT之家注：现汇率约合 444.7 亿元人民币） ， 平均售价（ASP）同比上涨 31% ，至 342 美元 （现汇率约合 2,304 元人民币） 。 报告显示，厂商在维持出货量与平均售价之间出现分化： 三星在提价的同时实现了市场份额增长 。 Galaxy A07 和 A17 上市后均进行了提价，打破了新品上市后价格通常逐步下降的惯例。这推动三星在整体 200–299 美元 （现汇率约合 1,348 – 2,015 元人民币） 价格区间的市场份额从 2025 年第二季度的 18% 提升至 2026 年第二季度的 32%。在竞争对手纷纷降低对 300 美元 （现汇率约合 2,021 元人民币） 以下市场布局的情况下，三星在更广泛的 300 美元 （现汇率约合 2,021 元人民币） 以下市场也实现了份额增长。 小米位列前五大厂商中 ASP 涨幅第二高的水平，同比增长 43.5%，而出货量下降 21% 。这一涨幅既反映了现有机型上市后的价格上涨，包括 Redmi Note 15，也反映了 17T 和 Redmi A7 Pro 等新机型的上市价格高于上一代产品。Xiaomi 在 100 美元 （现汇率约合 673.8 元人民币） 以下价格区间的出货量下降 69%，而 100–199 美元 （现汇率约合 673.8 – 1,341 元人民币） 价格区间的出货量增长 55%。 传音仍然是最依赖入门级市场的厂商。其 100 美元 （现汇率约合 673.8 元人民币） 以下产品出货量在 2026 年第二季度下降 47%，而 100–199 美该信息目前未获一手来源确认。",
+        "summaryEn": "According to IT之家, IT之家 8 月 28 日消息，Omdia 最新研究，2026 年第二季度东南亚智能手机市场出货量同比下降 23%，至 1,930 万部， 创 2014 年以来最低季度出货水平 。尽管出货量大幅下滑，但市场规模表现相对更具韧性，达到 66 亿美元 （IT之家注：现汇率约合 444.7 亿元人民币） ， 平均售价（ASP）同比上涨 31% ，至 342 美元 （现汇率约合 2,304 元人民币） 。 报告显示，厂商在维持出货量与平均售价之间出现分化： 三星在提价的同时实现了市场份额增长 。 Galaxy A07 和 A17 上市后均进行了提价，打破了新品上市后价格通常逐步下降的惯例。这推动三星在整体 200–299 美元 （现汇率约合 1,348 – 2,015 元人民币） 价格区间的市场份额从 2025 年第二季度的 18% 提升至 2026 年第二季度的 32%。在竞争对手纷纷降低对 300 美元 （现汇率约合 2,021 元人民币） 以下市场布局的情况下，三星在更广泛的 300 美元 （现汇率约合 2,021 元人民币） 以下市场也实现了份额增长。 小米位列前五大厂商中 ASP 涨幅第二高的水平，同比增长 43.5%，而出货量下降 21% 。这一涨幅既反映了现有机型上市后的价格上涨，包括 Redmi Note 15，也反映了 17T 和 Redmi A7 Pro 等新机型的上市价格高于上一代产品。Xiaomi 在 100 美元 （现汇率约合 673.8 元人民币） 以下价格区间的出货量下降 69%，而 100–199 美元 （现汇率约合 673.8 – 1,341 元人民币） 价格区间的出货量增长 55%。 传音仍然是最依赖入门级市场的厂商。其 100 美元 （现汇率约合 673.8 元人民币） 以下产品出货量在 2026 年第二季度下降 47%，而 100–199 美 The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-7e6c48df8a1b8422675c",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "腾龙 12-20mm F/2.8 Di III VXD 超广角变焦镜头尼康 Z 卡口版本开售，12690 元",
+        "titleEn": "腾龙 12-20mm F/2.8 Di III VXD 超广角变焦镜头尼康 Z 卡口版本开售，12690 元",
+        "summaryZh": "据IT之家报道，IT之家 8 月 28 日消息，腾龙于 7 月 15 日发布了适用于全画幅无反相机索尼 E 卡口和尼康 Z 卡口的大光圈超广角变焦镜头 12-20mm F/2.8 Di III VXD（型号 A084），索尼 E 卡口版本此前已经上市，尼康 Z 卡口版本昨日正式开售， 售价 12690 元 。 据介绍，该镜头光学系统采用了以 XGM（大口径玻璃铸造双面非球面）镜片为代表的非球面镜片及特殊玻璃材料。有效抑制了画面边缘的畸变和色差并校正了在星空摄影等场景中边缘部位容易出现的矢状彗差，从而实现了从中心到边缘的高锐度成像。 具体规格方面，该镜头采用 12 组 17 片结构，广角端最近拍摄距离 0.18m，望远端最近拍摄距离 0.28m，尼康 Z 卡口版本重量 585g，IT之家附产品参数： 京东 腾龙（Tamron）A084Z 12-20mm F/2.8 Di III VXD 尼康全幅 Z 口 12690 元 直达链接该信息目前未获一手来源确认。",
+        "summaryEn": "According to IT之家, IT之家 8 月 28 日消息，腾龙于 7 月 15 日发布了适用于全画幅无反相机索尼 E 卡口和尼康 Z 卡口的大光圈超广角变焦镜头 12-20mm F/2.8 Di III VXD（型号 A084），索尼 E 卡口版本此前已经上市，尼康 Z 卡口版本昨日正式开售， 售价 12690 元 。 据介绍，该镜头光学系统采用了以 XGM（大口径玻璃铸造双面非球面）镜片为代表的非球面镜片及特殊玻璃材料。有效抑制了画面边缘的畸变和色差并校正了在星空摄影等场景中边缘部位容易出现的矢状彗差，从而实现了从中心到边缘的高锐度成像。 具体规格方面，该镜头采用 12 组 17 片结构，广角端最近拍摄距离 0.18m，望远端最近拍摄距离 0.28m，尼康 Z 卡口版本重量 585g，IT之家附产品参数： 京东 腾龙（Tamron）A084Z 12-20mm F/2.8 Di III VXD 尼康全幅 Z 口 12690 元 直达链接 The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-4f4b28f4741cf00d41de",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "昔日“彩电一哥”康佳宣布主动申请退市，2026 上半年归母净亏损 1.73 亿元",
+        "titleEn": "昔日“彩电一哥”康佳宣布主动申请退市，2026 上半年归母净亏损 1.73 亿元",
+        "summaryZh": "据IT之家报道，IT之家 8 月 28 日消息，昔日“彩电一哥”康佳 8 月 27 日晚发布公告， 以股东会决议方式主动终止公司股票上市 。 康佳公告称，鉴于康佳集团股份有限公司（以下简称“公司”或“康佳集团”）2025 年度经审计期末净资产为负值， 公司股票已被实施退市风险警示 ，依据《深圳证券交易所股票上市规则》（以下简称《深交所股票上市规则》）相关条款规定，若公司 2026 年度经审计期末净资产持续为负值，公司股票将被深交所终止上市。 为保护中小股东利益，根据《深交所股票上市规则》等相关法律、法规及规范性文件的规定，经公司董事会审议通过后， 公司拟以股东会决议方式主动撤回 A 股和 B 股股票在深圳证券交易所（以下简称“深交所”）的上市交易 ，并在股票终止上市后申请转入全国中小企业股份转让系统有限责任公司代为管理的退市板块转让。请各位股东在股东会表决时做出慎重决策。 根据《深交所股票上市规则》第 9.7.4 条的相关规定：公司本次通过股东会决议主动终止公司股票上市的方式下，公司应当向深圳证券交易所申请股票自股东会股权登记日的次一交易日停牌（ 即 9 月 4 日开始停牌 ），可以在股东会做出终止上市决议后十五个交易日内向深圳证券交易所提交主动终止上市申请。 根据《深交所股票上市规则》第 9.7.8 条、第 9.7.9 条相关规定，深交所在收到公司提交的终止上市申请文件后五个交易日内作出是否受理的决定并通知公司；深交所在受理公司申请后的十五个交易日内，上市委员会形成审议意见，深交所根据上市委员会的审议意见作出是否终止公司股票上市的决定。 2026 年 7 月 23 日，中国华润有限公司召开董事会，同意公司主动终止上市事项。 2026 年 8 月 27 日，公司先后召开第十一届董事会战略与投资委员会第三次会议、第十一届董事会独立董事专门会议第八次会议，审议通过了《关于以股东会决议方式主动终该信息目前未获一手来源确认。",
+        "summaryEn": "According to IT之家, IT之家 8 月 28 日消息，昔日“彩电一哥”康佳 8 月 27 日晚发布公告， 以股东会决议方式主动终止公司股票上市 。 康佳公告称，鉴于康佳集团股份有限公司（以下简称“公司”或“康佳集团”）2025 年度经审计期末净资产为负值， 公司股票已被实施退市风险警示 ，依据《深圳证券交易所股票上市规则》（以下简称《深交所股票上市规则》）相关条款规定，若公司 2026 年度经审计期末净资产持续为负值，公司股票将被深交所终止上市。 为保护中小股东利益，根据《深交所股票上市规则》等相关法律、法规及规范性文件的规定，经公司董事会审议通过后， 公司拟以股东会决议方式主动撤回 A 股和 B 股股票在深圳证券交易所（以下简称“深交所”）的上市交易 ，并在股票终止上市后申请转入全国中小企业股份转让系统有限责任公司代为管理的退市板块转让。请各位股东在股东会表决时做出慎重决策。 根据《深交所股票上市规则》第 9.7.4 条的相关规定：公司本次通过股东会决议主动终止公司股票上市的方式下，公司应当向深圳证券交易所申请股票自股东会股权登记日的次一交易日停牌（ 即 9 月 4 日开始停牌 ），可以在股东会做出终止上市决议后十五个交易日内向深圳证券交易所提交主动终止上市申请。 根据《深交所股票上市规则》第 9.7.8 条、第 9.7.9 条相关规定，深交所在收到公司提交的终止上市申请文件后五个交易日内作出是否受理的决定并通知公司；深交所在受理公司申请后的十五个交易日内，上市委员会形成审议意见，深交所根据上市委员会的审议意见作出是否终止公司股票上市的决定。 2026 年 7 月 23 日，中国华润有限公司召开董事会，同意公司主动终止上市事项。 2026 年 8 月 27 日，公司先后召开第十一届董事会战略与投资委员会第三次会议、第十一届董事会独立董事专门会议第八次会议，审议通过了《关于以股东会决议方式主动终 The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-a6bec38080b63863ce52",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Dynamics。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "SK Telecom launches new AI DC infrastructure focused company, split from SK Broadband",
+        "titleEn": "SK Telecom launches new AI DC infrastructure focused company, split from SK Broadband",
+        "summaryZh": "据Data Center Dynamics报道，SK Horizon launches with $2.2 billion in investment from KKR and IMM该信息目前未获一手来源确认。",
+        "summaryEn": "According to Data Center Dynamics, SK Horizon launches with $2.2 billion in investment from KKR and IMM The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-7cbe2ff95fb3eabc20d7",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Blocks & Files。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-cdca7314562f68b11fdc",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-fce203b7ad65f31c5a32",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f9a493b712967005ea6d",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-62637ac3dc8c1095a7d8",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Utility Dive。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Drones are the next big security challenge for critical infrastructure",
+        "titleEn": "Drones are the next big security challenge for critical infrastructure",
+        "summaryZh": "据Utility Dive报道，The same capabilities that make drones operationally valuable for utilities also make them effective tools for threat actors, writes&nbsp;SkySafe Chief Revenue Officer Melissa Swisher.该信息目前未获一手来源确认。",
+        "summaryEn": "According to Utility Dive, The same capabilities that make drones operationally valuable for utilities also make them effective tools for threat actors, writes&nbsp;SkySafe Chief Revenue Officer Melissa Swisher. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-31205ca1f818347300e8",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-2b0a5419fe594856d389",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-fa56bdeacc380e51962c",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-bcbf9c2f8d4efa407226",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-8cb7e5221d11978e2b4b",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Dynamics。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Gateway Capital files to build 81MW data center in Sydney, Australia",
+        "titleEn": "Gateway Capital files to build 81MW data center in Sydney, Australia",
+        "summaryZh": "据Data Center Dynamics报道，Former industrial site earmarked for five-story facility该信息目前未获一手来源确认。",
+        "summaryEn": "According to Data Center Dynamics, Former industrial site earmarked for five-story facility The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-fcab8282174fbf0ca9b0",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 2,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Fierce Network。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Mediacom preps fiber buildouts to unserved and underserved Indiana communities",
+        "titleEn": "Mediacom preps fiber buildouts to unserved and underserved Indiana communities",
+        "summaryZh": "据Fierce Network报道，Nearly $2.4 million in projects to be completed in partnership with Indiana Broadband Office该信息目前未获一手来源确认。",
+        "summaryEn": "According to Fierce Network, Nearly $2.4 million in projects to be completed in partnership with Indiana Broadband Office The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-cd7bc88f04dd79a02ead",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-0deb913bba1c26a2e053",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-57ceacb6efcb3a652f97",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f5d5887184e5ecd0fadb",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 0,
+        "researchValueScore": 4.4,
+        "readerValueScore": 2.5
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Google Developers Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Evolving Spec-Driven Development: Conductor Now Supports Antigravity",
+        "titleEn": "Evolving Spec-Driven Development: Conductor Now Supports Antigravity",
+        "summaryZh": "Conductor has evolved from a Gemini CLI extension into a portable plugin, bringing conversational Spec-Driven Development (SDD) to ecosystems like Antigravity CLI and Claude. Rather than relying on strict command sequences, developers can now chat naturally with their AI assistant while it dynamically manages persistent markdown artifacts (like spec.md and plan.md) in the background. This update eliminates workflow friction while ensuring your repository remains a version-controlled, single source of truth for your project's architecture and state across different AI tools.",
+        "summaryEn": "Conductor has evolved from a Gemini CLI extension into a portable plugin, bringing conversational Spec-Driven Development (SDD) to ecosystems like Antigravity CLI and Claude. Rather than relying on strict command sequences, developers can now chat naturally with their AI assistant while it dynamically manages persistent markdown artifacts (like spec.md and plan.md) in the background. This update eliminates workflow friction while ensuring your repository remains a version-controlled, single source of truth for your project's architecture and state across different AI tools."
+      }
+    },
+    {
+      "eventId": "evt-3307b456001abeeffe8d",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 0,
+        "researchValueScore": 4.4,
+        "readerValueScore": 2.5
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Google Developers Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Building scalable AI agents with modular prompt transpilation",
+        "titleEn": "Building scalable AI agents with modular prompt transpilation",
+        "summaryZh": "To resolve the scaling bottlenecks and runtime errors caused by monolithic system prompts, engineering teams should treat prompts as build artifacts by modularizing instructions into reusable templates. By running these modular \"skill files\" through a transpiler, developers can enforce static validation, catch missing dependencies at build time, and integrate prompt generation directly into their CI/CD pipelines. This deterministic approach prevents code drift and ultimately establishes a safe framework where agents can propose updates to their own logic via standard pull requests.",
+        "summaryEn": "To resolve the scaling bottlenecks and runtime errors caused by monolithic system prompts, engineering teams should treat prompts as build artifacts by modularizing instructions into reusable templates. By running these modular \"skill files\" through a transpiler, developers can enforce static validation, catch missing dependencies at build time, and integrate prompt generation directly into their CI/CD pipelines. This deterministic approach prevents code drift and ultimately establishes a safe framework where agents can propose updates to their own logic via standard pull requests."
+      }
+    },
+    {
+      "eventId": "evt-b246095ddf1339557c5f",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 1.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Fierce Network。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "FCC opens comments on E-Rate as the program gets attacked in court",
+        "titleEn": "FCC opens comments on E-Rate as the program gets attacked in court",
+        "summaryZh": "据Fierce Network报道，School and library leaders from across the country are really concerned the FCC will cut E-Rate funding, which they say is absolutely critical.该信息目前未获一手来源确认。",
+        "summaryEn": "According to Fierce Network, School and library leaders from across the country are really concerned the FCC will cut E-Rate funding, which they say is absolutely critical. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-ad2ecf368330f142c74d",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国政策与算力。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-bba40285c7581ce83f87",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-cee33b568136ec959411",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-551018935e5c0849313f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-cb1bac85727e176738b1",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-542622bd507c8d87a76f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-b5346b6176022f5718d5",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a969dd160bb641fd45e0",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Utility Dive。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Trump’s energy policy could cost US 540 GW of renewables, says NRDC",
+        "titleEn": "Trump’s energy policy could cost US 540 GW of renewables, says NRDC",
+        "summaryZh": "据Utility Dive报道，&ldquo;We lose more than half of everything that we expected to be able to build with the combination of market forces and proactive policy,&rdquo;&nbsp;said Amanda Levin, NRDC&rsquo;s director of policy analysis.该信息目前未获一手来源确认。",
+        "summaryEn": "According to Utility Dive, &ldquo;We lose more than half of everything that we expected to be able to build with the combination of market forces and proactive policy,&rdquo;&nbsp;said Amanda Levin, NRDC&rsquo;s director of policy analysis. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-45e0e2a4eeb25d9650a5",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-0a46778a8c4f70065082",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-572de08442428e29bba8",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 0,
+        "researchValueScore": 3.5,
+        "readerValueScore": 2.5
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Fierce Network。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "SK Telecom launches dedicated data center infrastructure company",
+        "titleEn": "SK Telecom launches dedicated data center infrastructure company",
+        "summaryZh": "据Fierce Network报道，The creation of SK Horizon builds on the operator's earlier launch of a dedicated AI data center business unit called SK Hyper.该信息目前未获一手来源确认。",
+        "summaryEn": "According to Fierce Network, The creation of SK Horizon builds on the operator's earlier launch of a dedicated AI data center business unit called SK Hyper. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-a57bd3a075c60c225bac",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 0,
+        "researchValueScore": 3.5,
+        "readerValueScore": 2.5
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Fierce Network。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Opinion: Fiber’s next act: From broadband to the infrastructure of the physical AI economy",
+        "titleEn": "Opinion: Fiber’s next act: From broadband to the infrastructure of the physical AI economy",
+        "summaryZh": "据Fierce Network报道，As AI moves into the physical world, Cityside Fiber, of Southern California, sees broadband networks evolving into the distributed infrastructure layer for edge computing, smart cities and machine intelligence.该信息目前未获一手来源确认。",
+        "summaryEn": "According to Fierce Network, As AI moves into the physical world, Cityside Fiber, of Southern California, sees broadband networks evolving into the distributed infrastructure layer for edge computing, smart cities and machine intelligence. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-f77487f7cbe002a64db6",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 0,
+        "researchValueScore": 3.5,
+        "readerValueScore": 2.5
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Fierce Network。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Broadband Nation Expo 2026 expands with 100 speakers and new Data Center Summit",
+        "titleEn": "Broadband Nation Expo 2026 expands with 100 speakers and new Data Center Summit",
+        "summaryZh": "据Fierce Network报道，Broadband Nation Expo is heading to New Orleans Nov. 18-20, 2026, with a focus on one of the industry's defining challenges.该信息目前未获一手来源确认。",
+        "summaryEn": "According to Fierce Network, Broadband Nation Expo is heading to New Orleans Nov. 18-20, 2026, with a focus on one of the industry's defining challenges. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-693221b4554c20000efa",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 0,
+        "researchValueScore": 3.5,
+        "readerValueScore": 2.5
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Fierce Network。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid"
+      ],
+      "publicCopy": {
+        "titleZh": "Ciena: CSPs expect AI services and MOFN for revenue growth but they need network upgrades",
+        "titleEn": "Ciena: CSPs expect AI services and MOFN for revenue growth but they need network upgrades",
+        "summaryZh": "据Fierce Network报道，A Ciena survey of CSPs underscores the revenue potential of AI-driven networking.该信息目前未获一手来源确认。",
+        "summaryEn": "According to Fierce Network, A Ciena survey of CSPs underscores the revenue potential of AI-driven networking. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-b5bbea4812b0bc6c5d22",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-46081078ce2e6d23e35d",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-ee35274520567e37e35e",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-be0420b47e8780f2dd55",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-1099a3785724b8625c77",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-fd408badada67c77a6a8",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-87703c0d345d80d495e8",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-49aaacd99c8eaaf72ebd",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-17b2dced354c9e108cf8",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f24c99c37f6b47fd9c9f",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-747eac3985277003cdc7",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-46125e54dc093099a03d",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-b6bac88a072b079ad4be",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-534c64e36aa800bb7204",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-26f0e9038cec04544cc9",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-4ad2cd363d1e6503fcf0",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-84b75cee3926d0be2111",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-102e87fe2859d5c01bf8",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-2337c0a31a0fcbf4826f",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Neocloud。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-e6ce53591bd48dcf17d8",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-8e0e27c0e6553eb69bae",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f1d3b71a1a3648f7081a",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-7e1e578361c0fbab5165",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    }
+  ],
+  "errors": []
+}

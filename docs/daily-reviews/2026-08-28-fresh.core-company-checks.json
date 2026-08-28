@@ -1,0 +1,2573 @@
+{
+  "schemaVersion": "atlas-core-company-checks.v1",
+  "runId": "atlas-2026-08-28-fresh",
+  "checkedAt": "2026-08-28T02:34:04.024Z",
+  "window": {
+    "from": "2026-08-27T02:33:01.000Z",
+    "to": "2026-08-28T02:34:04.024Z",
+    "timeZone": "UTC",
+    "reason": "09:30 handoff blocked/untrusted; fallback from last trusted 16:30 window"
+  },
+  "cutoffVerification": {
+    "status": "fallback",
+    "previousCutoff": "2026-08-28T09:31:07+08:00",
+    "reason": "09:30 manifest was blocked before source review; independent 16:30 run used the last trusted 16:30 boundary",
+    "fallbackFrom": "2026-08-27T02:33:01.000Z"
+  },
+  "companyCount": 50,
+  "checkedCount": 50,
+  "hitCount": 6,
+  "notDeterminedCount": 41,
+  "noChangeCount": 3,
+  "windowEventsConsidered": 115,
+  "companies": [
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "microsoft",
+        "azure-blog"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "microsoft",
+          "url": "https://news.microsoft.com/feed/",
+          "finalUrl": "https://news.microsoft.com/feed/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 502
+        },
+        {
+          "sourceId": "azure-blog",
+          "url": "https://azure.microsoft.com/en-us/blog/feed/",
+          "finalUrl": "https://azure.microsoft.com/en-us/blog/feed/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 375
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 2,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 2,
+        "accessGaps": []
+      },
+      "result": "new/changed",
+      "eventIds": [
+        "evt-731022286a582f9e1da4",
+        "evt-63b7ebde4173168782b0",
+        "evt-655aeff8aa186563fade",
+        "evt-3390af672edb46c794d7",
+        "evt-76f6fb282a3e9b8a569d",
+        "evt-15d2c4c73d395e47fa7f",
+        "evt-b74866ea5876162640e4"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-731022286a582f9e1da4",
+          "title": "Agent Plugins package your skills, tools, and more",
+          "lastUpdatedAt": "2026-08-28T02:33:57.041Z",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceUrls": [
+            "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/"
+          ]
+        },
+        {
+          "eventId": "evt-63b7ebde4173168782b0",
+          "title": "Grok 4.6 登陆微软 Foundry 平台",
+          "lastUpdatedAt": "2026-08-28T01:37:44.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/elonmusk/status/2093151010407453155"
+          ]
+        },
+        {
+          "eventId": "evt-655aeff8aa186563fade",
+          "title": "《微软模拟飞行》游戏免费更新意大利 9 城，10 月 13 日启动 5 类空中竞速",
+          "lastUpdatedAt": "2026-08-28T00:51:46.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.ithome.com/0/995/367.htm"
+          ]
+        },
+        {
+          "eventId": "evt-3390af672edb46c794d7",
+          "title": "450 亿美元算力订单落地，Anthropic 持续扩张AI 算力储备|彭博社|芯片系统|微软|英伟达|人工智能_手机新浪网 - 新浪财经",
+          "lastUpdatedAt": "2026-08-28T00:11:17.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVjRHc28zdUhIcE8yT1loVGt0bHFaQkJUWC1tSXJQNXlPZEhnandBclNhMUYxWDl0S3ZvbDltVEpFN0dNbGlfekJxMUVON3g1VHBVZ1NxQ1pCMjZMTXZ6eHRuRnBjcDgwRTE4VUVWRFNpQ094bjNDdmNXU2NiUkRuNnpNMEpaa05hLVhPUW1sZFo4YTkxZ0tsYWFmZ09sNjNZV2NnWDVZSQ?oc=5",
+            "https://news.google.com/rss/articles/CBMieEFVX3lxTFB3LUc2RFFBa19HM08tUzBia3ZsaXI4YVdVNVU4eUhUMnd6TFp4RVVLbENDTmtuUjlCa1J2ZDRYa1N0dmp1amxOcVJHNjd2aTNRT3E0VmRHRm9ZT0N3a1RFcEwxYXZWVkJmQTJTWTA3d1FCQmxsYlJzZA?oc=5"
+          ]
+        },
+        {
+          "eventId": "evt-76f6fb282a3e9b8a569d",
+          "title": "AI Compute Deal: Microsoft Hits Critical Power Limit At 50MW - Yellow.com",
+          "lastUpdatedAt": "2026-08-27T19:52:40.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1ONXlmLWQ4WHI1aF91amNuOW5CSVlQMWVnVjhGVFAxMkYwYlh3Z1dTMWktS3FuQ1hUVGdkY2lyd1RIX2ZnTU5EOGVMYmxGNTRmUlA0dEtCaVZvbjJua25RVlpWSFJ1Yms?oc=5",
+            "https://news.google.com/rss/articles/CBMingJBVV95cUxPS3BhZWF6a1FRWEQ5czJHSmViX0x3ZHZoUGNMN005UHdPUUdDRjNLYUZhU3MyM3NQX3BNZ3Q3eXhabFBDaFduVjE5am5OcGgwdWVubFJ0RS04djFaSlBBM1AyWFNmZDBWb3ZXUUxtdU1zOUZLenpNaVVZQmctWVZzdmw1VFhRZW1wUVpLTDJoQjVTZHplZHNJTmFJR0hkd2lsNjY2N0x5NXNaTEI4eG9jckV0YnFoY3F3NkRNanUzTEV1Y290LVhrZzlLd0xyVE1HOVJ5bjRQZHFDTWFhVl9pV0ZXd3o0alFLWWVIMVZFellOekVkdTdvOTM2bmo3VEhQZnNTQ2NHZ21zZWRobkVXSzJpaExSejdNZHl1RkdR0gGeAkFVX3lxTE9LcGFlYXprUVFYRDlzMkdKZWJfTHdkdmhQY0w3TTlQd09RR0NGM0thRmFTczIzc1BfcE1ndDd5eFpsUENoV25WMTlqbk5waDB1ZW5sUnRFLTh2MVpKUEEzUDJYU2ZkMFZvdldRTG11TXM5Rkt6ek1pVVlCZy1ZVnN2bDVUWFFlbXBRWktMMmhCNVNkemVkc0lOYUlHSGR3aWw2NjY3THk1c1pMQjh4b2NyRXRicWhjcXc2RE1qdTNMRXVjb3QtWGtnOUt3THJUTUc5UnluNFBkcUNNYWFWX2lXRld3ejRqUUtZZUgxVkV6WU56RWR1N285MzZuajdUSFBmc1NDY0dnbXNlZGhuRVdLMmloTFJ6N01keXVGR1E?oc=5"
+          ]
+        },
+        {
+          "eventId": "evt-15d2c4c73d395e47fa7f",
+          "title": "Microsoft Stock And 2 AI Infrastructure Picks For Data Center Growth - simplywall.st",
+          "lastUpdatedAt": "2026-08-27T19:06:00.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMixwFBVV95cUxQNUtELXVUTHRpLWlfZ1hBQWhfak8tMU5xcHNKSmczakQtWGlfbi1BdkgwY2xlN2JnR05SaUt3VmxWMUp6ZldfRHNrMmxGT1pJRzAtSHM1dFBnZFNwVXIxOUt0aW00S0pyNkk1RzdIN1V1cmtKS1lkVFhvelZQMUY3V25pUl9wZHNWRjNHRUVHaFJRNktsNzFUSURLcW1nRkFadzk5bmtFQ1BXVHdYNUlweG5OMHg0bjdUckxhT2lEQ085aVFRZk9V0gHMAUFVX3lxTE9wbHdzcGMybGwtSXNCZmFsWFhoeWxjeEUzMGNDeVZPeXlRZ19OVUNBZHZ4NWdIQklNaE1LOEthaktpVlpVeExhU0Z2SjdpQUJ6c2tZcldXcTZEUEFqOEVDUnZyamFQOFNPOVBvWHp3SHh0aVB3N19YdmNoMzRwQUM0MVZaRUVaV2x2UlpURl9sbFFoTlhTZHlwNGdRb29HdFpseEZ2dFRVUTVrdTVyeGtJbUExN3Z3WGIySVhzT1p1TTNPdktVR2FRU0ctUQ?oc=5",
+            "https://news.google.com/rss/articles/CBMidkFVX3lxTE1QSldjel9jNU5mTWZpcUpHOE1wWmtPZmZWRk5xMjZoalF1S1ZHMFRqejMtZmhGdjNyLXZEQTA3MHBtUURVN0pnQkE3dC1xcEVxQWY4MXVxSW5fYUhMNVdwZVRwLVdtdDlyRHhEQXlHX3RaYVVwREE?oc=5",
+            "https://news.google.com/rss/articles/CBMivwFBVV95cUxOLXRWU29tZ0JITEE0XzNaLVM1ZHExTlBZVU1BaUl2TWRsazk5S0taZnNmSmp2NUxYMWgycVFrdUN0ZUpXbTJiRWVEWGlmV29tUFFuUzN1cmJyZnZHY3hUbHViX055OWdEcGZDU2VqQmpnTGlDYXBDV0psY3EtX01CUG1PZXVlc25BcUhURTZVMXhQLUEyTXNmbjN3ajdvQmtiajdwM2ZLcWppdmt4VHUxbjRneElTZEVkVnl5c3Bodw?oc=5",
+            "https://news.google.com/rss/articles/CBMigwFBVV95cUxOSTlxc3JTaW1vWUlRam5EbzFVNVo5c3ZCQXAwTGtPWVJWV25Kb01MNTdpWGl5ZUtlejBFUEtyY2RzbHZzdDcxbUdkNVlla25uOU9ZN3N2OF9zWnVzQnVsczlpWnR1R0cyVk0yY2lTcFdZTFRJTzZPQ01wNmNLLXp3UkR2bw?oc=5"
+          ]
+        },
+        {
+          "eventId": "evt-b74866ea5876162640e4",
+          "title": "ChronoScale (CHRN) Shares Surge 7% on Microsoft Partnership for AI Infrastructure - Blockonomi",
+          "lastUpdatedAt": "2026-08-27T13:12:10.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMipAFBVV95cUxNbUVTTllieFpUMm8xbXhGNGNURGdMZnpjWHhFOWdvb21ITDVCWGFBWjg5LTc5ODd0dGNsQUpZcnB3Rm91V1BDbVFoNWVyUG9DVWg5Q0REYXhXUWtpcGhBN2ZzYWpiRnhHQzM0MjVQMlRJbGVSSV9abjVkZTV3N05DeWw1U3pzbG9XTGJFb0J4c2xBMUJUc1hVcEFlRm1IYngwc0NOcg?oc=5"
+          ]
+        }
+      ],
+      "accessStatus": "public"
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "aws-news"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "aws-news",
+          "url": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
+          "finalUrl": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 466
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 1,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "new/changed",
+      "eventIds": [
+        "evt-731022286a582f9e1da4",
+        "evt-93aee5fa118f550bb338",
+        "evt-701f303257ac06756fc6",
+        "evt-d6e9cd0367beb36d1d0d"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-731022286a582f9e1da4",
+          "title": "Agent Plugins package your skills, tools, and more",
+          "lastUpdatedAt": "2026-08-28T02:33:57.041Z",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceUrls": [
+            "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/"
+          ]
+        },
+        {
+          "eventId": "evt-93aee5fa118f550bb338",
+          "title": "YouTube now lets creators tag Amazon products and earn commissions from purchases",
+          "lastUpdatedAt": "2026-08-27T19:54:28.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://techcrunch.com/2026/08/27/youtube-now-lets-creators-tag-amazon-products-and-earn-commissions-from-purchases/"
+          ]
+        },
+        {
+          "eventId": "evt-701f303257ac06756fc6",
+          "title": "Entergy says Amazon's $25 billion MS expansion is helping your power bill - The Clarion-Ledger",
+          "lastUpdatedAt": "2026-08-27T13:23:00.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMiygFBVV95cUxPY0JkR25SajRrdlRlZUxQZlp3SDFqSFRNdUhKQUZZWm5YcjJLZ1lUVmdBSnFEdm05enB2eGZoX25Ob29KWlZTcnB0WlgyYzZtMGp6UnJFbjV1TllocmFadWpNWHBadTk0bVEyYU9xY0xMbjZ2Ti1TU0pqVS1UTUhCeF9mak91SjhDUzNvTWI3ZkRmNXVtNXY1Mml5QVEtX1ctWmpoZHBNcF9JWlEyZE5jcjNmNlVSVlhUYUtwN3Zhc05xSkNPMU55aVpR?oc=5"
+          ]
+        },
+        {
+          "eventId": "evt-d6e9cd0367beb36d1d0d",
+          "title": "How Data Centers Are Using AI to Run Cooler and Smarter",
+          "lastUpdatedAt": "2026-08-27T09:00:00.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.datacenterknowledge.com/data-center-software/how-data-centers-are-using-ai-to-run-cooler-and-smarter"
+          ]
+        }
+      ],
+      "accessStatus": "public"
+    },
+    {
+      "id": "alphabet",
+      "name": "Alphabet",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "google-cloud",
+        "google-ai-blog",
+        "google-developers"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "google-cloud",
+          "url": "https://cloud.google.com/blog/rss",
+          "finalUrl": "https://cloud.google.com/blog/rss",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 585
+        },
+        {
+          "sourceId": "google-ai-blog",
+          "url": "https://blog.google/technology/ai/rss/",
+          "finalUrl": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1221
+        },
+        {
+          "sourceId": "google-developers",
+          "url": "https://developers.googleblog.com/feeds/posts/default",
+          "finalUrl": "https://developers.googleblog.com/feeds/posts/default/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1949
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 3,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 3,
+        "accessGaps": []
+      },
+      "result": "new/changed",
+      "eventIds": [
+        "evt-03b191d69a26e1e8c222",
+        "evt-731022286a582f9e1da4",
+        "evt-8a364bafe52cb6ee17cd",
+        "evt-22fa182646dbb6a97ad7"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-03b191d69a26e1e8c222",
+          "title": "Introducing Credentio: Open Source C++ Library for C2PA Content Credentials from Google",
+          "lastUpdatedAt": "2026-08-28T02:33:57.041Z",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceUrls": [
+            "https://developers.googleblog.com/introducing-credentio-open-source-c-library-for-c2pa-content-credentials-from-google/"
+          ]
+        },
+        {
+          "eventId": "evt-731022286a582f9e1da4",
+          "title": "Agent Plugins package your skills, tools, and more",
+          "lastUpdatedAt": "2026-08-28T02:33:57.041Z",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceUrls": [
+            "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/"
+          ]
+        },
+        {
+          "eventId": "evt-8a364bafe52cb6ee17cd",
+          "title": "Google tells Android app developers to cool it on memory use, or else",
+          "lastUpdatedAt": "2026-08-27T18:33:11.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.theverge.com/tech/985679/google-play-android-17-memory-limit"
+          ]
+        },
+        {
+          "eventId": "evt-22fa182646dbb6a97ad7",
+          "title": "Marvell财报即将公布：谷歌合作能否推动AI芯片业务加速增长？ 提供者 Investing.com - 英为财情 Investing.com",
+          "lastUpdatedAt": "2026-08-27T13:50:00.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMia0FVX3lxTE9FUzgtemYzemF3VlhNWnpqeklZTmJnY2VCelNtSlZSeEV0ZS1pREhFWDR6T0lQX3dXVm9GR2x0TnJTVFJ2STZ4Q0JLM3BDMUNRWnB4M1hXQmlLLTA5ZkNKVGNCRldUNzE3VnhN?oc=5"
+          ]
+        }
+      ],
+      "accessStatus": "public"
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "meta",
+        "meta-engineering"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "meta",
+          "url": "https://about.fb.com/news/feed/",
+          "finalUrl": "https://about.fb.com/news/feed/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 353
+        },
+        {
+          "sourceId": "meta-engineering",
+          "url": "https://engineering.fb.com/feed/",
+          "finalUrl": "https://engineering.fb.com/feed/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 357
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 2,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 2,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [
+        "evt-eec6928c7be25109dbaa",
+        "evt-2c08cf0995e86b5370cd",
+        "evt-24c820ebeb8151ad3e26",
+        "evt-6a260cf0615a58e68a43"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-eec6928c7be25109dbaa",
+          "title": "Meta addresses ‘pervert glasses’ reputation with a privacy fix and a new marketing campaign",
+          "lastUpdatedAt": "2026-08-27T21:37:45.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.theverge.com/tech/985851/meta-privacy-loophole-fix-marketing-campaign"
+          ]
+        },
+        {
+          "eventId": "evt-2c08cf0995e86b5370cd",
+          "title": "Buried in Meta’s $18B settlement is a legal pass on kids’ data",
+          "lastUpdatedAt": "2026-08-27T20:04:26.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://techcrunch.com/2026/08/27/buried-in-metas-18b-settlement-is-a-legal-pass-on-kids-data/"
+          ]
+        },
+        {
+          "eventId": "evt-24c820ebeb8151ad3e26",
+          "title": "Here’s all the times AI has gone rogue and hacked other companies",
+          "lastUpdatedAt": "2026-08-27T14:01:42.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://techcrunch.com/2026/08/27/heres-all-the-times-ai-has-gone-rogue-and-hacked-other-companies/"
+          ]
+        },
+        {
+          "eventId": "evt-6a260cf0615a58e68a43",
+          "title": "Nvidia&apos;s revenue outlook, Meta&apos;s $16.7B settlement, mail-in voting and more in Morning Squawk",
+          "lastUpdatedAt": "2026-08-27T12:44:01.000Z",
+          "sourceTiers": [
+            "T2"
+          ],
+          "sourceUrls": [
+            "https://www.cnbc.com/2026/08/27/5-things-to-know-before-the-stock-market-opens.html"
+          ]
+        }
+      ],
+      "accessStatus": "public"
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "oracle"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "oracle",
+          "url": "https://www.oracle.com/a/ocom/docs/oracle-news.xml",
+          "finalUrl": "https://www.oracle.com/a/ocom/docs/oracle-news.xml",
+          "httpStatus": 404,
+          "accessStatus": "unavailable",
+          "durationMs": 523
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 1,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "oracle: 404"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "openai-news"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "openai-news",
+          "url": "https://openai.com/news/rss.xml",
+          "finalUrl": "https://openai.com/news/rss.xml",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 396
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 1,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [
+        "evt-f06e28e676b97fa592e1",
+        "evt-04bef27c87fecc59328d",
+        "evt-d4e92e2b526b0ed27029",
+        "evt-f504fa94ab9869a977cd",
+        "evt-3b3f34552c3bf4d54964",
+        "evt-24c820ebeb8151ad3e26"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-f06e28e676b97fa592e1",
+          "title": "Show HN：Experiential--开源智能体工作流网关与路由器",
+          "lastUpdatedAt": "2026-08-28T01:41:19.996Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://github.com/experientiallabs/experiential"
+          ]
+        },
+        {
+          "eventId": "evt-04bef27c87fecc59328d",
+          "title": "Georgia Power deal to power OpenAI data center is approved, with some fine print - AJC.com",
+          "lastUpdatedAt": "2026-08-27T22:21:09.000Z",
+          "sourceTiers": [
+            "D",
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMirwFBVV95cUxNTGxOUUhmcW14cTN6MGw4X3AyYzRjOGxyQk1ad2c1ZjVWczhZbWFpZU92eXBlc1FneWVyWkNMd2tuaURCanpMSjNvVmJjM3VDbmhGNkNxS3hPc3dRb3B4TVJ0VTFIUmRtaFV1X1ZmMEVjWXhBNGZPUVdncnRKdVNyUEtULUZlR2V2cFl5Sm9sZnlMU1ljZllYSTN2R0ZEOUxIWWJVRVh2VF9DMnNIRGt3?oc=5",
+            "https://news.google.com/rss/articles/CBMi2AFBVV95cUxORnRLLU00NFdEZXBRWlNSTjFQVTQ3WnpBc3BIdC1aRXRIXzBPenBsb0VsbmdoM052Q1ZDenZzM2xZYkZkYzYzdndwUnQtY2RtYVJKZnBzMnJmWlV3YzRJeFBqZDdUTm81NTItZkpYLUhmSUk0ZVBPWm9jMFZqZnNLMDVtMXRDaWxtNU9JQm5xTjBIS3hGcXNRZzlSWFFRQWZwZWJSQXljOF9FWW1MdlFLUkhNN1RBYmJLUVNCUHVOREV2TkNzQXE4ZWpYMExiV0NIeVh3OGtpcXk?oc=5",
+            "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPeWw3Vm1CUC1nUENMaFBJdkgtNDNjMnhuZTBhR0V4eEpWdU9pQ0dmSnRsZDU2OHhPMVhiZk9jellLendRZGhfSldjdk5jMExTeFNoVGhITXBVQ0NldWFhcks4RC1xUkN4UTFHN2JVZXNHNHNxRlRjdzVJbHgzcVdSTmVSRmlYRnZUQ2xMWTFXRzdJV2RKblZ2MHFKdkRydjlRLUxZeDBTdWp3a3VNYk43UjZsSll2Nml5bEF2eUpwWkM3NFJmSU1OeGF1VUdTeXN4c0ZjMVp3MnJPRS1RUUE?oc=5",
+            "https://www.datacenterdynamics.com/en/news/openai-gets-green-light-for-32gw-power-deal-to-supply-planned-data-center-in-effingham-county-georgia/"
+          ]
+        },
+        {
+          "eventId": "evt-d4e92e2b526b0ed27029",
+          "title": "2026年Anthropic与OpenAI营收加速增长",
+          "lastUpdatedAt": "2026-08-27T21:54:16.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/EpochAIResearch/status/2093094775213985826"
+          ]
+        },
+        {
+          "eventId": "evt-f504fa94ab9869a977cd",
+          "title": "ChatGPT 正成为你的个人 AGI 智能体",
+          "lastUpdatedAt": "2026-08-27T19:57:28.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/gdb/status/2093065379145019902"
+          ]
+        },
+        {
+          "eventId": "evt-3b3f34552c3bf4d54964",
+          "title": "OpenAI 智能体攻击事件：安全疏漏与责任未明",
+          "lastUpdatedAt": "2026-08-27T18:22:39.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/rohanpaul_ai/status/2093041518345073023"
+          ]
+        },
+        {
+          "eventId": "evt-24c820ebeb8151ad3e26",
+          "title": "Here’s all the times AI has gone rogue and hacked other companies",
+          "lastUpdatedAt": "2026-08-27T14:01:42.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://techcrunch.com/2026/08/27/heres-all-the-times-ai-has-gone-rogue-and-hacked-other-companies/"
+          ]
+        }
+      ],
+      "accessStatus": "public"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "anthropic-official-fallback",
+          "url": "https://www.anthropic.com/news",
+          "finalUrl": "https://www.anthropic.com/news",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 836
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "new/changed",
+      "eventIds": [
+        "evt-f5d5887184e5ecd0fadb",
+        "evt-3390af672edb46c794d7",
+        "evt-0e0e7084e6d5088378e3",
+        "evt-d4e92e2b526b0ed27029",
+        "evt-ee35274520567e37e35e",
+        "evt-775b5c6b6ff8e56fffe7",
+        "evt-505108b50bd6c826e206",
+        "evt-35bc27db37957f13e462",
+        "evt-24c820ebeb8151ad3e26",
+        "evt-71940ecc77a994a4a339",
+        "evt-3580e756bc477f1d88eb"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-f5d5887184e5ecd0fadb",
+          "title": "Evolving Spec-Driven Development: Conductor Now Supports Antigravity",
+          "lastUpdatedAt": "2026-08-28T02:33:57.041Z",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceUrls": [
+            "https://developers.googleblog.com/evolving-spec-driven-development-conductor-now-supports-antigravity/"
+          ]
+        },
+        {
+          "eventId": "evt-3390af672edb46c794d7",
+          "title": "450 亿美元算力订单落地，Anthropic 持续扩张AI 算力储备|彭博社|芯片系统|微软|英伟达|人工智能_手机新浪网 - 新浪财经",
+          "lastUpdatedAt": "2026-08-28T00:11:17.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVjRHc28zdUhIcE8yT1loVGt0bHFaQkJUWC1tSXJQNXlPZEhnandBclNhMUYxWDl0S3ZvbDltVEpFN0dNbGlfekJxMUVON3g1VHBVZ1NxQ1pCMjZMTXZ6eHRuRnBjcDgwRTE4VUVWRFNpQ094bjNDdmNXU2NiUkRuNnpNMEpaa05hLVhPUW1sZFo4YTkxZ0tsYWFmZ09sNjNZV2NnWDVZSQ?oc=5",
+            "https://news.google.com/rss/articles/CBMieEFVX3lxTFB3LUc2RFFBa19HM08tUzBia3ZsaXI4YVdVNVU4eUhUMnd6TFp4RVVLbENDTmtuUjlCa1J2ZDRYa1N0dmp1amxOcVJHNjd2aTNRT3E0VmRHRm9ZT0N3a1RFcEwxYXZWVkJmQTJTWTA3d1FCQmxsYlJzZA?oc=5"
+          ]
+        },
+        {
+          "eventId": "evt-0e0e7084e6d5088378e3",
+          "title": "Anthropic据悉考虑收购AI芯片初创公司MatX - 东方财富",
+          "lastUpdatedAt": "2026-08-27T22:48:17.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9fR3RzMDRWdl9FeS1xYVNDX1A1R0F0WmdZOVgzX1cwZ2VDNGpZTUtuejBrU3JrX054LVR1Y1pjQXgwVUR3dzV1aHE4TFZOUU9BaWQxTnBsM3VzUW5YZEZB?oc=5",
+            "https://news.google.com/rss/articles/CBMid0FVX3lxTE1qVG5QSWllUFFwQTdSRVVJcTZKVnVua2F6YzlYdTg3NmxGQkd0bGtKMnFvQV9SOUV1WTUzMFpHVFhIb0NsNzM1eHNBUXNtUHo5TjRMQTRCRUlERXVuUEpacEx2V1RxYTBVa0FxTm9reGc2amxJV1RB?oc=5"
+          ]
+        },
+        {
+          "eventId": "evt-d4e92e2b526b0ed27029",
+          "title": "2026年Anthropic与OpenAI营收加速增长",
+          "lastUpdatedAt": "2026-08-27T21:54:16.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/EpochAIResearch/status/2093094775213985826"
+          ]
+        },
+        {
+          "eventId": "evt-ee35274520567e37e35e",
+          "title": "AgentMercury：训练环境与评测集脱钩可提升泛化",
+          "lastUpdatedAt": "2026-08-27T21:13:00.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/rohanpaul_ai/status/2093084387667542290"
+          ]
+        },
+        {
+          "eventId": "evt-775b5c6b6ff8e56fffe7",
+          "title": "Anthropic 推 MHS 标准，让 Claude 操控实验室设备",
+          "lastUpdatedAt": "2026-08-27T19:53:03.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/rohanpaul_ai/status/2093064270028431640"
+          ]
+        },
+        {
+          "eventId": "evt-505108b50bd6c826e206",
+          "title": "Anthropic launches AI tool that can conduct scientific experiments",
+          "lastUpdatedAt": "2026-08-27T19:20:48.000Z",
+          "sourceTiers": [
+            "T2"
+          ],
+          "sourceUrls": [
+            "https://www.ft.com/content/dd069af7-a2a2-4984-8d9a-5edeaf54f2f8?syn-25a6b1a6=1"
+          ]
+        },
+        {
+          "eventId": "evt-35bc27db37957f13e462",
+          "title": "Anthropic pushes into physical world with new standard to help AI agents operate machines",
+          "lastUpdatedAt": "2026-08-27T19:08:46.000Z",
+          "sourceTiers": [
+            "T2"
+          ],
+          "sourceUrls": [
+            "https://www.cnbc.com/2026/08/27/anthropic-pushes-into-physical-world-with-new-standard-to-help-ai-agents-operate-machines.html",
+            "https://fortune.com/2026/08/27/anthropic-makes-first-move-into-physical-ai-with-universal-standard-for-scientists-manufacturing/"
+          ]
+        },
+        {
+          "eventId": "evt-24c820ebeb8151ad3e26",
+          "title": "Here’s all the times AI has gone rogue and hacked other companies",
+          "lastUpdatedAt": "2026-08-27T14:01:42.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://techcrunch.com/2026/08/27/heres-all-the-times-ai-has-gone-rogue-and-hacked-other-companies/"
+          ]
+        },
+        {
+          "eventId": "evt-71940ecc77a994a4a339",
+          "title": "Salesforce stock jumps 18% on AI growth and Anthropic investment gain - CNBC",
+          "lastUpdatedAt": "2026-08-27T13:53:26.000Z",
+          "sourceTiers": [
+            "D",
+            "T2"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMigAFBVV95cUxNOFl4RF9YV05NUXJrNjBaakFQQVBaVXRJWEpoZkJ1SlZhajR1b3V6dUpaaDh2MlhmaFVISzE4czN6TEpjSjVxa19IczkwOGRmbjNSZW1PWlppTGR5T0VfUF9hYnd0XzZNcmdOZUNBeE12SXkzSFNsTXpRS1hjVmE0SNIBhgFBVV95cUxOMzM4UzZleG9vZGpKMkNza0xQRUsxNzZEN09nQ0o2OW93MnZ1WG9fS1plQm9sWkktZHgzSnlBUExWTzNrYUY0MkRtZG12V0ZwOGFPNU80QTI2Q25oamV3ZC13Z2NWVDRPenFEYkQxa0F4VmVJTHg5ZUhIRjRyempFZXA3aHBVQQ?oc=5",
+            "https://www.cnbc.com/2026/08/26/salesforce-crm-q2-earnings-report-2027.html"
+          ]
+        },
+        {
+          "eventId": "evt-3580e756bc477f1d88eb",
+          "title": "Anthropic signs $45bn compute capacity agreement with Nscale - report",
+          "lastUpdatedAt": "2026-08-27T10:34:19.000Z",
+          "sourceTiers": [
+            "T3",
+            "T2"
+          ],
+          "sourceUrls": [
+            "https://www.datacenterdynamics.com/en/news/anthropic-signs-45bn-compute-capacity-agreement-with-nscale-report/",
+            "https://www.ft.com/content/0ec76ba3-5f7f-4085-88fb-acf21954bc85?syn-25a6b1a6=1"
+          ]
+        }
+      ],
+      "accessStatus": "public"
+    },
+    {
+      "id": "xai",
+      "name": "xAI",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "xai-news"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "xai-news",
+          "url": "https://x.ai/news",
+          "finalUrl": "https://x.ai/news",
+          "httpStatus": 403,
+          "accessStatus": "unavailable",
+          "durationMs": 364
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 1,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "xai-news: 403"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [
+        "evt-63b7ebde4173168782b0",
+        "evt-81608ba2a034f226602c",
+        "evt-27e73060d5300aacd0c4"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-63b7ebde4173168782b0",
+          "title": "Grok 4.6 登陆微软 Foundry 平台",
+          "lastUpdatedAt": "2026-08-28T01:37:44.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/elonmusk/status/2093151010407453155"
+          ]
+        },
+        {
+          "eventId": "evt-81608ba2a034f226602c",
+          "title": "Grok Bot 如何改变智能体协作体验",
+          "lastUpdatedAt": "2026-08-27T20:58:05.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/omarsar0/status/2093080633509626034"
+          ]
+        },
+        {
+          "eventId": "evt-27e73060d5300aacd0c4",
+          "title": "诉讼指控 xAI 使用儿童性虐待材料训练 Grok 模型",
+          "lastUpdatedAt": "2026-08-27T20:52:31.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://arstechnica.com/tech-policy/2026/08/elon-musks-xai-used-child-porn-to-train-grok-models-lawsuit-says"
+          ]
+        }
+      ],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "coreweave",
+      "name": "CoreWeave",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "coreweave"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "coreweave",
+          "url": "https://www.coreweave.com/news",
+          "finalUrl": "https://www.coreweave.com/newsroom",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 2519
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 1,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "new/changed",
+      "eventIds": [
+        "evt-4d9ddfed30db153c14dd"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-4d9ddfed30db153c14dd",
+          "title": "News and Press Releases | CoreWeave",
+          "lastUpdatedAt": "2026-08-28T02:33:54.709Z",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceUrls": [
+            "https://www.coreweave.com/news"
+          ]
+        }
+      ],
+      "accessStatus": "public"
+    },
+    {
+      "id": "alibaba",
+      "name": "Alibaba",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "alibaba-official-fallback",
+          "url": "https://www.alibabagroup.com/en-US/ir-home",
+          "finalUrl": "https://www.alibabagroup.com/en-US/ir-home",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 554
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [
+        "evt-0b3c2731400465412495",
+        "evt-849be4516ec5b6585795"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-0b3c2731400465412495",
+          "title": "阿里云Qwen Work：从问答到自主智能体",
+          "lastUpdatedAt": "2026-08-28T01:39:31.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/alibaba_cloud/status/2093151460431405241"
+          ]
+        },
+        {
+          "eventId": "evt-849be4516ec5b6585795",
+          "title": "阿里云 Wan3.0 登顶视频编辑竞技场",
+          "lastUpdatedAt": "2026-08-28T01:37:58.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/alibaba_cloud/status/2093151068482072891"
+          ]
+        }
+      ],
+      "accessStatus": "public"
+    },
+    {
+      "id": "tencent",
+      "name": "Tencent",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "tencent-official-fallback",
+          "url": "https://www.tencent.com/en-us/investors.html",
+          "finalUrl": "https://www.tencent.com/investors/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1923
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "public"
+    },
+    {
+      "id": "bytedance",
+      "name": "ByteDance",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "bytedance-official-fallback",
+          "url": "https://www.bytedance.com/en/news",
+          "finalUrl": "https://www.bytedance.com/en/news",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 625
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "public"
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "apple-newsroom"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "apple-newsroom",
+          "url": "https://www.apple.com/newsroom/rss-feed.rss",
+          "finalUrl": "https://www.apple.com/newsroom/rss-feed.rss",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 596
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 1,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [
+        "evt-4734d170268a8cb2f0b1"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-4734d170268a8cb2f0b1",
+          "title": "苹果 M6 Mac mini 细节：支持 Thread 智能家居协议，预装 macOS 27 系统",
+          "lastUpdatedAt": "2026-08-27T23:28:48.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.ithome.com/0/995/348.htm"
+          ]
+        }
+      ],
+      "accessStatus": "public"
+    },
+    {
+      "id": "tesla",
+      "name": "Tesla",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "tesla-official-fallback",
+          "url": "https://ir.tesla.com/",
+          "finalUrl": "https://ir.tesla.com/",
+          "httpStatus": 403,
+          "accessStatus": "unavailable",
+          "durationMs": 394
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "tesla-official-fallback: 403"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "palantir",
+      "name": "Palantir",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "palantir-official-fallback",
+          "url": "https://investors.palantir.com/",
+          "finalUrl": "https://investors.palantir.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 891
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "public"
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "salesforce-official-fallback",
+          "url": "https://investor.salesforce.com/",
+          "finalUrl": "https://investor.salesforce.com/",
+          "httpStatus": 403,
+          "accessStatus": "unavailable",
+          "durationMs": 419
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "salesforce-official-fallback: 403"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [
+        "evt-2da657f9cc3662768914",
+        "evt-71940ecc77a994a4a339"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-2da657f9cc3662768914",
+          "title": "Salesforce’s stock rockets 20% and gives the software sector a major lift",
+          "lastUpdatedAt": "2026-08-27T22:51:00.000Z",
+          "sourceTiers": [
+            "T2"
+          ],
+          "sourceUrls": [
+            "https://www.marketwatch.com/story/salesforce-stock-is-jumping-what-wall-street-is-saying-about-its-earnings-and-its-anthropic-relationship-853ada85?mod=mw_rss_topstories"
+          ]
+        },
+        {
+          "eventId": "evt-71940ecc77a994a4a339",
+          "title": "Salesforce stock jumps 18% on AI growth and Anthropic investment gain - CNBC",
+          "lastUpdatedAt": "2026-08-27T13:53:26.000Z",
+          "sourceTiers": [
+            "D",
+            "T2"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMigAFBVV95cUxNOFl4RF9YV05NUXJrNjBaakFQQVBaVXRJWEpoZkJ1SlZhajR1b3V6dUpaaDh2MlhmaFVISzE4czN6TEpjSjVxa19IczkwOGRmbjNSZW1PWlppTGR5T0VfUF9hYnd0XzZNcmdOZUNBeE12SXkzSFNsTXpRS1hjVmE0SNIBhgFBVV95cUxOMzM4UzZleG9vZGpKMkNza0xQRUsxNzZEN09nQ0o2OW93MnZ1WG9fS1plQm9sWkktZHgzSnlBUExWTzNrYUY0MkRtZG12V0ZwOGFPNU80QTI2Q25oamV3ZC13Z2NWVDRPenFEYkQxa0F4VmVJTHg5ZUhIRjRyempFZXA3aHBVQQ?oc=5",
+            "https://www.cnbc.com/2026/08/26/salesforce-crm-q2-earnings-report-2027.html"
+          ]
+        }
+      ],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "servicenow",
+      "name": "ServiceNow",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "servicenow-official-fallback",
+          "url": "https://investors.servicenow.com/",
+          "finalUrl": "https://investor.servicenow.com/overview/default.aspx",
+          "httpStatus": 403,
+          "accessStatus": "unavailable",
+          "durationMs": 1758
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "servicenow-official-fallback: 403"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "snowflake",
+      "name": "Snowflake",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "snowflake-official-fallback",
+          "url": "https://investors.snowflake.com/",
+          "finalUrl": "https://investors.snowflake.com/",
+          "httpStatus": 403,
+          "accessStatus": "unavailable",
+          "durationMs": 378
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "snowflake-official-fallback: 403"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "cloudflare-blog"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "cloudflare-blog",
+          "url": "https://blog.cloudflare.com/rss/",
+          "finalUrl": "https://blog.cloudflare.com/rss/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 372
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 1,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "no-change",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "public"
+    },
+    {
+      "id": "baidu",
+      "name": "Baidu",
+      "layer": "model-application",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "baidu-official-fallback",
+          "url": "https://ir.baidu.com/",
+          "finalUrl": "https://ir.baidu.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 650
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "public"
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "layer": "model-application",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "deepseek-official-fallback",
+          "url": "https://www.deepseek.com/",
+          "finalUrl": "https://www.deepseek.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 387
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "public"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "layer": "model-application",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "mistral-official-fallback",
+          "url": "https://mistral.ai/news",
+          "finalUrl": "https://mistral.ai/news/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1741
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "public"
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "perplexity-official-fallback",
+          "url": "https://www.perplexity.ai/hub",
+          "finalUrl": "https://www.perplexity.ai/hub",
+          "httpStatus": 403,
+          "accessStatus": "unavailable",
+          "durationMs": 351
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "perplexity-official-fallback: 403"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "asml",
+      "name": "ASML",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "asml-official-fallback",
+          "url": "https://www.asml.com/en/news",
+          "finalUrl": "https://www.asml.com/en/news",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 471
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "public"
+    },
+    {
+      "id": "applied-materials",
+      "name": "Applied Materials",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "applied-materials-official-fallback",
+          "url": "https://ir.appliedmaterials.com/",
+          "finalUrl": "https://ir.appliedmaterials.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 614
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "public"
+    },
+    {
+      "id": "lam-research",
+      "name": "Lam Research",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "lam-research-official-fallback",
+          "url": "https://investor.lamresearch.com/",
+          "finalUrl": "https://investor.lamresearch.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 457
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "public"
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "nvidia",
+        "nvidia-developer"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "nvidia",
+          "url": "https://nvidianews.nvidia.com/rss.xml",
+          "finalUrl": "https://nvidianews.nvidia.com/rss.xml",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 518
+        },
+        {
+          "sourceId": "nvidia-developer",
+          "url": "https://developer.nvidia.com/blog/feed/",
+          "finalUrl": "https://developer.nvidia.com/blog/feed/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 436
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 2,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 2,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [
+        "evt-48cb8b4ef70f568d4997",
+        "evt-3390af672edb46c794d7",
+        "evt-7853c7e1d7e61f0fa6bd",
+        "evt-a434850abeadb653e14a",
+        "evt-daf68654e3d7ef7f1a21",
+        "evt-b0e242b75a184d5f04e5",
+        "evt-d5e83d9e1c80c91e3e65",
+        "evt-77bdc07c35f083aaabaa",
+        "evt-d1fac7e4dff047c47582",
+        "evt-90ad149f8f21a41a0ce0",
+        "evt-3ab06c2287e7f595a8eb",
+        "evt-6a260cf0615a58e68a43",
+        "evt-960736f7704e903bc6df",
+        "evt-977dd2e6e4984ecf4b9e",
+        "evt-be3eb9901a8e7e7f28c3",
+        "evt-8e31955228116e7575a9"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-48cb8b4ef70f568d4997",
+          "title": "Analysts split on whether rumored Nvidia-Hugging Face deal is a good thing",
+          "lastUpdatedAt": "2026-08-28T02:34:00.895Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.fierce-network.com/cloud/analysts-split-whether-rumored-nvidia-hugging-face-deal-good-thing"
+          ]
+        },
+        {
+          "eventId": "evt-3390af672edb46c794d7",
+          "title": "450 亿美元算力订单落地，Anthropic 持续扩张AI 算力储备|彭博社|芯片系统|微软|英伟达|人工智能_手机新浪网 - 新浪财经",
+          "lastUpdatedAt": "2026-08-28T00:11:17.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVjRHc28zdUhIcE8yT1loVGt0bHFaQkJUWC1tSXJQNXlPZEhnandBclNhMUYxWDl0S3ZvbDltVEpFN0dNbGlfekJxMUVON3g1VHBVZ1NxQ1pCMjZMTXZ6eHRuRnBjcDgwRTE4VUVWRFNpQ094bjNDdmNXU2NiUkRuNnpNMEpaa05hLVhPUW1sZFo4YTkxZ0tsYWFmZ09sNjNZV2NnWDVZSQ?oc=5",
+            "https://news.google.com/rss/articles/CBMieEFVX3lxTFB3LUc2RFFBa19HM08tUzBia3ZsaXI4YVdVNVU4eUhUMnd6TFp4RVVLbENDTmtuUjlCa1J2ZDRYa1N0dmp1amxOcVJHNjd2aTNRT3E0VmRHRm9ZT0N3a1RFcEwxYXZWVkJmQTJTWTA3d1FCQmxsYlJzZA?oc=5"
+          ]
+        },
+        {
+          "eventId": "evt-7853c7e1d7e61f0fa6bd",
+          "title": "作者将赴柏林GTC，聚焦智能体与开源模型",
+          "lastUpdatedAt": "2026-08-27T20:16:24.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/kimmonismus/status/2093070145208152261"
+          ]
+        },
+        {
+          "eventId": "evt-a434850abeadb653e14a",
+          "title": "NVIDIA 开源 srt-slurm 编排推理部署",
+          "lastUpdatedAt": "2026-08-27T20:00:47.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/SemiAnalysis_/status/2093066214771679716"
+          ]
+        },
+        {
+          "eventId": "evt-daf68654e3d7ef7f1a21",
+          "title": "报道：英伟达拟以130亿美元收购AI模型库Hugging Face",
+          "lastUpdatedAt": "2026-08-27T19:55:22.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://arstechnica.com/ai/2026/08/report-nvidia-to-acquire-ai-model-repository-hugging-face-for-13-billion"
+          ]
+        },
+        {
+          "eventId": "evt-b0e242b75a184d5f04e5",
+          "title": "英伟达季度营收5%或来自SpaceX",
+          "lastUpdatedAt": "2026-08-27T18:28:29.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/cb_doge/status/2093042986934546485"
+          ]
+        },
+        {
+          "eventId": "evt-d5e83d9e1c80c91e3e65",
+          "title": "英伟达收购Hugging Face交易接近达成，估值约130亿美元 - 至顶网",
+          "lastUpdatedAt": "2026-08-27T18:18:35.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9ibkN0aGhMUDR6d2lkektLRDNpZ2Z3Vmp4UkxhVk16MzRjd0g5MEdiVTlGWVhNZUJ1SHJLMW1aajZ6YlZWLVpmeVB1T0Y2UngtRmc?oc=5"
+          ]
+        },
+        {
+          "eventId": "evt-77bdc07c35f083aaabaa",
+          "title": "Qualcomm Bets Open-Source AI Software Can Break Nvidia’s Lock-In",
+          "lastUpdatedAt": "2026-08-27T18:09:20.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.eetimes.com/qualcomm-bets-open-source-ai-software-can-break-nvidias-lock-in/"
+          ]
+        },
+        {
+          "eventId": "evt-d1fac7e4dff047c47582",
+          "title": "Nvidia agrees to buy Hugging Face for $12.9 billion, report says",
+          "lastUpdatedAt": "2026-08-27T17:49:53.000Z",
+          "sourceTiers": [
+            "T2"
+          ],
+          "sourceUrls": [
+            "https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html"
+          ]
+        },
+        {
+          "eventId": "evt-90ad149f8f21a41a0ce0",
+          "title": "Jensen Huang says Nvidia achieved AGI, again — not that it matters",
+          "lastUpdatedAt": "2026-08-27T16:15:52.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.theverge.com/ai-artificial-intelligence/985597/jensen-huang-says-nvidia-achieved-senseless-agi"
+          ]
+        },
+        {
+          "eventId": "evt-3ab06c2287e7f595a8eb",
+          "title": "《共鸣：瘟疫传说传承》正式推出：《瘟疫传说》系列前传，199 元",
+          "lastUpdatedAt": "2026-08-27T16:12:46.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.ithome.com/0/995/327.htm"
+          ]
+        },
+        {
+          "eventId": "evt-6a260cf0615a58e68a43",
+          "title": "Nvidia&apos;s revenue outlook, Meta&apos;s $16.7B settlement, mail-in voting and more in Morning Squawk",
+          "lastUpdatedAt": "2026-08-27T12:44:01.000Z",
+          "sourceTiers": [
+            "T2"
+          ],
+          "sourceUrls": [
+            "https://www.cnbc.com/2026/08/27/5-things-to-know-before-the-stock-market-opens.html"
+          ]
+        }
+      ],
+      "accessStatus": "public"
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "amd"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "amd",
+          "url": "https://ir.amd.com/rss/news-releases.xml",
+          "finalUrl": "https://ir.amd.com/news-events/press-releases/rss",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 792
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 1,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [
+        "evt-b05176deb9e214e58671",
+        "evt-3ab06c2287e7f595a8eb"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-b05176deb9e214e58671",
+          "title": "撼讯推出《共鸣：瘟疫传说传承》联名款 RX 9070 XT 暗黑犬显卡",
+          "lastUpdatedAt": "2026-08-28T01:44:51.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.ithome.com/0/995/395.htm"
+          ]
+        },
+        {
+          "eventId": "evt-3ab06c2287e7f595a8eb",
+          "title": "《共鸣：瘟疫传说传承》正式推出：《瘟疫传说》系列前传，199 元",
+          "lastUpdatedAt": "2026-08-27T16:12:46.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.ithome.com/0/995/327.htm"
+          ]
+        }
+      ],
+      "accessStatus": "public"
+    },
+    {
+      "id": "broadcom",
+      "name": "Broadcom",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "broadcom-official-fallback",
+          "url": "https://investors.broadcom.com/",
+          "finalUrl": "https://investors.broadcom.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 527
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "public"
+    },
+    {
+      "id": "marvell",
+      "name": "Marvell",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "marvell-official-fallback",
+          "url": "https://investor.marvell.com/",
+          "finalUrl": "https://investor.marvell.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 472
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [
+        "evt-814cbd1bc3f9fde53c6f",
+        "evt-22fa182646dbb6a97ad7"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-814cbd1bc3f9fde53c6f",
+          "title": "Marvell CEO projects 45% revenue growth to $12B in FY27 as AI demand accelerates - Crypto Briefing",
+          "lastUpdatedAt": "2026-08-27T21:20:47.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zenI1bW5aczhsSGhGMHVIT2NrZnZ2enFmZW1CQmh0dlhrYmR0MnFhR1Z1dUtEckZxNEZBX0FyMlFkWkVmN2pSRFZ5VjBKekY3REVIYVdOaHN6RXVneWZSbjhaQTZUQlJ4Q3ktYTZVcWp1aTA?oc=5"
+          ]
+        },
+        {
+          "eventId": "evt-22fa182646dbb6a97ad7",
+          "title": "Marvell财报即将公布：谷歌合作能否推动AI芯片业务加速增长？ 提供者 Investing.com - 英为财情 Investing.com",
+          "lastUpdatedAt": "2026-08-27T13:50:00.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMia0FVX3lxTE9FUzgtemYzemF3VlhNWnpqeklZTmJnY2VCelNtSlZSeEV0ZS1pREhFWDR6T0lQX3dXVm9GR2x0TnJTVFJ2STZ4Q0JLM3BDMUNRWnB4M1hXQmlLLTA5ZkNKVGNCRldUNzE3VnhN?oc=5"
+          ]
+        }
+      ],
+      "accessStatus": "public"
+    },
+    {
+      "id": "tsmc",
+      "name": "TSMC",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "tsmc-official-fallback",
+          "url": "https://investor.tsmc.com/english",
+          "finalUrl": "https://investor.tsmc.com/english",
+          "httpStatus": 403,
+          "accessStatus": "unavailable",
+          "durationMs": 392
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "tsmc-official-fallback: 403"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "sk-hynix",
+      "name": "SK hynix",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [
+        "sk-hynix-newsroom"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "sk-hynix-newsroom",
+          "url": "https://news.skhynix.com/feed/",
+          "finalUrl": null,
+          "httpStatus": null,
+          "accessStatus": "unavailable",
+          "durationMs": 468,
+          "error": "fetch failed"
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 1,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "sk-hynix-newsroom: fetch-failed"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [
+        "evt-f8da9516daf5285b0273",
+        "evt-321d989cab5410def95a"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-f8da9516daf5285b0273",
+          "title": "SK海力士在美建首个HBM封装基地",
+          "lastUpdatedAt": "2026-08-27T19:23:02.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://x.com/rohanpaul_ai/status/2093056713889079496"
+          ]
+        },
+        {
+          "eventId": "evt-321d989cab5410def95a",
+          "title": "SK hynix Holds Groundbreaking Ceremony for HBM Production Base in Indiana, “Beginning a New Future for US-Korea AI”",
+          "lastUpdatedAt": "2026-08-27T16:21:49.000Z",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceUrls": [
+            "https://news.skhynix.com/en/groundbreaking-ceremony-in-indiana-01/"
+          ]
+        }
+      ],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "micron",
+      "name": "Micron",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "micron-official-fallback",
+          "url": "https://investors.micron.com/",
+          "finalUrl": "https://investors.micron.com/",
+          "httpStatus": 403,
+          "accessStatus": "unavailable",
+          "durationMs": 364
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "micron-official-fallback: 403"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung Electronics",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [
+        "samsung-global-newsroom"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "samsung-global-newsroom",
+          "url": "https://news.samsung.com/global/feed",
+          "finalUrl": null,
+          "httpStatus": null,
+          "accessStatus": "unavailable",
+          "durationMs": 457,
+          "error": "fetch failed"
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 1,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "samsung-global-newsroom: fetch-failed"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [
+        "evt-96272c1d55b45e3814c7"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-96272c1d55b45e3814c7",
+          "title": "Omdia 报告：2026 年 Q2 东南亚智能手机市场出货量下降 23%，创 2014 年以来最低水平",
+          "lastUpdatedAt": "2026-08-27T23:55:52.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.ithome.com/0/995/354.htm"
+          ]
+        }
+      ],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "arista",
+      "name": "Arista Networks",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "arista-official-fallback",
+          "url": "https://investors.arista.com/",
+          "finalUrl": "https://investors.arista.com/",
+          "httpStatus": 403,
+          "accessStatus": "unavailable",
+          "durationMs": 552
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "arista-official-fallback: 403"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "dell",
+      "name": "Dell Technologies",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "dell"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [],
+      "sourceCoverage": {
+        "officialRegistrySources": 1,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "supermicro",
+      "name": "Supermicro",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "supermicro-official-fallback",
+          "url": "https://ir.supermicro.com/",
+          "finalUrl": "https://ir.supermicro.com/",
+          "httpStatus": 403,
+          "accessStatus": "unavailable",
+          "durationMs": 539
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "supermicro-official-fallback: 403"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "huawei",
+      "name": "Huawei",
+      "layer": "compute-silicon",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "huawei-official-fallback",
+          "url": "https://www.huawei.com/en/news",
+          "finalUrl": "https://www.huawei.com/en/news",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 717
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "public"
+    },
+    {
+      "id": "equinix",
+      "name": "Equinix",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "equinix-ir"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "equinix-ir",
+          "url": "https://investor.equinix.com/rss/news-releases.xml",
+          "finalUrl": "https://investor.equinix.com/news-events/press-releases/rss",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 852
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 1,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "no-change",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "public"
+    },
+    {
+      "id": "digital-realty",
+      "name": "Digital Realty",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "digital-realty"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "digital-realty",
+          "url": "https://investor.digitalrealty.com/rss/news-releases.xml",
+          "finalUrl": "https://investor.digitalrealty.com/rss/news-releases.xml",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 569
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 1,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [
+        "evt-d6e9cd0367beb36d1d0d"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-d6e9cd0367beb36d1d0d",
+          "title": "How Data Centers Are Using AI to Run Cooler and Smarter",
+          "lastUpdatedAt": "2026-08-27T09:00:00.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.datacenterknowledge.com/data-center-software/how-data-centers-are-using-ai-to-run-cooler-and-smarter"
+          ]
+        }
+      ],
+      "accessStatus": "public"
+    },
+    {
+      "id": "vertiv",
+      "name": "Vertiv",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "vertiv-official-fallback",
+          "url": "https://investors.vertiv.com/",
+          "finalUrl": "https://investors.vertiv.com/",
+          "httpStatus": 403,
+          "accessStatus": "unavailable",
+          "durationMs": 414
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "vertiv-official-fallback: 403"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "schneider-electric",
+      "name": "Schneider Electric",
+      "layer": "capacity-power",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "schneider-electric-official-fallback",
+          "url": "https://www.se.com/ww/en/about-us/newsroom/",
+          "finalUrl": "https://www.se.com/ww/en/about-us/newsroom/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 3487
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [
+        "evt-d6e9cd0367beb36d1d0d"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-d6e9cd0367beb36d1d0d",
+          "title": "How Data Centers Are Using AI to Run Cooler and Smarter",
+          "lastUpdatedAt": "2026-08-27T09:00:00.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.datacenterknowledge.com/data-center-software/how-data-centers-are-using-ai-to-run-cooler-and-smarter"
+          ]
+        }
+      ],
+      "accessStatus": "public"
+    },
+    {
+      "id": "eaton",
+      "name": "Eaton",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "eaton-official-fallback",
+          "url": "https://www.eaton.com/us/en-us/company/investor-relations.html",
+          "finalUrl": "https://www.eaton.com/us/en-us/company/investor-relations.html",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 567
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "public"
+    },
+    {
+      "id": "ge-vernova",
+      "name": "GE Vernova",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "ge-vernova-official-fallback",
+          "url": "https://investors.gevernova.com/",
+          "finalUrl": null,
+          "httpStatus": null,
+          "accessStatus": "unavailable",
+          "durationMs": 206,
+          "error": "fetch failed"
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "ge-vernova-official-fallback: fetch-failed"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "hut-8",
+      "name": "Hut 8",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "hut8"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "hut8",
+          "url": "https://www.hut8.com/news-insights/press-releases",
+          "finalUrl": "https://www.hut8.com/news-insights/press-releases",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 390
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 1,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "no-change",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "public"
+    },
+    {
+      "id": "terawulf",
+      "name": "TeraWulf",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "terawulf"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "terawulf",
+          "url": "https://ir.terawulf.com/rss/news-releases.xml",
+          "finalUrl": null,
+          "httpStatus": null,
+          "accessStatus": "unavailable",
+          "durationMs": 201,
+          "error": "fetch failed"
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 1,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "terawulf: fetch-failed"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "galaxy-digital",
+      "name": "Galaxy Digital",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "galaxy"
+      ],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "galaxy",
+          "url": "https://www.galaxy.com/newsroom",
+          "finalUrl": "https://www.galaxy.com/newsroom",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 374
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 1,
+        "officialFallbackSources": 0,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "new/changed",
+      "eventIds": [
+        "evt-96272c1d55b45e3814c7",
+        "evt-d5c87998efcc11668b7a"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-96272c1d55b45e3814c7",
+          "title": "Omdia 报告：2026 年 Q2 东南亚智能手机市场出货量下降 23%，创 2014 年以来最低水平",
+          "lastUpdatedAt": "2026-08-27T23:55:52.000Z",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceUrls": [
+            "https://www.ithome.com/0/995/354.htm"
+          ]
+        },
+        {
+          "eventId": "evt-d5c87998efcc11668b7a",
+          "title": "[Video] No Unfolding Needed: A Day With Galaxy Z Flip8’s FlexWindow",
+          "lastUpdatedAt": "2026-08-27T08:00:00.000Z",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceUrls": [
+            "https://news.samsung.com/global/video-no-unfolding-needed-a-day-with-galaxy-z-flip8s-flexwindow"
+          ]
+        }
+      ],
+      "accessStatus": "public"
+    },
+    {
+      "id": "riot-platforms",
+      "name": "Riot Platforms",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "riot-platforms-official-fallback",
+          "url": "https://investors.riotplatforms.com/",
+          "finalUrl": null,
+          "httpStatus": null,
+          "accessStatus": "unavailable",
+          "durationMs": 191,
+          "error": "fetch failed"
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "riot-platforms-official-fallback: fetch-failed"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "not-determined"
+    },
+    {
+      "id": "applied-digital",
+      "name": "Applied Digital",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "applied-digital-official-fallback",
+          "url": "https://ir.applieddigital.com/",
+          "finalUrl": "https://ir.applieddigital.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 425
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 1,
+        "accessGaps": []
+      },
+      "result": "not-determined",
+      "eventIds": [
+        "evt-c542dbd1af168a43e75f"
+      ],
+      "newDetails": [
+        {
+          "eventId": "evt-c542dbd1af168a43e75f",
+          "title": "Applied Digital Corporation (NASDAQ: APLD) Surges 8.4% Post-Earnings As Revenue Jumps 407% Year Over Year - foreignpolicyjournal.com",
+          "lastUpdatedAt": "2026-08-27T20:23:00.000Z",
+          "sourceTiers": [
+            "D"
+          ],
+          "sourceUrls": [
+            "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQYkpveUg1TFFmYVRBMUlZR0o5M2QyRDA1NTQ2dGg1X2dEQzBDM010dW9MTFl5aGFfWVYzNkJoSjZRc0dkZHJBUlEtc0dfcUJhdjNtdWRDcnNEWGgzVEM5THJnWTRjRGVXNGRhdHlKd0h4eEM1c3VYUThISHpRQWhSeGI3blFtY0htWnY0QjVhdXVqTm9xUjNNdVg2ZW1YNlRvZmJ0UENZYnlual9ENWZIeG5MeTE0cWRBQkpHbUVPd1dKVWdwY2ZuUVFBcEplaUxPdU80b1pFWHBFbEJnbnRUMV9ndw?oc=5"
+          ]
+        }
+      ],
+      "accessStatus": "public"
+    },
+    {
+      "id": "gds",
+      "name": "GDS Holdings",
+      "layer": "capacity-power",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "attemptedSources": [
+        {
+          "sourceId": "gds-official-fallback",
+          "url": "https://ir.gds-services.com/",
+          "finalUrl": null,
+          "httpStatus": null,
+          "accessStatus": "unavailable",
+          "durationMs": 194,
+          "error": "fetch failed"
+        }
+      ],
+      "sourceCoverage": {
+        "officialRegistrySources": 0,
+        "officialFallbackSources": 1,
+        "publicAccessibleAttempts": 0,
+        "accessGaps": [
+          "gds-official-fallback: fetch-failed"
+        ]
+      },
+      "result": "not-determined",
+      "eventIds": [],
+      "newDetails": [],
+      "accessStatus": "not-determined"
+    }
+  ]
+}

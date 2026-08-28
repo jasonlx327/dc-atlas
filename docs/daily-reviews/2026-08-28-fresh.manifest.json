@@ -1,0 +1,317 @@
+{
+  "schemaVersion": "1.1",
+  "runId": "atlas-2026-08-28-fresh",
+  "runDate": "2026-08-28",
+  "cutoff": "2026-08-27T10:33:01+08:00",
+  "displayTimezones": {
+    "zh": "Asia/Shanghai",
+    "en": "America/New_York"
+  },
+  "status": "ready-for-partial-release",
+  "projectPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-fresh-2026-08-28",
+  "sourceLedgerPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-fresh-2026-08-28/docs/daily-reviews/2026-08-28-fresh.sources.json",
+  "host": "bogon",
+  "headBefore": "6af5ddfb07c0dba6cd83f7be54a14d0119e9f60e",
+  "sections": {
+    "idc-pulse": {
+      "status": "updated",
+      "checkedAt": "2026-08-28T02:43:51.422Z",
+      "newIds": [
+        "sk-telecom-sk-horizon-318mw-2026"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "sk-telecom-sk-horizon-2026-08-27",
+        "global-scan-2026-08-28-fresh",
+        "aihot-health-2026-08-28"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "发布 SK Horizon 拟拆分与投资协议的一手记录；AI HOT 仅作发现源健康检查。"
+    },
+    "listed-companies": {
+      "status": "updated",
+      "checkedAt": "2026-08-28T02:43:51.422Z",
+      "newIds": [
+        "sk-telecom-sk-horizon-318mw-listed-2026"
+      ],
+      "updatedIds": [],
+      "heldIds": [
+        "41-core-company-not-determined"
+      ],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "sk-telecom-sk-horizon-2026-08-27",
+        "core-company-checks-2026-08-28-fresh"
+      ],
+      "accessGaps": [
+        "50-company check: 41 not-determined; only independently verified SK Telecom record is included"
+      ],
+      "releaseDisposition": "publish",
+      "notes": "50/50 已检查；只发布已核验的一手公司更新，其余覆盖不足记录继续 hold。"
+    },
+    "mna": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-08-28T02:43:51.422Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-28-fresh",
+        "editor-decision-2026-08-28-fresh"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "NVIDIA/Hugging Face 仅为媒体报道并已路由 Rumor Watch；SK Horizon 记录按公司与容量更新去重。"
+    },
+    "capacity": {
+      "status": "updated",
+      "checkedAt": "2026-08-28T02:43:51.422Z",
+      "newIds": [
+        "sk-telecom-sk-horizon-318mw-2026"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "sk-telecom-sk-horizon-2026-08-27",
+        "global-scan-2026-08-28-fresh"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "发布 SK Horizon 318MW 组合；明确其包含在运与在建资产，不计作全部新增容量。"
+    },
+    "cooling": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-08-28T02:43:51.422Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-45732fd11570ced3d411"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-28-fresh",
+        "editor-decision-2026-08-28-fresh"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "LG CNS/Naver 液冷主张缺少一手确认，已以归因媒体报道进入 Rumor Watch，正式液冷区不升级。"
+    },
+    "compute-products": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-08-28T02:43:51.422Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-28-fresh",
+        "core-company-checks-2026-08-28-fresh"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "复核完成；没有新增且满足正式区门禁的计算产品记录。"
+    },
+    "china-gpu": {
+      "status": "blocked",
+      "checkedAt": "2026-08-28T02:43:51.422Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "china-xpu-overlay-7-not-determined"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "china-xpu-checks-2026-08-28-fresh"
+      ],
+      "accessGaps": [
+        "China XPU overlay: 7/7 checked, all 7 not-determined"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "交易所与发行人覆盖不足，局部 hold；不推断无变化。"
+    },
+    "supply-chain": {
+      "status": "updated",
+      "checkedAt": "2026-08-28T02:43:51.422Z",
+      "newIds": [
+        "sk-hynix-indiana-hbm-packaging-2026"
+      ],
+      "updatedIds": [],
+      "heldIds": [
+        "interconnect-cpo-overlay-20-not-determined"
+      ],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "sk-hynix-indiana-groundbreaking-2026-08-28",
+        "interconnect-cpo-checks-2026-08-28-fresh"
+      ],
+      "accessGaps": [
+        "Interconnect/CPO overlay: 20/20 checked, all 20 not-determined; held independently"
+      ],
+      "releaseDisposition": "publish",
+      "notes": "发布 SK 海力士印第安纳 HBM 先进封装基地奠基；CPO overlay 单独 hold。"
+    },
+    "power-model-demand": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-08-28T02:43:51.422Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-ffd87cb164545c018fa9",
+        "evt-3580e756bc477f1d88eb"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-28-fresh",
+        "editor-decision-2026-08-28-fresh"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "PJM 与 Anthropic/Nscale 均按归因媒体报道进入 Rumor Watch；正式需求区不升级。"
+    },
+    "earnings-calendar": {
+      "status": "blocked",
+      "checkedAt": "2026-08-28T02:43:51.422Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "41-core-company-not-determined"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "core-company-checks-2026-08-28-fresh"
+      ],
+      "accessGaps": [
+        "50-company official coverage incomplete for 41 companies"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "覆盖不足，不能声明完整无变化；不影响其他板块发布。"
+    },
+    "rumors": {
+      "status": "updated",
+      "checkedAt": "2026-08-28T02:43:51.422Z",
+      "newIds": [
+        "lg-cns-naver-direct-chip-cooling-report-2026",
+        "anthropic-nscale-45b-460mw-report-2026",
+        "pjm-data-center-cost-9pct-report-2026",
+        "nvidia-hugging-face-12-9b-report-2026"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 5,
+      "sourceRefs": [
+        "dcd-lg-cns-naver-cooling-2026-08-27",
+        "dcd-anthropic-nscale-2026-08-27",
+        "ft-anthropic-nscale-2026-08-26",
+        "utility-dive-pjm-cost-2026-08-27",
+        "cnbc-nvidia-hugging-face-2026-08-27"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "发布 4 条可归因媒体报道：Anthropic/Nscale 为多来源，其余为单来源组；全部明确未获一手确认。"
+    },
+    "policy": {
+      "status": "blocked",
+      "checkedAt": "2026-08-28T02:43:51.422Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "ndrc",
+        "miit",
+        "mep-china",
+        "beijing-gov",
+        "shanghai-gov"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-28-fresh"
+      ],
+      "accessGaps": [
+        "five China official policy source paths failed during this scan"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "官方政策入口存在访问缺口，不能声明全球政策无变化；局部 hold。"
+    },
+    "columns": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-08-28T02:43:51.422Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "17-research-queue-items"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-2026-08-28-fresh",
+        "editor-decision-2026-08-28-fresh"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "17 个机制性候选进入研究队列；本轮没有完成一手证据与双语全文的专栏。"
+    }
+  },
+  "release": {
+    "mode": "partial",
+    "tests": "passed",
+    "build": "passed",
+    "cloudflare": "pending",
+    "formalReadback": "pending",
+    "dailySnapshot": "pending",
+    "sites": "pending",
+    "sitesReadback": "pending",
+    "commit": null,
+    "workerCommit": null,
+    "sitesCommit": null,
+    "cloudflareVersion": null,
+    "sitesVersion": null,
+    "formalUrl": null,
+    "sitesUrl": null,
+    "includedSections": [
+      "idc-pulse",
+      "listed-companies",
+      "capacity",
+      "supply-chain",
+      "rumors"
+    ],
+    "heldSections": [
+      "china-gpu",
+      "earnings-calendar",
+      "policy"
+    ],
+    "testBaseline": "50/50 rendered tests; lint 0 errors and 27 pre-existing warnings; Cloudflare dry-run passed"
+  },
+  "blockers": [
+    {
+      "scope": "section",
+      "reason": "China XPU 7/7 remained not-determined",
+      "nextAction": "Retry issuer exchange and official IR paths; do not infer no-change."
+    },
+    {
+      "scope": "section",
+      "reason": "Earnings/company coverage remained not-determined for 41 of 50 core companies",
+      "nextAction": "Continue source chasing without blocking independently verified sections."
+    },
+    {
+      "scope": "section",
+      "reason": "Five China policy source paths failed",
+      "nextAction": "Retry official policy endpoints and retain source-chain handoff."
+    }
+  ]
+}

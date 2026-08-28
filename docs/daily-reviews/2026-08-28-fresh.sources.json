@@ -1,0 +1,174 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-08-28-fresh",
+  "sources": [
+    {
+      "ref": "sk-telecom-sk-horizon-2026-08-27",
+      "evidenceKind": "public-source",
+      "sourceName": "SK Telecom Newsroom",
+      "tier": "T1",
+      "canonicalUrl": "https://news.sktelecom.com/en/3290",
+      "publishedAt": "2026-08-27T00:00:00+09:00",
+      "accessState": "public",
+      "independenceGroup": "sk-telecom",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "capacity"
+      ]
+    },
+    {
+      "ref": "sk-hynix-indiana-groundbreaking-2026-08-28",
+      "evidenceKind": "public-source",
+      "sourceName": "SK hynix Newsroom",
+      "tier": "T1",
+      "canonicalUrl": "https://news.skhynix.com/en/groundbreaking-ceremony-in-indiana-01/",
+      "publishedAt": "2026-08-28T00:00:00+09:00",
+      "accessState": "public",
+      "independenceGroup": "sk-hynix",
+      "sections": [
+        "supply-chain"
+      ]
+    },
+    {
+      "ref": "dcd-anthropic-nscale-2026-08-27",
+      "evidenceKind": "public-source",
+      "sourceName": "Data Center Dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/anthropic-signs-45bn-compute-capacity-agreement-with-nscale-report/",
+      "publishedAt": "2026-08-27T10:34:19Z",
+      "accessState": "public",
+      "independenceGroup": "dcd",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "ft-anthropic-nscale-2026-08-26",
+      "evidenceKind": "public-source",
+      "sourceName": "Financial Times",
+      "tier": "T2",
+      "canonicalUrl": "https://www.ft.com/content/0ec76ba3-5f7f-4085-88fb-acf21954bc85",
+      "publishedAt": "2026-08-26T21:48:11Z",
+      "accessState": "public",
+      "independenceGroup": "ft",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "cnbc-nvidia-hugging-face-2026-08-27",
+      "evidenceKind": "public-source",
+      "sourceName": "CNBC",
+      "tier": "T2",
+      "canonicalUrl": "https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html",
+      "publishedAt": "2026-08-27T17:49:53Z",
+      "accessState": "public",
+      "independenceGroup": "cnbc",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "utility-dive-pjm-cost-2026-08-27",
+      "evidenceKind": "public-source",
+      "sourceName": "Utility Dive",
+      "tier": "T3",
+      "canonicalUrl": "https://www.utilitydive.com/news/data-center-load-pjm-wholesale-market/828917/",
+      "publishedAt": "2026-08-27T13:02:31Z",
+      "accessState": "public",
+      "independenceGroup": "utility-dive",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "dcd-lg-cns-naver-cooling-2026-08-27",
+      "evidenceKind": "public-source",
+      "sourceName": "Data Center Dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/lg-cns-deploys-direct-to-chip-cooling-for-naver-cloud-at-data-center-in-goyang-city-south-korea/",
+      "publishedAt": "2026-08-27T09:20:45Z",
+      "accessState": "public",
+      "independenceGroup": "dcd",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "global-scan-2026-08-28-fresh",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "Fresh global source scan",
+      "observedAt": "2026-08-28T02:34:04.024Z",
+      "sections": [
+        "*"
+      ],
+      "details": {
+        "fetched": 2932,
+        "normalized": 2899,
+        "clusters": 636,
+        "sourceCount": 91,
+        "passingSourceCount": 71,
+        "errors": 6
+      }
+    },
+    {
+      "ref": "core-company-checks-2026-08-28-fresh",
+      "evidenceKind": "workflow-state",
+      "sourceName": "50-company fresh official-source checks",
+      "observedAt": "2026-08-28T02:43:51.422Z",
+      "sections": [
+        "listed-companies",
+        "compute-products",
+        "capacity",
+        "power-model-demand",
+        "earnings-calendar"
+      ]
+    },
+    {
+      "ref": "china-xpu-checks-2026-08-28-fresh",
+      "evidenceKind": "workflow-state",
+      "sourceName": "China XPU 7/7 overlay",
+      "observedAt": "2026-08-28T02:43:51.422Z",
+      "sections": [
+        "china-gpu"
+      ]
+    },
+    {
+      "ref": "interconnect-cpo-checks-2026-08-28-fresh",
+      "evidenceKind": "workflow-state",
+      "sourceName": "Interconnect and CPO 20/20 overlay",
+      "observedAt": "2026-08-28T02:43:51.422Z",
+      "sections": [
+        "supply-chain"
+      ]
+    },
+    {
+      "ref": "editor-decision-2026-08-28-fresh",
+      "evidenceKind": "workflow-state",
+      "sourceName": "Reviewed bilingual editor decision",
+      "observedAt": "2026-08-28T02:34:56.453Z",
+      "sections": [
+        "*"
+      ]
+    },
+    {
+      "ref": "aihot-health-2026-08-28",
+      "evidenceKind": "runtime-state",
+      "sourceName": "AI HOT selected 24h health check",
+      "observedAt": "2026-08-28T02:43:51.422Z",
+      "sections": [
+        "idc-pulse"
+      ]
+    },
+    {
+      "ref": "morning-handoff-2026-08-28-0930",
+      "evidenceKind": "workflow-state",
+      "sourceName": "09:30 blocked-run handoff audit",
+      "observedAt": "2026-08-28T02:43:51.422Z",
+      "sections": [
+        "*"
+      ]
+    }
+  ]
+}

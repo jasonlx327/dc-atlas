@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-08-28-fresh",
+  "status": "ready-for-partial-release",
+  "resolved": [
+    "shadow SQLite observation identity persistence repaired and verified",
+    "blocked 09:30 cutoff replaced with documented 24-hour fallback",
+    "six public updates received source-reviewed bilingual copy",
+    "public content moved to versioned source instead of production editorial candidate KV",
+    "review date and acceptance test updated together"
+  ],
+  "holds": [
+    {
+      "scope": "policy",
+      "count": 5,
+      "state": "not-determined",
+      "nextAction": "retry official China policy source paths"
+    },
+    {
+      "scope": "core-company",
+      "count": 41,
+      "state": "not-determined",
+      "nextAction": "continue official IR, exchange, regulator and newsroom source chasing"
+    },
+    {
+      "scope": "china-xpu",
+      "count": 7,
+      "state": "not-determined",
+      "nextAction": "retry all official issuer and exchange paths"
+    },
+    {
+      "scope": "interconnect-cpo",
+      "count": 20,
+      "state": "not-determined",
+      "nextAction": "retry all official issuer and product paths"
+    },
+    {
+      "scope": "pjm-report",
+      "count": 1,
+      "state": "rumor-watch",
+      "nextAction": "locate and verify the primary market-monitor report"
+    }
+  ],
+  "globalBlocker": false
+}

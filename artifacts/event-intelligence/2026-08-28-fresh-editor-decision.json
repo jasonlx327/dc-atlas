@@ -1,0 +1,5000 @@
+{
+  "schemaVersion": "atlas-editor-decision.v1",
+  "generatedAt": "2026-08-28T02:34:56.453Z",
+  "cutoffAt": "2026-08-28T02:34:56.453Z",
+  "timezone": "Asia/Shanghai",
+  "day": "2026-08-28",
+  "status": "completed",
+  "sourcePacketGeneratedAt": "2026-08-28T02:34:56.453Z",
+  "decisions": [
+    {
+      "eventId": "evt-3d536e4b3985f74a8f43",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.powermag.com/hull-street-acquires-two-pjm-based-power-stations-from-rockland-capital/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "PJM"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-26T19:07:29.000Z",
+      "sourceId": "power-magazine",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-61e6dd7234b78880ce7a",
+      "section": "capacity",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.datacenterknowledge.com/energy-power-supply/pjm-s-power-shortfall-puts-data-center-growth-in-focus"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "PJM"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-26T17:43:34.000Z",
+      "sourceId": "data-center-knowledge",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-1bc7ffd39ab8433e8ca7",
+      "section": "idc-pulse",
+      "sourceTier": "T0",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://www.federalregister.gov/documents/2026/08/27/2026-17504/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-for",
+        "https://www.federalregister.gov/documents/2026/08/27/2026-17456/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-for"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [
+        "EPA"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T00:00:00.000Z",
+      "sourceId": "federal-register",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    },
+    {
+      "eventId": "evt-264a4852ac01f8e38222",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.cnbc.com/2026/08/26/open-ai-hugging-face-hack.html"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "OpenAI"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-26T21:17:34.000Z",
+      "sourceId": "cnbc-technology",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-b05176deb9e214e58671",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/995/395.htm"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "AMD"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-28T01:44:51.000Z",
+      "sourceId": "ithome",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-437c54e1c9d45acf4472",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/995/342.htm"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T23:01:49.000Z",
+      "sourceId": "ithome",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-eec6928c7be25109dbaa",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.theverge.com/tech/985851/meta-privacy-loophole-fix-marketing-campaign"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "Meta"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T21:37:45.000Z",
+      "sourceId": "the-verge",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-93aee5fa118f550bb338",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://techcrunch.com/2026/08/27/youtube-now-lets-creators-tag-amazon-products-and-earn-commissions-from-purchases/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "Amazon"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T19:54:28.000Z",
+      "sourceId": "techcrunch",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-005387062de7da619208",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.powermag.com/revolve-renewable-power-secures-24-million-from-mexico-bank-for-project-financing/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T16:42:59.000Z",
+      "sourceId": "power-magazine",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-3ab06c2287e7f595a8eb",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/995/327.htm"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "NVIDIA",
+        "AMD",
+        "Intel"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T16:12:46.000Z",
+      "sourceId": "ithome",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-45732fd11570ced3d411",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.datacenterdynamics.com/en/news/lg-cns-deploys-direct-to-chip-cooling-for-naver-cloud-at-data-center-in-goyang-city-south-korea/"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T09:20:45.000Z",
+      "sourceId": "data-center-dynamics",
+      "action": "publish",
+      "route": "rumor-watch",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "human-source-review",
+        "natural-bilingual-copy",
+        "model-scoring-fallback",
+        "attributable-media-report"
+      ],
+      "publicCopy": {
+        "titleZh": "报道称 LG CNS 将为 Naver Cloud 部署直接芯片液冷",
+        "titleEn": "Report says LG CNS is deploying direct-to-chip cooling for Naver Cloud",
+        "summaryZh": "据 DCD 转述 Korea Herald 报道，LG CNS 正在韩国高阳市 Samsong 数据中心安装直接芯片液冷系统，用于支持 Naver Cloud 计划部署的 NVIDIA Vera Rubin AI 系统；截至本轮 cutoff，核心部署主张尚未获得项目方一手确认。",
+        "summaryEn": "DCD, citing the Korea Herald, reports that LG CNS is installing direct-to-chip liquid cooling at the Samsong data center in Goyang, South Korea, for Naver Cloud's planned NVIDIA Vera Rubin systems. The core deployment claim lacked primary confirmation by this cutoff."
+      },
+      "publicClaims": [
+        {
+          "claim": "2026-08-27T09:20:45.000Z",
+          "sourceRefs": [
+            "https://www.datacenterdynamics.com/en/news/lg-cns-deploys-direct-to-chip-cooling-for-naver-cloud-at-data-center-in-goyang-city-south-korea/"
+          ],
+          "state": "reported",
+          "qualifier": "published_at"
+        }
+      ],
+      "internalNotes": []
+    },
+    {
+      "eventId": "evt-d6e9cd0367beb36d1d0d",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.datacenterknowledge.com/data-center-software/how-data-centers-are-using-ai-to-run-cooler-and-smarter"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "Digital Realty"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T09:00:00.000Z",
+      "sourceId": "data-center-knowledge",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-3580e756bc477f1d88eb",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.datacenterdynamics.com/en/news/anthropic-signs-45bn-compute-capacity-agreement-with-nscale-report/",
+        "https://www.ft.com/content/0ec76ba3-5f7f-4085-88fb-acf21954bc85?syn-25a6b1a6=1"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [
+        "Anthropic"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T10:34:19.000Z",
+      "sourceId": "data-center-dynamics",
+      "action": "publish",
+      "route": "rumor-watch",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "human-source-review",
+        "natural-bilingual-copy",
+        "model-scoring-fallback",
+        "attributable-media-report"
+      ],
+      "publicCopy": {
+        "titleZh": "多家媒体称 Anthropic 与 Nscale 达成算力容量协议",
+        "titleEn": "Reports say Anthropic reached a $45B compute-capacity agreement with Nscale",
+        "summaryZh": "DCD 与 Financial Times 分别报道，Anthropic 拟在六年内租用 Nscale 西弗吉尼亚州园区 460MW 容量，协议价值约 $45 billion；DCD 称已向 Nscale 求证，截至本轮 cutoff 尚无一手确认，460MW 的容量口径也未进一步披露。",
+        "summaryEn": "DCD and the Financial Times separately report that Anthropic would lease 460MW at Nscale's West Virginia campus for six years under an agreement worth about $45 billion. DCD says it sought confirmation from Nscale; no primary confirmation was available by this cutoff, and the 460MW capacity type was not further specified."
+      },
+      "publicClaims": [
+        {
+          "claim": "$45bn",
+          "sourceRefs": [
+            "https://www.datacenterdynamics.com/en/news/anthropic-signs-45bn-compute-capacity-agreement-with-nscale-report/",
+            "https://www.ft.com/content/0ec76ba3-5f7f-4085-88fb-acf21954bc85?syn-25a6b1a6=1"
+          ],
+          "state": "reported"
+        },
+        {
+          "claim": "460MW",
+          "sourceRefs": [
+            "https://www.datacenterdynamics.com/en/news/anthropic-signs-45bn-compute-capacity-agreement-with-nscale-report/",
+            "https://www.ft.com/content/0ec76ba3-5f7f-4085-88fb-acf21954bc85?syn-25a6b1a6=1"
+          ],
+          "state": "reported",
+          "capacityType": "unspecified_capacity"
+        },
+        {
+          "claim": "2026-08-27T10:34:19.000Z",
+          "sourceRefs": [
+            "https://www.datacenterdynamics.com/en/news/anthropic-signs-45bn-compute-capacity-agreement-with-nscale-report/",
+            "https://www.ft.com/content/0ec76ba3-5f7f-4085-88fb-acf21954bc85?syn-25a6b1a6=1"
+          ],
+          "state": "reported",
+          "qualifier": "published_at"
+        },
+        {
+          "claim": "2026-08-26T21:48:11.000Z",
+          "sourceRefs": [
+            "https://www.datacenterdynamics.com/en/news/anthropic-signs-45bn-compute-capacity-agreement-with-nscale-report/",
+            "https://www.ft.com/content/0ec76ba3-5f7f-4085-88fb-acf21954bc85?syn-25a6b1a6=1"
+          ],
+          "state": "reported",
+          "qualifier": "published_at"
+        }
+      ],
+      "internalNotes": []
+    },
+    {
+      "eventId": "evt-c2e621297e8652175ac0",
+      "section": "supply-chain",
+      "sourceTier": "T0",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://www.federalregister.gov/documents/2026/08/27/2026-17450/notice-of-award-of-a-sole-source-cooperative-agreement-to-fund-vietnam-administration-of-medical"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "EPA"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T00:00:00.000Z",
+      "sourceId": "federal-register",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-199e061f2b13d7010953",
+      "section": "capacity",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://blogs.cisco.com/datacenter/vpc-and-esi-based-multi-homing-the-dynamic-duo-powering-scalable-resilient-data-centers"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T15:00:21.000Z",
+      "sourceId": "cisco-blog",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    },
+    {
+      "eventId": "evt-8734701af160b8d045da",
+      "section": "idc-pulse",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://www.dell.com/en-us/blog/activate-more-data-spend-less/"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T13:00:36.000Z",
+      "sourceId": "dell-blog",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    },
+    {
+      "eventId": "evt-dac94e8ebf69cbae985f",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.lightreading.com/fttx/ustelecom-ntca-back-lumos-in-ohio-permitting-dispute"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "FCC"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-26T12:00:00.000Z",
+      "sourceId": "light-reading",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-ffd87cb164545c018fa9",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.utilitydive.com/news/data-center-load-pjm-wholesale-market/828917/"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [
+        "PJM"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T13:02:31.000Z",
+      "sourceId": "utility-dive",
+      "action": "publish",
+      "route": "rumor-watch",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "human-source-review",
+        "natural-bilingual-copy",
+        "model-scoring-fallback",
+        "attributable-media-report"
+      ],
+      "publicCopy": {
+        "titleZh": "报道称数据中心负荷占 PJM 年内批发电价成本的 9%",
+        "titleEn": "Report says data-center load made up 9% of PJM wholesale power costs through July",
+        "summaryZh": "Utility Dive 援引 PJM 独立市场监测机构称，2026 年前七个月，现有及预测数据中心负荷经容量市场贡献了 PJM 批发电价的 9%，即 10.48 美元/MWh；该口径不含数据中心带来的电能与输电价格增量，本条尚未在事件包中完成一手报告升级。",
+        "summaryEn": "Utility Dive cites PJM's independent market monitor as saying existing and forecast data-center load accounted for 9%, or $10.48/MWh, of PJM wholesale power prices through July 2026 via the capacity market. The measure excludes data-center-related energy and transmission price increases; this event packet has not yet been upgraded to the primary report."
+      },
+      "publicClaims": [
+        {
+          "claim": "2026-08-27T09:46:07.000Z",
+          "sourceRefs": [
+            "https://www.utilitydive.com/news/data-center-load-pjm-wholesale-market/828917/"
+          ],
+          "state": "reported",
+          "qualifier": "published_at"
+        },
+        {
+          "claim": "$56.7 billion",
+          "sourceRefs": [
+            "https://www.utilitydive.com/news/data-center-load-pjm-wholesale-market/828917/"
+          ],
+          "state": "reported"
+        },
+        {
+          "claim": "2026-08-27T13:02:31.000Z",
+          "sourceRefs": [
+            "https://www.utilitydive.com/news/data-center-load-pjm-wholesale-market/828917/"
+          ],
+          "state": "reported",
+          "qualifier": "published_at"
+        },
+        {
+          "claim": "9%",
+          "sourceRefs": [
+            "https://www.utilitydive.com/news/data-center-load-pjm-wholesale-market/828917/"
+          ],
+          "state": "reported",
+          "qualifier": "reported share of PJM wholesale price through July 2026"
+        },
+        {
+          "claim": "$10.48/MWh",
+          "sourceRefs": [
+            "https://www.utilitydive.com/news/data-center-load-pjm-wholesale-market/828917/"
+          ],
+          "state": "reported",
+          "qualifier": "reported data-center capacity-market component"
+        }
+      ],
+      "internalNotes": []
+    },
+    {
+      "eventId": "evt-04bef27c87fecc59328d",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMirwFBVV95cUxNTGxOUUhmcW14cTN6MGw4X3AyYzRjOGxyQk1ad2c1ZjVWczhZbWFpZU92eXBlc1FneWVyWkNMd2tuaURCanpMSjNvVmJjM3VDbmhGNkNxS3hPc3dRb3B4TVJ0VTFIUmRtaFV1X1ZmMEVjWXhBNGZPUVdncnRKdVNyUEtULUZlR2V2cFl5Sm9sZnlMU1ljZllYSTN2R0ZEOUxIWWJVRVh2VF9DMnNIRGt3?oc=5",
+        "https://news.google.com/rss/articles/CBMi2AFBVV95cUxORnRLLU00NFdEZXBRWlNSTjFQVTQ3WnpBc3BIdC1aRXRIXzBPenBsb0VsbmdoM052Q1ZDenZzM2xZYkZkYzYzdndwUnQtY2RtYVJKZnBzMnJmWlV3YzRJeFBqZDdUTm81NTItZkpYLUhmSUk0ZVBPWm9jMFZqZnNLMDVtMXRDaWxtNU9JQm5xTjBIS3hGcXNRZzlSWFFRQWZwZWJSQXljOF9FWW1MdlFLUkhNN1RBYmJLUVNCUHVOREV2TkNzQXE4ZWpYMExiV0NIeVh3OGtpcXk?oc=5",
+        "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPeWw3Vm1CUC1nUENMaFBJdkgtNDNjMnhuZTBhR0V4eEpWdU9pQ0dmSnRsZDU2OHhPMVhiZk9jellLendRZGhfSldjdk5jMExTeFNoVGhITXBVQ0NldWFhcks4RC1xUkN4UTFHN2JVZXNHNHNxRlRjdzVJbHgzcVdSTmVSRmlYRnZUQ2xMWTFXRzdJV2RKblZ2MHFKdkRydjlRLUxZeDBTdWp3a3VNYk43UjZsSll2Nml5bEF2eUpwWkM3NFJmSU1OeGF1VUdTeXN4c0ZjMVp3MnJPRS1RUUE?oc=5",
+        "https://www.datacenterdynamics.com/en/news/openai-gets-green-light-for-32gw-power-deal-to-supply-planned-data-center-in-effingham-county-georgia/"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [
+        "OpenAI"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T20:08:08.000Z",
+      "sourceId": "google-news-ai-power",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    },
+    {
+      "eventId": "evt-701f303257ac06756fc6",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiygFBVV95cUxPY0JkR25SajRrdlRlZUxQZlp3SDFqSFRNdUhKQUZZWm5YcjJLZ1lUVmdBSnFEdm05enB2eGZoX25Ob29KWlZTcnB0WlgyYzZtMGp6UnJFbjV1TllocmFadWpNWHBadTk0bVEyYU9xY0xMbjZ2Ti1TU0pqVS1UTUhCeF9mak91SjhDUzNvTWI3ZkRmNXVtNXY1Mml5QVEtX1ctWmpoZHBNcF9JWlEyZE5jcjNmNlVSVlhUYUtwN3Zhc05xSkNPMU55aVpR?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "Amazon"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T13:23:00.000Z",
+      "sourceId": "google-news-ai-power",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-cd86faa1d0ff6e623ba9",
+      "section": "capacity",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPYk9jYWdiSnFMNE1SUFh0bW0wVGZGa2xUYUlLYzlQZEw3dVFXc0JrT3BHMlhPOXZSd2pBbkhxeGtQUS1zY05xUDZ2dFNPdE9GMXQ0cm5DVnRLQWdZUmowVVhBR3IwNmVfaEdIckxmR3dCMHVBdHc1TGhZYTYzcGhITFhQZVdXdTJfRmlVX1V2LU5RQl9aN1FYTi1RMzFQcmxRajVtc2d4WXk3QnJkV29aQVZGQmMzVVROMl9XUFFQYTV5a2lFZmhsMEk3VUc4eGZqZzliN0hFeERSdkZWaXpr?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "EPA"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T11:30:00.000Z",
+      "sourceId": "google-news-ai-power",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-76f6fb282a3e9b8a569d",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1ONXlmLWQ4WHI1aF91amNuOW5CSVlQMWVnVjhGVFAxMkYwYlh3Z1dTMWktS3FuQ1hUVGdkY2lyd1RIX2ZnTU5EOGVMYmxGNTRmUlA0dEtCaVZvbjJua25RVlpWSFJ1Yms?oc=5",
+        "https://news.google.com/rss/articles/CBMingJBVV95cUxPS3BhZWF6a1FRWEQ5czJHSmViX0x3ZHZoUGNMN005UHdPUUdDRjNLYUZhU3MyM3NQX3BNZ3Q3eXhabFBDaFduVjE5am5OcGgwdWVubFJ0RS04djFaSlBBM1AyWFNmZDBWb3ZXUUxtdU1zOUZLenpNaVVZQmctWVZzdmw1VFhRZW1wUVpLTDJoQjVTZHplZHNJTmFJR0hkd2lsNjY2N0x5NXNaTEI4eG9jckV0YnFoY3F3NkRNanUzTEV1Y290LVhrZzlLd0xyVE1HOVJ5bjRQZHFDTWFhVl9pV0ZXd3o0alFLWWVIMVZFellOekVkdTdvOTM2bmo3VEhQZnNTQ2NHZ21zZWRobkVXSzJpaExSejdNZHl1RkdR0gGeAkFVX3lxTE9LcGFlYXprUVFYRDlzMkdKZWJfTHdkdmhQY0w3TTlQd09RR0NGM0thRmFTczIzc1BfcE1ndDd5eFpsUENoV25WMTlqbk5waDB1ZW5sUnRFLTh2MVpKUEEzUDJYU2ZkMFZvdldRTG11TXM5Rkt6ek1pVVlCZy1ZVnN2bDVUWFFlbXBRWktMMmhCNVNkemVkc0lOYUlHSGR3aWw2NjY3THk1c1pMQjh4b2NyRXRicWhjcXc2RE1qdTNMRXVjb3QtWGtnOUt3THJUTUc5UnluNFBkcUNNYWFWX2lXRld3ejRqUUtZZUgxVkV6WU56RWR1N285MzZuajdUSFBmc1NDY0dnbXNlZGhuRVdLMmloTFJ6N01keXVGR1E?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "Microsoft"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T19:52:40.000Z",
+      "sourceId": "google-news-data-center",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-a80ae45549d1fe7b69d5",
+      "section": "capacity",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMilgFBVV95cUxQYThOYjltY3lKZ2dyUi1JWE5HRkpzREk2SnA2N19vWFBfam1reVZ4cWwzUE5JWVF3YkdTMFJjSDVMMVRybVZobjdqMGJmTVNSXzhhQ1U3OFZOLUFDaVRHaUJjM3pXamhtX1BxcFRCT2U5eDBBQ080R0t5WFNnbVNMMUNldUdHY3FNMDUwNURLQ3FQUmdqY2c?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T23:32:45.000Z",
+      "sourceId": "google-news-ai-power",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-9fe5085d8324f739128f",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.ft.com/content/64fe84f0-0b78-4c8b-a220-1aa2466179f6?syn-25a6b1a6=1"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T10:46:08.000Z",
+      "sourceId": "financial-times-tech",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-3935c0856ac8fa5c2049",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.theverge.com/23987993/gta-6-news-trailers-rockstar-games"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T20:01:56.000Z",
+      "sourceId": "the-verge",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-3eee07d220c70fa1bd0b",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.utilitydive.com/news/us-army-selects-5-companies-to-deploy-microreactors-at-military-installatio/828974/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T16:49:14.000Z",
+      "sourceId": "utility-dive",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-f2b067680f10a192c571",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.eetimes.com/newpower-worldwide-expands-credit-facility-to-750-million-to-support-global-growth-and-customer-demand/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T14:44:16.000Z",
+      "sourceId": "ee-times",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-c43fa8918441973e4faa",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.datacenterdynamics.com/en/news/vci-global-announces-launch-of-galatron-ai/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T12:58:25.000Z",
+      "sourceId": "data-center-dynamics",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-507e7728ad8e04ba0a5b",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.theregister.com/security/2026/08/27/fbi-seizes-hacking-tools-it-says-china-used-to-attack-nasa-doe-us-senate-and-other-critical-networks/5292742"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "DOE"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T00:06:03.000Z",
+      "sourceId": "the-register",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-2363a2f6319af09dfa27",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.powermag.com/u-s-army-mobilizes-2-2b-janus-program-to-deploy-more-than-20-commercial-microreactors/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T20:32:59.000Z",
+      "sourceId": "power-magazine",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-82b1ea90c3b0c66e6b38",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.utilitydive.com/news/nevada-misses-an-opportunity-in-performance-based-der-tariffs-advocate/828836/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T15:07:56.000Z",
+      "sourceId": "utility-dive",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-9f92d3586741b55e8e31",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.utilitydive.com/news/harbert-acquires-cogenerating-heat-power-plant-in-georgia/828833/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T14:41:12.000Z",
+      "sourceId": "utility-dive",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-5dd68c061518df9e9cf9",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.powermag.com/westinghouse-evinci-reaches-criticality-milestone-at-nevada-test-site/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T13:58:01.000Z",
+      "sourceId": "power-magazine",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-281988a807e55edc2dfa",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.datacenterknowledge.com/data-center-construction/openai-moves-energy-planning-inside-data-center-organization"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "OpenAI"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-26T12:13:02.000Z",
+      "sourceId": "data-center-knowledge",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-a478e69bdff2a334b90c",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.eetimes.com/accelerating-silicon-design-for-physical-ai/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T12:00:00.000Z",
+      "sourceId": "ee-times",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-7a3cceb9cc7f6fe1145a",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://capacityglobal.com/news/what-is-a-dfi/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T10:55:45.000Z",
+      "sourceId": "capacity-media",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-dd56f9a6b25d25ff7cf7",
+      "section": "capacity",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://capacityglobal.com/news/mtn-targets-150mw-of-ai-data-centre-capacity/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T10:34:49.000Z",
+      "sourceId": "capacity-media",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-321d989cab5410def95a",
+      "section": "supply-chain",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://news.skhynix.com/en/groundbreaking-ceremony-in-indiana-01/"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [
+        "SK hynix"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T16:21:49.000Z",
+      "sourceId": "sk-hynix-newsroom",
+      "action": "publish",
+      "route": "formal-section",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid",
+        "human-source-review",
+        "natural-bilingual-copy",
+        "model-scoring-fallback",
+        "formal-primary-source",
+        "public-adapter-ready"
+      ],
+      "publicCopy": {
+        "titleZh": "SK 海力士在印第安纳州为 HBM 先进封装基地奠基",
+        "titleEn": "SK hynix breaks ground on its Indiana HBM advanced-packaging base",
+        "summaryZh": "SK 海力士官方披露，已在印第安纳州西拉斐特为美国首个 HBM 先进封装基地奠基，计划投资超过 $4 billion，目标在 2028 年 10 月完成无尘室，并于 2029 年下半年启动下一代 HBM 量产。",
+        "summaryEn": "SK hynix says it has broken ground in West Lafayette, Indiana, on its first U.S. HBM advanced-packaging base. It plans to invest more than $4 billion, complete the cleanroom in October 2028 and begin next-generation HBM mass production in the second half of 2029."
+      },
+      "publicClaims": [
+        {
+          "claim": "2026-08-27T16:21:49.000Z",
+          "sourceRefs": [
+            "https://news.skhynix.com/en/groundbreaking-ceremony-in-indiana-01/"
+          ],
+          "state": "source-stated",
+          "qualifier": "published_at"
+        },
+        {
+          "claim": "more than $4 billion",
+          "sourceRefs": [
+            "https://news.skhynix.com/en/groundbreaking-ceremony-in-indiana-01/"
+          ],
+          "state": "source-stated",
+          "qualifier": "planned investment"
+        },
+        {
+          "claim": "2028-10",
+          "sourceRefs": [
+            "https://news.skhynix.com/en/groundbreaking-ceremony-in-indiana-01/"
+          ],
+          "state": "source-stated",
+          "qualifier": "cleanroom completion target"
+        },
+        {
+          "claim": "2029-H2",
+          "sourceRefs": [
+            "https://news.skhynix.com/en/groundbreaking-ceremony-in-indiana-01/"
+          ],
+          "state": "source-stated",
+          "qualifier": "mass-production target"
+        }
+      ],
+      "internalNotes": []
+    },
+    {
+      "eventId": "evt-03b191d69a26e1e8c222",
+      "section": "supply-chain",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://developers.googleblog.com/introducing-credentio-open-source-c-library-for-c2pa-content-credentials-from-google/"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [
+        "Google"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-28T02:33:57.041Z",
+      "sourceId": "google-developers",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    },
+    {
+      "eventId": "evt-b0e242b75a184d5f04e5",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/cb_doge/status/2093042986934546485"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "SpaceX"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T18:28:29.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-35bc27db37957f13e462",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.cnbc.com/2026/08/27/anthropic-pushes-into-physical-world-with-new-standard-to-help-ai-agents-operate-machines.html",
+        "https://fortune.com/2026/08/27/anthropic-makes-first-move-into-physical-ai-with-universal-standard-for-scientists-manufacturing/"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [
+        "Anthropic"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T19:08:46.000Z",
+      "sourceId": "cnbc-technology",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    },
+    {
+      "eventId": "evt-505108b50bd6c826e206",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.ft.com/content/dd069af7-a2a2-4984-8d9a-5edeaf54f2f8?syn-25a6b1a6=1"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "Anthropic"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T19:20:48.000Z",
+      "sourceId": "financial-times-tech",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-d1fac7e4dff047c47582",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [
+        "NVIDIA"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T17:49:53.000Z",
+      "sourceId": "cnbc-technology",
+      "action": "publish",
+      "route": "rumor-watch",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "human-source-review",
+        "natural-bilingual-copy",
+        "model-scoring-fallback",
+        "attributable-media-report"
+      ],
+      "publicCopy": {
+        "titleZh": "报道称 NVIDIA 拟收购 Hugging Face",
+        "titleEn": "Report says NVIDIA agreed to acquire Hugging Face for $12.9B",
+        "summaryZh": "据 CNBC 转述 The Information 报道，NVIDIA 已同意以 $12.9 billion 收购开源 AI 模型平台 Hugging Face。NVIDIA 与 Hugging Face 截至本轮 cutoff 均未发布一手公告，本条按单一独立来源组的媒体报道呈现。",
+        "summaryEn": "CNBC, citing The Information, reports that NVIDIA agreed to acquire open-source AI model platform Hugging Face for $12.9 billion. Neither NVIDIA nor Hugging Face had issued a primary announcement by this cutoff, so this remains a single-independent-source-group media report."
+      },
+      "publicClaims": [
+        {
+          "claim": "$12.9 billion",
+          "sourceRefs": [
+            "https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html"
+          ],
+          "state": "reported"
+        },
+        {
+          "claim": "2026-08-27T17:49:53.000Z",
+          "sourceRefs": [
+            "https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html"
+          ],
+          "state": "reported",
+          "qualifier": "published_at"
+        }
+      ],
+      "internalNotes": []
+    },
+    {
+      "eventId": "evt-6a260cf0615a58e68a43",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.cnbc.com/2026/08/27/5-things-to-know-before-the-stock-market-opens.html"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "Meta",
+        "NVIDIA"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T12:44:01.000Z",
+      "sourceId": "cnbc-technology",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-9020e012bb49fbf0f5d1",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.cnbc.com/2026/08/26/jensen-huang-defends-nvidias-growing-financial-support-for-ai-ecosystem-says-the-risk-is-low-.html"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "NVIDIA"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T00:53:55.000Z",
+      "sourceId": "cnbc-technology",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-655aeff8aa186563fade",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/995/367.htm"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "Microsoft"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-28T00:51:46.000Z",
+      "sourceId": "ithome",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-2c08cf0995e86b5370cd",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://techcrunch.com/2026/08/27/buried-in-metas-18b-settlement-is-a-legal-pass-on-kids-data/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "Meta"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T20:04:26.000Z",
+      "sourceId": "techcrunch",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-8a364bafe52cb6ee17cd",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.theverge.com/tech/985679/google-play-android-17-memory-limit"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "Google"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T18:33:11.000Z",
+      "sourceId": "the-verge",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-77bdc07c35f083aaabaa",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.eetimes.com/qualcomm-bets-open-source-ai-software-can-break-nvidias-lock-in/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "NVIDIA"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T18:09:20.000Z",
+      "sourceId": "ee-times",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-90ad149f8f21a41a0ce0",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.theverge.com/ai-artificial-intelligence/985597/jensen-huang-says-nvidia-achieved-senseless-agi"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "NVIDIA"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T16:15:52.000Z",
+      "sourceId": "the-verge",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-24c820ebeb8151ad3e26",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://techcrunch.com/2026/08/27/heres-all-the-times-ai-has-gone-rogue-and-hacked-other-companies/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "OpenAI",
+        "Anthropic",
+        "Meta"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T14:01:42.000Z",
+      "sourceId": "techcrunch",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-42f5061b290e1db1634f",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.theregister.com/storage/2026/08/26/memory-crunch-cloud-operators-may-be-pushed-to-splurge-68-of-capex-on-dram-and-nand/5292648"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T16:18:00.000Z",
+      "sourceId": "the-register",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-751b2551be09131083cc",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.theregister.com/public-sector/2026/08/26/sopra-sterias-370m-capita-spat-heads-for-2028-courtroom-showdown/5292234"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T08:29:00.000Z",
+      "sourceId": "the-register",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-4825188083bd5b971bfc",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.cnbc.com/2026/08/27/uae-spy-sheikh-trump-family-crypto-bank.html"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T21:22:08.000Z",
+      "sourceId": "cnbc-technology",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-4ea6fd0fbd8355bcae3e",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.cnbc.com/2026/08/26/salesforce-anthropic-partnership-claudeforce.html"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "Anthropic"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-26T20:50:45.000Z",
+      "sourceId": "cnbc-technology",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-cdca7314562f68b11fdc",
+      "section": "capacity",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOSGdyLUk1OVBGQXhWMU1MV3BScjNhanE1TGxXa1JnRnp2amJXTnFYMnFwSkhZcFRka2gzdS1sLU8xNWdvY0xLRGRPMjdsZUFVRlhkc3ZXeUQ4LXlZOTZNeTZjTllPWVlHWDFZTU03R3VuZXZqdUNoY0NRQkVPSnFOUDFMaDV0ZVZWM2RpMkZES2I2OTVGcUFvaTllck9USnhOd1VaVE5VTUlsZ284RUpLY0xOU1hjbDhHSHp2VlNyNzEzTG8xTmlhbEtqVUNqRTF6LUIweXpRUVllMFJHelU1RElsTEpNczlLWWJHV0FPQQ?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-28T01:47:50.000Z",
+      "sourceId": "google-news-ai-power",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-fce203b7ad65f31c5a32",
+      "section": "capacity",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMie0FVX3lxTE5sVzlfNGZkd2RVblRYc2Y3TG5mSkd6MmlZNC1aeFA1aGI4Ni1CU2I3Q1I0R3c2TzJMRzR2Q3A0UFVEcDRhd3diSnFJSllpckEwTWViak83NFZXS3hBeExxdEl5Tl90RGh6bENPOHUyXzR1cHdSMkhtNGJsONIBe0FVX3lxTE1GdDYzaUhyamdPQXR5bUtON3F0V1pGNGtCemJqYVJKcW9wSG1RaFA5cVA5ekMtcnVZN3hpVU1Nb2hHYUxQc0VaZ3pYckl4NDFpMUlDVXdUd3NoaVMtSFA4TkNjVXdfMldnSVlXNGhiUzZUbktCTnNBal9PTQ?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T21:31:00.000Z",
+      "sourceId": "google-news-ai-power",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-f9a493b712967005ea6d",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/Replit/status/2093081124901671208"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T21:00:02.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-a434850abeadb653e14a",
+      "section": "compute-products",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/SemiAnalysis_/status/2093066214771679716"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "NVIDIA"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T20:00:47.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-31205ca1f818347300e8",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1yaW9LTHlvSHB6TFdWRXlja2tZM3hROGFra2xPaEdGMjdXX0traUxiWlJfZUxydVExY2YtMTRRbVRuVHYtdXhwcU5FNjhfcFRsYi04Smg5cFhOeVE?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T16:09:00.000Z",
+      "sourceId": "google-news-ai-power",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-2b0a5419fe594856d389",
+      "section": "capacity",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMijAFBVV95cUxQXzBDVVlRNVNkeEc5YnNGY3FWNFA0OFV1TE5PWUs2Z01iZXNGYnNfYjJKOTltUzBKS20tNUhJZlFKdU1xYnV4Sm5nRWtDYWVTVHhmQ0RXX1pNcTZWWEJpUDJkZEFyaTVucFhvY2NaWk96b0RUaER2YjdWSmh1QnRoNUVwUDF1OTVBalY3MQ?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T13:55:10.000Z",
+      "sourceId": "google-news-ai-power",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-fa56bdeacc380e51962c",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMimAFBVV95cUxPeTNJdmgwRWR6UGNVYW5pVlpRbUxCVkhlb1dGN0F4U3BuSzJYUWRmWUNEbEZacE9RMEFpZklrc1VKc0ZfMUY5UW5FSTVCNktmRW9NZjYtb2szUTlsb2FsWHhqOGs4d3NKMWc2bzlYaGU3WGZvazBRd2JqSjVnTkhaMjgzX3FQT1N1aE42V1NRZlRRTEJPZURjRA?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T11:10:00.000Z",
+      "sourceId": "google-news-ai-power",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-bcbf9c2f8d4efa407226",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQXlPQkstV2tSYk0walM1ME4xU1NHMXZ1OF90NmQtYjFoZXRJVUNiZWtVbEtlOUM5NnVFSkNMdEQ4bzh3djFGQWVlNWdqaklWWDVNcTFQa3doWmZsbm9uZzV4c0FyRUhMZnRjdjlfMDlhQUk1OUFnSGFIN1JIRUZLZzh6WFJ6X3hXVDJZdTFHdURmSWlzMlBseGlrbTVWeXJ5bWZsaWNYdEg1NWU5UjFPLU0ySlBzeTIteWsxTEJOdzA?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T06:27:39.000Z",
+      "sourceId": "google-news-ai-infrastructure",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-cd7bc88f04dd79a02ead",
+      "section": "capacity",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBjNW5qTjVLTGRqYVhqR1BxOUNHb2RpYXpxNTdRQzcyR2JmcFpxVGZZRXRIanlTbExoc1ZlaDJYdGtlVDFtazNZajEtMTllRDkwNnBodGstR3hQRXAwaVV2aGtFVF9Sdw?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T14:48:03.000Z",
+      "sourceId": "google-news-cn-infrastructure",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-0deb913bba1c26a2e053",
+      "section": "supply-chain",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMizwFBVV95cUxPYkNYeEdMZVhYREV5cllmMWFxeDZ0VnZiWGhycVN2bUNHa2pTNzRvZ2dtU3dtT0NyYnFlRFNieWx0cTMwR190cjZaVkgxVF9YeFBIaVh1RU56dnBUemZxU180dFIteXBrSzVCRWViX2xwbDlwUF9PV2ZsRjFMZzJBUi1sTmp1WlFucDJ4Zk5qelVYT3M5MGJ0dlc0aDMxa0VjN3VfcVgweDVYalVDUm5NVTk0RF8ycGl4RGF2ZWRQUEtJZFFET2lUTEJWRkdwNnc?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T07:31:37.000Z",
+      "sourceId": "google-news-ai-business",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-57ceacb6efcb3a652f97",
+      "section": "capacity",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMixAJBVV95cUxOTUZ5UE9Fa3RGTUZPRjQ1VUJpOXNraEFfTmp3Uy1lS29mbVNFeDNBUUNQSEpTdWtSdFJoSENjWEEtTlVZZFNieXJOek9DcGdWUEwxQk95b2NDY1pZYllJdU1SQ0VOOVVzd3JSa0RlMk5QRHY2cUpYOE8yVXJCOW1CODZNX3V5czRMRVhMVzFqZkZ2ZGNDcEJPdmozVjhNWGJjUTBVVjZSbjNXZTN3UXA1MVRuVE5rR1BrWGNDeDVxbDJ1OGRJLWxEQXFtME1jYXdHWURRT0pjVFAwOEZaSHY5c3pRZktCMG9yTTk0Q0dpbUhaWi1La0VsM2VCbTJxeENMcXpwcTItTUgyS1VibmpncmhpeEtkelMtcl9mSm9lQnphXzFXNU5uUGxFb1RxcGVNYmw1TW5zQ0YybVJRQ1RITU9fSTY?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T05:57:03.000Z",
+      "sourceId": "google-news-cn-infrastructure",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-b5346b6176022f5718d5",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMihwJBVV95cUxQQmRCYzAwLXJvY2xoYXphMDM3T1JPNDJlZnk2MkVIU0h5MmFhazVuZW40eVFMekpWcnl6WFlrbm8xbVlWeWRnZW9IRjB6cm1PSWJhUjgzeFd5a010UEtYSnhKcy1lM1l4QTNfOWQ0d1FXQWZqYmlfRXBmZFBFZHVFbm5Ja1FPSzJqX04wRWhucDdTV0NIOGVvd3NjeWxja3lXMHVhQk9tLWZRVUt6UThxeUxReGdfdnNfS3BkcnNVVW0xdjJ2cENTM2QwNHhhdDB5ZENVRmVzNlhtNHhtcVlDVnI0Xy05OXdxTjJUakEzNlVxWnJwZnJtVTFWcG9vSVlSNEZRei1fZw?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T22:06:08.000Z",
+      "sourceId": "google-news-ai-power",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-0a46778a8c4f70065082",
+      "section": "compute-products",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMidkFVX3lxTFBEQktPZE1UMUw5M2N1MVU2OU9HWk5Kd1pBLXRBR29CaXlZcmRXc0RXcHhSWG9YOVRxVHFJTDJicUZtU2ZxMk04d0ZqN0dsbXhFUUtQSERmY0drTDRsVXRwaW1aUXhVTWt4ZUJJMmhVUnVMUEZydlE?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T19:08:00.000Z",
+      "sourceId": "google-news-ai-infrastructure",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-b5bbea4812b0bc6c5d22",
+      "section": "capacity",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcUVwYS0xWEctdFNTc1JNbXVadjRQMFI2dUZvSjFYbl9aX3N4R2xqZGpkLXk4VHQtSXI1LUM5enUxU1llbGkwZVdBR3RDVXhPRWhVNzA1NUYyUVFjS3NJNlh4T0poelNtS3R1Wll6aU51TjFPckhTMWdTTHdXQWJhRHdIUlp6QjdJVlc1Y29FUEZWWDZlSTVDaHBXVGw?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T12:32:00.000Z",
+      "sourceId": "google-news-data-center",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-15d2c4c73d395e47fa7f",
+      "section": "capacity",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMixwFBVV95cUxQNUtELXVUTHRpLWlfZ1hBQWhfak8tMU5xcHNKSmczakQtWGlfbi1BdkgwY2xlN2JnR05SaUt3VmxWMUp6ZldfRHNrMmxGT1pJRzAtSHM1dFBnZFNwVXIxOUt0aW00S0pyNkk1RzdIN1V1cmtKS1lkVFhvelZQMUY3V25pUl9wZHNWRjNHRUVHaFJRNktsNzFUSURLcW1nRkFadzk5bmtFQ1BXVHdYNUlweG5OMHg0bjdUckxhT2lEQ085aVFRZk9V0gHMAUFVX3lxTE9wbHdzcGMybGwtSXNCZmFsWFhoeWxjeEUzMGNDeVZPeXlRZ19OVUNBZHZ4NWdIQklNaE1LOEthaktpVlpVeExhU0Z2SjdpQUJ6c2tZcldXcTZEUEFqOEVDUnZyamFQOFNPOVBvWHp3SHh0aVB3N19YdmNoMzRwQUM0MVZaRUVaV2x2UlpURl9sbFFoTlhTZHlwNGdRb29HdFpseEZ2dFRVUTVrdTVyeGtJbUExN3Z3WGIySVhzT1p1TTNPdktVR2FRU0ctUQ?oc=5",
+        "https://news.google.com/rss/articles/CBMidkFVX3lxTE1QSldjel9jNU5mTWZpcUpHOE1wWmtPZmZWRk5xMjZoalF1S1ZHMFRqejMtZmhGdjNyLXZEQTA3MHBtUURVN0pnQkE3dC1xcEVxQWY4MXVxSW5fYUhMNVdwZVRwLVdtdDlyRHhEQXlHX3RaYVVwREE?oc=5",
+        "https://news.google.com/rss/articles/CBMivwFBVV95cUxOLXRWU29tZ0JITEE0XzNaLVM1ZHExTlBZVU1BaUl2TWRsazk5S0taZnNmSmp2NUxYMWgycVFrdUN0ZUpXbTJiRWVEWGlmV29tUFFuUzN1cmJyZnZHY3hUbHViX055OWdEcGZDU2VqQmpnTGlDYXBDV0psY3EtX01CUG1PZXVlc25BcUhURTZVMXhQLUEyTXNmbjN3ajdvQmtiajdwM2ZLcWppdmt4VHUxbjRneElTZEVkVnl5c3Bodw?oc=5",
+        "https://news.google.com/rss/articles/CBMigwFBVV95cUxOSTlxc3JTaW1vWUlRam5EbzFVNVo5c3ZCQXAwTGtPWVJWV25Kb01MNTdpWGl5ZUtlejBFUEtyY2RzbHZzdDcxbUdkNVlla25uOU9ZN3N2OF9zWnVzQnVsczlpWnR1R0cyVk0yY2lTcFdZTFRJTzZPQ01wNmNLLXp3UkR2bw?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "Microsoft"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T07:49:36.000Z",
+      "sourceId": "google-news-data-center",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-c1054d8c3be2a79939e9",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.datacenterdynamics.com/en/news/nexspace-breaks-ground-on-data-center-in-graz-austria/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T11:40:32.000Z",
+      "sourceId": "data-center-dynamics",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-6303c7a40cfaa58da29b",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.datacenterdynamics.com/en/news/new-german-operator-data-center-capital-launches/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T11:00:30.000Z",
+      "sourceId": "data-center-dynamics",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-f9439deff4f9899c0b37",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.datacenterdynamics.com/en/news/delaware-enacts-clean-energy-mandate-for-hyperscale-data-centers/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T10:43:42.000Z",
+      "sourceId": "data-center-dynamics",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-8cb7e5221d11978e2b4b",
+      "section": "capacity",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.datacenterdynamics.com/en/news/gateway-capital-files-to-build-81mw-data-center-in-sydney-australia/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T12:28:02.000Z",
+      "sourceId": "data-center-dynamics",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-8b4e7aa53b01be491b70",
+      "section": "power-model-demand",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://blogs.cisco.com/ai/model-provenance-entanglement"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T12:55:55.000Z",
+      "sourceId": "cisco-blog",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    },
+    {
+      "eventId": "evt-d5c87998efcc11668b7a",
+      "section": "listed-companies",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://news.samsung.com/global/video-no-unfolding-needed-a-day-with-galaxy-z-flip8s-flexwindow"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T08:00:00.000Z",
+      "sourceId": "samsung-global-newsroom",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    },
+    {
+      "eventId": "evt-d64196866c91f7e9df6a",
+      "section": "idc-pulse",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://developer.nvidia.com/blog/how-to-train-a-cross-embodiment-robot-navigation-policy-with-ai-agents/"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T20:05:06.000Z",
+      "sourceId": "nvidia-developer",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    },
+    {
+      "eventId": "evt-76c61c2f95c13cb24733",
+      "section": "idc-pulse",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://blogs.cisco.com/customerexperience/cisco-iq-engineering-sovereignty-in-the-ai-era"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T15:00:44.000Z",
+      "sourceId": "cisco-blog",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    },
+    {
+      "eventId": "evt-1872dc06e5aa5e914b28",
+      "section": "power-model-demand",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://www.dell.com/en-us/blog/the-best-dell-systems-for-openclaw/"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T13:00:07.000Z",
+      "sourceId": "dell-blog",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    },
+    {
+      "eventId": "evt-d580742b14c65f9f4a6d",
+      "section": "mna",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://newsroom.ibm.com/2026-08-26-ibm-completes-acquisition-of-hrl-laboratories-to-accelerate-the-future-of-quantum"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T12:00:00.000Z",
+      "sourceId": "ibm-newsroom",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    },
+    {
+      "eventId": "evt-71940ecc77a994a4a339",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMigAFBVV95cUxNOFl4RF9YV05NUXJrNjBaakFQQVBaVXRJWEpoZkJ1SlZhajR1b3V6dUpaaDh2MlhmaFVISzE4czN6TEpjSjVxa19IczkwOGRmbjNSZW1PWlppTGR5T0VfUF9hYnd0XzZNcmdOZUNBeE12SXkzSFNsTXpRS1hjVmE0SNIBhgFBVV95cUxOMzM4UzZleG9vZGpKMkNza0xQRUsxNzZEN09nQ0o2OW93MnZ1WG9fS1plQm9sWkktZHgzSnlBUExWTzNrYUY0MkRtZG12V0ZwOGFPNU80QTI2Q25oamV3ZC13Z2NWVDRPenFEYkQxa0F4VmVJTHg5ZUhIRjRyempFZXA3aHBVQQ?oc=5",
+        "https://www.cnbc.com/2026/08/26/salesforce-crm-q2-earnings-report-2027.html"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [
+        "Anthropic"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-26T20:07:31.000Z",
+      "sourceId": "google-news-ai-business",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    },
+    {
+      "eventId": "evt-f06e28e676b97fa592e1",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://github.com/experientiallabs/experiential"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "OpenAI"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-28T01:41:19.996Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-0b3c2731400465412495",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/alibaba_cloud/status/2093151460431405241"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "阿里云"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-28T01:39:31.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-849be4516ec5b6585795",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/alibaba_cloud/status/2093151068482072891"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "阿里云"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-28T01:37:58.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-63b7ebde4173168782b0",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/elonmusk/status/2093151010407453155"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "Microsoft",
+        "xAI",
+        "Grok",
+        "SpaceX",
+        "SpaceXAI"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-28T01:37:44.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-81608ba2a034f226602c",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/omarsar0/status/2093080633509626034"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "Grok"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T20:58:05.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-27e73060d5300aacd0c4",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://arstechnica.com/tech-policy/2026/08/elon-musks-xai-used-child-porn-to-train-grok-models-lawsuit-says"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "xAI",
+        "Grok"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T20:52:31.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-7853c7e1d7e61f0fa6bd",
+      "section": "mna",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/kimmonismus/status/2093070145208152261"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "NVIDIA"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T20:16:24.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-775b5c6b6ff8e56fffe7",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/rohanpaul_ai/status/2093064270028431640"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "Anthropic"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T19:53:03.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-ad2ecf368330f142c74d",
+      "section": "idc-pulse",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiakFVX3lxTE8wOFFKdUw3WV9jU1dFYVdCbTJVcnNHTHpnWVhNVUxhZlUxSkpjaUg1VXFOY1hrdTc2S3d3aEVaZTF4VUtkUzAtSGhfbXJYVUhaS1pGaXh0TmxJRWkydTlqUTFHMmI0Qm5QOEE?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T19:51:21.000Z",
+      "sourceId": "google-news-cn-policy",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-f8da9516daf5285b0273",
+      "section": "supply-chain",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/rohanpaul_ai/status/2093056713889079496"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T19:23:02.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-3b3f34552c3bf4d54964",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/rohanpaul_ai/status/2093041518345073023"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "OpenAI"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T18:22:39.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-b74866ea5876162640e4",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMipAFBVV95cUxNbUVTTllieFpUMm8xbXhGNGNURGdMZnpjWHhFOWdvb21ITDVCWGFBWjg5LTc5ODd0dGNsQUpZcnB3Rm91V1BDbVFoNWVyUG9DVWg5Q0REYXhXUWtpcGhBN2ZzYWpiRnhHQzM0MjVQMlRJbGVSSV9abjVkZTV3N05DeWw1U3pzbG9XTGJFb0J4c2xBMUJUc1hVcEFlRm1IYngwc0NOcg?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "Microsoft"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T13:12:10.000Z",
+      "sourceId": "google-news-ai-business",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-3390af672edb46c794d7",
+      "section": "compute-products",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVjRHc28zdUhIcE8yT1loVGt0bHFaQkJUWC1tSXJQNXlPZEhnandBclNhMUYxWDl0S3ZvbDltVEpFN0dNbGlfekJxMUVON3g1VHBVZ1NxQ1pCMjZMTXZ6eHRuRnBjcDgwRTE4VUVWRFNpQ094bjNDdmNXU2NiUkRuNnpNMEpaa05hLVhPUW1sZFo4YTkxZ0tsYWFmZ09sNjNZV2NnWDVZSQ?oc=5",
+        "https://news.google.com/rss/articles/CBMieEFVX3lxTFB3LUc2RFFBa19HM08tUzBia3ZsaXI4YVdVNVU4eUhUMnd6TFp4RVVLbENDTmtuUjlCa1J2ZDRYa1N0dmp1amxOcVJHNjd2aTNRT3E0VmRHRm9ZT0N3a1RFcEwxYXZWVkJmQTJTWTA3d1FCQmxsYlJzZA?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "Anthropic"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-28T00:11:17.000Z",
+      "sourceId": "google-news-cn-infrastructure",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-122b9613445ea9b218fa",
+      "section": "compute-products",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPLXJQY2hTWGFUUmFzcGdGYnhYQWl5N05MeXd2cWJ3U2RYbUJXUEwtVDVrMWdCODNJYXVLSU51TEtOVmNBNjM2QV9OSmVxeUdSRFJ6V0hOR0lhOUpSQmdReGk1NUxfR2FYSXNnMXlqMkVkNWhkaUtldXpuMVV5V2ZzRG9PcnVpTVlFSDBzR3ZoektKV0FJOFhzcjkwblJmTFV3cUxNSE5DeUVRRlZibC1zLXNRWnhsLXlMRmlLX1N5ZkpZSkVBaE1ocE0yOUJIaFJoVjFiRk9zTncwaGc?oc=5",
+        "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1YdjBGank0cDR5eldSdE16eVdNWFRzQkprOFZSanE0aG9sVnVDcXR3dTBwb1gydGk4X2J5c3ZvcENJTWl6aThYMUFXV2QwNkY0WHdKZG9IZjFZXzZxUFlOOHhB?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "Amazon",
+        "NVIDIA"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T02:26:08.000Z",
+      "sourceId": "google-news-ai-infrastructure",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-d4e92e2b526b0ed27029",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/EpochAIResearch/status/2093094775213985826"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "OpenAI",
+        "Anthropic"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T21:54:16.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-a4ad89a89cd0f61014ab",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPaGRfZmFzdVpTVVRNZlIxY21QZGJrMWsySFE2bnV4VjhQRmRLTklDN25JZ2hzWTZ5cEw4VFJLT1E3aEVMX1J5V1d4T0o3V2N4YnNaX2dyd1loUXczXzlITVFqYXplSVZleHFDSkU2ang3aVJkNmlvLVlYR3FXcFBPdGdWMG43VUw2UGFUejlDZkI1elZmY3VIVmwyQjhTVlhnSGp5Yy1SY0JHakc0cWVLNEZpMXJYOXZJcTFkNlZWd2w4ejV1Tl9ZYXJ3U01UNDN4YnhBRTVhU2FhdFloaG83a2pMSTZHUlU?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "Google"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-26T15:05:50.000Z",
+      "sourceId": "google-news-ai-interconnect",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-0e0e7084e6d5088378e3",
+      "section": "mna",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9fR3RzMDRWdl9FeS1xYVNDX1A1R0F0WmdZOVgzX1cwZ2VDNGpZTUtuejBrU3JrX054LVR1Y1pjQXgwVUR3dzV1aHE4TFZOUU9BaWQxTnBsM3VzUW5YZEZB?oc=5",
+        "https://news.google.com/rss/articles/CBMid0FVX3lxTE1qVG5QSWllUFFwQTdSRVVJcTZKVnVua2F6YzlYdTg3NmxGQkd0bGtKMnFvQV9SOUV1WTUzMFpHVFhIb0NsNzM1eHNBUXNtUHo5TjRMQTRCRUlERXVuUEpacEx2V1RxYTBVa0FxTm9reGc2amxJV1RB?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "Anthropic"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-27T22:48:17.000Z",
+      "sourceId": "google-news-cn-ai-chain",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-2da657f9cc3662768914",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.marketwatch.com/story/salesforce-stock-is-jumping-what-wall-street-is-saying-about-its-earnings-and-its-anthropic-relationship-853ada85?mod=mw_rss_topstories"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T22:51:00.000Z",
+      "sourceId": "marketwatch-top",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-488b7ae3b89bf5569fde",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.cnbc.com/2026/08/27/okta-skyrockets-20percent-and-crowdstrike-surges-15percent-leading-cyber-rally.html"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T20:08:43.000Z",
+      "sourceId": "cnbc-technology",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-c7b8f9af59348e977145",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://fortune.com/2026/08/27/ai-oyssey-cognitive-offload-fear-imposter-syndrome-psychology/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T17:29:22.000Z",
+      "sourceId": "fortune",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-9056d2163b4074932d62",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.cnbc.com/2026/08/26/okta-okta-earnings-q2-2027.html"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T14:12:37.000Z",
+      "sourceId": "cnbc-technology",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-7689467252e3dd436599",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.ft.com/content/42c449c6-03f6-4097-9eae-e119447e8aa5?syn-25a6b1a6=1"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T07:01:01.000Z",
+      "sourceId": "financial-times-tech",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-4734d170268a8cb2f0b1",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/995/348.htm"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T23:28:48.000Z",
+      "sourceId": "ithome",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-2d74ff4c900ff5f457de",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://techcrunch.com/2026/08/27/hoomanelys-building-a-smart-feeding-bowl-and-an-ai-platform-to-help-owners-spot-when-their-pup-is-sick/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T16:53:50.000Z",
+      "sourceId": "techcrunch",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-a6bec38080b63863ce52",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.datacenterdynamics.com/en/news/sk-telecom-launches-new-ai-dc-infrastructure-focused-company-split-from-sk-broadband/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T11:09:58.000Z",
+      "sourceId": "data-center-dynamics",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-83d6ec97d581f4a0cadf",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.servethehome.com/apple-mac-studio-m5-ultra-and-mac-mini-m6-launched/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T15:00:05.000Z",
+      "sourceId": "serve-the-home",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-7cbe2ff95fb3eabc20d7",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.blocksandfiles.com/hci/2026/08/26/nutanix-adds-more-rooms-to-its-agentic-ai-building/5292580"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T13:21:28.000Z",
+      "sourceId": "blocks-and-files",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-1510074381ae56b9ee42",
+      "section": "rumors",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.marketwatch.com/story/good-good-golf-ad-fallout-deepens-as-callaway-ends-partnership-retailers-pull-gear-and-golf-channel-delays-show-33546426?mod=mw_rss_topstories"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T22:17:00.000Z",
+      "sourceId": "marketwatch-top",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-04e05a819df9f7a166fd",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/995/383.htm"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-28T01:07:49.000Z",
+      "sourceId": "ithome",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-96272c1d55b45e3814c7",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/995/354.htm"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T23:55:52.000Z",
+      "sourceId": "ithome",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-7e6c48df8a1b8422675c",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/995/349.htm"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T23:33:27.000Z",
+      "sourceId": "ithome",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-4f4b28f4741cf00d41de",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/995/332.htm"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T19:57:15.000Z",
+      "sourceId": "ithome",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-62637ac3dc8c1095a7d8",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.utilitydive.com/news/drones-are-the-next-big-security-challenge-for-critical-infrastructure/827036/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T15:00:00.000Z",
+      "sourceId": "utility-dive",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-a969dd160bb641fd45e0",
+      "section": "capacity",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.utilitydive.com/news/trumps-energy-policy-could-cost-us-540-gw-of-renewables-says-nrdc/828826/"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T14:01:37.000Z",
+      "sourceId": "utility-dive",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-bba40285c7581ce83f87",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMigwFBVV95cUxQd2JuTzJvWHcwaFB4eTY2c3RKTHlsNUFOdEhOMFlLLTlIMF9waWZGSlFobTZHdUlkZi1vNEcxVmJPMERfTTFMbDN6RnV0cHYzb0JkR2xaRXJkSXRLZ0RJUnlwOVRUa0J3eVlLcGlhMXhyZGJ6RmdSQ08xdENwLUlZTk9xUQ?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T15:00:00.000Z",
+      "sourceId": "google-news-data-center",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-cee33b568136ec959411",
+      "section": "capacity",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNWlZSdkRjejM0Y0NRZmZkYUZmY1pMZkRLNTl1RXJYY0NveTJfaGlsaTRwTmdjOWJGUDE1V2t1ZXF0MDFmOHRuamFnSXgyRGtOdy1nMklKX1hIOHJNeWp2U3QyRjk5ejEtR25mbi03ZU1HTTNqSG82RTA3Mk44a01CdjZsWVhKUkpGTnFtald1NlVrOGp4RmhFWUxoQm9oc09BMUhVOXc2ZG9pWUNteUZKOWpQQldLRzVXYXpyT3FfMm1SaGJ5aWRhZGFiVjRtQm1VOFB4ZXpEWExNZEcwM21MZC1HNzFjUmw0U1BCN09PYTRFcFk?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T09:51:47.000Z",
+      "sourceId": "google-news-data-center",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-551018935e5c0849313f",
+      "section": "capacity",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9ZLUl5aUo1azNFN1AyWkNNYWp1MVhGTF9peHRESjdENDFVajRHLVZLaEhvMURwbzRBVHVKZEFNa0tzN1otU3pNTm9yZw?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T07:43:28.000Z",
+      "sourceId": "google-news-data-center",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-cb1bac85727e176738b1",
+      "section": "capacity",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPV1VBdF9RQng5bUZ3VC1nd1JFWldZX1FlQTFYTVF1cVhIeXNUU0c5YlIzdXByVVFYYWhydU5Ua0UyWEtQYjV6cGJfZUFtakNIY3AzMEJHaHNlQ2ZDMll3RGNMM2FkRmlVWjRWcWFDVnpZVkhhM3NLTkVlekgxYzhpZGVqWGpMUDFr0gGcAUFVX3lxTE1QanFlZmwtbW9QeTJrdUZLOGQwekRCSTQ3TG5sR3ZjRnhQYUYwbWowOC1uTW5DS0NKLVdrNUJiSENGcUM2LW41NTVSUE5vRnJyQjZfcTBUMGNyZUFOYWVVaUUtUHVSQkRJNkl1WlhkajEzOHZ2V1VWY3Jpa3FYVEtManJlaXJKY3REYnM5QTUwOURVMVd3T1AxNFVfaQ?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T05:20:00.000Z",
+      "sourceId": "google-news-data-center",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-542622bd507c8d87a76f",
+      "section": "capacity",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNRkJHVXJLWVZwV0RhaElLQi1UZ3F6VVd4bEx5czRpNkNPb3Axd0Y2TF9pYm5NeGx5ZUQ0N1NWMFFwdHhBMnRvdU54cHlLb3MxaTBZajRNVjdtX0JDYjNMa3RqbEFISHgxNDRfMGpFd1BvaXNKMjBmb1ZGWEsyaTlkb1N6U2d6Nm5fVGNVcXFudG92dmNfOG9WczlQZk9LYXNnUkhZRk5CeEdHVmp1MkJDZG91bzBxQjhrQURKZ08tSUdwblY4YzU3U2t5UHRQRzVDMkpCQTM5OXh3ZmhKaVZZ0gHjAUFVX3lxTE5SeUV1WWZBMjVZcXd6cDA2a09VT2swNkQxak1sT3BERWIzVlQyaE41bFUwdjJoYW1EZjdqZEc2cFlLQXNDMFRhZHlhRzlvMVBWWlRpYXNOdXJsWmJ2Nmp5VkRMNEx5bEVmX1NteGZINmlldnQ1SFdTVHg4Y2I4QnRlQUpWNV9TNW9pMldVeVBVZHlSNjNfQ0ViLS1nazJiZVFJWVZtaW92UENsVEhlbTFscE1FS3NldHBUZWtDRUZWM0c1Y1dDLTJpOEl1cG52X1BfNlcwOS1MTzhTOTBCU1Fjdk9r?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T03:28:55.000Z",
+      "sourceId": "google-news-data-center",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-45e0e2a4eeb25d9650a5",
+      "section": "capacity",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMitAFBVV95cUxOSm52eXU4bWNXbTBDejFteUJVRFJ5bzFDeVVGY2tnYW1aaVdDQjRLNXNBRnh6eTRnMU1ING1uc2pqUnRwYVNqZWRKVGpwNC1Kd2x5UnRla2MwZEFYcXRqSDVCTzhPa1BqQzFxVkRJOGttcU51b2R2SHNoRnQ2QnhFZEhUQzhXM2NFM2phWjBSRTV2XzlKTjdWdG4xVE9vVWI2T052cXJOQVMwbWlkZ1dINkRMeHg?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T14:00:00.000Z",
+      "sourceId": "google-news-ai-power",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-4d9ddfed30db153c14dd",
+      "section": "listed-companies",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://www.coreweave.com/news"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-28T02:33:54.709Z",
+      "sourceId": "coreweave",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    },
+    {
+      "eventId": "evt-731022286a582f9e1da4",
+      "section": "supply-chain",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [
+        "Google",
+        "Microsoft",
+        "Amazon"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-28T02:33:57.041Z",
+      "sourceId": "google-developers",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    },
+    {
+      "eventId": "evt-814cbd1bc3f9fde53c6f",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zenI1bW5aczhsSGhGMHVIT2NrZnZ2enFmZW1CQmh0dlhrYmR0MnFhR1Z1dUtEckZxNEZBX0FyMlFkWkVmN2pSRFZ5VjBKekY3REVIYVdOaHN6RXVneWZSbjhaQTZUQlJ4Q3ktYTZVcWp1aTA?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T21:20:47.000Z",
+      "sourceId": "google-news-ai-interconnect",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-f504fa94ab9869a977cd",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/gdb/status/2093065379145019902"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T19:57:28.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-daf68654e3d7ef7f1a21",
+      "section": "mna",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://arstechnica.com/ai/2026/08/report-nvidia-to-acquire-ai-model-repository-hugging-face-for-13-billion"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T19:55:22.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-28bb2a48be36d1fc4387",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVWpLQTNwbVRmRVhJcVR6UHZlOXQtUFlsS2dEdE1DWUNvV1BlSksyODdJZjRDVGFBM3cyZnozWWxHYUtSeVFrVGtkU3c1Uy0zVFp4YWFfTmNoUkdtRG1YV3hLb2t6QzkyaC1uVTZXMGZPLVhfcTl4bkxmTzVINjVSalFHVlRrTmFGWXVRQUVSZVR6WVJlVWRRRW84R1hINDN3Zk9R?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T19:45:00.000Z",
+      "sourceId": "google-news-ai-interconnect",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-2138bfea415ae5b2d0ec",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMimwFBVV95cUxNMnl4WVFBc3Nlc2tPM1JVbEpBM2JQdmV1ZFptQ0pWcS13X19xNXcxckFhTmx4dzFIcHRwVEI5eVBUdlVJOHRlS1haMm1sakNxWWtnZDRuNFVmenQtNV9VZHhqaEdWeF8zbk9yWHJnNWxacjdTVlQ5dXBUUl9MT1cwWmJfTjJ4WHlZVUlVWEVmdGk2cGpYZ2I4dHZfbw?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T19:08:50.000Z",
+      "sourceId": "google-news-data-center",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-1a2326a8f0a1b922e3b5",
+      "section": "compute-products",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQT0FmckFTZHFucWFvRUdfUHlSODVXaWxrYjAzS1dIY2k3dUxxczhtUGZmSGJCQ182UEQzeU9fOUlsSlFUc2tNc1d1Nk1TZms5NWVsNUVxRXhvVm9xeU9QMFBia2NtbWlXNWVXMmk1QVE0RkNMRmVlTk9CRkcyXzZyZkg2djdsYzVEQ0VJbzJGTWZQdjlvTXlVN0RYNVpSYlJZUEpFTS1TTkMyQWtHbnJlQ0NKVG1hdDN6bVpXcWZzQTJkalI4eXlnRVMwRUJuMWQyZEZvQTZYa21FenlCMWlHZXA4WDI?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T11:22:00.000Z",
+      "sourceId": "google-news-cn-infrastructure",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-c542dbd1af168a43e75f",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQYkpveUg1TFFmYVRBMUlZR0o5M2QyRDA1NTQ2dGg1X2dEQzBDM010dW9MTFl5aGFfWVYzNkJoSjZRc0dkZHJBUlEtc0dfcUJhdjNtdWRDcnNEWGgzVEM5THJnWTRjRGVXNGRhdHlKd0h4eEM1c3VYUThISHpRQWhSeGI3blFtY0htWnY0QjVhdXVqTm9xUjNNdVg2ZW1YNlRvZmJ0UENZYnlual9ENWZIeG5MeTE0cWRBQkpHbUVPd1dKVWdwY2ZuUVFBcEplaUxPdU80b1pFWHBFbEJnbnRUMV9ndw?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T20:23:00.000Z",
+      "sourceId": "google-news-neocloud",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-d5e83d9e1c80c91e3e65",
+      "section": "mna",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9ibkN0aGhMUDR6d2lkektLRDNpZ2Z3Vmp4UkxhVk16MzRjd0g5MEdiVTlGWVhNZUJ1SHJLMW1aajZ6YlZWLVpmeVB1T0Y2UngtRmc?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T18:18:35.000Z",
+      "sourceId": "google-news-cn-ai-chain",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-22fa182646dbb6a97ad7",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMia0FVX3lxTE9FUzgtemYzemF3VlhNWnpqeklZTmJnY2VCelNtSlZSeEV0ZS1pREhFWDR6T0lQX3dXVm9GR2x0TnJTVFJ2STZ4Q0JLM3BDMUNRWnB4M1hXQmlLLTA5ZkNKVGNCRldUNzE3VnhN?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T13:50:00.000Z",
+      "sourceId": "google-news-cn-ai-chain",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-960736f7704e903bc6df",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMipwFBVV95cUxOaVhMN1NHRk1zR1k0bmdLakxzNU1aYlNyU1RfcGRvd3hWa2FPeTJQWHBTLUFnY0w1dy1pUHFBaVJmNkNmeUtkdS02Zzl1RGozRkM3TFZ5bGIxTWdzVWRqeDU1WXBsTS1UcGtiRDhjVVAzYnJUME1fNERkQm5SUlY1ZTF1amF1MnBqUjhPMHhfcGgta3NmbWtsdGtkVzZNZ29PbzM0cjg4WQ?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T09:33:31.000Z",
+      "sourceId": "google-news-cn-ai-chain",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-977dd2e6e4984ecf4b9e",
+      "section": "compute-products",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSFN4UHljMUJXY1k1VUYwWW0teGVzVnY3aEVaZ1VkU3hSU0JaMmlzWjYzeHZ2SDhYNldSNXR2cXhvbTNUYW5PX01janZicm94WUYyVW0wZWRTemVrOTllQzRpTTdSNEVPRUt0dVFrZTBuaVlTS05JRHVMSUVodzkxNHY2TVQ5c3htYlVvbjVMdXNwWC1uYVh0YXRfZHlNUmRyWGpTSVFlaVFiZw?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T07:01:15.000Z",
+      "sourceId": "google-news-cn-ai-chain",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-be3eb9901a8e7e7f28c3",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMijAFBVV95cUxPdHNHdmFPai1ObmlqaWEzMHd2VG9aOHdjWWg2TmtIN1NKd3RCczZZT0FoV0JYOVhTRXA4cEQ0Q0FKREVPNVh2TDVJemI1bzhoVm9DQjhEclJpUFJmaGlLckV4cjhJdDJZMDkxWVJyVDlGMXcxVUVzM0NZMjhpS3VSR20zaFZPQ1k5NHJ2ag?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T03:00:00.000Z",
+      "sourceId": "google-news-cn-ai-chain",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-8e31955228116e7575a9",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5XRGw4blBKYUU2U2ltZ21CSm9LU3MxMUFRRmI0ZGpUSTFHazdhaDBjdGlWZ0l2UlNvdG9UX0EydVlBUS1NbTZsYXFxZUhBbUNDNmw5dlVaTmNnR1pI?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T02:36:34.000Z",
+      "sourceId": "google-news-cn-infrastructure",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-48cb8b4ef70f568d4997",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.fierce-network.com/cloud/analysts-split-whether-rumored-nvidia-hugging-face-deal-good-thing"
+      ],
+      "fallbackScored": true,
+      "holdClass": "blocking",
+      "entities": [
+        "NVIDIA"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-28T02:34:00.895Z",
+      "sourceId": "fierce-network",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-fcab8282174fbf0ca9b0",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.fierce-network.com/newswire/mediacom-preps-fiber-buildouts-unserved-and-underserved-indiana-communities"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-28T02:34:00.895Z",
+      "sourceId": "fierce-network",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-46081078ce2e6d23e35d",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMixwFBVV95cUxPdHR0ZTd4aGhIRExIamNVR3hFZWgzajVkWFl3SEd4N25BVmxDLVBmZmtKZ0pickZPajlSaWdvRk54VDUyaGVSSGVaNlloOXBFMk5oWGZza2JxY0RsQzNfdTN2Y2Y4U1haUmZCWHlza1FXWDdjMUpMdjJKd3NLaXZOd1RvZWxPb1J0bDJTeDhaZVlUYkgyZ09DNVVvcHV1QlJKeER1c3BnQTIyY1FrMWJqb1RNeTY5Zl9vdUVHcEhmVC02UGh1MUhZ?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T22:28:02.000Z",
+      "sourceId": "google-news-ai-infrastructure",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-ee35274520567e37e35e",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/rohanpaul_ai/status/2093084387667542290"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T21:13:00.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-be0420b47e8780f2dd55",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/MiniMax_AI/status/2093074338413244514"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T20:33:04.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-1099a3785724b8625c77",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://www.marktechpost.com/2026/08/27/cohere-releases-parse-5-parse-v5-0-a-2-3b-vision-language-model-that-turns-enterprise-documents-into-markdown"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T20:05:49.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-fd408badada67c77a6a8",
+      "section": "idc-pulse",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/rohanpaul_ai/status/2093066395785556369"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T20:01:30.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-87703c0d345d80d495e8",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/Replit/status/2093058509558501403"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T19:30:10.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-49aaacd99c8eaaf72ebd",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://x.com/omarsar0/status/2093056965568332236"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T19:24:02.000Z",
+      "sourceId": "aihot-discovery",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "publication-gate-not-met"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "publication-gate-not-met"
+      ]
+    },
+    {
+      "eventId": "evt-17b2dced354c9e108cf8",
+      "section": "idc-pulse",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMipgFBVV95cUxPWHNncXllbUZOM0w4dnpyZGY0Qmk1VmxCdmkyWnZOa2Q3OUpMaExteENSVkhqZjZOYnZpV1padFlnUHFCTGY5UDBPek9rSFFNREtqY2k0OFQ5RlNNX3ZkU052MnFNU0FFbm9Ucl9XZlhDWXhMWHBOMEhVS250MHVBRUpqYzhZaXJCSFg1WW1JMDc1amxMcTViM0VSd1JuZUJtYmVKZlNB?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T13:02:25.000Z",
+      "sourceId": "google-news-ai-business",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-f24c99c37f6b47fd9c9f",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZGY5V014c0ZPUEFIUWdGWW1xcTl3RFNJTlR5eUdjOGlRYVhwTjVZcy1fb0NVWkhTUGVfY0wwT0NsSUp4NDdWd0lRWWRMaGVVTnJadHlHNGVTYlF6blBtOWxpWkxqWXhmbUVJSWtDN3IwWnR4VTEyUWxwVnJnMXlFeFU0YlB6YWp5OUoxMjVxT1RHSmJRNlNXRGNHOWNCelY4MTFWN3dsd3JDOVg1T2cycGFGVDNMMDJ5WElCWk1acUNQRF9IY2pGS1NzVDViRDA?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T18:42:56.000Z",
+      "sourceId": "google-news-data-center",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-747eac3985277003cdc7",
+      "section": "compute-products",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPbEZEVkNIUlJiZHFDWkk0THdpYXlLbTFXOXhzc2Z2cFZzRUJidTItTlNfcl91dWlkTk9oajg4TldCTXUtcXVzVFBEWm1SdjZKVlZhTzVCdFh1akRSVkVyM1R3UkQ3aXNZNm44UDdNNWotQy04MEtuQVlqZGlSdUhMX1E0dldXVV9iZWNlTWJPSGh6bFdhbmcxTTdfR3VtWnBTLXgwOU9HWTlHRmszazd1SXJmRG5QN256?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T18:22:58.000Z",
+      "sourceId": "google-news-ai-infrastructure",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-46125e54dc093099a03d",
+      "section": "idc-pulse",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNWGpQSkhUeUJEaU1CS2RMT1R1bzNqNDhaaXk2T0pJUWw1Qzc1aTVaUksxWGVGcGVUbWdmU29Md1JRMHVoaHBWRTJHbTYwTEdrMEVkVEhyQXJUQWxzcTZudGU0QTEweHpoTGlJR1Zselo1emxYN19yZmE0eXJiM1ltTmE3VnZwTm5RV19vdGVXbmtCcnljMkdrZzdLZUNzMEU2alhwRWhmaGRDd0JuVjNOTExtOEp2RDFaOHAwekFvNVRYRld1aWg3SW1xRlN0R0JpY1N5MnNBNHRlaFlfZ2c?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T16:02:00.000Z",
+      "sourceId": "google-news-data-center",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-b6bac88a072b079ad4be",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMifkFVX3lxTFBMTlJ4QnhxTjBQclY4LWF4SHN3Y2NGWXhBbzRFcThXWkJtak9ZbXpNYXR1TkZOWkw3UUZIenBxR3J6NjdRekhmdFREYl8waGFxbWZtbl9GYUg3T05aRVU2R3pNVTIwNUZfTGhSMjZPODFEWmpra250azgxbmY3QQ?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T14:01:53.000Z",
+      "sourceId": "google-news-ai-infrastructure",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-534c64e36aa800bb7204",
+      "section": "listed-companies",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMitAFBVV95cUxOSC1xMEt1OW9temJybVdVTjg4aGRZN1VNWkVVWmpUVW50aHRtZmVZN2hWYkJVSFdpS3pnZS1mUDRBeHVkS05nZjEtMTVudmlUMjRYTFZZQk1WUU52YmdmZXRhVzhIR1R3RG9Odi1Pb1l6YmR2bGhVQ0FtbUtscHJpMnJKOTM3djVCVnl4cGlLUkI0NlBLNGVMbHYwUjBNeW9fd3ZycFpYa1VhZVhUTEFTdGN1VUo?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T12:49:00.000Z",
+      "sourceId": "google-news-ai-business",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-26f0e9038cec04544cc9",
+      "section": "idc-pulse",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNUEJPbDQ2Z28xYkx6b0MtTjFKNGJaTWpQZEVTalhrRm90RUJiQlJGeVJhREZ5RFJuT2k4YXlkRy1PekpMSmp6NE9YeHdyd2h2cjRnU1JZTTFBdElZaVB2YXFoMzc3S1JLOVUyQk9xd1N6UHI4NjNtcHNJU3IxWGtzUFdrdVotWW1Remgw?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T12:47:59.000Z",
+      "sourceId": "google-news-ai-business",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-4ad2cd363d1e6503fcf0",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiowFBVV95cUxQLWF4cVpYXzNxcjI2Tm4xdTBaZTlWUl9XSTJDVVF6WmVjVjhJYUdQTEwwV1NRVlEta3FxbGVLazZlZUEzNXFEazB2Sktvbzc2MmNhVUpXMjFxTWd6RUNEUTN2VlctLUdMTDJmbmZnY1dRd2Vzaks0a3ZzSnBxLTN0WXpGd2JMdXhocE9hMjNlVmpFUThVcnFXZXdwY3ZERm9mR0Q0?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T12:13:08.000Z",
+      "sourceId": "google-news-ai-infrastructure",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-84b75cee3926d0be2111",
+      "section": "idc-pulse",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMixgFBVV95cUxQU2EwMjBlb05NMjRuTWQtV19xYlJ0ZzNmTHVQb09zeVJHTEg0ajRwdVNhVUF1SzMwNUYyUXl4dWhiTTdBa1pfNmJwMEFGaDd2OFlJXzJ5RWtYRzJuNkhqVE1yUVdGUTR0YjluSHRFUEJoRU1kQmJGSWcxOHBUMy1kTHY3R3BxOUlfWDk2XzAwVUpNY09nRnEzc1gzSm5sVkdGZFdhLVphbThDUkFVLTlxUU42djM0VUVDZTQxLVk1SEloMUVqaWc?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T11:20:43.000Z",
+      "sourceId": "google-news-ai-business",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-102e87fe2859d5c01bf8",
+      "section": "mna",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMifEFVX3lxTE1GdHlxNzdCX0NFZW5yTUR4b0dqajN0YWNyenFkeGZkUW1BMTNuekhXWDZYRjBtWVl2ZUxVWU1tOFJWdmpqR2p3Zy1HNXVaYW5ZOTdJc3pRalU1cXQzRjk3TlUxRTNfcHVTemIxWDk0NlhmVFFIVnNsS2REY1g?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T06:11:18.000Z",
+      "sourceId": "google-news-ai-business",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-2337c0a31a0fcbf4826f",
+      "section": "power-model-demand",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMigwFBVV95cUxPeWdHX29NeFpZcGNpV3R5bVBPX3pJa3kxTVJGVHJvX2hHQW5qN2FnM1lJSUlqWDlRX2JWbWYtSnV4OHJBcTdkOVAzMW5hYnlvelF1UFNKbExLcnNlYTNNTl9OOXFKOEdCWklPOU1NSjN3VU5Pd29hVWdPT3RIWl9QTXN2VQ?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T04:43:50.000Z",
+      "sourceId": "google-news-neocloud",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-e6ce53591bd48dcf17d8",
+      "section": "mna",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMidkFVX3lxTE1RalRlNjdFWU14bHkxQ3pqMlpFTFNuZHlSSGFxOFNSR28zdVFrN0JtMG9KSnNoUFhpX3IxV0dFZ0RDWEdsbzhWcndjRVB5Q0hKOW4tV2pNazF1TlQzOG9PREplS0pTdU1VY0twYUU4SmtTblA0MHc?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T03:29:38.000Z",
+      "sourceId": "google-news-ai-infrastructure",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-f1d3b71a1a3648f7081a",
+      "section": "capacity",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUTBUTVZWUGNLcUNUOWxwS1FNS3ZDOGx5VFJMRmVvMjZ5Y0RSdFVZQXUzRVdhYTBmdGkxSGx0YXlIbWZSUk5DVkFZWlhMVjU0TWhqZXBqcW9fWmprel9VR0hVdWVmb3I5dFpTa05MSnF2VEw3ZGlvcFk4U19sY21jQi1iMnhab002SklwQS0xbFNrOWwwM3ZfbF9lazVFZVc5MkU2UEZNcDZlNzIxOG9ETXR3VEpGZ9IBuwFBVV95cUxPeFdhMXB4TVNaeTJpWk4yZ1NpV2Q1YXFPT01rMUJNZldId3dGdmkySXhOZTVJNHloSzZSMi0xU0JsNmJOVHAwMnZpTGRYTE04bUJsTGljR01LM0JCaDlmWjB0TmNpQUVVbjJxMnBjYk9FMjVLWkV0R1Rwd1FQZWNYTExWYjFndGRXNV9FYm9NWHdoTXhFdUh2Ykt5OFA3cjBjUWk1ejBGeXFMbHMtLV9odVlkYVFsVnJGNUlZ?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T20:59:27.000Z",
+      "sourceId": "google-news-data-center",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-7e1e578361c0fbab5165",
+      "section": "capacity",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPeFdhMXB4TVNaeTJpWk4yZ1NpV2Q1YXFPT01rMUJNZldId3dGdmkySXhOZTVJNHloSzZSMi0xU0JsNmJOVHAwMnZpTGRYTE04bUJsTGljR01LM0JCaDlmWjB0TmNpQUVVbjJxMnBjYk9FMjVLWkV0R1Rwd1FQZWNYTExWYjFndGRXNV9FYm9NWHdoTXhFdUh2Ykt5OFA3cjBjUWk1ejBGeXFMbHMtLV9odVlkYVFsVnJGNUlZ0gG7AUFVX3lxTE94V2ExcHhNU1p5MmlaTjJnU2lXZDVhcU9PTWsxQk1mV0h3d0Z2aTJJeE5lNUk0eWhLNlIyLTFTQmw2Yk5UcDAydmlMZFhMTThtQmxMaWNHTUszQkJoOWZaMHROY2lBRVVuMnEycGNiT0UyNUtaRXRHVHB3UVBlY1hMTFZiMWd0ZFc1X0Vib01Yd2hNeEV1SHZiS3k4UDdyMGNRaTV6MEZ5cUxscy0tX2h1WWRhUWxWckY1SVk?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-27T20:59:27.000Z",
+      "sourceId": "google-news-ai-power",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-8e0e27c0e6553eb69bae",
+      "section": "idc-pulse",
+      "sourceTier": "D",
+      "evidenceStatus": "lead",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi2gJBVV95cUxNaUdRaXg5ZEZDd0E2ZHBUYzJjYWVmMEZPSWNhRU1aVXZkQkxic29sYUNpZmpIVHQxU0R6OGVYRDlENExPMHltdUNIbXJZMUZtaHktRjcxMjdleUFPUnBrUGVYTEJRUTZNUFRFRVhYdVJuWTZqWVNka1JyamtxOVRCQ0FKdDhaYlhhMTYtSG9INW1uRVNNbFkyUk11aEFHdk5XNlJtX1lRbG5wNDBHYnFhQkJaMUJfVVhmMnEtM0ZrWGJ5aXQ4VWxLVU9OQlgyVW5iNW1CQWZJTzBjWWdxdnJCRjJQenU2Mzh0MVhTbUphbzlIdnZRcE5sckVXR0FfQjJrMjRMN01Uak05YXNuMWpTaHgyLTd0ZGkzaWtxU3gybDVucmRuSDBobGF2V05OcFBKc2UzZmdzS0NMTlM0QmhUTUZGX1hNRXBRbjMzR2JKM0x1SkxjSzhwOTln?oc=5"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-26T05:56:17.000Z",
+      "sourceId": "google-news-cn-infrastructure",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-b246095ddf1339557c5f",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.fierce-network.com/broadband/fcc-opens-comments-e-rate-program-gets-attacked-court"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [
+        "FCC"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-08-28T02:34:00.895Z",
+      "sourceId": "fierce-network",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-572de08442428e29bba8",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.fierce-network.com/newswire/sk-telecom-launches-dedicated-data-center-infrastructure-company"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-28T02:34:00.895Z",
+      "sourceId": "fierce-network",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-a57bd3a075c60c225bac",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.fierce-network.com/broadband/opinion-fibers-next-act-broadband-infrastructure-physical-ai-economy"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-28T02:34:00.895Z",
+      "sourceId": "fierce-network",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-f77487f7cbe002a64db6",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.fierce-network.com/broadband/what-know-about-broadband-nation-expo-year"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-28T02:34:00.895Z",
+      "sourceId": "fierce-network",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-693221b4554c20000efa",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.fierce-network.com/newswire/ciena-csps-expect-ai-services-and-mofn-revenue-growth-they-need-network-upgrades"
+      ],
+      "fallbackScored": true,
+      "holdClass": "watch",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-28T02:34:00.895Z",
+      "sourceId": "fierce-network",
+      "action": "hold",
+      "route": "internal",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "bilingual-copy-valid",
+        "bilingual-copy-invalid-or-incomplete"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "bilingual-copy-invalid-or-incomplete"
+      ]
+    },
+    {
+      "eventId": "evt-f5d5887184e5ecd0fadb",
+      "section": "idc-pulse",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://developers.googleblog.com/evolving-spec-driven-development-conductor-now-supports-antigravity/"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-28T02:33:57.041Z",
+      "sourceId": "google-developers",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    },
+    {
+      "eventId": "evt-3307b456001abeeffe8d",
+      "section": "idc-pulse",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://developers.googleblog.com/building-scalable-ai-agents-with-modular-prompt-transpilation/"
+      ],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-08-28T02:33:57.041Z",
+      "sourceId": "google-developers",
+      "action": "watch",
+      "route": "research-queue",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "bilingual-copy-valid",
+        "research-mechanism-review"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "model-scoring-fallback"
+      ]
+    }
+  ],
+  "summary": {
+    "publishFormal": 1,
+    "publishRumor": 4,
+    "research": 17,
+    "hold": 145,
+    "reject": 0,
+    "fallbackScored": 167,
+    "adapterReady": 5,
+    "blockingHold": 56
+  }
+}

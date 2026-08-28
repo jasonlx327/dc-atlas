@@ -1,0 +1,407 @@
+{
+  "schemaVersion": "atlas-china-xpu-listed-checks.v1",
+  "runId": "atlas-2026-08-28-fresh",
+  "checkedAt": "2026-08-28T02:34:04.024Z",
+  "window": {
+    "from": "2026-08-27T02:33:01.000Z",
+    "to": "2026-08-28T02:34:04.024Z",
+    "cutoffBasis": "09:30 handoff blocked; last trusted 16:30 fallback"
+  },
+  "directIssuerCount": 7,
+  "checkedCount": 7,
+  "hitCount": 0,
+  "results": {
+    "new/changed": 0,
+    "no-change": 0,
+    "not-determined": 7
+  },
+  "directIssuers": [
+    {
+      "id": "jingjia-micro",
+      "name": "景嘉微",
+      "ticker": "300474",
+      "exchange": "SZSE",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "exchangeCoverage": {
+        "attempted": true,
+        "urls": [
+          "https://www.szse.cn/disclosure/listed/notice/"
+        ],
+        "public": true,
+        "accessStatus": "public"
+      },
+      "irCoverage": {
+        "attempted": true,
+        "urls": [
+          "https://www.jingjiamicro.com/"
+        ],
+        "public": true,
+        "accessStatus": "public"
+      },
+      "attempts": [
+        {
+          "url": "https://www.szse.cn/disclosure/listed/notice/",
+          "finalUrl": "https://www.szse.cn/disclosure/listed/notice/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 555,
+          "role": "exchange"
+        },
+        {
+          "url": "https://www.jingjiamicro.com/",
+          "finalUrl": "https://www.jingjiamicro.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1271,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results/preliminary-results/guidance/earnings-call materials",
+        "revenue/gross margin/operating cash flow/R&D/inventory/CAPEX when disclosed",
+        "orders/backlog/shipments/customer concentration/delivery when disclosed",
+        "product roadmap/tape-out/mass-production/delivery/software ecosystem/supply constraints",
+        "IPO/refinancing/lock-up/control/pledge/sanctions/regulatory inquiry"
+      ],
+      "originalUrls": []
+    },
+    {
+      "id": "cambricon",
+      "name": "寒武纪",
+      "ticker": "688256",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "exchangeCoverage": {
+        "attempted": true,
+        "urls": [
+          "https://www.sse.com.cn/disclosure/listedinfo/announcement/"
+        ],
+        "public": true,
+        "accessStatus": "public"
+      },
+      "irCoverage": {
+        "attempted": true,
+        "urls": [
+          "https://www.cambricon.com/"
+        ],
+        "public": true,
+        "accessStatus": "public"
+      },
+      "attempts": [
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "finalUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1058,
+          "role": "exchange"
+        },
+        {
+          "url": "https://www.cambricon.com/",
+          "finalUrl": "https://www.cambricon.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1119,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results/preliminary-results/guidance/earnings-call materials",
+        "revenue/gross margin/operating cash flow/R&D/inventory/CAPEX when disclosed",
+        "orders/backlog/shipments/customer concentration/delivery when disclosed",
+        "product roadmap/tape-out/mass-production/delivery/software ecosystem/supply constraints",
+        "IPO/refinancing/lock-up/control/pledge/sanctions/regulatory inquiry"
+      ],
+      "originalUrls": []
+    },
+    {
+      "id": "hygon",
+      "name": "海光信息",
+      "ticker": "688041",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "exchangeCoverage": {
+        "attempted": true,
+        "urls": [
+          "https://www.sse.com.cn/disclosure/listedinfo/announcement/"
+        ],
+        "public": true,
+        "accessStatus": "public"
+      },
+      "irCoverage": {
+        "attempted": true,
+        "urls": [
+          "https://www.hygon.cn/"
+        ],
+        "public": true,
+        "accessStatus": "public"
+      },
+      "attempts": [
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "finalUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1367,
+          "role": "exchange"
+        },
+        {
+          "url": "https://www.hygon.cn/",
+          "finalUrl": "https://www.hygon.cn/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 820,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results/preliminary-results/guidance/earnings-call materials",
+        "revenue/gross margin/operating cash flow/R&D/inventory/CAPEX when disclosed",
+        "orders/backlog/shipments/customer concentration/delivery when disclosed",
+        "product roadmap/tape-out/mass-production/delivery/software ecosystem/supply constraints",
+        "IPO/refinancing/lock-up/control/pledge/sanctions/regulatory inquiry"
+      ],
+      "originalUrls": []
+    },
+    {
+      "id": "moore-threads",
+      "name": "摩尔线程",
+      "ticker": "688795",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "exchangeCoverage": {
+        "attempted": true,
+        "urls": [
+          "https://www.sse.com.cn/disclosure/listedinfo/announcement/"
+        ],
+        "public": true,
+        "accessStatus": "public"
+      },
+      "irCoverage": {
+        "attempted": true,
+        "urls": [
+          "https://www.mthreads.com/"
+        ],
+        "public": true,
+        "accessStatus": "public"
+      },
+      "attempts": [
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "finalUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1223,
+          "role": "exchange"
+        },
+        {
+          "url": "https://www.mthreads.com/",
+          "finalUrl": "https://www.mthreads.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 982,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results/preliminary-results/guidance/earnings-call materials",
+        "revenue/gross margin/operating cash flow/R&D/inventory/CAPEX when disclosed",
+        "orders/backlog/shipments/customer concentration/delivery when disclosed",
+        "product roadmap/tape-out/mass-production/delivery/software ecosystem/supply constraints",
+        "IPO/refinancing/lock-up/control/pledge/sanctions/regulatory inquiry"
+      ],
+      "originalUrls": []
+    },
+    {
+      "id": "biren",
+      "name": "壁仞科技",
+      "ticker": "6082",
+      "exchange": "HKEX",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "exchangeCoverage": {
+        "attempted": true,
+        "urls": [
+          "https://www.hkexnews.hk/index.htm"
+        ],
+        "public": true,
+        "accessStatus": "public"
+      },
+      "irCoverage": {
+        "attempted": true,
+        "urls": [
+          "https://www.birentech.com/"
+        ],
+        "public": true,
+        "accessStatus": "public"
+      },
+      "attempts": [
+        {
+          "url": "https://www.hkexnews.hk/index.htm",
+          "finalUrl": "https://www.hkexnews.hk/index.htm",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 2512,
+          "role": "exchange"
+        },
+        {
+          "url": "https://www.birentech.com/",
+          "finalUrl": "https://www.birentech.com/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1459,
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results/preliminary-results/guidance/earnings-call materials",
+        "revenue/gross margin/operating cash flow/R&D/inventory/CAPEX when disclosed",
+        "orders/backlog/shipments/customer concentration/delivery when disclosed",
+        "product roadmap/tape-out/mass-production/delivery/software ecosystem/supply constraints",
+        "IPO/refinancing/lock-up/control/pledge/sanctions/regulatory inquiry"
+      ],
+      "originalUrls": []
+    },
+    {
+      "id": "loongson",
+      "name": "龙芯中科",
+      "ticker": "688047",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "exchangeCoverage": {
+        "attempted": true,
+        "urls": [
+          "https://www.sse.com.cn/disclosure/listedinfo/announcement/"
+        ],
+        "public": true,
+        "accessStatus": "public"
+      },
+      "irCoverage": {
+        "attempted": true,
+        "urls": [
+          "https://www.loongson.cn/"
+        ],
+        "public": false,
+        "accessStatus": "not-determined"
+      },
+      "attempts": [
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "finalUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 896,
+          "role": "exchange"
+        },
+        {
+          "url": "https://www.loongson.cn/",
+          "finalUrl": null,
+          "httpStatus": null,
+          "accessStatus": "unavailable",
+          "durationMs": 5371,
+          "error": "fetch failed",
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results/preliminary-results/guidance/earnings-call materials",
+        "revenue/gross margin/operating cash flow/R&D/inventory/CAPEX when disclosed",
+        "orders/backlog/shipments/customer concentration/delivery when disclosed",
+        "product roadmap/tape-out/mass-production/delivery/software ecosystem/supply constraints",
+        "IPO/refinancing/lock-up/control/pledge/sanctions/regulatory inquiry"
+      ],
+      "originalUrls": []
+    },
+    {
+      "id": "metax",
+      "name": "沐曦股份",
+      "ticker": "688802",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-08-28T02:34:04.024Z",
+      "exchangeCoverage": {
+        "attempted": true,
+        "urls": [
+          "https://www.sse.com.cn/disclosure/listedinfo/announcement/"
+        ],
+        "public": true,
+        "accessStatus": "public"
+      },
+      "irCoverage": {
+        "attempted": true,
+        "urls": [
+          "https://www.metax-tech.com/"
+        ],
+        "public": false,
+        "accessStatus": "not-determined"
+      },
+      "attempts": [
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "finalUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1533,
+          "role": "exchange"
+        },
+        {
+          "url": "https://www.metax-tech.com/",
+          "finalUrl": null,
+          "httpStatus": null,
+          "accessStatus": "unavailable",
+          "durationMs": 10465,
+          "error": "fetch failed",
+          "role": "IR/newsroom"
+        }
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results/preliminary-results/guidance/earnings-call materials",
+        "revenue/gross margin/operating cash flow/R&D/inventory/CAPEX when disclosed",
+        "orders/backlog/shipments/customer concentration/delivery when disclosed",
+        "product roadmap/tape-out/mass-production/delivery/software ecosystem/supply constraints",
+        "IPO/refinancing/lock-up/control/pledge/sanctions/regulatory inquiry"
+      ],
+      "originalUrls": []
+    }
+  ],
+  "windowEventsConsidered": 115,
+  "cutoffVerification": {
+    "status": "fallback",
+    "previousCutoff": "2026-08-28T09:31:07+08:00",
+    "reason": "09:30 manifest was blocked before source review; this overlay is independent",
+    "fallbackFrom": "2026-08-27T02:33:01.000Z"
+  }
+}
