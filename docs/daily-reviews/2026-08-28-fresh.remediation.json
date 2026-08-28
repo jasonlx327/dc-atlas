@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "runId": "atlas-2026-08-28-fresh",
-  "status": "ready-for-partial-release",
+  "status": "partially-published",
   "resolved": [
     "shadow SQLite observation identity persistence repaired and verified",
     "blocked 09:30 cutoff replaced with documented 24-hour fallback",
@@ -41,5 +41,15 @@
       "nextAction": "locate and verify the primary market-monitor report"
     }
   ],
-  "globalBlocker": false
+  "globalBlocker": false,
+  "release": {
+    "commit": "45a523bc676f1291bf297cddc6f894431c41cbe6",
+    "cloudflareVersion": "0de79b3e-fd3d-401e-a2a3-9c1cde69c35e",
+    "sitesVersion": 134,
+    "sameCommit": true,
+    "formalReadback": "passed",
+    "dailySnapshotReadback": "passed",
+    "bilingualRumorReadback": "passed",
+    "sitesMirrorReadback": "passed"
+  }
 }
