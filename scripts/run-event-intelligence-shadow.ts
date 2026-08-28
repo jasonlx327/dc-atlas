@@ -105,11 +105,14 @@ function insertEntity(database: DatabaseSync, name: string, entityType: string) 
   return id;
 }
 
-function persistShadowReport(report: ShadowRunReport, results: ConnectorResult[], sources: SourceDefinition[], dbPath: string, migration: string, trigger: string) {
+export function persistShadowReport(report: ShadowRunReport, results: ConnectorResult[], sources: SourceDefinition[], dbPath: string, migration: string, trigger: string) {
   const database = new DatabaseSync(dbPath);
+  let transactionOpen = false;
   try {
     ensureShadowDatabase(database, migration);
     for (const source of sources) insertSource(database, source);
+    database.exec("BEGIN IMMEDIATE");
+    transactionOpen = true;
     const runId = `run-${report.generatedAt.replace(/[^0-9]/g, "").slice(0, 14)}-${report.strategyVersion}`;
     database.prepare(`INSERT OR REPLACE INTO ingestion_runs
       (id, trigger, started_at, finished_at, status, strategy_version, fetched_count, normalized_count, classified_relevant_count, deep_scored_count, clustered_count, published_count, error_count, summary_json)
@@ -121,7 +124,20 @@ function persistShadowReport(report: ShadowRunReport, results: ConnectorResult[]
       (version, code_version, classifier_version, prompt_hash, weights_json, thresholds_json, published_at, replay_report_ref, is_active)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`)
       .run(report.strategyVersion, report.strategyVersion, report.classifierVersion, null, JSON.stringify(scoringConfig.weights), JSON.stringify(scoringConfig.thresholds), report.generatedAt, "artifacts/event-intelligence/strategy-comparison.json", 1);
+    const observationIdByReportId = new Map<string, string>();
+    const observationById = database.prepare("SELECT id FROM observations WHERE id = ?");
+    const observationBySourceExternalId = database.prepare("SELECT id FROM observations WHERE source_id = ? AND external_id = ?");
+    const observationByCanonicalUrlHash = database.prepare("SELECT id FROM observations WHERE canonical_url_hash = ?");
     for (const record of report.observationAnalysis) {
+      const identityMatches = [
+        observationById.get(record.id) as { id: string } | undefined,
+        record.externalId ? observationBySourceExternalId.get(record.sourceId, record.externalId) as { id: string } | undefined : undefined,
+        observationByCanonicalUrlHash.get(record.canonicalUrlHash) as { id: string } | undefined,
+      ].filter((match): match is { id: string } => Boolean(match));
+      const matchedIds = new Set(identityMatches.map((match) => match.id));
+      if (matchedIds.size > 1) throw new Error(`Observation identity conflict for ${record.id}: ${[...matchedIds].join(", ")}`);
+      const persistedObservationId = identityMatches[0]?.id ?? record.id;
+      observationIdByReportId.set(record.id, persistedObservationId);
       database.prepare(`INSERT INTO observations
         (id, source_id, endpoint_id, canonical_url, original_url, external_id, title_original, summary_original, language, author, published_at, discovered_at, fetched_at, content_hash, canonical_url_hash, raw_payload_json, access_status)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -132,12 +148,12 @@ function persistShadowReport(report: ShadowRunReport, results: ConnectorResult[]
           published_at = excluded.published_at, discovered_at = excluded.discovered_at, fetched_at = excluded.fetched_at,
           content_hash = excluded.content_hash, canonical_url_hash = excluded.canonical_url_hash,
           raw_payload_json = excluded.raw_payload_json, access_status = excluded.access_status`)
-        .run(record.id, record.sourceId, record.endpointId, record.canonicalUrl, record.originalUrl, record.externalId, record.titleOriginal, record.summaryOriginal, record.language, record.author,
+        .run(persistedObservationId, record.sourceId, record.endpointId, record.canonicalUrl, record.originalUrl, record.externalId, record.titleOriginal, record.summaryOriginal, record.language, record.author,
           record.publishedAt, record.discoveredAt, record.fetchedAt, record.contentHash, record.canonicalUrlHash, JSON.stringify(record.rawPayload), record.accessStatus);
       database.prepare(`INSERT OR REPLACE INTO observation_analysis
         (observation_id, classifier_version, topic_bucket, is_relevant, uncertain, topic_relevance_score, mechanism_depth_score, specificity_score, research_value_score, reader_value_score, editor_judgment, reason, entities_json, facts_json, translated_title_zh, translated_title_en, summary_zh, summary_en, embedding_model, embedding_ref, analysis_status, analyzed_at)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
-        .run(record.id, report.classifierVersion, record.classification.topicBucket, record.classification.isRelevant ? 1 : 0, record.classification.uncertain ? 1 : 0,
+        .run(persistedObservationId, report.classifierVersion, record.classification.topicBucket, record.classification.isRelevant ? 1 : 0, record.classification.uncertain ? 1 : 0,
           record.analysis.topicRelevanceScore, record.analysis.mechanismDepthScore, record.analysis.specificityScore, record.analysis.researchValueScore, record.analysis.readerValueScore,
           null, record.analysis.reason, JSON.stringify(record.analysis.entities), JSON.stringify(record.analysis.facts), record.analysis.titleZh, record.analysis.titleEn, record.analysis.summaryZh, record.analysis.summaryEn,
           null, null, record.analysis.analysisStatus, report.generatedAt);
@@ -146,17 +162,18 @@ function persistShadowReport(report: ShadowRunReport, results: ConnectorResult[]
         database.prepare(`INSERT OR IGNORE INTO pipeline_stage_runs
           (id, run_id, stage, observation_id, status, duration_ms, model, estimated_cost_usd, started_at, finished_at)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
-          .run(`${runId}-${record.id}-entity-${entityId}`, runId, "entity", record.id, "succeeded", 0, "deterministic-shadow-v1", 0, report.generatedAt, report.generatedAt);
+          .run(`${runId}-${persistedObservationId}-entity-${entityId}`, runId, "entity", persistedObservationId, "succeeded", 0, "deterministic-shadow-v1", 0, report.generatedAt, report.generatedAt);
       }
       for (const stage of ["normalize", "classify", "analyze"] as const) {
         database.prepare(`INSERT OR IGNORE INTO pipeline_stage_runs
           (id, run_id, stage, observation_id, status, duration_ms, model, estimated_cost_usd, started_at, finished_at)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
-          .run(`${runId}-${record.id}-${stage}`, runId, stage, record.id, "succeeded", 0, stage === "analyze" ? "deterministic-shadow-v1" : null, 0, report.generatedAt, report.generatedAt);
+          .run(`${runId}-${persistedObservationId}-${stage}`, runId, stage, persistedObservationId, "succeeded", 0, stage === "analyze" ? "deterministic-shadow-v1" : null, 0, report.generatedAt, report.generatedAt);
       }
     }
     for (const event of report.events) {
       const mainObservation = event.sourceChain.find((item) => item.observationId === event.mainObservationId) ?? event.sourceChain[0];
+      const mainObservationId = mainObservation ? observationIdByReportId.get(mainObservation.observationId) ?? mainObservation.observationId : null;
       const existing = database.prepare("SELECT evidence_status, publication_state, title_zh, title_en, summary_zh, summary_en, last_updated_at FROM events WHERE id = ?").get(event.id) as { evidence_status: string; publication_state: string; title_zh: string; title_en: string; summary_zh: string; summary_en: string; last_updated_at: string } | undefined;
       const publicationState = event.eligible ? "pending" : "internal";
       database.prepare(`INSERT INTO events
@@ -169,7 +186,7 @@ function persistShadowReport(report: ShadowRunReport, results: ConnectorResult[]
           publication_state = excluded.publication_state, main_observation_id = excluded.main_observation_id,
           strategy_version = excluded.strategy_version, internal_priority = excluded.internal_priority`).run(
         event.id, event.eventKey, event.eventType, event.titleZh, event.titleEn, event.summaryZh, event.summaryEn, event.firstSeenAt, event.lastUpdatedAt,
-        event.eventTime, event.region, event.evidenceStatus, publicationState, mainObservation?.observationId ?? null,
+        event.eventTime, event.region, event.evidenceStatus, publicationState, mainObservationId,
         report.strategyVersion, event.priorityScore ?? 0,
       );
       const changed = !existing || existing.evidence_status !== event.evidenceStatus || existing.publication_state !== publicationState
@@ -179,7 +196,7 @@ function persistShadowReport(report: ShadowRunReport, results: ConnectorResult[]
           (id, event_id, status_from, status_to, change_type, observed_at, source_observation_id, note)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?)`).run(
           `${runId}-${event.id}-update`, event.id, existing?.evidence_status ?? null, event.evidenceStatus,
-          existing ? "evidence-or-content-change" : "created", report.generatedAt, mainObservation.observationId,
+          existing ? "evidence-or-content-change" : "created", report.generatedAt, mainObservationId,
           existing ? `publication ${existing.publication_state} -> ${publicationState}` : "first observed in shadow store",
         );
       }
@@ -200,17 +217,18 @@ function persistShadowReport(report: ShadowRunReport, results: ConnectorResult[]
           .run(`${runId}-${event.id}-${stage}`, runId, stage, event.id, "succeeded", 0, "deterministic-shadow-v1", 0, report.generatedAt, report.generatedAt);
       }
       for (const chain of event.sourceChain) {
+        const chainObservationId = observationIdByReportId.get(chain.observationId) ?? chain.observationId;
         database.prepare(`INSERT OR REPLACE INTO event_observations
           (event_id, observation_id, relationship, is_independent_confirmation, is_main)
           VALUES (?, ?, ?, ?, ?)`).run(
-          event.id, chain.observationId, chain.relationship, chain.relationship === "confirmation" ? 1 : 0, chain.observationId === event.mainObservationId ? 1 : 0,
+          event.id, chainObservationId, chain.relationship, chain.relationship === "confirmation" ? 1 : 0, chain.observationId === event.mainObservationId ? 1 : 0,
         );
         if (chain.observationId !== event.mainObservationId && ["new-detail", "official-response", "contradiction"].includes(chain.noveltyClass)) {
           database.prepare(`INSERT OR IGNORE INTO event_updates
             (id, event_id, status_from, status_to, change_type, observed_at, source_observation_id, note)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)`).run(
-            `${runId}-${event.id}-${chain.observationId}-delta`, event.id, event.evidenceStatus, event.evidenceStatus,
-            chain.noveltyClass, chain.publishedAt ?? report.generatedAt, chain.observationId,
+            `${runId}-${event.id}-${chainObservationId}-delta`, event.id, event.evidenceStatus, event.evidenceStatus,
+            chain.noveltyClass, chain.publishedAt ?? report.generatedAt, chainObservationId,
             `${chain.noveltyClass}; new facts ${chain.newFactCount}`,
           );
         }
@@ -227,7 +245,7 @@ function persistShadowReport(report: ShadowRunReport, results: ConnectorResult[]
           (id, event_id, fact_type, value_text, value_number, unit, qualifier, period_start, period_end, source_observation_id, confidence_state)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`).run(
           `${event.id}-fact-${index}`, event.id, fact.factType, fact.valueText, fact.valueNumber ?? null, fact.unit ?? null, fact.qualifier ?? null,
-          fact.factType === "date" ? fact.valueText : null, null, fact.sourceObservationId, fact.confidenceState,
+          fact.factType === "date" ? fact.valueText : null, null, observationIdByReportId.get(fact.sourceObservationId) ?? fact.sourceObservationId, fact.confidenceState,
         );
       }
       database.prepare(`INSERT OR REPLACE INTO pipeline_stage_runs
@@ -255,6 +273,11 @@ function persistShadowReport(report: ShadowRunReport, results: ConnectorResult[]
         successful ? 0 : 1, result.error ?? null,
       );
     }
+    database.exec("COMMIT");
+    transactionOpen = false;
+  } catch (error) {
+    if (transactionOpen) database.exec("ROLLBACK");
+    throw error;
   } finally {
     database.close();
   }
@@ -282,4 +305,4 @@ async function run() {
   console.log(JSON.stringify({ message: "Event intelligence Codex run complete", mode, trigger, status: report.status, freshness: report.freshness, stats: report.stats, output: outputPath, shadowDbPath: dbPath }));
 }
 
-void run();
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) void run();

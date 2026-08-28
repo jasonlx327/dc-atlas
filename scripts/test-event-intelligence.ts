@@ -1,5 +1,9 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { mkdtemp, readFile, rm } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { DatabaseSync } from "node:sqlite";
+import { persistShadowReport } from "./run-event-intelligence-shadow.ts";
 import { canonicalizeUrl, runShadowPipeline } from "../worker/event-intelligence/pipeline.ts";
 import { beijingLabel, dispatchEventIntelligenceSchedule, eventIntelligenceSchedule, jobForUtcSlot, newYorkLabel } from "../worker/event-intelligence/schedule.ts";
 import { fetchRegisteredSource, shadowSources, sourceRegistry, sourceRegistryById } from "../worker/connectors/index.ts";
@@ -51,6 +55,54 @@ function observation(overrides: Partial<ObservationEnvelope> & Pick<ObservationE
     eventType: "capacity-agreement",
     ...overrides,
   };
+}
+
+const persistenceSource = sourceRegistryById.get("nvidia")!;
+const persistenceExternalId = "shadow-persistence-url-drift";
+const persistenceResult = (canonicalUrl: string, fetchedAt: string): ConnectorResult[] => [{
+  status: "ok",
+  sourceId: persistenceSource.id,
+  endpointId: persistenceSource.endpoint.id,
+  fetchedAt,
+  observations: [observation({
+    sourceId: persistenceSource.id,
+    endpointId: persistenceSource.endpoint.id,
+    canonicalUrl,
+    originalUrl: canonicalUrl,
+    externalId: persistenceExternalId,
+    titleOriginal: "NVIDIA launches a data-center GPU platform",
+    summaryOriginal: "NVIDIA launched a new GPU platform for data-center infrastructure.",
+    entities: ["NVIDIA"],
+    eventType: "product-release",
+  })],
+}];
+const firstPersistenceResults = persistenceResult("https://www.nvidia.com/news/first-url", "2026-08-08T12:01:00.000Z");
+const secondPersistenceResults = persistenceResult("https://www.nvidia.com/news/updated-url", "2026-08-08T13:01:00.000Z");
+const firstPersistenceReport = await runShadowPipeline(firstPersistenceResults, sourceRegistry, { generatedAt: "2026-08-08T12:02:00.000Z" });
+const secondPersistenceReport = await runShadowPipeline(secondPersistenceResults, sourceRegistry, { generatedAt: "2026-08-08T13:02:00.000Z" });
+const duplicatePersistenceReport = await runShadowPipeline([{
+  ...firstPersistenceResults[0],
+  observations: [...firstPersistenceResults[0].observations, ...secondPersistenceResults[0].observations],
+}], sourceRegistry, { generatedAt: "2026-08-08T14:02:00.000Z" });
+assert.equal(duplicatePersistenceReport.stats.duplicates, 1, "same-source external IDs should deduplicate even when the canonical URL drifts");
+
+const persistenceTempDir = await mkdtemp(join(tmpdir(), "idc-atlas-shadow-persistence-"));
+const persistenceDbPath = join(persistenceTempDir, "shadow.sqlite");
+const migration = await readFile(new URL("../drizzle/0000_event_intelligence.sql", import.meta.url), "utf8");
+try {
+  persistShadowReport(firstPersistenceReport, firstPersistenceResults, sourceRegistry, persistenceDbPath, migration, "fixture-first");
+  persistShadowReport(secondPersistenceReport, secondPersistenceResults, sourceRegistry, persistenceDbPath, migration, "fixture-second");
+  const persistenceDb = new DatabaseSync(persistenceDbPath);
+  try {
+    const rows = persistenceDb.prepare("SELECT id, canonical_url FROM observations WHERE source_id = ? AND external_id = ?").all(persistenceSource.id, persistenceExternalId) as Array<{ id: string; canonical_url: string }>;
+    assert.equal(rows.length, 1, "URL drift must update one observation instead of violating the source/external ID constraint");
+    assert.equal(rows[0]?.id, firstPersistenceReport.observationAnalysis[0]?.id, "persisted observation identity should remain stable");
+    assert.equal(rows[0]?.canonical_url, "https://www.nvidia.com/news/updated-url");
+  } finally {
+    persistenceDb.close();
+  }
+} finally {
+  await rm(persistenceTempDir, { recursive: true, force: true });
 }
 
 const regressionResults: ConnectorResult[] = [{

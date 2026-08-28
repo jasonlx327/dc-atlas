@@ -848,14 +848,19 @@ export async function runShadowPipeline(
   const failures = results.filter((result) => result.status === "failed" || result.status === "blocked" || result.status === "parse-error").map((result) => `${result.sourceId}/${result.endpointId}: ${result.error ?? result.status}`);
   const normalizedAll = await Promise.all(rawObservations.map((observation) => normalizeObservation(observation, sourceMap)));
   const deduped: NormalizedObservation[] = [];
-  const seen = new Set<string>();
+  const seenCanonicalUrls = new Set<string>();
+  const seenSourceExternalIds = new Set<string>();
   let duplicates = 0;
   for (const observation of normalizedAll) {
-    if (seen.has(observation.canonicalUrlHash)) {
+    const sourceExternalId = observation.externalId?.trim()
+      ? `${observation.sourceId}\u0000${observation.externalId.trim()}`
+      : null;
+    if (seenCanonicalUrls.has(observation.canonicalUrlHash) || (sourceExternalId !== null && seenSourceExternalIds.has(sourceExternalId))) {
       duplicates += 1;
       continue;
     }
-    seen.add(observation.canonicalUrlHash);
+    seenCanonicalUrls.add(observation.canonicalUrlHash);
+    if (sourceExternalId !== null) seenSourceExternalIds.add(sourceExternalId);
     deduped.push(observation);
   }
   const classified = deduped.map((observation) => ({ observation, classification: classifyObservation(observation) }));
