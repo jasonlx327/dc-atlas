@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "runId": "atlas-2026-08-30-1630-source-recovery",
-  "status": "publish-approved",
+  "status": "partially-published",
   "cutoff": "2026-08-29T19:24:43+08:00",
   "checkedThrough": "2026-08-30T21:08:16+08:00",
   "coreCompanyChecks": {"checked": 50, "changed": 15, "verifiedNoChange": 10, "notDetermined": 25, "newlyRecovered": 3},
@@ -20,5 +20,13 @@
   ],
   "globalBlocker": false,
   "releaseGate": {"lint": "passed-with-existing-warnings", "test": "passed-50-of-50", "build": "passed", "cloudflarePreflight": "passed", "cloudflareDryRun": "passed", "scopeReview": "passed"},
-  "release": {"deployment": "authorized-pending", "sameHeadRequired": true, "formalReadback": "required", "sitesMirrorReadback": "required"}
+  "release": {
+    "contentCommit": "8a613eee0ecf3dba612fbbb6b95ccbc6891052e0",
+    "cloudflareVersion": "dccff4fb-b1a9-477a-bd73-d736f854e022",
+    "sitesVersion": 136,
+    "sameCommit": true,
+    "formalReadback": "passed-four-bilingual-records",
+    "sitesMirrorReadback": "passed-after-canonical-redirect",
+    "closureMetadata": "committed after initial content readback and requires same-HEAD redeployment"
+  }
 }

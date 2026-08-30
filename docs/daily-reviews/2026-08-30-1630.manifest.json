@@ -36,7 +36,7 @@
     "cloudflarePreflight": "passed",
     "cloudflareDryRun": "passed",
     "scopeReview": "passed",
-    "deployment": "authorized-pending",
-    "productionReadback": "required-after-deployment"
+    "deployment": "passed-initial-content-release",
+    "productionReadback": "passed-four-bilingual-records"
   }
 }
