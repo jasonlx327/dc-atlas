@@ -5,7 +5,8 @@
   "checkedAt": "2026-08-30T12:04:18.017Z",
   "issuerCount": 7,
   "counts": {
-    "not-determined": 7
+    "not-determined": 6,
+    "changed": 1
   },
   "checks": [
     {
@@ -247,7 +248,7 @@
       "sourceIds": [
         "hkex"
       ],
-      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "lastCheckedAt": "2026-08-30T14:18:00.000Z",
       "exchangeCoverage": [
         {
           "sourceId": "hkex",
@@ -256,17 +257,19 @@
           "error": null
         }
       ],
-      "result": "not-determined",
-      "eventsInWindow": 0,
-      "notes": "Broad exchange/feed endpoint was reachable, but no issuer-specific filing/IR text was opened and reconciled in this run; no-change is not inferred."
+      "result": "changed",
+      "eventsInWindow": 1,
+      "formalRecordId": "biren-h1-2026-results-listed",
+      "officialUrl": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0828/2026082800454_c.pdf",
+      "notes": "Issuer-specific HKEX interim-results filing opened and reconciled; the prior profit alert was replaced by final H1 figures and delivery disclosures."
     }
   ],
   "linkedListedCompaniesChecked": [
     {
       "id": "alibaba",
       "name": "阿里巴巴",
-      "result": "not-determined",
-      "reason": "No event-specific XPU linkage requiring issuer routing was promoted; broad company watch coverage remains incomplete."
+      "result": "changed",
+      "reason": "Official IR release confirms an HK$80B placement with intended uses across global compute infrastructure and hyperscale AI data centers; no specific XPU procurement is inferred."
     },
     {
       "id": "baidu",

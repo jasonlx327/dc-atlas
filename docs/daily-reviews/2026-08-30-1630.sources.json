@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "atlas-source-ledger.v1",
+  "runId": "atlas-2026-08-30-1630-source-recovery",
+  "cutoff": "2026-08-29T19:24:43+08:00",
+  "checkedThrough": "2026-08-30T21:08:16+08:00",
+  "fallback": null,
+  "sources": [
+    {
+      "ref": "alibaba-hk80b-ai-infrastructure-placement-20260826",
+      "canonicalUrl": "https://www.alibabagroup.com/zh-HK/document-2029365886510432256",
+      "sourceName": "Alibaba Group Investor Relations",
+      "sourceTier": "T1",
+      "accessState": "public",
+      "publishedAt": "2026-08-26T00:00:00+08:00",
+      "independenceGroup": "alibaba",
+      "sections": ["listed-companies", "capacity", "power-model-demand"],
+      "editorDecision": "publish",
+      "formalRecordId": "alibaba-hk80b-ai-infrastructure-placement-2026",
+      "claimBoundary": "Placement completion is reported fact; intended use of proceeds is forward-looking company intent."
+    },
+    {
+      "ref": "lam-oregon-ai-lab-groundbreaking-20260826",
+      "canonicalUrl": "https://investor.lamresearch.com/2026-08-26-Lam-Research-Breaks-Ground-on-New-Oregon-Lab-to-Accelerate-AI-Era-Semiconductor-Research-Development-Locally,-Globally",
+      "sourceName": "Lam Research Investor Relations",
+      "sourceTier": "T1",
+      "accessState": "public",
+      "publishedAt": "2026-08-26T00:00:00-07:00",
+      "independenceGroup": "lam-research",
+      "sections": ["listed-companies", "supply-chain"],
+      "editorDecision": "publish",
+      "formalRecordId": "lam-oregon-ai-lab-groundbreaking-2026",
+      "claimBoundary": "Groundbreaking is complete; investment, cleanroom expansion and 2028 opening are company plans."
+    },
+    {
+      "ref": "biren-h1-results-20260828",
+      "canonicalUrl": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0828/2026082800454_c.pdf",
+      "sourceName": "Biren Technology / HKEX",
+      "sourceTier": "T0",
+      "accessState": "public",
+      "publishedAt": "2026-08-28T16:31:00+08:00",
+      "independenceGroup": "biren-hkex",
+      "sections": ["listed-companies", "china-gpu", "earnings-calendar"],
+      "editorDecision": "publish",
+      "formalRecordId": "biren-h1-2026-results-listed",
+      "supersedes": "biren-h1-2026-profit-alert-listed",
+      "claimBoundary": "Reported figures are separated from management product and supply-chain statements; undisclosed shipments and customer concentration are not inferred."
+    },
+    {
+      "ref": "marvell-q2-fy2027-10q-20260828",
+      "canonicalUrl": "https://investor.marvell.com/sec-filings/all-sec-filings/content/0001835632-26-000025/mrvl-20260801.htm",
+      "sourceName": "Marvell Technology Form 10-Q",
+      "sourceTier": "T0",
+      "accessState": "public",
+      "publishedAt": "2026-08-28T00:00:00-07:00",
+      "independenceGroup": "marvell-sec-filing",
+      "sections": ["listed-companies", "supply-chain", "earnings-calendar"],
+      "editorDecision": "publish",
+      "formalRecordId": "marvell-q2-fy2027-ai-data-center-2026",
+      "claimBoundary": "Reported end-market revenue is reconciled to the 10-Q; no call transcript or unidentified customer claim is used."
+    }
+  ],
+  "deduplication": {
+    "keys": ["canonicalUrl", "originalPublisher", "independenceGroup", "entityActionProjectLocationPeriod"],
+    "supersededRecords": ["biren-h1-2026-profit-alert-listed"],
+    "duplicatePublicRecordsCreated": 0
+  }
+}

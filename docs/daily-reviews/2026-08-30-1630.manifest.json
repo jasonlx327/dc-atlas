@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "atlas-release-manifest.v1",
+  "runId": "atlas-2026-08-30-1630-source-recovery",
+  "cutoff": "2026-08-29T19:24:43+08:00",
+  "checkedThrough": "2026-08-30T21:08:16+08:00",
+  "sourceLedger": "docs/daily-reviews/2026-08-30-1630.sources.json",
+  "coreCompanyChecks": "docs/daily-reviews/2026-08-30-1630.core-company-checks.json",
+  "chinaXpuChecks": "docs/daily-reviews/2026-08-30-1630.china-xpu-listed-checks.json",
+  "formalRecordIds": [
+    "alibaba-hk80b-ai-infrastructure-placement-2026",
+    "lam-oregon-ai-lab-groundbreaking-2026",
+    "biren-h1-2026-results-listed",
+    "marvell-q2-fy2027-ai-data-center-2026"
+  ],
+  "sections": {
+    "idc-pulse": {"releaseDisposition": "no-change", "newIds": [], "heldIds": [], "notes": "No separate pulse record created; related facts are deduplicated into the listed-company release."},
+    "listed-companies": {"releaseDisposition": "publish", "newIds": ["alibaba-hk80b-ai-infrastructure-placement-2026", "lam-oregon-ai-lab-groundbreaking-2026", "marvell-q2-fy2027-ai-data-center-2026"], "updatedIds": ["biren-h1-2026-results-listed"], "heldIds": []},
+    "mna": {"releaseDisposition": "no-change", "newIds": [], "heldIds": []},
+    "capacity": {"releaseDisposition": "publish", "newIds": ["alibaba-hk80b-ai-infrastructure-placement-2026"], "heldIds": [], "notes": "Financing use is published as intent, not commissioned capacity."},
+    "cooling": {"releaseDisposition": "no-change", "newIds": [], "heldIds": []},
+    "compute-products": {"releaseDisposition": "no-change", "newIds": [], "heldIds": [], "notes": "Biren product claims remain attached to its results record rather than duplicated as a product launch."},
+    "china-gpu": {"releaseDisposition": "publish", "newIds": [], "updatedIds": ["biren-h1-2026-results-listed"], "heldIds": ["cambricon", "hygon", "loongson", "jingjia-micro", "moore-threads", "muxi"]},
+    "supply-chain": {"releaseDisposition": "publish", "newIds": ["lam-oregon-ai-lab-groundbreaking-2026", "marvell-q2-fy2027-ai-data-center-2026"], "heldIds": []},
+    "power-model-demand": {"releaseDisposition": "publish", "newIds": ["alibaba-hk80b-ai-infrastructure-placement-2026"], "heldIds": [], "notes": "Funding intent is not converted into MW or operating demand."},
+    "earnings-calendar": {"releaseDisposition": "publish", "newIds": ["marvell-q2-fy2027-ai-data-center-2026"], "updatedIds": ["biren-h1-2026-results-listed"], "heldIds": []},
+    "rumors": {"releaseDisposition": "no-change", "newIds": [], "heldIds": []},
+    "policy": {"releaseDisposition": "hold", "newIds": [], "heldIds": ["pjm", "ndrc", "miit", "mee", "beijing-gov", "shanghai-gov"], "notes": "Failed official listing paths remain local holds and do not block formal company records."},
+    "columns": {"releaseDisposition": "no-change", "newIds": [], "heldIds": [], "notes": "No long-form column manufactured from four short formal records."}
+  },
+  "releaseGate": {
+    "bilingual": "passed",
+    "candidateLeakage": "passed",
+    "lint": "passed-with-existing-warnings",
+    "test": "passed-50-of-50",
+    "build": "passed",
+    "cloudflarePreflight": "passed",
+    "cloudflareDryRun": "passed",
+    "scopeReview": "passed",
+    "deployment": "authorized-pending",
+    "productionReadback": "required-after-deployment"
+  }
+}

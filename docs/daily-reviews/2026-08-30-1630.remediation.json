@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-08-30-1630-source-recovery",
+  "status": "publish-approved",
+  "cutoff": "2026-08-29T19:24:43+08:00",
+  "checkedThrough": "2026-08-30T21:08:16+08:00",
+  "coreCompanyChecks": {"checked": 50, "changed": 15, "verifiedNoChange": 10, "notDetermined": 25, "newlyRecovered": 3},
+  "chinaXpuChecks": {"checked": 7, "changed": 1, "notDetermined": 6, "newlyRecovered": 1},
+  "formalRecordIds": ["alibaba-hk80b-ai-infrastructure-placement-2026", "lam-oregon-ai-lab-groundbreaking-2026", "biren-h1-2026-results-listed", "marvell-q2-fy2027-ai-data-center-2026"],
+  "sections": {
+    "publish": ["listed-companies", "capacity", "china-gpu", "supply-chain", "power-model-demand", "earnings-calendar"],
+    "noChange": ["idc-pulse", "mna", "cooling", "compute-products", "rumors", "columns"],
+    "hold": ["policy"]
+  },
+  "holds": [
+    {"scope": "core-company", "count": 25, "state": "not-determined", "nextAction": "continue issuer-specific official-source recovery"},
+    {"scope": "china-xpu", "count": 6, "state": "not-determined", "nextAction": "open issuer-specific exchange filings before assigning no-change"},
+    {"scope": "official-listing-paths", "count": 6, "state": "hold", "targets": ["PJM", "NDRC", "MIIT", "MEE", "Beijing", "Shanghai"]},
+    {"scope": "xai-news", "count": 1, "state": "hold", "nextAction": "retry the official news route; no formal record depends on it"}
+  ],
+  "globalBlocker": false,
+  "releaseGate": {"lint": "passed-with-existing-warnings", "test": "passed-50-of-50", "build": "passed", "cloudflarePreflight": "passed", "cloudflareDryRun": "passed", "scopeReview": "passed"},
+  "release": {"deployment": "authorized-pending", "sameHeadRequired": true, "formalReadback": "required", "sitesMirrorReadback": "required"}
+}

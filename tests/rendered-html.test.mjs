@@ -852,7 +852,10 @@ test("keeps formally released records in versioned content and cache identity", 
     "celestica-q2-2026-800g-1-6t-programs",
     "singapore-dc-cfa2-200mw-listed-operators",
     "micron-research-labs-10b-2026",
-    "biren-h1-2026-profit-alert-listed",
+    "biren-h1-2026-results-listed",
+    "alibaba-hk80b-ai-infrastructure-placement-2026",
+    "lam-oregon-ai-lab-groundbreaking-2026",
+    "marvell-q2-fy2027-ai-data-center-2026",
   ]) assert.match(supplementSource, new RegExp(marker));
   assert.match(workerSource, /formalPulseSupplement: FORMAL_PULSE_SUPPLEMENT/);
   assert.match(workerSource, /formalListedSupplement: FORMAL_LISTED_SUPPLEMENT/);

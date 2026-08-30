@@ -13,8 +13,8 @@
   },
   "counts": {
     "no-change": 10,
-    "not-determined": 28,
-    "changed": 12
+    "not-determined": 25,
+    "changed": 15
   },
   "companies": [
     {
@@ -574,18 +574,25 @@
         "Global"
       ],
       "sourceIds": [],
-      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "lastCheckedAt": "2026-08-30T14:18:00.000Z",
       "coverage": [],
       "officialCoverage": {
-        "url": "https://www.alibabagroup.com/en-US/news",
-        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
-        "accessState": "not-determined"
+        "url": "https://www.alibabagroup.com/zh-HK/document-2029365886510432256",
+        "method": "official IR release opened and reconciled",
+        "accessState": "public"
       },
-      "eventsInWindow": 0,
-      "hits": [],
-      "result": "not-determined",
-      "formalPrimaryHit": false,
-      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+      "eventsInWindow": 1,
+      "hits": [{
+        "eventId": "alibaba-hk80b-ai-infrastructure-placement-2026",
+        "title": "Alibaba completes HK$80B placement and discloses intended AI-infrastructure uses",
+        "route": "formal",
+        "evidenceStatus": "T1",
+        "sourceTiers": ["T1"],
+        "primarySource": true
+      }],
+      "result": "changed",
+      "formalPrimaryHit": true,
+      "notes": "Official IR release opened; financing completion is reported fact and use-of-proceeds amounts remain company intent."
     },
     {
       "id": "tencent",
@@ -1059,18 +1066,25 @@
         "Global"
       ],
       "sourceIds": [],
-      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "lastCheckedAt": "2026-08-30T14:18:00.000Z",
       "coverage": [],
       "officialCoverage": {
-        "url": "https://newsroom.lamresearch.com/",
-        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
-        "accessState": "not-determined"
+        "url": "https://investor.lamresearch.com/2026-08-26-Lam-Research-Breaks-Ground-on-New-Oregon-Lab-to-Accelerate-AI-Era-Semiconductor-Research-Development-Locally,-Globally",
+        "method": "official IR release opened and reconciled",
+        "accessState": "public"
       },
-      "eventsInWindow": 0,
-      "hits": [],
-      "result": "not-determined",
-      "formalPrimaryHit": false,
-      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+      "eventsInWindow": 1,
+      "hits": [{
+        "eventId": "lam-oregon-ai-lab-groundbreaking-2026",
+        "title": "Lam Research starts construction on its Oregon R&D lab",
+        "route": "formal",
+        "evidenceStatus": "T1",
+        "sourceTiers": ["T1"],
+        "primarySource": true
+      }],
+      "result": "changed",
+      "formalPrimaryHit": true,
+      "notes": "Official IR release opened; groundbreaking is complete, while the 2028 opening and global lab investment remain plans."
     },
     {
       "id": "nvidia",
@@ -1222,18 +1236,25 @@
         "Global"
       ],
       "sourceIds": [],
-      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "lastCheckedAt": "2026-08-30T14:18:00.000Z",
       "coverage": [],
       "officialCoverage": {
-        "url": "https://investor.marvell.com/news-releases",
-        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
-        "accessState": "not-determined"
+        "url": "https://investor.marvell.com/sec-filings/all-sec-filings/content/0001835632-26-000025/mrvl-20260801.htm",
+        "method": "issuer-hosted Form 10-Q opened and reconciled",
+        "accessState": "public"
       },
-      "eventsInWindow": 0,
-      "hits": [],
-      "result": "not-determined",
-      "formalPrimaryHit": false,
-      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+      "eventsInWindow": 1,
+      "hits": [{
+        "eventId": "marvell-q2-fy2027-ai-data-center-2026",
+        "title": "Marvell Q2 data-center revenue reaches $2.172B",
+        "route": "formal",
+        "evidenceStatus": "T0",
+        "sourceTiers": ["T0"],
+        "primarySource": true
+      }],
+      "result": "changed",
+      "formalPrimaryHit": true,
+      "notes": "Issuer-hosted 10-Q reconciled for period, end-market revenue, margin and AI demand attribution; no third-party transcript used."
     },
     {
       "id": "tsmc",
