@@ -86,18 +86,32 @@ const duplicatePersistenceReport = await runShadowPipeline([{
 }], sourceRegistry, { generatedAt: "2026-08-08T14:02:00.000Z" });
 assert.equal(duplicatePersistenceReport.stats.duplicates, 1, "same-source external IDs should deduplicate even when the canonical URL drifts");
 
+const blankExternalIdResults: ConnectorResult[] = [{
+  ...firstPersistenceResults[0],
+  observations: [
+    { ...firstPersistenceResults[0].observations[0], canonicalUrl: "https://www.nvidia.com/news/blank-id-a", originalUrl: "https://www.nvidia.com/news/blank-id-a", externalId: "   " },
+    { ...firstPersistenceResults[0].observations[0], canonicalUrl: "https://www.nvidia.com/news/blank-id-b", originalUrl: "https://www.nvidia.com/news/blank-id-b", externalId: "" },
+  ],
+}];
+const blankExternalIdReport = await runShadowPipeline(blankExternalIdResults, sourceRegistry, { generatedAt: "2026-08-08T14:03:00.000Z" });
+assert.equal(blankExternalIdReport.stats.duplicates, 0, "blank external IDs must not collapse unrelated observations");
+assert.deepEqual(blankExternalIdReport.observationAnalysis.map((item) => item.externalId), [null, null]);
+
 const persistenceTempDir = await mkdtemp(join(tmpdir(), "idc-atlas-shadow-persistence-"));
 const persistenceDbPath = join(persistenceTempDir, "shadow.sqlite");
 const migration = await readFile(new URL("../drizzle/0000_event_intelligence.sql", import.meta.url), "utf8");
 try {
   persistShadowReport(firstPersistenceReport, firstPersistenceResults, sourceRegistry, persistenceDbPath, migration, "fixture-first");
   persistShadowReport(secondPersistenceReport, secondPersistenceResults, sourceRegistry, persistenceDbPath, migration, "fixture-second");
+  persistShadowReport(blankExternalIdReport, blankExternalIdResults, sourceRegistry, persistenceDbPath, migration, "fixture-blank-external-id");
   const persistenceDb = new DatabaseSync(persistenceDbPath);
   try {
     const rows = persistenceDb.prepare("SELECT id, canonical_url FROM observations WHERE source_id = ? AND external_id = ?").all(persistenceSource.id, persistenceExternalId) as Array<{ id: string; canonical_url: string }>;
     assert.equal(rows.length, 1, "URL drift must update one observation instead of violating the source/external ID constraint");
     assert.equal(rows[0]?.id, firstPersistenceReport.observationAnalysis[0]?.id, "persisted observation identity should remain stable");
     assert.equal(rows[0]?.canonical_url, "https://www.nvidia.com/news/updated-url");
+    const blankRows = persistenceDb.prepare("SELECT external_id FROM observations WHERE canonical_url LIKE 'https://www.nvidia.com/news/blank-id-%' ORDER BY canonical_url").all() as Array<{ external_id: string | null }>;
+    assert.deepEqual(blankRows.map((row) => row.external_id), [null, null], "blank external IDs must persist as NULL to avoid the unique-index collision");
   } finally {
     persistenceDb.close();
   }
@@ -204,6 +218,12 @@ try {
   const htmlResult = await fetchRegisteredSource(sourceRegistryById.get("ferc")!);
   assert.equal(htmlResult.status, "ok");
   assert.equal(htmlResult.observations[0]?.canonicalUrl, "https://www.ferc.gov/example");
+  globalThis.fetch = async () => new Response('<html><body><ul><li><a href="/policy/ai-data-center">关于推进人工智能数据中心绿色用电的通知</a><span>2026-08-30</span></li><li><a href="/">首页</a></li></ul></body></html>', { status: 200, headers: { "content-type": "text/html" } });
+  const officialList = await fetchRegisteredSource(sourceRegistryById.get("ndrc")!);
+  assert.equal(officialList.status, "ok");
+  assert.equal(officialList.observations.length, 1);
+  assert.equal(officialList.observations[0]?.canonicalUrl, "https://www.ndrc.gov.cn/policy/ai-data-center");
+  assert.equal(officialList.observations[0]?.publishedAt, "2026-08-30T00:00:00.000Z");
   const licensed = await fetchRegisteredSource(sourceRegistryById.get("reuters")!);
   assert.equal(licensed.status, "blocked");
   globalThis.fetch = async () => new Response("<rss><channel><item><description>missing title and link</description></item></channel></rss>", { status: 200, headers: { "content-type": "application/rss+xml" } });

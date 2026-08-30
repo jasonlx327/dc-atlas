@@ -5,6 +5,7 @@ import { dailySelectionCandidates } from "../worker/event-intelligence/daily-mod
 import { matchCoreCompanies } from "../worker/event-intelligence/core-company-watchlist.ts";
 import { modelMaterialBand, semanticScore, type ModelDimensionScores } from "../worker/event-intelligence/model-scoring.ts";
 import type { ShadowRunReport } from "../worker/event-intelligence/pipeline.ts";
+import { validateBilingualPair } from "../worker/event-intelligence/provider-contract.ts";
 
 function arg(name: string): string | null {
   const prefix = `--${name}=`;
@@ -38,21 +39,20 @@ function scoresOf(event: ShadowRunReport["events"][number]): ModelDimensionScore
 function publicCopy(event: ShadowRunReport["events"][number]) {
   const source = event.sourceChain.find((item) => accessible(item) && ["T0", "T1", "T2", "T3"].includes(item.tier));
   if (!source || !event.summaryZh.trim() || !event.summaryEn.trim()) return undefined;
-  if (source.tier === "T0" || source.tier === "T1") {
-    return {
+  const copy = source.tier === "T0" || source.tier === "T1"
+    ? {
       titleZh: event.titleZh,
       titleEn: event.titleEn,
       summaryZh: event.summaryZh,
       summaryEn: event.summaryEn,
+    }
+    : {
+      titleZh: event.titleZh,
+      titleEn: event.titleEn,
+      summaryZh: `据${sourceName(source.sourceId)}报道，${event.summaryZh}该信息目前未获一手来源确认。`,
+      summaryEn: `According to ${sourceName(source.sourceId)}, ${event.summaryEn} The claim has not been confirmed by a primary source.`,
     };
-  }
-  const name = sourceName(source.sourceId);
-  return {
-    titleZh: event.titleZh,
-    titleEn: event.titleEn,
-    summaryZh: `据${name}报道，${event.summaryZh}该信息目前未获一手来源确认。`,
-    summaryEn: `According to ${name}, ${event.summaryEn} The claim has not been confirmed by a primary source.`,
-  };
+  return validateBilingualPair({ ...copy, entities: event.entities }).status === "pass" ? copy : undefined;
 }
 
 async function run() {

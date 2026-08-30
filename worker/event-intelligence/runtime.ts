@@ -119,7 +119,7 @@ export async function runEventIntelligenceShadow(
     report = await runShadowPipeline(results, fallbackSources, { generatedAt });
   }
   const priorCompanyWatch = await env.IDC_DAILY_SNAPSHOTS.get<CoreCompanyWatchState>(CORE_COMPANY_WATCH_STATE_KEY, "json");
-  const companyWatch = buildCoreCompanyWatchState(report.events, generatedAt, priorCompanyWatch);
+  const companyWatch = buildCoreCompanyWatchState(report.events, generatedAt, priorCompanyWatch, report.sourceHealth);
   const passingSources = report.sourceHealth.filter((result) => PASSING_CONNECTOR_STATES.has(result.status)).length;
   const liveSmoke = await priorSmoke(env);
   liveSmoke[smokeJob] = { passed: smokePassed(report.sourceHealth), generatedAt };

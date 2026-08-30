@@ -1,0 +1,1825 @@
+{
+  "schemaVersion": "atlas-core-company-checks.v1",
+  "runId": "atlas-2026-08-30-1630",
+  "cutoff": "2026-08-29T19:24:43+08:00",
+  "scanGeneratedAt": "2026-08-30T12:04:18.017Z",
+  "checkedAt": "2026-08-30T12:04:18.017Z",
+  "companyCount": 50,
+  "layers": {
+    "demand-platform": 12,
+    "model-application": 11,
+    "compute-silicon": 15,
+    "capacity-power": 12
+  },
+  "counts": {
+    "no-change": 10,
+    "not-determined": 28,
+    "changed": 12
+  },
+  "companies": [
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "microsoft",
+        "azure-blog"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "microsoft",
+          "status": "ok",
+          "observations": 10,
+          "error": null
+        },
+        {
+          "sourceId": "azure-blog",
+          "status": "ok",
+          "observations": 10,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Configured first-party scan returned no current-window material event."
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "aws-news"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "aws-news",
+          "status": "ok",
+          "observations": 100,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Configured first-party scan returned no current-window material event."
+    },
+    {
+      "id": "alphabet",
+      "name": "Alphabet",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "google-cloud",
+        "google-ai-blog",
+        "google-developers"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "google-cloud",
+          "status": "empty",
+          "observations": 0,
+          "error": null
+        },
+        {
+          "sourceId": "google-ai-blog",
+          "status": "ok",
+          "observations": 20,
+          "error": null
+        },
+        {
+          "sourceId": "google-developers",
+          "status": "ok",
+          "observations": 20,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "meta",
+        "meta-engineering"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "meta",
+          "status": "ok",
+          "observations": 10,
+          "error": null
+        },
+        {
+          "sourceId": "meta-engineering",
+          "status": "ok",
+          "observations": 9,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 3,
+      "hits": [
+        {
+          "eventId": "evt-136d24bd2c964429128e",
+          "title": "消息称 Meta 正测试数据中心机器人，可完成插拔线缆、重启服务器等运维工作",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://www.ithome.com/0/996/222.htm"
+          ],
+          "publishedAt": [
+            "2026-08-30T11:26:34.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-17c8e22ea6f629531ccc",
+          "title": "Inside Meta's push to put robots to work in data centers",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://arstechnica.com/ai/2026/08/inside-metas-push-to-put-robots-to-work-in-data-centers"
+          ],
+          "publishedAt": [
+            "2026-08-30T11:03:47.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-54ac4963994c8e042767",
+          "title": "Most self-improving agents still refine answers inside a shallow loop； New research from Univ of M…",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://x.com/rohanpaul_ai/status/2093827742928417194"
+          ],
+          "publishedAt": [
+            "2026-08-29T22:26:50.000Z"
+          ]
+        }
+      ],
+      "result": "changed",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "oracle"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "oracle",
+          "status": "not-scanned",
+          "observations": 0,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "openai-news"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "openai-news",
+          "status": "ok",
+          "observations": 1157,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 4,
+      "hits": [
+        {
+          "eventId": "evt-0e0e7084e6d5088378e3",
+          "title": "Anthropic盯上「训练芯片」？被爆曾想70亿美元收购AI芯片公司MatX - 搜狐网",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOV2ZKQzNYSVZmenhWMTlDU0k0eXNaY0NxOEo2RDdXWVhuVzN3ZUtGQ181RjYyc3Fmcnl6cHBYQ2tseEN2WlRVMEdvekNzbWl4eUJwQUZ6d1hNVy15aFFoUG1LVGlWLU84VjMxeEpxN053a0lRc0hxRzJqb0I3bnJPX1hwMFRqaHpk?oc=5",
+            "https://news.google.com/rss/articles/CBMiSEFVX3lxTE90VlRua0M1NVZSbVVKbl9LRGt6dm1UZmpGRmNsZ1A5eWVkUUwxS2g2Q1E2My0tYTMwcWdVdVpaWUdoTnRKcFEzeA?oc=5"
+          ],
+          "publishedAt": [
+            "2026-08-30T08:21:13.000Z",
+            "2026-08-29T12:08:05.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-f06e28e676b97fa592e1",
+          "title": "OPENAI 🔥： Codex and ChatGPT Work usage limits are being reset once again. Besides that， OpenAI is…",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://x.com/testingcatalog/status/2093804005382123831",
+            "https://x.com/thsottiaux/status/2093801758665715784"
+          ],
+          "publishedAt": [
+            "2026-08-29T20:52:30.000Z",
+            "2026-08-29T20:43:34.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-d4e92e2b526b0ed27029",
+          "title": "Another supposedly GPT-\"Astra\" output. One-shotted a GTA-1 clone using max reasoning. Unbelievably g…",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://x.com/kimmonismus/status/2093786010648010831"
+          ],
+          "publishedAt": [
+            "2026-08-29T19:41:00.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-3cc1b9e7d9573a422847",
+          "title": "OpenAI to end model access to Cursor after acquisition by Elon Musk&apos;s SpaceX",
+          "route": "rumor-watch",
+          "evidenceStatus": "reported",
+          "sourceTiers": [
+            "T2"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://www.cnbc.com/2026/08/29/openai-cursor-spacex-model-access.html"
+          ],
+          "publishedAt": [
+            "2026-08-29T19:06:22.000Z"
+          ]
+        }
+      ],
+      "result": "changed",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.anthropic.com/news",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 4,
+      "hits": [
+        {
+          "eventId": "evt-6a984428fbfe1ffac704",
+          "title": "Sony and Warner sue Anthropic over \"one of the largest and most blatant ongoing thefts of intellectual property in history\"",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://the-decoder.com/sony-and-warner-sue-anthropic-over-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history"
+          ],
+          "publishedAt": [
+            "2026-08-30T08:50:20.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-0e0e7084e6d5088378e3",
+          "title": "Anthropic盯上「训练芯片」？被爆曾想70亿美元收购AI芯片公司MatX - 搜狐网",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOV2ZKQzNYSVZmenhWMTlDU0k0eXNaY0NxOEo2RDdXWVhuVzN3ZUtGQ181RjYyc3Fmcnl6cHBYQ2tseEN2WlRVMEdvekNzbWl4eUJwQUZ6d1hNVy15aFFoUG1LVGlWLU84VjMxeEpxN053a0lRc0hxRzJqb0I3bnJPX1hwMFRqaHpk?oc=5",
+            "https://news.google.com/rss/articles/CBMiSEFVX3lxTE90VlRua0M1NVZSbVVKbl9LRGt6dm1UZmpGRmNsZ1A5eWVkUUwxS2g2Q1E2My0tYTMwcWdVdVpaWUdoTnRKcFEzeA?oc=5"
+          ],
+          "publishedAt": [
+            "2026-08-30T08:21:13.000Z",
+            "2026-08-29T12:08:05.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-ddf07c3b5ca229cd3aa3",
+          "title": "为什么你用 Claude Code 总是在修 Bug，而Claude Code 负责人 Boris却能一个人并行狂飙？ 核心差距只有一条铁律： 交付质量差三倍的根源，不在于模型智力，而在于你有没有给它…",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://x.com/AYi_AInotes/status/2093969081774846348"
+          ],
+          "publishedAt": [
+            "2026-08-30T07:48:27.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-eadf44362d06bfa19f6f",
+          "title": "\"史上最大规模版权盗窃\"：Anthropic 被指侵权训练 Claude AI，单曲最高索赔 15 万美元",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://www.ithome.com/0/996/095.htm"
+          ],
+          "publishedAt": [
+            "2026-08-30T02:54:03.000Z"
+          ]
+        }
+      ],
+      "result": "changed",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "xai",
+      "name": "xAI",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "xai-news"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "xai-news",
+          "status": "blocked",
+          "observations": 0,
+          "error": "HTTP 403"
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 4,
+      "hits": [
+        {
+          "eventId": "evt-27e73060d5300aacd0c4",
+          "title": "特斯拉车机系统有望接入 Grok Bot，打造移动 AI 工作站",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://www.ithome.com/0/996/169.htm"
+          ],
+          "publishedAt": [
+            "2026-08-30T07:31:11.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-dfc8b42b7ce6db51b5c3",
+          "title": "Grok @Bot buys a Tesla！",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://x.com/elonmusk/status/2093858309824553395"
+          ],
+          "publishedAt": [
+            "2026-08-30T00:28:17.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-595b080e764900be9db0",
+          "title": "Consensus estimate is that ~15GW of AI compute produced in 2027 cannot be turned on in 2027. This …",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://x.com/elonmusk/status/2093810234141634702"
+          ],
+          "publishedAt": [
+            "2026-08-29T21:17:15.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-bbd54de824233161778b",
+          "title": "BREAKING： Grok Bot has surpassed OpenClaw in YouTube search interest by a wide margin. 🔥🚀 People …",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://x.com/cb_doge/status/2093793783381189115"
+          ],
+          "publishedAt": [
+            "2026-08-29T20:11:53.000Z"
+          ]
+        }
+      ],
+      "result": "changed",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "coreweave",
+      "name": "CoreWeave",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "coreweave"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "coreweave",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Configured first-party scan returned no current-window material event."
+    },
+    {
+      "id": "alibaba",
+      "name": "Alibaba",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.alibabagroup.com/en-US/news",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "tencent",
+      "name": "Tencent",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.tencent.com/en-us/updates.html",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 2,
+      "hits": [
+        {
+          "eventId": "evt-ea022f9aae4d50a23d63",
+          "title": "Hy4 preview is now available on WorkBuddy， where users can switch between Work and Coding tasks. Th…",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://x.com/testingcatalog/status/2093957891900289328"
+          ],
+          "publishedAt": [
+            "2026-08-30T07:03:59.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-1734fa4822ac883d2c7b",
+          "title": "Introducing Hy4 Preview",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://simonwillison.net/2026/Aug/29/hy4"
+          ],
+          "publishedAt": [
+            "2026-08-29T23:53:13.000Z"
+          ]
+        }
+      ],
+      "result": "changed",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "bytedance",
+      "name": "ByteDance",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.bytedance.com/en/news",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "apple-newsroom"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "apple-newsroom",
+          "status": "ok",
+          "observations": 20,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Configured first-party scan returned no current-window material event."
+    },
+    {
+      "id": "tesla",
+      "name": "Tesla",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://ir.tesla.com/press",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 4,
+      "hits": [
+        {
+          "eventId": "evt-aa2315a29e773f984aa1",
+          "title": "24 小时订单超 260 万美元，Hugging Face 机器鸭 Microduck 爆单",
+          "route": "rumor-watch",
+          "evidenceStatus": "reported",
+          "sourceTiers": [
+            "T3"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://www.ithome.com/0/996/199.htm"
+          ],
+          "publishedAt": [
+            "2026-08-30T09:50:36.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-0b76adab8558508660db",
+          "title": "全球仅 3 家能铸：马斯克 SpaceX 突破 AI 供电瓶颈，自产涡轮叶片提前 18 个月投运",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://www.ithome.com/0/996/179.htm",
+            "https://x.com/rohanpaul_ai/status/2093809492387598421"
+          ],
+          "publishedAt": [
+            "2026-08-30T07:53:56.000Z",
+            "2026-08-29T21:14:18.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-27e73060d5300aacd0c4",
+          "title": "特斯拉车机系统有望接入 Grok Bot，打造移动 AI 工作站",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://www.ithome.com/0/996/169.htm"
+          ],
+          "publishedAt": [
+            "2026-08-30T07:31:11.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-dfc8b42b7ce6db51b5c3",
+          "title": "Grok @Bot buys a Tesla！",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://x.com/elonmusk/status/2093858309824553395"
+          ],
+          "publishedAt": [
+            "2026-08-30T00:28:17.000Z"
+          ]
+        }
+      ],
+      "result": "changed",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "palantir",
+      "name": "Palantir",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://investors.palantir.com/news",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://investor.salesforce.com/press-releases/",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "servicenow",
+      "name": "ServiceNow",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.servicenow.com/company/media/press-room.html",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "snowflake",
+      "name": "Snowflake",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.snowflake.com/en/news/",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "cloudflare-blog"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "cloudflare-blog",
+          "status": "ok",
+          "observations": 20,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Configured first-party scan returned no current-window material event."
+    },
+    {
+      "id": "baidu",
+      "name": "Baidu",
+      "layer": "model-application",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://ir.baidu.com/news-releases",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 1,
+      "hits": [
+        {
+          "eventId": "evt-acf520d669efaf542e04",
+          "title": "消息称百度智能云分拆平台产品事业部：MaaS 划入基础设施、Agent 独立成军",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://www.ithome.com/0/996/123.htm"
+          ],
+          "publishedAt": [
+            "2026-08-30T05:57:38.000Z"
+          ]
+        }
+      ],
+      "result": "changed",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "layer": "model-application",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.deepseek.com/",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "layer": "model-application",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://mistral.ai/news",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.perplexity.ai/hub/blog",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "asml",
+      "name": "ASML",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.asml.com/en/news/stories",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "applied-materials",
+      "name": "Applied Materials",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://ir.appliedmaterials.com/news-releases",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "lam-research",
+      "name": "Lam Research",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://newsroom.lamresearch.com/",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "nvidia",
+        "nvidia-developer"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "nvidia",
+          "status": "ok",
+          "observations": 20,
+          "error": null
+        },
+        {
+          "sourceId": "nvidia-developer",
+          "status": "ok",
+          "observations": 100,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 1,
+      "hits": [
+        {
+          "eventId": "evt-77bdc07c35f083aaabaa",
+          "title": "Nvidia’s AI advantage is moving beyond the GPU",
+          "route": "rumor-watch",
+          "evidenceStatus": "reported",
+          "sourceTiers": [
+            "T3"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://techcrunch.com/2026/08/29/nvidias-ai-advantage-is-moving-beyond-the-gpu/"
+          ],
+          "publishedAt": [
+            "2026-08-29T13:00:00.000Z"
+          ]
+        }
+      ],
+      "result": "changed",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "amd"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "amd",
+          "status": "ok",
+          "observations": 10,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 2,
+      "hits": [
+        {
+          "eventId": "evt-b05176deb9e214e58671",
+          "title": "日企 Links 推出 LC7530 迷你主机：锐龙 5 7530U 芯片、16GB LPDDR4 内存",
+          "route": "rumor-watch",
+          "evidenceStatus": "reported",
+          "sourceTiers": [
+            "T3"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://www.ithome.com/0/996/167.htm"
+          ],
+          "publishedAt": [
+            "2026-08-30T07:25:50.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-2780faa0d087dcaee388",
+          "title": "酷冷至尊龙影二代 Pro 黑金限量款 360 一体式水冷散热器开售：限量 1999 台，1299 元",
+          "route": "rumor-watch",
+          "evidenceStatus": "reported",
+          "sourceTiers": [
+            "T3"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://www.ithome.com/0/996/160.htm"
+          ],
+          "publishedAt": [
+            "2026-08-30T07:18:27.000Z"
+          ]
+        }
+      ],
+      "result": "changed",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "broadcom",
+      "name": "Broadcom",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://investors.broadcom.com/news-releases",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "marvell",
+      "name": "Marvell",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://investor.marvell.com/news-releases",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "tsmc",
+      "name": "TSMC",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://pr.tsmc.com/english/news",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 1,
+      "hits": [
+        {
+          "eventId": "evt-87703c0d345d80d495e8",
+          "title": "AI 人才争夺加码：台积电 2026Q2 奖金约为 360 亿新台币，同比增 50.6%",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://www.ithome.com/0/996/073.htm"
+          ],
+          "publishedAt": [
+            "2026-08-30T00:55:57.000Z"
+          ]
+        }
+      ],
+      "result": "changed",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "sk-hynix",
+      "name": "SK hynix",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [
+        "sk-hynix-newsroom"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "sk-hynix-newsroom",
+          "status": "ok",
+          "observations": 10,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Configured first-party scan returned no current-window material event."
+    },
+    {
+      "id": "micron",
+      "name": "Micron",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://investors.micron.com/news-releases",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung Electronics",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [
+        "samsung-global-newsroom"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "samsung-global-newsroom",
+          "status": "ok",
+          "observations": 50,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Configured first-party scan returned no current-window material event."
+    },
+    {
+      "id": "arista",
+      "name": "Arista Networks",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://investors.arista.com/news-releases",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "dell",
+      "name": "Dell Technologies",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "dell"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "dell",
+          "status": "not-scanned",
+          "observations": 0,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "supermicro",
+      "name": "Supermicro",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://ir.supermicro.com/news-releases",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "huawei",
+      "name": "Huawei",
+      "layer": "compute-silicon",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.huawei.com/en/news",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 3,
+      "hits": [
+        {
+          "eventId": "evt-0e90c0647c7e02c019bf",
+          "title": "华为云联合瑞金医院发布瑞智病理大模型 RuiPath 2.0：7B 参数，覆盖 19 个常见癌种",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://www.ithome.com/0/996/195.htm"
+          ],
+          "publishedAt": [
+            "2026-08-30T09:12:57.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-2398a30df046438841df",
+          "title": "徐直军谈鸿蒙生态临界点：突破 1 亿用户就如同核裂变的\"临界质量\"或者飞机起飞的\"离地速度\"",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://www.ithome.com/0/996/155.htm"
+          ],
+          "publishedAt": [
+            "2026-08-30T07:14:06.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-7e6c48df8a1b8422675c",
+          "title": "网易云音乐海报现鸿蒙 HarmonyOS：九月，宜听歌",
+          "route": "rumor-watch",
+          "evidenceStatus": "reported",
+          "sourceTiers": [
+            "T3"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://www.ithome.com/0/996/126.htm"
+          ],
+          "publishedAt": [
+            "2026-08-30T06:31:52.000Z"
+          ]
+        }
+      ],
+      "result": "changed",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "equinix",
+      "name": "Equinix",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "equinix-ir"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "equinix-ir",
+          "status": "ok",
+          "observations": 6,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Configured first-party scan returned no current-window material event."
+    },
+    {
+      "id": "digital-realty",
+      "name": "Digital Realty",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "digital-realty"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "digital-realty",
+          "status": "not-scanned",
+          "observations": 0,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "vertiv",
+      "name": "Vertiv",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://investors.vertiv.com/news-releases",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "schneider-electric",
+      "name": "Schneider Electric",
+      "layer": "capacity-power",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.se.com/ww/en/about-us/newsroom/",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "eaton",
+      "name": "Eaton",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases.html",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "ge-vernova",
+      "name": "GE Vernova",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.gevernova.com/news",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "hut-8",
+      "name": "Hut 8",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "hut8"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "hut8",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Configured first-party scan returned no current-window material event."
+    },
+    {
+      "id": "terawulf",
+      "name": "TeraWulf",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "terawulf"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "terawulf",
+          "status": "not-scanned",
+          "observations": 0,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "galaxy-digital",
+      "name": "Galaxy Digital",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "galaxy"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [
+        {
+          "sourceId": "galaxy",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "sourceIds route only",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Configured first-party scan returned no current-window material event."
+    },
+    {
+      "id": "riot-platforms",
+      "name": "Riot Platforms",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.riotplatforms.com/news/",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "applied-digital",
+      "name": "Applied Digital",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://ir.applieddigital.com/news-releases",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 1,
+      "hits": [
+        {
+          "eventId": "evt-e57cee6af8873183cc37",
+          "title": "Applied Digital’s AI Buildout Pace Has Needham ‘Pleasantly Surprised’ After APLD Strikes $5.2B Deal With A Hyperscaler - Stocktwits",
+          "route": "hold",
+          "evidenceStatus": "lead",
+          "sourceTiers": [
+            "D"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://news.google.com/rss/articles/CBMiywFBVV95cUxPbW5kZFNsOG1Zd2FvY25OOGlteXJ3ZE15V1dnV0t4c0g4LXNuTzRaVVB4bTlaMFdSN0FUc0d0SEVxTm02RWh6bk50SWlIRzVwMmszaVgzenRFM3o3Q3NQYnZMQjR2U1B0X0dveTNnczQ5dmJZRl8zSDNXSVRXSmhxRDg5Q1NqQjlLSlZ6ckdsMnVqcVg2TXVOeWw2TF9pYWRnY1FGaFQwYzJrdm84MTFSUVJpQ2xyT0pxQ2Z1Y25zWGFTc1JNNUp3OWdNWQ?oc=5"
+          ],
+          "publishedAt": [
+            "2026-08-29T14:52:43.000Z"
+          ]
+        }
+      ],
+      "result": "changed",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    },
+    {
+      "id": "gds",
+      "name": "GDS Holdings",
+      "layer": "capacity-power",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://ir.gds-services.com/news-releases",
+        "method": "official newsroom/IR route recorded; exact issuer-period change not closed",
+        "accessState": "not-determined"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Current-window lead or incomplete issuer-specific first-party coverage; retained as not-determined unless a T0/T1 issuer/exchange record is opened."
+    }
+  ]
+}

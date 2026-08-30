@@ -27,9 +27,19 @@ const state = buildCoreCompanyWatchState([{
   summaryEn: "Model update",
   entities: ["DeepSeek"],
   lastUpdatedAt: "2026-08-12T12:00:00.000Z",
-}], "2026-08-12T12:30:00.000Z");
+}], "2026-08-12T12:30:00.000Z", null, [
+  { sourceId: "nvidia", status: "empty" },
+  { sourceId: "nvidia-developer", status: "not-modified" },
+]);
 assert.equal(state.companyCount, 50);
+assert.equal(state.schemaVersion, "atlas-core-company-watch.v2");
 assert.equal(state.companies.find((company) => company.id === "deepseek")?.eventsInLatestRun, 1);
+assert.equal(state.companies.find((company) => company.id === "deepseek")?.result, "changed");
+assert.equal(state.companies.find((company) => company.id === "deepseek")?.lastCheckedAt, null, "a discovery match must not masquerade as a company-source check");
 assert.equal(state.companies.find((company) => company.id === "nvidia")?.eventsInLatestRun, 0);
+assert.equal(state.companies.find((company) => company.id === "nvidia")?.result, "no-change");
+assert.equal(state.companies.find((company) => company.id === "nvidia")?.sourceCoverage.passingSourceIds.length, 2);
+assert.equal(state.companies.find((company) => company.id === "anthropic")?.result, "not-determined", "companies without registered sources require explicit manual evidence");
+assert.equal(state.companies.find((company) => company.id === "anthropic")?.lastCheckedAt, null);
 
 console.log(JSON.stringify({ message: "core company watchlist tests passed", companies: CORE_COMPANY_WATCHLIST.length, sourceFeeds: CORE_COMPANY_SOURCE_IDS.length }));

@@ -271,8 +271,10 @@ export async function normalizeObservation(
   const canonicalUrlHash = await sha256(canonicalUrl);
   const contentHash = await sha256(`${normalizedTitle}\n${normalizedSummary}`);
   const source = sourceFor(observation, sourceMap);
+  const externalId = observation.externalId?.trim() || null;
   return {
     ...observation,
+    externalId,
     id: `obs-${canonicalUrlHash.slice(0, 20)}`,
     canonicalUrl,
     normalizedTitle,

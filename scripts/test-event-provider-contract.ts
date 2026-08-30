@@ -7,9 +7,10 @@ assert.equal(recordedTranslationAdapter.translateSummary({ sourceLanguage: "zh-C
 assert.deepEqual(recordedTranslationAdapter.protectNumerics("NVIDIA 200 MW / 2 GW"), ["200mw", "2gw"]);
 assert.ok(recordedTranslationAdapter.protectEntities("NVIDIA deploys an AI GPU", ["NVIDIA"]).includes("NVIDIA"));
 
-assert.equal(validateBilingualPair({ titleZh: "NVIDIA 200MW", titleEn: "NVIDIA 200MW", summaryZh: "AI capacity 2GW in 2027", summaryEn: "AI capacity 2GW in 2027", entities: ["NVIDIA"] }).status, "pass");
-assert.equal(validateBilingualPair({ titleZh: "NVIDIA 200MW", titleEn: "NVIDIA 300MW", summaryZh: "AI capacity 2GW", summaryEn: "AI capacity 2GW", entities: ["NVIDIA"] }).status, "fail");
-assert.equal(validateBilingualPair({ titleZh: "NVIDIA 200MW", titleEn: "AMD 200MW", summaryZh: "AI capacity 2GW", summaryEn: "AI capacity 2GW", entities: ["NVIDIA"] }).status, "fail");
+assert.equal(validateBilingualPair({ titleZh: "NVIDIA 建设 200MW 园区", titleEn: "NVIDIA builds a 200MW campus", summaryZh: "AI 容量将在 2027 年达到 2GW", summaryEn: "AI capacity will reach 2GW in 2027", entities: ["NVIDIA"] }).status, "pass");
+assert.equal(validateBilingualPair({ titleZh: "NVIDIA 建设 200MW 园区", titleEn: "NVIDIA builds a 300MW campus", summaryZh: "AI 容量为 2GW", summaryEn: "AI capacity is 2GW", entities: ["NVIDIA"] }).status, "fail");
+assert.equal(validateBilingualPair({ titleZh: "NVIDIA 建设 200MW 园区", titleEn: "AMD builds a 200MW campus", summaryZh: "AI 容量为 2GW", summaryEn: "AI capacity is 2GW", entities: ["NVIDIA"] }).status, "fail");
+assert.equal(validateBilingualPair({ titleZh: "NVIDIA builds a 200MW campus", titleEn: "NVIDIA builds a 200MW campus", summaryZh: "AI capacity is 2GW", summaryEn: "AI capacity is 2GW", entities: ["NVIDIA"] }).status, "fail", "mirrored source-language copy must not pass as bilingual");
 const deterministic = await deterministicShadowProvider.analyze({ title: "title", summary: "summary" });
 assert.deepEqual(deterministic, { status: "deterministic", modelCalls: 0, estimatedUsd: 0 });
 console.log(JSON.stringify({ message: "Event provider contract tests passed", provider: deterministicShadowProvider.id, modelCalls: deterministic.modelCalls }));

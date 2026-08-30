@@ -93,6 +93,14 @@ export function validateBilingualPair(pair: BilingualPair): BilingualValidation 
   const entityTokensZh = entityTokens(zhText, expectedEntities);
   const entityTokensEn = entityTokens(enText, expectedEntities);
   const errors: string[] = [];
+  const containsHan = (value: string) => /[\u3400-\u9fff]/.test(value);
+  const normalizedCopy = (value: string) => value.normalize("NFKC").replace(/\s+/g, " ").trim().toLocaleLowerCase();
+  if (!containsHan(zhText)) errors.push("zh-copy-missing-han-text");
+  if (containsHan(enText)) errors.push("en-copy-contains-han-text");
+  if (normalizedCopy(pair.titleZh) === normalizedCopy(pair.titleEn)
+    || normalizedCopy(pair.summaryZh) === normalizedCopy(pair.summaryEn)) {
+    errors.push("mirrored-source-copy");
+  }
   if (numericTokensZh.join("|") !== numericTokensEn.join("|")) errors.push("numeric-or-unit-mismatch");
   if (timeTokensZh.filter((token) => /^20\d{2}|^q[1-4]/i.test(token)).join("|") !== timeTokensEn.filter((token) => /^20\d{2}|^q[1-4]/i.test(token)).join("|")) errors.push("time-token-mismatch");
   const stableExpectedEntities = (pair.entities ?? []).filter((entity) => /^(?:[A-Z][A-Z0-9.-]{1,}|OpenAI|Anthropic|Microsoft|Google|Amazon|Meta|Intel|Micron)$/.test(entity));

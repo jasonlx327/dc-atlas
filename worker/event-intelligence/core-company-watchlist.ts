@@ -88,7 +88,7 @@ export const CORE_COMPANY_SOURCE_IDS = [...new Set(CORE_COMPANY_WATCHLIST.flatMa
 export const CORE_COMPANY_WATCH_STATE_KEY = "event-intelligence:core-company-watch:latest";
 
 export type CoreCompanyWatchState = {
-  schemaVersion: "atlas-core-company-watch.v1";
+  schemaVersion: "atlas-core-company-watch.v2";
   generatedAt: string;
   companyCount: number;
   companies: Array<{
@@ -101,7 +101,14 @@ export type CoreCompanyWatchState = {
     latestEventId: string | null;
     latestEventTitle: string | null;
     latestEventAt: string | null;
-    lastCheckedAt: string;
+    lastCheckedAt: string | null;
+    sourceCoverage: {
+      expectedSourceIds: string[];
+      checkedSourceIds: string[];
+      passingSourceIds: string[];
+      failedSourceIds: string[];
+    };
+    result: "changed" | "no-change" | "not-determined";
   }>;
 };
 
@@ -115,10 +122,18 @@ type CompanyWatchEvent = {
   lastUpdatedAt: string;
 };
 
+type CompanySourceHealth = {
+  sourceId: string;
+  status: "ok" | "empty" | "not-modified" | "failed" | "blocked" | "parse-error";
+};
+
+const PASSING_SOURCE_STATES = new Set<CompanySourceHealth["status"]>(["ok", "empty", "not-modified"]);
+
 export function buildCoreCompanyWatchState(
   events: CompanyWatchEvent[],
   generatedAt: string,
   prior: CoreCompanyWatchState | null = null,
+  sourceHealth: CompanySourceHealth[] = [],
 ): CoreCompanyWatchState {
   const priorById = new Map((prior?.companies ?? []).map((company) => [company.id, company]));
   const matches = new Map<string, CompanyWatchEvent[]>();
@@ -133,13 +148,20 @@ export function buildCoreCompanyWatchState(
     for (const company of companies) matches.set(company.id, [...(matches.get(company.id) ?? []), event]);
   }
   return {
-    schemaVersion: "atlas-core-company-watch.v1",
+    schemaVersion: "atlas-core-company-watch.v2",
     generatedAt,
     companyCount: CORE_COMPANY_WATCHLIST.length,
     companies: CORE_COMPANY_WATCHLIST.map((company) => {
       const current = (matches.get(company.id) ?? []).sort((left, right) => Date.parse(right.lastUpdatedAt) - Date.parse(left.lastUpdatedAt));
       const latest = current[0];
       const previous = priorById.get(company.id);
+      const checked = sourceHealth.filter((source) => company.sourceIds.includes(source.sourceId));
+      const passing = checked.filter((source) => PASSING_SOURCE_STATES.has(source.status));
+      const failed = checked.filter((source) => !PASSING_SOURCE_STATES.has(source.status));
+      const allExpectedPassed = company.sourceIds.length > 0
+        && passing.length === company.sourceIds.length
+        && new Set(passing.map((source) => source.sourceId)).size === company.sourceIds.length;
+      const result = current.length > 0 ? "changed" : allExpectedPassed ? "no-change" : "not-determined";
       return {
         id: company.id,
         name: company.name,
@@ -150,7 +172,14 @@ export function buildCoreCompanyWatchState(
         latestEventId: latest?.id ?? previous?.latestEventId ?? null,
         latestEventTitle: latest?.titleZh ?? latest?.titleEn ?? previous?.latestEventTitle ?? null,
         latestEventAt: latest?.lastUpdatedAt ?? previous?.latestEventAt ?? null,
-        lastCheckedAt: generatedAt,
+        lastCheckedAt: checked.length > 0 ? generatedAt : null,
+        sourceCoverage: {
+          expectedSourceIds: company.sourceIds,
+          checkedSourceIds: [...new Set(checked.map((source) => source.sourceId))],
+          passingSourceIds: [...new Set(passing.map((source) => source.sourceId))],
+          failedSourceIds: [...new Set(failed.map((source) => source.sourceId))],
+        },
+        result,
       };
     }),
   };

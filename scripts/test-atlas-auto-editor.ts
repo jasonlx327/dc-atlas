@@ -122,6 +122,22 @@ const ordinaryWatchHold = item({
   sourceChain: [{ observationId: "obs-follow-up", sourceId: "media", tier: "T3", independenceGroup: "media", relationship: "origin", noveltyClass: "new-event", newFactCount: 0, title: "Media follow-up", url: "https://media.example/follow-up", accessStatus: "public", publishedAt: "2026-08-17T01:00:00.000Z" }],
   result: { ...formal.result, publicCopy: undefined },
 });
+const mirroredSourceCopy = item({
+  eventId: "event-mirrored-source-copy",
+  titleZh: "NVIDIA announces a 300MW AI data-center campus",
+  titleEn: "NVIDIA announces a 300MW AI data-center campus",
+  summaryZh: "The company disclosure provides 300MW of planned capacity.",
+  summaryEn: "The company disclosure provides 300MW of planned capacity.",
+  result: {
+    ...formal.result,
+    publicCopy: {
+      titleZh: "NVIDIA announces a 300MW AI data-center campus",
+      titleEn: "NVIDIA announces a 300MW AI data-center campus",
+      summaryZh: "The company disclosure provides 300MW of planned capacity.",
+      summaryEn: "The company disclosure provides 300MW of planned capacity.",
+    },
+  },
+});
 const releasedSoftware = item({
   eventId: "event-released-software",
   titleZh: "Google 发布开源 C++ 内容凭证库",
@@ -149,6 +165,9 @@ assert.notEqual(editorSectionFor(releasedSoftware), "capacity", "the word releas
 
 const watchOnlyDecision = buildAtlasEditorDecision(packet([ordinaryWatchHold]), Date.parse("2026-08-17T01:30:00.000Z"));
 assert.equal(watchOnlyDecision.status, "completed", "ordinary watch holds must not make the whole editor run partial");
+const mirroredCopyDecision = buildAtlasEditorDecision(packet([mirroredSourceCopy]), Date.parse("2026-08-17T01:30:00.000Z"));
+assert.equal(mirroredCopyDecision.decisions[0]?.action, "hold", "mirrored source-language copy must never reach a public adapter");
+assert.ok(mirroredCopyDecision.decisions[0]?.reasonCodes.includes("bilingual-copy-invalid-or-incomplete"));
 
 if (process.argv.includes("--packet")) {
   process.stdout.write(JSON.stringify(decision));

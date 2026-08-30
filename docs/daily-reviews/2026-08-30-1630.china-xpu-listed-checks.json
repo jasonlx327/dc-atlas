@@ -1,0 +1,302 @@
+{
+  "schemaVersion": "atlas-china-xpu-listed-checks.v1",
+  "runId": "atlas-2026-08-30-1630",
+  "cutoff": "2026-08-29T19:24:43+08:00",
+  "checkedAt": "2026-08-30T12:04:18.017Z",
+  "issuerCount": 7,
+  "counts": {
+    "not-determined": 7
+  },
+  "checks": [
+    {
+      "id": "cambricon",
+      "name": "寒武纪",
+      "ticker": "688256",
+      "exchange": "SSE",
+      "xpuScope": [
+        "AI accelerator",
+        "processor IP"
+      ],
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "sourceIds": [
+        "sse",
+        "cninfo"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "exchangeCoverage": [
+        {
+          "sourceId": "sse",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        },
+        {
+          "sourceId": "cninfo",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "result": "not-determined",
+      "eventsInWindow": 0,
+      "notes": "Broad exchange/feed endpoint was reachable, but no issuer-specific filing/IR text was opened and reconciled in this run; no-change is not inferred."
+    },
+    {
+      "id": "hygon",
+      "name": "海光信息",
+      "ticker": "688041",
+      "exchange": "SSE",
+      "xpuScope": [
+        "DCU",
+        "CPU"
+      ],
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "sourceIds": [
+        "sse",
+        "cninfo"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "exchangeCoverage": [
+        {
+          "sourceId": "sse",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        },
+        {
+          "sourceId": "cninfo",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "result": "not-determined",
+      "eventsInWindow": 0,
+      "notes": "Broad exchange/feed endpoint was reachable, but no issuer-specific filing/IR text was opened and reconciled in this run; no-change is not inferred."
+    },
+    {
+      "id": "loongson",
+      "name": "龙芯中科",
+      "ticker": "688047",
+      "exchange": "SSE",
+      "xpuScope": [
+        "CPU",
+        "processor ecosystem"
+      ],
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "sourceIds": [
+        "sse",
+        "cninfo"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "exchangeCoverage": [
+        {
+          "sourceId": "sse",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        },
+        {
+          "sourceId": "cninfo",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "result": "not-determined",
+      "eventsInWindow": 0,
+      "notes": "Broad exchange/feed endpoint was reachable, but no issuer-specific filing/IR text was opened and reconciled in this run; no-change is not inferred."
+    },
+    {
+      "id": "jingjia-micro",
+      "name": "景嘉微",
+      "ticker": "300474",
+      "exchange": "SZSE",
+      "xpuScope": [
+        "GPU",
+        "graphics and compute chips"
+      ],
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "sourceIds": [
+        "szse",
+        "cninfo"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "exchangeCoverage": [
+        {
+          "sourceId": "szse",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        },
+        {
+          "sourceId": "cninfo",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "result": "not-determined",
+      "eventsInWindow": 0,
+      "notes": "Broad exchange/feed endpoint was reachable, but no issuer-specific filing/IR text was opened and reconciled in this run; no-change is not inferred."
+    },
+    {
+      "id": "moore-threads",
+      "name": "摩尔线程",
+      "ticker": "688795",
+      "exchange": "SSE",
+      "xpuScope": [
+        "GPU",
+        "AI accelerator"
+      ],
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "sourceIds": [
+        "sse",
+        "cninfo"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "exchangeCoverage": [
+        {
+          "sourceId": "sse",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        },
+        {
+          "sourceId": "cninfo",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "result": "not-determined",
+      "eventsInWindow": 0,
+      "notes": "Broad exchange/feed endpoint was reachable, but no issuer-specific filing/IR text was opened and reconciled in this run; no-change is not inferred."
+    },
+    {
+      "id": "metax",
+      "name": "沐曦股份",
+      "ticker": "688802",
+      "exchange": "SSE",
+      "xpuScope": [
+        "GPU",
+        "AI accelerator"
+      ],
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "sourceIds": [
+        "sse",
+        "cninfo"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "exchangeCoverage": [
+        {
+          "sourceId": "sse",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        },
+        {
+          "sourceId": "cninfo",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "result": "not-determined",
+      "eventsInWindow": 0,
+      "notes": "Broad exchange/feed endpoint was reachable, but no issuer-specific filing/IR text was opened and reconciled in this run; no-change is not inferred."
+    },
+    {
+      "id": "biren",
+      "name": "壁仞科技",
+      "ticker": "6082",
+      "exchange": "HKEX",
+      "xpuScope": [
+        "GPGPU",
+        "AI accelerator"
+      ],
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "sourceIds": [
+        "hkex"
+      ],
+      "lastCheckedAt": "2026-08-30T12:04:18.017Z",
+      "exchangeCoverage": [
+        {
+          "sourceId": "hkex",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "result": "not-determined",
+      "eventsInWindow": 0,
+      "notes": "Broad exchange/feed endpoint was reachable, but no issuer-specific filing/IR text was opened and reconciled in this run; no-change is not inferred."
+    }
+  ],
+  "linkedListedCompaniesChecked": [
+    {
+      "id": "alibaba",
+      "name": "阿里巴巴",
+      "result": "not-determined",
+      "reason": "No event-specific XPU linkage requiring issuer routing was promoted; broad company watch coverage remains incomplete."
+    },
+    {
+      "id": "baidu",
+      "name": "百度",
+      "result": "not-determined",
+      "reason": "No event-specific XPU linkage requiring issuer routing was promoted; broad company watch coverage remains incomplete."
+    },
+    {
+      "id": "tencent",
+      "name": "腾讯",
+      "result": "not-determined",
+      "reason": "No event-specific XPU linkage requiring issuer routing was promoted; broad company watch coverage remains incomplete."
+    },
+    {
+      "id": "sugon",
+      "name": "中科曙光",
+      "result": "not-determined",
+      "reason": "No event-specific XPU linkage requiring issuer routing was promoted; broad company watch coverage remains incomplete."
+    },
+    {
+      "id": "inspur-information",
+      "name": "浪潮信息",
+      "result": "not-determined",
+      "reason": "No event-specific XPU linkage requiring issuer routing was promoted; broad company watch coverage remains incomplete."
+    },
+    {
+      "id": "lenovo",
+      "name": "联想集团",
+      "result": "not-determined",
+      "reason": "No event-specific XPU linkage requiring issuer routing was promoted; broad company watch coverage remains incomplete."
+    }
+  ]
+}
