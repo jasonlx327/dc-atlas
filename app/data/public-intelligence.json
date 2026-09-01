@@ -1,1 +1,120 @@
-[]
+[
+  {
+    "id": "editor-evt-8fab3ef561c3891d0d4c",
+    "title": "产业调查称 NVIDIA 重启 Rubin CPX，并改用 HBM4 与独立机架设计",
+    "titleEn": "Industry checks say NVIDIA has restarted Rubin CPX with HBM4 and a separate rack design",
+    "summary": "IT之家转述郭明錤的产业调查称，NVIDIA 已重启面向推理预填充的 Rubin CPX，计划采用 168GB HBM4、最高 2300W 单芯片功耗和独立 MGX ETL 机架，并以 2027 年第一季度开始生产为目标。NVIDIA 尚未确认重启、规格或量产时间，所有参数均按单一媒体来源保留。",
+    "summaryEn": "IT Home, citing Ming-Chi Kuo's industry checks, reports that NVIDIA has restarted the Rubin CPX prefill accelerator with 168GB of HBM4, up to 2,300W per chip and a separate MGX ETL rack, targeting production in the first quarter of 2027. NVIDIA has not confirmed the restart, specifications or timing, so every parameter remains attributed to one media source.",
+    "publishedAt": "2026-09-01T01:42:15.000Z",
+    "sourceName": "IT之家",
+    "sourceUrl": "https://www.ithome.com/0/996/759.htm",
+    "region": "全球",
+    "status": "reported",
+    "statusLabel": "媒体 · 单一来源",
+    "statusLabelEn": "Media · single source",
+    "sourceCount": 1,
+    "entities": [
+      "NVIDIA",
+      "Rubin CPX",
+      "Spectrum-6"
+    ],
+    "officialResponse": "当前状态为媒体报道；后续一手材料将用于升级状态，而不影响本条公开可见。",
+    "officialResponseEn": "The current state is media reporting; later primary material will upgrade the status without determining visibility.",
+    "sourceNote": "IT之家公开报道；主张按原始来源归属呈现。",
+    "sourceNoteEn": "Public reporting by IT之家; claims remain attributed to the original source."
+  },
+  {
+    "id": "editor-evt-de82d0a92e1b145a52fa",
+    "title": "CNBC 称 OpenAI 广告业务年化收入运行率达到 $1 billion",
+    "titleEn": "CNBC reports OpenAI's advertising business has reached a $1 billion annualized revenue run rate",
+    "summary": "CNBC 报道称，OpenAI 在 ChatGPT 推出广告后，广告业务已达到约 $1 billion 年化收入运行率。该数字是媒体所述运行率，不是已审计收入、全年确认收入或利润，也没有披露广告负载对应的 Token、推理成本或数据中心需求。",
+    "summaryEn": "CNBC reports that OpenAI's advertising business has reached roughly a $1 billion annualized revenue run rate after ads were introduced in ChatGPT. The figure is a reported run rate, not audited revenue, full-year recognized revenue or profit, and it does not disclose the associated token volume, inference cost or data-center demand.",
+    "publishedAt": "2026-08-31T16:33:46.000Z",
+    "sourceName": "CNBC Technology",
+    "sourceUrl": "https://www.cnbc.com/2026/08/31/open-ai-chatgpt-ads-revenue.html",
+    "region": "全球",
+    "status": "reported",
+    "statusLabel": "媒体 · 单一来源",
+    "statusLabelEn": "Media · single source",
+    "sourceCount": 1,
+    "entities": [
+      "OpenAI",
+      "ChatGPT"
+    ],
+    "officialResponse": "当前状态为媒体报道；后续一手材料将用于升级状态，而不影响本条公开可见。",
+    "officialResponseEn": "The current state is media reporting; later primary material will upgrade the status without determining visibility.",
+    "sourceNote": "CNBC Technology公开报道；主张按原始来源归属呈现。",
+    "sourceNoteEn": "Public reporting by CNBC Technology; claims remain attributed to the original source."
+  },
+  {
+    "id": "editor-evt-437c54e1c9d45acf4472",
+    "title": "报道称长鑫存储（CXMT）启动 HBM3E 风险试产，量产时间仍待确认",
+    "titleEn": "Report says CXMT has begun HBM3E risk production; volume timing remains unconfirmed",
+    "summary": "IT之家转述 The Information 称，长鑫存储（CXMT）已开始 HBM3E 风险试产，当前规模仍很有限，并可能在数周内转向大规模量产；报道还称公司计划把年底 DRAM 制造能力提高到每月 35 万片晶圆。CXMT 未公开确认 HBM3E 规格、良率、客户验证、月产分配或量产时间，35 万片也不是 HBM3E 专属产能。",
+    "summaryEn": "IT Home, citing The Information, reports that CXMT has begun limited HBM3E risk production and could move toward volume output within weeks. The report also says CXMT plans to raise total DRAM manufacturing capacity to 350,000 wafers per month by year-end. CXMT has not confirmed HBM3E specifications, yield, customer qualification, allocation or volume timing, and the 350,000 figure is not HBM3E-only capacity.",
+    "publishedAt": "2026-08-31T14:57:39.000Z",
+    "sourceName": "IT之家",
+    "sourceUrl": "https://www.ithome.com/0/996/670.htm",
+    "region": "中国",
+    "status": "reported",
+    "statusLabel": "媒体 · 单一来源",
+    "statusLabelEn": "Media · single source",
+    "sourceCount": 1,
+    "entities": [
+      "CXMT",
+      "长鑫存储",
+      "HBM3E"
+    ],
+    "officialResponse": "当前状态为媒体报道；后续一手材料将用于升级状态，而不影响本条公开可见。",
+    "officialResponseEn": "The current state is media reporting; later primary material will upgrade the status without determining visibility.",
+    "sourceNote": "IT之家公开报道；主张按原始来源归属呈现。",
+    "sourceNoteEn": "Public reporting by IT之家; claims remain attributed to the original source."
+  },
+  {
+    "id": "editor-evt-40f0b321ada2f10817c7",
+    "title": "Oklo 就 PJM 移除 750MW 混合电源项目向 FERC 提起紧急申诉",
+    "titleEn": "Oklo files an emergency FERC complaint after PJM removes a 750MW hybrid project from study",
+    "summary": "Utility Dive 报道，Oklo 要求 FERC 命令 PJM 恢复一个 750MW 混合电源项目的原排队位置；项目由 150MW 先进核电、300MW 燃料电池和 300MW 燃气发电组成。PJM 据报因低电压穿越等材料问题将其移出研究周期；项目身份及其与 Meta 相关园区的关系尚未在申诉中公开确认。",
+    "summaryEn": "Utility Dive reports that Oklo asked FERC to restore a 750MW hybrid project to its original PJM study position. The proposal combines 150MW of advanced nuclear, 300MW of fuel cells and 300MW of gas generation. PJM reportedly removed it over application issues including low-voltage ride-through information. The complaint does not publicly identify the project or confirm its relationship to a Meta-backed campus.",
+    "publishedAt": "2026-08-31T13:20:51.000Z",
+    "sourceName": "Utility Dive",
+    "sourceUrl": "https://www.utilitydive.com/news/pjm-oklo-advanced-nuclear-ferc-interconnection/829150/",
+    "region": "美国",
+    "status": "reported",
+    "statusLabel": "媒体 · 单一来源",
+    "statusLabelEn": "Media · single source",
+    "sourceCount": 1,
+    "entities": [
+      "Oklo",
+      "PJM",
+      "FERC",
+      "Meta"
+    ],
+    "officialResponse": "当前状态为媒体报道；后续一手材料将用于升级状态，而不影响本条公开可见。",
+    "officialResponseEn": "The current state is media reporting; later primary material will upgrade the status without determining visibility.",
+    "sourceNote": "Utility Dive公开报道；主张按原始来源归属呈现。",
+    "sourceNoteEn": "Public reporting by Utility Dive; claims remain attributed to the original source."
+  },
+  {
+    "id": "editor-evt-3a2b91269216df5c4bef",
+    "title": "报道称 OpenAI 正组建内部能源团队，将电力采购纳入核心战略",
+    "titleEn": "Report says OpenAI is building an internal energy desk as power becomes a core strategy",
+    "summary": "Capacity 报道称，OpenAI 正招聘电力交易与清洁能源人才，把能源采购从配套职能提升为算力扩张的内部能力。OpenAI 的公开招聘页面显示其算力战略岗位覆盖能源采购、地产、托管、云、芯片和基础设施融资，但公司尚未正式披露团队规模、交易权限或已签合同。",
+    "summaryEn": "Capacity reports that OpenAI is hiring power-trading and clean-energy specialists, moving energy procurement into its internal compute-expansion capability. OpenAI's public compute-strategy roles cover energy, real estate, colocation, cloud, silicon and infrastructure finance, but the company has not formally disclosed the desk's size, trading mandate or signed contracts.",
+    "publishedAt": "2026-08-31T06:19:00.000Z",
+    "sourceName": "Capacity Media",
+    "sourceUrl": "https://capacityglobal.com/news/openai-builds-an-energy-desk-to-power-its-ai-empire/",
+    "region": "全球",
+    "status": "reported",
+    "statusLabel": "媒体 · 单一来源",
+    "statusLabelEn": "Media · single source",
+    "sourceCount": 1,
+    "entities": [
+      "OpenAI"
+    ],
+    "officialResponse": "当前状态为媒体报道；后续一手材料将用于升级状态，而不影响本条公开可见。",
+    "officialResponseEn": "The current state is media reporting; later primary material will upgrade the status without determining visibility.",
+    "sourceNote": "Capacity Media公开报道；主张按原始来源归属呈现。",
+    "sourceNoteEn": "Public reporting by Capacity Media; claims remain attributed to the original source."
+  }
+]

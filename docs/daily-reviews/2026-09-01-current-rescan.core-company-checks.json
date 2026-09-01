@@ -1,0 +1,1477 @@
+{
+  "schemaVersion": "atlas-core-company-checks.v1",
+  "generatedAt": "2026-09-01T01:52:14.002Z",
+  "cutoffAt": "2026-09-01T01:30:00.000Z",
+  "companyCount": 50,
+  "summary": {
+    "checked": 50,
+    "changed": 4,
+    "noChange": 28,
+    "notDetermined": 18,
+    "formalPrimaryHits": 4
+  },
+  "companies": [
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "microsoft",
+        "azure-blog"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "microsoft",
+          "status": "ok",
+          "observations": 10,
+          "error": null
+        },
+        {
+          "sourceId": "azure-blog",
+          "status": "ok",
+          "observations": 10,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "aws-news"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "aws-news",
+          "status": "ok",
+          "observations": 100,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "alphabet",
+      "name": "Alphabet",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "google-cloud",
+        "google-ai-blog",
+        "google-developers"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "google-cloud",
+          "status": "empty",
+          "observations": 0,
+          "error": null
+        },
+        {
+          "sourceId": "google-ai-blog",
+          "status": "ok",
+          "observations": 20,
+          "error": null
+        },
+        {
+          "sourceId": "google-developers",
+          "status": "ok",
+          "observations": 20,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "meta",
+        "meta-engineering"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "meta",
+          "status": "ok",
+          "observations": 10,
+          "error": null
+        },
+        {
+          "sourceId": "meta-engineering",
+          "status": "ok",
+          "observations": 9,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "oracle"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "oracle",
+          "status": "not-scanned",
+          "observations": 0,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "openai-news"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "openai-news",
+          "status": "ok",
+          "observations": 1158,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 1,
+      "hits": [
+        {
+          "eventId": "evt-3a2b91269216df5c4bef",
+          "title": "Capacity reports that OpenAI is building an internal energy desk",
+          "route": "formal",
+          "evidenceStatus": "officially_confirmed",
+          "sourceTiers": [
+            "T3"
+          ],
+          "primarySource": true,
+          "sourceRefs": [
+            "https://capacityglobal.com/news/openai-builds-an-energy-desk-to-power-its-ai-empire/"
+          ],
+          "publishedAt": [
+            "2026-08-31T06:19:00.000Z"
+          ]
+        }
+      ],
+      "result": "changed",
+      "formalPrimaryHit": true,
+      "notes": "Current run found a material event or state change; publication routing is recorded in the release manifest."
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.anthropic.com/news",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "xai",
+      "name": "xAI",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "xai-news"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "xai-news",
+          "status": "blocked",
+          "observations": 0,
+          "error": "HTTP 403"
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "coreweave",
+      "name": "CoreWeave",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "coreweave"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "coreweave",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "alibaba",
+      "name": "Alibaba",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.alibabagroup.com/zh-HK/document-2029365886510432256",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 2,
+      "hits": [
+        {
+          "eventId": "evt-764d220a8c78b812adec",
+          "title": "Fierce Network reports that Alibaba Cloud launched its first Brazil cloud region",
+          "route": "formal",
+          "evidenceStatus": "officially_confirmed",
+          "sourceTiers": [
+            "T3"
+          ],
+          "primarySource": true,
+          "sourceRefs": [
+            "https://www.fierce-network.com/newswire/alibaba-cloud-launches-first-cloud-region-brazil"
+          ],
+          "publishedAt": [
+            "2026-08-28T15:14:00.000Z"
+          ]
+        },
+        {
+          "eventId": "evt-764d220a8c78b812adec",
+          "title": "Alibaba Cloud launches first cloud region in Brazil",
+          "route": "rumor-watch",
+          "evidenceStatus": "reported",
+          "sourceTiers": [
+            "T3"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://www.fierce-network.com/newswire/alibaba-cloud-launches-first-cloud-region-brazil"
+          ],
+          "publishedAt": []
+        }
+      ],
+      "result": "changed",
+      "formalPrimaryHit": true,
+      "notes": "Current run found a material event or state change; publication routing is recorded in the release manifest."
+    },
+    {
+      "id": "tencent",
+      "name": "Tencent",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.tencent.com/en-us/updates.html",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "not-determined",
+        "httpStatus": 404,
+        "error": "HTTP 404"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "bytedance",
+      "name": "ByteDance",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.bytedance.com/en/news",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "apple-newsroom"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "apple-newsroom",
+          "status": "ok",
+          "observations": 20,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "tesla",
+      "name": "Tesla",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://ir.tesla.com/press",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "blocked",
+        "httpStatus": 403,
+        "error": "HTTP 403"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "palantir",
+      "name": "Palantir",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://investors.palantir.com/news",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://investor.salesforce.com/press-releases/",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "blocked",
+        "httpStatus": 403,
+        "error": "HTTP 403"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "servicenow",
+      "name": "ServiceNow",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.servicenow.com/company/media/press-room.html",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "blocked",
+        "httpStatus": 403,
+        "error": "HTTP 403"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "snowflake",
+      "name": "Snowflake",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.snowflake.com/en/news/",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "cloudflare-blog"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "cloudflare-blog",
+          "status": "ok",
+          "observations": 20,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "baidu",
+      "name": "Baidu",
+      "layer": "model-application",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://ir.baidu.com/news-releases",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "layer": "model-application",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.deepseek.com/",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "layer": "model-application",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://mistral.ai/news",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.perplexity.ai/hub/blog",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "blocked",
+        "httpStatus": 403,
+        "error": "HTTP 403"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "asml",
+      "name": "ASML",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.asml.com/en/news/stories",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "applied-materials",
+      "name": "Applied Materials",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://ir.appliedmaterials.com/news-releases",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "lam-research",
+      "name": "Lam Research",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://investor.lamresearch.com/2026-08-26-Lam-Research-Breaks-Ground-on-New-Oregon-Lab-to-Accelerate-AI-Era-Semiconductor-Research-Development-Locally,-Globally",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "nvidia",
+        "nvidia-developer"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "nvidia",
+          "status": "ok",
+          "observations": 20,
+          "error": null
+        },
+        {
+          "sourceId": "nvidia-developer",
+          "status": "ok",
+          "observations": 100,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 2,
+      "hits": [
+        {
+          "eventId": "nvidia-mediatek-nvlink-fusion-2026",
+          "title": "NVIDIA invests $3.5B in MediaTek convertible bonds and expands NVLink Fusion collaboration",
+          "route": "formal",
+          "evidenceStatus": "officially_confirmed",
+          "sourceTiers": [
+            "T1"
+          ],
+          "primarySource": true,
+          "sourceRefs": [
+            "https://nvidianews.nvidia.com/news/nvidia-and-mediatek-deepen-long-standing-partnership-to-build-ai-edge-to-cloud-computing-platforms"
+          ],
+          "publishedAt": [
+            "2026-08-31T00:00:00-07:00"
+          ]
+        },
+        {
+          "eventId": "evt-8fab3ef561c3891d0d4c",
+          "title": "消息称英伟达重启推理预填充优化芯片 Rubin CPX 项目，设计大幅调整",
+          "route": "rumor-watch",
+          "evidenceStatus": "reported",
+          "sourceTiers": [
+            "T3"
+          ],
+          "primarySource": false,
+          "sourceRefs": [
+            "https://www.ithome.com/0/996/759.htm"
+          ],
+          "publishedAt": [
+            "2026-09-01T01:42:15.000Z"
+          ]
+        }
+      ],
+      "result": "changed",
+      "formalPrimaryHit": true,
+      "notes": "Current run found a material event or state change; publication routing is recorded in the release manifest."
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "amd"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "amd",
+          "status": "ok",
+          "observations": 10,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 1,
+      "hits": [
+        {
+          "eventId": "amd-cisco-humain-mi355x-live-2026",
+          "title": "AMD, Cisco and HUMAIN put MI355X production compute live in Saudi Arabia",
+          "route": "formal",
+          "evidenceStatus": "officially_confirmed",
+          "sourceTiers": [
+            "T1"
+          ],
+          "primarySource": true,
+          "sourceRefs": [
+            "https://newsroom.amd.com/news/amd-cisco-humain-expand-saudi-arabia-ai-infrastructure/"
+          ],
+          "publishedAt": [
+            "2026-08-31T00:00:00-07:00"
+          ]
+        }
+      ],
+      "result": "changed",
+      "formalPrimaryHit": true,
+      "notes": "Current run found a material event or state change; publication routing is recorded in the release manifest."
+    },
+    {
+      "id": "broadcom",
+      "name": "Broadcom",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://investors.broadcom.com/news-releases",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "not-determined",
+        "httpStatus": 404,
+        "error": "HTTP 404"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "marvell",
+      "name": "Marvell",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://investor.marvell.com/sec-filings/all-sec-filings/content/0001835632-26-000025/mrvl-20260801.htm",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "tsmc",
+      "name": "TSMC",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://pr.tsmc.com/english/news",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "blocked",
+        "httpStatus": 403,
+        "error": "HTTP 403"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "sk-hynix",
+      "name": "SK hynix",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [
+        "sk-hynix-newsroom"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "sk-hynix-newsroom",
+          "status": "ok",
+          "observations": 10,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "micron",
+      "name": "Micron",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://investors.micron.com/news-releases",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "not-determined",
+        "httpStatus": 404,
+        "error": "HTTP 404"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung Electronics",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [
+        "samsung-global-newsroom"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "samsung-global-newsroom",
+          "status": "ok",
+          "observations": 50,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "arista",
+      "name": "Arista Networks",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://investors.arista.com/news-releases",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "not-determined",
+        "httpStatus": 404,
+        "error": "HTTP 404"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "dell",
+      "name": "Dell Technologies",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "dell"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "dell",
+          "status": "not-scanned",
+          "observations": 0,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "supermicro",
+      "name": "Supermicro",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://ir.supermicro.com/news-releases",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "not-determined",
+        "httpStatus": 404,
+        "error": "HTTP 404"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "huawei",
+      "name": "Huawei",
+      "layer": "compute-silicon",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.huawei.com/en/news",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "equinix",
+      "name": "Equinix",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "equinix-ir"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "equinix-ir",
+          "status": "ok",
+          "observations": 6,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "digital-realty",
+      "name": "Digital Realty",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "digital-realty"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "digital-realty",
+          "status": "not-scanned",
+          "observations": 0,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "vertiv",
+      "name": "Vertiv",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://investors.vertiv.com/news-releases",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "not-determined",
+        "httpStatus": 404,
+        "error": "HTTP 404"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "schneider-electric",
+      "name": "Schneider Electric",
+      "layer": "capacity-power",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.se.com/ww/en/about-us/newsroom/",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "eaton",
+      "name": "Eaton",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases.html",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "ge-vernova",
+      "name": "GE Vernova",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.gevernova.com/news",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "hut-8",
+      "name": "Hut 8",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "hut8"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "hut8",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "terawulf",
+      "name": "TeraWulf",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "terawulf"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "terawulf",
+          "status": "not-scanned",
+          "observations": 0,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "galaxy-digital",
+      "name": "Galaxy Digital",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "galaxy"
+      ],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [
+        {
+          "sourceId": "galaxy",
+          "status": "ok",
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "officialCoverage": {
+        "url": null,
+        "method": "configured first-party source route checked in current global scan",
+        "accessState": "not-applicable"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "riot-platforms",
+      "name": "Riot Platforms",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://www.riotplatforms.com/news/",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "not-determined",
+        "httpStatus": 404,
+        "error": "HTTP 404"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    },
+    {
+      "id": "applied-digital",
+      "name": "Applied Digital",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://ir.applieddigital.com/news-releases",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "public",
+        "httpStatus": 200,
+        "error": null
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "no-change",
+      "formalPrimaryHit": false,
+      "notes": "Current official route completed with no material change in scope."
+    },
+    {
+      "id": "gds",
+      "name": "GDS Holdings",
+      "layer": "capacity-power",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-01T01:52:14.002Z",
+      "coverage": [],
+      "officialCoverage": {
+        "url": "https://ir.gds-services.com/news-releases",
+        "method": "official newsroom/IR route fetched in current run",
+        "accessState": "not-determined",
+        "httpStatus": null,
+        "error": "TypeError: fetch failed"
+      },
+      "eventsInWindow": 0,
+      "hits": [],
+      "result": "not-determined",
+      "formalPrimaryHit": false,
+      "notes": "Official route was attempted but did not support a verified no-change conclusion; retained as not-determined."
+    }
+  ]
+}

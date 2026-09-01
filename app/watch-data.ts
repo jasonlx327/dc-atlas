@@ -45,6 +45,27 @@ export type RumorWatchItem = {
 
 export const POLICY_BRIEFS: PolicyIndexRecord[] = [
   {
+    id: "us-bulk-power-supply-chain-emergency-2026",
+    jurisdiction: "US",
+    title: "美国就大电网设备供应链风险宣布国家紧急状态",
+    titleEn: "U.S. declares a national emergency over bulk-power equipment supply-chain risks",
+    scope: "69kV 及以上输电系统、变压器、逆变器、储能、UPS、发电设备及相关软件与远程访问",
+    scopeEn: "Transmission at 69kV and above, transformers, inverters, storage, UPS, generation equipment, software and remote access",
+    status: "行政令已签署 · 能源部实施规则待发布",
+    statusEn: "Executive order signed · Energy Department implementation rules pending",
+    publishedAt: "2026-08-31T00:00:00-04:00",
+    effectiveLabel: "2026年8月26日签署；能源部按风险认定实施，120日内可发布配套规则",
+    effectiveLabelEn: "Signed August 26, 2026; Energy Department risk determinations apply, with implementing rules possible within 120 days",
+    sourceName: "Federal Register / Executive Order 14421",
+    sourceUrl: "https://www.federalregister.gov/documents/2026/08/31/2026-17843/declaring-a-national-emergency-to-secure-the-united-states-bulk-power-system",
+    summary: "第14421号行政令授权能源部禁止或附条件处理涉及受覆盖外国实体控制、且被认定构成不可接受风险的外国制造大电网设备交易，并可要求识别、隔离、监测或替换既有高风险设备。范围包括变压器、并网逆变器、储能、关键基础设施 UPS、发电机、涡轮、控制系统及相关软件和远程访问。",
+    summaryEn: "Executive Order 14421 authorizes the Energy Department to prohibit or condition transactions involving foreign-produced bulk-power equipment tied to covered foreign entities when the department determines that the transaction presents an unacceptable risk. It can also require identification, isolation, monitoring or replacement of existing high-risk equipment, including transformers, grid-connected inverters, storage, critical-infrastructure UPS, generators, turbines, control systems, software and remote access.",
+    impact: "数据中心项目的电网侧和关键供电设备采购将面临更强的来源、软件、维护和远程访问审查，但行政令不是对所有外国设备的自动全面禁令；具体供应商、设备与豁免仍取决于能源部认定和后续规则。",
+    impactEn: "Data-center grid and critical-power procurement faces stronger scrutiny of origin, software, maintenance and remote access. The order is not an automatic blanket ban on all foreign equipment; affected vendors, products and exemptions depend on Energy Department determinations and later rules.",
+    affected: "美国数据中心开发商、公用事业、EPC、变压器与 UPS/储能/控制系统供应商",
+    affectedEn: "U.S. data-center developers, utilities, EPCs and suppliers of transformers, UPS, storage and control systems",
+  },
+  {
     id: "us-texas-data-center-audit-2026",
     jurisdiction: "US",
     title: "得州要求数据中心项目通过全面并网审计",

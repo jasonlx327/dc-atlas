@@ -44,7 +44,7 @@ function formatDate(value: string | null | undefined, lang: "zh" | "en") {
 }
 
 function hasOfficialResponse(item: RumorWatchItem): boolean {
-  return !/未找到|未披露|没有|no (?:complete |corresponding )?public|not (?:found|disclosed)|has not/i.test(`${item.officialResponse} ${item.officialResponseEn}`);
+  return !/当前状态为媒体报道|未找到|未披露|没有|current state is media reporting|no (?:complete |corresponding )?public|not (?:found|disclosed)|has not/i.test(`${item.officialResponse} ${item.officialResponseEn}`);
 }
 
 function WatchIndex({ lang, kind, initialPayload = null }: Props) {

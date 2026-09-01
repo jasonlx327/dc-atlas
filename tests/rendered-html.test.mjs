@@ -156,6 +156,9 @@ test("redirects the retired policy index and publishes bilingual Global Intellig
   assert.match(rumorsHtml, /Amazon据报确认在得州Pecos County推进配套现场发电的数据中心项目/);
   assert.match(rumorsHtml, /Hut 8未披露的得州租户/);
   assert.match(rumorsHtml, /公开回应/);
+  const rubinCardStart = rumorsHtml.indexOf('<h2><a href="/rumors/editor-evt-8fab3ef561c3891d0d4c">');
+  assert.ok(rubinCardStart >= 0);
+  assert.match(rumorsHtml.slice(rubinCardStart, rubinCardStart + 5000), /<li class=""><span>2<\/span>官方回应<\/li>/);
   assert.doesNotMatch(rumorsHtml, /得州据报暂停不符合新要求的数据中心并网审批/);
 
   const english = await render("/en/rumors");
@@ -911,7 +914,7 @@ test("keeps live-data validation in the deployment path", async () => {
   assert.match(liveCheck, /newsStatus !== "ok"/);
   for (const section of ["idcPulse", "listedCompanyNews", "mnaDeals", "capacityRadar", "coolingProgress"]) assert.match(liveCheck, new RegExp(section));
   assert.match(liveCheck, /freshness\.status === "stale"/);
-  assert.match(workerSource, /CONTENT_REVIEWED_AT = "2026-08-30"/);
+  assert.match(workerSource, /CONTENT_REVIEWED_AT = "2026-09-01"/);
   assert.match(workerSource, /Riot 在 Rockdale 签署 191MW 关键 IT 容量长期租约/);
   assert.match(workerSource, /1\.25GW 电力基础设施 · 非运行 IT 容量/);
   assert.match(workerSource, /目标动员逾 \$5,000 亿第三方资本/);
