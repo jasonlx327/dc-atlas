@@ -8,9 +8,9 @@
 
 ## Section decisions
 
-Publish: IDC Pulse, listed companies, M&A, capacity, compute products, China GPU, supply chain, power/model demand, Global Intelligence and policy.
+Publish: IDC Pulse, listed companies, M&A, capacity, compute products, supply chain, power/model demand, Global Intelligence and policy.
 
-No change: cooling, earnings calendar and columns. The MiniMax/Z.ai research published earlier remains current and is not duplicated.
+No change: cooling, China GPU formal records, earnings calendar and columns. The CXMT HBM3E report remains attributed Global Intelligence, while the MiniMax/Z.ai research published earlier remains current and is not duplicated.
 
 ## Evidence boundaries
 
@@ -18,4 +18,4 @@ The AMD/HUMAIN live-compute milestone, Alibaba Brazil region, NVIDIA/MediaTek tr
 
 ## Release state
 
-Versioned writes are complete. Validation, selective commit, same-HEAD Cloudflare/Sites deployment and production readback are pending.
+Published from commit `ffde3b39d88e1355dcffd330cb6fab9d1041f325` to Cloudflare version `268cc31a-b08c-4780-8fa2-278a16bb4d7a` and Sites version `142`. Both deployments use the same commit. Formal-domain bilingual pages and record IDs returned 200; the Sites mirror returned its expected 308 canonical redirect and followed to a 200 formal-domain response. The production API returned all five new Global Intelligence records in the top six after the public-feed cache version was refreshed.
