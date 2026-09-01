@@ -3704,7 +3704,6 @@ function compactHomepageAtlasPayload(payload: Record<string, unknown>, language:
     factChangedAt: payload.factChangedAt,
     researchPublishedAt: payload.researchPublishedAt,
     briefPublishedAt: payload.briefPublishedAt,
-    dailyBrief: payload.dailyBrief,
     sourceCount: payload.sourceCount ?? sourceCount,
     verifiedCount: payload.verifiedCount ?? coreRecords.length,
     // Keep the server-rendered homepage payload below the reliable 3.5 KB
