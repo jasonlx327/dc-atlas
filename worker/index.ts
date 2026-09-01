@@ -3295,31 +3295,35 @@ function selectedCoreRumors(packet: AtlasEditorDecisionPacket | null): RumorWatc
 }
 
 function rumorWatch(news: NewsItem[], packet: AtlasEditorDecisionPacket | null = null): RumorWatchItem[] {
-  const mediaSource = /reuters|bloomberg|marketwatch|cnbc|financial times|the information|wall street journal/i;
+  const mediaSource = /reuters|bloomberg|marketwatch|cnbc|financial times|the information|wall street journal|data center dynamics|utility dive|techcrunch|the register|datacenter knowledge|light reading/i;
   const rumorLanguage = /rumou?r|report(?:ed|s)?|sources?|plans?|consider(?:s|ing)?|expects?|may |could |in talks|据称|消息人士|传闻|拟|考虑|计划|或将/i;
   const orderSignal = /order|contract|lease|supply|procurement|deployment|shipment|delivery|客户|订单|合同|租约|供货|采购|交付|出货|中标/i;
   const liveCandidates = news
-    .filter((item) => mediaSource.test(item.sourceName ?? "") && rumorLanguage.test(`${item.title} ${item.summary}`))
+    .filter((item) => mediaSource.test(item.sourceName ?? "")
+      && rumorLanguage.test(`${item.title} ${item.summary}`)
+      && Boolean(item.sourceUrl ?? item.permalink)
+      && Boolean(item.titleEn?.trim() && item.summaryEn?.trim())
+      && !/[\u3400-\u9fff]/.test(`${item.titleEn} ${item.summaryEn}`))
     .sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime())
     .map((item): RumorWatchItem => ({
       id: item.id,
       title: item.title,
-      titleEn: item.title,
+      titleEn: item.titleEn!,
       summary: item.summary,
-      summaryEn: item.summary,
+      summaryEn: item.summaryEn!,
       publishedAt: item.publishedAt ?? new Date().toISOString(),
       sourceName: item.sourceName ?? "公开媒体",
       sourceUrl: item.sourceUrl ?? item.permalink,
       region: item.region === "中国" || item.region === "美国" ? item.region : "全球",
       status: "reported",
-      statusLabel: "媒体报道 · 尚待完整确认",
-      statusLabelEn: "Media report · not fully confirmed",
+      statusLabel: "媒体 · 单一来源",
+      statusLabelEn: "Media · single source",
       sourceCount: 1,
       entities: [],
       officialResponse: "当前公开资料中未找到完整的公司或监管方确认。",
       officialResponseEn: "No complete company or regulatory confirmation was found in the public record.",
-      sourceNote: "动态抓取的媒体线索；请通过原始报道核对具体措辞与时间。",
-      sourceNoteEn: "Dynamically discovered media lead; use the original report to verify wording and timing.",
+      sourceNote: "公开媒体报道；主张按原始报道归属呈现，并持续跟踪后续状态变化。",
+      sourceNoteEn: "Public media reporting; claims remain attributed to the original report while subsequent status changes are tracked.",
     }));
   const seen = new Set<string>();
   return [...selectedCoreRumors(packet), ...RUMOR_BRIEFS, ...liveCandidates]
@@ -3528,8 +3532,8 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
     rumors,
     rumorStatus: rumors.length ? "live" : "not-yet-published",
     rumorNote: rumors.length
-      ? "公开媒体报道与官方披露分开显示；条目不等同于已核验事实。"
-      : "当前没有符合来源与线索过滤条件的公开条目；Rumor Watch 不回填未经核验的内容。",
+      ? "重要媒体情报默认公开并标注来源层级；后续一手披露用于升级状态。"
+      : "当前没有达到公开归因与双语门槛的新情报。",
     policyIndex: policyIndex(),
     policyStatus: "policy-briefs",
     positiveNews,

@@ -143,7 +143,7 @@ function publicClaims(item: DailyMaterialSelectionItem, copy: AtlasEditorPublicC
 }
 
 function decisionFor(item: DailyMaterialSelectionItem): AtlasEditorDecision {
-  const section = editorSectionFor(item);
+  const topicSection = editorSectionFor(item);
   const tier = strongestTier(item.sourceTiers);
   const sources = accessibleSources(item);
   const urls = [...new Set(sources.map((source) => source.url))];
@@ -155,7 +155,7 @@ function decisionFor(item: DailyMaterialSelectionItem): AtlasEditorDecision {
   const fallbackScored = item.result.provider === "deterministic-fallback";
   const common = (canonicalSources: typeof sources, canonicalUrls: string[]) => ({
     eventId: item.eventId,
-    section,
+    section: topicSection,
     sourceTier: tier,
     evidenceStatus: item.evidenceStatus,
     canonicalUrls,
@@ -171,7 +171,7 @@ function decisionFor(item: DailyMaterialSelectionItem): AtlasEditorDecision {
     && (item.publicationReadiness === "eligible-by-rules" || item.priorityScore >= 30)
     && (item.evidenceStatus === "officially_confirmed" || item.evidenceStatus === "official_response")
     && primaryUrls.length > 0;
-  if (formalEvidence && FORMAL_ADAPTER_SECTIONS.has(section) && copy) {
+  if (formalEvidence && FORMAL_ADAPTER_SECTIONS.has(topicSection) && copy) {
     return {
       ...common(primarySources, primaryUrls),
       action: "publish",
@@ -182,23 +182,32 @@ function decisionFor(item: DailyMaterialSelectionItem): AtlasEditorDecision {
       internalNotes: [],
     };
   }
-  const rumorEvidence = section === "rumors"
-    && (tier === "T2" || tier === "T3")
+  const reportingGroupCount = new Set(reportingSources.map((source) => source.independenceGroup)).size;
+  const rumorEvidence = reportingUrls.length > 0
     && (item.band === "selected" || item.band === "watch")
-    && item.evidenceStatus !== "lead"
-    && reportingUrls.length > 0;
+    && item.evidenceStatus !== "lead";
   if (rumorEvidence && copy) {
     return {
       ...common(reportingSources, reportingUrls),
+      section: "rumors",
+      sourceTier: strongestTier(reportingSources.map((source) => source.tier)),
       action: "publish",
       route: "rumor-watch",
-      reasonCodes: unique([...item.result.reasonCodes, ...(fallbackScored ? ["model-scoring-fallback"] : []), "attributable-media-report", "bilingual-copy-valid"]),
+      reasonCodes: unique([
+        ...item.result.reasonCodes,
+        ...(fallbackScored ? ["model-scoring-fallback"] : []),
+        "attributable-media-report",
+        reportingGroupCount >= 2 ? "multi-source-report" : "single-source-report",
+        `topic-section:${topicSection}`,
+        "bilingual-copy-valid",
+        "public-adapter-ready",
+      ]),
       publicCopy: copy,
       publicClaims: publicClaims(item, copy, reportingUrls).map((claim) => ({ ...claim, state: "reported" })),
       internalNotes: [],
     };
   }
-  if (section === "columns" || item.routeCandidates.includes("research-queue")) {
+  if (topicSection === "columns" || item.routeCandidates.includes("research-queue")) {
     return {
       ...common(sources, urls),
       action: "watch",
@@ -213,11 +222,11 @@ function decisionFor(item: DailyMaterialSelectionItem): AtlasEditorDecision {
     ...(urls.length ? [] : ["canonical-source-unavailable"]),
     ...((tier === "T0" || tier === "T1") && primaryUrls.length === 0 ? ["primary-source-inaccessible"] : []),
     ...(copy ? [] : ["bilingual-copy-invalid-or-incomplete"]),
-    ...(formalEvidence && !FORMAL_ADAPTER_SECTIONS.has(section) ? ["structured-public-adapter-unavailable"] : []),
+    ...(formalEvidence && !FORMAL_ADAPTER_SECTIONS.has(topicSection) ? ["structured-public-adapter-unavailable"] : []),
   ];
   if (!holdReasons.length) holdReasons.push("publication-gate-not-met");
   const materialCandidate = item.band === "selected" && item.publicationReadiness === "eligible-by-rules";
-  const evidenceCandidate = tier === "T0" || tier === "T1" || (section === "rumors" && (tier === "T2" || tier === "T3"));
+  const evidenceCandidate = tier === "T0" || tier === "T1" || reportingUrls.length > 0;
   const holdClass = materialCandidate && evidenceCandidate && holdReasons.some((reason) => [
     "canonical-source-unavailable",
     "primary-source-inaccessible",

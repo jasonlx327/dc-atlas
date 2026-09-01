@@ -11,6 +11,7 @@ import {
   type ModelScoringInput,
   type ModelScoringResult,
 } from "./model-scoring.ts";
+import { validateBilingualPair } from "./provider-contract.ts";
 
 export type EventRecord = ShadowRunReport["events"][number];
 export type DailySelectionSlot = "event-night" | "event-midday" | "event-day";
@@ -71,7 +72,8 @@ export type DailyEditorialCandidatePacket = {
   selectedCount: number;
   watchCount: number;
   ruleEligibleCount: number;
-  /** @deprecated Use ruleEligibleCount. Publication authority belongs to Atlas Auto Editor. */
+  copyReadyCount: number;
+  /** @deprecated Candidate packets never carry publication authority. Use Atlas Auto Editor adapterReady. */
   publicationReadyCount: number;
   fallbackCount?: number;
   selected: DailyMaterialSelectionItem[];
@@ -236,6 +238,15 @@ export function dailyCandidatePacket(report: DailyMaterialSelectionReport): Dail
   const selected = report.items.filter((item) => item.band === "selected");
   const watch = report.items.filter((item) => item.band === "watch");
   const ruleEligibleCount = selected.filter((item) => item.publicationReadiness === "eligible-by-rules").length;
+  const copyReadyCount = [...selected, ...watch].filter((item) => {
+    const copy = item.result.publicCopy ?? {
+      titleZh: item.titleZh,
+      titleEn: item.titleEn,
+      summaryZh: item.summaryZh,
+      summaryEn: item.summaryEn,
+    };
+    return validateBilingualPair({ ...copy, entities: item.entities }).status === "pass";
+  }).length;
   return {
     schemaVersion: "atlas-daily-candidate-packet.v1",
     day: report.day,
@@ -247,7 +258,8 @@ export function dailyCandidatePacket(report: DailyMaterialSelectionReport): Dail
     selectedCount: selected.length,
     watchCount: watch.length,
     ruleEligibleCount,
-    publicationReadyCount: ruleEligibleCount,
+    copyReadyCount,
+    publicationReadyCount: 0,
     fallbackCount: report.items.filter((item) => item.result.provider === "deterministic-fallback").length,
     selected,
     watch,

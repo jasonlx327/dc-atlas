@@ -87,6 +87,11 @@ function rumorLink(item: ConsoleRumor, isZh: boolean): string {
   return item.sourceUrl ?? (isZh ? "/rumors" : "/en/rumors");
 }
 
+function intelligenceEvidenceLabel(item: ConsoleRumor, isZh: boolean): string {
+  if (item.sourceCount >= 2) return isZh ? "媒体 · 多源" : "MEDIA · MULTI-SOURCE";
+  return isZh ? "媒体 · 单一来源" : "MEDIA · SINGLE SOURCE";
+}
+
 export type ConsoleOverviewData = {
   generatedAt?: string;
   reviewedAt?: string;
@@ -583,7 +588,7 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
   const lead = [...pulse, ...companies].sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime())[0];
   const events = data.events.slice(0, 6);
   const deals = data.deals.slice(0, 5);
-  const rumors = sortNewest(data.rumors ?? []).slice(0, 3);
+  const rumors = sortNewest(data.rumors ?? []).slice(0, 6);
   const articles = publishedColumnArticles().slice(0, 5);
   const dailyBrief = buildDailyBrief(articles);
   const featuredResearch = dailyBrief?.article;
@@ -693,6 +698,20 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
     <div className="atlas-console-canvas">
       <div id="overview"><ConsoleStatusbar lang={lang} generatedAt={data.generatedAt} reviewedAt={data.reviewedAt} contentVersion={data.contentVersion} lastContentChangedAt={data.lastContentChangedAt} factChangedAt={data.factChangedAt} researchPublishedAt={data.researchPublishedAt} briefPublishedAt={data.briefPublishedAt} sourceCount={data.sourceCount ?? (dataConnected ? uniqueSources.size : undefined)} verifiedCount={data.verifiedCount ?? (dataConnected ? verifiedCount : undefined)} /></div>
 
+      <section className="atlas-rumor-desk" id="rumors" aria-labelledby="atlas-rumor-desk-title">
+        <header>
+          <div><span>GLOBAL INTELLIGENCE · LIVE DESK</span><strong id="atlas-rumor-desk-title">{isZh ? "全球情报流" : "Global intelligence feed"}</strong></div>
+          <p>{isZh ? "重要媒体情报默认公开展示；一手披露用于升级状态，而不是决定是否可见。" : "Material media intelligence is visible by default; primary disclosure upgrades its status rather than deciding visibility."}</p>
+          <a href={isZh ? "/rumors" : "/en/rumors"}>{isZh ? `查看全部 ${data.rumors?.length ?? rumors.length} 条` : `View all ${data.rumors?.length ?? rumors.length}`} →</a>
+        </header>
+        {rumors.length ? <div className="atlas-rumor-desk-grid">{rumors.map((item, index) => <a href={rumorLink(item, isZh)} key={item.id} target={RUMOR_BRIEFS.some((record) => record.id === item.id) ? undefined : "_blank"} rel={RUMOR_BRIEFS.some((record) => record.id === item.id) ? undefined : "noreferrer"}>
+          <div><span>{String(index + 1).padStart(2, "0")}</span><time>{dateLabel(item.publishedAt, lang)}</time></div>
+          <strong>{isZh ? item.title : item.titleEn}</strong>
+          <p>{isZh ? item.summary : item.summaryEn}</p>
+          <footer><span>{intelligenceEvidenceLabel(item, isZh)}</span><span>{item.sourceCount} {isZh ? "个独立来源组" : "source groups"}</span><b>{item.sourceName}</b></footer>
+        </a>)}</div> : <div className="atlas-rumor-desk-empty">{isZh ? "当前没有达到公开归因与双语门槛的新情报。" : "No new intelligence currently clears attribution and bilingual-copy gates."}</div>}
+      </section>
+
       {featuredResearch && featuredEvidence ? <section className="atlas-research-lead" aria-labelledby="atlas-lead-title">
         <div className="atlas-research-lead-copy">
           <span>{isZh ? "今日重点研究" : "TODAY'S LEAD RESEARCH"}</span>
@@ -744,20 +763,6 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
           </a>)}</div>
           <p>{isZh ? "专栏优先级由公司重要性、事实变化幅度与一手材料完整度共同决定。" : "Research priority follows company importance, the size of the change and primary-source completeness."}</p>
         </div>
-      </section>
-
-      <section className="atlas-rumor-desk" id="rumors" aria-labelledby="atlas-rumor-desk-title">
-        <header>
-          <div><span>RUMOR WATCH · INTELLIGENCE DESK</span><strong id="atlas-rumor-desk-title">{isZh ? "市场情报" : "Reported intelligence"}</strong></div>
-          <p>{isZh ? "并购、融资、算力采购与重大项目报道。" : "Reported M&A, financing, compute procurement and major projects."}</p>
-          <a href={isZh ? "/rumors" : "/en/rumors"}>{isZh ? "进入情报台" : "Open Rumor Watch"} →</a>
-        </header>
-        {rumors.length ? <div className="atlas-rumor-desk-grid">{rumors.map((item, index) => <a href={rumorLink(item, isZh)} key={item.id} target={RUMOR_BRIEFS.some((record) => record.id === item.id) ? undefined : "_blank"} rel={RUMOR_BRIEFS.some((record) => record.id === item.id) ? undefined : "noreferrer"}>
-          <div><span>{String(index + 1).padStart(2, "0")}</span><time>{dateLabel(item.publishedAt, lang)}</time></div>
-          <strong>{isZh ? item.title : item.titleEn}</strong>
-          <p>{isZh ? item.summary : item.summaryEn}</p>
-          <footer><span>{isZh ? item.statusLabel : item.statusLabelEn}</span><span>{item.sourceCount} {isZh ? "个报道来源" : "reported sources"}</span><b>{item.sourceName}</b></footer>
-        </a>)}</div> : <div className="atlas-rumor-desk-empty">{isZh ? "当前没有符合来源与时效门槛的市场线索。" : "No current report clears the source and freshness thresholds."}</div>}
       </section>
 
       <section className="atlas-live-pulse" id="pulse" data-paused={pulsePaused || pulsePointerHeld ? "true" : undefined}>

@@ -40,6 +40,8 @@
     "event:model:test": "node --experimental-strip-types scripts/test-model-scoring.ts",
     "event:daily-selection:test": "node --experimental-strip-types scripts/test-daily-model-selection.ts",
     "event:auto-editor:test": "node --experimental-strip-types scripts/test-atlas-auto-editor.ts",
+    "event:intelligence:apply": "node --experimental-strip-types scripts/apply-intelligence-editor-decisions.ts",
+    "event:intelligence:test": "node --experimental-strip-types scripts/test-intelligence-publication.ts",
     "event:daily-closure:test": "node --experimental-strip-types scripts/test-daily-section-closure.ts",
     "event:codex:scan": "node --experimental-strip-types scripts/run-event-intelligence-shadow.ts --mode=live --slot=event-night --output=codex-event-night.json --concurrency=6 --retries=2",
     "event:codex:ingest": "node --experimental-strip-types scripts/publish-codex-event-run.ts --slot=event-night --input=artifacts/event-intelligence/codex-event-night.json",

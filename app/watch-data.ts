@@ -1,3 +1,5 @@
+import publicIntelligence from "./data/public-intelligence.json";
+
 export type PolicyIndexRecord = {
   id: string;
   jurisdiction: "US" | "中国";
@@ -275,7 +277,7 @@ export const POLICY_BRIEFS: PolicyIndexRecord[] = [
   },
 ];
 
-export const RUMOR_BRIEFS: RumorWatchItem[] = [
+const LEGACY_RUMOR_BRIEFS: RumorWatchItem[] = [
   {
     id: "lg-cns-naver-direct-chip-cooling-report-2026",
     title: "报道称 LG CNS 将为 Naver Cloud 部署直接芯片液冷",
@@ -697,3 +699,12 @@ export const RUMOR_BRIEFS: RumorWatchItem[] = [
     sourceNoteEn: "The system-level advantage, Vera Rubin components and data-movement interpretation come from a single TechCrunch analysis and remain a reported lead rather than a formal product or capacity fact.",
   },
 ];
+
+const versionedIntelligence = publicIntelligence as RumorWatchItem[];
+const intelligenceById = new Map<string, RumorWatchItem>();
+for (const item of [...versionedIntelligence, ...LEGACY_RUMOR_BRIEFS]) {
+  if (!intelligenceById.has(item.id)) intelligenceById.set(item.id, item);
+}
+
+export const RUMOR_BRIEFS: RumorWatchItem[] = [...intelligenceById.values()]
+  .sort((left, right) => Date.parse(right.publishedAt) - Date.parse(left.publishedAt));

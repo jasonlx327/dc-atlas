@@ -175,6 +175,12 @@ const mockFetch = (async () => {
       scores: { topicRelevanceScore: 5, mechanismDepthScore: 4, specificityScore: 4, researchValueScore: 4, readerValueScore: 4 },
       rationale: "事件包含明确的基础设施机制和后续核验价值。",
       reasonCodes: ["infrastructure", "material-change"],
+      publicCopy: {
+        titleZh: "NVIDIA 发布新的 AI 基础设施更新",
+        titleEn: "NVIDIA publishes a new AI-infrastructure update",
+        summaryZh: "公开材料披露了新的基础设施安排，具体状态继续按来源记录。",
+        summaryEn: "The public material discloses a new infrastructure arrangement, with its status tracked to the source.",
+      },
     }) } }],
     usage: { prompt_tokens: 100, completion_tokens: 30, total_tokens: 130 },
   });
@@ -206,7 +212,8 @@ assert.equal(kv.values.get("event-intelligence:model-usage:2026-08-12"), "4");
 const packet = JSON.parse(kv.values.get(DAILY_CANDIDATE_PACKET_LATEST_KEY) ?? "null") as DailyEditorialCandidatePacket;
 assert.equal(packet.selectedCount, 4);
 assert.equal(packet.ruleEligibleCount, 3);
-assert.equal(packet.publicationReadyCount, 3);
+assert.equal(packet.copyReadyCount, 4);
+assert.equal(packet.publicationReadyCount, 0, "candidate packets must never claim publication authority");
 assert.deepEqual(packet.sourceSlots, ["event-night", "event-midday", "event-day"]);
 
 const limitedKv = new MemoryKv();

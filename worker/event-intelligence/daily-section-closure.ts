@@ -53,8 +53,7 @@ export function closureKey(day: string): string {
 }
 
 export function isAttributableRumorReport(item: DailyMaterialSelectionItem): boolean {
-  return item.route === "rumor-watch"
-    && (item.band === "selected" || item.band === "watch")
+  return (item.band === "selected" || item.band === "watch")
     && item.evidenceStatus !== "lead"
     && item.sourceTiers.some((tier) => tier === "T2" || tier === "T3")
     && (item.sourceChain ?? []).some((source) => Boolean(source.url)

@@ -73,12 +73,12 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
-test("fills the three-column intelligence desk without truncating summaries", async () => {
+test("fills the prominent six-item intelligence desk without truncating summaries", async () => {
   const overview = await readFile(new URL("../app/intelligence-console-overview.tsx", import.meta.url), "utf8");
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   const summaryRule = css.match(/\.atlas-rumor-desk-grid > a > p \{[^}]+\}/)?.[0] ?? "";
 
-  assert.match(overview, /sortNewest\(data\.rumors \?\? \[\]\)\.slice\(0, 3\)/);
+  assert.match(overview, /sortNewest\(data\.rumors \?\? \[\]\)\.slice\(0, 6\)/);
   assert.match(css, /\.atlas-rumor-desk-grid \{[^}]*grid-template-columns: repeat\(3,/);
   assert.doesNotMatch(summaryRule, /line-clamp|overflow:\s*hidden/);
 });
@@ -138,7 +138,7 @@ test("publishes focused Pulse and Industry content hubs", async () => {
   assert.match(source, /setActiveStage\(stage as ChainKey\)/);
 });
 
-test("redirects the retired policy index and publishes bilingual Rumor Watch routes", async () => {
+test("redirects the retired policy index and publishes bilingual Global Intelligence routes", async () => {
   const policy = await render("/policy");
   assert.ok([307, 308].includes(policy.status));
   assert.match(policy.headers.get("location") ?? "", /\/pulse\?signal=policy$/);
@@ -150,8 +150,8 @@ test("redirects the retired policy index and publishes bilingual Rumor Watch rou
   const rumors = await render("/rumors");
   assert.equal(rumors.status, 200);
   const rumorsHtml = await rumors.text();
-  assert.match(rumorsHtml, /市场情报/);
-  assert.match(rumorsHtml, /RUMOR WATCH · SOURCE LINKED/);
+  assert.match(rumorsHtml, /全球情报台/);
+  assert.match(rumorsHtml, /GLOBAL INTELLIGENCE · SOURCE LINKED/);
   assert.match(rumorsHtml, /长鑫科技据报考虑在北京亦庄建设第二座DRAM晶圆厂/);
   assert.match(rumorsHtml, /Amazon据报确认在得州Pecos County推进配套现场发电的数据中心项目/);
   assert.match(rumorsHtml, /Hut 8未披露的得州租户/);
@@ -161,8 +161,8 @@ test("redirects the retired policy index and publishes bilingual Rumor Watch rou
   const english = await render("/en/rumors");
   assert.equal(english.status, 200);
   const englishHtml = await english.text();
-  assert.match(englishHtml, /Rumor Watch/);
-  assert.match(englishHtml, /Reported intelligence/);
+  assert.match(englishHtml, /Global Intelligence/);
+  assert.match(englishHtml, /Global intelligence/);
   assert.match(englishHtml, /CXMT is reported to be considering a second DRAM fab in Beijing/);
   assert.match(englishHtml, /Amazon is reported to have confirmed a Pecos County data-center project with on-site generation/);
   assert.match(englishHtml, /Nvidia is reported to be Hut 8/);
@@ -174,7 +174,7 @@ test("redirects the retired policy index and publishes bilingual Rumor Watch rou
   assert.doesNotMatch(css, /\.watch-card \{[^}]*linear-gradient\(145deg, rgba\(17,28,41/);
 });
 
-test("publishes shareable bilingual policy and Rumor Watch brief pages", async () => {
+test("publishes shareable bilingual policy and Global Intelligence brief pages", async () => {
   const texasPolicy = await render("/policy/us-texas-data-center-audit-2026");
   assert.equal(texasPolicy.status, 200);
   assert.match(await texasPolicy.text(), /得州要求数据中心项目通过全面并网审计/);
@@ -201,7 +201,7 @@ test("publishes shareable bilingual policy and Rumor Watch brief pages", async (
   assert.match(rumorHtml, /SpaceX据报锁定NVIDIA路线，并披露10GW算力与20GW电力目标/);
   assert.match(rumorHtml, /rel="canonical" href="https:\/\/idc-index\.com\/rumors\/spacex-nvidia-ai-infrastructure-call-2026"/i);
   assert.match(rumorHtml, /公开回应/);
-  assert.match(rumorHtml, /不等同于已核验事实/);
+  assert.match(rumorHtml, /一手确认不是可见性门槛/);
   assert.match(rumorHtml, /"mentions":\[\{"@type":"Thing","name":"SpaceX"\}/);
 
   const english = await render("/en/rumors/spacex-nvidia-ai-infrastructure-call-2026");

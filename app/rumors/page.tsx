@@ -7,11 +7,11 @@ import { RUMOR_BRIEFS } from "../watch-data";
 const canonical = "https://idc-index.com/rumors";
 
 export const metadata: Metadata = {
-  title: "市场情报 Rumor Watch｜IDC Atlas",
-  description: "聚合主流媒体报道的数据中心、云计算、芯片与 AI 基础设施线索，保留时间、涉及主体、证据状态与公开回应。",
+  title: "全球情报台｜IDC Atlas",
+  description: "持续发布全球数据中心、云计算、芯片与 AI 基础设施媒体情报，并追踪来源、状态变化与公开回应。",
   alternates: { canonical, languages: { "zh-CN": canonical, en: "https://idc-index.com/en/rumors", "x-default": "https://idc-index.com/en/rumors" } },
-  openGraph: { title: "市场情报 Rumor Watch｜IDC Atlas", description: "保留涉及主体、公开回应、时间与来源边界的报道情报台。", url: canonical, type: "website", images: [{ url: "/og.png", width: 1731, height: 909, alt: "IDC Atlas 市场情报 Rumor Watch" }] },
-  twitter: { card: "summary_large_image", title: "市场情报 Rumor Watch｜IDC Atlas", description: "保留涉及主体、公开回应、时间与来源边界的报道情报台。", images: ["/og.png"] },
+  openGraph: { title: "全球情报台｜IDC Atlas", description: "全球媒体情报、来源归因、状态变化与公开回应。", url: canonical, type: "website", images: [{ url: "/og.png", width: 1731, height: 909, alt: "IDC Atlas 全球情报台" }] },
+  twitter: { card: "summary_large_image", title: "全球情报台｜IDC Atlas", description: "全球媒体情报、来源归因、状态变化与公开回应。", images: ["/og.png"] },
 };
 
 export default async function RumorsPage() {
@@ -20,7 +20,7 @@ export default async function RumorsPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "市场情报 Rumor Watch",
+    name: "全球情报台",
     url: canonical,
     inLanguage: "zh-CN",
     description: metadata.description,

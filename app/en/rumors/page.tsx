@@ -7,11 +7,11 @@ import { RUMOR_BRIEFS } from "../../watch-data";
 const canonical = "https://idc-index.com/en/rumors";
 
 export const metadata: Metadata = {
-  title: "Rumor Watch | IDC Atlas",
-  description: "Reported data-center, cloud, chip and AI-infrastructure developments not yet fully confirmed by companies or regulators, with entities, responses and sources visible.",
+  title: "Global Intelligence | IDC Atlas",
+  description: "Global media intelligence on data centers, cloud, chips and AI infrastructure, with attribution, status changes and public responses tracked.",
   alternates: { canonical, languages: { "zh-CN": "https://idc-index.com/rumors", en: canonical, "x-default": canonical } },
-  openGraph: { title: "Rumor Watch | IDC Atlas", description: "Reported developments with entities, public responses, timestamps and source boundaries visible.", url: canonical, type: "website", images: [{ url: "/og-idc-atlas-en.png", width: 1731, height: 909, alt: "IDC Atlas Rumor Watch" }] },
-  twitter: { card: "summary_large_image", title: "Rumor Watch | IDC Atlas", description: "Reported developments with entities, public responses, timestamps and source boundaries visible.", images: ["/og-idc-atlas-en.png"] },
+  openGraph: { title: "Global Intelligence | IDC Atlas", description: "Global media intelligence with attribution, status changes and public responses.", url: canonical, type: "website", images: [{ url: "/og-idc-atlas-en.png", width: 1731, height: 909, alt: "IDC Atlas Global Intelligence" }] },
+  twitter: { card: "summary_large_image", title: "Global Intelligence | IDC Atlas", description: "Global media intelligence with attribution, status changes and public responses.", images: ["/og-idc-atlas-en.png"] },
 };
 
 export default async function EnglishRumorsPage() {
@@ -20,7 +20,7 @@ export default async function EnglishRumorsPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Rumor Watch",
+    name: "Global Intelligence",
     url: canonical,
     inLanguage: "en-US",
     description: metadata.description,

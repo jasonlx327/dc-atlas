@@ -88,13 +88,13 @@ function WatchIndex({ lang, kind, initialPayload = null }: Props) {
     ? new Set(policy.map((item) => item.sourceName)).size
     : new Set(rumors.map((item) => item.sourceName)).size;
   const verifiedCount = kind === "policy" ? policy.length : 0;
-  const pageLabel = kind === "policy" ? (isZh ? "政策证据存档" : "Policy evidence archive") : (isZh ? "市场情报" : "Rumor Watch");
+  const pageLabel = kind === "policy" ? (isZh ? "政策证据存档" : "Policy evidence archive") : (isZh ? "全球情报台" : "Global Intelligence");
   const title = kind === "policy"
     ? (isZh ? "中美数据中心政策追踪" : "Data-center policy tracker")
-    : (isZh ? "市场情报" : "Reported intelligence");
+    : (isZh ? "全球情报台" : "Global intelligence");
   const description = kind === "policy"
     ? (isZh ? "追踪影响数据中心建设、用电、并网和运营成本的中美政策变化。每条提炼政策内容、执行状态和直接影响，原文仅作核验出处。" : "Tracks China and U.S. policy that changes data-center construction, power, interconnection and operating costs. Each brief separates the policy, its status and its direct effect.")
-    : (isZh ? "聚合主流媒体报道的数据中心与 AI 基础设施线索，追踪后续进展与公开回应。报道事实、官方确认和尚待核实的部分会明确分开。" : "Aggregates reported data-center and AI-infrastructure developments, then tracks follow-ups and public responses. Reported facts, primary confirmation and unresolved claims remain explicitly separated.");
+    : (isZh ? "持续发布全球数据中心与 AI 基础设施媒体情报，并追踪后续进展、公开回应与一手状态升级。" : "Publishes global data-center and AI-infrastructure media intelligence, then tracks follow-ups, public responses and primary-source status upgrades.");
   const items = kind === "policy" ? visiblePolicy : visibleRumors;
   const detailHref = (id: string) => {
     const isStaticRecord = kind === "policy"
@@ -115,7 +115,7 @@ function WatchIndex({ lang, kind, initialPayload = null }: Props) {
   >
     <div className={`watch-page ${kind === "policy" ? "policy-page" : "rumor-page"}`}>
       <header className="watch-hero">
-        <span>{kind === "policy" ? "POLICY WATCH · DIRECT IMPACT" : "RUMOR WATCH · SOURCE LINKED"}</span>
+        <span>{kind === "policy" ? "POLICY WATCH · DIRECT IMPACT" : "GLOBAL INTELLIGENCE · SOURCE LINKED"}</span>
         <h1>{title}</h1>
         <p>{description}</p>
         <div className="watch-hero-meta">
@@ -125,7 +125,7 @@ function WatchIndex({ lang, kind, initialPayload = null }: Props) {
             <span>{isZh ? "直接影响" : "Direct effect"}</span>
           </> : <>
             <span>{isZh ? "报道时间线" : "Source timeline"}</span>
-            <span>{isZh ? "证据状态" : "Evidence status"}</span>
+            <span>{isZh ? "媒体来源" : "Media sources"}</span>
             <span>{isZh ? "公开回应" : "Public response"}</span>
           </>}
           <span>{isZh ? "更新时间" : "Updated"} {formatDate(payload?.generatedAt, lang)}</span>
@@ -134,7 +134,7 @@ function WatchIndex({ lang, kind, initialPayload = null }: Props) {
 
       <section className="watch-toolbar" aria-label={isZh ? "筛选" : "Filters"}>
         <div>
-          <strong>{kind === "policy" ? (isZh ? "政策动态" : "Policy briefs") : (isZh ? "报道线索" : "Reported items")}</strong>
+          <strong>{kind === "policy" ? (isZh ? "政策动态" : "Policy briefs") : (isZh ? "全球情报流" : "Global intelligence feed")}</strong>
           <span>{kind === "policy" ? (isZh ? `${visiblePolicy.length} 条政策更新` : `${visiblePolicy.length} policy updates`) : (isZh ? `${visibleRumors.length} 条公开报道` : `${visibleRumors.length} public reports`)}</span>
         </div>
         <nav>
@@ -165,7 +165,7 @@ function WatchIndex({ lang, kind, initialPayload = null }: Props) {
           <div className="watch-card-foot"><strong>{isZh ? item.status : item.statusEn}</strong><a href={item.sourceUrl} target="_blank" rel="noreferrer">{item.sourceName} ↗</a></div>
         </article>)
         : visibleRumors.map((item) => <article className="watch-card rumor-card" key={item.id}>
-          <div className="watch-card-top"><span>{isZh ? "媒体报道" : "REPORTED"}</span><time>{formatDate(item.publishedAt, lang)}</time></div>
+          <div className="watch-card-top"><span>{item.sourceCount >= 2 ? (isZh ? "媒体 · 多源" : "MEDIA · MULTI-SOURCE") : (isZh ? "媒体 · 单一来源" : "MEDIA · SINGLE SOURCE")}</span><time>{formatDate(item.publishedAt, lang)}</time></div>
           <h2>{detailHref(item.id) ? <a href={detailHref(item.id)!}>{isZh ? item.title : item.titleEn}</a> : (isZh ? item.title : item.titleEn)}</h2>
           <p>{isZh ? item.summary : item.summaryEn}</p>
           <div className="watch-entity-row">
@@ -184,7 +184,7 @@ function WatchIndex({ lang, kind, initialPayload = null }: Props) {
           <div className="watch-card-foot"><strong>{isZh ? item.statusLabel : item.statusLabelEn}</strong><a href={item.sourceUrl} target="_blank" rel="noreferrer">{item.sourceName} ↗</a></div>
         </article>)}</section> : <section className="watch-empty" aria-live="polite"><span>NO CURRENT MATCH</span><h2>{kind === "policy" ? (isZh ? "当前筛选下没有政策更新。" : "No policy update matches this filter.") : (isZh ? "当前筛选下没有公开报道。" : "No public report matches this filter.")}</h2><p>{kind === "policy" ? (isZh ? "政策简报只收录可回溯到官方文件、且能说明执行状态与直接影响的条目。" : "Policy briefs require an official document plus a clear implementation status and direct effect.") : (payload?.rumorNote ?? (isZh ? "不会用旧内容或未注明来源的消息填充当前列表。" : "The list is not backfilled with stale or unsourced items."))}</p></section>}
 
-      <aside className="watch-boundary"><strong>{isZh ? "阅读边界" : "Reading boundary"}</strong><p>{kind === "policy" ? (isZh ? "页面内容是对公开政策文件的研究摘要，不构成法律意见；具体适用范围与执行要求以发布机构正式文件为准。" : "These are research summaries of public policy documents, not legal advice. The issuing authority's text controls scope and implementation.") : (isZh ? "Rumor Watch 只记录公开报道，不把线索当作已核验事实，也不作投资建议；出现官方披露后，信息会转入对应脉冲或公司页面。" : "Rumor Watch records public reporting without treating it as verified fact or investment advice. Official disclosures move to the relevant pulse or company page.")}</p></aside>
+      <aside className="watch-boundary"><strong>{isZh ? "阅读边界" : "Reading boundary"}</strong><p>{kind === "policy" ? (isZh ? "页面内容是对公开政策文件的研究摘要，不构成法律意见；具体适用范围与执行要求以发布机构正式文件为准。" : "These are research summaries of public policy documents, not legal advice. The issuing authority's text controls scope and implementation.") : (isZh ? "媒体情报按原报道归因公开，不因缺少一手确认而隐藏；后续出现公司、监管或项目方材料时，状态会升级并转入对应事实板块。" : "Media intelligence is published with attribution rather than hidden for lack of primary confirmation. Company, regulatory or project-owner material upgrades the status and moves the item into the relevant fact section.")}</p></aside>
     </div>
   </IntelligenceConsoleShell>;
 }

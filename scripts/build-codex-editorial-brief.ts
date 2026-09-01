@@ -54,8 +54,9 @@ async function run() {
       allowedModels: ["gpt-5.6-luna", "deterministic-atlas-fallback-v1"],
       status: "completed",
       verdicts: "exactly one verdict for every candidate; no unknown or duplicate eventId",
-      publicCopy: "generate when the source summary is usable; if absent or incomplete, retain the candidate and hold only that event; T2/T3 copy must use natural source attribution and must not claim official confirmation",
-      rumorPolicy: "presume publication for current accessible reader-relevant T2/T3 reporting; one independent source is enough for single-source-report; missing T0/T1 confirmation blocks formal promotion, not Rumor Watch",
+      publicCopy: "generate complete natural Chinese and English publicCopy for every current publishable T0-T3 item; if source material is insufficient, hold only that event and preserve its source chain; T2/T3 copy must attribute the report and must not claim official confirmation",
+      intelligencePolicy: "presume public intelligence publication for current accessible reader-relevant T2/T3 reporting regardless of its original topic route; one independent source is enough for single-source-report; missing T0/T1 confirmation changes evidence status but never blocks media visibility",
+      publicationBridge: "after editor adapterReady validation, run event:intelligence:apply against the completed editor packet, review the versioned app/data/public-intelligence.json diff, then validate and deploy the same HEAD; candidate, selected, watch or action=publish alone is never publication proof",
       errors: [],
     },
   };

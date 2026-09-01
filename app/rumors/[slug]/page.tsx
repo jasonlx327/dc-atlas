@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!item) return {};
   const canonical = `https://idc-index.com/rumors/${item.id}`;
   return {
-    title: `${item.title}｜IDC Atlas Rumor Watch`,
+    title: `${item.title}｜IDC Atlas 全球情报台`,
     description: item.summary,
     keywords: item.entities,
     alternates: { canonical, languages: { "zh-CN": canonical, en: `https://idc-index.com/en/rumors/${item.id}`, "x-default": `https://idc-index.com/en/rumors/${item.id}` } },
