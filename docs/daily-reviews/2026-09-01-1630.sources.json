@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-research-minimax-zhipu-2026-09-01",
+  "cutoff": "2026-08-26T18:51:00+08:00",
+  "checkedThrough": "2026-09-01T08:50:00+08:00",
+  "fallback": "Targeted urgent research release; the source window begins with MiniMax's first interim-results publication and includes Z.ai's August 31 filing and both post-results calls.",
+  "sources": [
+    {
+      "ref": "minimax-h1-2026-results",
+      "canonicalUrl": "https://file.cdn.minimax.io/public/586c7995-cab1-41b5-9178-c06685b32c88.pdf",
+      "sourceName": "MiniMax / HKEX",
+      "tier": "T0",
+      "accessState": "public",
+      "publishedAt": "2026-08-26T18:51:00+08:00",
+      "independenceGroup": "minimax-official",
+      "sections": ["listed-companies", "power-model-demand", "columns"],
+      "editorDecision": "publish",
+      "formalRecordId": "minimax-zhipu-h1-token-economics",
+      "claimBoundary": "Reported financial statements, revenue mix, margin, R&D, cash, borrowings and post-period financing are formal facts; management causality remains attributed."
+    },
+    {
+      "ref": "minimax-h1-2026-results-release",
+      "canonicalUrl": "https://www.minimax.io/news/minimax-announces-first-half-2026-financial-results-1787744160",
+      "sourceName": "MiniMax",
+      "tier": "T1",
+      "accessState": "public",
+      "publishedAt": "2026-08-26T18:51:00+08:00",
+      "independenceGroup": "minimax-official",
+      "sections": ["power-model-demand", "columns"],
+      "editorDecision": "publish",
+      "formalRecordId": "minimax-zhipu-h1-token-economics",
+      "claimBoundary": "The July token-consumption level is a company metric relative to January and is not converted into GPUs, power or unique paying users."
+    },
+    {
+      "ref": "minimax-h1-2026-call-page",
+      "canonicalUrl": "https://ir.minimax.io/corporate-filings/quarterly-results",
+      "sourceName": "MiniMax Investor Relations",
+      "tier": "T1",
+      "accessState": "public",
+      "publishedAt": "2026-08-26T20:00:00+08:00",
+      "independenceGroup": "minimax-official",
+      "sections": ["columns"],
+      "editorDecision": "publish",
+      "formalRecordId": "minimax-zhipu-h1-token-economics",
+      "claimBoundary": "The page verifies the call and filing link; it does not supply a complete transcript licensed for republication."
+    },
+    {
+      "ref": "zhipu-h1-2026-results",
+      "canonicalUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083101539.pdf",
+      "sourceName": "Z.ai / HKEX",
+      "tier": "T0",
+      "accessState": "public",
+      "publishedAt": "2026-08-31T18:56:00+08:00",
+      "independenceGroup": "zhipu-official",
+      "sections": ["listed-companies", "power-model-demand", "columns"],
+      "editorDecision": "publish",
+      "formalRecordId": "minimax-zhipu-h1-token-economics",
+      "claimBoundary": "Financial figures, API margin, token growth, 100,000-plus domestic-chip cluster and 80% unit-cost decline are company disclosures; suppliers, online utilization, power and SLA remain undisclosed."
+    },
+    {
+      "ref": "minimax-h1-2026-yicai-call",
+      "canonicalUrl": "https://m.yicai.com/news/103335505.html",
+      "sourceName": "Yicai",
+      "tier": "T2",
+      "accessState": "public",
+      "publishedAt": "2026-08-26T22:42:44+08:00",
+      "independenceGroup": "minimax-call-media",
+      "sections": ["columns"],
+      "editorDecision": "publish-attributed",
+      "formalRecordId": "minimax-zhipu-h1-token-economics",
+      "claimBoundary": "ARR, B2B mix, domestic-chip adaptation and M3.1 cost target are paraphrased as attributed call reporting, not elevated to filing facts."
+    },
+    {
+      "ref": "zhipu-h1-2026-yicai-call",
+      "canonicalUrl": "https://m.yicai.com/news/103341523.html",
+      "sourceName": "Yicai",
+      "tier": "T2",
+      "accessState": "public",
+      "publishedAt": "2026-08-31T21:19:23+08:00",
+      "independenceGroup": "zhipu-call-media",
+      "sections": ["columns"],
+      "editorDecision": "publish-attributed",
+      "formalRecordId": "minimax-zhipu-h1-token-economics",
+      "claimBoundary": "Compute sourcing and effective-compute comments are paraphrased and attributed; no long quotation or reconstructed transcript is used."
+    },
+    {
+      "ref": "zhipu-h1-2026-caixin-arr",
+      "canonicalUrl": "https://companies.caixin.com/2026-08-31/102480428.html",
+      "sourceName": "Caixin",
+      "tier": "T2",
+      "accessState": "public",
+      "publishedAt": "2026-08-31T22:44:26+08:00",
+      "independenceGroup": "zhipu-call-media",
+      "sections": ["columns"],
+      "editorDecision": "publish-attributed",
+      "formalRecordId": "minimax-zhipu-h1-token-economics",
+      "claimBoundary": "The $1.6 billion August ARR is management's monthly annualization reported by media; it is explicitly separated from recognized revenue."
+    }
+  ],
+  "deduplication": {
+    "keys": ["canonicalUrl", "originalPublisher", "independenceGroup", "entityActionProjectLocationPeriod"],
+    "supersededRecords": [],
+    "duplicatePublicRecordsCreated": 0,
+    "notes": "Both issuers and both reporting periods are combined into one comparative research record. Call reports support attributed management commentary only."
+  }
+}

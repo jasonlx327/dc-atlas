@@ -5,6 +5,173 @@ const reported = (url: string, zh: string, en: string) => ({ url, zh, en, level:
 
 export const currentResearchRecords: ScheduledResearchRecord[] = [
   {
+    slug: "minimax-zhipu-h1-token-economics",
+    imageAltZh: "MiniMax 与智谱的 API 收入、Token 调用、推理集群和亏损结构对比",
+    imageAltEn: "Comparison of MiniMax and Z.ai API revenue, token usage, inference clusters and loss structure",
+    articleSectionZh: "中国基础模型财报与推理经济性",
+    articleSectionEn: "China foundation-model earnings and inference economics",
+    topics: ["MiniMax", "Z.ai", "Zhipu", "2026 interim results", "API revenue", "token economics", "domestic AI chips", "inference"],
+    sources: [
+      primary("https://file.cdn.minimax.io/public/586c7995-cab1-41b5-9178-c06685b32c88.pdf", "MiniMax 2026 年中期业绩公告", "MiniMax 2026 interim results announcement"),
+      primary("https://www.minimax.io/news/minimax-announces-first-half-2026-financial-results-1787744160", "MiniMax 2026 年中期业绩新闻稿与 Token 消耗口径", "MiniMax 2026 interim-results release and token-consumption metric"),
+      primary("https://ir.minimax.io/corporate-filings/quarterly-results", "MiniMax 官方业绩与电话会活动页", "MiniMax official results and conference-call page"),
+      primary("https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083101539.pdf", "智谱 2026 年中期业绩公告", "Z.ai 2026 interim results announcement"),
+      reported("https://m.yicai.com/news/103335505.html", "第一财经：MiniMax 中期业绩交流会", "Yicai report on the MiniMax interim-results call"),
+      reported("https://m.yicai.com/news/103341523.html", "第一财经：智谱中期业绩电话会", "Yicai report on the Z.ai interim-results call"),
+      reported("https://companies.caixin.com/2026-08-31/102480428.html", "财新：智谱 8 月 ARR 管理层口径", "Caixin report on Z.ai management's August ARR disclosure"),
+    ],
+    zh: {
+      hero: "MiniMax 与智谱的 2026 年中报把中国基础模型商业化推进到一个可核验的新阶段。MiniMax 的开放平台及企业服务占收入 63.4%，智谱的开放平台及 API 占 86.5%；两家公司都从产品或项目收入转向持续调用。智谱进一步披露十万卡级国产推理、单位 Token 成本较年初下降 80% 和 API 毛利率转正。收入转换已经发生，训练投入、借款和经调整亏损仍让算力账保持开放。",
+      thesis: "这两份财报支持一个有条件的结论：Token 增长已经能够形成可确认收入和正毛利，但还没有形成自给自足的模型经济。智谱给出的证据链更完整，覆盖调用量、价格、单位成本与业务毛利；MiniMax 的全球企业收入增长和整体毛利率改善同样明确，但国产算力集群与下一代推理成本目标仍来自电话会中的未来计划。两家公司都没有披露可把 Token 直接换算成 GPU 数量、MW 或数据中心收入的统一口径。",
+      opening: [
+        "MiniMax 上半年收入为 1.166 亿美元，同比增长 283.1%；开放平台及其他 AI 企业服务收入为 7,393 万美元，同比增长 703.1%，占总收入 63.4%。整体毛利率从 12.1% 升至 17.9%。净亏损收窄 11.0% 至 3.580 亿美元，经调整净亏损却扩大 111.2% 至 2.930 亿美元，主要经营投入仍远高于收入。",
+        "智谱上半年收入为 9.539 亿元人民币，同比增长 399.7%；开放平台及 API 收入为 8.252 亿元，占 86.5%，同比增长 2,735.7%。该业务毛利率从 -0.4% 升至 24.6%，但公司整体毛利率因云业务占比上升从 50.0% 降至 26.4%。净亏损收窄 12.1% 至 20.720 亿元，经调整净亏损扩大 12.1% 至 19.641 亿元。",
+        "两家公司使用不同货币、收入分类和非 IFRS 调整口径，本文不做未经披露汇率的横向规模换算。可比较的部分是方向：API 与订阅收入占比上升，推理效率改善，同时研发和融资继续支撑模型迭代。",
+      ],
+      sections: [
+        {
+          label: "01 · REVENUE MIX", heading: "API 从分发渠道变成主要收入确认方式",
+          paragraphs: [
+            "MiniMax 的开放平台及企业服务占比从 30.3% 升至 63.4%，增长来自付费个人与企业用户、API 调用量和 Token Plan。AI 原生产品收入也增长 100.9% 至 4,264 万美元，因此公司仍保留消费者产品与企业平台两条收入线；地域上，中国内地以外收入占 60.8%。",
+            "智谱的转换幅度更大。开放平台及 API 占比从上年同期 15.2% 升至 86.5%，企业级通用大模型收入下降 54.6% 至 6,704 万元。本地化部署占比由 73.7% 降至 13.5%。这使收入从项目验收和一次性许可转向按调用与订阅持续确认，也把定价、留存、并发和服务稳定性放到同一张经营表里。",
+            "智谱披露，截至公告日 MaaS Token 调用量较年初增长超过 40 倍，Coding Plan 调用量超过 23 倍，平均 API 售价上升约 101%。量价同升是强信号，但这些均为公司统计口径，缺少独立的活跃客户分层、续费率和优惠后净价。",
+          ],
+          metrics: [
+            { label: "MiniMax 开放平台", value: "63.4%", note: "上半年收入占比；同比增长 703.1%。" },
+            { label: "智谱开放平台 / API", value: "86.5%", note: "上半年收入占比；同比增长 2,735.7%。" },
+            { label: "智谱 API 毛利率", value: "24.6%", note: "上年同期为 -0.4%。" },
+            { label: "智谱 Token 调用", value: ">40×", note: "截至公告日相对 2026 年初，公司口径。" },
+          ],
+        },
+        {
+          label: "02 · ARR BOUNDARY", heading: "电话会 ARR 显示加速，也放大了口径风险",
+          paragraphs: [
+            "第一财经转述 MiniMax 管理层称，8 月 ARR 超过 8 亿美元，其中企业端约占 80%；财新转述智谱管理层称，8 月 ARR 为 16 亿美元，采用当月收入年化口径。这两项都没有写入中期业绩公告，也没有公开完整客户、合同期限、退款、折扣或流失率桥接。",
+            "ARR 是当前月份或合同状态的年化读数，不等于上半年已确认收入、现金回款或未来十二个月保证收入。它适合观察 8 月业务速度，不能与半年收入直接相加，也不能在两家公司之间作无口径调整的估值比较。",
+            "下一次财报需要验证三个转换：ARR 是否进入季度收入，API 业务毛利是否保持，合同负债与经营现金流是否同步增加。若 ARR 上升而确认收入、毛利或回款没有跟上，增长可能更多来自短期促销、集中客户或年化方法。",
+          ],
+          cards: [
+            { label: "REPORTED", title: "MiniMax ARR > 8 亿美元", body: "第一财经转述管理层；约 80% 来自企业端，未写入中期公告。" },
+            { label: "REPORTED", title: "智谱 ARR 16 亿美元", body: "财新转述管理层；按 8 月收入乘以 12，未写入中期公告。" },
+            { label: "GATE", title: "ARR 不是已确认收入", body: "后续需用季度收入、毛利、合同负债、留存与现金回款闭环。" },
+          ],
+        },
+        {
+          label: "03 · INFERENCE ECONOMICS", heading: "智谱首次把国产卡规模、成本和毛利放进同一条链",
+          paragraphs: [
+            "智谱在业绩公告中把国产芯片列为主要推理资源，并披露超过 10 万颗国产芯片的集群、单位 Token 推理成本较年初下降 80%。同一公告显示，开放平台及 API 毛利率达到 24.6%，改善来自规模摊薄、提价和全栈工程优化。这四个字段首次把物理集群、调用量、价格与毛利连接起来。",
+            "电话会报道补充了算力来源：自有集群、租赁和采购服务共同覆盖训练与推理。这个组合说明十万卡不等同于公司自有资产，也不能直接推算资本开支。公司仍未披露芯片供应商、有效在线卡数、功耗、吞吐、SLA 或不同来源的成本比例。",
+            "MiniMax 的中报只披露整体毛利率因基础设施效率改善而升至 17.9%。第一财经转述管理层称 M3 和 H3 正在适配国产芯片，计划上线大规模国产算力集群，并把 M3.1 推理成本目标设为 M3 初始水平的约三分之一。这些是方向和目标，尚未形成智谱式的已运营集群、单位成本与业务毛利闭环。",
+          ],
+          steps: [
+            { title: "Token 进入计费", body: "API 调用和订阅把模型使用转成持续收入。" },
+            { title: "集群吸收并发", body: "模型、引擎、互联和调度决定安装算力能否形成有效 Token。" },
+            { title: "单位成本下降", body: "规模摊薄与工程优化需要覆盖云服务、芯片、网络和运维。" },
+            { title: "毛利验证经济性", body: "价格与成本最终在业务毛利率中汇合；现金流仍是下一道门。" },
+          ],
+        },
+        {
+          label: "04 · LOSS AND FUNDING", heading: "收入增长还没有覆盖训练周期和资金需求",
+          paragraphs: [
+            "MiniMax 研发开支增至 2.969 亿美元，同比增长 138.8%，公司明确称主要增量来自模型训练相关云服务。期末现金余额为 13.228 亿美元，银行借款增至 1.336 亿美元；7 月又完成约 94.44 亿港元净配售和约 64.33 亿港元净可转债融资。资本市场继续为训练与扩张提供缓冲。",
+            "智谱研发开支为 21.312 亿元人民币，同比增长 33.6%。期末现金及现金等价物为 39.937 亿元，银行贷款增至 22.248 亿元；同期经调整净亏损为 19.641 亿元。其 API 业务已经产生正毛利，但集团仍需用上市融资和借款覆盖更大的研发与运营支出。",
+            "两家公司披露的期末资本承诺均不重大或为零，这不表示未来算力需求很小。云服务、租赁和采购服务可能按运营费用、短期合同或其他安排确认。判断资金压力需要同时跟踪现金、借款、云服务费用、租赁负债和后续融资，不能只看固定资产承诺。",
+          ],
+        },
+        {
+          label: "05 · INFRASTRUCTURE READ-THROUGH", heading: "对数据中心链条的信号更明确，容量换算仍需克制",
+          paragraphs: [
+            "两份财报共同确认生产推理需求正在扩大，且编码与代理任务比一般对话更依赖长上下文、缓存、工具调用和连续运行。智谱的十万卡集群为国产加速器、互联、服务器和调度提供了已运营需求证据；MiniMax 的全球收入结构意味着推理容量需要跨区域部署或采购。",
+            "公开材料没有给出每 Token 计算量、平均序列长度、缓存命中、批处理效率、芯片型号或 PUE。40 倍和 20 倍 Token 增长无法直接换算为 40 倍和 20 倍 GPU 或 MW；单位成本下降、模型架构和利用率提升可能吸收相当部分增量。",
+            "未来 12 至 36 个月，最有判别力的指标是 API 毛利率能否继续上升、经调整亏损能否随收入缩小、国产集群是否披露有效在线规模与单位任务成本，以及 ARR 能否转成确认收入和经营现金流。四项同时改善，模型需求才会稳定传导为可融资的数据中心容量。",
+          ],
+          cards: [
+            { label: "DEMAND", title: "生产调用已进入收入表", body: "API 与订阅占比上升，需求不再只由模型榜单或免费试用代理。" },
+            { label: "EFFICIENCY", title: "Token 不等于固定算力", body: "模型、缓存、并发和芯片效率会改变 GPU 与 MW 的换算关系。" },
+            { label: "FINANCE", title: "毛利之后还要看现金", body: "训练投入、借款与融资决定推理需求能否持续扩张。" },
+          ],
+        },
+      ],
+      conclusion: "MiniMax 与智谱已经证明，国内基础模型可以把大规模调用转成持续收入；智谱还给出了国产推理集群、单位成本和 API 毛利的首个完整经营截面。财报也同时表明，这条业务线仍依赖高额训练投入和外部资金。对 IDC Atlas 而言，需求信号从‘模型有人用’升级为‘调用能够计费并产生毛利’，下一步必须用现金转换和可复现的集群效率判断它能支撑多少长期算力容量。",
+      disclosure: "资料截止 2026 年 9 月 1 日 08:45（北京时间）。财务数据、Token 调用、智谱国产芯片规模及成本变化来自两家公司中期业绩公告。MiniMax 的 8 月 ARR、企业端占比、国产芯片适配与 M3.1 成本目标，以及智谱的 8 月 ARR 和电话会问答，来自具名媒体对业绩会的转述；官方活动页可验证 MiniMax 电话会存在，但未提供可公开复用的完整逐字稿。ARR 不等于已确认收入，Token 不直接等于 GPU、MW 或数据中心收入。本文不含股价、评级、目标价或投资建议。",
+    },
+    en: {
+      hero: "MiniMax and Z.ai's 2026 interim results move Chinese foundation-model commercialization into a more verifiable phase. Open Platform and enterprise services reached 63.4% of MiniMax revenue, while Open Platform and API reached 86.5% at Z.ai. Z.ai also disclosed 100,000-plus domestic chips in inference, an 80% decline in unit-token inference cost since the start of the year and positive API gross margin. Revenue conversion is visible; training spend, borrowings and adjusted losses keep the compute bill open.",
+      thesis: "The filings support a conditional conclusion: token growth can now produce recognized revenue and positive gross profit, but it has not produced a self-funding model economy. Z.ai offers the fuller chain across volume, price, unit cost and segment margin. MiniMax also shows clear global enterprise growth and total-margin improvement, while its domestic-compute cluster and next-generation cost target remain forward plans reported from the call. Neither company provides a common bridge from tokens to GPUs, megawatts or data-center revenue.",
+      opening: [
+        "MiniMax reported $116.6 million of first-half revenue, up 283.1%. Open Platform and other AI-based enterprise services generated $73.9 million, up 703.1%, and represented 63.4% of revenue. Total gross margin rose from 12.1% to 17.9%. Net loss narrowed 11.0% to $358.0 million, but adjusted net loss widened 111.2% to $293.0 million, leaving operating investment far above revenue.",
+        "Z.ai reported RMB953.9 million of first-half revenue, up 399.7%. Open Platform and API revenue was RMB825.2 million, or 86.5% of the total, up 2,735.7%. Segment gross margin moved from -0.4% to 24.6%, while group gross margin fell from 50.0% to 26.4% as cloud revenue diluted the legacy mix. Net loss narrowed 12.1% to RMB2.072 billion; adjusted net loss widened 12.1% to RMB1.964 billion.",
+        "The companies report in different currencies and use different revenue categories and non-IFRS adjustments, so this article does not impose an unreported exchange rate to rank their scale. The comparable direction is the shift toward API and subscription revenue, improving inference efficiency and continued reliance on R&D and financing.",
+      ],
+      sections: [
+        {
+          label: "01 · REVENUE MIX", heading: "The API is becoming the primary revenue-recognition channel",
+          paragraphs: [
+            "MiniMax's Open Platform and enterprise-services share rose from 30.3% to 63.4%, driven by paying users, enterprise customers, API calls and Token Plan adoption. AI-native product revenue also rose 100.9% to $42.6 million, preserving two revenue tracks across products and enterprise infrastructure. Revenue outside mainland China represented 60.8% of the total.",
+            "Z.ai's switch was larger. Open Platform and API moved from 15.2% of revenue a year earlier to 86.5%, while enterprise general-purpose large-model revenue fell 54.6% to RMB67.0 million. On-premise deployment fell from 73.7% of the prior full-year mix to 13.5%. Revenue is moving from project acceptance and one-time licenses toward metered calls and subscriptions, tying pricing, retention, concurrency and service reliability together.",
+            "Z.ai says MaaS token volume was more than 40 times its level at the start of 2026 by the announcement date, Coding Plan volume was more than 23 times higher and average API selling price rose about 101%. Volume and price rose together, but these remain company-defined statistics without independent cohort retention, net-price or promotion data.",
+          ],
+          metrics: [
+            { label: "MiniMax Open Platform", value: "63.4%", note: "Share of H1 revenue; up 703.1% year over year." },
+            { label: "Z.ai Open Platform / API", value: "86.5%", note: "Share of H1 revenue; up 2,735.7% year over year." },
+            { label: "Z.ai API gross margin", value: "24.6%", note: "Up from -0.4% a year earlier." },
+            { label: "Z.ai token volume", value: ">40×", note: "Company measure from the start of 2026 to the announcement date." },
+          ],
+        },
+        {
+          label: "02 · ARR BOUNDARY", heading: "Call disclosures show acceleration and increase the need for denominator discipline",
+          paragraphs: [
+            "Yicai reported MiniMax management's August ARR at more than $800 million, with roughly 80% from business customers. Caixin reported Z.ai management's August ARR at $1.6 billion using monthly revenue annualized. Neither number appears in the interim-results filings, and neither is accompanied by a public bridge across customers, contract duration, refunds, discounts or churn.",
+            "ARR annualizes a current month or contract state. It is not first-half recognized revenue, cash collection or guaranteed revenue for the next twelve months. The figures help measure August velocity; they should not be added to reported revenue or compared across the companies without aligned definitions.",
+            "The next filing must test three conversions: ARR into quarterly revenue, API margin durability and contract liabilities plus operating cash flow. If ARR rises without a matching movement in recognized revenue, margin or cash, promotions, customer concentration or the annualization method may explain part of the signal.",
+          ],
+          cards: [
+            { label: "REPORTED", title: "MiniMax ARR above $800M", body: "Management disclosure reported by Yicai; roughly 80% business, absent from the interim filing." },
+            { label: "REPORTED", title: "Z.ai ARR at $1.6B", body: "Management disclosure reported by Caixin; August monthly revenue multiplied by twelve, absent from the interim filing." },
+            { label: "GATE", title: "ARR is not recognized revenue", body: "Quarterly revenue, margin, contract liabilities, retention and cash collection must complete the bridge." },
+          ],
+        },
+        {
+          label: "03 · INFERENCE ECONOMICS", heading: "Z.ai connects domestic-chip scale, cost and margin in one disclosure chain",
+          paragraphs: [
+            "Z.ai identifies domestic chips as a primary inference resource and reports a cluster of more than 100,000 chips plus an 80% decline in unit-token inference cost since the start of the year. The same filing puts Open Platform and API gross margin at 24.6%, attributing the improvement to scale, pricing and full-stack engineering. Physical infrastructure, volume, price and margin now sit in one operating chain.",
+            "Call reporting adds that owned clusters, leased compute and purchased services cover both training and inference. More than 100,000 chips therefore does not mean 100,000 company-owned assets or provide a direct capex estimate. Suppliers, effective online chips, power draw, throughput, SLA and the cost mix across sourcing modes remain undisclosed.",
+            "MiniMax discloses only that infrastructure efficiency lifted total gross margin to 17.9%. Yicai reported management saying M3 and H3 are being adapted to domestic chips, that a large domestic-compute cluster is expected to come online and that M3.1 targets inference cost at roughly one third of M3's launch level. Those are plans and targets, not yet an operating cluster-cost-margin bridge comparable with Z.ai's filing.",
+          ],
+          steps: [
+            { title: "Tokens enter billing", body: "API calls and subscriptions turn model use into recurring revenue." },
+            { title: "Clusters absorb concurrency", body: "Models, engines, networks and scheduling determine whether installed compute creates effective tokens." },
+            { title: "Unit cost falls", body: "Scale and engineering must cover cloud services, chips, networking and operations." },
+            { title: "Margin tests the economics", body: "Price and cost converge in segment gross margin; cash flow remains the next gate." },
+          ],
+        },
+        {
+          label: "04 · LOSS AND FUNDING", heading: "Revenue growth has not yet covered the training cycle or funding requirement",
+          paragraphs: [
+            "MiniMax R&D expense rose 138.8% to $296.9 million, primarily because of cloud-service expense for training. It ended June with a $1.323 billion cash balance and $133.6 million of bank borrowings. In July it raised approximately HK$9.44 billion net from a placement and HK$6.43 billion net from convertible bonds, extending the funding buffer for training and expansion.",
+            "Z.ai spent RMB2.131 billion on R&D, up 33.6%. It ended June with RMB3.994 billion of cash and cash equivalents and RMB2.225 billion of bank loans, while adjusted net loss was RMB1.964 billion. Positive API gross profit has arrived, but listing proceeds and debt still support a larger R&D and operating base.",
+            "Both companies reported no significant or outstanding period-end capital commitments. That does not imply low future compute demand. Cloud services, leases and purchased compute can be recognized as operating expense, short-duration contracts or other arrangements. Cash, debt, cloud-service expense, lease liabilities and later financing need to be read together.",
+          ],
+        },
+        {
+          label: "05 · INFRASTRUCTURE READ-THROUGH", heading: "The data-center demand signal is clearer; capacity conversion remains constrained",
+          paragraphs: [
+            "Both filings confirm expanding production inference, with coding and agent workloads adding long context, cache, tool calls and sustained execution. Z.ai's 100,000-plus-chip cluster is operating evidence for domestic accelerators, servers, interconnect and orchestration. MiniMax's international revenue mix implies inference capacity procured or deployed across regions.",
+            "Public disclosures omit compute per token, average sequence length, cache hit rate, batching efficiency, chip models and PUE. Forty-fold and twenty-fold token growth cannot be translated into forty-fold and twenty-fold GPUs or megawatts. Lower unit cost, model architecture and utilization can absorb a substantial share of the increase.",
+            "Over the next 12 to 36 months, the discriminating signals are sustained API-margin expansion, adjusted losses shrinking with revenue, effective online domestic-cluster scale and cost per completed task, and ARR converting into recognized revenue and operating cash flow. Improvement across all four would support financeable, durable data-center capacity.",
+          ],
+          cards: [
+            { label: "DEMAND", title: "Production use is in the revenue statement", body: "API and subscription mix reduce reliance on leaderboards or free trials as demand proxies." },
+            { label: "EFFICIENCY", title: "Tokens are not fixed compute", body: "Models, cache, concurrency and chip efficiency alter the GPU and megawatt conversion." },
+            { label: "FINANCE", title: "Cash follows gross margin", body: "Training spend, debt and financing determine whether inference demand can keep expanding." },
+          ],
+        },
+      ],
+      conclusion: "MiniMax and Z.ai have shown that Chinese foundation models can convert large-scale use into recurring revenue. Z.ai also provides the first integrated operating snapshot across domestic inference scale, unit cost and API margin. The filings simultaneously show that the business still depends on heavy training investment and external capital. For IDC Atlas, the signal has advanced from model usage to billable usage with gross profit. Cash conversion and reproducible cluster efficiency now determine how much durable compute capacity it can support.",
+      disclosure: "Cutoff: September 1, 2026, 8:45 AM Beijing time. Financial data, token volume, Z.ai's domestic-chip scale and cost change come from the companies' interim-results announcements. MiniMax's August ARR, business mix, domestic-chip adaptation and M3.1 cost target, together with Z.ai's August ARR and call Q&A, come from attributed media reports of the results calls. MiniMax's official event page verifies the call but does not provide a complete transcript licensed for republication. ARR is not recognized revenue, and tokens do not directly equal GPUs, megawatts or data-center revenue. This article contains no price target, rating or investment advice.",
+    },
+  },
+  {
     slug: "nvidia-fy27-q2-five-tests",
     imageAltZh: "NVIDIA AI 工厂从晶圆、HBM、机架和网络延伸到园区电力与信用支持的分析剖面",
     imageAltEn: "Analyst cutaway of NVIDIA AI factories spanning wafers, HBM, racks, networking, campus power and credit support",

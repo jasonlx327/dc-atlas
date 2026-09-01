@@ -1,5 +1,8 @@
 export const columnArticles = [
   {
+    href: "/columns/minimax-zhipu-h1-token-economics", hrefEn: "/en/columns/minimax-zhipu-h1-token-economics", date: "2026-09-01", publishAt: "2026-09-01T08:45:00+08:00", series: "MODEL ECONOMICS · 32", title: "MiniMax 与智谱中报：Token 规模开始变成收入，算力账还没闭合", titleEn: "MiniMax and Z.ai H1: Token Scale Is Becoming Revenue, but the Compute Bill Is Still Open", summary: "两家公司都把增长核心切到 API 与开放平台。智谱披露十万卡国产推理和 API 毛利率转正，MiniMax 披露全球企业收入扩张；经调整亏损与融资需求仍然显著。", summaryEn: "Both companies shifted growth toward APIs and open platforms. Z.ai disclosed 100,000-plus domestic-chip inference and positive API margin; MiniMax showed global enterprise expansion. Adjusted losses and funding needs remain substantial.", image: "/column-agent-runtime-demand-v1.jpg",
+  },
+  {
     href: "/columns/singapore-200mw-allocation", hrefEn: "/en/columns/singapore-200mw-allocation", date: "2026-08-24", publishAt: "2026-08-24T09:30:00+08:00", series: "SOVEREIGN CAPACITY · 26", title: "新加坡只放出 200MW：稀缺电力如何重写数据中心竞争", titleEn: "Singapore Releases Just 200MW: How Scarce Power Rewrites Data-Center Competition", summary: "四家运营商各获暂定 50MW。真正的门槛不只是拿到容量，而是把绿色电力、IT 能效、AI 价值与项目兑现放进同一份许可。", summaryEn: "Four operators received provisional 50MW allocations. The real gate combines green power, IT efficiency, AI value and project execution.", image: "/column-singapore-200mw-allocation-v1.jpg",
   },
   {

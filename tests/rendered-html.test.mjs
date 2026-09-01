@@ -48,14 +48,14 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /class="atlas-calendar-group" aria-hidden="true"/);
   assert.match(html, /研究队列/);
   assert.match(html, /今日重点研究/);
-  assert.match(html, /NVIDIA Q2：962 亿美元收入之后，风险表扩到了电力与信用/);
+  assert.match(html, /MiniMax 与智谱中报：Token 规模开始变成收入，算力账还没闭合/);
   assert.match(html, /证据摘要/);
   assert.match(html, /尚未确认/);
   assert.match(html, /下一验证点/);
   assert.match(html, /为何今天读它/);
-  assert.match(html, /column-nvidia-fy27-q2-five-tests-v1\.jpg/);
+  assert.match(html, /column-agent-runtime-demand-v1\.jpg/);
   assert.match(html, /href="\/columns"/);
-  assert.match(html, /href="\/columns\/nvidia-fy27-q2-five-tests"/);
+  assert.match(html, /href="\/columns\/minimax-zhipu-h1-token-economics"/);
   assert.doesNotMatch(html, /情报摘要/);
   assert.match(html, /市场脉搏/);
   assert.match(html, /class="atlas-pulse-wave"/);
@@ -696,7 +696,22 @@ test("publishes the first scheduled research column and keeps later releases tim
   assert.match(feedSource, /publishedColumnArticles\(\)/);
 });
 
-test("publishes the NVIDIA Q2 and GLM-5.3-Flash research in both languages", async () => {
+test("publishes the MiniMax-Z.ai, NVIDIA Q2 and GLM-5.3-Flash research in both languages", async () => {
+  const modelEconomicsZh = await render("/columns/minimax-zhipu-h1-token-economics");
+  assert.equal(modelEconomicsZh.status, 200);
+  const modelEconomicsZhHtml = await modelEconomicsZh.text();
+  assert.match(modelEconomicsZhHtml, /MiniMax 与智谱中报：Token 规模开始变成收入，算力账还没闭合/);
+  assert.match(modelEconomicsZhHtml, /超过 10 万颗国产芯片/);
+  assert.match(modelEconomicsZhHtml, /ARR 不等于已确认收入/);
+  assert.match(modelEconomicsZhHtml, /智谱 2026 年中期业绩公告/);
+
+  const modelEconomicsEn = await render("/en/columns/minimax-zhipu-h1-token-economics");
+  assert.equal(modelEconomicsEn.status, 200);
+  const modelEconomicsEnHtml = await modelEconomicsEn.text();
+  assert.match(modelEconomicsEnHtml, /MiniMax and Z\.ai H1: Token Scale Is Becoming Revenue, but the Compute Bill Is Still Open/);
+  assert.match(modelEconomicsEnHtml, /more than 100,000 chips/);
+  assert.match(modelEconomicsEnHtml, /ARR is not recognized revenue/);
+
   const nvidiaZh = await render("/columns/nvidia-fy27-q2-five-tests");
   assert.equal(nvidiaZh.status, 200);
   const nvidiaZhHtml = await nvidiaZh.text();
@@ -732,6 +747,7 @@ test("publishes the NVIDIA Q2 and GLM-5.3-Flash research in both languages", asy
 
 test("renders every bilingual column inside the shared console reading layout", async () => {
   const slugs = [
+    "minimax-zhipu-h1-token-economics",
     "nvidia-fy27-q2-five-tests",
     "glm-5-3-flash-china-chips",
     "meta-blackrock-el-paso",

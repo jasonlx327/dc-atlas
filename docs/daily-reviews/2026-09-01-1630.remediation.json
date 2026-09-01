@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "atlas-daily-remediation.v2",
+  "runId": "atlas-research-minimax-zhipu-2026-09-01",
+  "date": "2026-09-01",
+  "slot": "urgent-research",
+  "status": "ready-for-partial-release",
+  "scope": "MiniMax and Z.ai 2026 interim-results research",
+  "cutoff": "2026-08-26T18:51:00+08:00",
+  "checkedThrough": "2026-09-01T08:50:00+08:00",
+  "formalRecordIds": ["minimax-zhipu-h1-token-economics"],
+  "callEvidence": {
+    "minimax": {"officialEvent": true, "completeTranscript": false, "mediaReports": 1, "status": "official-event-plus-attributed-media"},
+    "zhipu": {"officialFiling": true, "completeTranscript": false, "mediaReports": 2, "status": "official-filing-plus-attributed-media"}
+  },
+  "sections": {
+    "publish": ["listed-companies", "power-model-demand", "columns"],
+    "noChange": [],
+    "hold": ["idc-pulse", "mna", "capacity", "cooling", "compute-products", "china-gpu", "supply-chain", "earnings-calendar", "rumors", "policy"]
+  },
+  "editorial": {
+    "primarySources": 4,
+    "mediaSources": 3,
+    "bilingual": true,
+    "arrBoundary": "reported-management-metric-not-recognized-revenue",
+    "tokenBoundary": "no-direct-gpu-or-mw-conversion",
+    "republication": "paraphrase-only-for-media-call-reporting"
+  },
+  "releaseGate": {
+    "lint": "passed",
+    "focusedTests": "passed-4-of-4",
+    "fullTests": "passed-50-of-50",
+    "build": "passed",
+    "cloudflarePreflight": "passed",
+    "cloudflareDryRun": "passed",
+    "scopeReview": "passed"
+  },
+  "release": {
+    "contentCommit": null,
+    "cloudflareVersion": null,
+    "sitesVersion": null,
+    "sameCommit": false,
+    "formalReadback": "pending",
+    "sitesMirrorReadback": "pending"
+  },
+  "globalBlocker": false,
+  "manualFollowUps": [
+    "Obtain or archive an issuer-authorized complete transcript if either company publishes one.",
+    "Do not allocate the 100,000-plus domestic chips to named vendors without issuer or supplier evidence.",
+    "Reconcile August ARR to the next recognized-revenue, margin, contract-liability and cash-flow disclosure."
+  ]
+}
