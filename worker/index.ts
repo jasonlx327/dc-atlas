@@ -3,6 +3,7 @@ import handler from "vinext/server/app-router-entry";
 import { publishedColumnArticles } from "../app/columns/articles";
 import { currentDailyBriefRecord } from "../app/daily-briefs";
 import { entityDirectory } from "../app/entity-directory";
+import { sortNewest } from "../app/intelligence-model";
 import {
   POLICY_BRIEFS,
   RUMOR_BRIEFS,
@@ -3297,7 +3298,6 @@ function selectedCoreRumors(packet: AtlasEditorDecisionPacket | null): RumorWatc
 function rumorWatch(news: NewsItem[], packet: AtlasEditorDecisionPacket | null = null): RumorWatchItem[] {
   const mediaSource = /reuters|bloomberg|marketwatch|cnbc|financial times|the information|wall street journal|data center dynamics|utility dive|techcrunch|the register|datacenter knowledge|light reading/i;
   const rumorLanguage = /rumou?r|report(?:ed|s)?|sources?|plans?|consider(?:s|ing)?|expects?|may |could |in talks|据称|消息人士|传闻|拟|考虑|计划|或将/i;
-  const orderSignal = /order|contract|lease|supply|procurement|deployment|shipment|delivery|客户|订单|合同|租约|供货|采购|交付|出货|中标/i;
   const liveCandidates = news
     .filter((item) => mediaSource.test(item.sourceName ?? "")
       && rumorLanguage.test(`${item.title} ${item.summary}`)
@@ -3326,16 +3326,11 @@ function rumorWatch(news: NewsItem[], packet: AtlasEditorDecisionPacket | null =
       sourceNoteEn: "Public media reporting; claims remain attributed to the original report while subsequent status changes are tracked.",
     }));
   const seen = new Set<string>();
-  return [...selectedCoreRumors(packet), ...RUMOR_BRIEFS, ...liveCandidates]
+  return sortNewest([...selectedCoreRumors(packet), ...RUMOR_BRIEFS, ...liveCandidates])
     .filter((item) => {
       if (seen.has(item.sourceUrl)) return false;
       seen.add(item.sourceUrl);
       return true;
-    })
-    .sort((a, b) => {
-      const aOrder = orderSignal.test(`${a.title} ${a.summary} ${a.sourceNote}`) ? 1 : 0;
-      const bOrder = orderSignal.test(`${b.title} ${b.summary} ${b.sourceNote}`) ? 1 : 0;
-      return bOrder - aOrder || new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
     })
     .slice(0, 12);
 }

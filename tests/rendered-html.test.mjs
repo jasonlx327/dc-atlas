@@ -915,6 +915,8 @@ test("keeps live-data validation in the deployment path", async () => {
   for (const section of ["idcPulse", "listedCompanyNews", "mnaDeals", "capacityRadar", "coolingProgress"]) assert.match(liveCheck, new RegExp(section));
   assert.match(liveCheck, /freshness\.status === "stale"/);
   assert.match(workerSource, /CONTENT_REVIEWED_AT = "2026-09-01"/);
+  assert.match(workerSource, /return sortNewest\(\[\.\.\.selectedCoreRumors\(packet\), \.\.\.RUMOR_BRIEFS, \.\.\.liveCandidates\]\)/);
+  assert.doesNotMatch(workerSource, /const orderSignal =/);
   assert.match(workerSource, /Riot 在 Rockdale 签署 191MW 关键 IT 容量长期租约/);
   assert.match(workerSource, /1\.25GW 电力基础设施 · 非运行 IT 容量/);
   assert.match(workerSource, /目标动员逾 \$5,000 亿第三方资本/);
