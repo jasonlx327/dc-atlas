@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "atlas-editor-decision.v1",
+  "generatedAt": "2026-09-01T08:50:00.000Z",
+  "cutoffAt": "2026-09-01T01:30:00.000Z",
+  "timezone": "Asia/Shanghai",
+  "day": "2026-09-01",
+  "status": "completed",
+  "sourcePacketGeneratedAt": "2026-09-01T08:39:52.920Z",
+  "decisions": [
+    {
+      "eventId": "trendforce-essd-q2-2026",
+      "action": "publish",
+      "route": "rumor-watch",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": ["https://www.ithome.com/0/996/989.htm", "https://www.trendforce.com/presscenter/news/20260901-13210.html"],
+      "reasonCodes": ["attributable-media-report", "single-source-report", "source-canonical-repaired", "bilingual-copy-valid", "public-adapter-ready"],
+      "publicCopy": {
+        "titleZh": "TrendForce：五大企业级 SSD 品牌 2026 Q2 收入近 $37.59 billion",
+        "titleEn": "TrendForce: Top five enterprise-SSD brands neared $37.59 billion in 2026 Q2 revenue",
+        "summaryZh": "TrendForce 表示，五大企业级 SSD 品牌在 2026 Q2 的合计收入约为 $37.59 billion，环比增长 103.6%；报告将增长归因于出货量增加和合约价格上涨，并预计生成式 AI agent 服务、云厂商数据中心部署和 NVIDIA GB 系列机架出货将支撑 2026 Q3 需求。这里的收入数据与需求判断来自 TrendForce 研究，不代表厂商逐项披露，也不等于数据中心资本开支或服务器出货已被逐一确认。",
+        "summaryEn": "TrendForce says the top five enterprise-SSD brands generated nearly $37.59 billion in combined 2026 Q2 revenue, up 103.6% quarter over quarter, citing higher shipments and contract prices. It expects generative-AI agent adoption, CSP data-center deployments and NVIDIA GB-series rack shipments to support 2026 Q3 demand. The figures and outlook are TrendForce research, not itemized vendor disclosures or proof of data-center capex or server shipments."
+      },
+      "publicClaims": [{"claim":"TrendForce reports combined 2Q26 enterprise-SSD revenue of nearly $37.59 billion for the top five brands, up 103.6% quarter over quarter, and expects AI-agent adoption and data-center deployments to support 3Q26 demand.","sourceRefs":["https://www.trendforce.com/presscenter/news/20260901-13210.html"],"state":"reported"}],
+      "internalNotes": ["The original local event ID evt-8fab3ef561c3891d0d4c collides with the existing Rubin CPX public record; this stable canonical-source ID is used so the prior record is not overwritten.","IT之家 republishes TrendForce; the independence group remains TrendForce, so this is single-source reporting."],
+      "fallbackScored": false,
+      "holdClass": null,
+      "entities": ["TrendForce", "Samsung", "SK hynix", "Micron", "Kioxia", "SanDisk", "NVIDIA"],
+      "region": "全球",
+      "publishedAt": "2026-09-01T07:49:30.000Z",
+      "sourceId": "ithome"
+    },
+    {
+      "eventId": "evt-8fab3ef561c3891d0d4c",
+      "action": "hold",
+      "route": "internal",
+      "section": "rumors",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": ["https://www.ithome.com/0/996/989.htm"],
+      "reasonCodes": ["event-id-collision-with-existing-public-record", "identity-reconciliation-required"],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": ["The scanner ID is already used by the published Rubin CPX record; do not apply this raw event ID."],
+      "fallbackScored": false,
+      "holdClass": "watch",
+      "entities": ["NVIDIA", "Micron", "SK hynix"],
+      "region": "全球",
+      "publishedAt": "2026-09-01T07:49:30.000Z",
+      "sourceId": "ithome"
+    }
+  ],
+  "summary": {"publishFormal": 0, "publishRumor": 1, "research": 0, "hold": 1, "reject": 0, "fallbackScored": 0, "adapterReady": 1, "blockingHold": 0}
+}

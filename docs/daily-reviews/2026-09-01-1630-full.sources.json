@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-09-01-full",
+  "sources": [
+    {
+      "ref": "global-scan-20260901-1630-full",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "Fresh global source scan",
+      "observedAt": "2026-09-01T16:39:52+08:00",
+      "sections": ["*"],
+      "details": {"fetched": 2618, "normalized": 2581, "duplicates": 37, "relevant": 1746, "clusters": 626, "held": 140, "errors": 7, "status": "partial"}
+    },
+    {
+      "ref": "morning-current-rescan-20260901",
+      "evidenceKind": "workflow-state",
+      "sourceName": "09:30 current-rescan handoff",
+      "observedAt": "2026-09-01T09:55:00+08:00",
+      "sections": ["*"],
+      "details": {"handoffRecords": 121, "newFormal": 4, "newIntelligence": 5, "localHolds": 133, "productionReadback": "passed", "applicationCommit": "e628b4c7b1b9e1bc79dfb43d7f7e3e0b3b2b8a2d"}
+    },
+    {
+      "ref": "industry-refresh-20260901",
+      "evidenceKind": "workflow-state",
+      "sourceName": "09:55–11:20 industry-refresh handoff",
+      "observedAt": "2026-09-01T11:20:00+08:00",
+      "sections": ["*"],
+      "details": {"newEvents": 0, "crossRoutedExistingRecords": 4, "localHolds": 1, "productionReadback": "passed", "applicationCommit": "774dd937b6acf23aab2a89ca3df4774e7431b7c8"}
+    },
+    {
+      "ref": "candidate-handoff-20260901",
+      "evidenceKind": "runtime-state",
+      "sourceName": "Worker daily-candidates handoff",
+      "observedAt": "2026-09-01T09:10:20+08:00",
+      "sections": ["*"],
+      "details": {"candidateCount": 121, "selectedCount": 93, "watchCount": 28, "status": "completed", "discoveryOnly": true}
+    },
+    {
+      "ref": "closure-handoff-20260901",
+      "evidenceKind": "runtime-state",
+      "sourceName": "Worker daily-closure handoff",
+      "observedAt": "2026-09-01T09:10:20+08:00",
+      "sections": ["*"],
+      "details": {"updated": 6, "verifiedNoChange": 7, "blocked": 0, "status": "completed", "discoveryOnly": true}
+    },
+    {
+      "ref": "core-company-checks-20260901-1630",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "50-company official entrypoint checks",
+      "observedAt": "2026-09-01T16:43:53+08:00",
+      "sections": ["listed-companies", "china-gpu", "earnings-calendar"],
+      "details": {"companyCount": 50, "changed": 10, "noChange": 13, "notDetermined": 27, "layers": {"demand-platform": 12, "model-application": 11, "compute-silicon": 15, "capacity-power": 12}}
+    },
+    {
+      "ref": "china-xpu-checks-20260901-1630",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "Seven China XPU listed-company checks",
+      "observedAt": "2026-09-01T16:51:48+08:00",
+      "sections": ["china-gpu", "listed-companies", "earnings-calendar"],
+      "details": {"issuerCount": 7, "notDetermined": 7, "reason": "issuer-specific exchange/filing reconciliation incomplete"}
+    },
+    {
+      "ref": "trendforce-essd-q2-2026",
+      "evidenceKind": "public-source",
+      "sourceName": "TrendForce / IT之家 enterprise SSD report",
+      "tier": "T3",
+      "canonicalUrl": "https://www.trendforce.com/presscenter/news/20260901-13210.html",
+      "publishedAt": "2026-09-01T00:00:00+08:00",
+      "accessState": "public",
+      "independenceGroup": "trendforce",
+      "sections": ["rumors", "supply-chain"],
+      "details": {"republisherUrl": "https://www.ithome.com/0/996/989.htm", "attribution": "IT之家 republishes TrendForce; one independent source group", "observedFacts": ["2Q26 top-five enterprise SSD revenue nearly $37.59 billion", "quarter-over-quarter growth 103.6%", "3Q26 demand supported by gen-AI agents and CSP data-center deployments"]}
+    },
+    {
+      "ref": "china-xpu-cambricon-issuer-20260901",
+      "evidenceKind": "runtime-state",
+      "sourceName": "寒武纪 issuer and SSE entrypoints",
+      "observedAt": "2026-09-01T16:51:48+08:00",
+      "canonicalUrl": "https://www.cambricon.com/",
+      "accessState": "public",
+      "sections": ["china-gpu", "listed-companies", "earnings-calendar"],
+      "details": {"httpStatus": 200, "exchangeUrl": "https://www.sse.com.cn/assortment/stock/list/info/company/index.shtml?COMPANY_CODE=688256", "result": "not-determined"}
+    },
+    {
+      "ref": "china-xpu-hygon-issuer-20260901",
+      "evidenceKind": "runtime-state",
+      "sourceName": "海光信息 issuer and SSE entrypoints",
+      "observedAt": "2026-09-01T16:51:48+08:00",
+      "canonicalUrl": "https://www.hygon.cn/",
+      "accessState": "public",
+      "sections": ["china-gpu", "listed-companies", "earnings-calendar"],
+      "details": {"httpStatus": 200, "exchangeUrl": "https://www.sse.com.cn/assortment/stock/list/info/company/index.shtml?COMPANY_CODE=688041", "result": "not-determined"}
+    },
+    {
+      "ref": "china-xpu-loongson-issuer-20260901",
+      "evidenceKind": "runtime-state",
+      "sourceName": "龙芯中科 issuer and SSE entrypoints",
+      "observedAt": "2026-09-01T16:51:48+08:00",
+      "canonicalUrl": "https://www.loongson.cn/",
+      "accessState": "public",
+      "sections": ["china-gpu", "listed-companies", "earnings-calendar"],
+      "details": {"httpStatus": 200, "exchangeUrl": "https://www.sse.com.cn/assortment/stock/list/info/company/index.shtml?COMPANY_CODE=688047", "result": "not-determined"}
+    },
+    {
+      "ref": "china-xpu-jingjia-issuer-20260901",
+      "evidenceKind": "runtime-state",
+      "sourceName": "景嘉微 issuer and SZSE entrypoints",
+      "observedAt": "2026-09-01T16:51:48+08:00",
+      "canonicalUrl": "https://www.jingjiamicro.com/",
+      "accessState": "public",
+      "sections": ["china-gpu", "listed-companies", "earnings-calendar"],
+      "details": {"httpStatus": 200, "exchangeUrl": "https://www.szse.cn/market/product/stock/list/index.html?stockCode=300474", "result": "not-determined"}
+    },
+    {
+      "ref": "china-xpu-mthreads-issuer-20260901",
+      "evidenceKind": "runtime-state",
+      "sourceName": "摩尔线程 issuer and SSE entrypoints",
+      "observedAt": "2026-09-01T16:51:48+08:00",
+      "canonicalUrl": "https://www.mthreads.com/",
+      "accessState": "public",
+      "sections": ["china-gpu", "listed-companies", "earnings-calendar"],
+      "details": {"httpStatus": 200, "exchangeUrl": "https://www.sse.com.cn/assortment/stock/list/info/company/index.shtml?COMPANY_CODE=688795", "result": "not-determined"}
+    },
+    {
+      "ref": "china-xpu-metax-issuer-20260901",
+      "evidenceKind": "runtime-state",
+      "sourceName": "沐曦股份 issuer and SSE entrypoints",
+      "observedAt": "2026-09-01T16:51:48+08:00",
+      "canonicalUrl": "https://www.metax-tech.com/",
+      "accessState": "public",
+      "sections": ["china-gpu", "listed-companies", "earnings-calendar"],
+      "details": {"httpStatus": 200, "exchangeUrl": "https://www.sse.com.cn/assortment/stock/list/info/company/index.shtml?COMPANY_CODE=688802", "result": "not-determined"}
+    },
+    {
+      "ref": "china-xpu-biren-issuer-20260901",
+      "evidenceKind": "runtime-state",
+      "sourceName": "壁仞科技 issuer and HKEX entrypoints",
+      "observedAt": "2026-09-01T16:51:48+08:00",
+      "canonicalUrl": "https://www.birentech.com/news/",
+      "accessState": "public",
+      "sections": ["china-gpu", "listed-companies", "earnings-calendar"],
+      "details": {"httpStatus": 200, "knownFilingUrl": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0828/2026082800454_c.pdf", "knownFilingStatus": 200, "result": "not-determined"}
+    }
+  ]
+}

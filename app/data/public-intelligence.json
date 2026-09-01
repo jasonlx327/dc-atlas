@@ -1,5 +1,33 @@
 [
   {
+    "id": "editor-trendforce-essd-q2-2026",
+    "title": "TrendForce：五大企业级 SSD 品牌 2026 Q2 收入近 $37.59 billion",
+    "titleEn": "TrendForce: Top five enterprise-SSD brands neared $37.59 billion in 2026 Q2 revenue",
+    "summary": "TrendForce 表示，五大企业级 SSD 品牌在 2026 Q2 的合计收入约为 $37.59 billion，环比增长 103.6%；报告将增长归因于出货量增加和合约价格上涨，并预计生成式 AI agent 服务、云厂商数据中心部署和 NVIDIA GB 系列机架出货将支撑 2026 Q3 需求。这里的收入数据与需求判断来自 TrendForce 研究，不代表厂商逐项披露，也不等于数据中心资本开支或服务器出货已被逐一确认。",
+    "summaryEn": "TrendForce says the top five enterprise-SSD brands generated nearly $37.59 billion in combined 2026 Q2 revenue, up 103.6% quarter over quarter, citing higher shipments and contract prices. It expects generative-AI agent adoption, CSP data-center deployments and NVIDIA GB-series rack shipments to support 2026 Q3 demand. The figures and outlook are TrendForce research, not itemized vendor disclosures or proof of data-center capex or server shipments.",
+    "publishedAt": "2026-09-01T07:49:30.000Z",
+    "sourceName": "IT之家",
+    "sourceUrl": "https://www.ithome.com/0/996/989.htm",
+    "region": "全球",
+    "status": "reported",
+    "statusLabel": "媒体 · 单一来源",
+    "statusLabelEn": "Media · single source",
+    "sourceCount": 1,
+    "entities": [
+      "TrendForce",
+      "Samsung",
+      "SK hynix",
+      "Micron",
+      "Kioxia",
+      "SanDisk",
+      "NVIDIA"
+    ],
+    "officialResponse": "当前状态为媒体报道；后续一手材料将用于升级状态，而不影响本条公开可见。",
+    "officialResponseEn": "The current state is media reporting; later primary material will upgrade the status without determining visibility.",
+    "sourceNote": "IT之家公开报道；主张按原始来源归属呈现。",
+    "sourceNoteEn": "Public reporting by IT之家; claims remain attributed to the original source."
+  },
+  {
     "id": "editor-evt-8fab3ef561c3891d0d4c",
     "title": "产业调查称 NVIDIA 重启 Rubin CPX，并改用 HBM4 与独立机架设计",
     "titleEn": "Industry checks say NVIDIA has restarted Rubin CPX with HBM4 and a separate rack design",
