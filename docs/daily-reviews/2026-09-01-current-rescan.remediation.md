@@ -11,13 +11,15 @@
 1. Corrected the Global Intelligence status track so a generic media-report state no longer lights the official-response step.
 2. Removed the legacy order-keyword priority from the public intelligence feed and made the newest attributable records the prominent sequence.
 3. Added a public-feed cache version so a deployment cannot retain the previous ordering under an unchanged content hash.
+4. Removed an unused full daily-brief object from the compressed homepage prime so the latest intelligence record is present in the server-rendered first screen rather than appearing only after client hydration.
 
 ## Release proof
 
-- Release commit: `ffde3b39d88e1355dcffd330cb6fab9d1041f325`.
-- Cloudflare: version `268cc31a-b08c-4780-8fa2-278a16bb4d7a`.
-- Sites: version `142`, built from the same commit.
+- Release commit: `e62852c962fe2525e6b9624129a8f4e10bd66d60`.
+- Cloudflare: version `49142956-eec1-4c6e-b5d8-33d836b9eac6`.
+- Sites: version `143`, built from the same commit.
 - Production API: `contentReviewedAt=2026-09-01`; the five new media records occupy positions 1–5 of the public intelligence feed.
+- Server-rendered first screen: the latest Rubin CPX record is present before client hydration; the client then expands the desk to the six newest records.
 - Formal and English pages: root, intelligence index, representative intelligence detail and policy detail all returned HTTP 200.
 - Sites mirror: deployment succeeded; the mirror returned the expected HTTP 308 canonical redirect to `https://idc-index.com/`, which returned HTTP 200.
 

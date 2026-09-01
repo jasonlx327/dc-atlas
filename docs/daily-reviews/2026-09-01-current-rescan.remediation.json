@@ -14,16 +14,16 @@
   },
   "formalRecordIds": ["amd-cisco-humain-mi355x-live-2026", "alibaba-cloud-brazil-region-2026", "nvidia-mediatek-nvlink-fusion-2026", "us-bulk-power-supply-chain-emergency-2026"],
   "intelligenceRecordIds": ["editor-evt-8fab3ef561c3891d0d4c", "editor-evt-de82d0a92e1b145a52fa", "editor-evt-437c54e1c9d45acf4472", "editor-evt-40f0b321ada2f10817c7", "editor-evt-3a2b91269216df5c4bef"],
-  "remediations": ["official-response-state-marker", "newest-first-public-intelligence", "versioned-public-feed-cache-key"],
+  "remediations": ["official-response-state-marker", "newest-first-public-intelligence", "versioned-public-feed-cache-key", "bounded-server-rendered-homepage-prime"],
   "globalBlocker": false,
   "releaseGate": {"lint": "passed-with-27-existing-warnings", "test": "passed-50-of-50", "build": "passed", "cloudflareDryRun": "passed", "scopeReview": "passed"},
   "release": {
-    "contentCommit": "ffde3b39d88e1355dcffd330cb6fab9d1041f325",
-    "cloudflareVersion": "268cc31a-b08c-4780-8fa2-278a16bb4d7a",
-    "sitesVersion": 142,
+    "contentCommit": "e62852c962fe2525e6b9624129a8f4e10bd66d60",
+    "cloudflareVersion": "49142956-eec1-4c6e-b5d8-33d836b9eac6",
+    "sitesVersion": 143,
     "sameCommit": true,
     "formalReadback": "passed-bilingual-pages-and-nine-records",
-    "publicFeedReadback": "passed-five-new-intelligence-records-in-top-six",
+    "publicFeedReadback": "passed-five-new-intelligence-records-in-top-six-and-latest-record-in-server-rendered-first-screen",
     "sitesMirrorReadback": "passed-after-canonical-redirect"
   },
   "manualFollowUp": ["18 company checks remain not-determined", "retry seven failed source routes in a later window"]
