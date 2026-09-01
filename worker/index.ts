@@ -1460,11 +1460,31 @@ function trackedSourceNews(): NewsItem[] {
 
 function recentNews(items: NewsItem[], days: number, take = 3): NewsItem[] {
   const cutoff = Date.now() - days * 24 * 60 * 60 * 1_000;
-  return uniqueNews(items.filter((item) => {
-    if (!item.publishedAt) return false;
-    const publishedAt = new Date(item.publishedAt).getTime();
-    return Number.isFinite(publishedAt) && publishedAt >= cutoff && publishedAt <= Date.now() + 24 * 60 * 60 * 1_000;
-  }), take);
+  return uniqueNews(items
+    .filter((item) => {
+      if (!item.publishedAt) return false;
+      const publishedAt = new Date(item.publishedAt).getTime();
+      return Number.isFinite(publishedAt) && publishedAt >= cutoff && publishedAt <= Date.now() + 24 * 60 * 60 * 1_000;
+    })
+    .sort((a, b) => Date.parse(b.publishedAt ?? "") - Date.parse(a.publishedAt ?? "")), take);
+}
+
+function formalChainNews(stage: Exclude<ChainKey, "model" | "campus">): NewsItem[] {
+  const matchers: Record<Exclude<ChainKey, "model" | "campus">, RegExp> = {
+    compute: /GPU|CPU|XPU|accelerator|HBM|DRAM|chip|processor|算力芯片|芯片|处理器|封装/i,
+    rack: /rack|server|interconnect|NVLink|Ethernet|InfiniBand|CPO|LPO|optical|laser|1\.6T|800G|机架|服务器|互联|光模块|激光器/i,
+    cooling: /liquid cool|cooling|chiller|cold plate|CDU|RDHx|液冷|冷却|散热|冷板/i,
+    power: /electric|grid|PPA|MW|GW|电力|供电|电网|绿电|能源采购/i,
+  };
+  const matching = [...FORMAL_PULSE_SUPPLEMENT, ...FORMAL_LISTED_SUPPLEMENT]
+    .filter((item) => {
+      if (item.category === "idc-software") return false;
+      if (stage === "compute" && item.signal === "hardware") return true;
+      if (stage === "rack" && item.signal === "network") return true;
+      return matchers[stage].test(`${item.title} ${item.titleEn} ${item.summary} ${item.summaryEn} ${item.scale}`);
+    });
+  return Array.from(new Map(matching.map((item) => [item.sourceUrl || item.id, item])).values())
+    .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
 }
 
 function positiveIdcNews(liveNews: NewsItem[], records: SourceRecord[]): NewsItem[] {
@@ -3363,7 +3383,8 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const staticContentVersion = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(JSON.stringify(staticAtlasContent()))).then((digest) => Array.from(new Uint8Array(digest)).slice(0, 8).map((byte) => byte.toString(16).padStart(2, "0")).join(""));
   const relationSchemaVersion = "entity-brief-v3";
   const publicFeedVersion = "rumor-newest-v1";
-  const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}&relations=${relationSchemaVersion}&feed=${publicFeedVersion}`, request.url), { method: "GET" });
+  const chainRoutingVersion = "formal-cross-route-v1";
+  const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}&relations=${relationSchemaVersion}&feed=${publicFeedVersion}&chain=${chainRoutingVersion}`, request.url), { method: "GET" });
   const edgeCache = (caches as unknown as { default: Cache }).default;
   if (!options.forceRefresh) {
     const cached = await edgeCache.match(cacheKey);
@@ -3462,24 +3483,29 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const fallback = chainFallbackNews(records, coolingRecords);
   const chainWindowDays = 30;
   const computeNews = nvidiaNews.filter((item) => /GPU|服务器|机柜|算力芯片|AI\s*工厂|Vera\s*Rubin|Blackwell|Rubin/i.test(item.title));
+  const formalPowerNews = formalChainNews("power");
+  const formalPowerUrls = new Set(formalPowerNews.map((item) => item.sourceUrl).filter(Boolean));
   const chainNews: Record<ChainKey, NewsItem[]> = {
     compute: recentNews([
+      ...formalChainNews("compute"),
       ...editorNewsItems(publicEditorDecision, ["compute-products", "china-gpu"]),
       ...chinaChipNews,
       ...listedCompanyNews.filter((item) => item.id === "biwin-xincheng-hanqi-financing-2026"),
       ...computeNews,
       ...fallback.rack.slice(0, 2),
-    ], chainWindowDays),
-    rack: recentNews([...editorNewsItems(publicEditorDecision, ["supply-chain"]), ...networkNews, ...fallback.rack], chainWindowDays),
-    cooling: recentNews([...editorNewsItems(publicEditorDecision, ["cooling"]), ...coolingNews, ...fallback.cooling], chainWindowDays),
+    ], chainWindowDays, 6),
+    rack: recentNews([...formalChainNews("rack"), ...editorNewsItems(publicEditorDecision, ["supply-chain"]), ...networkNews, ...fallback.rack], chainWindowDays, 6),
+    cooling: recentNews([...formalChainNews("cooling"), ...editorNewsItems(publicEditorDecision, ["cooling"]), ...coolingNews, ...fallback.cooling], chainWindowDays, 6),
     power: recentNews([
+      ...formalPowerNews,
       ...editorNewsItems(publicEditorDecision, ["power-model-demand"]),
       ...powerNews,
-      ...idcPulse.filter((item) => item.signal === "power" || /GW|MW|电力|供电|绿电/i.test(`${item.title} ${item.summary} ${item.scale ?? ""}`)),
+      ...idcPulse.filter((item) => (item.signal === "power" || /GW|MW|电力|供电|绿电/i.test(`${item.title} ${item.summary} ${item.scale ?? ""}`))
+        && !formalPowerUrls.has(item.sourceUrl)),
       ...fallback.power,
-    ], chainWindowDays),
-    campus: recentNews([...idcPulse, ...positiveNews, ...news], chainWindowDays),
-    model: recentNews([...editorNewsItems(publicEditorDecision, ["power-model-demand"]), ...modelNews], chainWindowDays),
+    ], chainWindowDays, 6),
+    campus: recentNews([...idcPulse, ...positiveNews, ...news], chainWindowDays, 6),
+    model: recentNews([...editorNewsItems(publicEditorDecision, ["power-model-demand"]), ...modelNews], chainWindowDays, 6),
   };
 
   const latestSnapshot = await env.IDC_DAILY_SNAPSHOTS.get<DailySnapshotMeta>("latest-meta", "json");

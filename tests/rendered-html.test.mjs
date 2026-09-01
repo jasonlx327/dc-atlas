@@ -880,8 +880,17 @@ test("keeps formally released records in versioned content and cache identity", 
   assert.match(workerSource, /formalListedSupplement: FORMAL_LISTED_SUPPLEMENT/);
   assert.match(workerSource, /const idcPulse = uniqueNews\(\[[\s\S]*FORMAL_PULSE_SUPPLEMENT[\s\S]*constructionPulse\(\)/);
   assert.match(workerSource, /const listedCompanyNews = uniqueNews\(\[[\s\S]*FORMAL_LISTED_SUPPLEMENT[\s\S]*listedCompanyPulse\(\)/);
+  assert.match(workerSource, /function formalChainNews/);
+  for (const stage of ["compute", "rack", "cooling", "power"]) {
+    assert.match(workerSource, new RegExp(`formalChainNews\\(\\"${stage}\\"\\)`));
+  }
+  assert.match(workerSource, /compute: recentNews\(\[[\s\S]*formalChainNews\("compute"\)/);
+  assert.match(workerSource, /rack: recentNews\(\[\.\.\.formalChainNews\("rack"\)/);
+  assert.match(workerSource, /function recentNews[\s\S]*\.sort\(\(a, b\) => Date\.parse\(b\.publishedAt/);
   assert.match(workerSource, /relationSchemaVersion = "entity-brief-v3"/);
   assert.match(workerSource, /publicFeedVersion = "rumor-newest-v1"/);
+  assert.match(workerSource, /chainRoutingVersion = "formal-cross-route-v1"/);
+  assert.match(workerSource, /&chain=\$\{chainRoutingVersion\}/);
 });
 
 test("keeps the large-campus radar current and source-backed", async () => {
