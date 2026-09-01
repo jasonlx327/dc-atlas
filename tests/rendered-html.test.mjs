@@ -881,6 +881,7 @@ test("keeps formally released records in versioned content and cache identity", 
   assert.match(workerSource, /const idcPulse = uniqueNews\(\[[\s\S]*FORMAL_PULSE_SUPPLEMENT[\s\S]*constructionPulse\(\)/);
   assert.match(workerSource, /const listedCompanyNews = uniqueNews\(\[[\s\S]*FORMAL_LISTED_SUPPLEMENT[\s\S]*listedCompanyPulse\(\)/);
   assert.match(workerSource, /relationSchemaVersion = "entity-brief-v3"/);
+  assert.match(workerSource, /publicFeedVersion = "rumor-newest-v1"/);
 });
 
 test("keeps the large-campus radar current and source-backed", async () => {

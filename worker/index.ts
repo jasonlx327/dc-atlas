@@ -3362,7 +3362,8 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const publicEditorDecision: AtlasEditorDecisionPacket | null = null;
   const staticContentVersion = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(JSON.stringify(staticAtlasContent()))).then((digest) => Array.from(new Uint8Array(digest)).slice(0, 8).map((byte) => byte.toString(16).padStart(2, "0")).join(""));
   const relationSchemaVersion = "entity-brief-v3";
-  const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}&relations=${relationSchemaVersion}`, request.url), { method: "GET" });
+  const publicFeedVersion = "rumor-newest-v1";
+  const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}&relations=${relationSchemaVersion}&feed=${publicFeedVersion}`, request.url), { method: "GET" });
   const edgeCache = (caches as unknown as { default: Cache }).default;
   if (!options.forceRefresh) {
     const cached = await edgeCache.match(cacheKey);
