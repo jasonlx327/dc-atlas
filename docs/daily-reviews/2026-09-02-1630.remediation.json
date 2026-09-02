@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "atlas-remediation.v1",
+  "date": "2026-09-02",
+  "slot": "16:30",
+  "mode": "partial",
+  "cutoff": "2026-09-02T09:30:00+08:00",
+  "scanStartedAt": "2026-09-02T16:36:27+08:00",
+  "baseline": {
+    "ref": "refs/heads/atlas-production",
+    "commit": "f4ca47e291628e41be4d8f16b48280f806eb7273",
+    "trusted": true,
+    "priorCloudflareVersion": "454b5ad3-4904-4294-a532-5e5d724a4963",
+    "priorSitesVersion": "145"
+  },
+  "scan": {
+    "globalFetched": 2830,
+    "globalNormalized": 2796,
+    "clusters": 693,
+    "sourceFailures": 6,
+    "morningHandoffCandidates": 121,
+    "morningHandoffClosure": {"updated": 1, "verifiedNoChange": 12, "blocked": 0}
+  },
+  "companyChecks": {
+    "checked": 50,
+    "changed": 7,
+    "noChange": 10,
+    "notDetermined": 33,
+    "chinaXpuListedChecked": 7,
+    "chinaXpuListedNotDetermined": 7
+  },
+  "sections": {
+    "publish": ["rumors"],
+    "noChange": ["idc-pulse", "mna", "supply-chain", "columns"],
+    "hold": ["listed-companies", "capacity", "cooling", "compute-products", "china-gpu", "power-model-demand", "earnings-calendar", "policy"]
+  },
+  "publication": {
+    "globalIntelligenceNew": 3,
+    "globalIntelligenceUpgraded": 0,
+    "formalFactsNew": 0,
+    "adapterReady": 3,
+    "formalRecords": [],
+    "globalIntelligenceRecords": [
+      "editor-evt-71bf696d5b750014f9c7",
+      "editor-evt-abc0d1317e9baa27baf2",
+      "editor-evt-d3591910ea19bfe093db"
+    ]
+  },
+  "release": {
+    "status": "ready-for-partial-release",
+    "cloudflare": "pending",
+    "sites": "pending",
+    "sameHead": false,
+    "formalReadback": "pending",
+    "sitesReadback": "pending",
+    "manualFollowUp": [
+      "33 company checks remain not-determined",
+      "7 China XPU listed issuers remain not-determined",
+      "five China official endpoints failed and xAI News returned 403",
+      "replay corpus is missing and model baseline assertion remains"
+    ]
+  },
+  "artifacts": {
+    "manifest": "docs/daily-reviews/2026-09-02-1630-full.manifest.json",
+    "sources": "docs/daily-reviews/2026-09-02-1630-full.sources.json",
+    "companyChecks": "docs/daily-reviews/2026-09-02-1630-full.core-company-checks.json",
+    "chinaXpuChecks": "docs/daily-reviews/2026-09-02-1630-full.china-xpu-listed-checks.json"
+  }
+}
