@@ -1,0 +1,239 @@
+{
+  "schemaVersion": "atlas-event-shadow-acceptance.v1",
+  "generatedAt": "2026-09-02T14:48:58.300Z",
+  "gate": "Gate 3",
+  "status": "blocked",
+  "productionTouched": false,
+  "runs": [
+    {
+      "file": "event-night-live-gate3.json",
+      "trigger": "event-night",
+      "status": "partial",
+      "freshness": "partial",
+      "stats": {
+        "fetched": 2919,
+        "normalized": 2876,
+        "duplicates": 43,
+        "relevant": 1973,
+        "uncertain": 14,
+        "deepScored": 1973,
+        "clusters": 707,
+        "publicEligible": 0,
+        "rejected": 0,
+        "held": 149,
+        "errors": 6,
+        "routeCounts": {
+          "rumor-watch": 127,
+          "pulse": 431,
+          "policy-index": 0,
+          "research-queue": 0,
+          "hold": 149,
+          "rejected": 0
+        }
+      },
+      "sourceHealth": {
+        "total": 77,
+        "ok": 66,
+        "empty": 5,
+        "failed": 5,
+        "parseError": 0,
+        "blocked": 1,
+        "notModified": 0,
+        "failures": [
+          {
+            "sourceId": "ndrc",
+            "endpointId": "ndrc-endpoint",
+            "status": "failed",
+            "error": "fetch failed"
+          },
+          {
+            "sourceId": "miit",
+            "endpointId": "miit-endpoint",
+            "status": "failed",
+            "error": "fetch failed"
+          },
+          {
+            "sourceId": "mep-china",
+            "endpointId": "mep-china-endpoint",
+            "status": "failed",
+            "error": "fetch failed"
+          },
+          {
+            "sourceId": "beijing-gov",
+            "endpointId": "beijing-gov-endpoint",
+            "status": "failed",
+            "error": "fetch failed"
+          },
+          {
+            "sourceId": "shanghai-gov",
+            "endpointId": "shanghai-gov-endpoint",
+            "status": "failed",
+            "error": "fetch failed"
+          },
+          {
+            "sourceId": "xai-news",
+            "endpointId": "xai-news-endpoint",
+            "status": "blocked",
+            "httpStatus": 403,
+            "error": "HTTP 403"
+          }
+        ]
+      },
+      "checks": {
+        "mediaOnlyEscalatedToPulse": 0,
+        "nonT0PolicyRoutes": 0,
+        "capacityBoundaryErrors": [],
+        "eventSamplesAvailable": 10
+      },
+      "cost": {
+        "modelCalls": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "estimatedUsd": 0,
+        "note": "Shadow uses deterministic rules; no model or production write was invoked."
+      },
+      "shadowDbPath": "/private/tmp/idc-atlas-event-intelligence-acceptance.sqlite"
+    },
+    {
+      "file": "event-day-live-gate3.json",
+      "trigger": "event-day",
+      "status": "partial",
+      "freshness": "partial",
+      "stats": {
+        "fetched": 2252,
+        "normalized": 2224,
+        "duplicates": 28,
+        "relevant": 1581,
+        "uncertain": 1,
+        "deepScored": 1581,
+        "clusters": 550,
+        "publicEligible": 0,
+        "rejected": 0,
+        "held": 99,
+        "errors": 6,
+        "routeCounts": {
+          "rumor-watch": 91,
+          "pulse": 360,
+          "policy-index": 0,
+          "research-queue": 0,
+          "hold": 99,
+          "rejected": 0
+        }
+      },
+      "sourceHealth": {
+        "total": 77,
+        "ok": 32,
+        "empty": 4,
+        "failed": 5,
+        "parseError": 0,
+        "blocked": 1,
+        "notModified": 35,
+        "failures": [
+          {
+            "sourceId": "ndrc",
+            "endpointId": "ndrc-endpoint",
+            "status": "failed",
+            "error": "fetch failed"
+          },
+          {
+            "sourceId": "miit",
+            "endpointId": "miit-endpoint",
+            "status": "failed",
+            "error": "fetch failed"
+          },
+          {
+            "sourceId": "mep-china",
+            "endpointId": "mep-china-endpoint",
+            "status": "failed",
+            "error": "fetch failed"
+          },
+          {
+            "sourceId": "beijing-gov",
+            "endpointId": "beijing-gov-endpoint",
+            "status": "failed",
+            "error": "fetch failed"
+          },
+          {
+            "sourceId": "shanghai-gov",
+            "endpointId": "shanghai-gov-endpoint",
+            "status": "failed",
+            "error": "fetch failed"
+          },
+          {
+            "sourceId": "xai-news",
+            "endpointId": "xai-news-endpoint",
+            "status": "blocked",
+            "httpStatus": 403,
+            "error": "HTTP 403"
+          }
+        ]
+      },
+      "checks": {
+        "mediaOnlyEscalatedToPulse": 0,
+        "nonT0PolicyRoutes": 0,
+        "capacityBoundaryErrors": [],
+        "eventSamplesAvailable": 10
+      },
+      "cost": {
+        "modelCalls": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "estimatedUsd": 0,
+        "note": "Shadow uses deterministic rules; no model or production write was invoked."
+      },
+      "shadowDbPath": "/private/tmp/idc-atlas-event-intelligence-acceptance.sqlite"
+    }
+  ],
+  "comparison": {
+    "sameEventKeyCount": 550,
+    "firstRunEventCount": 707,
+    "secondRunEventCount": 550,
+    "staticCompatibility": "现有 atlas-live-v5、公开 Worker route、静态 RUMOR/POLICY fallback 和站点生产读取链没有切换；本报告只记录 shadow 旁路结果，未做逐条静态内容替换比较。",
+    "fixtureStrategy": {
+      "currentMediaOnlyEscalatedToPulse": 0,
+      "legacyMediaOnlyEscalatedToPulse": 1,
+      "labelsPassed": 7,
+      "labelsTotal": 7,
+      "scaleCaveat": "这是可审计的核心边界 fixture，不等同于计划要求的 200–500 条历史回放；真实 shadow 运行后需再次观察该指标。"
+    }
+  },
+  "schedule": [
+    {
+      "job": "event-night",
+      "utc": "30 21 * * *",
+      "beijing": "05:30",
+      "purpose": "nightly event ingest, cluster and route"
+    },
+    {
+      "job": "event-midday",
+      "utc": "30 4 * * *",
+      "beijing": "12:30",
+      "purpose": "midday event ingest, cluster and route"
+    },
+    {
+      "job": "snapshot-daily",
+      "utc": "0 22 * * *",
+      "beijing": "06:00",
+      "purpose": "existing formal Atlas snapshot"
+    },
+    {
+      "job": "daily-closure",
+      "utc": "30 22 * * *",
+      "beijing": "06:30",
+      "purpose": "DeepSeek selection, 13-section closure and refreshed snapshot"
+    },
+    {
+      "job": "event-day",
+      "utc": "30 12 * * *",
+      "beijing": "20:30",
+      "purpose": "evening event ingest, cluster and route"
+    }
+  ],
+  "unresolvedRisks": [
+    "event-night 有 6 个 endpoint failed/parse-error/blocked；不得用旧数据替代。",
+    "当前真实 shadow 的分类、五维分析、聚类、评分和路由仍是 deterministic-shadow，不代表模型版本已校准。",
+    "真实数据的 707 个事件簇尚未与 Atlas 历史 200–500 条标注集回放；现有 fixture 只有 12 条观察、7 个标注事件。",
+    "真实双语翻译适配器尚未接入；源语言内容只可进入内部路线，不能成为公开候选。",
+    "公开候选数量不是发布授权；生产 D1、发布记录、日报和公开 API 均未写入。"
+  ]
+}

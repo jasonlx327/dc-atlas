@@ -1,0 +1,360 @@
+{
+  "schemaVersion": "atlas-china-xpu-listed-checks.v1",
+  "runId": "atlas-2026-09-02-full",
+  "checkedAt": "2026-09-02T16:36:27+08:00",
+  "cutoff": "2026-09-02T09:30:00+08:00",
+  "issuerCount": 7,
+  "summary": {
+    "changed": 0,
+    "no-change": 0,
+    "not-determined": 7
+  },
+  "checks": [
+    {
+      "id": "cambricon",
+      "name": "寒武纪",
+      "ticker": "688256",
+      "exchange": "SSE",
+      "xpuScope": [
+        "AI accelerator",
+        "processor IP"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "sse",
+          "cninfo"
+        ],
+        "checkedSourceIds": [
+          "sse",
+          "cninfo"
+        ],
+        "passingSourceIds": [
+          "sse",
+          "cninfo"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "sse",
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "status": "ok",
+          "httpStatus": 200,
+          "observations": 1,
+          "error": null
+        },
+        {
+          "sourceId": "cninfo",
+          "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+          "status": "ok",
+          "httpStatus": 200,
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "notes": "Generic exchange/registry endpoints were checked, but issuer-specific cutoff-window announcements, IR/newsroom reconciliation, and product or financial disclosure review were not completed; no-change is not inferred."
+    },
+    {
+      "id": "hygon",
+      "name": "海光信息",
+      "ticker": "688041",
+      "exchange": "SSE",
+      "xpuScope": [
+        "DCU",
+        "CPU"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "sse",
+          "cninfo"
+        ],
+        "checkedSourceIds": [
+          "sse",
+          "cninfo"
+        ],
+        "passingSourceIds": [
+          "sse",
+          "cninfo"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "sse",
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "status": "ok",
+          "httpStatus": 200,
+          "observations": 1,
+          "error": null
+        },
+        {
+          "sourceId": "cninfo",
+          "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+          "status": "ok",
+          "httpStatus": 200,
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "notes": "Generic exchange/registry endpoints were checked, but issuer-specific cutoff-window announcements, IR/newsroom reconciliation, and product or financial disclosure review were not completed; no-change is not inferred."
+    },
+    {
+      "id": "loongson",
+      "name": "龙芯中科",
+      "ticker": "688047",
+      "exchange": "SSE",
+      "xpuScope": [
+        "CPU",
+        "processor ecosystem"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "sse",
+          "cninfo"
+        ],
+        "checkedSourceIds": [
+          "sse",
+          "cninfo"
+        ],
+        "passingSourceIds": [
+          "sse",
+          "cninfo"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "sse",
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "status": "ok",
+          "httpStatus": 200,
+          "observations": 1,
+          "error": null
+        },
+        {
+          "sourceId": "cninfo",
+          "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+          "status": "ok",
+          "httpStatus": 200,
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "notes": "Generic exchange/registry endpoints were checked, but issuer-specific cutoff-window announcements, IR/newsroom reconciliation, and product or financial disclosure review were not completed; no-change is not inferred."
+    },
+    {
+      "id": "jingjia-micro",
+      "name": "景嘉微",
+      "ticker": "300474",
+      "exchange": "SZSE",
+      "xpuScope": [
+        "GPU",
+        "graphics and compute chips"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "szse",
+          "cninfo"
+        ],
+        "checkedSourceIds": [
+          "szse",
+          "cninfo"
+        ],
+        "passingSourceIds": [
+          "szse",
+          "cninfo"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "szse",
+          "url": "https://www.szse.cn/disclosure/listed/notice/",
+          "status": "not-modified",
+          "httpStatus": 304,
+          "observations": 0,
+          "error": null
+        },
+        {
+          "sourceId": "cninfo",
+          "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+          "status": "ok",
+          "httpStatus": 200,
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "notes": "Generic exchange/registry endpoints were checked, but issuer-specific cutoff-window announcements, IR/newsroom reconciliation, and product or financial disclosure review were not completed; no-change is not inferred."
+    },
+    {
+      "id": "moore-threads",
+      "name": "摩尔线程",
+      "ticker": "688795",
+      "exchange": "SSE",
+      "xpuScope": [
+        "GPU",
+        "AI accelerator"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "sse",
+          "cninfo"
+        ],
+        "checkedSourceIds": [
+          "sse",
+          "cninfo"
+        ],
+        "passingSourceIds": [
+          "sse",
+          "cninfo"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "sse",
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "status": "ok",
+          "httpStatus": 200,
+          "observations": 1,
+          "error": null
+        },
+        {
+          "sourceId": "cninfo",
+          "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+          "status": "ok",
+          "httpStatus": 200,
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "notes": "Generic exchange/registry endpoints were checked, but issuer-specific cutoff-window announcements, IR/newsroom reconciliation, and product or financial disclosure review were not completed; no-change is not inferred."
+    },
+    {
+      "id": "metax",
+      "name": "沐曦股份",
+      "ticker": "688802",
+      "exchange": "SSE",
+      "xpuScope": [
+        "GPU",
+        "AI accelerator"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "sse",
+          "cninfo"
+        ],
+        "checkedSourceIds": [
+          "sse",
+          "cninfo"
+        ],
+        "passingSourceIds": [
+          "sse",
+          "cninfo"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "sse",
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "status": "ok",
+          "httpStatus": 200,
+          "observations": 1,
+          "error": null
+        },
+        {
+          "sourceId": "cninfo",
+          "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+          "status": "ok",
+          "httpStatus": 200,
+          "observations": 1,
+          "error": null
+        }
+      ],
+      "notes": "Generic exchange/registry endpoints were checked, but issuer-specific cutoff-window announcements, IR/newsroom reconciliation, and product or financial disclosure review were not completed; no-change is not inferred."
+    },
+    {
+      "id": "biren",
+      "name": "壁仞科技",
+      "ticker": "6082",
+      "exchange": "HKEX",
+      "xpuScope": [
+        "GPGPU",
+        "AI accelerator"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "hkex"
+        ],
+        "checkedSourceIds": [
+          "hkex"
+        ],
+        "passingSourceIds": [
+          "hkex"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "hkex",
+          "url": "https://www.hkexnews.hk/index.htm",
+          "status": "not-modified",
+          "httpStatus": 304,
+          "observations": 0,
+          "error": null
+        }
+      ],
+      "notes": "Generic exchange/registry endpoints were checked, but issuer-specific cutoff-window announcements, IR/newsroom reconciliation, and product or financial disclosure review were not completed; no-change is not inferred."
+    }
+  ]
+}\n

@@ -1,0 +1,177 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-09-02-full",
+  "sources": [
+    {
+      "ref": "global-scan-20260902-1630-full",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "Fresh Codex global source scan",
+      "observedAt": "2026-09-02T16:36:27+08:00",
+      "sections": [
+        "*"
+      ],
+      "details": {
+        "cutoff": "2026-09-02T09:30:00+08:00",
+        "checkedThrough": "2026-09-02T16:36:27+08:00",
+        "fetched": 2830,
+        "normalized": 2796,
+        "duplicates": 34,
+        "clusters": 693,
+        "sourceErrors": 6,
+        "routeCounts": {
+          "rumorWatch": 133,
+          "pulse": 417,
+          "hold": 143
+        }
+      }
+    },
+    {
+      "ref": "worker-candidates-20260902",
+      "evidenceKind": "runtime-state",
+      "sourceName": "Worker daily candidate handoff",
+      "observedAt": "2026-09-02T16:36:27+08:00",
+      "sections": [
+        "*"
+      ],
+      "details": {
+        "day": "2026-09-01",
+        "generatedAt": "2026-09-01T01:10:20.646Z",
+        "candidateCount": 121,
+        "selectedCount": 93,
+        "watchCount": 28,
+        "sourceSlots": [
+          "event-night"
+        ],
+        "status": "stale-discovery-only"
+      }
+    },
+    {
+      "ref": "worker-closure-20260902",
+      "evidenceKind": "workflow-state",
+      "sourceName": "Worker daily section closure",
+      "observedAt": "2026-09-02T16:36:27+08:00",
+      "sections": [
+        "*"
+      ],
+      "details": {
+        "day": "2026-09-02",
+        "generatedAt": "2026-09-01T22:30:21.000Z",
+        "status": "blocked",
+        "blockedSections": 13
+      }
+    },
+    {
+      "ref": "core-company-checks-20260902",
+      "evidenceKind": "runtime-state",
+      "sourceName": "Independent 50-company official and IR checks",
+      "observedAt": "2026-09-02T16:36:27+08:00",
+      "sections": [
+        "listed-companies",
+        "china-gpu",
+        "capacity",
+        "power-model-demand",
+        "earnings-calendar"
+      ],
+      "details": {
+        "companyCount": 50,
+        "changed": 7,
+        "noChange": 10,
+        "notDetermined": 33
+      }
+    },
+    {
+      "ref": "china-xpu-checks-20260902",
+      "evidenceKind": "runtime-state",
+      "sourceName": "China XPU direct issuer checks",
+      "observedAt": "2026-09-02T16:36:27+08:00",
+      "sections": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "details": {
+        "issuerCount": 7,
+        "changed": 0,
+        "noChange": 0,
+        "notDetermined": 7,
+        "sourceIds": [
+          "sse",
+          "szse",
+          "cninfo",
+          "hkex"
+        ]
+      }
+    },
+    {
+      "ref": "source-failures-20260902",
+      "evidenceKind": "runtime-state",
+      "sourceName": "Current scan access-gap ledger",
+      "observedAt": "2026-09-02T16:36:27+08:00",
+      "sections": [
+        "policy",
+        "compute-products",
+        "cooling",
+        "capacity",
+        "china-gpu",
+        "power-model-demand"
+      ],
+      "details": {
+        "failed": [
+          "ndrc",
+          "miit",
+          "mep-china",
+          "beijing-gov",
+          "shanghai-gov"
+        ],
+        "blocked": [
+          "xai-news"
+        ],
+        "rule": "access failure remains not-determined; no-change is not inferred"
+      }
+    },
+    {
+      "ref": "media-ithome-cowos-20260902",
+      "evidenceKind": "public-source",
+      "sourceName": "IT之家（转述韩国《朝鲜日报》）",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/0/997/518.htm",
+      "publishedAt": "2026-09-02T08:24:48Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors",
+        "supply-chain"
+      ]
+    },
+    {
+      "ref": "media-ee-times-hrdwyr-20260902",
+      "evidenceKind": "public-source",
+      "sourceName": "EE Times",
+      "tier": "T3",
+      "canonicalUrl": "https://www.eetimes.com/indian-startup-hrdwyr-builds-ai-native-socs-for-the-physical-world/",
+      "publishedAt": "2026-09-02T08:00:00Z",
+      "accessState": "public",
+      "independenceGroup": "ee-times",
+      "sections": [
+        "rumors",
+        "compute-products",
+        "supply-chain"
+      ]
+    },
+    {
+      "ref": "media-fortune-datacenter-politics-20260902",
+      "evidenceKind": "public-source",
+      "sourceName": "Fortune",
+      "tier": "T2",
+      "canonicalUrl": "https://fortune.com/2026/09/02/trump-data-center-backwards-poor-gdp-us-economy-politics-midterms-elections-bipartisan/",
+      "publishedAt": "2026-09-02T06:36:00Z",
+      "accessState": "public",
+      "independenceGroup": "fortune",
+      "sections": [
+        "rumors",
+        "policy",
+        "power-model-demand"
+      ]
+    }
+  ]
+}

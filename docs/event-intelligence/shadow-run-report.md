@@ -1,6 +1,6 @@
 # IDC Atlas Event Intelligence · Gate 3 Shadow Run Report
 
-Generated: 2026-08-09T02:17:28.604Z
+Generated: 2026-09-02T14:48:58.300Z
 
 ## Gate status
 
@@ -10,22 +10,32 @@ Generated: 2026-08-09T02:17:28.604Z
 
 | Slot | Status | Freshness | Fetched | Relevant | Clusters | Public eligible | Errors | Rumor | Pulse | Policy | Hold |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| event-night | succeeded | verified-no-change | 92 | 26 | 19 | 0 | 0 | 9 | 9 | 1 | 0 |
-| event-day | succeeded | verified-no-change | 92 | 26 | 19 | 0 | 0 | 9 | 9 | 1 | 0 |
+| event-night | partial | partial | 2919 | 1973 | 707 | 0 | 6 | 127 | 431 | 0 | 149 |
+| event-day | partial | partial | 2252 | 1581 | 550 | 0 | 6 | 91 | 360 | 0 | 99 |
 
-Event-night returned 92 observations and 19 clusters; event-day returned 92 observations and 19 clusters. The two slots shared 19 event keys; this is expected because both fetches were executed close together and is not evidence of a production delta.
+Event-night returned 2919 observations and 707 clusters; event-day returned 2252 observations and 550 clusters. The two slots shared 550 event keys; this is expected because both fetches were executed close together and is not evidence of a production delta.
 
 ## Source health
 
-Each slot sampled 15 public endpoints from a 45-source registry. Event-night: 6 ok, 1 empty, 0 parse-error, 0 failed, 0 blocked. Event-day: 6 ok, 1 empty, 0 parse-error, 0 failed, 0 blocked.
+Each slot sampled 77 public endpoints from a 45-source registry. Event-night: 66 ok, 5 empty, 0 parse-error, 5 failed, 1 blocked. Event-day: 32 ok, 4 empty, 0 parse-error, 5 failed, 1 blocked.
 
 ### Event-night failures
 
-- None
+- `ndrc` / `ndrc-endpoint`: failed — fetch failed
+- `miit` / `miit-endpoint`: failed — fetch failed
+- `mep-china` / `mep-china-endpoint`: failed — fetch failed
+- `beijing-gov` / `beijing-gov-endpoint`: failed — fetch failed
+- `shanghai-gov` / `shanghai-gov-endpoint`: failed — fetch failed
+- `xai-news` / `xai-news-endpoint`: blocked HTTP 403 — HTTP 403
 
 ### Event-day failures
 
-- None
+- `ndrc` / `ndrc-endpoint`: failed — fetch failed
+- `miit` / `miit-endpoint`: failed — fetch failed
+- `mep-china` / `mep-china-endpoint`: failed — fetch failed
+- `beijing-gov` / `beijing-gov-endpoint`: failed — fetch failed
+- `shanghai-gov` / `shanghai-gov-endpoint`: failed — fetch failed
+- `xai-news` / `xai-news-endpoint`: blocked HTTP 403 — HTTP 403
 
 Failures are not replaced with old observations and do not advance a successful cursor. AI HOT was called through its current v1 connector (/api/v1/items, selected, 24h); the old /api/public/* contract was not copied.
 
@@ -46,20 +56,20 @@ The following are source-chain samples from event-night. They are internal shado
 
 | # | Main event | Evidence | Route | Priority | Source chain | Capacity facts | Route reasons |
 | ---: | --- | --- | --- | ---: | --- | --- | --- |
-| 1 | Plan of Action Under the Defense Production Act (Human Mobilization Committee) | officially_confirmed | policy-index | 83.1 | federal-register[T0/origin/public-api] | — | source-tier-T0, independent-sources-1, semantic-4.5, policy-route-requires-T0, research-question-candidate, bilingual-translation-pending |
-| 2 | Firebird Launches CIS Region’s Largest AI Factory in Armenia | officially_confirmed | pulse | 74.8 | nvidia[T1/origin/public] | — | source-tier-T1, independent-sources-1, semantic-4.1, official-T0-or-T1-supports-pulse, research-question-candidate, bilingual-translation-pending |
-| 3 | Texas Audit Could Delay 49.8 GW of Data Center Load, Cost Projects Up to $15 Billion, BNEF Warns | reported | rumor-watch | 66.1 | power-magazine[T3/origin/public] | 49.8 GW potential/it_capacity | source-tier-T3, independent-sources-1, semantic-4, media-only-stays-rumor-watch, bilingual-translation-pending |
-| 4 | Rugged Switchgear–A Reliable Data Center’s Bedrock | reported | rumor-watch | 61.8 | power-magazine[T3/origin/public] | — | source-tier-T3, independent-sources-1, semantic-3.7, media-only-stays-rumor-watch, bilingual-translation-pending |
-| 5 | LS Power Acquiring 606-MW Texas Gas-Fired Plant From Constellation | reported | rumor-watch | 61.6 | power-magazine[T3/origin/public] | — | source-tier-T3, independent-sources-1, semantic-3.7, media-only-stays-rumor-watch, bilingual-translation-pending |
-| 6 | DOE Approves Safety Design of Deep Fission’s Underground SMR | reported | rumor-watch | 65.8 | power-magazine[T3/origin/public] | — | source-tier-T3, independent-sources-1, semantic-4, media-only-stays-rumor-watch, bilingual-translation-pending |
-| 7 | Oklo’s Groves Becomes Fifth DOE Pilot Reactor to Reach Criticality, First on Private Land | reported | rumor-watch | 65.8 | power-magazine[T3/origin/public] | — | source-tier-T3, independent-sources-1, semantic-4, media-only-stays-rumor-watch, bilingual-translation-pending |
-| 8 | The POWER Interview: NRG’s Case for Bring Your Own Power—and the Labor to Build It | reported | rumor-watch | 64.8 | power-magazine[T3/origin/public] | — | source-tier-T3, independent-sources-1, semantic-3.9, media-only-stays-rumor-watch, bilingual-translation-pending |
-| 9 | AI’s Obstacle: Why the Grid Can’t Keep Pace With the Data Center Boom | reported | rumor-watch | 60.6 | power-magazine[T3/origin/public] | — | source-tier-T3, independent-sources-1, semantic-3.7, media-only-stays-rumor-watch, bilingual-translation-pending |
-| 10 | Nebraska Public Power District Breaks Ground on 694-MW Princeton Road Station | reported | rumor-watch | 64.1 | power-magazine[T3/origin/public] | — | source-tier-T3, independent-sources-1, semantic-3.9, media-only-stays-rumor-watch, bilingual-translation-pending |
+| 1 | Samsung Redefines Laundry With New A-70% and 13 Kg Bespoke AI Washers at IFA 2026 | officially_confirmed | pulse | 75.4 | samsung-global-newsroom[T1/origin/public] | — | source-tier-T1, independent-sources-1, semantic-4.1, official-T0-or-T1-supports-pulse, research-question-candidate, bilingual-translation-pending |
+| 2 | Analysts split on whether rumored Nvidia-Hugging Face deal is a good thing | reported | rumor-watch | 53 | fierce-network[T3/origin/public] | — | source-tier-T3, independent-sources-1, semantic-2.9, media-only-stays-rumor-watch, bilingual-translation-pending |
+| 3 | AWS and Microsoft launch multicloud networking in preview | reported | rumor-watch | 55.7 | fierce-network[T3/origin/public] | — | source-tier-T3, independent-sources-1, semantic-3.1, media-only-stays-rumor-watch, bilingual-translation-pending |
+| 4 | Equinix and CPP Investments close $4B atNorth acquisition | reported | rumor-watch | 49 | fierce-network[T3/origin/public] | — | source-tier-T3, independent-sources-1, semantic-2.6, media-only-stays-rumor-watch, bilingual-translation-pending |
+| 5 | What is sovereign AI? Only 13% of enterprises know. | reported | rumor-watch | 46.2 | fierce-network[T3/origin/public] | — | source-tier-T3, independent-sources-1, semantic-2.4, media-only-stays-rumor-watch, bilingual-translation-pending |
+| 6 | Huawei reports mixed results as HP dispute ends and U.S. trial nears | reported | rumor-watch | 45.9 | fierce-network[T3/origin/public] | — | source-tier-T3, independent-sources-1, semantic-2.3, media-only-stays-rumor-watch, bilingual-translation-pending |
+| 7 | Opinion: AI-RAN could give telecom a second chance to own the AI economy | reported | rumor-watch | 46.2 | fierce-network[T3/origin/public] | — | source-tier-T3, independent-sources-1, semantic-2.4, media-only-stays-rumor-watch, bilingual-translation-pending |
+| 8 | Alibaba Cloud launches first cloud region in Brazil | reported | rumor-watch | 49 | fierce-network[T3/origin/public] | — | source-tier-T3, independent-sources-1, semantic-2.6, media-only-stays-rumor-watch, bilingual-translation-pending |
+| 9 | SK Telecom launches dedicated data center infrastructure company | reported | rumor-watch | 49 | fierce-network[T3/origin/public] | — | source-tier-T3, independent-sources-1, semantic-2.6, media-only-stays-rumor-watch, bilingual-translation-pending |
+| 10 | Agent Plugins package your skills, tools, and more | officially_confirmed | pulse | 60.1 | google-developers[T1/origin/public] | — | source-tier-T1, independent-sources-1, semantic-3, official-T0-or-T1-supports-pulse, research-question-candidate, bilingual-translation-pending |
 
 ## Strategy, model and cost
 
-- Strategy version: atlas-event-v1
+- Strategy version: atlas-event-v2
 - Classifier version: rules-v1
 - Model calls: 0 in each run.
 - Estimated model cost: 0 in each run.
@@ -72,8 +82,10 @@ The following are source-chain samples from event-night. They are internal shado
 | Job | UTC cron | Beijing | Purpose |
 | --- | --- | --- | --- |
 | event-night | 30 21 * * * | 05:30 | nightly event ingest, cluster and route |
+| event-midday | 30 4 * * * | 12:30 | midday event ingest, cluster and route |
 | snapshot-daily | 0 22 * * * | 06:00 | existing formal Atlas snapshot |
-| event-day | 30 9 * * * | 17:30 | daytime event ingest, cluster and route |
+| daily-closure | 30 22 * * * | 06:30 | DeepSeek selection, 13-section closure and refreshed snapshot |
+| event-day | 30 12 * * * | 20:30 | evening event ingest, cluster and route |
 
 The local schedule map distinguishes the three jobs. The existing production Wrangler cron was not changed in this gate.
 
@@ -83,8 +95,9 @@ The local schedule map distinguishes the three jobs. The existing production Wra
 
 ## Unresolved risks
 
+- event-night 有 6 个 endpoint failed/parse-error/blocked；不得用旧数据替代。
 - 当前真实 shadow 的分类、五维分析、聚类、评分和路由仍是 deterministic-shadow，不代表模型版本已校准。
-- 真实数据的 19 个事件簇尚未与 Atlas 历史 200–500 条标注集回放；现有 fixture 只有 12 条观察、7 个标注事件。
+- 真实数据的 707 个事件簇尚未与 Atlas 历史 200–500 条标注集回放；现有 fixture 只有 12 条观察、7 个标注事件。
 - 真实双语翻译适配器尚未接入；源语言内容只可进入内部路线，不能成为公开候选。
 - 公开候选数量不是发布授权；生产 D1、发布记录、日报和公开 API 均未写入。
 

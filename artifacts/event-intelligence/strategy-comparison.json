@@ -1,7 +1,7 @@
 {
   "schemaVersion": "atlas-event-strategy-comparison.v1",
   "generatedAt": "2026-08-08T14:00:00.000Z",
-  "strategyVersion": "atlas-event-v1",
+  "strategyVersion": "atlas-event-v2",
   "classifierVersion": "rules-v1",
   "fixture": {
     "observations": 12,

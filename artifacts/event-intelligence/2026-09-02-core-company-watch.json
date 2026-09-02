@@ -1,0 +1,1210 @@
+{
+  "schemaVersion": "atlas-core-company-watch.v2",
+  "generatedAt": "2026-09-02T04:30:21.000Z",
+  "companyCount": 50,
+  "companies": [
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "microsoft",
+        "azure-blog"
+      ],
+      "eventsInLatestRun": 6,
+      "latestEventId": "evt-7bbdebf718fc6326b4a8",
+      "latestEventTitle": "Microsoft and AWS build the multicloud bridge they said customers barely needed",
+      "latestEventAt": "2026-09-01T14:16:00.000Z",
+      "lastCheckedAt": "2026-09-02T04:30:21.000Z",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "microsoft",
+          "azure-blog"
+        ],
+        "checkedSourceIds": [
+          "microsoft"
+        ],
+        "passingSourceIds": [
+          "microsoft"
+        ],
+        "failedSourceIds": []
+      },
+      "result": "changed"
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "aws-news"
+      ],
+      "eventsInLatestRun": 14,
+      "latestEventId": "evt-4553b39b02db3ce12d5c",
+      "latestEventTitle": "Amazon MWAA supports Apache Airflow version 3.3.1",
+      "latestEventAt": "2026-09-01T15:00:00.000Z",
+      "lastCheckedAt": "2026-09-02T04:30:21.000Z",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "aws-news"
+        ],
+        "checkedSourceIds": [
+          "aws-news"
+        ],
+        "passingSourceIds": [
+          "aws-news"
+        ],
+        "failedSourceIds": []
+      },
+      "result": "changed"
+    },
+    {
+      "id": "alphabet",
+      "name": "Alphabet",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "google-cloud",
+        "google-ai-blog",
+        "google-developers"
+      ],
+      "eventsInLatestRun": 5,
+      "latestEventId": "evt-ceab935d23009c69f882",
+      "latestEventTitle": "谷歌 AI 图像设计工具 Google Pics 上线，Docs / Slides 可直接调用修图",
+      "latestEventAt": "2026-09-02T02:53:44.000Z",
+      "lastCheckedAt": "2026-09-02T04:30:21.000Z",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "google-cloud",
+          "google-ai-blog",
+          "google-developers"
+        ],
+        "checkedSourceIds": [
+          "google-cloud"
+        ],
+        "passingSourceIds": [
+          "google-cloud"
+        ],
+        "failedSourceIds": []
+      },
+      "result": "changed"
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "meta",
+        "meta-engineering"
+      ],
+      "eventsInLatestRun": 2,
+      "latestEventId": "evt-265366fa6167e05f1a8a",
+      "latestEventTitle": "Meta 发布实时音频感知模型 Muse Voice Transcribe，支持 20 余人分轨转写",
+      "latestEventAt": "2026-09-02T00:23:26.000Z",
+      "lastCheckedAt": "2026-09-02T04:30:21.000Z",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "meta",
+          "meta-engineering"
+        ],
+        "checkedSourceIds": [
+          "meta"
+        ],
+        "passingSourceIds": [
+          "meta"
+        ],
+        "failedSourceIds": []
+      },
+      "result": "changed"
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "oracle"
+      ],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-3b3f34552c3bf4d54964",
+      "latestEventTitle": "OpenAI 联合多家科技巨头呼吁加强全球网络防御",
+      "latestEventAt": "2026-08-27T20:32:29.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "oracle"
+        ],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "openai-news"
+      ],
+      "eventsInLatestRun": 7,
+      "latestEventId": "evt-683662691694804a2abc",
+      "latestEventTitle": "OpenAI 称 Astra 是其首个达到 Critical 网络安全能力阈值的模型",
+      "latestEventAt": "2026-09-02T02:12:46.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "openai-news"
+        ],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "changed"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 7,
+      "latestEventId": "evt-11fe5ff1b50a6f94a2fe",
+      "latestEventTitle": "BestBlogs 早报 09-02：OpenAI Astra 达关键网络安全阈值，Anthropic 复盘 Claude 越权事件，Gemini 智能体视频理解降本",
+      "latestEventAt": "2026-09-02T00:21:48.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "changed"
+    },
+    {
+      "id": "xai",
+      "name": "xAI",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "xai-news"
+      ],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-967eaa620435c27e0fb0",
+      "latestEventTitle": "Lauren Tan 发布 grok @bot 插件助手 tinkabot v0.1.0",
+      "latestEventAt": "2026-09-01T20:21:30.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "xai-news"
+        ],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "coreweave",
+      "name": "CoreWeave",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "coreweave"
+      ],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-896769e29f536d821b19",
+      "latestEventTitle": "2026 年最佳 GPU Neocloud 排名：CoreWeave、Nebius、Lambda、Crusoe 与 Groq 按公开定价和签约电力对比",
+      "latestEventAt": "2026-08-21T23:20:12.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "coreweave"
+        ],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "alibaba",
+      "name": "Alibaba",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 3,
+      "latestEventId": "evt-40a8f7708614defc62df",
+      "latestEventTitle": "阿里云讲解如何用 OpenTelemetry 为 DeepSeek Harness 生成 GenAI 追踪",
+      "latestEventAt": "2026-09-02T03:38:29.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "changed"
+    },
+    {
+      "id": "tencent",
+      "name": "Tencent",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-0eb09cd08b31d477fb31",
+      "latestEventTitle": "燧原科技科创板IPO定价约20.97美元，拟募资约9.02亿美元",
+      "latestEventAt": "2026-09-01T08:00:00.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "bytedance",
+      "name": "ByteDance",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-063e49c452f281d0a206",
+      "latestEventTitle": "字节跳动推迟豆包2.2发布以强化智能体能力",
+      "latestEventAt": "2026-08-31T07:09:58.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "apple-newsroom"
+      ],
+      "eventsInLatestRun": 1,
+      "latestEventId": "evt-d0a8611533f6df57b47d",
+      "latestEventTitle": "苹果在对 OpenAI 的诉讼中披露从其前员工 MacBook 获取的证据",
+      "latestEventAt": "2026-09-01T22:25:23.381Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "apple-newsroom"
+        ],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "changed"
+    },
+    {
+      "id": "tesla",
+      "name": "Tesla",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-0b76adab8558508660db",
+      "latestEventTitle": "马斯克确认 SpaceX 自建燃气轮机叶片铸造厂，称可提前 18 个月投运",
+      "latestEventAt": "2026-08-30T07:53:56.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "palantir",
+      "name": "Palantir",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null,
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-264a4852ac01f8e38222",
+      "latestEventTitle": "OpenAI 开始对部分大客户按 AI 实际完成任务效果收费",
+      "latestEventAt": "2026-08-31T14:28:14.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "servicenow",
+      "name": "ServiceNow",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-b9ada7a16c04ea206cf8",
+      "latestEventTitle": "ServiceNow powers actionable enterprise AI with OpenAI",
+      "latestEventAt": "2026-01-20T05:45:00.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "snowflake",
+      "name": "Snowflake",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-fc4e001e96a9e0c484c1",
+      "latestEventTitle": "AI 生成的 GitHub Copilot\"自动修复\"功能导致 Snowflake 的 Jira 系统遭到入侵",
+      "latestEventAt": "2026-08-17T16:38:11.073Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "cloudflare-blog"
+      ],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-fd408badada67c77a6a8",
+      "latestEventTitle": "2026 年最佳 Agent 沙箱对比：E2B、Daytona、Modal、Cloudflare 与 Vercel 的冷启动、按秒计费与网络策略",
+      "latestEventAt": "2026-08-27T17:04:49.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "cloudflare-blog"
+        ],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "baidu",
+      "name": "Baidu",
+      "layer": "model-application",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-deeb96adde50d3fed068",
+      "latestEventTitle": "2026 年 8 月\"AI 魔改\"视频治理成果公布：清理违规视频近 14000 条、处置违规账号 30 余个",
+      "latestEventAt": "2026-09-01T09:33:12.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "layer": "model-application",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 2,
+      "latestEventId": "evt-40a8f7708614defc62df",
+      "latestEventTitle": "阿里云讲解如何用 OpenTelemetry 为 DeepSeek Harness 生成 GenAI 追踪",
+      "latestEventAt": "2026-09-02T03:38:29.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "changed"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "layer": "model-application",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-f9a493b712967005ea6d",
+      "latestEventTitle": "Mistral AI 自家平台开放第三方模型接入：首个为智谱 GLM-5.2",
+      "latestEventAt": "2026-08-13T00:45:56.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-51386d037496b522fdad",
+      "latestEventTitle": "Grok Bots 将 LLM 引用数据转化为运营闭环",
+      "latestEventAt": "2026-08-31T17:06:22.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "asml",
+      "name": "ASML",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null,
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "applied-materials",
+      "name": "Applied Materials",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null,
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "lam-research",
+      "name": "Lam Research",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null,
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "nvidia",
+        "nvidia-developer"
+      ],
+      "eventsInLatestRun": 12,
+      "latestEventId": "evt-7a1e447743e35d23b423",
+      "latestEventTitle": "Nvidia 担保下银行向 GMI Cloud 提供超申请额一倍的 9.47 亿美元 GPU 抵押贷款",
+      "latestEventAt": "2026-09-02T03:10:04.000Z",
+      "lastCheckedAt": "2026-09-02T04:30:21.000Z",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "nvidia",
+          "nvidia-developer"
+        ],
+        "checkedSourceIds": [
+          "nvidia"
+        ],
+        "passingSourceIds": [
+          "nvidia"
+        ],
+        "failedSourceIds": []
+      },
+      "result": "changed"
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "amd"
+      ],
+      "eventsInLatestRun": 6,
+      "latestEventId": "evt-fc44a4c575be356fdbbf",
+      "latestEventTitle": "VMware uses Nvidia-favored 'AI factory' brand to build something with rival AMD",
+      "latestEventAt": "2026-08-31T20:48:35.000Z",
+      "lastCheckedAt": "2026-09-02T04:30:21.000Z",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "amd"
+        ],
+        "checkedSourceIds": [
+          "amd"
+        ],
+        "passingSourceIds": [
+          "amd"
+        ],
+        "failedSourceIds": []
+      },
+      "result": "changed"
+    },
+    {
+      "id": "broadcom",
+      "name": "Broadcom",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-3ff5f9ff3f5710b0eb1b",
+      "latestEventTitle": "Anthropic 发力自研芯片，聘请前谷歌 TPU 负责人阿米尔·萨莱克",
+      "latestEventAt": "2026-08-22T00:50:18.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "marvell",
+      "name": "Marvell",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-b851b284900c221f61e2",
+      "latestEventTitle": "Google pits Marvell against Broadcom as it chases AI crown",
+      "latestEventAt": "2026-08-19T19:33:15.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "tsmc",
+      "name": "TSMC",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-87703c0d345d80d495e8",
+      "latestEventTitle": "AI 人才争夺加码：台积电 2026Q2 奖金约 360 亿新台币，同比增 50.6%",
+      "latestEventAt": "2026-08-30T00:55:57.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "sk-hynix",
+      "name": "SK hynix",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [
+        "sk-hynix-newsroom"
+      ],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-f8da9516daf5285b0273",
+      "latestEventTitle": "SK海力士在美建首个HBM封装基地",
+      "latestEventAt": "2026-08-27T19:23:02.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "sk-hynix-newsroom"
+        ],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "micron",
+      "name": "Micron",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-d74015d048a39a678575",
+      "latestEventTitle": "美光 CEO 桑杰·梅赫罗特拉：AI 已彻底改变内存行业周期性格局",
+      "latestEventAt": "2026-08-21T07:00:54.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung Electronics",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [
+        "samsung-global-newsroom"
+      ],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-7a1e447743e35d23b423",
+      "latestEventTitle": "SemiAnalysis 分析韩国万亿美元主权 AI 投资：Nvidia 受益，Hynix 受挫",
+      "latestEventAt": "2026-09-01T20:56:35.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "samsung-global-newsroom"
+        ],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "arista",
+      "name": "Arista Networks",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null,
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "dell",
+      "name": "Dell Technologies",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "dell"
+      ],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-3ab06c2287e7f595a8eb",
+      "latestEventTitle": "Firebird Launches CIS Region’s Largest AI Factory in Armenia",
+      "latestEventAt": "2026-08-08T10:24:54.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "dell"
+        ],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "supermicro",
+      "name": "Supermicro",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-0231dc73115ec8953bc8",
+      "latestEventTitle": "Supermicro fired staff after probe into $2.5 billion GPUs-to-China smuggling operation",
+      "latestEventAt": "2026-08-21T02:39:56.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "huawei",
+      "name": "Huawei",
+      "layer": "compute-silicon",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 1,
+      "latestEventId": "evt-bf7ce64dad82a5731f8c",
+      "latestEventTitle": "华为云预告 HUAWEI CONNECT 2026 将于 9 月 17 至 19 日在上海举办",
+      "latestEventAt": "2026-09-02T02:36:41.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "changed"
+    },
+    {
+      "id": "equinix",
+      "name": "Equinix",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "equinix-ir"
+      ],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-a44005c5dc1213a36e3f",
+      "latestEventTitle": "Singapore gov't allocates 200MW of power for four data center developers on Jurong Island",
+      "latestEventAt": "2026-08-21T09:43:54.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "equinix-ir"
+        ],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "digital-realty",
+      "name": "Digital Realty",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "digital-realty"
+      ],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-d898607e1682a489caef",
+      "latestEventTitle": "Digital Realty breaks ground on fourth data center in Zurich, Switzerland",
+      "latestEventAt": "2026-08-28T11:30:28.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "digital-realty"
+        ],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "vertiv",
+      "name": "Vertiv",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null,
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "schneider-electric",
+      "name": "Schneider Electric",
+      "layer": "capacity-power",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null,
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "eaton",
+      "name": "Eaton",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null,
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "ge-vernova",
+      "name": "GE Vernova",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-b3cc12e90efcc7e0aaee",
+      "latestEventTitle": "Texas 2.5-GW Gas-Plus-Nuclear Project Proceeds to Engineering, Licensing Phase",
+      "latestEventAt": "2026-08-13T20:26:14.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "hut-8",
+      "name": "Hut 8",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "hut8"
+      ],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-32d0bb315ee3cb83ce8a",
+      "latestEventTitle": "Anthropic 与 Nvidia 支持的 Lambda 签订 350 亿美元云协议",
+      "latestEventAt": "2026-09-01T10:45:01.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "hut8"
+        ],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "terawulf",
+      "name": "TeraWulf",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "terawulf"
+      ],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-4e789112615fe9a1b280",
+      "latestEventTitle": "TeraWulf secures 482MW electrical service agreement for planned data center campus in Kentucky",
+      "latestEventAt": "2026-08-25T11:59:45.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "terawulf"
+        ],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "galaxy-digital",
+      "name": "Galaxy Digital",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "galaxy"
+      ],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-87703c0d345d80d495e8",
+      "latestEventTitle": "三星 Exynos 2700 工程样片现身 Geekbench，超大核主频达 4.24GHz",
+      "latestEventAt": "2026-08-23T06:55:04.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "galaxy"
+        ],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "riot-platforms",
+      "name": "Riot Platforms",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-2138bfea415ae5b2d0ec",
+      "latestEventTitle": "RIOT STOCK - AI INFRASTRUCTURE DATA CENTER DEAL (INSANE VALUE!) Julio Cesar Chavez (QrERGhzZ5i) - mshale.com",
+      "latestEventAt": "2026-08-19T03:29:45.000Z",
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "applied-digital",
+      "name": "Applied Digital",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null,
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    },
+    {
+      "id": "gds",
+      "name": "GDS Holdings",
+      "layer": "capacity-power",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null,
+      "lastCheckedAt": null,
+      "sourceCoverage": {
+        "expectedSourceIds": [],
+        "checkedSourceIds": [],
+        "passingSourceIds": [],
+        "failedSourceIds": []
+      },
+      "result": "not-determined"
+    }
+  ]
+}

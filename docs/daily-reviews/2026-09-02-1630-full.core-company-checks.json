@@ -1,0 +1,1994 @@
+{
+  "schemaVersion": "atlas-core-company-checks.v1",
+  "runId": "atlas-2026-09-02-full",
+  "checkedAt": "2026-09-02T16:36:27+08:00",
+  "cutoff": "2026-09-02T09:30:00+08:00",
+  "companyCount": 50,
+  "summary": {
+    "changed": 7,
+    "no-change": 10,
+    "not-determined": 33
+  },
+  "layerCounts": {
+    "demand-platform": {
+      "changed": 2,
+      "no-change": 4,
+      "not-determined": 6
+    },
+    "model-application": {
+      "changed": 1,
+      "no-change": 1,
+      "not-determined": 9
+    },
+    "compute-silicon": {
+      "changed": 4,
+      "no-change": 2,
+      "not-determined": 9
+    },
+    "capacity-power": {
+      "changed": 0,
+      "no-change": 3,
+      "not-determined": 9
+    }
+  },
+  "coverage": {
+    "window": "2026-09-02T09:30:00+08:00 to 2026-09-02T16:36:27+08:00",
+    "method": "Current scan plus direct official/IR entrypoint attempts; missing or inaccessible source remains not-determined.",
+    "sourceScan": "artifacts/event-intelligence/2026-09-02-codex-event-night.json"
+  },
+  "companies": [
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.microsoft.com/en-us/Investor/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "microsoft",
+          "azure-blog"
+        ],
+        "checkedSourceIds": [
+          "microsoft",
+          "azure-blog"
+        ],
+        "passingSourceIds": [
+          "microsoft",
+          "azure-blog"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "microsoft",
+          "url": "https://news.microsoft.com/feed/",
+          "status": "not-modified",
+          "httpStatus": 304,
+          "error": null
+        },
+        {
+          "sourceId": "azure-blog",
+          "url": "https://azure.microsoft.com/en-us/blog/feed/",
+          "status": "not-modified",
+          "httpStatus": 304,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://ir.aboutamazon.com/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "aws-news"
+        ],
+        "checkedSourceIds": [
+          "aws-news"
+        ],
+        "passingSourceIds": [
+          "aws-news"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "aws-news",
+          "url": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
+          "status": "ok",
+          "httpStatus": 200,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "alphabet",
+      "name": "Alphabet",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://abc.xyz/investor/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "google-cloud",
+          "google-ai-blog",
+          "google-developers"
+        ],
+        "checkedSourceIds": [
+          "google-cloud",
+          "google-ai-blog",
+          "google-developers"
+        ],
+        "passingSourceIds": [
+          "google-cloud",
+          "google-ai-blog",
+          "google-developers"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "google-cloud",
+          "url": "https://cloud.google.com/blog/rss",
+          "status": "empty",
+          "httpStatus": 200,
+          "error": null
+        },
+        {
+          "sourceId": "google-ai-blog",
+          "url": "https://blog.google/technology/ai/rss/",
+          "status": "ok",
+          "httpStatus": 200,
+          "error": null
+        },
+        {
+          "sourceId": "google-developers",
+          "url": "https://developers.googleblog.com/feeds/posts/default",
+          "status": "ok",
+          "httpStatus": 200,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-71bf696d5b750014f9c7",
+          "title": "消息称台积电先进封装 CoWoS 明年产能配额已全被预订，部分客户转向英特尔 EMIB-T",
+          "lastUpdatedAt": "2026-09-02T08:24:48.000Z",
+          "sourceIds": [
+            "ithome"
+          ]
+        },
+        {
+          "eventId": "evt-6778ac2bea11057a8c5b",
+          "title": "谷歌副总裁 Amin Vahdat 谈 AI 泡沫：技术变革和市场需求确实存在",
+          "lastUpdatedAt": "2026-09-02T07:44:53.000Z",
+          "sourceIds": [
+            "ithome"
+          ]
+        },
+        {
+          "eventId": "evt-0e14a3313c8523eb053c",
+          "title": "福特解释新款纯电皮卡 Fathom 为何选择苹果地图：这是最佳解决方案",
+          "lastUpdatedAt": "2026-09-02T07:22:39.000Z",
+          "sourceIds": [
+            "ithome"
+          ]
+        },
+        {
+          "eventId": "evt-bde569c590ff1e456cff",
+          "title": "继谷歌地图后，苹果地图面向美国用户将安大略湖更名为“美国湖”",
+          "lastUpdatedAt": "2026-09-02T07:04:28.000Z",
+          "sourceIds": [
+            "ithome"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://investor.atmeta.com/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "meta",
+          "meta-engineering"
+        ],
+        "checkedSourceIds": [
+          "meta",
+          "meta-engineering"
+        ],
+        "passingSourceIds": [
+          "meta",
+          "meta-engineering"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "meta",
+          "url": "https://about.fb.com/news/feed/",
+          "status": "ok",
+          "httpStatus": 200,
+          "error": null
+        },
+        {
+          "sourceId": "meta-engineering",
+          "url": "https://engineering.fb.com/feed/",
+          "status": "ok",
+          "httpStatus": 200,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-71bf696d5b750014f9c7",
+          "title": "消息称台积电先进封装 CoWoS 明年产能配额已全被预订，部分客户转向英特尔 EMIB-T",
+          "lastUpdatedAt": "2026-09-02T08:24:48.000Z",
+          "sourceIds": [
+            "ithome"
+          ]
+        },
+        {
+          "eventId": "evt-265366fa6167e05f1a8a",
+          "title": "Meta 强力打击智能眼镜偷拍行为：你敢破坏指示灯，我就永久禁止摄像头",
+          "lastUpdatedAt": "2026-09-02T07:41:02.000Z",
+          "sourceIds": [
+            "ithome"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://investor.oracle.com/",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "oracle"
+        ],
+        "checkedSourceIds": [
+          "oracle"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "oracle"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "oracle",
+          "url": null,
+          "status": "not-checked",
+          "httpStatus": null,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://openai.com/news/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "openai-news"
+        ],
+        "checkedSourceIds": [
+          "openai-news"
+        ],
+        "passingSourceIds": [
+          "openai-news"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "openai-news",
+          "url": "https://openai.com/news/rss.xml",
+          "status": "ok",
+          "httpStatus": 200,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.anthropic.com/news",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "anthropic-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "anthropic-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "anthropic-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "anthropic-official-entrypoint",
+          "url": "https://www.anthropic.com/news",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "xai",
+      "name": "xAI",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://x.ai/news",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "xai-news"
+        ],
+        "checkedSourceIds": [
+          "xai-news"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "xai-news"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "xai-news",
+          "url": "https://x.ai/news",
+          "status": "blocked",
+          "httpStatus": 403,
+          "error": "HTTP 403"
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "coreweave",
+      "name": "CoreWeave",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.coreweave.com/news",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "coreweave"
+        ],
+        "checkedSourceIds": [
+          "coreweave"
+        ],
+        "passingSourceIds": [
+          "coreweave"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "coreweave",
+          "url": "https://www.coreweave.com/news",
+          "status": "ok",
+          "httpStatus": 200,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "alibaba",
+      "name": "Alibaba",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.alibabagroup.com/en-US/news",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "alibaba-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "alibaba-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "alibaba-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "alibaba-official-entrypoint",
+          "url": "https://www.alibabagroup.com/en-US/news",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "tencent",
+      "name": "Tencent",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.tencent.com/en-us/IR.html",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "tencent-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "tencent-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "tencent-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "tencent-official-entrypoint",
+          "url": "https://www.tencent.com/en-us/IR.html",
+          "httpStatus": null,
+          "access": "unavailable",
+          "checked": true,
+          "error": "fetch failed"
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "bytedance",
+      "name": "ByteDance",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.bytedance.com/en/news",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "bytedance-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "bytedance-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "bytedance-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "bytedance-official-entrypoint",
+          "url": "https://www.bytedance.com/en/news",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.apple.com/newsroom/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "apple-newsroom"
+        ],
+        "checkedSourceIds": [
+          "apple-newsroom"
+        ],
+        "passingSourceIds": [
+          "apple-newsroom"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "apple-newsroom",
+          "url": "https://www.apple.com/newsroom/rss-feed.rss",
+          "status": "not-modified",
+          "httpStatus": 304,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-f9e7ff9da5bdb4c4cd44",
+          "title": "苹果新任 CEO 约翰 · 特努斯成 Apple 官方 X 账号唯一关注",
+          "lastUpdatedAt": "2026-09-02T07:31:05.000Z",
+          "sourceIds": [
+            "ithome"
+          ]
+        },
+        {
+          "eventId": "evt-0e14a3313c8523eb053c",
+          "title": "福特解释新款纯电皮卡 Fathom 为何选择苹果地图：这是最佳解决方案",
+          "lastUpdatedAt": "2026-09-02T07:22:39.000Z",
+          "sourceIds": [
+            "ithome"
+          ]
+        },
+        {
+          "eventId": "evt-bde569c590ff1e456cff",
+          "title": "继谷歌地图后，苹果地图面向美国用户将安大略湖更名为“美国湖”",
+          "lastUpdatedAt": "2026-09-02T07:04:28.000Z",
+          "sourceIds": [
+            "ithome"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "tesla",
+      "name": "Tesla",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://ir.tesla.com/",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "tesla-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "tesla-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "tesla-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "tesla-official-entrypoint",
+          "url": "https://ir.tesla.com/",
+          "httpStatus": 403,
+          "access": "unavailable",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "palantir",
+      "name": "Palantir",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://investors.palantir.com/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "palantir-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "palantir-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "palantir-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "palantir-official-entrypoint",
+          "url": "https://investors.palantir.com/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.salesforce.com/news/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "salesforce-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "salesforce-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "salesforce-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "salesforce-official-entrypoint",
+          "url": "https://www.salesforce.com/news/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "servicenow",
+      "name": "ServiceNow",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.servicenow.com/company/media/press-room.html",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "servicenow-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "servicenow-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "servicenow-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "servicenow-official-entrypoint",
+          "url": "https://www.servicenow.com/company/media/press-room.html",
+          "httpStatus": 403,
+          "access": "unavailable",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "snowflake",
+      "name": "Snowflake",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.snowflake.com/en/news/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "snowflake-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "snowflake-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "snowflake-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "snowflake-official-entrypoint",
+          "url": "https://www.snowflake.com/en/news/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://blog.cloudflare.com/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "cloudflare-blog"
+        ],
+        "checkedSourceIds": [
+          "cloudflare-blog"
+        ],
+        "passingSourceIds": [
+          "cloudflare-blog"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "cloudflare-blog",
+          "url": "https://blog.cloudflare.com/rss/",
+          "status": "ok",
+          "httpStatus": 200,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "baidu",
+      "name": "Baidu",
+      "layer": "model-application",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://ir.baidu.com/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "baidu-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "baidu-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "baidu-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "baidu-official-entrypoint",
+          "url": "https://ir.baidu.com/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "layer": "model-application",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.deepseek.com/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "deepseek-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "deepseek-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "deepseek-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "deepseek-official-entrypoint",
+          "url": "https://www.deepseek.com/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "layer": "model-application",
+      "regions": [
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://mistral.ai/news/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "mistral-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "mistral-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "mistral-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "mistral-official-entrypoint",
+          "url": "https://mistral.ai/news/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.perplexity.ai/hub",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "perplexity-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "perplexity-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "perplexity-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "perplexity-official-entrypoint",
+          "url": "https://www.perplexity.ai/hub",
+          "httpStatus": 403,
+          "access": "unavailable",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "asml",
+      "name": "ASML",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.asml.com/en/news",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "asml-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "asml-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "asml-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "asml-official-entrypoint",
+          "url": "https://www.asml.com/en/news",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "applied-materials",
+      "name": "Applied Materials",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://ir.appliedmaterials.com/news-releases",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "applied-materials-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "applied-materials-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "applied-materials-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "applied-materials-official-entrypoint",
+          "url": "https://ir.appliedmaterials.com/news-releases",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "lam-research",
+      "name": "Lam Research",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://newsroom.lamresearch.com/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "lam-research-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "lam-research-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "lam-research-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "lam-research-official-entrypoint",
+          "url": "https://newsroom.lamresearch.com/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://nvidianews.nvidia.com/rss.xml",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "nvidia",
+          "nvidia-developer"
+        ],
+        "checkedSourceIds": [
+          "nvidia",
+          "nvidia-developer"
+        ],
+        "passingSourceIds": [
+          "nvidia",
+          "nvidia-developer"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "nvidia",
+          "url": "https://nvidianews.nvidia.com/rss.xml",
+          "status": "ok",
+          "httpStatus": 200,
+          "error": null
+        },
+        {
+          "sourceId": "nvidia-developer",
+          "url": "https://developer.nvidia.com/blog/feed/",
+          "status": "ok",
+          "httpStatus": 200,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-71bf696d5b750014f9c7",
+          "title": "消息称台积电先进封装 CoWoS 明年产能配额已全被预订，部分客户转向英特尔 EMIB-T",
+          "lastUpdatedAt": "2026-09-02T08:24:48.000Z",
+          "sourceIds": [
+            "ithome"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://ir.amd.com/rss/news-releases.xml",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "amd"
+        ],
+        "checkedSourceIds": [
+          "amd"
+        ],
+        "passingSourceIds": [
+          "amd"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "amd",
+          "url": "https://ir.amd.com/rss/news-releases.xml",
+          "status": "ok",
+          "httpStatus": 200,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "broadcom",
+      "name": "Broadcom",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://investors.broadcom.com/news-releases",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "broadcom-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "broadcom-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "broadcom-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "broadcom-official-entrypoint",
+          "url": "https://investors.broadcom.com/news-releases",
+          "httpStatus": 404,
+          "access": "unavailable",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-71bf696d5b750014f9c7",
+          "title": "消息称台积电先进封装 CoWoS 明年产能配额已全被预订，部分客户转向英特尔 EMIB-T",
+          "lastUpdatedAt": "2026-09-02T08:24:48.000Z",
+          "sourceIds": [
+            "ithome"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "marvell",
+      "name": "Marvell",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://investor.marvell.com/news-releases",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "marvell-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "marvell-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "marvell-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "marvell-official-entrypoint",
+          "url": "https://investor.marvell.com/news-releases",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "tsmc",
+      "name": "TSMC",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://pr.tsmc.com/english/news",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "tsmc-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "tsmc-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "tsmc-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "tsmc-official-entrypoint",
+          "url": "https://pr.tsmc.com/english/news",
+          "httpStatus": 403,
+          "access": "unavailable",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-71bf696d5b750014f9c7",
+          "title": "消息称台积电先进封装 CoWoS 明年产能配额已全被预订，部分客户转向英特尔 EMIB-T",
+          "lastUpdatedAt": "2026-09-02T08:24:48.000Z",
+          "sourceIds": [
+            "ithome"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "sk-hynix",
+      "name": "SK hynix",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://news.skhynix.com/feed/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "sk-hynix-newsroom"
+        ],
+        "checkedSourceIds": [
+          "sk-hynix-newsroom"
+        ],
+        "passingSourceIds": [
+          "sk-hynix-newsroom"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "sk-hynix-newsroom",
+          "url": "https://news.skhynix.com/feed/",
+          "status": "ok",
+          "httpStatus": 200,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-71bf696d5b750014f9c7",
+          "title": "消息称台积电先进封装 CoWoS 明年产能配额已全被预订，部分客户转向英特尔 EMIB-T",
+          "lastUpdatedAt": "2026-09-02T08:24:48.000Z",
+          "sourceIds": [
+            "ithome"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "micron",
+      "name": "Micron",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://investors.micron.com/news-releases",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "micron-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "micron-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "micron-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "micron-official-entrypoint",
+          "url": "https://investors.micron.com/news-releases",
+          "httpStatus": 404,
+          "access": "unavailable",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung Electronics",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://news.samsung.com/global/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "samsung-global-newsroom"
+        ],
+        "checkedSourceIds": [
+          "samsung-global-newsroom"
+        ],
+        "passingSourceIds": [
+          "samsung-global-newsroom"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "samsung-global-newsroom",
+          "url": "https://news.samsung.com/global/feed",
+          "status": "ok",
+          "httpStatus": 200,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "arista",
+      "name": "Arista Networks",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://investors.arista.com/news-releases",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "arista-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "arista-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "arista-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "arista-official-entrypoint",
+          "url": "https://investors.arista.com/news-releases",
+          "httpStatus": 404,
+          "access": "unavailable",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "dell",
+      "name": "Dell Technologies",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://investors.delltechnologies.com/news-releases",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "dell"
+        ],
+        "checkedSourceIds": [
+          "dell"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "dell"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "dell",
+          "url": null,
+          "status": "not-checked",
+          "httpStatus": null,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "supermicro",
+      "name": "Supermicro",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://ir.supermicro.com/news-releases",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "supermicro-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "supermicro-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "supermicro-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "supermicro-official-entrypoint",
+          "url": "https://ir.supermicro.com/news-releases",
+          "httpStatus": 404,
+          "access": "unavailable",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "huawei",
+      "name": "Huawei",
+      "layer": "compute-silicon",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.huawei.com/en/news",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "huawei-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "huawei-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "huawei-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "huawei-official-entrypoint",
+          "url": "https://www.huawei.com/en/news",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "equinix",
+      "name": "Equinix",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://investor.equinix.com/news-releases",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "equinix-ir"
+        ],
+        "checkedSourceIds": [
+          "equinix-ir"
+        ],
+        "passingSourceIds": [
+          "equinix-ir"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "equinix-ir",
+          "url": "https://investor.equinix.com/rss/news-releases.xml",
+          "status": "ok",
+          "httpStatus": 200,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "digital-realty",
+      "name": "Digital Realty",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://investor.digitalrealty.com/news-releases",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "digital-realty"
+        ],
+        "checkedSourceIds": [
+          "digital-realty"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "digital-realty"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "digital-realty",
+          "url": null,
+          "status": "not-checked",
+          "httpStatus": null,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "vertiv",
+      "name": "Vertiv",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://investors.vertiv.com/news-releases",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "vertiv-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "vertiv-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "vertiv-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "vertiv-official-entrypoint",
+          "url": "https://investors.vertiv.com/news-releases",
+          "httpStatus": 404,
+          "access": "unavailable",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "schneider-electric",
+      "name": "Schneider Electric",
+      "layer": "capacity-power",
+      "regions": [
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.se.com/ww/en/about-us/newsroom/",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "schneider-electric-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "schneider-electric-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "schneider-electric-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "schneider-electric-official-entrypoint",
+          "url": "https://www.se.com/ww/en/about-us/newsroom/",
+          "httpStatus": null,
+          "access": "unavailable",
+          "checked": true,
+          "error": "fetch failed"
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "eaton",
+      "name": "Eaton",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.eaton.com/us/en-us/company/news-insights/news-releases.html",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "eaton-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "eaton-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "eaton-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "eaton-official-entrypoint",
+          "url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases.html",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "ge-vernova",
+      "name": "GE Vernova",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.gevernova.com/news",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "ge-vernova-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "ge-vernova-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "ge-vernova-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "ge-vernova-official-entrypoint",
+          "url": "https://www.gevernova.com/news",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "hut-8",
+      "name": "Hut 8",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.hut8.com/news-insights/press-releases",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "hut8"
+        ],
+        "checkedSourceIds": [
+          "hut8"
+        ],
+        "passingSourceIds": [
+          "hut8"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "hut8",
+          "url": "https://www.hut8.com/news-insights/press-releases",
+          "status": "ok",
+          "httpStatus": 200,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "terawulf",
+      "name": "TeraWulf",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://ir.terawulf.com/news-releases",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "terawulf"
+        ],
+        "checkedSourceIds": [
+          "terawulf"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "terawulf"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "terawulf",
+          "url": null,
+          "status": "not-checked",
+          "httpStatus": null,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "galaxy-digital",
+      "name": "Galaxy Digital",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.galaxy.com/newsroom/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "galaxy"
+        ],
+        "checkedSourceIds": [
+          "galaxy"
+        ],
+        "passingSourceIds": [
+          "galaxy"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "galaxy",
+          "url": "https://www.galaxy.com/newsroom",
+          "status": "ok",
+          "httpStatus": 200,
+          "error": null
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "riot-platforms",
+      "name": "Riot Platforms",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://www.riotplatforms.com/news",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "riot-platforms-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "riot-platforms-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "riot-platforms-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "riot-platforms-official-entrypoint",
+          "url": "https://www.riotplatforms.com/news",
+          "httpStatus": 404,
+          "access": "unavailable",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "applied-digital",
+      "name": "Applied Digital",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://ir.applieddigital.com/news-releases",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "applied-digital-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "applied-digital-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "applied-digital-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "applied-digital-official-entrypoint",
+          "url": "https://ir.applieddigital.com/news-releases",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    },
+    {
+      "id": "gds",
+      "name": "GDS Holdings",
+      "layer": "capacity-power",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-02T16:36:27+08:00",
+      "officialUrl": "https://ir.gds-services.com/",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "gds-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "gds-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "gds-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "gds-official-entrypoint",
+          "url": "https://ir.gds-services.com/",
+          "httpStatus": null,
+          "access": "unavailable",
+          "checked": true,
+          "error": "fetch failed"
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Source entrypoint was checked, but issuer-specific cutoff-window reconciliation is incomplete; no-change is not inferred."
+    }
+  ]
+}\n

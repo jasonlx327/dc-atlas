@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "atlas-event-timezone-dst.v1",
+  "status": "passed",
+  "generatedAt": "2026-09-02T14:46:45.275Z",
+  "timeZones": {
+    "zh": "Asia/Shanghai",
+    "en": "America/New_York"
+  },
+  "utcSchedule": {
+    "eventNight": "30 21 * * *",
+    "eventMidday": "30 4 * * *",
+    "eventDay": "30 12 * * *",
+    "snapshotDaily": "0 22 * * *",
+    "dailyClosure": "30 22 * * *"
+  },
+  "cases": [
+    {
+      "id": "beijing-event-night-next-day",
+      "instant": "2026-08-08T21:30:00Z",
+      "timeZone": "Asia/Shanghai",
+      "expected": {
+        "year": "2026",
+        "month": "08",
+        "day": "09",
+        "hour": "05",
+        "minute": "30"
+      },
+      "actual": {
+        "year": "2026",
+        "month": "08",
+        "day": "09",
+        "hour": "05",
+        "minute": "30"
+      },
+      "pass": true
+    },
+    {
+      "id": "beijing-daily-closure",
+      "instant": "2026-08-08T22:30:00Z",
+      "timeZone": "Asia/Shanghai",
+      "expected": {
+        "year": "2026",
+        "month": "08",
+        "day": "09",
+        "hour": "06",
+        "minute": "30"
+      },
+      "actual": {
+        "year": "2026",
+        "month": "08",
+        "day": "09",
+        "hour": "06",
+        "minute": "30"
+      },
+      "pass": true
+    },
+    {
+      "id": "beijing-winter-no-dst",
+      "instant": "2026-01-15T15:00:00Z",
+      "timeZone": "Asia/Shanghai",
+      "expected": {
+        "year": "2026",
+        "month": "01",
+        "day": "15",
+        "hour": "23",
+        "minute": "00"
+      },
+      "actual": {
+        "year": "2026",
+        "month": "01",
+        "day": "15",
+        "hour": "23",
+        "minute": "00"
+      },
+      "pass": true
+    },
+    {
+      "id": "beijing-summer-no-dst",
+      "instant": "2026-07-15T15:00:00Z",
+      "timeZone": "Asia/Shanghai",
+      "expected": {
+        "year": "2026",
+        "month": "07",
+        "day": "15",
+        "hour": "23",
+        "minute": "00"
+      },
+      "actual": {
+        "year": "2026",
+        "month": "07",
+        "day": "15",
+        "hour": "23",
+        "minute": "00"
+      },
+      "pass": true
+    },
+    {
+      "id": "new-york-standard-time",
+      "instant": "2026-01-15T15:00:00Z",
+      "timeZone": "America/New_York",
+      "expected": {
+        "year": "2026",
+        "month": "01",
+        "day": "15",
+        "hour": "10",
+        "minute": "00"
+      },
+      "actual": {
+        "year": "2026",
+        "month": "01",
+        "day": "15",
+        "hour": "10",
+        "minute": "00"
+      },
+      "pass": true
+    },
+    {
+      "id": "new-york-daylight-time",
+      "instant": "2026-07-15T15:00:00Z",
+      "timeZone": "America/New_York",
+      "expected": {
+        "year": "2026",
+        "month": "07",
+        "day": "15",
+        "hour": "11",
+        "minute": "00"
+      },
+      "actual": {
+        "year": "2026",
+        "month": "07",
+        "day": "15",
+        "hour": "11",
+        "minute": "00"
+      },
+      "pass": true
+    }
+  ],
+  "productionTouched": false
+}
