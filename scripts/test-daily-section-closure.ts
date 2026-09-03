@@ -179,4 +179,22 @@ assert.equal(ordinaryHoldEditor.summary.blockingHold, 0);
 assert.equal(ordinaryHoldClosure.sections.find((section) => section.section === "capacity")?.status, "verified-no-change");
 assert.equal(ordinaryHoldClosure.retryRequired, false);
 
+const blockingCopyPacket: DailyEditorialCandidatePacket = {
+  ...packet,
+  copyReadyCount: 0,
+  selected: [item({
+    eventId: "event-copy-retry",
+    result: { ...item().result, publicCopy: undefined },
+  })],
+};
+const blockingCopyEditor = buildAtlasEditorDecision(blockingCopyPacket, scheduledTime);
+const blockingCopyClosure = buildDailySectionClosure(blockingCopyPacket, scheduledTime, sources, blockingCopyEditor);
+assert.equal(blockingCopyEditor.decisions[0]?.action, "hold");
+assert.equal(blockingCopyEditor.decisions[0]?.holdClass, "blocking");
+assert.equal(blockingCopyEditor.status, "partial");
+assert.equal(blockingCopyClosure.status, "partial", "an item-level copy gap must not be reported as a global blocked run");
+assert.equal(blockingCopyClosure.sections.find((section) => section.section === "capacity")?.status, "blocked");
+assert.equal(blockingCopyClosure.counts.blocked, 1);
+assert.equal(blockingCopyClosure.retryRequired, true);
+
 console.log(JSON.stringify({ message: "Daily section closure tests passed", sections: report.sections.length, counts: report.counts }));

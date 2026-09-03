@@ -274,5 +274,7 @@ assert.equal(unavailable.status, "partial");
 assert.equal(unavailable.attemptedCount, 0);
 assert.equal(unavailable.items.length, 3, "provider outages must retain deterministic candidates");
 assert.equal(unavailable.fallbackCount, 3);
+const unavailablePacket = JSON.parse(unavailableKv.values.get(DAILY_CANDIDATE_PACKET_LATEST_KEY) ?? "null") as DailyEditorialCandidatePacket;
+assert.equal(unavailablePacket.copyReadyCount, 0, "source-stage text must not be counted as reviewed publicCopy during fallback");
 
 console.log("daily model selection tests passed");

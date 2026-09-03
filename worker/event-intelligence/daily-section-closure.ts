@@ -86,7 +86,7 @@ export function buildDailySectionClosure(
     && beijingDay(new Date(sourceReport.generatedAt)) === day
     && sourceReport.status !== "failed"
     && sourceReport.status !== "blocked";
-  const editorCurrent = editorPacket?.day === day && editorPacket.status === "completed";
+  const editorCurrent = editorPacket?.day === day && editorPacket.status !== "blocked";
   const coverage = buildSectionSourceCoverage(sourceCurrent ? sourceReport : null);
   const coverageBySection = new Map(coverage.map((entry) => [entry.section, entry]));
 

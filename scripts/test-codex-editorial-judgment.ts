@@ -128,11 +128,20 @@ assert.equal(packets.closure.sections.length, 13);
 
 assert.throws(() => buildCodexEditorialPackets(report, { ...verdict, model: "deepseek-v4-flash" }), /gpt-5.6-luna/);
 assert.throws(() => buildCodexEditorialPackets(report, { ...verdict, verdicts: [] }), /缺少 1 个候选/);
-const missingCopyPackets = buildCodexEditorialPackets(report, {
+assert.throws(() => buildCodexEditorialPackets(report, {
   ...verdict,
   verdicts: [{ ...verdict.verdicts[0], publicCopy: undefined }],
-});
-assert.equal(missingCopyPackets.editor.decisions[0]?.action, "publish");
+}), /未完成.*missing-publicCopy/);
+assert.throws(() => buildCodexEditorialPackets(report, {
+  ...verdict,
+  verdicts: [{
+    ...verdict.verdicts[0],
+    publicCopy: {
+      ...verdict.verdicts[0].publicCopy,
+      titleEn: verdict.verdicts[0].publicCopy.titleZh,
+    },
+  }],
+}), /未完成.*en-copy-contains-han-text/);
 assert.throws(() => buildCodexEditorialPackets(report, {
   ...verdict,
   verdicts: [{ ...verdict.verdicts[0], band: "dropped" }],

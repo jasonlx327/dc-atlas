@@ -24,6 +24,7 @@ import {
   type ModelMaterialBand,
   type ModelScoringResult,
 } from "./model-scoring.ts";
+import { validateBilingualPair } from "./provider-contract.ts";
 import type { ShadowRunReport } from "./pipeline.ts";
 
 export type CodexEditorialVerdict = {
@@ -78,6 +79,25 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 function parseBand(value: unknown): ModelMaterialBand {
   if (value === "selected" || value === "watch" || value === "dropped") return value;
   throw new Error("Codex verdict band 无效。");
+}
+
+function accessiblePublicSource(source: ShadowRunReport["events"][number]["sourceChain"][number]): boolean {
+  return Boolean(source.url)
+    && ["T0", "T1", "T2", "T3"].includes(source.tier)
+    && !["blocked", "paywalled", "unavailable", "login-required"].includes(source.accessStatus);
+}
+
+export function requiresEditorialPublicCopy(
+  event: ShadowRunReport["events"][number],
+  band: ModelMaterialBand,
+): boolean {
+  if (band !== "selected" && band !== "watch") return false;
+  if (event.evidenceStatus === "lead") return false;
+  const publicRoute = event.route === "pulse"
+    || event.route === "rumor-watch"
+    || event.route === "policy-index"
+    || event.routeCandidates.some((route) => route === "pulse" || route === "rumor-watch" || route === "policy-index");
+  return publicRoute && event.sourceChain.some(accessiblePublicSource);
 }
 
 export function parseCodexEditorialJudgment(value: unknown): CodexEditorialJudgment {
@@ -139,6 +159,17 @@ export function buildCodexEditorialPackets(
   }
   const missing = candidates.filter((event) => !verdictById.has(event.id)).map((event) => event.id);
   if (missing.length) throw new Error(`Codex judgment 缺少 ${missing.length} 个候选：${missing.join(", ")}`);
+
+  const copyGaps = candidates.flatMap((event) => {
+    const verdict = verdictById.get(event.id)!;
+    if (!requiresEditorialPublicCopy(event, verdict.band)) return [];
+    if (!verdict.publicCopy) return [`${event.id}:missing-publicCopy`];
+    const validation = validateBilingualPair({ ...verdict.publicCopy, entities: event.entities });
+    return validation.status === "pass" ? [] : [`${event.id}:${validation.errors.join("+") || validation.status}`];
+  });
+  if (copyGaps.length) {
+    throw new Error(`Codex judgment 未完成：${copyGaps.length} 个可公开候选缺少合格中英文 publicCopy：${copyGaps.join(", ")}`);
+  }
 
   const items = candidates.map((event) => {
     const verdict = verdictById.get(event.id)!;

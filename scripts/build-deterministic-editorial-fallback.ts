@@ -4,6 +4,7 @@ import { shadowSources } from "../worker/connectors/index.ts";
 import { dailySelectionCandidates } from "../worker/event-intelligence/daily-model-selection.ts";
 import { matchCoreCompanies } from "../worker/event-intelligence/core-company-watchlist.ts";
 import { modelMaterialBand, semanticScore, type ModelDimensionScores } from "../worker/event-intelligence/model-scoring.ts";
+import { requiresEditorialPublicCopy } from "../worker/event-intelligence/codex-editorial-judgment.ts";
 import type { ShadowRunReport } from "../worker/event-intelligence/pipeline.ts";
 import { validateBilingualPair } from "../worker/event-intelligence/provider-contract.ts";
 
@@ -86,19 +87,39 @@ async function run() {
       ...(copy ? { publicCopy: copy } : {}),
     };
   });
+  const candidateById = new Map(candidates.map((event) => [event.id, event]));
+  const completionRequired = verdicts.flatMap((verdict) => {
+    const event = candidateById.get(verdict.eventId)!;
+    return requiresEditorialPublicCopy(event, verdict.band) && !verdict.publicCopy
+      ? [{ eventId: verdict.eventId, reason: "missing-or-invalid-bilingual-publicCopy" }]
+      : [];
+  });
   const judgment = {
     schemaVersion: "atlas-codex-editorial-judgment.v1",
     day: beijingDay(new Date(generatedAt)),
     generatedAt,
     sourceGeneratedAt: sourceReport.generatedAt,
     model: "deterministic-atlas-fallback-v1",
-    status: "completed",
+    status: completionRequired.length ? "needs-editorial-completion" : "completed",
     verdicts,
-    errors: [],
+    errors: completionRequired.length
+      ? [`${completionRequired.length} 个可公开候选需要当前 Codex 完成中英文 publicCopy。`]
+      : [],
+    completionRequired,
   };
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, `${JSON.stringify(judgment, null, 2)}\n`);
-  console.log(JSON.stringify({ message: "Deterministic editorial fallback created", input, output, day: judgment.day, candidates: verdicts.length }));
+  console.log(JSON.stringify({
+    message: completionRequired.length
+      ? "Deterministic fallback retained candidates; editorial completion required before ingest"
+      : "Deterministic editorial fallback created",
+    input,
+    output,
+    day: judgment.day,
+    candidates: verdicts.length,
+    status: judgment.status,
+    completionRequired: completionRequired.length,
+  }));
 }
 
 void run();

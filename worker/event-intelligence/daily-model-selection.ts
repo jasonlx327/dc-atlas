@@ -239,12 +239,8 @@ export function dailyCandidatePacket(report: DailyMaterialSelectionReport): Dail
   const watch = report.items.filter((item) => item.band === "watch");
   const ruleEligibleCount = selected.filter((item) => item.publicationReadiness === "eligible-by-rules").length;
   const copyReadyCount = [...selected, ...watch].filter((item) => {
-    const copy = item.result.publicCopy ?? {
-      titleZh: item.titleZh,
-      titleEn: item.titleEn,
-      summaryZh: item.summaryZh,
-      summaryEn: item.summaryEn,
-    };
+    const copy = item.result.publicCopy;
+    if (!copy) return false;
     return validateBilingualPair({ ...copy, entities: item.entities }).status === "pass";
   }).length;
   return {

@@ -112,12 +112,8 @@ function accessibleSources(item: DailyMaterialSelectionItem) {
 }
 
 function publicCopy(item: DailyMaterialSelectionItem): AtlasEditorPublicCopy | null {
-  const candidate = item.result.publicCopy ?? {
-    titleZh: item.titleZh,
-    titleEn: item.titleEn,
-    summaryZh: item.summaryZh,
-    summaryEn: item.summaryEn,
-  };
+  const candidate = item.result.publicCopy;
+  if (!candidate) return null;
   if (!/[\u3400-\u9fff]/.test(`${candidate.titleZh} ${candidate.summaryZh}`)) return null;
   if (/[\u3400-\u9fff]/.test(candidate.titleEn)) return null;
   const validation = validateBilingualPair({ ...candidate, entities: item.entities });
@@ -207,7 +203,8 @@ function decisionFor(item: DailyMaterialSelectionItem): AtlasEditorDecision {
       internalNotes: [],
     };
   }
-  if (topicSection === "columns" || item.routeCandidates.includes("research-queue")) {
+  const publicEvidencePendingCopy = !copy && (formalEvidence || rumorEvidence);
+  if (!publicEvidencePendingCopy && (topicSection === "columns" || item.routeCandidates.includes("research-queue"))) {
     return {
       ...common(sources, urls),
       action: "watch",
@@ -277,7 +274,7 @@ export function buildAtlasEditorDecision(
     cutoffAt: now.toISOString(),
     timezone: "Asia/Shanghai",
     day,
-    status: !current ? "blocked" : "completed",
+    status: !current ? "blocked" : summary.blockingHold > 0 ? "partial" : "completed",
     sourcePacketGeneratedAt: packet?.generatedAt ?? null,
     decisions,
     summary,

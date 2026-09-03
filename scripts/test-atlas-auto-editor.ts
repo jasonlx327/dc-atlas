@@ -184,6 +184,15 @@ assert.equal(watchOnlyDecision.status, "completed", "ordinary watch holds must n
 const mirroredCopyDecision = buildAtlasEditorDecision(packet([mirroredSourceCopy]), Date.parse("2026-08-17T01:30:00.000Z"));
 assert.equal(mirroredCopyDecision.decisions[0]?.action, "hold", "mirrored source-language copy must never reach a public adapter");
 assert.ok(mirroredCopyDecision.decisions[0]?.reasonCodes.includes("bilingual-copy-invalid-or-incomplete"));
+assert.equal(mirroredCopyDecision.status, "partial", "a blocking editorial copy gap must remain visible at packet level");
+
+const implicitSourceCopyDecision = buildAtlasEditorDecision(packet([item({
+  eventId: "event-no-editorial-copy",
+  result: { ...formal.result, publicCopy: undefined },
+})]), Date.parse("2026-08-17T01:30:00.000Z"));
+assert.equal(implicitSourceCopyDecision.decisions[0]?.action, "hold", "source-stage bilingual fields must not stand in for reviewed publicCopy");
+assert.equal(implicitSourceCopyDecision.decisions[0]?.holdClass, "blocking");
+assert.equal(implicitSourceCopyDecision.status, "partial");
 
 if (process.argv.includes("--packet")) {
   process.stdout.write(JSON.stringify(decision));
