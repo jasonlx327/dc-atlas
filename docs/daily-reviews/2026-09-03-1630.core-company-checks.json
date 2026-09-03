@@ -1,0 +1,2477 @@
+{
+  "schemaVersion": "atlas-core-company-checks.v1",
+  "runId": "atlas-2026-09-03-1630",
+  "checkedAt": "2026-09-03T08:42:19.928Z",
+  "cutoff": "2026-09-02T16:36:27+08:00",
+  "cutoffBasis": "09:30 blocked; 24-hour fallback from last trusted global cutoff",
+  "companyCount": 50,
+  "summary": {
+    "changed": 14,
+    "no-change": 20,
+    "not-determined": 16
+  },
+  "layerCounts": {
+    "demand-platform": {
+      "changed": 7,
+      "no-change": 2,
+      "not-determined": 3
+    },
+    "model-application": {
+      "changed": 2,
+      "no-change": 6,
+      "not-determined": 3
+    },
+    "compute-silicon": {
+      "changed": 4,
+      "no-change": 6,
+      "not-determined": 5
+    },
+    "capacity-power": {
+      "changed": 1,
+      "no-change": 6,
+      "not-determined": 5
+    }
+  },
+  "coverage": {
+    "method": "current live Codex source run plus direct official IR/newsroom/filing/project entrypoint refresh",
+    "sourceRun": "artifacts/event-intelligence/codex-event-night.json",
+    "requiredLayers": [
+      "demand-platform",
+      "model-application",
+      "compute-silicon",
+      "capacity-power"
+    ]
+  },
+  "companies": [
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.microsoft.com/en-us/Investor/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "microsoft",
+          "azure-blog"
+        ],
+        "checkedSourceIds": [
+          "microsoft",
+          "azure-blog",
+          "microsoft-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "microsoft",
+          "azure-blog",
+          "microsoft-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "microsoft",
+          "url": "https://news.microsoft.com/feed/",
+          "httpStatus": 304,
+          "access": "public",
+          "checked": true,
+          "status": "not-modified",
+          "observations": 0
+        },
+        {
+          "sourceId": "azure-blog",
+          "url": "https://azure.microsoft.com/en-us/blog/feed/",
+          "httpStatus": 304,
+          "access": "public",
+          "checked": true,
+          "status": "not-modified",
+          "observations": 0
+        },
+        {
+          "sourceId": "microsoft-official-entrypoint",
+          "url": "https://www.microsoft.com/en-us/Investor/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 293300
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-b644b9ef2abe20322e00",
+          "titleZh": "Agent Plugins package your skills, tools, and more",
+          "titleEn": "Agent Plugins package your skills, tools, and more",
+          "lastUpdatedAt": "2026-09-03T08:36:34.463Z",
+          "route": "pulse",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceIds": [
+            "google-developers"
+          ]
+        },
+        {
+          "eventId": "evt-a743155cab17349f3ca5",
+          "titleZh": "微软调整财报口径：智能体与基础设施、设备与消费者 2 板块，Azure 营收纳入报告范围",
+          "titleEn": "微软调整财报口径：智能体与基础设施、设备与消费者 2 板块，Azure 营收纳入报告范围",
+          "lastUpdatedAt": "2026-09-03T08:21:18.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceIds": [
+            "ithome"
+          ]
+        },
+        {
+          "eventId": "evt-98a336a31bd5a66b6f20",
+          "titleZh": "Microsoft update disarms Outlook and Teams on Arm PCs",
+          "titleEn": "Microsoft update disarms Outlook and Teams on Arm PCs",
+          "lastUpdatedAt": "2026-09-02T12:30:00.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceIds": [
+            "the-register"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://ir.aboutamazon.com/",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "aws-news"
+        ],
+        "checkedSourceIds": [
+          "aws-news",
+          "amazon-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "aws-news"
+        ],
+        "failedSourceIds": [
+          "amazon-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "aws-news",
+          "url": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "status": "ok",
+          "observations": 100
+        },
+        {
+          "sourceId": "amazon-official-entrypoint",
+          "url": "https://ir.aboutamazon.com/",
+          "httpStatus": 403,
+          "access": "http-403",
+          "checked": true,
+          "bytes": 5494
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-b644b9ef2abe20322e00",
+          "titleZh": "Agent Plugins package your skills, tools, and more",
+          "titleEn": "Agent Plugins package your skills, tools, and more",
+          "lastUpdatedAt": "2026-09-03T08:36:34.463Z",
+          "route": "pulse",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceIds": [
+            "google-developers"
+          ]
+        },
+        {
+          "eventId": "evt-3a836cd1eeccc65be09a",
+          "titleZh": "Amazon Connect Customer expands automated performance evaluations to Malay",
+          "titleEn": "Amazon Connect Customer expands automated performance evaluations to Malay",
+          "lastUpdatedAt": "2026-09-02T17:00:00.000Z",
+          "route": "pulse",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceIds": [
+            "aws-news"
+          ]
+        },
+        {
+          "eventId": "evt-b500400e7f371e2ed82a",
+          "titleZh": "Second-generation AWS Outposts racks now in the AWS GovCloud (US) Regions",
+          "titleEn": "Second-generation AWS Outposts racks now in the AWS GovCloud (US) Regions",
+          "lastUpdatedAt": "2026-09-02T16:00:00.000Z",
+          "route": "pulse",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceIds": [
+            "aws-news"
+          ]
+        }
+      ],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "alphabet",
+      "name": "Alphabet",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://abc.xyz/investor/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "google-cloud",
+          "google-ai-blog",
+          "google-developers"
+        ],
+        "checkedSourceIds": [
+          "google-cloud",
+          "google-ai-blog",
+          "google-developers",
+          "alphabet-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "google-cloud",
+          "google-ai-blog",
+          "google-developers",
+          "alphabet-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "google-cloud",
+          "url": "https://cloud.google.com/blog/rss",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "status": "empty",
+          "observations": 0
+        },
+        {
+          "sourceId": "google-ai-blog",
+          "url": "https://blog.google/technology/ai/rss/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "status": "ok",
+          "observations": 20
+        },
+        {
+          "sourceId": "google-developers",
+          "url": "https://developers.googleblog.com/feeds/posts/default",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "status": "ok",
+          "observations": 20
+        },
+        {
+          "sourceId": "alphabet-official-entrypoint",
+          "url": "https://abc.xyz/investor/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 173871
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-b644b9ef2abe20322e00",
+          "titleZh": "Agent Plugins package your skills, tools, and more",
+          "titleEn": "Agent Plugins package your skills, tools, and more",
+          "lastUpdatedAt": "2026-09-03T08:36:34.463Z",
+          "route": "pulse",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceIds": [
+            "google-developers"
+          ]
+        },
+        {
+          "eventId": "evt-930b1f96a343bb90b3ec",
+          "titleZh": "Belkin’s first trackers come ready to attach to your gear.",
+          "titleEn": "Belkin’s first trackers come ready to attach to your gear.",
+          "lastUpdatedAt": "2026-09-03T08:00:00.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceIds": [
+            "the-verge"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://investor.atmeta.com/",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "meta",
+          "meta-engineering"
+        ],
+        "checkedSourceIds": [
+          "meta",
+          "meta-engineering",
+          "meta-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "meta",
+          "meta-engineering"
+        ],
+        "failedSourceIds": [
+          "meta-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "meta",
+          "url": "https://about.fb.com/news/feed/",
+          "httpStatus": 304,
+          "access": "public",
+          "checked": true,
+          "status": "not-modified",
+          "observations": 0
+        },
+        {
+          "sourceId": "meta-engineering",
+          "url": "https://engineering.fb.com/feed/",
+          "httpStatus": 304,
+          "access": "public",
+          "checked": true,
+          "status": "not-modified",
+          "observations": 0
+        },
+        {
+          "sourceId": "meta-official-entrypoint",
+          "url": "https://investor.atmeta.com/",
+          "httpStatus": 403,
+          "access": "http-403",
+          "checked": true,
+          "bytes": 5495
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-265366fa6167e05f1a8a",
+          "titleZh": "Meta settlement could clear the way for new AI product launches, Morgan Stanley says",
+          "titleEn": "Meta settlement could clear the way for new AI product launches, Morgan Stanley says",
+          "lastUpdatedAt": "2026-09-02T09:19:25.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T2"
+          ],
+          "sourceIds": [
+            "cnbc-technology"
+          ]
+        }
+      ],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://investor.oracle.com/",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "oracle"
+        ],
+        "checkedSourceIds": [
+          "oracle"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "oracle"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "oracle",
+          "url": "https://investor.oracle.com/",
+          "httpStatus": 403,
+          "access": "http-403",
+          "checked": true,
+          "bytes": 5495
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://openai.com/news/",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "openai-news"
+        ],
+        "checkedSourceIds": [
+          "openai-news",
+          "openai-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "openai-news"
+        ],
+        "failedSourceIds": [
+          "openai-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "openai-news",
+          "url": "https://openai.com/news/rss.xml",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "status": "ok",
+          "observations": 1164
+        },
+        {
+          "sourceId": "openai-official-entrypoint",
+          "url": "https://openai.com/news/",
+          "httpStatus": 403,
+          "access": "http-403",
+          "checked": true,
+          "bytes": 9801
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-e11cbe85d95ae026efa4",
+          "titleZh": "Anthropic pauses some AI training following rogue agent hacks. Here’s how it compares with OpenAI",
+          "titleEn": "Anthropic pauses some AI training following rogue agent hacks. Here’s how it compares with OpenAI",
+          "lastUpdatedAt": "2026-09-02T12:49:37.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T2"
+          ],
+          "sourceIds": [
+            "fortune"
+          ]
+        }
+      ],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.anthropic.com/news",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "anthropic-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "anthropic-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "anthropic-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "anthropic-official-entrypoint",
+          "url": "https://www.anthropic.com/news",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 471775
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-e11cbe85d95ae026efa4",
+          "titleZh": "Anthropic pauses some AI training following rogue agent hacks. Here’s how it compares with OpenAI",
+          "titleEn": "Anthropic pauses some AI training following rogue agent hacks. Here’s how it compares with OpenAI",
+          "lastUpdatedAt": "2026-09-02T12:49:37.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T2"
+          ],
+          "sourceIds": [
+            "fortune"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "xai",
+      "name": "xAI",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://x.ai/news",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "xai-news"
+        ],
+        "checkedSourceIds": [
+          "xai-news",
+          "xai-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "xai-news",
+          "xai-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "xai-news",
+          "url": "https://x.ai/news",
+          "httpStatus": 403,
+          "access": "blocked",
+          "checked": true,
+          "status": "blocked",
+          "observations": 0
+        },
+        {
+          "sourceId": "xai-official-entrypoint",
+          "url": "https://x.ai/news",
+          "httpStatus": 403,
+          "access": "http-403",
+          "checked": true,
+          "bytes": 5478
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "coreweave",
+      "name": "CoreWeave",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.coreweave.com/news",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "coreweave"
+        ],
+        "checkedSourceIds": [
+          "coreweave",
+          "coreweave-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "coreweave",
+          "coreweave-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "coreweave",
+          "url": "https://www.coreweave.com/news",
+          "httpStatus": 304,
+          "access": "public",
+          "checked": true,
+          "status": "not-modified",
+          "observations": 0
+        },
+        {
+          "sourceId": "coreweave-official-entrypoint",
+          "url": "https://www.coreweave.com/news",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 413159
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "alibaba",
+      "name": "Alibaba",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.alibabagroup.com/en-US/news",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "alibaba-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "alibaba-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "alibaba-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "alibaba-official-entrypoint",
+          "url": "https://www.alibabagroup.com/en-US/news",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 58019
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-f9e7ff9da5bdb4c4cd44",
+          "titleZh": "阿里智能体编程平台 Qoder 上线“眼镜版”，将接入千问和乐奇 AI 眼镜",
+          "titleEn": "阿里智能体编程平台 Qoder 上线“眼镜版”，将接入千问和乐奇 AI 眼镜",
+          "lastUpdatedAt": "2026-09-03T07:49:11.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceIds": [
+            "ithome"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "tencent",
+      "name": "Tencent",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.tencent.com/en-us/IR.html",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "tencent-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "tencent-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "tencent-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "tencent-official-entrypoint",
+          "url": "https://www.tencent.com/en-us/IR.html",
+          "httpStatus": 404,
+          "access": "http-404",
+          "checked": true,
+          "bytes": 130123
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "bytedance",
+      "name": "ByteDance",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.bytedance.com/en/news",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "bytedance-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "bytedance-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "bytedance-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "bytedance-official-entrypoint",
+          "url": "https://www.bytedance.com/en/news",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 52423
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.apple.com/newsroom/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "apple-newsroom"
+        ],
+        "checkedSourceIds": [
+          "apple-newsroom",
+          "apple-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "apple-newsroom",
+          "apple-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "apple-newsroom",
+          "url": "https://www.apple.com/newsroom/rss-feed.rss",
+          "httpStatus": 304,
+          "access": "public",
+          "checked": true,
+          "status": "not-modified",
+          "observations": 0
+        },
+        {
+          "sourceId": "apple-official-entrypoint",
+          "url": "https://www.apple.com/newsroom/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 123835
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-930b1f96a343bb90b3ec",
+          "titleZh": "Belkin’s first trackers come ready to attach to your gear.",
+          "titleEn": "Belkin’s first trackers come ready to attach to your gear.",
+          "lastUpdatedAt": "2026-09-03T08:00:00.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceIds": [
+            "the-verge"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "tesla",
+      "name": "Tesla",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://ir.tesla.com/",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "tesla-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "tesla-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "tesla-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "tesla-official-entrypoint",
+          "url": "https://ir.tesla.com/",
+          "httpStatus": 403,
+          "access": "http-403",
+          "checked": true,
+          "bytes": 515
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "palantir",
+      "name": "Palantir",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://investors.palantir.com/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "palantir-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "palantir-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "palantir-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "palantir-official-entrypoint",
+          "url": "https://investors.palantir.com/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 6701
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.salesforce.com/news/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "salesforce-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "salesforce-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "salesforce-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "salesforce-official-entrypoint",
+          "url": "https://www.salesforce.com/news/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 262913
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "servicenow",
+      "name": "ServiceNow",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.servicenow.com/company/media/press-room.html",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "servicenow-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "servicenow-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "servicenow-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "servicenow-official-entrypoint",
+          "url": "https://www.servicenow.com/company/media/press-room.html",
+          "httpStatus": null,
+          "access": "unavailable",
+          "checked": true,
+          "error": "fetch failed"
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "snowflake",
+      "name": "Snowflake",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.snowflake.com/en/news/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "snowflake-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "snowflake-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "snowflake-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "snowflake-official-entrypoint",
+          "url": "https://www.snowflake.com/en/news/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 701742
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-bbe776ab94aec014f348",
+          "titleZh": "Snowflake’s stock soars as the company blows away estimates with its AI-fueled forecast",
+          "titleEn": "Snowflake’s stock soars as the company blows away estimates with its AI-fueled forecast",
+          "lastUpdatedAt": "2026-09-03T00:23:00.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T2"
+          ],
+          "sourceIds": [
+            "marketwatch-top"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://blog.cloudflare.com/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "cloudflare-blog"
+        ],
+        "checkedSourceIds": [
+          "cloudflare-blog",
+          "cloudflare-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "cloudflare-blog",
+          "cloudflare-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "cloudflare-blog",
+          "url": "https://blog.cloudflare.com/rss/",
+          "httpStatus": 304,
+          "access": "public",
+          "checked": true,
+          "status": "not-modified",
+          "observations": 0
+        },
+        {
+          "sourceId": "cloudflare-official-entrypoint",
+          "url": "https://blog.cloudflare.com/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 189452
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "baidu",
+      "name": "Baidu",
+      "layer": "model-application",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://ir.baidu.com/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "baidu-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "baidu-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "baidu-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "baidu-official-entrypoint",
+          "url": "https://ir.baidu.com/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 44451
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "layer": "model-application",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.deepseek.com/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "deepseek-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "deepseek-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "deepseek-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "deepseek-official-entrypoint",
+          "url": "https://www.deepseek.com/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 83749
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "layer": "model-application",
+      "regions": [
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://mistral.ai/news/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "mistral-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "mistral-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "mistral-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "mistral-official-entrypoint",
+          "url": "https://mistral.ai/news/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 1196092
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.perplexity.ai/hub",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "perplexity-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "perplexity-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "perplexity-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "perplexity-official-entrypoint",
+          "url": "https://www.perplexity.ai/hub",
+          "httpStatus": 403,
+          "access": "http-403",
+          "checked": true,
+          "bytes": 5524
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "asml",
+      "name": "ASML",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.asml.com/en/news",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "asml-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "asml-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "asml-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "asml-official-entrypoint",
+          "url": "https://www.asml.com/en/news",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 151255
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "applied-materials",
+      "name": "Applied Materials",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://ir.appliedmaterials.com/news-releases",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "applied-materials-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "applied-materials-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "applied-materials-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "applied-materials-official-entrypoint",
+          "url": "https://ir.appliedmaterials.com/news-releases",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 73547
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "lam-research",
+      "name": "Lam Research",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://newsroom.lamresearch.com/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "lam-research-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "lam-research-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "lam-research-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "lam-research-official-entrypoint",
+          "url": "https://newsroom.lamresearch.com/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 185956
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://nvidianews.nvidia.com/rss.xml",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "nvidia",
+          "nvidia-developer"
+        ],
+        "checkedSourceIds": [
+          "nvidia",
+          "nvidia-developer",
+          "nvidia-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "nvidia",
+          "nvidia-developer",
+          "nvidia-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "nvidia",
+          "url": "https://nvidianews.nvidia.com/rss.xml",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "status": "ok",
+          "observations": 20
+        },
+        {
+          "sourceId": "nvidia-developer",
+          "url": "https://developer.nvidia.com/blog/feed/",
+          "httpStatus": 304,
+          "access": "public",
+          "checked": true,
+          "status": "not-modified",
+          "observations": 0
+        },
+        {
+          "sourceId": "nvidia-official-entrypoint",
+          "url": "https://nvidianews.nvidia.com/rss.xml",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 418239
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-6d96e2c1fc4e735ec4f7",
+          "titleZh": "Nvidia’s stock is climbing as investors get more confidence in an expanding base of AI customers",
+          "titleEn": "Nvidia’s stock is climbing as investors get more confidence in an expanding base of AI customers",
+          "lastUpdatedAt": "2026-09-02T21:38:00.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T2"
+          ],
+          "sourceIds": [
+            "marketwatch-top"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://ir.amd.com/rss/news-releases.xml",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "amd"
+        ],
+        "checkedSourceIds": [
+          "amd",
+          "amd-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "amd",
+          "amd-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "amd",
+          "url": "https://ir.amd.com/rss/news-releases.xml",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "status": "ok",
+          "observations": 10
+        },
+        {
+          "sourceId": "amd-official-entrypoint",
+          "url": "https://ir.amd.com/rss/news-releases.xml",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 7711
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "broadcom",
+      "name": "Broadcom",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://investors.broadcom.com/news-releases",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "broadcom-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "broadcom-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "broadcom-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "broadcom-official-entrypoint",
+          "url": "https://investors.broadcom.com/news-releases",
+          "httpStatus": 404,
+          "access": "http-404",
+          "checked": true,
+          "bytes": 57038
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "marvell",
+      "name": "Marvell",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://investor.marvell.com/news-releases",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "marvell-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "marvell-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "marvell-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "marvell-official-entrypoint",
+          "url": "https://investor.marvell.com/news-releases",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 115829
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "tsmc",
+      "name": "TSMC",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://pr.tsmc.com/english/news",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "tsmc-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "tsmc-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "tsmc-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "tsmc-official-entrypoint",
+          "url": "https://pr.tsmc.com/english/news",
+          "httpStatus": 403,
+          "access": "http-403",
+          "checked": true,
+          "bytes": 5509
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "sk-hynix",
+      "name": "SK hynix",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://news.skhynix.com/feed/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "sk-hynix-newsroom"
+        ],
+        "checkedSourceIds": [
+          "sk-hynix-newsroom",
+          "sk-hynix-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "sk-hynix-newsroom",
+          "sk-hynix-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "sk-hynix-newsroom",
+          "url": "https://news.skhynix.com/feed/",
+          "httpStatus": 304,
+          "access": "public",
+          "checked": true,
+          "status": "not-modified",
+          "observations": 0
+        },
+        {
+          "sourceId": "sk-hynix-official-entrypoint",
+          "url": "https://news.skhynix.com/feed/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 105998
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-5d6e4436eecce033ac64",
+          "titleZh": "澜起科技：CXL3.2 芯片导入三星 SK 海力士，PCIe Switch 年内流片",
+          "titleEn": "澜起科技：CXL3.2 芯片导入三星 SK 海力士，PCIe Switch 年内流片",
+          "lastUpdatedAt": "2026-09-03T07:49:09.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceIds": [
+            "ithome"
+          ]
+        },
+        {
+          "eventId": "evt-74417a531a9372d72121",
+          "titleZh": "韩国电力公社提议三星电子、SK 海力士支付合计 25 万亿韩元预付款",
+          "titleEn": "韩国电力公社提议三星电子、SK 海力士支付合计 25 万亿韩元预付款",
+          "lastUpdatedAt": "2026-09-03T06:03:44.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceIds": [
+            "ithome"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "micron",
+      "name": "Micron",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://investors.micron.com/news-releases",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "micron-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "micron-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "micron-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "micron-official-entrypoint",
+          "url": "https://investors.micron.com/news-releases",
+          "httpStatus": 404,
+          "access": "http-404",
+          "checked": true,
+          "bytes": 497195
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung Electronics",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://news.samsung.com/global/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "samsung-global-newsroom"
+        ],
+        "checkedSourceIds": [
+          "samsung-global-newsroom",
+          "samsung-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "samsung-global-newsroom",
+          "samsung-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "samsung-global-newsroom",
+          "url": "https://news.samsung.com/global/feed",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "status": "ok",
+          "observations": 50
+        },
+        {
+          "sourceId": "samsung-official-entrypoint",
+          "url": "https://news.samsung.com/global/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 193188
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-5bada877f28b9fc1a2dc",
+          "titleZh": "Samsung Showcases New Washers With Flat Design at IFA 2026",
+          "titleEn": "Samsung Showcases New Washers With Flat Design at IFA 2026",
+          "lastUpdatedAt": "2026-09-03T08:00:00.000Z",
+          "route": "pulse",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceIds": [
+            "samsung-global-newsroom"
+          ]
+        },
+        {
+          "eventId": "evt-5d6e4436eecce033ac64",
+          "titleZh": "澜起科技：CXL3.2 芯片导入三星 SK 海力士，PCIe Switch 年内流片",
+          "titleEn": "澜起科技：CXL3.2 芯片导入三星 SK 海力士，PCIe Switch 年内流片",
+          "lastUpdatedAt": "2026-09-03T07:49:09.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceIds": [
+            "ithome"
+          ]
+        },
+        {
+          "eventId": "evt-74417a531a9372d72121",
+          "titleZh": "韩国电力公社提议三星电子、SK 海力士支付合计 25 万亿韩元预付款",
+          "titleEn": "韩国电力公社提议三星电子、SK 海力士支付合计 25 万亿韩元预付款",
+          "lastUpdatedAt": "2026-09-03T06:03:44.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceIds": [
+            "ithome"
+          ]
+        },
+        {
+          "eventId": "evt-4d6b1efcb5da27ceb992",
+          "titleZh": "Samsung Redefines Laundry With New A-70% and 13 Kg Bespoke AI Washers at IFA 2026",
+          "titleEn": "Samsung Redefines Laundry With New A-70% and 13 Kg Bespoke AI Washers at IFA 2026",
+          "lastUpdatedAt": "2026-09-02T15:30:00.000Z",
+          "route": "pulse",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceIds": [
+            "samsung-global-newsroom"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "arista",
+      "name": "Arista Networks",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://investors.arista.com/news-releases",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "arista-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "arista-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "arista-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "arista-official-entrypoint",
+          "url": "https://investors.arista.com/news-releases",
+          "httpStatus": null,
+          "access": "unavailable",
+          "checked": true,
+          "error": "fetch failed"
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "dell",
+      "name": "Dell Technologies",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://investors.delltechnologies.com/news-releases",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "dell"
+        ],
+        "checkedSourceIds": [
+          "dell"
+        ],
+        "passingSourceIds": [
+          "dell"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "dell",
+          "url": "https://investors.delltechnologies.com/news-releases",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 64303
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-a404aefb7722d28a56be",
+          "titleZh": "HPE follows in Dell’s footsteps as it rides the AI server boom to a big earnings beat",
+          "titleEn": "HPE follows in Dell’s footsteps as it rides the AI server boom to a big earnings beat",
+          "lastUpdatedAt": "2026-09-03T00:22:00.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T2"
+          ],
+          "sourceIds": [
+            "marketwatch-top"
+          ]
+        },
+        {
+          "eventId": "evt-6d96e2c1fc4e735ec4f7",
+          "titleZh": "Nvidia’s stock is climbing as investors get more confidence in an expanding base of AI customers",
+          "titleEn": "Nvidia’s stock is climbing as investors get more confidence in an expanding base of AI customers",
+          "lastUpdatedAt": "2026-09-02T21:38:00.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T2"
+          ],
+          "sourceIds": [
+            "marketwatch-top"
+          ]
+        },
+        {
+          "eventId": "evt-c3e0fbaa4945bd5c9b74",
+          "titleZh": "Dell's revenue bonanza benefits from killer AI workloads",
+          "titleEn": "Dell's revenue bonanza benefits from killer AI workloads",
+          "lastUpdatedAt": "2026-09-02T11:05:14.000Z",
+          "route": "rumor-watch",
+          "sourceTiers": [
+            "T3"
+          ],
+          "sourceIds": [
+            "blocks-and-files"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "supermicro",
+      "name": "Supermicro",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://ir.supermicro.com/news-releases",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "supermicro-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "supermicro-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "supermicro-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "supermicro-official-entrypoint",
+          "url": "https://ir.supermicro.com/news-releases",
+          "httpStatus": null,
+          "access": "unavailable",
+          "checked": true,
+          "error": "fetch failed"
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "huawei",
+      "name": "Huawei",
+      "layer": "compute-silicon",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.huawei.com/en/news",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "huawei-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "huawei-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "huawei-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "huawei-official-entrypoint",
+          "url": "https://www.huawei.com/en/news",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 103798
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "equinix",
+      "name": "Equinix",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "changed",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://investor.equinix.com/news-releases",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "equinix-ir"
+        ],
+        "checkedSourceIds": [
+          "equinix-ir",
+          "equinix-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "equinix-ir",
+          "equinix-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "equinix-ir",
+          "url": "https://investor.equinix.com/rss/news-releases.xml",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "status": "ok",
+          "observations": 6
+        },
+        {
+          "sourceId": "equinix-official-entrypoint",
+          "url": "https://investor.equinix.com/news-releases",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 100284
+        }
+      ],
+      "eventsInWindow": [
+        {
+          "eventId": "evt-75206e292de150ca7b42",
+          "titleZh": "CPP Investments and Equinix Complete atNorth Acquisition to Support Growth of Leading Nordic Data Center Platform",
+          "titleEn": "CPP Investments and Equinix Complete atNorth Acquisition to Support Growth of Leading Nordic Data Center Platform",
+          "lastUpdatedAt": "2026-09-02T12:30:00.000Z",
+          "route": "pulse",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceIds": [
+            "equinix-ir"
+          ]
+        },
+        {
+          "eventId": "evt-587ff22c4d9117a2146f",
+          "titleZh": "Equinix Unveils Equinix Fabric One, Redefining How Enterprises Connect Across AI, Cloud and Networking Infrastructure",
+          "titleEn": "Equinix Unveils Equinix Fabric One, Redefining How Enterprises Connect Across AI, Cloud and Networking Infrastructure",
+          "lastUpdatedAt": "2026-09-02T12:01:00.000Z",
+          "route": "pulse",
+          "sourceTiers": [
+            "T1"
+          ],
+          "sourceIds": [
+            "equinix-ir"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "digital-realty",
+      "name": "Digital Realty",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://investor.digitalrealty.com/news-releases",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "digital-realty"
+        ],
+        "checkedSourceIds": [
+          "digital-realty"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "digital-realty"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "digital-realty",
+          "url": "https://investor.digitalrealty.com/news-releases",
+          "httpStatus": 404,
+          "access": "http-404",
+          "checked": true,
+          "bytes": 296
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "vertiv",
+      "name": "Vertiv",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://investors.vertiv.com/news-releases",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "vertiv-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "vertiv-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "vertiv-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "vertiv-official-entrypoint",
+          "url": "https://investors.vertiv.com/news-releases",
+          "httpStatus": 404,
+          "access": "http-404",
+          "checked": true,
+          "bytes": 6511
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "schneider-electric",
+      "name": "Schneider Electric",
+      "layer": "capacity-power",
+      "regions": [
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.se.com/ww/en/about-us/newsroom/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "schneider-electric-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "schneider-electric-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "schneider-electric-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "schneider-electric-official-entrypoint",
+          "url": "https://www.se.com/ww/en/about-us/newsroom/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 1619428
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "eaton",
+      "name": "Eaton",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.eaton.com/us/en-us/company/news-insights/news-releases.html",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "eaton-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "eaton-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "eaton-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "eaton-official-entrypoint",
+          "url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases.html",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 115062
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "ge-vernova",
+      "name": "GE Vernova",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.gevernova.com/news",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "ge-vernova-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "ge-vernova-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "ge-vernova-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "ge-vernova-official-entrypoint",
+          "url": "https://www.gevernova.com/news",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 126732
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "hut-8",
+      "name": "Hut 8",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.hut8.com/news-insights/press-releases",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "hut8"
+        ],
+        "checkedSourceIds": [
+          "hut8",
+          "hut-8-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "hut8",
+          "hut-8-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "hut8",
+          "url": "https://www.hut8.com/news-insights/press-releases",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "status": "ok",
+          "observations": 1
+        },
+        {
+          "sourceId": "hut-8-official-entrypoint",
+          "url": "https://www.hut8.com/news-insights/press-releases",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 183358
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "terawulf",
+      "name": "TeraWulf",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://ir.terawulf.com/news-releases",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "terawulf"
+        ],
+        "checkedSourceIds": [
+          "terawulf"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "terawulf"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "terawulf",
+          "url": "https://ir.terawulf.com/news-releases",
+          "httpStatus": null,
+          "access": "unavailable",
+          "checked": true,
+          "error": "fetch failed"
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "galaxy-digital",
+      "name": "Galaxy Digital",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.galaxy.com/newsroom/",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "galaxy"
+        ],
+        "checkedSourceIds": [
+          "galaxy",
+          "galaxy-digital-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "galaxy",
+          "galaxy-digital-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "galaxy",
+          "url": "https://www.galaxy.com/newsroom",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "status": "ok",
+          "observations": 1
+        },
+        {
+          "sourceId": "galaxy-digital-official-entrypoint",
+          "url": "https://www.galaxy.com/newsroom/",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 145672
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "riot-platforms",
+      "name": "Riot Platforms",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://www.riotplatforms.com/news",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "riot-platforms-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "riot-platforms-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "riot-platforms-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "riot-platforms-official-entrypoint",
+          "url": "https://www.riotplatforms.com/news",
+          "httpStatus": 404,
+          "access": "http-404",
+          "checked": true,
+          "bytes": 191873
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    },
+    {
+      "id": "applied-digital",
+      "name": "Applied Digital",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "result": "no-change",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://ir.applieddigital.com/news-releases",
+      "access": "public",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "applied-digital-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "applied-digital-official-entrypoint"
+        ],
+        "passingSourceIds": [
+          "applied-digital-official-entrypoint"
+        ],
+        "failedSourceIds": []
+      },
+      "endpointResults": [
+        {
+          "sourceId": "applied-digital-official-entrypoint",
+          "url": "https://ir.applieddigital.com/news-releases",
+          "httpStatus": 200,
+          "access": "public",
+          "checked": true,
+          "bytes": 31603
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": ""
+    },
+    {
+      "id": "gds",
+      "name": "GDS Holdings",
+      "layer": "capacity-power",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "result": "not-determined",
+      "lastCheckedAt": "2026-09-03T08:42:19.928Z",
+      "officialUrl": "https://ir.gds-services.com/",
+      "access": "not-determined",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "gds-official-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "gds-official-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "gds-official-entrypoint"
+        ]
+      },
+      "endpointResults": [
+        {
+          "sourceId": "gds-official-entrypoint",
+          "url": "https://ir.gds-services.com/",
+          "httpStatus": null,
+          "access": "unavailable",
+          "checked": true,
+          "error": "fetch failed"
+        }
+      ],
+      "eventsInWindow": [],
+      "notes": "Official entrypoint or expected source had an access gap; no-change is not inferred."
+    }
+  ]
+}

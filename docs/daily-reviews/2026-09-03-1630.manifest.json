@@ -1,0 +1,354 @@
+{
+  "schemaVersion": "1.1",
+  "runId": "atlas-2026-09-03-full",
+  "runDate": "2026-09-03",
+  "cutoff": "2026-09-02T16:36:27+08:00",
+  "displayTimezones": {
+    "zh": "Asia/Shanghai",
+    "en": "America/New_York"
+  },
+  "status": "reviewing",
+  "projectPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-16-30-20260903",
+  "sourceLedgerPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-16-30-20260903/docs/daily-reviews/2026-09-03-1630.sources.json",
+  "host": "bogon",
+  "headBefore": "c8e923f38f84855a0808f14cf2eaec37e342d62e",
+  "sections": {
+    "idc-pulse": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-03T16:50:03+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260903-1630",
+        "morning-handoff-20260903-0930",
+        "remote-core-watch-20260903",
+        "core-company-checks-20260903"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "全球扫描与正式脉冲复核完成；本轮没有达到新增正式脉冲门槛的条目。"
+    },
+    "listed-companies": {
+      "status": "blocked",
+      "checkedAt": "2026-09-03T16:50:03+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-5d6e4436eecce033ac64"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260903-1630",
+        "morning-handoff-20260903-0930",
+        "remote-core-watch-20260903",
+        "core-company-checks-20260903",
+        "china-xpu-checks-20260903",
+        "source-failures-20260903"
+      ],
+      "accessGaps": [
+        "16/50重点公司为not-determined",
+        "4家中国XPU发行人issuer入口未完成确认"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "公司层检查已完成但部分入口不可验证；不把媒体转述澜起科技升级为正式上市公司事实。"
+    },
+    "mna": {
+      "status": "updated",
+      "checkedAt": "2026-09-03T16:50:03+08:00",
+      "newIds": [],
+      "updatedIds": [
+        "formal-equinix-atnorth-acquisition-complete-2026"
+      ],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260903-1630",
+        "morning-handoff-20260903-0930",
+        "remote-core-watch-20260903",
+        "core-company-checks-20260903",
+        "formal-equinix-atnorth-20260903"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "atNorth收购完成的一手记录通过正式适配器；交易规模不等于新增投运容量。"
+    },
+    "capacity": {
+      "status": "updated",
+      "checkedAt": "2026-09-03T16:50:03+08:00",
+      "newIds": [],
+      "updatedIds": [
+        "aws-outposts-govcloud-regions-2026"
+      ],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260903-1630",
+        "morning-handoff-20260903-0930",
+        "remote-core-watch-20260903",
+        "core-company-checks-20260903",
+        "formal-aws-outposts-govcloud-20260903"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "AWS GovCloud Outposts区域可用性通过正式适配器；没有从公告推导新增机架或MW。"
+    },
+    "cooling": {
+      "status": "blocked",
+      "checkedAt": "2026-09-03T16:50:03+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-1863ee44d2e980c61346"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260903-1630",
+        "morning-handoff-20260903-0930",
+        "remote-core-watch-20260903",
+        "core-company-checks-20260903",
+        "source-failures-20260903"
+      ],
+      "accessGaps": [
+        "生态环境部入口失败",
+        "媒体液冷/电力产品线没有T0/T1部署证据"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Haffner Energy仅作为Global Intelligence媒体情报发布，不升级为正式液冷项目。"
+    },
+    "compute-products": {
+      "status": "blocked",
+      "checkedAt": "2026-09-03T16:50:03+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-7e4b50ce8cf7b6cf0e42"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260903-1630",
+        "morning-handoff-20260903-0930",
+        "remote-core-watch-20260903",
+        "core-company-checks-20260903",
+        "source-failures-20260903"
+      ],
+      "accessGaps": [
+        "xAI News 403",
+        "部分计算产品入口不可验证"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Northrop Grumman条目保留为媒体研发情报，不升级为正式产品或数据中心部署。"
+    },
+    "china-gpu": {
+      "status": "blocked",
+      "checkedAt": "2026-09-03T16:50:03+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-5d6e4436eecce033ac64"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260903-1630",
+        "morning-handoff-20260903-0930",
+        "remote-core-watch-20260903",
+        "core-company-checks-20260903",
+        "china-xpu-checks-20260903",
+        "source-failures-20260903"
+      ],
+      "accessGaps": [
+        "7家direct China XPU中4家issuer-specific结果not-determined",
+        "MIIT入口失败"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "未把媒体或通用交易所入口写入China XPU正式事实。"
+    },
+    "supply-chain": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-03T16:50:03+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260903-1630",
+        "morning-handoff-20260903-0930",
+        "remote-core-watch-20260903",
+        "core-company-checks-20260903"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "供应链信源已检查；澜起科技媒体条目留在Global Intelligence，未形成T0/T1正式写入。"
+    },
+    "power-model-demand": {
+      "status": "blocked",
+      "checkedAt": "2026-09-03T16:50:03+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-74417a531a9372d72121"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260903-1630",
+        "morning-handoff-20260903-0930",
+        "remote-core-watch-20260903",
+        "core-company-checks-20260903",
+        "source-failures-20260903"
+      ],
+      "accessGaps": [
+        "NDRC、MIIT及地方官方入口失败",
+        "KEPCO预付款仍未见协议原文"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "KEPCO预付款报道已按媒体归因公开；电力安排、金额和利息条款等待KEPCO/企业/监管原文。"
+    },
+    "earnings-calendar": {
+      "status": "blocked",
+      "checkedAt": "2026-09-03T16:50:03+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260903-1630",
+        "morning-handoff-20260903-0930",
+        "remote-core-watch-20260903",
+        "core-company-checks-20260903",
+        "china-xpu-checks-20260903"
+      ],
+      "accessGaps": [
+        "China XPU issuer-specific earnings reconciliation not-determined"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "没有新增已核验的财报日期、完整电话会原文或可写入的业绩事实。"
+    },
+    "rumors": {
+      "status": "updated",
+      "checkedAt": "2026-09-03T16:50:03+08:00",
+      "newIds": [
+        "editor-evt-74417a531a9372d72121",
+        "editor-evt-5d6e4436eecce033ac64",
+        "editor-evt-48cd1ceaa933f9df039a",
+        "editor-evt-1863ee44d2e980c61346",
+        "editor-evt-5c06b68c6cebc0b8e455",
+        "editor-evt-7e4b50ce8cf7b6cf0e42"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 6,
+      "sourceRefs": [
+        "global-scan-20260903-1630",
+        "morning-handoff-20260903-0930",
+        "remote-core-watch-20260903",
+        "core-company-checks-20260903",
+        "media-ithome-kepco-20260903",
+        "media-ithome-montage-20260903",
+        "media-dcd-iren-20260903",
+        "media-dcd-haffner-20260903",
+        "media-power-one-nuclear-20260903",
+        "media-dcd-northrop-20260903"
+      ],
+      "accessGaps": [
+        "其余候选事件级hold"
+      ],
+      "releaseDisposition": "publish",
+      "notes": "6条当前、可访问、可归因T3媒体报道完成双语publicCopy并写入版本化Global Intelligence；均标记媒体单一来源。"
+    },
+    "policy": {
+      "status": "blocked",
+      "checkedAt": "2026-09-03T16:50:03+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260903-1630",
+        "morning-handoff-20260903-0930",
+        "remote-core-watch-20260903",
+        "core-company-checks-20260903",
+        "source-failures-20260903"
+      ],
+      "accessGaps": [
+        "NDRC、MIIT、MEP China、北京和上海官方入口失败",
+        "AP Technology 403"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "未将政策媒体线索升级为正式政策索引。"
+    },
+    "columns": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-03T16:50:03+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260903-1630",
+        "morning-handoff-20260903-0930",
+        "remote-core-watch-20260903",
+        "core-company-checks-20260903"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "研究候选保留在内部队列；本轮没有达到专栏发布条件的稿件。"
+    }
+  },
+  "release": {
+    "mode": "partial",
+    "tests": "passed-with-baseline-failures",
+    "build": "passed",
+    "cloudflare": "pending",
+    "formalReadback": "pending",
+    "dailySnapshot": "pending",
+    "sites": "pending",
+    "sitesReadback": "pending",
+    "commit": null,
+    "workerCommit": null,
+    "sitesCommit": null,
+    "cloudflareVersion": null,
+    "sitesVersion": null,
+    "formalUrl": null,
+    "sitesUrl": null,
+    "includedSections": [
+      "capacity",
+      "mna",
+      "rumors"
+    ],
+    "heldSections": [
+      "china-gpu",
+      "compute-products",
+      "cooling",
+      "earnings-calendar",
+      "listed-companies",
+      "policy",
+      "power-model-demand"
+    ],
+    "testBaseline": {
+      "baseHead": "c8e923f38f84855a0808f14cf2eaec37e342d62e",
+      "baselineFailures": ["tests/rendered-html.test.mjs: keeps live-data validation in the deployment path (CONTENT_REVIEWED_AT date assertion)"],
+      "currentFailures": ["tests/rendered-html.test.mjs: keeps live-data validation in the deployment path (CONTENT_REVIEWED_AT date assertion)"],
+      "focusedChecks": ["event:codex:test", "event:auto-editor:test", "event:intelligence:test", "event:daily-closure:test", "event:company-watch:test", "npm run lint", "npm run check:seo", "npm test"],
+      "noNewFailures": true
+    }
+  },
+  "blockers": [
+    "独立扫描 freshness=partial，7个来源访问失败；相关板块按事件/板块局部hold",
+    "16/50重点公司与4/7 China XPU发行人结果not-determined，未伪装成no-change",
+    "外部评分未完成，使用deterministic-atlas-fallback-v1；已对8条发布项完成Codex双语编辑"
+  ]
+}

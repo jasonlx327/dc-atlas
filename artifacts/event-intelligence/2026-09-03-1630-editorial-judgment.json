@@ -1,0 +1,3025 @@
+{
+  "schemaVersion": "atlas-codex-editorial-judgment.v1",
+  "day": "2026-09-03",
+  "generatedAt": "2026-09-03T08:50:03.044Z",
+  "sourceGeneratedAt": "2026-09-03T08:36:47.940Z",
+  "model": "deterministic-atlas-fallback-v1",
+  "status": "completed",
+  "verdicts": [
+    {
+      "eventId": "evt-3a836cd1eeccc65be09a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 AWS News。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-4d6b1efcb5da27ceb992",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Samsung Global Newsroom。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-4553b39b02db3ce12d5c",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 AWS News。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-1765ddcffaf1a90a49a7",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 OpenAI News。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-5bada877f28b9fc1a2dc",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Samsung Global Newsroom。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-74417a531a9372d72121",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "codex-bilingual-editorial-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "IT之家据韩媒：KEPCO提议三星与 SK 海力士预付合计 25 万亿韩元电费",
+        "titleEn": "IT Home, citing Korean media: KEPCO proposes KRW25T in advance power payments from Samsung and SK hynix",
+        "summaryZh": "IT之家援引韩国媒体《朝鲜日报》报道称，韩国电力公社近期向三星电子和 SK 海力士提议，为 2027—2031 年电力安排预付合计 25 万亿韩元，以支持龙仁、湖南半导体集群的电力基础设施建设。报道未显示双方已签署协议，金额、利息和供电安排仍需以 KEPCO、企业或监管文件核验。",
+        "summaryEn": "IT Home, citing South Korean media Chosun, reports that Korea Electric Power proposed KRW25T in advance payments from Samsung Electronics and SK hynix for 2027–2031 power arrangements to support infrastructure for the Yongin and Honam semiconductor clusters. The report does not show that an agreement has been signed; the amount, interest terms and supply arrangements require confirmation from KEPCO, the companies or regulators."
+      }
+    },
+    {
+      "eventId": "evt-9712ffad761e45b921fd",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 AWS News。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-b500400e7f371e2ed82a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 AWS News。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated",
+        "codex-bilingual-editorial-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "AWS第二代 Outposts 机架进入美国 GovCloud 东、西区域",
+        "titleEn": "Second-generation AWS Outposts racks become available in AWS GovCloud US-East and US-West",
+        "summaryZh": "AWS 官方更新显示，第二代 Outposts 机架现支持 AWS GovCloud（美国东部）和（美国西部）区域。客户可在本地数据中心或托管空间订购，用于低时延和数据驻留工作负载；公告没有披露本次支持扩展对应的新增机架量或数据中心 MW。",
+        "summaryEn": "AWS says second-generation Outposts racks are now supported in AWS GovCloud US-East and US-West. Customers can order the racks for on-premises data centers or colocation space for latency- and residency-sensitive workloads; the update does not disclose incremental rack volume or data-center MW."
+      }
+    },
+    {
+      "eventId": "evt-96351e5b0ddcde960a19",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 AWS News。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-75206e292de150ca7b42",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Equinix Investor Relations。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated",
+        "codex-bilingual-editorial-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "CPP Investments与Equinix完成收购北欧数据中心平台atNorth",
+        "titleEn": "CPP Investments and Equinix complete the acquisition of Nordic data-center platform atNorth",
+        "summaryZh": "Equinix与CPP Investments官方披露，双方已完成对北欧数据中心开发与运营商 atNorth 的收购；atNorth 将继续以原品牌独立运营，现有组合包含运营中数据中心及多个开发项目。交易总值约 $4B，融资安排约 $4.1B；这组数字描述交易与融资规模，不等于本轮新增投运容量。",
+        "summaryEn": "Equinix and CPP Investments said they completed the acquisition of Nordic data-center developer and operator atNorth. atNorth will continue to operate independently under its existing brand, with operating data centers and multiple projects under development. The transaction is valued at about $4B with a financing package of about $4.1B; these figures describe transaction and financing scale, not newly commissioned capacity."
+      }
+    },
+    {
+      "eventId": "evt-587ff22c4d9117a2146f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Equinix Investor Relations。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-67bf7155c669b8e85243",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-930b1f96a343bb90b3ec",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Verge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-6d96e2c1fc4e735ec4f7",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 MarketWatch Top Stories。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-e11cbe85d95ae026efa4",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 Fortune。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-bde569c590ff1e456cff",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Light Reading。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-265366fa6167e05f1a8a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-7bbdebf718fc6326b4a8",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-233a18dda0664c78c332",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c4354b8f2d961825b858",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a743155cab17349f3ca5",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-d2dbb36e4ca6d9c892f5",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-98a336a31bd5a66b6f20",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-b644b9ef2abe20322e00",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 1.5,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Google Developers Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-5d6e4436eecce033ac64",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "codex-bilingual-editorial-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "IT之家：澜起科技称 CXL 3.2 芯片已导入客户，PCIe Switch 预计年内流片",
+        "titleEn": "IT Home: Montage Technology says CXL 3.2 chips entered customer programs and PCIe Switch tape-out is expected this year",
+        "summaryZh": "IT之家援引澜起科技投资者关系活动记录表报道称，公司互连类芯片产品继续推进商业化，DDR5 RCD、PCIe Retimer 与 CXL MXC 等产品获得客户导入进展，PCIe Switch 工程样片预计年内流片。该条保留为媒体转述，客户导入、收入数字与产品节点仍应以公司原始公告核验。",
+        "summaryEn": "IT Home, citing Montage Technology’s investor-relations activity record, reports continued commercialization of the company’s interconnect chips, including customer progress for DDR5 RCD, PCIe Retimer and CXL MXC products, with a PCIe Switch engineering sample expected this year. The item remains attributed reporting; customer adoption, revenue figures and product milestones should be checked against the company’s original filing."
+      }
+    },
+    {
+      "eventId": "evt-2e2cb999e182b60be9a5",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c86bea327d00b0b9a591",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-8fab3ef561c3891d0d4c",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 EE Times。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-0e14a3313c8523eb053c",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-bbe776ab94aec014f348",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 MarketWatch Top Stories。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a404aefb7722d28a56be",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 MarketWatch Top Stories。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-79498b3a1178386f07eb",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c3e0fbaa4945bd5c9b74",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Blocks & Files。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-d94bad87167d463db2b1",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Dynamics。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-1f3af5c2fd941cb777cb",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c0d422aea407d97f7821",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-034eb4de2ebb027947c6",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-586f4b9ee85b58215ab1",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-7708390e2326867e0704",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a3eca2124ce22a02aa95",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-e055bd9fc52cd8955743",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-861cfaf8903647e3f818",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国政策与算力。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-11fe5ff1b50a6f94a2fe",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-446985ca1eff562561af",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a093eee14ca3b3673bd9",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-917d49c37bc4ee6f77ee",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-dc4d8b05ef36bedbe498",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-b68e8fb813663cf56e98",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-2aeb32e06d2a7c2798b2",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-d0a8611533f6df57b47d",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-5dd9cf6b8d685155854e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-5aab981bf592a4b6dc39",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-6a6d9d8e1b9fe1d1e343",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-66a68ab2397ebc6ffb83",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a7a5c0171e4d384ce87a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-217e511758058170020c",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-335cbf4a52f0a8caa026",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-42b091bda4b1c1c99382",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Neocloud。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-554d35a4e5130ab9af10",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Dynamics。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-846b42c45c1ec7a22bd1",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-6d7d409bf2bf37cb52bc",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-32d0bb315ee3cb83ce8a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-4e0260833b9d8d2f2910",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f61a8b2bb717e214a88e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-548a58614a559448627e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国 AI 产业链。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c346e1ebd6d7aec4be3b",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-da0deebb9ef78e4ac2e0",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国 AI 产业链。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-43beddbd9ff25675bea0",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-4a10e15195be4b741781",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T0；首个可访问来源 Federal Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-df7b19d221c0516a6d17",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-46ed62506c85f84e0701",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Light Reading。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-48cd1ceaa933f9df039a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Dynamics。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "codex-bilingual-editorial-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "DCD：Iren称已获一家未具名前沿实验室云合同，AI 云业务继续扩张",
+        "titleEn": "DCD: Iren says it secured a cloud contract with an unnamed frontier lab",
+        "summaryZh": "Data Center Dynamics 报道，Iren 在 FY2026 业绩披露期间称已获得一家未具名“前沿实验室”的云合同，并披露 AI 云业务的 ARR、在运营容量和未来管线信息。报道同时指出，比特币挖矿仍是其大型业务；合同客户、交付条款和退出加密业务路径仍需以后续公司文件核验。",
+        "summaryEn": "Data Center Dynamics reports that Iren said during its FY2026 results that it had secured a cloud contract with an unnamed “frontier lab” and disclosed AI-cloud ARR, operating capacity and future pipeline information. The report also notes that bitcoin mining remains a large business; the customer, delivery terms and path to exit crypto require follow-up in company filings."
+      }
+    },
+    {
+      "eventId": "evt-1863ee44d2e980c61346",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Dynamics。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "codex-bilingual-editorial-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "DCD：Haffner Energy 推出面向数据中心的生物质供电与制冷系统",
+        "titleEn": "DCD: Haffner Energy launches a biomass power-and-cooling system for data centers",
+        "summaryZh": "Data Center Dynamics 报道，法国 Haffner Energy 基于 CORE100 与 C-iB 模块推出面向数据中心的生物质供电与制冷方案；公司称其可在并网之外提供本地电力与冷却，并降低现场用水。公开信息仍是产品与公司能力声明，不是已签约或投运项目。",
+        "summaryEn": "Data Center Dynamics reports that France’s Haffner Energy launched a biomass-based power-and-cooling offering for data centers using its CORE100 and C-iB modules. The company says it can add local power and cooling alongside the grid and reduce on-site water use. The public record is a product and company claim, not a signed or operating project."
+      }
+    },
+    {
+      "eventId": "evt-b5c3b15c38dcb4ce9b31",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 POWER Magazine。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-55a8457b8714cb902acf",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 POWER Magazine。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-d3591910ea19bfe093db",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 Fortune。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-648efa49e10ec736ab64",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-cf532734b008ebf415ea",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 Financial Times Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-748b1d5c1b654e98b81a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f042f77504aab90a2c2d",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Verge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-dcd3b865f6c285714526",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Verge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-5c06b68c6cebc0b8e455",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 POWER Magazine。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "codex-bilingual-editorial-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "POWER Magazine：ONE Nuclear 签署路易斯安那燃气电站与大型电池项目 LOI",
+        "titleEn": "POWER Magazine: ONE Nuclear signs an LOI for a gas plant and large BESS in Louisiana",
+        "summaryZh": "POWER Magazine 报道，ONE Nuclear 已就路易斯安那 Project Cayman 签署具有约束力的意向书，以取得项目场址控制权；项目包括 2.88GW 燃气电站和 700MW/2.88GWh 电池储能系统，拟与数据中心园区配套。报道未披露数据中心客户，LOI 也不等于已建成或已并网投运。",
+        "summaryEn": "POWER Magazine reports that ONE Nuclear signed a binding letter of intent for site control over Louisiana’s Project Cayman, comprising a 2.88GW gas plant and a 700MW/2.88GWh battery system intended to sit alongside a data-center complex. The report does not name the data-center customers, and the LOI is not operating or commissioned capacity."
+      }
+    },
+    {
+      "eventId": "evt-8e39b5e396e3d593b3cb",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-8152ecb7fb30378d3a5a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 IBM Newsroom。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-b9d77972d21768170e12",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Dell Technologies Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-abc0d1317e9baa27baf2",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 EE Times。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c8b9b9a70bae4f2cc9b2",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 OpenAI News。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-02d843caa01ebae49c03",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Knowledge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-8edc4ff95c5729049ad8",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Dell Technologies Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-7d01aa52e28d5bcaf18e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Light Reading。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-0da275fc4b712dc77b50",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Knowledge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-fc4912b64786a05b3bb2",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 EE Times。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-ef586400a911424672ee",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Light Reading。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-117738fbff3cd12ffb64",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 POWER Magazine。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a847202d6fb724aec24b",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-2734d3bcbb74b5fc7763",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-7e4b50ce8cf7b6cf0e42",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Dynamics。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated",
+        "codex-bilingual-editorial-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "DCD：Northrop Grumman 获 DARPA $7M 钻石散热芯片项目",
+        "titleEn": "DCD: Northrop Grumman wins a $7M DARPA project for diamond-cooled chips",
+        "summaryZh": "Data Center Dynamics 报道，Northrop Grumman 获得 DARPA THREADS 项目第二阶段 $7M 合同，研究把金刚石散热技术集成到下一代国防芯片；报道提到第一阶段曾实现 3.3 倍功率提升，第二阶段目标是进一步提高功率密度。该项目仍处于研发阶段，不是数据中心部署。",
+        "summaryEn": "Data Center Dynamics reports that Northrop Grumman won a $7M Phase II DARPA THREADS contract to integrate diamond-based heat dissipation into next-generation defense chips. The report says Phase I demonstrated a 3.3x power boost and Phase II targets further power-density gains. This remains R&D, not data-center deployment."
+      }
+    },
+    {
+      "eventId": "evt-5bbf027a8dccf8dd91b3",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-daaccf2b90a8387b5608",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Knowledge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-2688b7f7995c8679b4e6",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-9efe57277172ab557c2d",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c888d59d6f52be266f94",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Dynamics。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-d6a78f28a8bab0b65029",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 POWER Magazine。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c6ec2d7c34c4e2e460e4",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Dynamics。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-bf8400091697fc45845a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-4a9670a4220a3ffaf747",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Light Reading。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-6364d957dd9031bc7285",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 Financial Times Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-328451cc9c0c14402e5f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 Financial Times Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f9e7ff9da5bdb4c4cd44",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a74d4dc7b13de386345e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-7aff33f272aaf7706b94",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-41d81bc8c0d1c9591099",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-3d365cd2337eb86bb950",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-6913c7e4b726b75edde8",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Light Reading。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c3ae0e8ffb83642d1ca2",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 EE Times。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-875cd21e1bbec764db2c",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Blocks & Files。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-3771a840639cdbbd40f3",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Blocks & Files。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-314d090749eadbe983f3",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Light Reading。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a6d47faf36da6fa361b3",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-d6fdee28dbb612e9017a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-248fd0b83b67b8ce1411",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Data Center Dynamics。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-d8e4e6b714923c24ba56",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-89b8f1cac5800df29f60",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-d91dd95b130447bab68e",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 0,
+        "researchValueScore": 4.4,
+        "readerValueScore": 2.5
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Google Developers Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-d4faa7ebb32509925df5",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 0,
+        "researchValueScore": 4.4,
+        "readerValueScore": 2.5
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Google Developers Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f8e07101e89b7cd75ba6",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-623d7adda0cbc94bbb08",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-fa5fa2d64820d8942cc7",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-7ca27ccac83f00656619",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c821ba6dbe319739e98a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-751da10e599d3657bd9e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-978d8aeb3eeec7bc4498",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c62ae93e66cb80d9ee0b",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a759b73d68a13b505c15",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-7d6457d50625b158b616",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Neocloud。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-9a9fd7e02abd93771142",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-35be469570b1471b1f2e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-8c6c87ebaf52b8715db9",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f6e75cc2d418eb1ef3ad",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-aaf1e9ecd9dfe11b6966",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-02cb619b1a77a5819a08",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-2fccaeddfd39536f5744",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-dea3e40fd7b2f2f319a1",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a8bf2e7015458a2000d3",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c72589dc0c5bacf4f5fa",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-2133350d30c05f03ad03",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-6746151169484ae157d3",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国 AI 产业链。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-d17e0bf8c60ad7e120e1",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a80fcba3af02c9cd5400",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-67d9fa3805443fa41dae",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-61e5a975342649e7d8ce",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-7f5b23118873db21ddea",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-5e56a62b884143ab94f1",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-871ec6c426390a035e4d",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国政策与算力。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-58e2d3e1dce91605b867",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国政策与算力。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-beb88636cacd00ecfbb4",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f5addb0dffce76f1cb8c",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-731c1d0db447749d60d7",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-2382b73e0941d4c1f40e",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-6576d4e6093e2e3e532c",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-80cce8009fe981070676",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-4986d27a432b90e47075",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-109a5adf18b0555463bb",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 AI HOT。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f08ffe6a88694ccfca42",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-dd50ee0fc09df6104e86",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-010a54d638ec4bf25fe9",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国政策与算力。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a20d64306d019ab538dc",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a39c8f94b86cdf219d33",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Interconnect。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-e54736c14ff4467174f6",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-bb3c0c1a913486101def",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-9dddaed71af662f2000d",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Neocloud。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f89ecde9385ce395a073",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-81094a6fe035d075fd28",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-45f6f16eb38b096ab767",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,192 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-09-03-full",
+  "sources": [
+    {
+      "ref": "global-scan-20260903-1630",
+      "sourceName": "Codex live global event scan",
+      "evidenceKind": "discovery-artifact",
+      "observedAt": "2026-09-03T08:36:47.940Z",
+      "sections": [
+        "*"
+      ],
+      "notes": "2592 fetched, 2558 normalized, 618 clusters, 1702 relevant, 124 held, 7 source failures; scan freshness partial."
+    },
+    {
+      "ref": "morning-handoff-20260903-0930",
+      "sourceName": "09:30 Atlas handoff",
+      "evidenceKind": "workflow-state",
+      "observedAt": "2026-09-03T01:10:18.953Z",
+      "sections": [
+        "*"
+      ],
+      "notes": "Morning run was blocked with 24-hour cutoff fallback; 208 brief candidates reviewed and no public write was trusted."
+    },
+    {
+      "ref": "remote-core-watch-20260903",
+      "sourceName": "Cloudflare KV core-company watch latest",
+      "evidenceKind": "runtime-state",
+      "observedAt": "2026-09-03T04:30:09.000Z",
+      "sections": [
+        "*"
+      ],
+      "notes": "50-company watch state read after preflight; used as priority input, not publication proof."
+    },
+    {
+      "ref": "remote-candidates-20260903",
+      "sourceName": "Cloudflare KV daily candidates latest",
+      "evidenceKind": "workflow-state",
+      "observedAt": "2026-09-02T14:34:24.812Z",
+      "sections": [
+        "*"
+      ],
+      "notes": "Stale 2026-09-02 deterministic candidate packet; treated as handoff context only."
+    },
+    {
+      "ref": "remote-closure-20260903",
+      "sourceName": "Cloudflare KV daily closure latest",
+      "evidenceKind": "workflow-state",
+      "observedAt": "2026-09-02T22:30:09.000Z",
+      "sections": [
+        "*"
+      ],
+      "notes": "Stale blocked closure; independently rebuilt for this run."
+    },
+    {
+      "ref": "core-company-checks-20260903",
+      "sourceName": "50-company direct endpoint checks",
+      "evidenceKind": "discovery-artifact",
+      "observedAt": "2026-09-03T16:50:03+08:00",
+      "sections": [
+        "*"
+      ],
+      "notes": "50/50 checked; 14 changed, 20 no-change, 16 not-determined. Failed or missing endpoints were never labelled no-change."
+    },
+    {
+      "ref": "china-xpu-checks-20260903",
+      "sourceName": "China XPU listed issuer checks",
+      "evidenceKind": "discovery-artifact",
+      "observedAt": "2026-09-03T16:50:03+08:00",
+      "sections": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "notes": "7/7 checked; 3 no-change and 4 not-determined after exchange and issuer-specific checks."
+    },
+    {
+      "ref": "source-failures-20260903",
+      "sourceName": "Current scan source failure ledger",
+      "evidenceKind": "runtime-state",
+      "observedAt": "2026-09-03T08:36:47.940Z",
+      "sections": [
+        "*"
+      ],
+      "notes": "NDRC, MIIT, MEP China, Beijing, Shanghai endpoints failed; xAI News and AP Technology returned 403."
+    },
+    {
+      "ref": "formal-equinix-atnorth-20260903",
+      "sourceName": "Equinix Investor Relations",
+      "tier": "T1",
+      "canonicalUrl": "https://investor.equinix.com/news-events/press-releases/detail/1123/cpp-investments-and-equinix-complete-atnorth-acquisition-to",
+      "publishedAt": "2026-09-02T12:30:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "equinix",
+      "sections": [
+        "mna"
+      ],
+      "notes": "Official completion release; transaction and financing figures retained with lifecycle qualifiers."
+    },
+    {
+      "ref": "formal-aws-outposts-govcloud-20260903",
+      "sourceName": "AWS News",
+      "tier": "T1",
+      "canonicalUrl": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-outposts-govcloud-us-regions/",
+      "publishedAt": "2026-09-02T16:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "amazon",
+      "sections": [
+        "capacity"
+      ],
+      "notes": "Official availability update; no incremental rack or MW claim inferred."
+    },
+    {
+      "ref": "media-ithome-kepco-20260903",
+      "sourceName": "IT之家",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/0/997/888.htm",
+      "publishedAt": "2026-09-03T06:03:44.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ],
+      "notes": "IT之家 citing Chosun; proposal is not treated as signed agreement."
+    },
+    {
+      "ref": "media-ithome-montage-20260903",
+      "sourceName": "IT之家",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/0/997/975.htm",
+      "publishedAt": "2026-09-03T07:49:09.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ],
+      "notes": "IT之家 citing Montage investor-relations record; retained as attributed media reporting pending original filing check."
+    },
+    {
+      "ref": "media-dcd-iren-20260903",
+      "sourceName": "Data Center Dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/iren-secures-contract-from-leading-frontier-lab-on-track-to-exit-crypto-business-by-end-of-year/",
+      "publishedAt": "2026-09-02T17:30:28.000Z",
+      "accessState": "public",
+      "independenceGroup": "dcd",
+      "sections": [
+        "rumors"
+      ],
+      "notes": "Unnamed frontier-lab customer remains unnamed; cloud contract and crypto-exit path require follow-up."
+    },
+    {
+      "ref": "media-dcd-haffner-20260903",
+      "sourceName": "Data Center Dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/haffner-energy-launches-biomass-power-cooling-system-for-data-centers/",
+      "publishedAt": "2026-09-02T17:20:31.000Z",
+      "accessState": "public",
+      "independenceGroup": "dcd",
+      "sections": [
+        "rumors"
+      ],
+      "notes": "Product/company claims attributed; not treated as signed or operating project."
+    },
+    {
+      "ref": "media-power-one-nuclear-20260903",
+      "sourceName": "POWER Magazine",
+      "tier": "T3",
+      "canonicalUrl": "https://www.powermag.com/one-nuclear-signs-deal-for-2-88-gw-gas-fired-plant-large-bess-for-louisiana-data-center-campus/",
+      "publishedAt": "2026-09-02T18:38:26.000Z",
+      "accessState": "public",
+      "independenceGroup": "power-magazine",
+      "sections": [
+        "rumors"
+      ],
+      "notes": "Binding LOI and site control only; customer names undisclosed."
+    },
+    {
+      "ref": "media-dcd-northrop-20260903",
+      "sourceName": "Data Center Dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/us-defense-contractor-northrop-grumman-awarded-7m-for-diamond-cooled-chip-technology/",
+      "publishedAt": "2026-09-02T14:59:54.000Z",
+      "accessState": "public",
+      "independenceGroup": "dcd",
+      "sections": [
+        "rumors"
+      ],
+      "notes": "DARPA R&D report; not data-center deployment."
+    }
+  ]
+}

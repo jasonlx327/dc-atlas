@@ -1,0 +1,234 @@
+{
+  "schemaVersion": "atlas-china-xpu-listed-checks.v1",
+  "generatedAt": "2026-09-03T08:43:13.877Z",
+  "checked": 7,
+  "changed": 0,
+  "noChange": 3,
+  "notDetermined": 4,
+  "issuers": [
+    {
+      "id": "cambricon",
+      "name": "寒武纪",
+      "ticker": "688256",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-09-03T08:43:13.877Z",
+      "coverage": {
+        "exchange": {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "status": "ok",
+          "httpStatus": 200,
+          "bytes": 26464
+        },
+        "issuerIR": {
+          "url": "https://www.cambricon.com/",
+          "status": "timeout",
+          "httpStatus": null,
+          "error": "This operation was aborted"
+        }
+      },
+      "disclosureChecks": [
+        "results/guidance",
+        "revenue/gross-margin/cash-flow/R&D/inventory/CAPEX when disclosed",
+        "orders/backlog/shipments/customer concentration",
+        "product/tape-out/mass-production/software ecosystem",
+        "IPO/refinancing/lock-up/control/pledge/sanctions/inquiries"
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "announcementUrls": [],
+      "notes": "One or more exchange/issuer paths failed; no-change is not inferred."
+    },
+    {
+      "id": "hygon",
+      "name": "海光信息",
+      "ticker": "688041",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-09-03T08:43:13.877Z",
+      "coverage": {
+        "exchange": {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "status": "ok",
+          "httpStatus": 200,
+          "bytes": 26464
+        },
+        "issuerIR": {
+          "url": "https://www.hygon.cn/",
+          "status": "timeout",
+          "httpStatus": null,
+          "error": "This operation was aborted"
+        }
+      },
+      "disclosureChecks": [
+        "results/guidance",
+        "revenue/gross-margin/cash-flow/R&D/inventory/CAPEX when disclosed",
+        "orders/backlog/shipments/customer concentration",
+        "product/tape-out/mass-production/software ecosystem",
+        "IPO/refinancing/lock-up/control/pledge/sanctions/inquiries"
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "announcementUrls": [],
+      "notes": "One or more exchange/issuer paths failed; no-change is not inferred."
+    },
+    {
+      "id": "loongson",
+      "name": "龙芯中科",
+      "ticker": "688047",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-09-03T08:43:13.877Z",
+      "coverage": {
+        "exchange": {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "status": "ok",
+          "httpStatus": 200,
+          "bytes": 26464
+        },
+        "issuerIR": {
+          "url": "https://www.loongson.cn/",
+          "status": "failed",
+          "httpStatus": null,
+          "error": "fetch failed"
+        }
+      },
+      "disclosureChecks": [
+        "results/guidance",
+        "revenue/gross-margin/cash-flow/R&D/inventory/CAPEX when disclosed",
+        "orders/backlog/shipments/customer concentration",
+        "product/tape-out/mass-production/software ecosystem",
+        "IPO/refinancing/lock-up/control/pledge/sanctions/inquiries"
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "announcementUrls": [],
+      "notes": "One or more exchange/issuer paths failed; no-change is not inferred."
+    },
+    {
+      "id": "jingjia-micro",
+      "name": "景嘉微",
+      "ticker": "300474",
+      "exchange": "SZSE",
+      "lastCheckedAt": "2026-09-03T08:43:13.877Z",
+      "coverage": {
+        "exchange": {
+          "url": "https://www.szse.cn/disclosure/listed/notice/",
+          "status": "ok",
+          "httpStatus": 200,
+          "bytes": 29914
+        },
+        "issuerIR": {
+          "url": "https://www.jingjiamicro.com/",
+          "status": "ok",
+          "httpStatus": 200,
+          "bytes": 154977
+        }
+      },
+      "disclosureChecks": [
+        "results/guidance",
+        "revenue/gross-margin/cash-flow/R&D/inventory/CAPEX when disclosed",
+        "orders/backlog/shipments/customer concentration",
+        "product/tape-out/mass-production/software ecosystem",
+        "IPO/refinancing/lock-up/control/pledge/sanctions/inquiries"
+      ],
+      "result": "no-change",
+      "eventIds": [],
+      "announcementUrls": [],
+      "notes": ""
+    },
+    {
+      "id": "moore-threads",
+      "name": "摩尔线程",
+      "ticker": "688795",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-09-03T08:43:13.877Z",
+      "coverage": {
+        "exchange": {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "status": "ok",
+          "httpStatus": 200,
+          "bytes": 26464
+        },
+        "issuerIR": {
+          "url": "https://www.moorethreads.com/",
+          "status": "failed",
+          "httpStatus": null,
+          "error": "fetch failed"
+        }
+      },
+      "disclosureChecks": [
+        "results/guidance",
+        "revenue/gross-margin/cash-flow/R&D/inventory/CAPEX when disclosed",
+        "orders/backlog/shipments/customer concentration",
+        "product/tape-out/mass-production/software ecosystem",
+        "IPO/refinancing/lock-up/control/pledge/sanctions/inquiries"
+      ],
+      "result": "not-determined",
+      "eventIds": [],
+      "announcementUrls": [],
+      "notes": "One or more exchange/issuer paths failed; no-change is not inferred."
+    },
+    {
+      "id": "metax",
+      "name": "沐曦股份",
+      "ticker": "688802",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-09-03T08:43:13.877Z",
+      "coverage": {
+        "exchange": {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "status": "ok",
+          "httpStatus": 200,
+          "bytes": 26464
+        },
+        "issuerIR": {
+          "url": "https://www.metax-tech.com/",
+          "status": "ok",
+          "httpStatus": 200,
+          "bytes": 57964
+        }
+      },
+      "disclosureChecks": [
+        "results/guidance",
+        "revenue/gross-margin/cash-flow/R&D/inventory/CAPEX when disclosed",
+        "orders/backlog/shipments/customer concentration",
+        "product/tape-out/mass-production/software ecosystem",
+        "IPO/refinancing/lock-up/control/pledge/sanctions/inquiries"
+      ],
+      "result": "no-change",
+      "eventIds": [],
+      "announcementUrls": [],
+      "notes": ""
+    },
+    {
+      "id": "biren",
+      "name": "壁仞科技",
+      "ticker": "6082",
+      "exchange": "HKEX",
+      "lastCheckedAt": "2026-09-03T08:43:13.877Z",
+      "coverage": {
+        "exchange": {
+          "url": "https://www1.hkexnews.hk/index.htm",
+          "status": "ok",
+          "httpStatus": 200,
+          "bytes": 9173
+        },
+        "issuerIR": {
+          "url": "https://www.birentech.com/",
+          "status": "ok",
+          "httpStatus": 200,
+          "bytes": 235439
+        }
+      },
+      "disclosureChecks": [
+        "results/guidance",
+        "revenue/gross-margin/cash-flow/R&D/inventory/CAPEX when disclosed",
+        "orders/backlog/shipments/customer concentration",
+        "product/tape-out/mass-production/software ecosystem",
+        "IPO/refinancing/lock-up/control/pledge/sanctions/inquiries"
+      ],
+      "result": "no-change",
+      "eventIds": [],
+      "announcementUrls": [],
+      "notes": ""
+    }
+  ]
+}

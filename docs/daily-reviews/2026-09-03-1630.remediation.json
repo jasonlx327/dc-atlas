@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "atlas-remediation.v1",
+  "date": "2026-09-03",
+  "slot": "16:30",
+  "mode": "partial",
+  "cutoff": "2026-09-02T16:36:27+08:00",
+  "scanStartedAt": "2026-09-03T16:35:10+08:00",
+  "baseline": {
+    "ref": "refs/heads/atlas-production",
+    "commit": "c8e923f38f84855a0808f14cf2eaec37e342d62e",
+    "trusted": true,
+    "priorCloudflareVersion": "fee7f04f-ac49-4b78-be5f-95f6bb1e0590",
+    "priorSitesVersion": "146"
+  },
+  "scan": {
+    "globalFetched": 2592,
+    "globalNormalized": 2558,
+    "duplicates": 34,
+    "clusters": 618,
+    "relevant": 1702,
+    "held": 124,
+    "sourceFailures": 7,
+    "freshness": "partial",
+    "morningHandoffCandidatesReviewed": 208,
+    "morningHandoffClosure": {
+      "status": "blocked",
+      "usedAsInput": true
+    }
+  },
+  "companyChecks": {
+    "checked": 50,
+    "changed": 14,
+    "noChange": 20,
+    "notDetermined": 16,
+    "chinaXpuListedChecked": 7,
+    "chinaXpuListedChanged": 0,
+    "chinaXpuListedNoChange": 3,
+    "chinaXpuListedNotDetermined": 4
+  },
+  "sections": {
+    "publish": [
+      "capacity",
+      "mna",
+      "rumors"
+    ],
+    "noChange": [
+      "columns",
+      "idc-pulse",
+      "supply-chain"
+    ],
+    "hold": [
+      "china-gpu",
+      "compute-products",
+      "cooling",
+      "earnings-calendar",
+      "listed-companies",
+      "policy",
+      "power-model-demand"
+    ]
+  },
+  "publication": {
+    "globalIntelligenceNew": 6,
+    "globalIntelligenceUpgraded": 0,
+    "formalFactsNew": 2,
+    "adapterReady": 8,
+    "formalRecords": [
+      "equinix-atnorth-acquisition-complete-2026",
+      "aws-outposts-govcloud-regions-2026"
+    ],
+    "globalIntelligenceRecords": [
+      "editor-evt-74417a531a9372d72121",
+      "editor-evt-5d6e4436eecce033ac64",
+      "editor-evt-48cd1ceaa933f9df039a",
+      "editor-evt-1863ee44d2e980c61346",
+      "editor-evt-5c06b68c6cebc0b8e455",
+      "editor-evt-7e4b50ce8cf7b6cf0e42"
+    ],
+    "editorPacket": "artifacts/event-intelligence/2026-09-03-1630-editor.json",
+    "judgment": "artifacts/event-intelligence/2026-09-03-1630-editorial-judgment.json"
+  },
+  "release": {
+    "status": "ready-for-partial-release",
+    "tests": "passed-with-baseline-failures",
+    "build": "passed",
+    "cloudflare": "pending",
+    "sites": "pending",
+    "sameHead": false,
+    "formalReadback": "pending",
+    "dailySnapshot": "pending",
+    "sitesReadback": "pending",
+    "commit": null,
+    "workerCommit": null,
+    "sitesCommit": null,
+    "cloudflareVersion": null,
+    "sitesVersion": null,
+    "manualFollowUp": [
+      "NDRC/MIIT/MEP China/Beijing/Shanghai access failures",
+      "16 core companies and 4 China XPU issuers not-determined",
+      "verify official Montage filing and KEPCO proposal before any formal upgrade",
+      "Equinix Fabric One remained locally held because its source URL needed further canonical verification"
+    ]
+  },
+  "artifacts": {
+    "manifest": "docs/daily-reviews/2026-09-03-1630.manifest.json",
+    "sources": "docs/daily-reviews/2026-09-03-1630.sources.json",
+    "review": "docs/daily-reviews/2026-09-03-1630.md",
+    "companyChecks": "docs/daily-reviews/2026-09-03-1630.core-company-checks.json",
+    "chinaXpuChecks": "docs/daily-reviews/2026-09-03-1630.china-xpu-listed-checks.json",
+    "scan": "artifacts/event-intelligence/2026-09-03-1630-event.json",
+    "editor": "artifacts/event-intelligence/2026-09-03-1630-editor.json"
+  },
+  "blockers": [
+    "Independent scan freshness partial with 7 source access failures; affected sections remain locally held.",
+    "16/50 core companies and 4/7 China XPU issuers remain not-determined.",
+    "External scoring unavailable; deterministic fallback used, with Codex bilingual copy completed for all 8 adapter-ready items."
+  ]
+}
