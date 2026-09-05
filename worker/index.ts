@@ -3230,9 +3230,10 @@ function dailySnapshotKey(date: string): string {
 }
 
 async function persistDailySnapshot(env: Env, meta: DailySnapshotMeta, body: string): Promise<void> {
+  const snapshotBody = JSON.stringify({ ...JSON.parse(body), dailySnapshot: meta });
   await Promise.all([
-    env.IDC_DAILY_SNAPSHOTS.put(dailySnapshotKey(meta.date), body),
-    env.IDC_DAILY_SNAPSHOTS.put("latest", body),
+    env.IDC_DAILY_SNAPSHOTS.put(dailySnapshotKey(meta.date), snapshotBody),
+    env.IDC_DAILY_SNAPSHOTS.put("latest", snapshotBody),
     env.IDC_DAILY_SNAPSHOTS.put("latest-meta", JSON.stringify(meta)),
   ]);
 }

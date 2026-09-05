@@ -2,6 +2,24 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { gzipSync } from "node:zlib";
+import { stripTypeScriptTypes } from "node:module";
+
+test("cross-day bootstrap snapshots persist their new metadata inside both bodies", async () => {
+  const source = await readFile(new URL("../worker/index.ts", import.meta.url), "utf8");
+  const implementation = source.slice(source.indexOf("async function persistDailySnapshot("), source.indexOf("async function dailySnapshotApi("));
+  const persist = new Function("dailySnapshotKey", `${stripTypeScriptTypes(implementation)}; return persistDailySnapshot;`)((date) => `daily:${date}`);
+  const writes = new Map();
+  const env = { IDC_DAILY_SNAPSHOTS: { put: async (key, value) => writes.set(key, value) } };
+  const previous = { date: "2026-09-05", generatedAt: "2026-09-05T15:51:30Z", source: "manual" };
+  const next = { date: "2026-09-06", generatedAt: "2026-09-05T16:11:43Z", source: "bootstrap" };
+  const payload = { dailySnapshot: previous, rumors: [{ id: "preserved" }], contentVersion: "unchanged" };
+  await persist(env, next, JSON.stringify(payload));
+  assert.equal(writes.size, 3);
+  assert.equal(writes.get("latest"), writes.get("daily:2026-09-06"));
+  assert.deepEqual(JSON.parse(writes.get("latest")), { ...payload, dailySnapshot: next });
+  assert.deepEqual(JSON.parse(writes.get("latest-meta")), next);
+  assert.deepEqual(payload.dailySnapshot, previous);
+});
 
 async function render(pathname = "/", host = "dc-atlas.example", country = null, cookie = null) {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
