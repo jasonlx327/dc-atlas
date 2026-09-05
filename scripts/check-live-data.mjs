@@ -1,3 +1,6 @@
+import { readFile } from "node:fs/promises";
+
+const publishedIntelligence = JSON.parse(await readFile(new URL("../app/data/public-intelligence.json", import.meta.url), "utf8"));
 const endpoint = "https://idc-index.com/api/atlas-live-v5?schema=v1&deploy_check=";
 const pulsePage = "https://idc-index.com/pulse?deploy_check=";
 const expectedPulseMarkers = (process.env.ATLAS_EXPECTED_PULSE_CSS_MARKERS ?? "").split("|").map((value) => value.trim()).filter(Boolean);
@@ -13,6 +16,14 @@ for (let attempt = 0; attempt < 4; attempt += 1) {
     if (payload.newsStatus !== "ok" || payload.benchmarkStatus !== "ok") throw new Error(`core sources: news=${payload.newsStatus} benchmark=${payload.benchmarkStatus}`);
     if (!payload.generatedAt || !Array.isArray(payload.news) || !Array.isArray(payload.benchmarks)) throw new Error("invalid payload shape");
     if (!payload.contentReviewedAt || !payload.sectionFreshness) throw new Error("content freshness metadata missing");
+    if (!Array.isArray(payload.rumors)) throw new Error("intelligence archive missing");
+    for (const expected of publishedIntelligence) {
+      const actual = payload.rumors.find((item) => item.id === expected.id);
+      if (!actual) throw new Error(`published intelligence missing: ${expected.id}`);
+      for (const field of ["title", "titleEn", "summary", "summaryEn", "sourceUrl", "publishedAt", "status"]) {
+        if (actual[field] !== expected[field]) throw new Error(`published intelligence mismatch: ${expected.id}.${field}`);
+      }
+    }
     const requiredSections = ["idcPulse", "listedCompanyNews", "mnaDeals", "capacityRadar", "coolingProgress"];
     for (const section of requiredSections) {
       if (!Array.isArray(payload[section]) || payload[section].length === 0) throw new Error(`${section} is empty`);
@@ -38,7 +49,7 @@ for (let attempt = 0; attempt < 4; attempt += 1) {
       }
     }
     const sectionSummary = requiredSections.map((section) => `${section}=${payload[section].length}/${payload.sectionFreshness[section].status}`).join(" · ");
-    console.log(`Live data and Pulse UI check passed: ${payload.generatedAt} · reviewed=${payload.contentReviewedAt} · ${sectionSummary} · news=${payload.news.length} · benchmarks=${payload.benchmarks.length}`);
+    console.log(`Live data and Pulse UI check passed: ${payload.generatedAt} · reviewed=${payload.contentReviewedAt} · ${sectionSummary} · news=${payload.news.length} · benchmarks=${payload.benchmarks.length} · intelligence=${payload.rumors.length}/${publishedIntelligence.length} adapter records verified`);
     process.exit(0);
   } catch (error) {
     lastError = error;

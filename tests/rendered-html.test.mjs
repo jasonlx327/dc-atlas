@@ -18,6 +18,39 @@ async function render(pathname = "/", host = "dc-atlas.example", country = null,
   );
 }
 
+test("live API preserves the complete versioned intelligence archive during hydration", async (t) => {
+  const published = JSON.parse(await readFile(new URL("../app/data/public-intelligence.json", import.meta.url), "utf8"));
+  assert.ok(published.length > 12, "fixture must exercise the former twelve-item limit");
+  const cacheDescriptor = Object.getOwnPropertyDescriptor(globalThis, "caches");
+  Object.defineProperty(globalThis, "caches", { configurable: true, value: { default: {
+    match: async () => undefined,
+    put: async () => {},
+  } } });
+  t.after(() => {
+    if (cacheDescriptor) Object.defineProperty(globalThis, "caches", cacheDescriptor);
+    else delete globalThis.caches;
+  });
+  t.mock.method(globalThis, "fetch", async () => new Response("Unavailable in offline test", { status: 503 }));
+  const { default: worker } = await import(new URL("../dist/server/index.js", import.meta.url).href);
+  const response = await worker.fetch(new Request("https://idc-index.com/api/atlas-live-v5?schema=v1"), {
+    IDC_DAILY_SNAPSHOTS: { get: async () => null },
+  }, { waitUntil() {}, passThroughOnException() {} });
+  assert.equal(response.status, 200);
+  const payload = await response.json();
+  const html = await (await render("/rumors")).text();
+  const renderedIds = [...html.matchAll(/<h2><a href="\/rumors\/([^"]+)">/g)].map((match) => match[1]);
+  assert.deepEqual(payload.rumors.map((item) => item.id).sort(), renderedIds.sort(), "hydration must preserve every server-rendered archive card");
+  for (const item of published) {
+    const actual = payload.rumors.find((record) => record.id === item.id);
+    assert.ok(actual, `published intelligence missing from live API: ${item.id}`);
+    for (const field of ["title", "titleEn", "summary", "summaryEn", "sourceUrl", "publishedAt", "status"]) {
+      assert.equal(actual[field], item[field], `${item.id}.${field} must match the released adapter`);
+    }
+  }
+  assert.equal(new Set(payload.rumors.map((item) => item.sourceUrl)).size, payload.rumors.length);
+  assert.equal(payload.dailyClosure, null, "internal editorial state must not be injected");
+});
+
 test("server-renders the bilingual intelligence-console homepage", async () => {
   const response = await render();
   assert.equal(response.status, 200);
@@ -888,7 +921,7 @@ test("keeps formally released records in versioned content and cache identity", 
   assert.match(workerSource, /rack: recentNews\(\[\.\.\.formalChainNews\("rack"\)/);
   assert.match(workerSource, /function recentNews[\s\S]*\.sort\(\(a, b\) => Date\.parse\(b\.publishedAt/);
   assert.match(workerSource, /relationSchemaVersion = "entity-brief-v3"/);
-  assert.match(workerSource, /publicFeedVersion = "rumor-newest-v1"/);
+  assert.match(workerSource, /publicFeedVersion = "rumor-archive-v2"/);
   assert.match(workerSource, /chainRoutingVersion = "formal-cross-route-v1"/);
   assert.match(workerSource, /&chain=\$\{chainRoutingVersion\}/);
 });
@@ -924,7 +957,7 @@ test("keeps live-data validation in the deployment path", async () => {
   assert.match(liveCheck, /newsStatus !== "ok"/);
   for (const section of ["idcPulse", "listedCompanyNews", "mnaDeals", "capacityRadar", "coolingProgress"]) assert.match(liveCheck, new RegExp(section));
   assert.match(liveCheck, /freshness\.status === "stale"/);
-  assert.match(workerSource, /CONTENT_REVIEWED_AT = "2026-09-01"/);
+  assert.match(workerSource, /CONTENT_REVIEWED_AT = "\d{4}-\d{2}-\d{2}"/);
   assert.match(workerSource, /return sortNewest\(\[\.\.\.selectedCoreRumors\(packet\), \.\.\.RUMOR_BRIEFS, \.\.\.liveCandidates\]\)/);
   assert.doesNotMatch(workerSource, /const orderSignal =/);
   assert.match(workerSource, /Riot 在 Rockdale 签署 191MW 关键 IT 容量长期租约/);

@@ -210,7 +210,7 @@ type AihotDaily = {
 type DailySnapshotMeta = {
   date: string;
   generatedAt: string;
-  source: "scheduled" | "bootstrap";
+  source: "scheduled" | "bootstrap" | "manual";
 };
 
 type Benchmark = {
@@ -3351,8 +3351,7 @@ function rumorWatch(news: NewsItem[], packet: AtlasEditorDecisionPacket | null =
       if (seen.has(item.sourceUrl)) return false;
       seen.add(item.sourceUrl);
       return true;
-    })
-    .slice(0, 12);
+    });
 }
 
 function staticAtlasContent(): Record<string, unknown> {
@@ -3382,7 +3381,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const publicEditorDecision: AtlasEditorDecisionPacket | null = null;
   const staticContentVersion = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(JSON.stringify(staticAtlasContent()))).then((digest) => Array.from(new Uint8Array(digest)).slice(0, 8).map((byte) => byte.toString(16).padStart(2, "0")).join(""));
   const relationSchemaVersion = "entity-brief-v3";
-  const publicFeedVersion = "rumor-newest-v1";
+  const publicFeedVersion = "rumor-archive-v2";
   const chainRoutingVersion = "formal-cross-route-v1";
   const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}&relations=${relationSchemaVersion}&feed=${publicFeedVersion}&chain=${chainRoutingVersion}`, request.url), { method: "GET" });
   const edgeCache = (caches as unknown as { default: Cache }).default;

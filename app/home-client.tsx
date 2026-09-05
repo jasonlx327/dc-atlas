@@ -66,7 +66,7 @@ type SupernodeProduct = { id: string; vendor: string; name: string; status: stri
 type MnaDeal = { id: string; announcedAt: string; buyer: string; target: string; value: string; capacity: string; region: string; status: string; statusAsOf: string; valueBasis: string; capacityBasis: string; rationale: string; sourceName: string; sourceUrl: string };
 type SectionFreshness = { count: number; latestContentAt: string | null; latestVerifiedAt: string; status: "current" | "verified-no-change" | "stale" };
 type TrackedSource = { id: string; name: string; scope: string; mode: string; sourceUrl: string };
-type DailySnapshotMeta = { date: string; generatedAt: string; source: "scheduled" | "bootstrap" };
+type DailySnapshotMeta = { date: string; generatedAt: string; source: "scheduled" | "bootstrap" | "manual" };
 type CalendarEvent = { id: string; startsAt: string; company: string; ticker: string; sector: string; description: string; focus: string; sourceName: string; sourceUrl: string; conclusion?: { summary: string; sourceName: string; sourceUrl: string } };
 
 export type AtlasPayload = {
