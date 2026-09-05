@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { gzipSync } from "node:zlib";
 
 async function render(pathname = "/", host = "dc-atlas.example", country = null, cookie = null) {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
@@ -49,6 +50,27 @@ test("live API preserves the complete versioned intelligence archive during hydr
   }
   assert.equal(new Set(payload.rumors.map((item) => item.sourceUrl)).size, payload.rumors.length);
   assert.equal(payload.dailyClosure, null, "internal editorial state must not be injected");
+  const formalIds = ["aws-bedrock-servicenow-connector-2026", "nscale-figure-barstow-compute-2026", "pure-dc-brent-cross-b2-piling-2026", "cerebras-compute-nordic-mikkeli-165mw-2026", "t5-everon-salute-restructure-2026", "nvidia-hugging-face-acquisition-2026", "flex-epc-power-acquisition-2026"];
+  const formal = [...payload.idcPulse, ...payload.listedCompanyNews];
+  for (const id of formalIds) {
+    const item = formal.find((item) => item.id === id);
+    assert.ok(item?.titleEn && item?.summaryEn && item?.sourceUrl, `bilingual supplemental fact missing: ${id}`);
+    assert.ok(Number.isFinite(Date.parse(item.publishedAt)), `invalid publication time: ${id}`);
+  }
+  for (const id of ["nscale-figure-barstow-compute-2026", "pure-dc-brent-cross-b2-piling-2026", "cerebras-compute-nordic-mikkeli-165mw-2026"]) {
+    const record = payload.capacityRadar.find((item) => item.id === id);
+    assert.ok(record?.statusEn && record?.noteEn, `capacity adapter missing: ${id}`);
+    assert.ok(Number.isFinite(Date.parse(record.publishedAt)));
+  }
+  const upgraded = payload.rumors.find((item) => item.id === "nvidia-hugging-face-12-9b-report-2026");
+  assert.equal(upgraded.publishedAt, "2026-08-27T17:49:53Z");
+  assert.match(upgraded.sourceUrl, /cnbc\.com/);
+  assert.match(upgraded.officialResponseEn, /blogs\.nvidia\.com/);
+  assert.match(upgraded.statusLabelEn, /OFFICIAL RESPONSE/);
+  const prime = gzipSync(JSON.stringify(payload)).toString("base64");
+  const englishPulse = await (await render("/en", "dc-atlas.example", null, `__idc_atlas_prime=${prime}`)).text();
+  assert.match(englishPulse, /12,930,300,000 agreed consideration/);
+  assert.match(englishPulse, /4\.4B value, subject to customary adjustments/);
 });
 
 test("server-renders the bilingual intelligence-console homepage", async () => {

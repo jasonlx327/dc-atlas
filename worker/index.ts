@@ -674,6 +674,14 @@ function supernodeProducts(): SupernodeProduct[] {
 
 function capacityRadar(): SourceRecord[] {
   return [
+    ...FORMAL_PULSE_SUPPLEMENT.filter((item) => ["nscale-figure-barstow-compute-2026", "pure-dc-brent-cross-b2-piling-2026", "cerebras-compute-nordic-mikkeli-165mw-2026"].includes(item.id)).map((item) => ({
+      id: item.id, title: item.title, titleEn: item.titleEn,
+      subject: item.sourceName, subjectEn: item.sourceName,
+      metric: item.scale ?? "", metricEn: item.scale ?? "",
+      status: item.milestone ?? "", statusEn: item.id.startsWith("nscale") ? "Agreement signed · future deployment" : "Construction under way · phased delivery planned",
+      publishedAt: item.publishedAt.slice(0, 10), sourceName: item.sourceName, sourceUrl: item.sourceUrl,
+      note: item.summary, noteEn: item.summaryEn,
+    })),
     {
       id: "ports-pike-ohio-openai-nvidia-sb-energy",
       title: "OpenAI、NVIDIA 与 SB Energy 公告俄亥俄 PORTS-Pike AI 园区安排",
@@ -948,6 +956,16 @@ function capacityRadar(): SourceRecord[] {
 
 function coolingProgress(): SourceRecord[] {
   return [
+    {
+      id: "cerebras-mikkeli-closed-loop-2026", title: "Cerebras 芬兰 Mikkeli 园区采用闭环冷却设计", titleEn: "Cerebras Mikkeli campus designed for closed-loop cooling",
+      subject: "Cerebras / Compute Nordic", subjectEn: "Cerebras / Compute Nordic",
+      metric: "首期 50MW 已开工", metricEn: "Initial 50MW phase under construction",
+      status: "闭环冷却与余热回收设计 · 尚未投运", statusEn: "Closed-loop cooling and heat-recovery design · not commissioned",
+      publishedAt: "2026-09-01", sourceName: "Cerebras Investor Relations",
+      sourceUrl: "https://investors.cerebras.ai/news-releases/news-release-details/cerebras-and-compute-nordic-finland-announce-new-165-mw-ai-data",
+      note: "官方披露设计采用循环用水及余热回收；未将设计能力计作实际节水量或已交付供热。",
+      noteEn: "The issuer describes water recirculation and waste-heat recovery as design features, not measured water savings or delivered heat.",
+    },
     {
       id: "firebird-armenia-vertiv-chilled-water-cooling",
       title: "Firebird 亚美尼亚 AI 工厂部署 Vertiv 冷冻水制冷架构",
@@ -1245,6 +1263,54 @@ function chinaChipPulse(liveNews: NewsItem[], days = 30): NewsItem[] {
 
 function mnaDeals(): MnaDeal[] {
   return [
+    {
+      id: "nvidia-hugging-face-2026",
+      announcedAt: "2026-09-03",
+      buyer: "NVIDIA",
+      target: "Hugging Face",
+      value: "$129.303 亿",
+      capacity: "未披露",
+      region: "美国 / 全球",
+      status: "已签署 · 交割时间与监管条件未披露",
+      statusAsOf: CONTENT_REVIEWED_AT,
+      valueBasis: "NVIDIA 官方公告的协议收购价",
+      capacityBasis: "公告未披露 GPU、机柜、MW 或数据中心资产规模",
+      rationale: "交易拟把开放模型、数据集和应用社区平台纳入 NVIDIA 生态；NVIDIA 表示 Hugging Face 将继续支持多云、多加速器及非 NVIDIA 算力。",
+      sourceName: "NVIDIA Blog",
+      sourceUrl: "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/",
+    },
+    {
+      id: "flex-epc-power-2026",
+      announcedAt: "2026-09-03",
+      buyer: "Flex",
+      target: "EPC Power",
+      value: "$44 亿",
+      capacity: "已部署 >15GW · 美国年产能 2027 年预计 >30GW",
+      region: "美国 / 全球",
+      status: "已签署 · 预计 2026 年 Q4 交割",
+      statusAsOf: CONTENT_REVIEWED_AT,
+      valueBasis: "Flex 公告的交易估值，仍可能按惯例调整",
+      capacityBasis: "15GW 为 EPC Power 历史部署规模；30GW 为未来美国制造能力预期",
+      rationale: "收购拟把整流、DC-DC 转换与 800V 数据中心电力架构能力纳入 Flex 的 Cloud and Power Infrastructure 部门。",
+      sourceName: "Flex Investor Relations",
+      sourceUrl: "https://investors.flex.com/news/news-details/2026/Flex-to-Acquire-EPC-Power-Adding-Leading-Power-Conversion-Capabilities-for-AI-Data-Centers-and-Grid-Applications/default.aspx",
+    },
+    {
+      id: "salute-t5-operations-2026",
+      announcedAt: "2026-09-01",
+      buyer: "Salute",
+      target: "T5 Operations",
+      value: "未披露",
+      capacity: "未披露",
+      region: "美国 / 全球",
+      status: "确定性协议已签 · 交割时间未披露",
+      statusAsOf: CONTENT_REVIEWED_AT,
+      valueBasis: "交易条款未披露",
+      capacityBasis: "公告未披露纳入交易的数据中心或 MW 规模",
+      rationale: "T5 的运营业务拟加入 Salute；同期 T5 Construction 已独立成为 EverOn Data Center Services，原有建设项目与合同继续履行。",
+      sourceName: "EverOn Data Center Services",
+      sourceUrl: "https://everondcs.com/blog/t5-services-announces-next-phase-of-strategic-evolution-with-launch-of-everon-data-center-services-and-operations-transition-to-salute/",
+    },
     {
       id: "nvidia-ai-compute-financing-platform-mous",
       announcedAt: "2026-08-10",
@@ -3504,7 +3570,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
       ...fallback.power,
     ], chainWindowDays, 6),
     campus: recentNews([...idcPulse, ...positiveNews, ...news], chainWindowDays, 6),
-    model: recentNews([...editorNewsItems(publicEditorDecision, ["power-model-demand"]), ...modelNews], chainWindowDays, 6),
+    model: recentNews([...FORMAL_PULSE_SUPPLEMENT.filter((item) => item.id === "aws-bedrock-servicenow-connector-2026"), ...editorNewsItems(publicEditorDecision, ["power-model-demand"]), ...modelNews], chainWindowDays, 6),
   };
 
   const latestSnapshot = await env.IDC_DAILY_SNAPSHOTS.get<DailySnapshotMeta>("latest-meta", "json");

@@ -352,6 +352,21 @@ function englishEvent(event: CalendarEvent): CalendarEvent {
   };
 }
 function englishDeal(deal: Deal): Deal {
+  if (deal.id === "nvidia-hugging-face-2026") return {
+    ...deal, value: "$12,930,300,000 agreed consideration", capacity: "Not disclosed", region: "United States / Global",
+    status: "Agreement announced · closing timetable and regulatory conditions not disclosed",
+    rationale: "NVIDIA says Hugging Face will remain open to multiple clouds, accelerators and non-NVIDIA compute.",
+  };
+  if (deal.id === "flex-epc-power-2026") return {
+    ...deal, value: "$4.4B value, subject to customary adjustments", capacity: ">15GW deployed · >30GW annual US manufacturing capacity expected in 2027", region: "United States / Global",
+    status: "Definitive agreement · closing expected in calendar Q4 2026",
+    rationale: "Adds power-conversion technology for 800V data-center architectures to Flex, subject to approvals and closing conditions.",
+  };
+  if (deal.id === "salute-t5-operations-2026") return {
+    ...deal, value: "Not disclosed", capacity: "Not disclosed", region: "United States / Global",
+    status: "Definitive agreement · closing timetable not disclosed",
+    rationale: "T5 Operations has agreed to join Salute; T5 Construction separately became EverOn, retaining existing projects and contracts.",
+  };
   if (deal.buyer.includes("Galaxy")) return {
     ...deal,
     target: "McGregor, Texas data-center campus land",

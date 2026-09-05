@@ -1,0 +1,278 @@
+{
+  "generatedAt": "2026-09-05T15:26:33.492Z",
+  "checks": [
+    {
+      "id": "cambricon",
+      "name": "寒武纪",
+      "ticker": "688256",
+      "exchange": "SSE",
+      "xpuScope": [
+        "AI accelerator",
+        "processor IP"
+      ],
+      "sourceIds": [
+        "sse",
+        "cninfo"
+      ],
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "lastCheckedAt": "2026-09-05T15:26:28.134Z",
+      "result": "not-determined",
+      "resultReason": "Exchange/issuer entry requests are not a complete announcement-text review.",
+      "sourceCoverage": [
+        {
+          "url": "https://www.cambricon.com/",
+          "resolvedUrl": "https://www.cambricon.com/",
+          "checkedAt": "2026-09-05T15:26:29.189Z",
+          "httpStatus": 200,
+          "accessState": "partial",
+          "excerpt": "寒武纪 切换导航 产品技术 返回 智能加速卡 思元370系列 MLU370-S4/S8智能加速卡 MLU370-X4智能加速卡 MLU370-X8智能加速卡 思元270系列 MLU270-S4智能加速卡 MLU270-F4智能加速卡 智能边缘计算模组 思元220系列 MLU220-SOM智能模组 MLU220-M.2边缘端智能加速卡 终端智能处理器IP Cambricon-1M Cambricon-1H 软件开发平台 Cambricon NeuWare MagicMind 开放平台 返回 AI菜单 开发者 返回 开发者社区 文档中心 新闻中心 返回 公司新闻 加入我们 返回 校园招聘 社会招聘 校招内推 社招内推 关于我们 返回 使命与愿景 寒武纪介绍 联系我们 公司地址 投资者关系 寒武纪® AIDC® MLU370®-X8云端训练AI加速卡 面向中高端训练场景 采用双芯思元370及MLU-Link配置 了解更多 「思元370」推训一体芯片 寒武纪第三代云端AI芯片 先进chiplet技术，最新MLUarch03架构，AI性能全面升级 了解更多 寒武纪® AIDC® MLU370®-S4云端AI加速卡 面向高密度云端推理需求 能效出色，体积小巧，高密度部署 了解更多 寒武纪® AIDC® MLU370®-X4云端AI加速卡 面向云端AI业务需求 推训一体，性能卓越 了解更多 「思元220」边缘端AI芯片 了解更多 云端AI加速卡MLU370-S4 先进chiplet技术，最新MLUarch03架构，AI性能全面升级 了解更多 云端AI加速卡MLU370-X8 采用双芯思元37"
+        },
+        {
+          "url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688256",
+          "resolvedUrl": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688256",
+          "checkedAt": "2026-09-05T15:26:29.417Z",
+          "httpStatus": 200,
+          "accessState": "partial",
+          "excerpt": "公司公告 | 上海证券交易所 --> 上海证券交易所服务热线： 400-8888-400 APP下载 微博微信 English 繁 首页 党建 披露 数据 产品 服务 规则 关于 --> 投资者 债券承销机构 上市公司 媒体单位 拟上市公司 会员/证券机构 基金管理公司 公司公告 扫一扫下载 \"上交所移动App\" 上市公司公告全文 --> --> 查询 * 注： 点击公告标题后的 图标，可直接下载该公告PDF文件。 联系我们 意见反馈 网站地图 相关链接 法律声明 注册商标 官方微博 官方微信 APP下载 党建 党建动态 学习园地 图文播报 发行上市 审核公告通知 审核信息披露 审核项目动态 关于上市审核中心 科创战略 披露 交易提示 上交所公告 上市公司信息 融资融券信息 基金信息 公募REITs信息 交易信息披露 债券信息 股票期权信息 监管 上市公司监管 发行上市审核监管 债券监管 交易监管 会员及其他交易参与人监管 自律管理复核 自律监管与市场服务事项 诉求受理中心 数据 股票数据 债券数据 基金数据 公募REITs数据 其他数据 行情信息 上证系列指数 中证系列指数 中华系列指数 产品 股票与存托凭证 基金 债券 股票期权 公募REITs 服务 企业上市服务 IPO业务专栏 沪港通 绿色证券专栏 交易服务 交易技术支持专区 收费及代收税费 投资者服务 上市公司服务 路演服务 技术服务 信息服务 培训服务 司法服务 规则 法律法规 部门规章 本所业务规则 本所业务指南与流程 公开征求意见 制度规则汇编 关于 本所介绍 媒体中心 国际交流与合作 招聘信息 联系我们 研究 "
+        }
+      ]
+    },
+    {
+      "id": "hygon",
+      "name": "海光信息",
+      "ticker": "688041",
+      "exchange": "SSE",
+      "xpuScope": [
+        "DCU",
+        "CPU"
+      ],
+      "sourceIds": [
+        "sse",
+        "cninfo"
+      ],
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "lastCheckedAt": "2026-09-05T15:26:28.151Z",
+      "result": "not-determined",
+      "resultReason": "Exchange/issuer entry requests are not a complete announcement-text review.",
+      "sourceCoverage": [
+        {
+          "url": "https://www.hygon.cn/",
+          "resolvedUrl": "https://www.hygon.cn/",
+          "checkedAt": "2026-09-05T15:26:33.323Z",
+          "httpStatus": 200,
+          "accessState": "partial",
+          "excerpt": "海光--用“芯”计算未来 You need to enable JavaScript to run this app. MIT LICENSE Copyright (c) 2020-present Hygon, http://www.hygon.cn/ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE "
+        },
+        {
+          "url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688041",
+          "resolvedUrl": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688041",
+          "checkedAt": "2026-09-05T15:26:30.607Z",
+          "httpStatus": 200,
+          "accessState": "partial",
+          "excerpt": "公司公告 | 上海证券交易所 --> 上海证券交易所服务热线： 400-8888-400 APP下载 微博微信 English 繁 首页 党建 披露 数据 产品 服务 规则 关于 --> 投资者 债券承销机构 上市公司 媒体单位 拟上市公司 会员/证券机构 基金管理公司 公司公告 扫一扫下载 \"上交所移动App\" 上市公司公告全文 --> --> 查询 * 注： 点击公告标题后的 图标，可直接下载该公告PDF文件。 联系我们 意见反馈 网站地图 相关链接 法律声明 注册商标 官方微博 官方微信 APP下载 党建 党建动态 学习园地 图文播报 发行上市 审核公告通知 审核信息披露 审核项目动态 关于上市审核中心 科创战略 披露 交易提示 上交所公告 上市公司信息 融资融券信息 基金信息 公募REITs信息 交易信息披露 债券信息 股票期权信息 监管 上市公司监管 发行上市审核监管 债券监管 交易监管 会员及其他交易参与人监管 自律管理复核 自律监管与市场服务事项 诉求受理中心 数据 股票数据 债券数据 基金数据 公募REITs数据 其他数据 行情信息 上证系列指数 中证系列指数 中华系列指数 产品 股票与存托凭证 基金 债券 股票期权 公募REITs 服务 企业上市服务 IPO业务专栏 沪港通 绿色证券专栏 交易服务 交易技术支持专区 收费及代收税费 投资者服务 上市公司服务 路演服务 技术服务 信息服务 培训服务 司法服务 规则 法律法规 部门规章 本所业务规则 本所业务指南与流程 公开征求意见 制度规则汇编 关于 本所介绍 媒体中心 国际交流与合作 招聘信息 联系我们 研究 "
+        }
+      ]
+    },
+    {
+      "id": "loongson",
+      "name": "龙芯中科",
+      "ticker": "688047",
+      "exchange": "SSE",
+      "xpuScope": [
+        "CPU",
+        "processor ecosystem"
+      ],
+      "sourceIds": [
+        "sse",
+        "cninfo"
+      ],
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "lastCheckedAt": "2026-09-05T15:26:28.152Z",
+      "result": "not-determined",
+      "resultReason": "Exchange/issuer entry requests are not a complete announcement-text review.",
+      "sourceCoverage": [
+        {
+          "url": "https://www.loongson.cn/",
+          "checkedAt": "2026-09-05T15:26:33.492Z",
+          "accessState": "unavailable",
+          "error": "TypeError: fetch failed"
+        },
+        {
+          "url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688047",
+          "resolvedUrl": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688047",
+          "checkedAt": "2026-09-05T15:26:31.409Z",
+          "httpStatus": 200,
+          "accessState": "partial",
+          "excerpt": "公司公告 | 上海证券交易所 --> 上海证券交易所服务热线： 400-8888-400 APP下载 微博微信 English 繁 首页 党建 披露 数据 产品 服务 规则 关于 --> 投资者 债券承销机构 上市公司 媒体单位 拟上市公司 会员/证券机构 基金管理公司 公司公告 扫一扫下载 \"上交所移动App\" 上市公司公告全文 --> --> 查询 * 注： 点击公告标题后的 图标，可直接下载该公告PDF文件。 联系我们 意见反馈 网站地图 相关链接 法律声明 注册商标 官方微博 官方微信 APP下载 党建 党建动态 学习园地 图文播报 发行上市 审核公告通知 审核信息披露 审核项目动态 关于上市审核中心 科创战略 披露 交易提示 上交所公告 上市公司信息 融资融券信息 基金信息 公募REITs信息 交易信息披露 债券信息 股票期权信息 监管 上市公司监管 发行上市审核监管 债券监管 交易监管 会员及其他交易参与人监管 自律管理复核 自律监管与市场服务事项 诉求受理中心 数据 股票数据 债券数据 基金数据 公募REITs数据 其他数据 行情信息 上证系列指数 中证系列指数 中华系列指数 产品 股票与存托凭证 基金 债券 股票期权 公募REITs 服务 企业上市服务 IPO业务专栏 沪港通 绿色证券专栏 交易服务 交易技术支持专区 收费及代收税费 投资者服务 上市公司服务 路演服务 技术服务 信息服务 培训服务 司法服务 规则 法律法规 部门规章 本所业务规则 本所业务指南与流程 公开征求意见 制度规则汇编 关于 本所介绍 媒体中心 国际交流与合作 招聘信息 联系我们 研究 "
+        }
+      ]
+    },
+    {
+      "id": "jingjia-micro",
+      "name": "景嘉微",
+      "ticker": "300474",
+      "exchange": "SZSE",
+      "xpuScope": [
+        "GPU",
+        "graphics and compute chips"
+      ],
+      "sourceIds": [
+        "szse",
+        "cninfo"
+      ],
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "lastCheckedAt": "2026-09-05T15:26:28.152Z",
+      "result": "not-determined",
+      "resultReason": "Exchange/issuer entry requests are not a complete announcement-text review.",
+      "sourceCoverage": [
+        {
+          "url": "https://www.jingjiamicro.com/",
+          "resolvedUrl": "https://www.jingjiamicro.com/",
+          "checkedAt": "2026-09-05T15:26:33.331Z",
+          "httpStatus": 200,
+          "accessState": "partial",
+          "excerpt": "如果您有任何意见或建议请电邮dm-shenzhen@300.cn--> 长沙景嘉微电子股份有限公司 首页 技术能力 技术能力 集成电路 成功研制应用四代GPU芯片 信号处理 显示控制及信号处理 计算与存储 计算和固态存储 宽带自组网 抗干扰自组网通信 小型雷达 小型专用化雷达 电磁频谱 模拟复杂电磁环境 服务支持 服务支持 服务网络 健全的服务网络体系 服务原则 快速响应、积极配合、故障归零 售后服务 积极配合帮助客户解决问题 驱动下载 投资者关系 投资者关系 财务信息 股票动态图 企业治理 定期报告 投资者互动平台 投资者保护 新闻动态 招贤纳士 招贤纳士 人才政策 双轨制晋升通道，提供可视的发展路径 关于景嘉微 关于景嘉微 公司简介 国家高新技术企业，成立于2006年 发展历程 2016年3月深交所上市，股票代码：300474 企业文化 聚焦信息探测、处理和传递，便捷感知世界 荣誉资质 曾获湖南省科技进步一等奖 联系我们 做好客户服务保障工作，全面满足客户需求 下拉选择 all 确认 %{tishi_zhanwei}% 聚焦信息探测处理和传递 便捷感知世界 人才招聘 虚位以待 召唤高手 集成电路 查看详情 + 集成电路 公司是国内首家成功研制国产GPU芯片并实现大规模工程应用的企业，掌握了包括芯片底层逻辑/物理设计、超大规模电路集成验证、模拟接口设计、GPU驱动程序设计等关键技术，在GPU体系结构、图形绘制高效处理算法、高速浮点运算器设计、可复用模块设计、快速大容量存储器接口设计、低功耗设计等方面有深厚的技术积累，先后研制成功JM5系列、JM7系列、JM9系列等具有自主知识"
+        },
+        {
+          "url": "https://www.szse.cn/disclosure/listed/notice/index.html?stock=300474",
+          "resolvedUrl": "https://www.szse.cn/disclosure/listed/notice/index.html?stock=300474",
+          "checkedAt": "2026-09-05T15:26:28.717Z",
+          "httpStatus": 200,
+          "accessState": "partial",
+          "excerpt": "深交所主页 --> 上市公司公告 位置： 信息披露 / 上市公司信息 / 上市公司公告 信息披露 交易备忘 本所公告 通知公告 停复牌 上市公司 固收产品 基金 交易信息 竞价交易公开信息 大宗交易信息 权益类证券大宗交易 不动产基金大宗交易 不动产基金大宗交易（实时） 询价交易信息 不动产基金询价交易（逐笔） 不动产基金询价交易 可转债信息 上市公司向不特定对象发行的可转债信息 匹配成交交易公开信息 协商成交及盘后定价成交交易信息 协商成交申报信息 上市公司向特定对象发行的可转债信息 权证持有人信息 境外投资者持股信息 要约收购 非流通股转让 优先股信息 融资融券 业务公告 标的证券信息 可充抵保证金证券 融资融券交易 单一股票担保物比例 证券出借 战略配售股份信息 监管信息公开 监管动态 监管措施与纪律处分 监管措施 纪律处分 复核决定 交易监管 限制交易与纪律处分 监管案例 会员及其他交易参与人监管 中介机构监管 发行承销监管 问询函件 业务办理进度 信息披露考评 承诺事项及履行情况 董监高人员股份变动 重新上市申请审核进度 上市公司信息 上市公司公告 质量回报双提升 定期报告 当日公告摘要 风险警示板 独立董事信息库 董事会秘书信息库 限售股份解限与减持 上市公司诚信档案 处罚与处分记录 中介机构处罚与处分信息 持续督导意见 财务顾问持续督导意见 保荐机构持续督导意见 基金信息 基金公告 ETF公告 开放式基金净值 申购赎回清单 基金通平台 产品列表 转让信息 报价转让 成交概况 机构信息 做市商信息 基金销售机构信息 债券信息 债券公告 通用质押式回购质押券折算率 问"
+        }
+      ]
+    },
+    {
+      "id": "moore-threads",
+      "name": "摩尔线程",
+      "ticker": "688795",
+      "exchange": "SSE",
+      "xpuScope": [
+        "GPU",
+        "AI accelerator"
+      ],
+      "sourceIds": [
+        "sse",
+        "cninfo"
+      ],
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "lastCheckedAt": "2026-09-05T15:26:28.153Z",
+      "result": "not-determined",
+      "resultReason": "Exchange/issuer entry requests are not a complete announcement-text review.",
+      "sourceCoverage": [
+        {
+          "url": "https://www.mthreads.com/news",
+          "resolvedUrl": "https://www.mthreads.com/news",
+          "checkedAt": "2026-09-05T15:26:31.338Z",
+          "httpStatus": 200,
+          "accessState": "partial",
+          "excerpt": "新闻中心 | 摩尔线程 产品 查看全部产品 融合智算中心 系统与设备 全功能 GPU / 显卡 软件 应用与模型 融合智算中心 MTT KUAE 服务器 MTT SGX5000 算力本与台式机 MTT AIBOOK MTT AICUBE AI 模组 MTT E300 智算中心 MTT S5000 MTT S4000 MTT S3000 MTT S2000 游戏显卡 MTT S80 MTT S70 专业视觉加速卡 MTT X300 MTT S50 数字办公 MTT S30 / S10 基础软件 驱动程序 MUSA SDK Moore Perf System MUSACODE 人工智能 AI 训练套件 AI 推理套件 云原生 GPU 虚拟化 / vGPU KUAE 云原生套件 图形与多媒体 PES 控制中心 Smart Media Engine 科学计算 科学计算套件 应用 摩笔马良 模型 AI 语音 解决方案 全部解决方案 人工智能 云与数据中心 高性能渲染 视频加速 人工智能 融合智算中心 DigitalME 数字人 AI Reality AI 推理 云与数据中心 云电脑 高性能渲染 数字孪生与 GIS 工业设计与制造 视频加速 广播与专业音视频 视频会议 体验中心 大模型体验 MetaPark 软件下载 产品驱动 MUSA 软件 AI 镜像 服务与支持 售后介绍 保修条例 常见问题 信息反馈 开发者 摩尔学院 开发者社区 技术博客 技术文档 公司信息 关于我们 新闻中心 联系我们 加入我们 投资者关系 EN 新闻中心 为您提供关于摩尔线程的最新动态 推荐新闻 词元时代，万物智"
+        },
+        {
+          "url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688795",
+          "resolvedUrl": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688795",
+          "checkedAt": "2026-09-05T15:26:29.709Z",
+          "httpStatus": 200,
+          "accessState": "partial",
+          "excerpt": "公司公告 | 上海证券交易所 --> 上海证券交易所服务热线： 400-8888-400 APP下载 微博微信 English 繁 首页 党建 披露 数据 产品 服务 规则 关于 --> 投资者 债券承销机构 上市公司 媒体单位 拟上市公司 会员/证券机构 基金管理公司 公司公告 扫一扫下载 \"上交所移动App\" 上市公司公告全文 --> --> 查询 * 注： 点击公告标题后的 图标，可直接下载该公告PDF文件。 联系我们 意见反馈 网站地图 相关链接 法律声明 注册商标 官方微博 官方微信 APP下载 党建 党建动态 学习园地 图文播报 发行上市 审核公告通知 审核信息披露 审核项目动态 关于上市审核中心 科创战略 披露 交易提示 上交所公告 上市公司信息 融资融券信息 基金信息 公募REITs信息 交易信息披露 债券信息 股票期权信息 监管 上市公司监管 发行上市审核监管 债券监管 交易监管 会员及其他交易参与人监管 自律管理复核 自律监管与市场服务事项 诉求受理中心 数据 股票数据 债券数据 基金数据 公募REITs数据 其他数据 行情信息 上证系列指数 中证系列指数 中华系列指数 产品 股票与存托凭证 基金 债券 股票期权 公募REITs 服务 企业上市服务 IPO业务专栏 沪港通 绿色证券专栏 交易服务 交易技术支持专区 收费及代收税费 投资者服务 上市公司服务 路演服务 技术服务 信息服务 培训服务 司法服务 规则 法律法规 部门规章 本所业务规则 本所业务指南与流程 公开征求意见 制度规则汇编 关于 本所介绍 媒体中心 国际交流与合作 招聘信息 联系我们 研究 "
+        }
+      ]
+    },
+    {
+      "id": "metax",
+      "name": "沐曦股份",
+      "ticker": "688802",
+      "exchange": "SSE",
+      "xpuScope": [
+        "GPU",
+        "AI accelerator"
+      ],
+      "sourceIds": [
+        "sse",
+        "cninfo"
+      ],
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "lastCheckedAt": "2026-09-05T15:26:28.153Z",
+      "result": "not-determined",
+      "resultReason": "Exchange/issuer entry requests are not a complete announcement-text review.",
+      "sourceCoverage": [
+        {
+          "url": "https://www.metax-tech.com/",
+          "checkedAt": "2026-09-05T15:26:33.345Z",
+          "accessState": "unavailable",
+          "error": "TypeError: fetch failed"
+        },
+        {
+          "url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688802",
+          "resolvedUrl": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688802",
+          "checkedAt": "2026-09-05T15:26:29.178Z",
+          "httpStatus": 200,
+          "accessState": "partial",
+          "excerpt": "公司公告 | 上海证券交易所 --> 上海证券交易所服务热线： 400-8888-400 APP下载 微博微信 English 繁 首页 党建 披露 数据 产品 服务 规则 关于 --> 投资者 债券承销机构 上市公司 媒体单位 拟上市公司 会员/证券机构 基金管理公司 公司公告 扫一扫下载 \"上交所移动App\" 上市公司公告全文 --> --> 查询 * 注： 点击公告标题后的 图标，可直接下载该公告PDF文件。 联系我们 意见反馈 网站地图 相关链接 法律声明 注册商标 官方微博 官方微信 APP下载 党建 党建动态 学习园地 图文播报 发行上市 审核公告通知 审核信息披露 审核项目动态 关于上市审核中心 科创战略 披露 交易提示 上交所公告 上市公司信息 融资融券信息 基金信息 公募REITs信息 交易信息披露 债券信息 股票期权信息 监管 上市公司监管 发行上市审核监管 债券监管 交易监管 会员及其他交易参与人监管 自律管理复核 自律监管与市场服务事项 诉求受理中心 数据 股票数据 债券数据 基金数据 公募REITs数据 其他数据 行情信息 上证系列指数 中证系列指数 中华系列指数 产品 股票与存托凭证 基金 债券 股票期权 公募REITs 服务 企业上市服务 IPO业务专栏 沪港通 绿色证券专栏 交易服务 交易技术支持专区 收费及代收税费 投资者服务 上市公司服务 路演服务 技术服务 信息服务 培训服务 司法服务 规则 法律法规 部门规章 本所业务规则 本所业务指南与流程 公开征求意见 制度规则汇编 关于 本所介绍 媒体中心 国际交流与合作 招聘信息 联系我们 研究 "
+        }
+      ]
+    },
+    {
+      "id": "biren",
+      "name": "壁仞科技",
+      "ticker": "6082",
+      "exchange": "HKEX",
+      "xpuScope": [
+        "GPGPU",
+        "AI accelerator"
+      ],
+      "sourceIds": [
+        "hkex"
+      ],
+      "routes": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ],
+      "lastCheckedAt": "2026-09-05T15:26:28.153Z",
+      "result": "not-determined",
+      "resultReason": "Exchange/issuer entry requests are not a complete announcement-text review.",
+      "sourceCoverage": [
+        {
+          "url": "https://www.birentech.com/",
+          "resolvedUrl": "https://www.birentech.com/",
+          "checkedAt": "2026-09-05T15:26:29.385Z",
+          "httpStatus": 200,
+          "accessState": "partial",
+          "excerpt": "壁仞科技 智绘全球 | BIRENTECH 产品服务 软件生态 资讯中心 关于我们 投资者关系 加入我们 社会责任 产品服务 软件生态 资讯中心 关于我们 投资者关系 加入我们 社会责任 壁仞科技 智绘全球 RENDER THE WORLD WITH INTELLIGENCE 高能效、高算力、高通用性产品， 高能效、高算力、高通用性产品 为智算产业提供澎湃动力 凭借着实用、可靠、创新的产品及解决方案，壁仞科技产品已应用于 AI 数据中心、电信、AI 解决方案、能源及公用事业、金融科技及互联网等关键行业 壁砺™ 166M 数据中心训推一体 AI 加速风冷 OAM 模组 了解更多 壁砺™ 166L 数据中心训推一体 AI 加速液冷 OAM 模组 了解更多 壁砺™ 166C 高性能推理 AI 加速卡 了解更多 壁砺™ 166M 数据中心训推一体 AI 加速风冷 OAM 模组 了解更多 壁砺™ 166L 数据中心训推一体 AI 加速液冷 OAM 模组 了解更多 壁砺™ 166C 高性能推理 AI 加速卡 了解更多 创新技术 壁仞科技拥有开放、前沿、创新的技术生态 BIRENSUPA™ 软件开发平台 自主原创软件开发体系，软硬件全栈协同创新 了解更多 光互连技术 国内首次实现 GPU 和 OCS (光交换机)通信连接，并率先完成光互连技术商用落地 了解更多 BIRENSUPA™ 软件开发平台 自主原创软件开发体系，软硬件全栈协同创新 了解更多 光互连技术 国内首次实现 GPU 和 OCS (光交换机)通信连接，并率先完成光互连技术商用落地 了解更多 壁仞科技坚持自主研发 确保核心技术自主"
+        },
+        {
+          "url": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
+          "checkedAt": "2026-09-05T15:26:28.580Z",
+          "accessState": "unavailable",
+          "error": "TypeError: fetch failed"
+        }
+      ]
+    }
+  ]
+}

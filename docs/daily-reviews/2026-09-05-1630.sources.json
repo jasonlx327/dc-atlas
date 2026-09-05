@@ -1,0 +1,467 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-09-05-full",
+  "sources": [
+    {
+      "ref": "global-source-scan",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "Fresh 70-source global scan",
+      "observedAt": "2026-09-05T14:59:42.872Z",
+      "details": {
+        "stats": {
+          "fetched": 2910,
+          "normalized": 2868,
+          "duplicates": 42,
+          "relevant": 1912,
+          "uncertain": 14,
+          "deepScored": 1912,
+          "clusters": 670,
+          "publicEligible": 0,
+          "rejected": 0,
+          "held": 113,
+          "errors": 6,
+          "routeCounts": {
+            "rumor-watch": 112,
+            "pulse": 445,
+            "policy-index": 0,
+            "research-queue": 0,
+            "hold": 113,
+            "rejected": 0
+          }
+        },
+        "failures": [
+          "ndrc/ndrc-endpoint: fetch failed",
+          "miit/miit-endpoint: fetch failed",
+          "mep-china/mep-china-endpoint: fetch failed",
+          "beijing-gov/beijing-gov-endpoint: fetch failed",
+          "shanghai-gov/shanghai-gov-endpoint: fetch failed",
+          "xai-news/xai-news-endpoint: HTTP 403"
+        ],
+        "path": "artifacts/event-intelligence/2026-09-05-supplement-event.json"
+      }
+    },
+    {
+      "ref": "company-checks",
+      "evidenceKind": "workflow-state",
+      "sourceName": "50-company current official-entry checks",
+      "observedAt": "2026-09-05T14:58:46.910Z",
+      "details": {
+        "path": "docs/daily-reviews/2026-09-05-1630.core-company-checks.json",
+        "checked": 50,
+        "changed": 3,
+        "noChange": 8,
+        "notDetermined": 39
+      }
+    },
+    {
+      "ref": "xpu-checks",
+      "evidenceKind": "workflow-state",
+      "sourceName": "Seven listed China XPU issuers: exchange and issuer checks",
+      "observedAt": "2026-09-05T15:44:05.449Z",
+      "details": {
+        "path": "docs/daily-reviews/2026-09-05-1630.china-xpu-checks.json",
+        "result": "7 not-determined; announcement-text coverage incomplete"
+      }
+    },
+    {
+      "ref": "morning-handoff",
+      "evidenceKind": "runtime-state",
+      "sourceName": "Cloudflare candidate and closure KV read after successful preflight",
+      "observedAt": "2026-09-05T15:44:05.449Z",
+      "details": {
+        "candidateDay": "2026-09-03",
+        "candidateGeneratedAt": "2026-09-03T08:50:03.044Z",
+        "closureDay": "2026-09-05",
+        "closureStatus": "blocked",
+        "trustedMorningCutoff": false,
+        "cutoffFallback": "At least 24 hours; 2026-09-04T21:47:45+08:00 to 2026-09-05T22:53:19+08:00",
+        "localInterruptedRun": "../idc-atlas-16-30-20260905",
+        "draftsRechecked": 10,
+        "draftsReleased": 8,
+        "draftsHeld": 2
+      }
+    },
+    {
+      "ref": "column-parity-review",
+      "evidenceKind": "workflow-state",
+      "sourceName": "Research inventory and bilingual rendered-route regression review",
+      "observedAt": "2026-09-05T15:44:05.449Z",
+      "details": {
+        "contentChanged": false,
+        "routeChecks": [
+          "/columns",
+          "/en/columns"
+        ],
+        "newColumnApproved": false,
+        "reason": "No new deep-research article approved; preserve current inventory, bilingual metadata and covers."
+      }
+    },
+    {
+      "ref": "moscow-mining-ban-2032-20260904",
+      "evidenceKind": "public-source",
+      "sourceName": "Data Center Dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/moscow-bans-cryptomining-until-end-of-2032-citing-power-concerns/",
+      "publishedAt": "2026-09-04T14:25:15Z",
+      "publishedTimePrecision": "source timestamp",
+      "accessState": "public",
+      "independenceGroup": "datacenterdynamics",
+      "sections": [
+        "rumors"
+      ],
+      "language": "en",
+      "discoveredAt": "2026-09-05T15:44:05.449Z",
+      "entities": [],
+      "eventKey": "moscow-mining-ban-2032-20260904",
+      "sourceReviewedAt": "2026-09-05T15:44:05.449Z",
+      "claims": [
+        "DCD reports that Russian Government Decree 936 prohibits crypto mining and mining-pool activity in Moscow, surrounding areas and parts of Kursk through the end of 2032, linking the measure to pressure on electricity supply."
+      ]
+    },
+    {
+      "ref": "amd-threadripper-halo-station-20260904",
+      "evidenceKind": "public-source",
+      "sourceName": "ServeTheHome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.servethehome.com/amd-announces-threadripper-halo-station/",
+      "publishedAt": "2026-09-04T17:00:02Z",
+      "publishedTimePrecision": "source timestamp",
+      "accessState": "public",
+      "independenceGroup": "servethehome",
+      "sections": [
+        "rumors"
+      ],
+      "language": "en",
+      "discoveredAt": "2026-09-05T15:44:05.449Z",
+      "entities": [
+        "AMD"
+      ],
+      "eventKey": "amd-threadripper-halo-station-20260904",
+      "sourceReviewedAt": "2026-09-05T15:44:05.449Z",
+      "claims": [
+        "ServeTheHome reports that AMD demonstrated a tower workstation combining Threadripper Pro with Instinct MI350P at IFA, using liquid-cooled processors and accelerators for local inference and development. Pricing and availability had not been announced at publication."
+      ]
+    },
+    {
+      "ref": "firmus-apx-east-capacity-20260904",
+      "evidenceKind": "public-source",
+      "sourceName": "Data Center Dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/firmus-to-invest-300m-in-subcos-upcoming-australia-us-subsea-cable/",
+      "publishedAt": "2026-09-04T13:00:34Z",
+      "publishedTimePrecision": "source timestamp",
+      "accessState": "public",
+      "independenceGroup": "datacenterdynamics",
+      "sections": [
+        "rumors"
+      ],
+      "language": "en",
+      "discoveredAt": "2026-09-05T15:44:05.449Z",
+      "entities": [
+        "Firmus",
+        "SubCo"
+      ],
+      "eventKey": "firmus-apx-east-capacity-20260904",
+      "sourceReviewedAt": "2026-09-05T15:44:05.449Z",
+      "claims": [
+        "DCD reports that Firmus plans to invest $300 million for up to 150Tbps of dedicated capacity over 25 years on SubCo's APX East cable. The Australia–US link targets service in Q4 2028; this is not capacity already in operation."
+      ]
+    },
+    {
+      "ref": "tcs-hypervault-hyderabad-1gw-20260905",
+      "evidenceKind": "public-source",
+      "sourceName": "IT之家",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/0/998/810.htm",
+      "publishedAt": "2026-09-05T11:07:31Z",
+      "publishedTimePrecision": "source timestamp",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ],
+      "language": "zh",
+      "discoveredAt": "2026-09-05T15:44:05.449Z",
+      "entities": [
+        "TCS",
+        "HyperVault"
+      ],
+      "eventKey": "tcs-hypervault-hyderabad-1gw-20260905",
+      "sourceReviewedAt": "2026-09-05T15:44:05.449Z",
+      "claims": [
+        "IT Home reports that TCS subsidiary HyperVault has secured 264 acres for a phased 1GW AI data-center campus in Hyderabad. The reported capacity is a development target, not an operating footprint."
+      ]
+    },
+    {
+      "ref": "nscale-preipo-financing-20260904",
+      "evidenceKind": "public-source",
+      "sourceName": "The Next Web / Bloomberg",
+      "tier": "T3",
+      "canonicalUrl": "https://thenextweb.com/news/nscale-3-5-billion-pre-ipo-financing-nvidia-third-point-103bn-contracts-narvik-norway-new-york-listing",
+      "publishedAt": "2026-09-04T19:18:00Z",
+      "publishedTimePrecision": "source timestamp",
+      "accessState": "public",
+      "independenceGroup": "bloomberg",
+      "sections": [
+        "rumors"
+      ],
+      "language": "en",
+      "discoveredAt": "2026-09-05T15:44:05.449Z",
+      "entities": [
+        "Nscale",
+        "NVIDIA"
+      ],
+      "eventKey": "nscale-preipo-financing-20260904",
+      "sourceReviewedAt": "2026-09-05T15:44:05.449Z",
+      "claims": [
+        "The Next Web, citing Bloomberg, reports that Nscale is discussing up to $3.5 billion in pre-IPO funding through convertible notes and a potential NVIDIA investment. Talks continue; the amount, participants and listing plans may change."
+      ]
+    },
+    {
+      "ref": "crusoe-funding-20260903",
+      "evidenceKind": "public-source",
+      "sourceName": "Bloomberg News",
+      "tier": "T2",
+      "canonicalUrl": "https://news.bloomberglaw.com/business-and-practice/crusoe-raises-over-3-billion-in-round-at-30-billion-valuation",
+      "publishedAt": "2026-09-03T22:38:00Z",
+      "publishedTimePrecision": "source timestamp",
+      "accessState": "partial",
+      "independenceGroup": "bloomberg",
+      "sections": [
+        "rumors"
+      ],
+      "language": "en",
+      "discoveredAt": "2026-09-05T15:44:05.449Z",
+      "entities": [
+        "Crusoe"
+      ],
+      "eventKey": "crusoe-funding-20260903",
+      "sourceReviewedAt": "2026-09-05T15:44:05.449Z",
+      "claims": [
+        "Bloomberg, citing people familiar with the matter, reports that Crusoe raised over $3 billion at roughly a $30 billion valuation, co-led by Atreides Management and Valor Equity Partners. Completion is reported by the outlet, not announced by the company."
+      ]
+    },
+    {
+      "ref": "energy-star-doe-transition-20260904",
+      "evidenceKind": "public-source",
+      "sourceName": "Utility Dive / Facilities Dive",
+      "tier": "T3",
+      "canonicalUrl": "https://www.utilitydive.com/news/supporters-hopeful-as-doe-and-epa-finalize-energy-star-transition-plan/829701/",
+      "publishedAt": "2026-09-04T12:46:21Z",
+      "publishedTimePrecision": "source timestamp",
+      "accessState": "public",
+      "independenceGroup": "industry-dive",
+      "sections": [
+        "rumors"
+      ],
+      "language": "en",
+      "discoveredAt": "2026-09-05T15:44:05.449Z",
+      "entities": [
+        "DOE",
+        "EPA"
+      ],
+      "eventKey": "energy-star-doe-transition-20260904",
+      "sourceReviewedAt": "2026-09-05T15:44:05.449Z",
+      "claims": [
+        "Utility Dive reports that DOE and EPA finalized a plan to transfer Energy Star administration, covering knowledge, legal, data and systems work. Industry groups are focused on funding and staffing needed to maintain continuity of the efficiency program."
+      ]
+    },
+    {
+      "ref": "aws-bedrock-servicenow-connector-2026",
+      "evidenceKind": "public-source",
+      "sourceName": "AWS What's New",
+      "tier": "T1",
+      "canonicalUrl": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-bedrock-managed-knowledge-base-servicenow-native-data-source-connector/",
+      "publishedAt": "2026-09-04T21:14:00Z",
+      "publishedTimePrecision": "source timestamp",
+      "accessState": "public",
+      "independenceGroup": "aws.amazon.com",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "mna",
+        "capacity",
+        "cooling",
+        "supply-chain",
+        "power-model-demand"
+      ],
+      "language": "en",
+      "discoveredAt": "2026-09-05T15:44:05.449Z",
+      "entities": [],
+      "eventKey": "aws-bedrock-servicenow-connector-2026",
+      "sourceReviewedAt": "2026-09-05T15:44:05.449Z",
+      "claims": [
+        "AWS says Amazon Bedrock Managed Knowledge Base can ingest ServiceNow knowledge articles, service catalog items and attachments, automatically extracting metadata and synchronizing incremental changes for AI assistants grounded in enterprise knowledge."
+      ]
+    },
+    {
+      "ref": "nscale-figure-barstow-compute-2026",
+      "evidenceKind": "public-source",
+      "sourceName": "Nscale",
+      "tier": "T1",
+      "canonicalUrl": "https://www.nscale.com/press-releases/nscale-and-figure",
+      "publishedAt": "2026-09-03T00:00:00+01:00",
+      "publishedTimePrecision": "date-only; clock placeholder not source-stated",
+      "accessState": "public",
+      "independenceGroup": "www.nscale.com",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "mna",
+        "capacity",
+        "cooling",
+        "supply-chain",
+        "power-model-demand"
+      ],
+      "language": "en",
+      "discoveredAt": "2026-09-05T15:44:05.449Z",
+      "entities": [],
+      "eventKey": "nscale-figure-barstow-compute-2026",
+      "sourceReviewedAt": "2026-09-05T15:44:05.449Z",
+      "claims": [
+        "Nscale says its multi-year agreement with Figure could deploy up to 100,000 NVIDIA Vera Rubin GPUs. Initial deployment is targeted for the second half of 2027 in Barstow, Texas, with a $3.5B initial compute commitment and an intent to scale beyond $6B. Nscale will also become a Figure shareholder and preferred compute provider."
+      ]
+    },
+    {
+      "ref": "pure-dc-brent-cross-b2-piling-2026",
+      "evidenceKind": "public-source",
+      "sourceName": "Glencar Construction",
+      "tier": "T1",
+      "canonicalUrl": "https://www.glencar.com/news-articles/glencar-starts-piling-on-final-build-phase-of-pure-dcs-1bn-brent-cross-data-centre-campus/",
+      "publishedAt": "2026-09-02T00:00:00+01:00",
+      "publishedTimePrecision": "date-only; clock placeholder not source-stated",
+      "accessState": "public",
+      "independenceGroup": "www.glencar.com",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "mna",
+        "capacity",
+        "cooling",
+        "supply-chain",
+        "power-model-demand"
+      ],
+      "language": "en",
+      "discoveredAt": "2026-09-05T15:44:05.449Z",
+      "entities": [],
+      "eventKey": "pure-dc-brent-cross-b2-piling-2026",
+      "sourceReviewedAt": "2026-09-05T15:44:05.449Z",
+      "claims": [
+        "Main contractor Glencar says piling has begun for the west cold shell of Pure DC's LON01B2 development in London. B2 is planned for 70MW and more than 23,000 square metres of additional space; completion would bring the campus to 90MW, with B2 scheduled for Q2 2029."
+      ]
+    },
+    {
+      "ref": "cerebras-compute-nordic-mikkeli-165mw-2026",
+      "evidenceKind": "public-source",
+      "sourceName": "Cerebras Investor Relations",
+      "tier": "T1",
+      "canonicalUrl": "https://investors.cerebras.ai/news-releases/news-release-details/cerebras-and-compute-nordic-finland-announce-new-165-mw-ai-data",
+      "publishedAt": "2026-09-01T00:00:00+03:00",
+      "publishedTimePrecision": "date-only; clock placeholder not source-stated",
+      "accessState": "public",
+      "independenceGroup": "investors.cerebras.ai",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "mna",
+        "capacity",
+        "cooling",
+        "supply-chain",
+        "power-model-demand"
+      ],
+      "language": "en",
+      "discoveredAt": "2026-09-05T15:44:05.449Z",
+      "entities": [],
+      "eventKey": "cerebras-compute-nordic-mikkeli-165mw-2026",
+      "sourceReviewedAt": "2026-09-05T15:44:05.449Z",
+      "claims": [
+        "Cerebras says the Mikkeli project will scale through 50MW, 80MW and 165MW phases, with the initial 50MW phase already under construction. A series of seven-year service orders underpins the capacity arrangement. The site is designed for closed-loop cooling and heat recovery, with estimated regional investment of €1.0B–€1.7B."
+      ]
+    },
+    {
+      "ref": "t5-everon-salute-restructure-2026",
+      "evidenceKind": "public-source",
+      "sourceName": "EverOn Data Center Services",
+      "tier": "T1",
+      "canonicalUrl": "https://everondcs.com/blog/t5-services-announces-next-phase-of-strategic-evolution-with-launch-of-everon-data-center-services-and-operations-transition-to-salute/",
+      "publishedAt": "2026-09-01T00:00:00-04:00",
+      "publishedTimePrecision": "date-only; clock placeholder not source-stated",
+      "accessState": "public",
+      "independenceGroup": "everondcs.com",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "mna",
+        "capacity",
+        "cooling",
+        "supply-chain",
+        "power-model-demand"
+      ],
+      "language": "en",
+      "discoveredAt": "2026-09-05T15:44:05.449Z",
+      "entities": [],
+      "eventKey": "t5-everon-salute-restructure-2026",
+      "sourceReviewedAt": "2026-09-05T15:44:05.449Z",
+      "claims": [
+        "EverOn says T5 Construction became the independent data-center contractor EverOn Data Center Services on September 1, while T5 Operations entered a definitive agreement to join Salute. Existing EverOn projects, contracts and customer relationships remain in place; transaction terms and the closing timetable for T5 Operations were not disclosed."
+      ]
+    },
+    {
+      "ref": "nvidia-hugging-face-acquisition-2026",
+      "evidenceKind": "public-source",
+      "sourceName": "NVIDIA Blog",
+      "tier": "T1",
+      "canonicalUrl": "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/",
+      "publishedAt": "2026-09-03T00:00:00-07:00",
+      "publishedTimePrecision": "date-only; clock placeholder not source-stated",
+      "accessState": "public",
+      "independenceGroup": "blogs.nvidia.com",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "mna",
+        "capacity",
+        "cooling",
+        "supply-chain",
+        "power-model-demand",
+        "rumors"
+      ],
+      "language": "en",
+      "discoveredAt": "2026-09-05T15:44:05.449Z",
+      "entities": [],
+      "eventKey": "nvidia-hugging-face-acquisition-2026",
+      "sourceReviewedAt": "2026-09-05T15:44:05.449Z",
+      "claims": [
+        "NVIDIA says it has agreed to acquire Hugging Face for $12,930,300,000. Hugging Face will continue to support open-source and open-weight models, multi-cloud deployment and multiple accelerators, and NVIDIA compute will not be required. The announcement does not state an expected closing date or regulatory conditions."
+      ]
+    },
+    {
+      "ref": "flex-epc-power-acquisition-2026",
+      "evidenceKind": "public-source",
+      "sourceName": "Flex Investor Relations",
+      "tier": "T1",
+      "canonicalUrl": "https://investors.flex.com/news/news-details/2026/Flex-to-Acquire-EPC-Power-Adding-Leading-Power-Conversion-Capabilities-for-AI-Data-Centers-and-Grid-Applications/default.aspx",
+      "publishedAt": "2026-09-03T00:00:00-05:00",
+      "publishedTimePrecision": "date-only; clock placeholder not source-stated",
+      "accessState": "public",
+      "independenceGroup": "investors.flex.com",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "mna",
+        "capacity",
+        "cooling",
+        "supply-chain",
+        "power-model-demand"
+      ],
+      "language": "en",
+      "discoveredAt": "2026-09-05T15:44:05.449Z",
+      "entities": [],
+      "eventKey": "flex-epc-power-acquisition-2026",
+      "sourceReviewedAt": "2026-09-05T15:44:05.449Z",
+      "claims": [
+        "Flex says it signed a definitive agreement to acquire power-conversion supplier EPC Power at a value of $4.4B, with closing expected in calendar Q4 2026 and integration into its Cloud and Power Infrastructure segment. EPC Power has more than 15GW deployed in 62 countries, and Flex expects its annual US manufacturing capacity to exceed 30GW in 2027."
+      ]
+    }
+  ]
+}

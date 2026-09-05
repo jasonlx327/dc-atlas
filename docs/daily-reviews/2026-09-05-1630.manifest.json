@@ -1,0 +1,548 @@
+{
+  "schemaVersion": "1.1",
+  "runId": "atlas-2026-09-05-full",
+  "runDate": "2026-09-05",
+  "cutoff": "2026-09-04T21:47:45+08:00",
+  "displayTimezones": {
+    "zh": "Asia/Shanghai",
+    "en": "America/New_York"
+  },
+  "status": "ready-for-partial-release",
+  "projectPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-supplement-20260905",
+  "sourceLedgerPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-supplement-20260905/docs/daily-reviews/2026-09-05-1630.sources.json",
+  "host": "XlargedeMacBook-Air.local",
+  "headBefore": "3a18245486f37eb317bf9f8f5aad51d45c5b2537",
+  "sections": {
+    "idc-pulse": {
+      "status": "updated",
+      "checkedAt": "2026-09-05T15:44:05.449Z",
+      "newIds": [
+        "aws-bedrock-servicenow-connector-2026",
+        "nscale-figure-barstow-compute-2026",
+        "pure-dc-brent-cross-b2-piling-2026",
+        "cerebras-compute-nordic-mikkeli-165mw-2026",
+        "t5-everon-salute-restructure-2026"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 5,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "aws-bedrock-servicenow-connector-2026",
+        "nscale-figure-barstow-compute-2026",
+        "pure-dc-brent-cross-b2-piling-2026",
+        "cerebras-compute-nordic-mikkeli-165mw-2026",
+        "t5-everon-salute-restructure-2026",
+        "global-source-scan",
+        "company-checks",
+        "morning-handoff"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Five bilingual official updates; local source gaps do not suppress independent source-backed items."
+    },
+    "listed-companies": {
+      "status": "updated",
+      "checkedAt": "2026-09-05T15:44:05.449Z",
+      "newIds": [
+        "nvidia-hugging-face-acquisition-2026",
+        "flex-epc-power-acquisition-2026"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 2,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "nvidia-hugging-face-acquisition-2026",
+        "flex-epc-power-acquisition-2026",
+        "global-source-scan",
+        "company-checks",
+        "morning-handoff"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "NVIDIA and Flex agreements; closing not inferred. Other inaccessible issuers remain local handoffs."
+    },
+    "mna": {
+      "status": "updated",
+      "checkedAt": "2026-09-05T15:44:05.449Z",
+      "newIds": [
+        "nvidia-hugging-face-2026",
+        "flex-epc-power-2026",
+        "salute-t5-operations-2026"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 3,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "nvidia-hugging-face-acquisition-2026",
+        "flex-epc-power-acquisition-2026",
+        "t5-everon-salute-restructure-2026",
+        "global-source-scan",
+        "company-checks",
+        "morning-handoff"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Three signed transactions in the formal M&A adapter, with English route mappings; no closing inferred."
+    },
+    "capacity": {
+      "status": "updated",
+      "checkedAt": "2026-09-05T15:44:05.449Z",
+      "newIds": [
+        "nscale-figure-barstow-compute-2026",
+        "pure-dc-brent-cross-b2-piling-2026",
+        "cerebras-compute-nordic-mikkeli-165mw-2026"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 3,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "nscale-figure-barstow-compute-2026",
+        "pure-dc-brent-cross-b2-piling-2026",
+        "cerebras-compute-nordic-mikkeli-165mw-2026",
+        "global-source-scan",
+        "company-checks",
+        "morning-handoff"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Three formal capacity/state records; GPU ceiling, planned capacity and construction remain distinct from commissioning."
+    },
+    "cooling": {
+      "status": "updated",
+      "checkedAt": "2026-09-05T15:44:05.449Z",
+      "newIds": [
+        "cerebras-mikkeli-closed-loop-2026"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "cerebras-compute-nordic-mikkeli-165mw-2026",
+        "global-source-scan",
+        "company-checks",
+        "morning-handoff"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Closed-loop cooling and heat recovery are design features, not measured savings."
+    },
+    "compute-products": {
+      "status": "blocked",
+      "checkedAt": "2026-09-05T15:44:05.449Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-15491fab099aff570e34",
+        "evt-8fab3ef561c3891d0d4c",
+        "evt-1765ddcffaf1a90a49a7",
+        "evt-e11cbe85d95ae026efa4",
+        "evt-a77a0b00170e6fa8f4b9",
+        "evt-b644b9ef2abe20322e00",
+        "evt-98a336a31bd5a66b6f20",
+        "evt-3a8b109e97e6bd13895d",
+        "evt-d598dd68593fbd0b2d96",
+        "evt-0d45a27a5a9e9784c5fd",
+        "evt-586f4b9ee85b58215ab1",
+        "evt-d8e4e6b714923c24ba56",
+        "evt-79c70b5a5b7ad747ae02",
+        "evt-abb1bb78758a8a314df1",
+        "evt-18c34431384e5b911637",
+        "evt-60321d1ca8948aca9c68",
+        "evt-2133350d30c05f03ad03",
+        "evt-89b8f1cac5800df29f60",
+        "evt-5367f5b22c0bd9522fea",
+        "evt-dd954f71eb7cb41c958a",
+        "evt-56962310d581f79a0faa",
+        "evt-b5c3b15c38dcb4ce9b31",
+        "evt-1ea0fe782790fb6d934a",
+        "evt-fd535edde99186f655d1",
+        "evt-48cd1ceaa933f9df039a",
+        "evt-2e0405b0f55921d18c54",
+        "evt-751da10e599d3657bd9e",
+        "evt-02cb619b1a77a5819a08",
+        "evt-a39c8f94b86cdf219d33",
+        "evt-dab0a848e191c3054a32",
+        "evt-d91dd95b130447bab68e",
+        "evt-fcc6a40461331b6c43a5",
+        "evt-1fc88dfd8242b53c06de",
+        "evt-8c6c87ebaf52b8715db9",
+        "evt-c821ba6dbe319739e98a",
+        "evt-a53844fe914b0fdacfca",
+        "evt-4178db8d115a94410d3f"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-source-scan",
+        "company-checks",
+        "morning-handoff"
+      ],
+      "accessGaps": [
+        "AMD Halo Station is published as attributed media; final issuer specification/pricing/availability has not been obtained. Formal catalog retained."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "AMD Halo Station is published as attributed media; final issuer specification/pricing/availability has not been obtained. Formal catalog retained."
+    },
+    "china-gpu": {
+      "status": "blocked",
+      "checkedAt": "2026-09-05T15:44:05.449Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-15491fab099aff570e34",
+        "evt-8fab3ef561c3891d0d4c",
+        "evt-1765ddcffaf1a90a49a7",
+        "evt-e11cbe85d95ae026efa4",
+        "evt-a77a0b00170e6fa8f4b9",
+        "evt-b644b9ef2abe20322e00",
+        "evt-98a336a31bd5a66b6f20",
+        "evt-3a8b109e97e6bd13895d",
+        "evt-d598dd68593fbd0b2d96",
+        "evt-0d45a27a5a9e9784c5fd",
+        "evt-586f4b9ee85b58215ab1",
+        "evt-d8e4e6b714923c24ba56",
+        "evt-79c70b5a5b7ad747ae02",
+        "evt-abb1bb78758a8a314df1",
+        "evt-18c34431384e5b911637",
+        "evt-60321d1ca8948aca9c68",
+        "evt-2133350d30c05f03ad03",
+        "evt-89b8f1cac5800df29f60",
+        "evt-5367f5b22c0bd9522fea",
+        "evt-dd954f71eb7cb41c958a",
+        "evt-56962310d581f79a0faa",
+        "evt-b5c3b15c38dcb4ce9b31",
+        "evt-1ea0fe782790fb6d934a",
+        "evt-fd535edde99186f655d1",
+        "evt-48cd1ceaa933f9df039a",
+        "evt-2e0405b0f55921d18c54",
+        "evt-751da10e599d3657bd9e",
+        "evt-02cb619b1a77a5819a08",
+        "evt-a39c8f94b86cdf219d33",
+        "evt-dab0a848e191c3054a32",
+        "evt-d91dd95b130447bab68e",
+        "evt-fcc6a40461331b6c43a5",
+        "evt-1fc88dfd8242b53c06de",
+        "evt-8c6c87ebaf52b8715db9",
+        "evt-c821ba6dbe319739e98a",
+        "evt-a53844fe914b0fdacfca",
+        "evt-4178db8d115a94410d3f"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-source-scan",
+        "company-checks",
+        "morning-handoff",
+        "xpu-checks"
+      ],
+      "accessGaps": [
+        "All seven exchange/issuer entry checks executed, but complete current announcement texts were not obtained; no verified-no-change assertion."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "All seven exchange/issuer entry checks executed, but complete current announcement texts were not obtained; no verified-no-change assertion."
+    },
+    "supply-chain": {
+      "status": "updated",
+      "checkedAt": "2026-09-05T15:44:05.449Z",
+      "newIds": [
+        "flex-epc-power-acquisition-2026"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "flex-epc-power-acquisition-2026",
+        "global-source-scan",
+        "company-checks",
+        "morning-handoff"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Power-conversion supply-chain transaction cross-routed through versioned formal supplement; independent AMD equipment reporting in intelligence."
+    },
+    "power-model-demand": {
+      "status": "updated",
+      "checkedAt": "2026-09-05T15:44:05.449Z",
+      "newIds": [
+        "aws-bedrock-servicenow-connector-2026"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "aws-bedrock-servicenow-connector-2026",
+        "global-source-scan",
+        "company-checks",
+        "morning-handoff"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Official AWS connector announcement added to the model-demand chain; no capex inference."
+    },
+    "earnings-calendar": {
+      "status": "blocked",
+      "checkedAt": "2026-09-05T15:44:05.449Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-15491fab099aff570e34",
+        "evt-8fab3ef561c3891d0d4c",
+        "evt-1765ddcffaf1a90a49a7",
+        "evt-e11cbe85d95ae026efa4",
+        "evt-a77a0b00170e6fa8f4b9",
+        "evt-b644b9ef2abe20322e00",
+        "evt-98a336a31bd5a66b6f20",
+        "evt-3a8b109e97e6bd13895d",
+        "evt-d598dd68593fbd0b2d96",
+        "evt-0d45a27a5a9e9784c5fd",
+        "evt-586f4b9ee85b58215ab1",
+        "evt-d8e4e6b714923c24ba56",
+        "evt-79c70b5a5b7ad747ae02",
+        "evt-abb1bb78758a8a314df1",
+        "evt-18c34431384e5b911637",
+        "evt-60321d1ca8948aca9c68",
+        "evt-2133350d30c05f03ad03",
+        "evt-89b8f1cac5800df29f60",
+        "evt-5367f5b22c0bd9522fea",
+        "evt-dd954f71eb7cb41c958a",
+        "evt-56962310d581f79a0faa",
+        "evt-b5c3b15c38dcb4ce9b31",
+        "evt-1ea0fe782790fb6d934a",
+        "evt-fd535edde99186f655d1",
+        "evt-48cd1ceaa933f9df039a",
+        "evt-2e0405b0f55921d18c54",
+        "evt-751da10e599d3657bd9e",
+        "evt-02cb619b1a77a5819a08",
+        "evt-a39c8f94b86cdf219d33",
+        "evt-dab0a848e191c3054a32",
+        "evt-d91dd95b130447bab68e",
+        "evt-fcc6a40461331b6c43a5",
+        "evt-1fc88dfd8242b53c06de",
+        "evt-8c6c87ebaf52b8715db9",
+        "evt-c821ba6dbe319739e98a",
+        "evt-a53844fe914b0fdacfca",
+        "evt-4178db8d115a94410d3f"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-source-scan",
+        "company-checks",
+        "morning-handoff",
+        "xpu-checks"
+      ],
+      "accessGaps": [
+        "Broadcom IR timed out; HPE/Ciena and XPU result leads lack complete current official result/call evidence. Existing calendar retained; no new earnings analysis published."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Broadcom IR timed out; HPE/Ciena and XPU result leads lack complete current official result/call evidence. Existing calendar retained; no new earnings analysis published."
+    },
+    "rumors": {
+      "status": "updated",
+      "checkedAt": "2026-09-05T15:44:05.449Z",
+      "newIds": [
+        "editor-moscow-mining-ban-2032-20260904",
+        "editor-amd-threadripper-halo-station-20260904",
+        "editor-firmus-apx-east-capacity-20260904",
+        "editor-tcs-hypervault-hyderabad-1gw-20260905",
+        "editor-nscale-preipo-financing-20260904",
+        "editor-crusoe-funding-20260903",
+        "editor-energy-star-doe-transition-20260904"
+      ],
+      "updatedIds": [
+        "nvidia-hugging-face-12-9b-report-2026"
+      ],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 7,
+      "sourceRefs": [
+        "moscow-mining-ban-2032-20260904",
+        "amd-threadripper-halo-station-20260904",
+        "firmus-apx-east-capacity-20260904",
+        "tcs-hypervault-hyderabad-1gw-20260905",
+        "nscale-preipo-financing-20260904",
+        "crusoe-funding-20260903",
+        "energy-star-doe-transition-20260904",
+        "nvidia-hugging-face-acquisition-2026",
+        "global-source-scan",
+        "company-checks",
+        "morning-handoff"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Seven canonical-source stable IDs applied through event:intelligence:apply; one historical item upgraded with original URL/time retained. No KV decision injection."
+    },
+    "policy": {
+      "status": "blocked",
+      "checkedAt": "2026-09-05T15:44:05.449Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-15491fab099aff570e34",
+        "evt-8fab3ef561c3891d0d4c",
+        "evt-1765ddcffaf1a90a49a7",
+        "evt-e11cbe85d95ae026efa4",
+        "evt-a77a0b00170e6fa8f4b9",
+        "evt-b644b9ef2abe20322e00",
+        "evt-98a336a31bd5a66b6f20",
+        "evt-3a8b109e97e6bd13895d",
+        "evt-d598dd68593fbd0b2d96",
+        "evt-0d45a27a5a9e9784c5fd",
+        "evt-586f4b9ee85b58215ab1",
+        "evt-d8e4e6b714923c24ba56",
+        "evt-79c70b5a5b7ad747ae02",
+        "evt-abb1bb78758a8a314df1",
+        "evt-18c34431384e5b911637",
+        "evt-60321d1ca8948aca9c68",
+        "evt-2133350d30c05f03ad03",
+        "evt-89b8f1cac5800df29f60",
+        "evt-5367f5b22c0bd9522fea",
+        "evt-dd954f71eb7cb41c958a",
+        "evt-56962310d581f79a0faa",
+        "evt-b5c3b15c38dcb4ce9b31",
+        "evt-1ea0fe782790fb6d934a",
+        "evt-fd535edde99186f655d1",
+        "evt-48cd1ceaa933f9df039a",
+        "evt-2e0405b0f55921d18c54",
+        "evt-751da10e599d3657bd9e",
+        "evt-02cb619b1a77a5819a08",
+        "evt-a39c8f94b86cdf219d33",
+        "evt-dab0a848e191c3054a32",
+        "evt-d91dd95b130447bab68e",
+        "evt-fcc6a40461331b6c43a5",
+        "evt-1fc88dfd8242b53c06de",
+        "evt-8c6c87ebaf52b8715db9",
+        "evt-c821ba6dbe319739e98a",
+        "evt-a53844fe914b0fdacfca",
+        "evt-4178db8d115a94410d3f"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-source-scan",
+        "company-checks",
+        "morning-handoff"
+      ],
+      "accessGaps": [
+        "China NDRC/MIIT/environment and regional sources failed; US policy scan completed but Energy Star/Moscow only attributed media. Formal policy records retained."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "China NDRC/MIIT/environment and regional sources failed; US policy scan completed but Energy Star/Moscow only attributed media. Formal policy records retained."
+    },
+    "columns": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-05T15:44:05.449Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-source-scan",
+        "company-checks",
+        "morning-handoff",
+        "column-parity-review"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "Existing research inventory, bilingual routing, covers and metadata reviewed; no new source-complete research article approved. No forced column update."
+    }
+  },
+  "release": {
+    "mode": "partial",
+    "tests": "passed",
+    "build": "passed",
+    "cloudflare": "pending",
+    "formalReadback": "pending",
+    "dailySnapshot": "pending",
+    "sites": "pending",
+    "sitesReadback": "pending",
+    "commit": null,
+    "workerCommit": null,
+    "sitesCommit": null,
+    "cloudflareVersion": null,
+    "sitesVersion": null,
+    "formalUrl": null,
+    "sitesUrl": null,
+    "includedSections": [
+      "idc-pulse",
+      "listed-companies",
+      "mna",
+      "capacity",
+      "cooling",
+      "supply-chain",
+      "power-model-demand",
+      "rumors"
+    ],
+    "heldSections": [
+      "compute-products",
+      "china-gpu",
+      "earnings-calendar",
+      "policy"
+    ],
+    "testBaseline": null,
+    "lint": "passed-with-27-existing-warnings",
+    "cloudflareDryRun": "passed"
+  },
+  "blockers": [
+    {
+      "scope": "section",
+      "section": "compute-products",
+      "reason": "AMD Halo Station is published as attributed media; final issuer specification/pricing/availability has not been obtained. Formal catalog retained."
+    },
+    {
+      "scope": "section",
+      "section": "china-gpu",
+      "reason": "All seven exchange/issuer entry checks executed, but complete current announcement texts were not obtained; no verified-no-change assertion."
+    },
+    {
+      "scope": "section",
+      "section": "earnings-calendar",
+      "reason": "Broadcom IR timed out; HPE/Ciena and XPU result leads lack complete current official result/call evidence. Existing calendar retained; no new earnings analysis published."
+    },
+    {
+      "scope": "section",
+      "section": "policy",
+      "reason": "China NDRC/MIIT/environment and regional sources failed; US policy scan completed but Energy Star/Moscow only attributed media. Formal policy records retained."
+    }
+  ],
+  "cutoffEnd": "2026-09-05T22:53:19+08:00",
+  "cutoffFallback": {
+    "reason": "Missing trustworthy September 5 09:30 success; current closure blocked and candidate packet stale.",
+    "hours": 25.09,
+    "wideWindow": [
+      "M&A",
+      "campus status",
+      "permits",
+      "policy",
+      "power access"
+    ]
+  },
+  "companyCoverage": {
+    "checked": 50,
+    "changed": 3,
+    "noChange": 8,
+    "notDetermined": 39
+  },
+  "contentReviewMarker": {
+    "retained": "2026-09-03",
+    "reason": "Partial coverage must not reverify all held formal records; new records individually verified September 5."
+  },
+  "editorSummary": {
+    "publishFormal": 7,
+    "publishRumor": 7,
+    "research": 0,
+    "hold": 37,
+    "reject": 102,
+    "fallbackScored": 153,
+    "adapterReady": 14,
+    "blockingHold": 0
+  }
+}
