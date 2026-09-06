@@ -398,8 +398,8 @@ export const nextCycleResearchRecords: ScheduledResearchRecord[] = [
   }),
   record({
     slug: "anthropic-compute-commitment-gap",
-    imageAltZh: "Claude 收入增长曲线连接 AWS Trainium、Google TPU 与 SpaceX GPU 园区的资本剖面",
-    imageAltEn: "Capital cutaway linking Claude revenue growth to AWS Trainium, Google TPU and SpaceX GPU campuses",
+    imageAltZh: "概念体素插画：服务机房与分期算力底座之间的未接通桥梁，表现现金流与交付缺口",
+    imageAltEn: "Conceptual voxel illustration of an unfinished bridge between a service pod and staged compute foundations, representing the cash-flow and delivery gap",
     articleSectionZh: "模型收入与算力承诺",
     articleSectionEn: "Model revenue and compute commitments",
     topics: ["Anthropic", "Claude", "AWS", "Google", "Broadcom", "SpaceX", "run-rate revenue"],
@@ -532,8 +532,8 @@ export const nextCycleResearchRecords: ScheduledResearchRecord[] = [
   }),
   record({
     slug: "nebius-asset-light-factory",
-    imageAltZh: "自建 AI 园区与合作伙伴持有的 GPU 机房通过云软件平台连接的资本结构剖面",
-    imageAltEn: "Capital-structure cutaway linking an owned AI campus to partner-owned GPU halls through a cloud software platform",
+    imageAltZh: "概念体素分层示意：模块化机架与园区底座分离，表现云运营与实体资产的不同层次",
+    imageAltEn: "Conceptual exploded voxel illustration separating modular racks from the campus foundation to distinguish cloud operations from physical assets",
     articleSectionZh: "新云资本效率",
     articleSectionEn: "Neocloud capital efficiency",
     topics: ["Nebius", "neocloud", "asset-light", "GPU finance", "Bloom Energy", "AI cloud"],
