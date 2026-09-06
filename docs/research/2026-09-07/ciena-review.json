@@ -1,0 +1,236 @@
+{
+  "metadata": {
+    "title": "光模块之后，AI的钱正在流向园区之外：Ciena财报的第二条光网络增长线",
+    "titleEn": "Beyond Optical Modules: Ciena and AI’s Second Network Growth Channel",
+    "summary": "云客户与光线路平台同步增长，Ciena的财报把相干DCI推向前台。收入上行与下季利润率指引回落并存，投资传导仍须跨过订单、路线、验收与利用率四道门。",
+    "summaryEn": "Cloud customers and optical platforms are expanding together. Ciena’s higher revenue and lower next-quarter margin guidance expose the distinct economics of equipment, routes, acceptance and utilization.",
+    "slug": "ciena-ai-network-outside-rack",
+    "publishAt": "2026-09-10T09:30:00+08:00",
+    "date": "2026-09-10",
+    "image": "/column-hbm4-system-cadence-v1.jpg",
+    "series": "产业深度 / 光网络"
+  },
+  "ledger": [
+    {
+      "claim": "Q3 reporting date and quarter: September 3; ended August 1, 2026",
+      "status": "reported",
+      "sourceUrl": "https://investor.ciena.com/news/news-details/2026/Ciena-Reports-Fiscal-Third-Quarter-2026-Financial-Results/default.aspx",
+      "locator": "Header and Performance Summary",
+      "sourceDate": "2026-09-03"
+    },
+    {
+      "claim": "Q3 revenue $1,671.1M vs $1,219.4M; 37.0% YoY",
+      "status": "reported",
+      "sourceUrl": "https://investor.ciena.com/news/news-details/2026/Ciena-Reports-Fiscal-Third-Quarter-2026-Financial-Results/default.aspx",
+      "locator": "Comparative performance table, Revenue row",
+      "sourceDate": "2026-09-03"
+    },
+    {
+      "claim": "Adjusted gross margin 46.4% vs 41.9%; adjusted operating margin 22.5% vs 10.7%",
+      "status": "reported",
+      "sourceUrl": "https://investor.ciena.com/news/news-details/2026/Ciena-Reports-Fiscal-Third-Quarter-2026-Financial-Results/default.aspx",
+      "locator": "Non-GAAP performance table",
+      "sourceDate": "2026-09-03"
+    },
+    {
+      "claim": "Q4 guidance revenue $1.75B±$50M; adjusted gross margin45%±50bps; adjusted operating margin20%±50bps",
+      "status": "management-said",
+      "sourceUrl": "https://investor.ciena.com/news/news-details/2026/Ciena-Reports-Fiscal-Third-Quarter-2026-Financial-Results/default.aspx",
+      "locator": "Business Outlook",
+      "sourceDate": "2026-09-03"
+    },
+    {
+      "claim": "Two >10% customers combined41.7%; DSO76",
+      "status": "reported",
+      "sourceUrl": "https://investor.ciena.com/news/news-details/2026/Ciena-Reports-Fiscal-Third-Quarter-2026-Financial-Results/default.aspx",
+      "locator": "Financial Highlights",
+      "sourceDate": "2026-09-03"
+    },
+    {
+      "claim": "Cloud-provider revenue53% of total and +82%YoY; RLS and Waveserver each >55%YoY",
+      "status": "reported",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/936395/000162828026060245/ex9922026q3earningsprese.htm",
+      "locator": "Slide10",
+      "sourceDate": "2026-09-03"
+    },
+    {
+      "claim": "Q4 adjusted opex$415M±$10M; all guidance midpoints not simultaneously reconcilable",
+      "status": "reported",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/936395/000162828026060245/ex9922026q3earningsprese.htm",
+      "locator": "Slide15 and release Business Outlook",
+      "sourceDate": "2026-09-03"
+    },
+    {
+      "claim": "$1.75B×45%−$415M=$372.5M; divided by$1.75B gives21.2857%, not20%; no bridge supplied in reviewed material",
+      "status": "atlas-view",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/936395/000162828026060245/ex9922026q3earningsprese.htm",
+      "locator": "Atlas calculation of slide15 midpoints",
+      "sourceDate": "2026-09-06"
+    },
+    {
+      "claim": "Q4 revenue midpoint vs Q3 approximately+4.72%; GM−140bps, OM−250bps",
+      "status": "atlas-view",
+      "sourceUrl": "https://investor.ciena.com/news/news-details/2026/Ciena-Reports-Fiscal-Third-Quarter-2026-Financial-Results/default.aspx",
+      "locator": "Atlas calculation from reported historical and guidance midpoints",
+      "sourceDate": "2026-09-06"
+    },
+    {
+      "claim": "Two large customers categorized cloud provider A and B, identities undisclosed",
+      "status": "reported",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/936395/000162828026060361/cien-20260801.htm",
+      "locator": "Note3, customer concentration table",
+      "sourceDate": "2026-09-03"
+    },
+    {
+      "claim": "RPO$2.5B; non-cancelable customer orders. Inventory purchase commitments$3.3B, some adjustable; not comparable coverage amounts",
+      "status": "reported",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/936395/000162828026060361/cien-20260801.htm",
+      "locator": "Note3 Remaining Performance Obligations; Note20 Purchase Order Obligations",
+      "sourceDate": "2026-09-03"
+    },
+    {
+      "claim": "1.6T metro rate is not a universal distance capability; family page lists1.2T at1000km and800G for longer links",
+      "status": "management-said",
+      "sourceUrl": "https://www.ciena.com/products/wavelogic/wavelogic-family",
+      "locator": "WaveLogic6 section",
+      "sourceDate": "undated; checked2026-09-06"
+    },
+    {
+      "claim": "WL6e manufacturer claim: approximately50% lower space/power per bit vs preceding generation",
+      "status": "management-said",
+      "sourceUrl": "https://www.ciena.com/products/wavelogic/wavelogic-6/wavelogic-6-extreme",
+      "locator": "Features and benefits item5; boundary is product-level efficiency",
+      "sourceDate": "undated; checked2026-09-06"
+    },
+    {
+      "claim": "WL6n multiple rate modes and router/transport pluggable forms; pluggable is not synonymous with short-reach direct detection",
+      "status": "management-said",
+      "sourceUrl": "https://www.ciena.com/products/wavelogic/wavelogic-6/wavelogic-6-nano",
+      "locator": "Features and benefits; form factors and transmission modes",
+      "sourceDate": "undated; checked2026-09-06"
+    },
+    {
+      "claim": "Metro/campus/scale-across/backbone/submarine are different applications; metro DCI uses400ZR/800ZR",
+      "status": "management-said",
+      "sourceUrl": "https://www.ciena.com/solutions/dci-scale-across-networks",
+      "locator": "Data center connectivity—10km to10,000+km",
+      "sourceDate": "undated; checked2026-09-06"
+    },
+    {
+      "claim": "Arelion Scandinavian investment combined RLS,1.6T waves,400G coherent pluggables and cable/duct construction; present completion/utilization not established",
+      "status": "reported",
+      "sourceUrl": "https://www.arelion.com/dam/jcr:655a924c-0342-4913-b1c5-982f99c2b6a8/Arelion_Scandinavian_Network.pdf",
+      "locator": "Page1 paragraphs1–3 and future investment language",
+      "sourceDate": "2025-06-23"
+    },
+    {
+      "claim": "Arelion described1.6Tb/s single wavelength field trial over470km; not a new Q3 order",
+      "status": "reported",
+      "sourceUrl": "https://blog.arelion.com/2025/03/18/delivering-the-connectivity-that-wholesalers-require/",
+      "locator": "The next gen capacity around the corner",
+      "sourceDate": "2025-03-18"
+    },
+    {
+      "claim": "Constl1Tb/s1450km Mumbai–Chennai trial without regeneration and WL6e deployment",
+      "status": "reported",
+      "sourceUrl": "https://www.ciena.com/about/newsroom/press-releases/constl-and-ciena-achieve-breakthrough-1-tbps-transmission-across-1450-km-long-haul-network-using-wavelogic-6-extreme",
+      "locator": "Opening paragraphs",
+      "sourceDate": "2025-12-04"
+    },
+    {
+      "claim": "12.8Tb/s per protected route:32 total0.8T wavelengths or16 total1.6T wavelengths;64 or32 line-side endpoint functions; pure illustrative assumptions",
+      "status": "atlas-view",
+      "sourceUrl": "https://www.ciena.com/products/wavelogic/wavelogic-6/wavelogic-6-extreme",
+      "locator": "Atlas scenario section05, no customer forecast or fiber spectral guarantee",
+      "sourceDate": "2026-09-06"
+    },
+    {
+      "claim": "Half power per unit bandwidth×triple bandwidth=1.5×equipment power under fixed boundaries; no total-AI power conclusion",
+      "status": "atlas-view",
+      "sourceUrl": "https://www.ciena.com/products/wavelogic/wavelogic-6/wavelogic-6-extreme",
+      "locator": "Atlas hypothetical energy sensitivity section06",
+      "sourceDate": "2026-09-06"
+    },
+    {
+      "claim": "10% procurement timing shift across customers at41.7% combined exposure implies4.17% total-revenue sensitivity, all else unchanged",
+      "status": "atlas-view",
+      "sourceUrl": "https://investor.ciena.com/news/news-details/2026/Ciena-Reports-Fiscal-Third-Quarter-2026-Financial-Results/default.aspx",
+      "locator": "Atlas concentration sensitivity section04",
+      "sourceDate": "2026-09-06"
+    },
+    {
+      "claim": "Official call scheduled September3 at8:30a.m.Eastern; no usable verified official transcript/replay notes obtained",
+      "status": "not-determined",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/936395/000162828026060245/cien-20260903.htm",
+      "locator": "Item2.02; official quarterly/events indices checked",
+      "sourceDate": "2026-09-06"
+    },
+    {
+      "claim": "No disclosed customer route utilization or Chinese module vendor procurement allocation established by these sources",
+      "status": "not-determined",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/936395/000162828026060361/cien-20260801.htm",
+      "locator": "Scope boundary; no vendor-specific inference made",
+      "sourceDate": "2026-09-06"
+    },
+    {
+      "claim": "CPO changes electrical-to-optical placement and addresses density/power constraints within data centers; not a synonym for coherent external transport",
+      "status": "atlas-view",
+      "sourceUrl": "https://www.ciena.com/insights/blog/2026/how-open-ecosystems-advance-cpo-adoption",
+      "locator": "Plugs running out of steam; electrical front-panel connectivity discussion",
+      "sourceDate": "2026-05-07"
+    }
+  ],
+  "review": {
+    "counts": {
+      "zhHan": 4763,
+      "enWords": 2422,
+      "method": "Reader-facing narrative including headings, excluding source ledger, disclosure, metadata and tables"
+    },
+    "gates": {
+      "scope_gate": "pass",
+      "source_gate": "pass",
+      "numeric_gate": "pass",
+      "analysis_gate": "pass",
+      "editorial_gate": "pass",
+      "safety_gate": "pass"
+    },
+    "call_status": {
+      "status": "official-ir-record",
+      "call_date": "2026-09-03T08:30:00-04:00",
+      "reporting_period": "FY2026 Q3 ended2026-08-01",
+      "source_tier": "Official release and8-K confirm event; official quarterly/events indices checked",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/936395/000162828026060245/cien-20260903.htm",
+      "speakers_or_participants": "No transcript-derived participant or Q&A claims",
+      "transcript_method": "none",
+      "republication_rights": "analysis-only",
+      "numeric_fidelity": "Reported document figures reconciled; guidance midpoint bridge unresolved"
+    },
+    "gaps": [
+      "Official quarterly/events dynamic content did not expose usable Q3 transcript/replay in extraction; tested likely Q3 CDN transcript returned inaccessible. No Q&A used.",
+      "Q4 guidance midpoints yield21.29% derived operating margin vs separately stated20%; both release and presentation agree on printed values, but no explanatory bridge obtained. No integrated Q4 profit forecast constructed.",
+      "No customer-route-level utilization, actual completion of all historical announced upgrades, or named Chinese module supplier allocation inferred.",
+      "The requested /products/wavelogic path loaded once then became inaccessible; current official /products/wavelogic/wavelogic-family was opened and used."
+    ],
+    "cutoff": "2026-09-06T10:24:44+08:00",
+    "publication_status": "ready",
+    "source_budget": "No direct quotations. Facts condensed at source markers; original mechanism and explicitly hypothetical scenarios provide depth. Each source kept to a compact bilingual factual use.",
+    "gate_notes": "Ready as a bounded source-led infrastructure column, not a complete earnings-call analysis or integrated Q4 profit forecast. Primary historical figures and guidance match the official release/presentation; the midpoint nonalignment is explicitly shown in both languages, not silently resolved. Access limitations and unobserved route utilization remain disclosed.",
+    "validation": {
+      "jsonSchemaFields": "pass; matches read ScheduledResearchRecord type",
+      "bilingualSectionCount": 7,
+      "hanFloor": 4000,
+      "englishWordFloor": 2200,
+      "scopeMutations": "Only /tmp/atlas-week-20260907-ciena.json created/edited; no checkout, commit, deployment, or Sites action",
+      "editorialPass": "Completed after factual draft: evidence, progression, style and bilingual parity",
+      "calculations": {
+        "revenueYoYPercent": 37.0428079383303,
+        "q4RevenueQoQPercent": 4.721440967027712,
+        "q4MidpointsImpliedOperatingMarginPercent": 21.285714285714285,
+        "concentrationSensitivityPercent": 4.170000000000001,
+        "wavelengthsAt800G": 32,
+        "wavelengthsAt1600G": 16,
+        "powerScenarioMultiple": 1.5
+      }
+    }
+  }
+}

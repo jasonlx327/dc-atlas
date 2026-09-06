@@ -1,3 +1,5 @@
+import { septemberWeekArticles } from "./columns/september-week-articles";
+
 export type DailyBriefRecord = {
   id: string;
   editionDate: string;
@@ -8,6 +10,14 @@ export type DailyBriefRecord = {
 };
 
 export const dailyBriefRecords: readonly DailyBriefRecord[] = [
+  ...septemberWeekArticles.map((article) => ({
+    id: `${article.date}-${article.slug}`,
+    editionDate: article.date,
+    publishedAt: article.publishAt,
+    articleHref: article.href,
+    selectedBecauseZh: article.summary,
+    selectedBecauseEn: article.summaryEn,
+  })),
   {
     id: "2026-08-27-nvidia-fy27-q2",
     editionDate: "2026-08-27",

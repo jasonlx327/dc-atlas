@@ -1,0 +1,15 @@
+{
+  "slug": "astra-agent-cost-per-completed-task",
+  "reviewedAt": "2026-09-06",
+  "counts": { "zhHanBody": 4151, "enWordsBody": 2208, "excluded": "metadata, titles, hero, thesis, disclosure, source list" },
+  "ledger": [
+    { "claim": "OSWorld2.0 latency simulation: Astra72.6% at roughly40min vs Sol65.7% at75min; combined harness1.9x Mind2Web speed", "status": "management-said", "sourceUrl": "https://openai.com/index/gpt-6-astra/", "locator": "The world's best computer use model; footnotes", "boundary": "Company evaluation, not enterprise savings or GPU-hours; combined system not isolated model" },
+    { "claim": "Production safeguards may pause or stop legitimate work", "status": "management-said", "sourceUrl": "https://openai.com/index/path-to-astra/", "locator": "Deployment safeguards", "boundary": "Control friction must be measured alongside avoided loss" },
+    { "claim": "Computer-use architecture separates model requested actions from host execution and returned screen state", "status": "reported", "sourceUrl": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool", "locator": "Computer use tool architecture and agent loop" },
+    { "claim": "Hypothetical accepted-task cost150/60=2.5 vs150/80=1.875 (-25%); adverse180/65=2.7692", "status": "atlas-view", "basis": "100 initial jobs, normalized arbitrary cost units, stated review and acceptance assumptions; no vendor prices" },
+    { "claim": "Independent step sensitivity0.99^50=0.6050 vs0.999^50=0.9512", "status": "atlas-view", "basis": "Illustration only; real errors correlated and recovery changes outcome" },
+    { "claim": "Task rebound1.4x0.7=0.98 or2x0.7=1.4; stable concurrency120x0.5=60 or120x0.25=30", "status": "atlas-view", "basis": "Not revenue, power or GPU counts" }
+  ],
+  "gates": { "source": "pass", "numeric": "pass", "bilingual": "pass", "editorial": "pass", "depth": "pass" },
+  "gaps": [ "No claim of representative enterprise adoption, realized vendor pricing or actual customer cost savings", "2026-09-11 launch is scheduled; publication is not yet live" ]
+}

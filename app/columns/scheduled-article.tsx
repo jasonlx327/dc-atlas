@@ -2,6 +2,19 @@ import { columnArticleBySlug } from "./articles";
 import { scheduledResearchBySlug, type ResearchCopy, type ResearchSource } from "./scheduled-article-data";
 import { ColumnArticleConsole } from "./article-console";
 
+// Reader-facing source references support links only, never raw HTML.
+function ResearchText({ text, sources, lang }: { text: string; sources: ResearchSource[]; lang: "zh" | "en" }) {
+  const parts = text.split(/(\[[^\]]+\]\(https:\/\/[^\s)]+\)|\[\d+\])/g);
+  return <>{parts.map((part, index) => {
+    const link = /^\[([^\]]+)\]\((https:\/\/[^\s)]+)\)$/.exec(part);
+    if (link) return <a key={index} href={link[2]} target="_blank" rel="noreferrer">{link[1]}</a>;
+    const numbered = /^\[(\d+)\]$/.exec(part);
+    const source = numbered ? sources[Number(numbered[1]) - 1] : undefined;
+    if (source) return <a key={index} href={source.url} target="_blank" rel="noreferrer" aria-label={lang === "zh" ? source.zh : source.en}><sup>{part}</sup></a>;
+    return part;
+  })}</>;
+}
+
 function SourceLink({ source, lang }: { source: ResearchSource; lang: "zh" | "en" }) {
   return <a href={source.url} target="_blank" rel="noreferrer">
     {lang === "zh" ? source.zh : source.en}<span aria-hidden="true"> ↗</span>
@@ -58,7 +71,7 @@ function ResearchBody({ slug, lang }: { slug: string; lang: "zh" | "en" }) {
   return <article className="column-article-body">
     <aside className="column-article-thesis"><span>{lang === "zh" ? "核心判断" : "THE TAKEAWAY"}</span><p>{copy.thesis}</p></aside>
     <section>
-      {copy.opening.map((paragraph, index) => <p className={index === 0 ? "column-dropcap" : undefined} key={paragraph}>{paragraph}</p>)}
+      {copy.opening.map((paragraph, index) => <p className={index === 0 ? "column-dropcap" : undefined} key={paragraph}><ResearchText text={paragraph} sources={record.sources} lang={lang} /></p>)}
       <nav className="column-source-links" aria-label={lang === "zh" ? "本文来源" : "Article sources"}>
         <span>{lang === "zh" ? "来源" : "SOURCES"}</span>
         <div>{record.sources.map((source) => <SourceLink key={source.url} source={source} lang={lang} />)}</div>
@@ -67,7 +80,7 @@ function ResearchBody({ slug, lang }: { slug: string; lang: "zh" | "en" }) {
     {copy.sections.map((section) => <section key={section.label}>
       <div className="column-section-label">{section.label}</div>
       <h2>{section.heading}</h2>
-      {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+      {section.paragraphs.map((paragraph) => <p key={paragraph}><ResearchText text={paragraph} sources={record.sources} lang={lang} /></p>)}
       <MetricsTable copy={section.metrics} lang={lang} />
       {section.steps?.length ? <ol className="column-transmission">{section.steps.map((step, index) => <li key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><div><strong>{step.title}</strong><p>{step.body}</p></div></li>)}</ol> : null}
       {section.cards?.length ? <div className="column-question-grid">{section.cards.map((card) => <article key={`${card.label}-${card.title}`}><span>{card.label}</span><h3>{card.title}</h3><p>{card.body}</p></article>)}</div> : null}

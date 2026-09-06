@@ -91,7 +91,9 @@ test("live API preserves the complete versioned intelligence archive during hydr
   assert.match(englishPulse, /4\.4B value, subject to customary adjustments/);
 });
 
-test("server-renders the bilingual intelligence-console homepage", async () => {
+test("server-renders the bilingual intelligence-console homepage", async (t) => {
+  // Historical content fixture; current release boundaries have their own tests.
+  t.mock.timers.enable({ apis: ["Date"], now: Date.parse("2026-09-05T12:00:00+08:00") });
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
@@ -294,7 +296,8 @@ test("publishes shareable bilingual policy and Global Intelligence brief pages",
   assert.doesNotMatch(sitemap, /url: "https:\/\/idc-index\.com\/policy",/);
 });
 
-test("renders the English research console and focused content routes", async () => {
+test("renders the English research console and focused content routes", async (t) => {
+  t.mock.timers.enable({ apis: ["Date"], now: Date.parse("2026-09-05T12:00:00+08:00") });
   const response = await render("/en");
   assert.equal(response.status, 200);
   const html = await response.text();

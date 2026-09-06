@@ -96,7 +96,7 @@ export function requiresEditorialPublicCopy(
   const publicRoute = event.route === "pulse"
     || event.route === "rumor-watch"
     || event.route === "policy-index"
-    || event.routeCandidates.some((route) => route === "pulse" || route === "rumor-watch" || route === "policy-index");
+    || (event.routeCandidates ?? []).some((route) => route === "pulse" || route === "rumor-watch" || route === "policy-index");
   return publicRoute && event.sourceChain.some(accessiblePublicSource);
 }
 

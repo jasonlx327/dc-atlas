@@ -2,6 +2,7 @@ import { metaBlackrockElPaso } from "./meta-blackrock-el-paso-data";
 import { currentResearchRecords } from "./current-research-data";
 import { nextWeekResearchRecords } from "./next-week-research-data";
 import { nextCycleResearchRecords } from "./next-cycle-research-data";
+import { septemberWeekResearchRecords } from "./september-week-research-data";
 
 export type ResearchMetric = {
   label: string;
@@ -58,6 +59,7 @@ export type ScheduledResearchRecord = {
 };
 
 export const scheduledResearchRecords: ScheduledResearchRecord[] = [
+  ...septemberWeekResearchRecords,
   ...currentResearchRecords,
   ...nextCycleResearchRecords.filter((record) => !currentResearchRecords.some((current) => current.slug === record.slug)),
   ...nextWeekResearchRecords,

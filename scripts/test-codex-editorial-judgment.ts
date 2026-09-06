@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { shadowSources } from "../worker/connectors/index.ts";
-import { buildCodexEditorialPackets } from "../worker/event-intelligence/codex-editorial-judgment.ts";
+import { buildCodexEditorialPackets, requiresEditorialPublicCopy } from "../worker/event-intelligence/codex-editorial-judgment.ts";
 import type { ShadowRunReport } from "../worker/event-intelligence/pipeline.ts";
 
 const sources = shadowSources();
@@ -147,4 +147,7 @@ assert.throws(() => buildCodexEditorialPackets(report, {
   verdicts: [{ ...verdict.verdicts[0], band: "dropped" }],
 }), /band=dropped/);
 
+const withoutCandidates = { ...report.events[0], route: "hold" as const, routeCandidates: undefined };
+assert.equal(requiresEditorialPublicCopy(withoutCandidates, "selected"), false);
+assert.equal(requiresEditorialPublicCopy({ ...withoutCandidates, route: "pulse" }, "selected"), true);
 console.log(JSON.stringify({ message: "Codex Luna editorial judgment tests passed", closure: packets.closure.status, sections: packets.closure.counts }));

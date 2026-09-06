@@ -1,0 +1,134 @@
+{
+  "metadata": {
+    "title": "129亿美元拟购Hugging Face：NVIDIA把竞争推向模型分发入口",
+    "titleEn": "NVIDIA’s $12.9 Billion Hugging Face Deal Moves the Contest to Model Distribution",
+    "summary": "约119亿美元股东购买价与至多约10亿美元股权留任不能混作现金支出。交易若完成，NVIDIA将更接近模型发现、部署和推理路由的决策点；开放承诺能否变成可检验的平台中立性，将决定这笔分发投资的成败。",
+    "summaryEn": "The proposed transaction separates roughly $11.9 billion for shareholders from an equity retention program of up to $1 billion. Its strategic value depends on converting model discovery into deployment while preserving a credible multi-hardware marketplace.",
+    "slug": "nvidia-hugging-face-distribution",
+    "publishAt": "2026-09-07T09:30:00+08:00",
+    "date": "2026-09-07",
+    "image": "/column-nvidia-fy27-q2-five-tests-v1.jpg",
+    "series": "AI基础设施入口之争"
+  },
+  "ledger": [
+    {
+      "claim": "公告拟议金额12,930,300,000美元，并表示无需NVIDIA计算平台",
+      "status": "management-said",
+      "sourceUrl": "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/",
+      "locator": "2026-09-03 announcement paragraphs 1 and 3",
+      "sourceDate": "2026-09-03"
+    },
+    {
+      "claim": "9/2签约；约119亿美元股东价（可调整）+至多约10亿美元股权留任；预计2027H1有条件交割",
+      "status": "reported",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm",
+      "locator": "Item 8.01 paragraphs 1-3; closing timing is management expectation",
+      "sourceDate": "2026-09-03"
+    },
+    {
+      "claim": "自动路由默认fastest并允许cheapest/preferred/指定供应商",
+      "status": "reported",
+      "sourceUrl": "https://huggingface.co/docs/inference-providers/index",
+      "locator": "Quick Start - LLM / Provider Selection",
+      "sourceDate": "accessed 2026-09-06"
+    },
+    {
+      "claim": "外部供应商无额外加价，自带密钥可由供应商直接计费",
+      "status": "reported",
+      "sourceUrl": "https://huggingface.co/docs/inference-providers/pricing",
+      "locator": "How Billing Works / Pay-as-you-Go Details / Custom Provider Key",
+      "sourceDate": "accessed 2026-09-06"
+    },
+    {
+      "claim": "现存多硬件优化路径",
+      "status": "reported",
+      "sourceUrl": "https://huggingface.co/docs/optimum/index",
+      "locator": "Hardware partners",
+      "sourceDate": "accessed 2026-09-06"
+    },
+    {
+      "claim": "Optimum Neuron连接Transformers与AWS Trainium/Inferentia",
+      "status": "reported",
+      "sourceUrl": "https://huggingface.co/docs/optimum-neuron/index",
+      "locator": "Introduction",
+      "sourceDate": "accessed 2026-09-06"
+    },
+    {
+      "claim": "Cerebras存在集成调用示例",
+      "status": "reported",
+      "sourceUrl": "https://huggingface.co/docs/inference-providers/providers/cerebras",
+      "locator": "Supported tasks / code example",
+      "sourceDate": "accessed 2026-09-06"
+    },
+    {
+      "claim": "Groq存在集成，官方文档称为定制推理芯片",
+      "status": "reported",
+      "sourceUrl": "https://huggingface.co/docs/inference-providers/providers/groq",
+      "locator": "Introduction and Supported tasks",
+      "sourceDate": "accessed 2026-09-06"
+    },
+    {
+      "claim": "副本扩缩、缩零及冷启动约束",
+      "status": "reported",
+      "sourceUrl": "https://huggingface.co/docs/inference-endpoints/autoscaling",
+      "locator": "Autoscaling / Scaling to 0",
+      "sourceDate": "accessed 2026-09-06"
+    },
+    {
+      "claim": "仓库许可需独立遵守",
+      "status": "reported",
+      "sourceUrl": "https://huggingface.co/docs/hub/repositories-licenses",
+      "locator": "Licenses introduction",
+      "sourceDate": "accessed 2026-09-06"
+    },
+    {
+      "claim": "十年简化回收门槛11.9亿美元/年；设备时间示例90%",
+      "status": "atlas-view",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm",
+      "locator": "Atlas explicit assumptions: 11.9B/10; 1.5*0.6. Only purchase-price input is sourced; other inputs are hypothetical",
+      "sourceDate": "2026-09-06"
+    },
+    {
+      "claim": "Hugging Face独立审计财务、供应商流量份额、交易后盈利及中国芯片订单影响",
+      "status": "not-determined",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm",
+      "locator": "Not provided in reviewed transaction sources; no quantified claim made",
+      "sourceDate": "2026-09-06"
+    }
+  ],
+  "review": {
+    "counts": {
+      "zhHanNarrative": 4137,
+      "enWordsNarrative": 2428,
+      "zhHanBody": 4040,
+      "enWordsBody": 2375,
+      "method": "Han script characters and English alphanumeric words. Body includes opening/section paragraphs/conclusion only, excluding hero/thesis/headings/source links/tables/ledger/disclosure."
+    },
+    "scopeGate": "pass",
+    "sourceGate": "pass",
+    "numericGate": "pass",
+    "analysisGate": "pass",
+    "editorialGate": "pass",
+    "safetyGate": "pass",
+    "publicationStatus": "draft-pending-main-agent-validation",
+    "cutoff": "2026-09-06 Asia/Shanghai",
+    "sourceSummaryBudget": "Short factual summaries; ten primary pages; long sections are explicitly original Atlas mechanisms and conditional scenarios, not source paraphrase expansion.",
+    "openGaps": [
+      "Independent Hugging Face audited financials unavailable in reviewed packet; no multiple derived",
+      "No provider traffic share or attributable acquisition revenue forecast",
+      "No closing confirmation: expected 2027H1 subject to conditions",
+      "No demonstrated domestic accelerator supplier-order effect"
+    ],
+    "corrections": [
+      "Proposed deal, not completed acquisition",
+      "Headline amount differs from rounded purchase-price-plus-retention components",
+      "Retention is equity-based; total not described as cash consideration",
+      "Non-NVIDIA compute explicitly remains permitted",
+      "Hosted models and routing traffic are not net revenue or hardware orders"
+    ],
+    "prepublicationCheck": [
+      "Recheck transaction status and relevant current technical docs before release if new information appears",
+      "Main agent to validate schema, bilingual rendering and scheduled integration"
+    ]
+  }
+}
