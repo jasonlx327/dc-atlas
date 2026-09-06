@@ -16,7 +16,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Article",
+        "@type": "Article", "@id": `${canonical}#article`, url: canonical, translationOfWork: { "@id": `${canonical.replace("/en/", "/")}#article` },
         headline: "Where Hyperscaler AI CapEx Actually Goes",
         description: metadata.description,
         image: "https://idc-index.com/column-ai-capex-power-voxel-palette-v1.jpg",

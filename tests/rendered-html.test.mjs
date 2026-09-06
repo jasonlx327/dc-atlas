@@ -37,6 +37,28 @@ async function render(pathname = "/", host = "dc-atlas.example", country = null,
   );
 }
 
+test("research context links are bilingual, crawlable and exclude scheduled articles", async (t) => {
+  t.mock.timers.enable({ apis: ["Date"], now: new Date("2026-09-06T14:00:00Z") });
+  for (const prefix of ["", "/en"]) {
+    const html = await (await render(`${prefix}/columns/glm-5-3-flash-china-chips`)).text();
+    assert.match(html, /column-reading-context/);
+    assert.ok(html.includes(`href="${prefix}/methodology"`));
+    assert.ok(html.includes(`href="${prefix}/companies/`));
+    assert.match(html, /href="#research-section-1"/);
+    assert.match(html, /id="research-section-1"/);
+    const graphs = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap((match) => {
+      const value = JSON.parse(match[1]); return value["@graph"] ?? [value];
+    });
+    const article = graphs.find((node) => node["@type"] === "AnalysisNewsArticle");
+    assert.ok(article.mentions.length > 0);
+    assert.ok(article[prefix ? "translationOfWork" : "workTranslation"]["@id"].endsWith("#article"));
+    assert.ok(!html.includes('href="' + prefix + '/columns/broadcom-custom-ai-profit-pool"'));
+  }
+  const legacy = await (await render("/en/columns/cxmt-us-chip-impact")).text();
+  assert.match(legacy, /"@id":"https:\/\/idc-index.com\/en\/columns\/cxmt-us-chip-impact#article"/);
+  assert.match(legacy, /column-reading-context/);
+});
+
 test("live API preserves the complete versioned intelligence archive during hydration", async (t) => {
   const published = JSON.parse(await readFile(new URL("../app/data/public-intelligence.json", import.meta.url), "utf8"));
   assert.ok(published.length > 12, "fixture must exercise the former twelve-item limit");
@@ -101,7 +123,7 @@ test("server-renders the bilingual intelligence-console homepage", async (t) => 
   const html = await response.text();
   assert.match(html, /<title>全球数据中心与 AI 基础设施情报｜IDC Atlas<\/title>/i);
   assert.match(html, /超大规模云厂商 CAPEX/);
-  assert.match(html, /hrefLang="x-default" href="https:\/\/dc-atlas\.example\/en"/);
+  assert.match(html, /hrefLang="x-default" href="https:\/\/idc-index\.com\/en"/);
   assert.match(html, /class="atlas-console-overview"/);
   assert.match(html, /全球科技财报日历/);
   assert.doesNotMatch(html, /数据中心政策索引/);
@@ -1039,11 +1061,11 @@ test("redirects the Sites fallback host to the canonical production domain", asy
   assert.equal(response.headers.get("location"), "https://idc-index.com/?source=sites");
 });
 
-test("defaults overseas readers to English and remembers explicit language choice", async () => {
+test("keeps both language URLs crawlable worldwide and remembers explicit language choice", async () => {
   const overseas = await render("/", "dc-atlas.example", "US");
-  assert.equal(overseas.status, 307);
-  assert.equal(overseas.headers.get("location"), "https://dc-atlas.example/en");
-  assert.match(overseas.headers.get("cache-control") ?? "", /no-store/);
+  assert.equal(overseas.status, 200);
+  assert.equal(overseas.headers.get("location"), null);
+  assert.match(await overseas.text(), /<html lang="zh-CN"/);
 
   const mainland = await render("/", "dc-atlas.example", "CN");
   assert.equal(mainland.status, 200);
@@ -1051,22 +1073,27 @@ test("defaults overseas readers to English and remembers explicit language choic
   const chinesePreference = await render("/", "dc-atlas.example", "US", "idc_lang=zh");
   assert.equal(chinesePreference.status, 200);
 
+  const englishPreference = await render("/", "dc-atlas.example", "CN", "idc_lang=en");
+  assert.equal(englishPreference.status, 307);
+  assert.equal(englishPreference.headers.get("location"), "https://dc-atlas.example/en");
+  assert.match(englishPreference.headers.get("cache-control") ?? "", /no-store/);
+
   const rememberEnglish = await render("/en?lang=en", "dc-atlas.example", "CN");
   assert.equal(rememberEnglish.status, 302);
   assert.equal(rememberEnglish.headers.get("location"), "https://dc-atlas.example/en");
   assert.match(rememberEnglish.headers.get("set-cookie") ?? "", /idc_lang=en/);
 });
 
-test("includes social sharing metadata for the request host", async () => {
+test("pins canonical and social metadata to the production origin, not the request host", async () => {
   const response = await render();
   const html = await response.text();
 
-  assert.match(html, /property="og:image" content="https:\/\/dc-atlas\.example\/og\.png"/i);
+  assert.match(html, /property="og:image" content="https:\/\/idc-index\.com\/og\.png"/i);
   assert.match(html, /name="twitter:card" content="summary_large_image"/i);
   assert.match(html, /name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/i);
   assert.match(html, /lang="zh-CN"/i);
-  assert.match(html, /rel="canonical" href="https:\/\/dc-atlas\.example\/"/i);
-  assert.match(html, /hrefLang="en" href="https:\/\/dc-atlas\.example\/en"/i);
+  assert.match(html, /rel="canonical" href="https:\/\/idc-index\.com\/"/i);
+  assert.match(html, /hrefLang="en" href="https:\/\/idc-index\.com\/en"/i);
   assert.match(html, /"@type":"WebSite"/i);
 });
 

@@ -16,7 +16,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Article",
+        "@type": "Article", "@id": `${canonical}#article`, url: canonical, workTranslation: { "@id": `${canonical.replace("/columns/", "/en/columns/")}#article` },
         headline: "GW 级长租正在改写 IDC 订单",
         description: metadata.description,
         image: "https://idc-index.com/column-hyperscale-idc-leases-voxel-palette-v1.jpg",

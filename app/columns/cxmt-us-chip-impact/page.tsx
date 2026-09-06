@@ -16,7 +16,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Article",
+        "@type": "Article", "@id": `${canonical}#article`, url: canonical, workTranslation: { "@id": `${canonical.replace("/columns/", "/en/columns/")}#article` },
         headline: "长鑫上市：美股芯片的影响路径",
         description: metadata.description,
         image: "https://idc-index.com/column-cxmt-us-chip-impact-voxel-palette-v1.jpg",

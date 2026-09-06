@@ -17,7 +17,7 @@ function Header({ lang }: { lang: "zh" | "en" }) {
 }
 
 function ChineseArticle() {
-  return <ColumnArticleConsole lang="zh"><Header lang="zh" /><article className="column-article-body">
+  return <ColumnArticleConsole slug="microsoft-ai-capex" lang="zh"><Header lang="zh" /><article className="column-article-body">
     <aside className="column-article-thesis"><span>核心判断</span><p>Azure 增长加速来自三股力量：新增约 1GW 容量、既有算力效率提升、GPU 从到货到上线的周期缩短。微软已经证明需求存在；未来几个季度更难的任务，是在会计口径变化后持续证明建设强度、容量兑现和现金回报。</p></aside>
 
     <section><p className="column-dropcap">微软 2026 财年第四季度收入 900 亿美元，同比增长 18%；Azure 及其他云服务收入增长 43%。这两个数字同时出现，把财报讨论推到了一个更具体的问题：巨额资本开支究竟通过什么路径变成云收入？</p><p>管理层给出的答案散落在财报、指引和问答中。微软当季新增约 1GW 容量，全年启用 88 座数据中心；最大区域的 GPU “dock-to-live” 时间缩短近一半；芯片、模型和调度效率也在改善。Azure 的加速因此不能只归因于需求，也不能只归因于新机房。</p><p><SourceLink href={sources.results}>微软 FY2026 Q4 业绩公告</SourceLink><SourceLink href={sources.call}>微软 FY2026 Q4 电话会</SourceLink></p></section>
@@ -42,7 +42,7 @@ function ChineseArticle() {
 }
 
 function EnglishArticle() {
-  return <ColumnArticleConsole lang="en"><Header lang="en" /><article className="column-article-body">
+  return <ColumnArticleConsole slug="microsoft-ai-capex" lang="en"><Header lang="en" /><article className="column-article-body">
     <aside className="column-article-thesis"><span>THE TAKEAWAY</span><p>Azure accelerated through three engines: roughly one gigawatt of added capacity, higher fleet efficiency and a shorter path from GPU delivery to live service. Microsoft has demonstrated demand. The harder proof now lies in construction intensity, capacity conversion and cash returns as lease accounting becomes less comparable.</p></aside>
 
     <section><p className="column-dropcap">Microsoft closed fiscal 2026 with quarterly revenue of $90.0 billion, up 18%, while Azure and other cloud services grew 43%. Together, those figures turn an abstract CapEx debate into an operating question: how does infrastructure spending become cloud revenue?</p><p>The answer is spread across the release, prepared remarks and analyst Q&amp;A. Microsoft added roughly one gigawatt of capacity in the quarter, accelerated the time from GPU delivery to live service, and improved throughput across chips, models and orchestration. Azure&apos;s acceleration therefore carries three inputs, each on a different clock.</p><p><SourceLink href={sources.results}>Microsoft FY2026 Q4 results</SourceLink><SourceLink href={sources.call}>Microsoft FY2026 Q4 earnings call</SourceLink></p></section>

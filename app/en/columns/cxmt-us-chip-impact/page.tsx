@@ -16,7 +16,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Article",
+        "@type": "Article", "@id": `${canonical}#article`, url: canonical, translationOfWork: { "@id": `${canonical.replace("/en/", "/")}#article` },
         headline: "CXMT's Listing: The US Chip Exposure Map",
         description: metadata.description,
         image: "https://idc-index.com/column-cxmt-us-chip-impact-voxel-palette-v1.jpg",

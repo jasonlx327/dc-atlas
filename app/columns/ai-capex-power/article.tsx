@@ -21,7 +21,7 @@ function ArticleHeader({ lang }: { lang: "zh" | "en" }) {
 }
 
 function ChineseArticle() {
-  return <ColumnArticleConsole lang="zh">
+  return <ColumnArticleConsole slug="ai-capex-power" lang="zh">
     <ArticleHeader lang="zh" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>核心判断</span><p>财报季给出了更清楚的双重信号：Azure、Google Cloud 与 AWS 同时加速，说明需求正在吸收新增供给；但四家公司仍在提高或维持历史级投入，说明供给缺口尚未闭合。接下来不能只比 CAPEX 总额，要比较“每一美元投入转成可计费容量”的速度。</p></aside>
@@ -165,7 +165,7 @@ function ChineseArticle() {
 }
 
 function EnglishArticle() {
-  return <ColumnArticleConsole lang="en">
+  return <ColumnArticleConsole slug="ai-capex-power" lang="en">
     <ArticleHeader lang="en" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>THE TAKEAWAY</span><p>The latest calls produced a clearer two-sided signal: Azure, Google Cloud and AWS accelerated as demand absorbed new supply, while spending remains at historic levels because the capacity gap has not closed. The next comparison is not total CapEx, but how quickly each dollar becomes billable capacity.</p></aside>

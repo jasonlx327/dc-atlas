@@ -153,7 +153,7 @@ function llmsResearchDirectory(lang: "zh" | "en"): string {
     const title = lang === "zh" ? article.title : article.titleEn;
     const summary = lang === "zh" ? article.summary : article.summaryEn;
     const href = lang === "zh" ? article.href : article.hrefEn;
-    return `- [${title}](https://idc-index.com${href}): ${summary}`;
+    return `- [${title}](https://idc-index.com${href}) (${lang === "zh" ? "发布" : "Published"}: ${article.publishAt}): ${summary}`;
   });
   return `\n## ${lang === "zh" ? "当前已发布研究" : "Current published research"}\n\n${rows.join("\n")}\n`;
 }
@@ -4017,11 +4017,9 @@ function languagePreferenceResponse(request: Request, url: URL): Response | null
 
   if (url.pathname !== "/") return null;
   const preference = cookieValue(request, LANGUAGE_COOKIE);
-  if (preference === "zh") return null;
-
-  type RequestWithCountry = Request & { cf?: IncomingRequestCfProperties };
-  const country = (request as RequestWithCountry).cf?.country;
-  if (preference !== "en" && (!country || country === "CN")) return null;
+  // Keep language URLs crawlable from every country. Only an explicit reader
+  // preference may redirect the Chinese homepage; IP location is not consent.
+  if (preference !== "en") return null;
 
   url.pathname = "/en";
   const headers = new Headers({

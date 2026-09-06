@@ -20,7 +20,7 @@ function Header({ lang }: { lang: "zh" | "en" }) {
 }
 
 function ChineseArticle() {
-  return <ColumnArticleConsole lang="zh"><Header lang="zh" /><article className="column-article-body">
+  return <ColumnArticleConsole slug="alibaba-qwen-cloud" lang="zh"><Header lang="zh" /><article className="column-article-body">
     <aside className="column-article-thesis"><span>核心判断</span><p>阿里云已经跨过“AI 是否带来收入”的第一道门槛：外部客户收入增长 40%，AI 相关产品收入连续第 11 个季度三位数增长。下一份财报的重点会转向收入质量、模型服务商业化、资本效率与自研芯片交付。Qwen3.8 提供了新的需求入口，真正决定财务含义的仍是调用规模、可售算力和现金回报。</p></aside>
 
     <section><p className="column-dropcap">Qwen3.8-Max 已进入阿里云 Model Studio 的模型目录。此前，Qwen3.8-Max-Preview 于 7 月 19 日首先出现在 Token Plan。时间边界必须先划清：阿里巴巴六月季度已于 6 月 30 日结束，因此 Qwen3.8 不会贡献该季度收入；它更适合用来检验管理层对七月至九月需求、价格和容量的判断。</p><p>截至 8 月 3 日，阿里巴巴投资者关系页面尚未列出六月季度业绩发布日期。本文因此不使用市场一致预期，也不把新模型发布写成财报结果。分析起点是上一季度已经披露的云业务、AI 收入、资本开支与自由现金流。</p><p><SourceLink href={sources.modelDirectory}>Model Studio 模型目录</SourceLink><SourceLink href={sources.tokenPlan}>Qwen3.8-Max-Preview 发布记录</SourceLink><SourceLink href={sources.ir}>阿里巴巴投资者关系页面</SourceLink></p></section>
@@ -47,7 +47,7 @@ function ChineseArticle() {
 }
 
 function EnglishArticle() {
-  return <ColumnArticleConsole lang="en"><Header lang="en" /><article className="column-article-body">
+  return <ColumnArticleConsole slug="alibaba-qwen-cloud" lang="en"><Header lang="en" /><article className="column-article-body">
     <aside className="column-article-thesis"><span>THE TAKEAWAY</span><p>Alibaba Cloud has cleared the first test: AI is contributing to reported growth. External cloud revenue rose 40%, and AI-related product revenue delivered an eleventh consecutive quarter of triple-digit growth. The next report must show revenue quality, model-service monetization, capital efficiency and proprietary-chip execution.</p></aside>
 
     <section><p className="column-dropcap">Qwen3.8-Max is now listed in Alibaba Cloud Model Studio. Its preview first appeared in the Token Plan on July 19. The timing matters: Alibaba&apos;s June quarter ended June 30, so Qwen3.8 cannot explain that period&apos;s revenue. It can shape management&apos;s discussion of demand, pricing and capacity from July onward.</p><p>As of August 3, Alibaba Investor Relations had not posted the June-quarter earnings date. This analysis therefore uses no consensus beat-or-miss framing and treats the model release as a forward operating signal.</p><p><SourceLink href={sources.modelDirectory}>Model Studio model directory</SourceLink><SourceLink href={sources.tokenPlan}>Qwen3.8-Max-Preview launch record</SourceLink><SourceLink href={sources.ir}>Alibaba Investor Relations</SourceLink></p></section>

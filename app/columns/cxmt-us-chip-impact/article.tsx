@@ -22,7 +22,7 @@ function ArticleHeader({ lang }: { lang: "zh" | "en" }) {
 }
 
 function ChineseArticle() {
-  return <ColumnArticleConsole lang="zh">
+  return <ColumnArticleConsole slug="cxmt-us-chip-impact" lang="zh">
     <ArticleHeader lang="zh" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>核心判断</span><p>长鑫科技登陆科创板，提升了融资能力和经营透明度，新增晶圆供给仍需要厂房、设备、良率和客户认证逐步兑现。美股芯片公司的近端影响高度分化：Micron 的通用 DRAM 业务最敏感；美国设备商同时面对中国扩产需求与出口限制；NVIDIA、AMD 当前的直接影响较低。</p></aside>
@@ -55,7 +55,7 @@ function ChineseArticle() {
 }
 
 function EnglishArticle() {
-  return <ColumnArticleConsole lang="en">
+  return <ColumnArticleConsole slug="cxmt-us-chip-impact" lang="en">
     <ArticleHeader lang="en" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>THE TAKEAWAY</span><p>CXMT&apos;s STAR Market listing improves financing access and disclosure. New wafer supply still has to pass through construction, tool installation, yield ramp and customer qualification. Micron has the highest near-term exposure through conventional DRAM and China. US equipment vendors face demand constrained by export rules. The direct read-through to NVIDIA and AMD remains limited.</p></aside>

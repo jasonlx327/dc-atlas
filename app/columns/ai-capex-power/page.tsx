@@ -16,7 +16,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Article",
+        "@type": "Article", "@id": `${canonical}#article`, url: canonical, workTranslation: { "@id": `${canonical.replace("/columns/", "/en/columns/")}#article` },
         headline: "四大云厂商的 AI CAPEX 正流向供给缺口",
         description: metadata.description,
         image: "https://idc-index.com/column-ai-capex-power-voxel-palette-v1.jpg",

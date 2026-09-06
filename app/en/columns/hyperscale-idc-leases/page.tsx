@@ -16,7 +16,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Article",
+        "@type": "Article", "@id": `${canonical}#article`, url: canonical, translationOfWork: { "@id": `${canonical.replace("/en/", "/")}#article` },
         headline: "Gigawatt Leases Are Reshaping the Data Center Market",
         description: metadata.description,
         image: "https://idc-index.com/column-hyperscale-idc-leases-voxel-palette-v1.jpg",

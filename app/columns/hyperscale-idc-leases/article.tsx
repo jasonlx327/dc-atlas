@@ -20,7 +20,7 @@ function ArticleHeader({ lang }: { lang: "zh" | "en" }) {
 }
 
 function ChineseArticle() {
-  return <ColumnArticleConsole lang="zh">
+  return <ColumnArticleConsole slug="hyperscale-idc-leases" lang="zh">
     <ArticleHeader lang="zh" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>核心判断</span><p>四笔公开合同合计接近 1.8GW，显示 IDC 租赁已经进入园区级交易阶段。长期合同提高收入可见度，同时把现金流押在三个节点上：开发商能否融资、园区能否按时送电、客户是否开始付费。</p></aside>
@@ -50,7 +50,7 @@ function ChineseArticle() {
 }
 
 function EnglishArticle() {
-  return <ColumnArticleConsole lang="en">
+  return <ColumnArticleConsole slug="hyperscale-idc-leases" lang="en">
     <ArticleHeader lang="en" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>THE TAKEAWAY</span><p>Four disclosed agreements approach 1.8GW, showing that data-center leasing has moved to campus-scale transactions. Long contracts improve visibility while putting cash flow behind three gates: financing, on-time energization and the start of customer billing.</p></aside>
