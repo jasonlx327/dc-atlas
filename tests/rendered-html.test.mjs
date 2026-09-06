@@ -128,7 +128,7 @@ test("server-renders the bilingual intelligence-console homepage", async (t) => 
   assert.match(html, /尚未确认/);
   assert.match(html, /下一验证点/);
   assert.match(html, /为何今天读它/);
-  assert.match(html, /column-minimax-zhipu-h1-token-economics-voxel-bright-v2\.jpg/);
+  assert.match(html, /column-minimax-zhipu-h1-token-economics-voxel-palette-v3\.jpg/);
   assert.match(html, /href="\/columns"/);
   assert.match(html, /href="\/columns\/minimax-zhipu-h1-token-economics"/);
   assert.doesNotMatch(html, /情报摘要/);
