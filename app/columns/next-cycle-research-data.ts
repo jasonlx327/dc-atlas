@@ -7,8 +7,8 @@ const primary = (url: string, zh: string, en: string) => ({ url, zh, en, level: 
 export const nextCycleResearchRecords: ScheduledResearchRecord[] = [
   record({
     slug: "singapore-200mw-allocation",
-    imageAltZh: "新加坡裕廊岛数据中心园区、电网和海上绿色能源连接的建筑剖面",
-    imageAltEn: "Architectural cutaway of a Singapore data-center campus, grid and offshore green-energy links",
+    imageAltZh: "概念体素插画：电力分配节点连接四块分期建设用地",
+    imageAltEn: "Conceptual voxel illustration of a constrained power splitter feeding four distinct staged parcels",
     articleSectionZh: "主权容量与电力政策",
     articleSectionEn: "Sovereign capacity and power policy",
     topics: ["Singapore", "EDB", "IMDA", "data centers", "power", "AI infrastructure"],
@@ -139,8 +139,8 @@ export const nextCycleResearchRecords: ScheduledResearchRecord[] = [
   }),
   record({
     slug: "ports-pike-8gw-risk-stack",
-    imageAltZh: "俄亥俄超大型 AI 园区、变电站、建设分期与资本结构的剖面",
-    imageAltEn: "Cutaway of an Ohio hyperscale AI campus, substations, phased construction and capital stack",
+    imageAltZh: "概念体素插画：分层基础上的在建机房与未接通供电设施",
+    imageAltEn: "Conceptual voxel illustration of layered construction plinth with a partly built compute shell",
     articleSectionZh: "AI 园区融资与风险分配",
     articleSectionEn: "AI campus finance and risk allocation",
     topics: ["NVIDIA", "OpenAI", "SB Energy", "PORTS-Pike", "8GW", "project finance"],

@@ -2,8 +2,8 @@ import type { ScheduledResearchRecord } from "./scheduled-article-data";
 
 export const astraSeptemberRecord: ScheduledResearchRecord = {
   slug: "astra-agent-cost-per-completed-task",
-  imageAltZh: "连接模型集群、任务运行环境和企业工作流的 AI 基础设施示意",
-  imageAltEn: "Illustration of model infrastructure connected to agent runtimes and enterprise workflows",
+  imageAltZh: "概念体素插画：带有重试回路的任务处理与验收装置",
+  imageAltEn: "Conceptual voxel illustration of a block-built task acceptance gate on a processing conveyor",
   articleSectionZh: "模型经济学与企业代理",
   articleSectionEn: "Model economics and enterprise agents",
   topics: ["OpenAI", "GPT-6 Astra", "Anthropic", "agent infrastructure", "inference economics"],

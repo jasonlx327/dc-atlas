@@ -338,8 +338,8 @@ export const currentResearchRecords: ScheduledResearchRecord[] = [
   },
   {
     slug: "glm-5-3-flash-china-chips",
-    imageAltZh: "GLM-5.3-Flash 模型、国产 AI 加速器、高带宽互联与分离式推理集群的技术剖面",
-    imageAltEn: "Technical cutaway of GLM-5.3-Flash, Chinese AI accelerators, high-bandwidth interconnect and disaggregated inference",
+    imageAltZh: "概念体素插画：通过交换网络互联的加速器机架集群",
+    imageAltEn: "Conceptual voxel illustration of close-up interconnected accelerator rack cluster",
     articleSectionZh: "国产模型与推理基础设施",
     articleSectionEn: "Chinese models and inference infrastructure",
     topics: ["Ox Alpha", "GLM-5.3-Flash", "Z.ai", "Zhipu", "Chinese AI chips", "inference", "SGLang", "open weights"],

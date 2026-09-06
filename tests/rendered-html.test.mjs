@@ -665,7 +665,7 @@ test("publishes the bilingual Alibaba Cloud and Qwen3.8 earnings preview", async
   assert.match(chineseHtml, /阿里云财报的七项检验/);
   assert.match(chineseHtml, /三年 3,800 亿元如何变成可售容量/);
   assert.match(chineseHtml, /Qwen3\.8 在六月季度后发布/);
-  assert.match(chineseHtml, /column-alibaba-qwen-cloud-v2\.jpg/);
+  assert.match(chineseHtml, /column-alibaba-qwen-cloud-voxel-palette-v1\.jpg/);
   assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns\/alibaba-qwen-cloud"/i);
   assert.match(chineseHtml, /"@type":"AnalysisNewsArticle"/);
 
@@ -751,7 +751,7 @@ test("publishes the first scheduled research column and keeps later releases tim
   assert.match(chineseHtml, /SpaceX 1\.4GW 只押 NVIDIA，Anthropic 2GW 引入 AMD/);
   assert.match(chineseHtml, /铭牌功率为 1\.4GW/);
   assert.match(chineseHtml, /媒体对电话会的报道/);
-  assert.match(chineseHtml, /column-accelerator-platform-divergence-v1\.jpg/);
+  assert.match(chineseHtml, /column-accelerator-platform-divergence-voxel-palette-v1\.jpg/);
   assert.match(chineseHtml, /"@type":"AnalysisNewsArticle"/);
 
   const english = await render("/en/columns/accelerator-platform-divergence");
@@ -1179,23 +1179,23 @@ test("publishes bilingual column indexes with crawl metadata", async () => {
   assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns"/i);
   assert.match(chineseHtml, /"@type":"ItemList"/);
   for (const cover of [
-    "column-anthropic-volta-compute-v1.jpg",
-    "column-partners-group-avk-power-v1.jpg",
-    "column-ai-debt-refinancing-v1.jpg",
-    "column-memory-2027-allocation-v1.jpg",
-    "column-earnings-season-review-2026-v1.jpg",
-    "column-cxmt-us-chips-v2.jpg",
-    "column-caterpillar-ai-power-v1.jpg",
-    "column-eu-ai-gigafactories-v1.jpg",
-    "column-us-data-center-power-gate-v1.jpg",
-    "column-accelerator-platform-divergence-v1.jpg",
-    "column-alibaba-qwen-cloud-v2.jpg",
-    "column-microsoft-ai-capex-v2.jpg",
-    "column-frontier-model-economics-v2.jpg",
-    "column-sk-hynix-hbm-v2.jpg",
-    "column-cxmt-us-chips-v2.jpg",
-    "column-ai-capex-grid-v2.jpg",
-    "column-hyperscale-leases-v2.jpg",
+    "column-anthropic-volta-compute-voxel-palette-v1.jpg",
+    "column-partners-group-avk-power-voxel-palette-v1.jpg",
+    "column-ai-debt-refinancing-voxel-palette-v1.jpg",
+    "column-memory-2027-allocation-voxel-palette-v1.jpg",
+    "column-earnings-season-review-2026-voxel-palette-v1.jpg",
+    "column-cxmt-us-chip-impact-voxel-palette-v1.jpg",
+    "column-caterpillar-ai-power-voxel-palette-v1.jpg",
+    "column-eu-ai-gigafactories-voxel-palette-v1.jpg",
+    "column-us-data-center-power-gate-voxel-palette-v1.jpg",
+    "column-accelerator-platform-divergence-voxel-palette-v1.jpg",
+    "column-alibaba-qwen-cloud-voxel-palette-v1.jpg",
+    "column-microsoft-ai-capex-voxel-palette-v1.jpg",
+    "column-frontier-model-economics-voxel-palette-v1.jpg",
+    "column-sk-hynix-hbm-earnings-voxel-palette-v1.jpg",
+    "column-cxmt-us-chip-impact-voxel-palette-v1.jpg",
+    "column-ai-capex-power-voxel-palette-v1.jpg",
+    "column-hyperscale-idc-leases-voxel-palette-v1.jpg",
   ]) assert.match(chineseHtml, new RegExp(cover.replace(".", "\\.")));
 
   const english = await render("/en/columns");

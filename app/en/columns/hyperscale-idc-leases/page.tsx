@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   title: "Gigawatt Leases Are Reshaping the Data Center Market｜IDC Atlas",
   description: "What the latest CoreWeave, Digital Realty and VNET contracts reveal about hyperscale leasing, delivery, financing and customer concentration.",
   alternates: { canonical, languages: { "zh-CN": "https://idc-index.com/columns/hyperscale-idc-leases", en: canonical, "x-default": canonical } },
-  openGraph: { title: "Gigawatt Leases Are Reshaping the Data Center Market", description: "Contracted megawatts create visibility. Energization, financing and concentration decide how much becomes billable.", url: canonical, type: "article", publishedTime: "2026-07-28T00:00:00+08:00", modifiedTime: "2026-08-01T23:00:00+08:00", images: [{ url: "https://idc-index.com/column-hyperscale-leases-v2.jpg", width: 1672, height: 941, alt: "A hyperscale data center campus linked by long-term capacity contracts" }] },
-  twitter: { card: "summary_large_image", title: "Gigawatt Leases Are Reshaping the Data Center Market", description: "How 100–600MW contracts convert into energized, billable data-center capacity.", images: ["https://idc-index.com/column-hyperscale-leases-v2.jpg"] },
+  openGraph: { title: "Gigawatt Leases Are Reshaping the Data Center Market", description: "Contracted megawatts create visibility. Energization, financing and concentration decide how much becomes billable.", url: canonical, type: "article", publishedTime: "2026-07-28T00:00:00+08:00", modifiedTime: "2026-08-01T23:00:00+08:00", images: [{ url: "https://idc-index.com/column-hyperscale-idc-leases-voxel-palette-v1.jpg", width: 1672, height: 941, alt: "Conceptual voxel illustration of three staged campus modules along a delivery spine" }] },
+  twitter: { card: "summary_large_image", title: "Gigawatt Leases Are Reshaping the Data Center Market", description: "How 100–600MW contracts convert into energized, billable data-center capacity.", images: ["https://idc-index.com/column-hyperscale-idc-leases-voxel-palette-v1.jpg"] },
 };
 
 export default function Page() {
@@ -19,7 +19,7 @@ export default function Page() {
         "@type": "Article",
         headline: "Gigawatt Leases Are Reshaping the Data Center Market",
         description: metadata.description,
-        image: "https://idc-index.com/column-hyperscale-leases-v2.jpg",
+        image: "https://idc-index.com/column-hyperscale-idc-leases-voxel-palette-v1.jpg",
         datePublished: "2026-07-28T00:00:00+08:00",
         dateModified: "2026-08-01T23:00:00+08:00",
         inLanguage: "en-US",

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AlibabaQwenCloudArticle from "../../../columns/alibaba-qwen-cloud/article";
 
 const canonical = "https://idc-index.com/en/columns/alibaba-qwen-cloud";
-const image = "https://idc-index.com/column-alibaba-qwen-cloud-v2.jpg";
+const image = "https://idc-index.com/column-alibaba-qwen-cloud-voxel-palette-v1.jpg";
 const citations = [
   "https://data.alibabagroup.com/ecms-files/1532295521/5b1cb883-8d00-4237-a148-6631cc12a5d2/Alibaba%20Group%20Announces%20March%20Quarter%202026%20and%20Fiscal%20Year%202026%20Results.pdf",
   "https://help.aliyun.com/en/model-studio/models",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Qwen3.8 Is Live: Seven Tests for Alibaba Cloud’s Next Earnings | IDC Atlas",
   description: "Seven source-led tests across external cloud growth, model-service ARR, the RMB380B infrastructure plan, proprietary chips, margin and cash conversion.",
   alternates: { canonical, languages: { "zh-CN": "https://idc-index.com/columns/alibaba-qwen-cloud", en: canonical, "x-default": canonical } },
-  openGraph: { title: "Qwen3.8 Is Live. Alibaba Cloud Now Faces Seven Tests.", description: "The model launch raises the bar for recurring use, sellable capacity, cloud profit and cash conversion.", url: canonical, type: "article", publishedTime: "2026-08-03T17:20:00+08:00", modifiedTime: "2026-08-03T17:20:00+08:00", images: [{ url: image, width: 1672, height: 941, alt: "Inference racks connected to cloud networking, power and cooling infrastructure" }] },
+  openGraph: { title: "Qwen3.8 Is Live. Alibaba Cloud Now Faces Seven Tests.", description: "The model launch raises the bar for recurring use, sellable capacity, cloud profit and cash conversion.", url: canonical, type: "article", publishedTime: "2026-08-03T17:20:00+08:00", modifiedTime: "2026-08-03T17:20:00+08:00", images: [{ url: image, width: 1672, height: 941, alt: "Conceptual voxel illustration of model-service hub linked to a cloud rack terrace" }] },
   twitter: { card: "summary_large_image", title: "Seven Tests for Alibaba Cloud After Qwen3.8", description: "Revenue quality, model monetization, capacity, proprietary silicon, margin and cash.", images: [image] },
 };
 

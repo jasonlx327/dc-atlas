@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import MicrosoftAiCapexArticle from "../../../columns/microsoft-ai-capex/article";
 
 const canonical = "https://idc-index.com/en/columns/microsoft-ai-capex";
-const image = "https://idc-index.com/column-microsoft-ai-capex-v2.jpg";
+const image = "https://idc-index.com/column-microsoft-ai-capex-voxel-palette-v1.jpg";
 
 export const metadata: Metadata = {
   title: "Azure at 43%: The Delivery Test for Microsoft’s Next $50 Billion | IDC Atlas",
   description: "A source-led analysis of Microsoft FY2026 Q4 across Azure capacity, fleet efficiency, deployment speed, lease accounting and the infrastructure chain behind next quarter's $50B-plus CapEx.",
   alternates: { canonical, languages: { "zh-CN": "https://idc-index.com/columns/microsoft-ai-capex", en: canonical, "x-default": canonical } },
-  openGraph: { title: "Azure at 43%: The Delivery Test for the Next $50B", description: "One gigawatt, faster GPU activation and a less comparable CapEx line reshape the Microsoft AI-infrastructure read.", url: canonical, type: "article", publishedTime: "2026-07-31T00:00:00+08:00", modifiedTime: "2026-08-01T23:00:00+08:00", images: [{ url: image, width: 1672, height: 941, alt: "AI data center capacity connecting server halls with grid infrastructure" }] },
+  openGraph: { title: "Azure at 43%: The Delivery Test for the Next $50B", description: "One gigawatt, faster GPU activation and a less comparable CapEx line reshape the Microsoft AI-infrastructure read.", url: canonical, type: "article", publishedTime: "2026-07-31T00:00:00+08:00", modifiedTime: "2026-08-01T23:00:00+08:00", images: [{ url: image, width: 1672, height: 941, alt: "Conceptual voxel illustration of a stepped cloud compute construction ramp" }] },
   twitter: { card: "summary_large_image", title: "Azure at 43%: Microsoft’s Next $50B Quarter", description: "Capacity, efficiency, activation speed and the build intensity hidden by accounting.", images: [image] },
 };
 

@@ -612,7 +612,7 @@ export function IntelligenceConsoleOverview({ lang, data, translateStory }: Prop
   const verifiedCount = data.pulse.length + data.companies.length + data.deals.length;
   const dataConnected = Boolean(data.generatedAt || data.reviewedAt || verifiedCount);
   const leadImage = lead?.imageSrc ?? "/lead-amazon-aws-capex.png";
-  const contextualImages = ["/column-hyperscale-leases-v2.jpg", "/column-sk-hynix-hbm-v2.jpg", "/products/nvidia-dgx-b200.jpg", "/column-ai-capex-grid-v2.jpg", "/column-microsoft-ai-capex-v2.jpg"];
+  const contextualImages = ["/column-hyperscale-idc-leases-voxel-palette-v1.jpg", "/column-sk-hynix-hbm-earnings-voxel-palette-v1.jpg", "/products/nvidia-dgx-b200.jpg", "/column-ai-capex-power-voxel-palette-v1.jpg", "/column-microsoft-ai-capex-voxel-palette-v1.jpg"];
 
   function categoryLabel(value?: string | null): string {
     if (!value) return isZh ? "项目" : "Project";

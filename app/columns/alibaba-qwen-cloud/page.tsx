@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AlibabaQwenCloudArticle from "./article";
 
 const canonical = "https://idc-index.com/columns/alibaba-qwen-cloud";
-const image = "https://idc-index.com/column-alibaba-qwen-cloud-v2.jpg";
+const image = "https://idc-index.com/column-alibaba-qwen-cloud-voxel-palette-v1.jpg";
 const citations = [
   "https://data.alibabagroup.com/ecms-files/1532295521/5b1cb883-8d00-4237-a148-6631cc12a5d2/Alibaba%20Group%20Announces%20March%20Quarter%202026%20and%20Fiscal%20Year%202026%20Results.pdf",
   "https://help.aliyun.com/en/model-studio/models",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Qwen3.8 已上线，阿里云财报的七项检验｜IDC Atlas",
   description: "从外部云收入、模型服务 ARR、三年 3800 亿元基础设施投入、自研芯片、利润率与现金流，拆解阿里云下一份财报的七项检验。",
   alternates: { canonical, languages: { "zh-CN": canonical, en: "https://idc-index.com/en/columns/alibaba-qwen-cloud", "x-default": "https://idc-index.com/en/columns/alibaba-qwen-cloud" } },
-  openGraph: { title: "Qwen3.8 已上线，阿里云财报的七项检验", description: "模型发布之后，重点转向持续调用、可售算力、云利润与现金回报。", url: canonical, type: "article", publishedTime: "2026-08-03T17:20:00+08:00", modifiedTime: "2026-08-03T17:20:00+08:00", images: [{ url: image, width: 1672, height: 941, alt: "连接云网络、电力与冷却设施的推理机架" }] },
+  openGraph: { title: "Qwen3.8 已上线，阿里云财报的七项检验", description: "模型发布之后，重点转向持续调用、可售算力、云利润与现金回报。", url: canonical, type: "article", publishedTime: "2026-08-03T17:20:00+08:00", modifiedTime: "2026-08-03T17:20:00+08:00", images: [{ url: image, width: 1672, height: 941, alt: "概念体素插画：模型服务枢纽、云端机架与推理路由" }] },
   twitter: { card: "summary_large_image", title: "Qwen3.8 上线后，阿里云财报的七项检验", description: "七项检验：增长质量、模型商业化、容量、自研芯片、利润和现金流。", images: [image] },
 };
 

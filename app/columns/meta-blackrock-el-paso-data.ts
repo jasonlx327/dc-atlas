@@ -2,8 +2,8 @@ import type { ScheduledResearchRecord } from "./scheduled-article-data";
 
 export const metaBlackrockElPaso: ScheduledResearchRecord = {
   slug: "meta-blackrock-el-paso",
-  imageAltZh: "正在建设的数据中心园区通过变电站和输电线路接入电网，分层资产结构表现建设期融资",
-  imageAltEn: "A data-center campus under construction linked to a substation and transmission grid, with layered infrastructure financing",
+  imageAltZh: "概念体素插画：分层资产基础上的在建园区与租赁连接",
+  imageAltEn: "Conceptual voxel illustration of cutaway under-construction campus on two distinct ownership foundations",
   articleSectionZh: "AI 基建融资与园区交付",
   articleSectionEn: "AI infrastructure finance and campus delivery",
   topics: ["Meta", "BlackRock", "El Paso", "data-center finance", "leases", "residual value", "power", "AI infrastructure"],
