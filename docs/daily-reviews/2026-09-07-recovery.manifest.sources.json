@@ -1,0 +1,171 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-09-07-full",
+  "sources": [
+    {
+      "ref": "evt-bf8400091697fc45845a",
+      "evidenceKind": "public-source",
+      "sourceName": "Tata Consultancy Services",
+      "tier": "T1",
+      "canonicalUrl": "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-hypervault-establish-large-scale-ai-data-center-campus-telangana",
+      "publishedAt": "2026-09-05",
+      "accessState": "public",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "independenceGroup": "Tata Consultancy Services",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "capacity"
+      ],
+      "evidenceNotes": [
+        {
+          "claim": "TCS says HyperVault has secured 264 acres in Telangana. With partners, it expects to invest up to INR 700 billion in building and operating an AI data-center campus. The capacity of up to 1GW is a phased plan tied to customer demand, with liquid cooling in the design.",
+          "sourceRefs": [
+            "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-hypervault-establish-large-scale-ai-data-center-campus-telangana"
+          ],
+          "state": "source-stated"
+        }
+      ]
+    },
+    {
+      "ref": "evt-b99613192ae0a640df21",
+      "evidenceKind": "public-source",
+      "sourceName": "OpenAI",
+      "tier": "T1",
+      "canonicalUrl": "https://openai.com/index/research-acceleration-view-inside-openai/",
+      "publishedAt": "2026-09-06",
+      "accessState": "public",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "independenceGroup": "OpenAI",
+      "sections": [
+        "idc-pulse",
+        "power-model-demand"
+      ],
+      "evidenceNotes": [
+        {
+          "claim": "OpenAI describes agents handling well-defined, multi-day tasks under researcher direction. It cautions that runtime and code submissions do not directly measure scientific output. The report documents changes in internal research workflows, not the achievement of fully autonomous research.",
+          "sourceRefs": [
+            "https://openai.com/index/research-acceleration-view-inside-openai/"
+          ],
+          "state": "source-stated"
+        }
+      ]
+    },
+    {
+      "ref": "google-ai-planet-apac-20260907",
+      "evidenceKind": "public-source",
+      "sourceName": "Google DeepMind",
+      "tier": "T1",
+      "canonicalUrl": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/ai-planet-accelerator-apac/",
+      "publishedAt": "2026-09-07",
+      "accessState": "public",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "independenceGroup": "Google DeepMind",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "power-model-demand"
+      ],
+      "evidenceNotes": [
+        {
+          "claim": "Google DeepMind named 16 organizations for its AI for the Planet APAC accelerator, starting a Singapore bootcamp this week and three months of AI technology and mentoring support. Projects span agriculture, biodiversity and carbon emissions.",
+          "sourceRefs": [
+            "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/ai-planet-accelerator-apac/"
+          ],
+          "state": "source-stated"
+        }
+      ]
+    },
+    {
+      "ref": "evt-b102c3b0d5abb8dbb4e6",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/0/999/049.htm",
+      "publishedAt": "2026-09-07T06:43:34+08:00",
+      "accessState": "public",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ],
+      "evidenceNotes": [
+        {
+          "claim": "IT Home reports disputes over allocation as Anthropic's $1.5 billion copyright settlement enters distribution. Some authors question publishers' eligibility and revenue shares, including claims for works whose rights have reverted. This concerns settlement proceeds, not a new model procurement or financing announcement.",
+          "sourceRefs": [
+            "https://www.ithome.com/0/999/049.htm"
+          ],
+          "state": "reported"
+        }
+      ]
+    },
+    {
+      "ref": "evt-b4d9df0ea78106eeb136",
+      "evidenceKind": "public-source",
+      "sourceName": "the-register",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theregister.com/off-prem/2026/09/07/thailand-pauses-all-datacenter-builds-and-approvals/5294688",
+      "publishedAt": "2026-09-07T02:05:00Z",
+      "accessState": "public",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "independenceGroup": "the-register",
+      "sections": [
+        "rumors"
+      ],
+      "evidenceNotes": [
+        {
+          "claim": "The Register reports that a Thai committee paused data-center construction and approvals and requested information on existing and planned projects. Discussions include treating facilities above 2MW as industrial projects and introducing resource charges; those regulatory arrangements remain proposals.",
+          "sourceRefs": [
+            "https://www.theregister.com/off-prem/2026/09/07/thailand-pauses-all-datacenter-builds-and-approvals/5294688"
+          ],
+          "state": "reported"
+        }
+      ]
+    },
+    {
+      "ref": "evt-41d81bc8c0d1c9591099",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/0/999/086.htm",
+      "publishedAt": "2026-09-07T09:14:25+08:00",
+      "accessState": "public",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ],
+      "evidenceNotes": [
+        {
+          "claim": "IT Home, citing Liyang's announcement, reports that the company and Chongqing Guoxinwei agreed to end the proposed acquisition because transaction conditions were not sufficiently mature. They signed a termination agreement on September 4, with neither party assuming breach liability.",
+          "sourceRefs": [
+            "https://www.ithome.com/0/999/086.htm"
+          ],
+          "state": "reported"
+        }
+      ]
+    },
+    {
+      "ref": "scan-20260907",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "Fresh 77-source scan and 96-candidate review",
+      "observedAt": "2026-09-07T06:01:13.871Z",
+      "sections": [
+        "*"
+      ],
+      "path": "artifacts/event-intelligence/codex-event-night.json",
+      "note": "Discovery success is not editorial clearance. 24 unresolved candidate originals held locally."
+    },
+    {
+      "ref": "column-schedule",
+      "evidenceKind": "workflow-state",
+      "sourceName": "Current September column schedule",
+      "observedAt": "2026-09-07T06:01:13.871Z",
+      "sections": [
+        "columns"
+      ],
+      "path": "app/columns/september-week-articles.ts",
+      "note": "No column scheduled for September 7; existing September 8-11 schedule preserved. Rendered schedule tests passed."
+    }
+  ]
+}

@@ -52,6 +52,24 @@ async function render(pathname = "/", host = "dc-atlas.example", country = null,
   );
 }
 
+test("September 7 catch-up reporting has bilingual, indexable detail pages", async () => {
+  const records = JSON.parse(await readFile(new URL("../app/data/public-intelligence.json", import.meta.url), "utf8"));
+  for (const id of ["editor-evt-b102c3b0d5abb8dbb4e6", "editor-evt-b4d9df0ea78106eeb136", "editor-evt-41d81bc8c0d1c9591099"]) {
+    const record = records.find(item => item.id === id);
+    assert.ok(record, id);
+    for (const prefix of ["", "/en"]) {
+      const path = `${prefix}/rumors/${id}`;
+      const response = await render(path);
+      assert.equal(response.status, 200, path);
+      const html = await response.text();
+      assert.ok(html.includes(`rel="canonical" href="https://idc-index.com${path}"`), path);
+      assert.ok(html.includes(record.sourceUrl), path);
+      assert.ok(!html.includes("后续一手材料将用于升级状态"), path);
+      assert.ok(!/<meta name="robots" content="[^"]*noindex/.test(html), path);
+    }
+  }
+});
+
 test("retained rumor permalinks remain bilingual and do not re-enter the latest feed", async () => {
   const archive = JSON.parse(await readFile(new URL("../app/data/rumor-archive.json", import.meta.url), "utf8"));
   assert.equal(archive.length, 11);

@@ -1,3 +1,5 @@
+import { RECOVERY_NEWS } from "./formal-recovery-20260907";
+
 export type FormalNewsSupplement = {
   id: string;
   title: string;
@@ -22,7 +24,7 @@ export type FormalNewsSupplement = {
   lifecycle?: Array<{ label: string; state: "done" | "current" | "next" }>;
 };
 
-export const FORMAL_PULSE_SUPPLEMENT: FormalNewsSupplement[] = [{
+export const FORMAL_PULSE_SUPPLEMENT: FormalNewsSupplement[] = [...RECOVERY_NEWS, {
   id: "aws-bedrock-servicenow-connector-2026",
   title: "Amazon Bedrock 托管知识库新增 ServiceNow 原生连接器",
   titleEn: "Amazon Bedrock Managed Knowledge Base adds a native ServiceNow connector",
@@ -256,6 +258,7 @@ export const FORMAL_PULSE_SUPPLEMENT: FormalNewsSupplement[] = [{
 }];
 
 export const FORMAL_LISTED_SUPPLEMENT: FormalNewsSupplement[] = [
+  ...RECOVERY_NEWS.filter((item) => item.listedTicker),
   {
     id: "nvidia-hugging-face-acquisition-2026",
     title: "NVIDIA 同意以 129.303 亿美元收购 Hugging Face",

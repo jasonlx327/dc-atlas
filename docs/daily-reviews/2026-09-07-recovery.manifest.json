@@ -1,0 +1,287 @@
+{
+  "schemaVersion": "1.1",
+  "runId": "atlas-2026-09-07-full",
+  "runDate": "2026-09-07",
+  "cutoff": "2026-09-07T06:01:13.871Z",
+  "displayTimezones": {
+    "zh": "Asia/Shanghai",
+    "en": "America/New_York"
+  },
+  "status": "ready-for-partial-release",
+  "projectPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-recovery-20260907",
+  "sourceLedgerPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-recovery-20260907/docs/daily-reviews/2026-09-07-recovery.manifest.sources.json",
+  "host": "bogon",
+  "headBefore": "37aad03ee143bdb6335a3acc7aa2fe7115f9d9e3",
+  "sections": {
+    "idc-pulse": {
+      "status": "updated",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "newIds": [
+        "tcs-hypervault-telangana-land-20260905",
+        "openai-research-acceleration-20260906",
+        "google-ai-planet-apac-20260907"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 3,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "evt-bf8400091697fc45845a",
+        "evt-b99613192ae0a640df21",
+        "google-ai-planet-apac-20260907"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Only independently reviewed bilingual records included; publication is not a blanket full-section clearance."
+    },
+    "listed-companies": {
+      "status": "updated",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "newIds": [
+        "tcs-hypervault-telangana-land-20260905",
+        "google-ai-planet-apac-20260907"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 2,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "evt-bf8400091697fc45845a",
+        "google-ai-planet-apac-20260907"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Only independently reviewed bilingual records included; publication is not a blanket full-section clearance."
+    },
+    "mna": {
+      "status": "blocked",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "scan-20260907"
+      ],
+      "accessGaps": [
+        "Full section-level original-source clearance not established in this catch-up; previous content retained."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Reviewed current scan and candidate dispositions; the bounded recovery does not establish complete fresh source coverage for this section."
+    },
+    "capacity": {
+      "status": "updated",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "newIds": [
+        "tcs-hypervault-telangana-land-20260905"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "evt-bf8400091697fc45845a"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Only independently reviewed bilingual records included; publication is not a blanket full-section clearance."
+    },
+    "cooling": {
+      "status": "blocked",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "scan-20260907"
+      ],
+      "accessGaps": [
+        "Full section-level original-source clearance not established in this catch-up; previous content retained."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Reviewed current scan and candidate dispositions; the bounded recovery does not establish complete fresh source coverage for this section."
+    },
+    "compute-products": {
+      "status": "blocked",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "scan-20260907"
+      ],
+      "accessGaps": [
+        "Full section-level original-source clearance not established in this catch-up; previous content retained."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Reviewed current scan and candidate dispositions; the bounded recovery does not establish complete fresh source coverage for this section."
+    },
+    "china-gpu": {
+      "status": "blocked",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "scan-20260907"
+      ],
+      "accessGaps": [
+        "Full section-level original-source clearance not established in this catch-up; previous content retained."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Reviewed current scan and candidate dispositions; the bounded recovery does not establish complete fresh source coverage for this section."
+    },
+    "supply-chain": {
+      "status": "blocked",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "scan-20260907"
+      ],
+      "accessGaps": [
+        "Full section-level original-source clearance not established in this catch-up; previous content retained."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Reviewed current scan and candidate dispositions; the bounded recovery does not establish complete fresh source coverage for this section."
+    },
+    "power-model-demand": {
+      "status": "updated",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "newIds": [
+        "openai-research-acceleration-20260906",
+        "google-ai-planet-apac-20260907"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 2,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "evt-b99613192ae0a640df21",
+        "google-ai-planet-apac-20260907"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Only independently reviewed bilingual records included; publication is not a blanket full-section clearance."
+    },
+    "earnings-calendar": {
+      "status": "blocked",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "scan-20260907"
+      ],
+      "accessGaps": [
+        "Full section-level original-source clearance not established in this catch-up; previous content retained."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Reviewed current scan and candidate dispositions; the bounded recovery does not establish complete fresh source coverage for this section."
+    },
+    "rumors": {
+      "status": "updated",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "newIds": [
+        "editor-evt-b102c3b0d5abb8dbb4e6",
+        "editor-evt-b4d9df0ea78106eeb136",
+        "editor-evt-41d81bc8c0d1c9591099"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 3,
+      "sourceRefs": [
+        "evt-b102c3b0d5abb8dbb4e6",
+        "evt-b4d9df0ea78106eeb136",
+        "evt-41d81bc8c0d1c9591099"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Only independently reviewed bilingual records included; publication is not a blanket full-section clearance."
+    },
+    "policy": {
+      "status": "blocked",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "scan-20260907"
+      ],
+      "accessGaps": [
+        "Full section-level original-source clearance not established in this catch-up; previous content retained."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Reviewed current scan and candidate dispositions; the bounded recovery does not establish complete fresh source coverage for this section."
+    },
+    "columns": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-07T06:01:13.871Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "column-schedule"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "No column is scheduled for September 7. September 8-11 schedule remains unchanged; schedule regression tests passed."
+    }
+  },
+  "release": {
+    "mode": "partial",
+    "tests": "passed",
+    "build": "passed",
+    "cloudflare": "pending",
+    "formalReadback": "pending",
+    "dailySnapshot": "pending",
+    "sites": "pending",
+    "sitesReadback": "pending",
+    "commit": null,
+    "workerCommit": null,
+    "sitesCommit": null,
+    "cloudflareVersion": null,
+    "sitesVersion": null,
+    "formalUrl": null,
+    "sitesUrl": null,
+    "includedSections": [
+      "idc-pulse",
+      "listed-companies",
+      "capacity",
+      "power-model-demand",
+      "rumors"
+    ],
+    "heldSections": [
+      "mna",
+      "cooling",
+      "compute-products",
+      "china-gpu",
+      "supply-chain",
+      "earnings-calendar",
+      "policy"
+    ],
+    "testBaseline": null
+  },
+  "blockers": [
+    "Morning sandbox DNS/transport failure reproduced; approved host-network scan succeeded. Future runs must use normal platform network approval rather than claim no change.",
+    "Seven unchanged sections remain locally held; no full-site reviewedAt advance.",
+    "Six source connectors failed; 24 candidate originals remain unresolved."
+  ]
+}

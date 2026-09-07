@@ -1,0 +1,2088 @@
+{
+  "schemaVersion": "atlas-editor-decision.v1",
+  "status": "completed",
+  "generatedAt": "2026-09-07T05:55:52.729Z",
+  "cutoffAt": "2026-09-07T05:55:52.733Z",
+  "timezone": "Asia/Shanghai",
+  "reviewer": "current Codex agent (manual editorial review; not a Luna scoring receipt)",
+  "decisions": [
+    {
+      "eventId": "evt-1765ddcffaf1a90a49a7",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T2",
+      "canonicalUrls": [
+        "https://www.cnbc.com/2026/09/06/meta-google-openai-anthropic-ai-model-fatigue.html"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "CNBC original retrieval failed."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-4553b39b02db3ce12d5c",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.theverge.com/tech/990918/amazon-cargo-plane-crashed-miami"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-a50991ec0f1c75f0701b",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T2",
+      "canonicalUrls": [
+        "https://www.cnbc.com/2026/09/04/nvidia-hugging-face-deal-chips.html",
+        "https://www.fierce-network.com/cloud/nvidia-acquire-hugging-face-129b-ai-infrastructure-deal"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "duplicate"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Existing coverage or merged duplicate; no separately established new fact."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-3583bc8620b483573be0",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T2",
+      "canonicalUrls": [
+        "https://www.ft.com/content/9422805f-519c-4b22-839c-cbd7a6464f07?syn-25a6b1a6=1"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "FT original not accessible."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-5d6e4436eecce033ac64",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/999/156.htm"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-5dd9cf6b8d685155854e",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/999/146.htm"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-71bf696d5b750014f9c7",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/999/157.htm"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-a77a0b00170e6fa8f4b9",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T1",
+      "canonicalUrls": [
+        "https://www.coreweave.com/news"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-b644b9ef2abe20322e00",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T1",
+      "canonicalUrls": [
+        "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "recirculated-old-announcement"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Original Google page: 2026-08-06; discovery timestamp is not publication."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-8aefd2d70ba71d2d6c57",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://www.theverge.com/ai-artificial-intelligence/990932/seattle-times-newsday-lawsuit-openai-microsoft"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Verge original retrieval failed."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-3a8b109e97e6bd13895d",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.fierce-network.com/newswire/aws-and-microsoft-launch-multicloud-networking-preview"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "AWS/Microsoft preview: original product notice and duplicate match remain unresolved."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-2688b7f7995c8679b4e6",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBvU2hpT3p0TTdyWTdYd0ZtNmdRSFVBak1QYlV2eGpFOEIxN0VzLVdTV0p5cjdQX0xRTlZnYWxlOWthRWswTUs2VGpYUTFTUmhSVzRlaGtKMVB2U2xfTmJRVWpoWjJtT1U?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "recirculated-old-announcement"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "GE Vernova primary announcement: 2026-08-24; September relay is not a new launch."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-d868cbcc7d58579fbfac",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPcHE2UlcxOUYxTzhwSTh1ejAzYjJSNzNSMFFhMHp2cGRsUzNOZW5OT2VDSWp5ZVUwbTktbU1vWmJOT05td0oxa2MxR09lRU54dHhrd2hqWFB0YTFFT3FNdEN0WkVkaGlPeUIwcFIyejh5bDlhb0NPODZ4ZWZDMEpQamFoSldMclh3ZzBxcS1rNTVBVFpNYjg0dHVMd1lhOFRqYkhVMW90eXlxTnJMdm5ESHQ2RGRITk00RlR5bGVsajhZWVdBSUlwZlZFeVd0TUt5SVEtanFKUlM?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-6052725e3d791e372b37",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQQi1UUTJnMlZTUlIyelA4Nll1amZHVGk3MDdkZUZ4X0MzbFZLVElHa3ZvZW1Yd0wwRWdxbmtUYkxMUEdncXFkWUpXVFNGMWNFeXVtRG1QTTNocmVjVlpiRmtpTjdyOHRvVVR4bWtybUpyV0VnSGdPTk9UeWJKbWtUb1ppMnZJc0xXUy1uaVZmR242RXFCVWZlbDhUbmlJQzQtS1djd1ZCOGRlZHZXM2JHRjMwMUdvVWRSUnBsWFR4bWhlVkNndFZicHBsd2dvVGtiMy1VQ9IB2gFBVV95cUxQUjNlVzRrUkFQTzNCSkpyZFZtZFJNcUVncGJqamhPVVFCQnpPdE5pWnJuTDVSaHFQSlBLNk9nUGZ3dGlURHpWcFAzdEo1djZKWU1TekFjTmc4X2o5M1Q3aVRDNWtEdERtR000UkdxMUpxZ2JUZE0xSGRPN0FkdV91RmxuOXRKaEs5Tk0yaDBsRTF0dmg4M1BJZ3dNZmR3MHFPZlNsaXMwRElRUTg5c19UR0NqREhJQ0NSZWlaZFkwSGJsUW1BSGRKNDA3Rmtxcm94QXUwNklpRmVuQQ?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-b99613192ae0a640df21",
+      "action": "publish",
+      "route": "formal-section",
+      "section": "power-model-demand",
+      "sourceId": "OpenAI",
+      "entities": [
+        "OpenAI"
+      ],
+      "region": "美国",
+      "publishedAt": "2026-09-06",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://openai.com/index/research-acceleration-view-inside-openai/"
+      ],
+      "reasonCodes": [
+        "primary-source-read",
+        "bounded-claim",
+        "agent-edited"
+      ],
+      "publicCopy": {
+        "titleZh": "OpenAI 披露研究代理使用情况，区分自动化任务与独立研究能力",
+        "titleEn": "OpenAI reports research-agent usage, distinguishing automated tasks from independent research",
+        "summaryZh": "OpenAI 在研究加速报告中介绍，代理已能在研究员指导下处理定义清晰、持续数天的任务；公司同时强调，运行时长和代码提交量不能直接等同于科学产出。材料展示的是内部研究工作流的变化，而非完全自主研究已经实现。",
+        "summaryEn": "OpenAI describes agents handling well-defined, multi-day tasks under researcher direction. It cautions that runtime and code submissions do not directly measure scientific output. The report documents changes in internal research workflows, not the achievement of fully autonomous research."
+      },
+      "publicClaims": [
+        {
+          "claim": "OpenAI describes agents handling well-defined, multi-day tasks under researcher direction. It cautions that runtime and code submissions do not directly measure scientific output. The report documents changes in internal research workflows, not the achievement of fully autonomous research.",
+          "sourceRefs": [
+            "https://openai.com/index/research-acceleration-view-inside-openai/"
+          ],
+          "state": "source-stated"
+        }
+      ],
+      "internalNotes": [
+        "Primary page publication date; no intraday timestamp inferred."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-163ebae9e2fe8bb5c138",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://x.com/testingcatalog/status/2096753152926122300"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Social lead: Meta original material not established."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-b102c3b0d5abb8dbb4e6",
+      "action": "publish",
+      "route": "rumor-watch",
+      "section": "rumors",
+      "sourceId": "ithome",
+      "entities": [
+        "Anthropic"
+      ],
+      "region": "美国",
+      "publishedAt": "2026-09-07T06:43:34+08:00",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/999/049.htm"
+      ],
+      "reasonCodes": [
+        "single-source-report",
+        "original-media-body-read",
+        "agent-edited"
+      ],
+      "publicCopy": {
+        "titleZh": "IT之家：Anthropic 版权和解金发放引发作者与出版方分配争议",
+        "titleEn": "IT Home: Anthropic settlement payments spark disputes between authors and publishers",
+        "summaryZh": "IT之家报道，Anthropic 版权和解金进入发放阶段，部分作者对出版方申领资格和分成比例提出异议。争议涉及权利已回归作者的作品及申领记录；这是和解款分配问题，并非新的模型采购或融资公告。",
+        "summaryEn": "IT Home reports disputes over allocation as Anthropic's copyright settlement enters distribution. Some authors question publishers' eligibility and revenue shares, including claims for works whose rights have reverted. This concerns settlement proceeds, not a new model procurement or financing announcement."
+      },
+      "publicClaims": [
+        {
+          "claim": "IT Home reports disputes over allocation as Anthropic's $1.5 billion copyright settlement enters distribution. Some authors question publishers' eligibility and revenue shares, including claims for works whose rights have reverted. This concerns settlement proceeds, not a new model procurement or financing announcement.",
+          "sourceRefs": [
+            "https://www.ithome.com/0/999/049.htm"
+          ],
+          "state": "reported"
+        }
+      ],
+      "internalNotes": [
+        "Media attribution retained; not promoted into formal transactions or policy."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-de5795d0c3bc2b37174b",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://x.com/thsottiaux/status/2096698561971064864"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-8882108e3a0eb7a05f0c",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://x.com/rohanpaul_ai/status/2096697446248403187"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Microsoft/Cornell: original paper not established."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-7ff3ed6ed22e66c34929",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://www.marktechpost.com/2026/09/06/meta-fair-introduces-ai-research-preference-models-rpms-ranking-ml-experiments-before-spending-gpu-hours"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Meta RPM research: original paper not established."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-5aab981bf592a4b6dc39",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://x.com/alexandr_wang/status/2096684178448560467"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Muse Spark benchmark: original result not established."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-2a79172df455ac7125ef",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://x.com/rohanpaul_ai/status/2096650583537234065"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Reasoning research: original paper not established."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-11fe5ff1b50a6f94a2fe",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://x.com/omarsar0/status/2096641382110707850"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "duplicate"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Existing coverage or merged duplicate; no separately established new fact."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-9dddaed71af662f2000d",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMihAJBVV95cUxOSmtBUjFIM1Q2UU1fMVdfaUdjYTh4cVJsQmNmaDZWV0VZZGpKZkR4LW8tSlk5Q3FOd1dNYlNIcGdHWE1nTDdGRG5QSzN2Q0JkQXdKZjh3ajBIZEdld1B6WW9qalVTQ09CTTEwSTM1RWlqbUdzbVZqYjh0RnkyRU9sWXBSUjNBR2FDWnNrT2dlOGhnOXJmNlo4czF1SFJ0YldHY0UxVWRCREx0Z1J6cXA2alI3eGtGdUVUNkZrRk16Rk9OcGFFVnI0NWR2a0RLVUtLcFczVERvUVVhN3ZEN2p0ZzY4MVFuVEtwd2NHY1ZfcDI0dFc4MDZPS3RSaGozR3pNNWNidw?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-92eba59f85a9894b8862",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiugFBVV95cUxPSFA1dnB6ZWhSNERTeHJKcW5MVHpyM2F0ZmdLTXNqZjdkbmtUWWFlVFJQa3AtWGQwTGZQaVREY3pVcmFiZWo0N2tSVzBpUVkyUU1zNjhlV21YV09PVWRiS18xRHc2R3FFNDFBMmFDRHFPUmw4LS01SWUxR2VDdi01WHd6SXpoTkowVkQxeTR6SlRvdldlYXhiMzM4blRrQ25mQktwR2h3NHFaTFZCMV93QkRBWTVaZFBybGc?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-d0a8611533f6df57b47d",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://x.com/gdb/status/2096721633876771094",
+        "https://x.com/rohanpaul_ai/status/2096711182212321480"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "duplicate"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Existing coverage or merged duplicate; no separately established new fact."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-335cbf4a52f0a8caa026",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMihgFBVV95cUxPTUFjZlI3X3RPNXBnMjBlS0NlaGU4aWdVWkxWdjBNM0JkOGJZLXM0VFNFS1VJbkVGVnpmampjTXc1QjlDcnFaUUN1Z0h0d1lNd1hsUHRfRHBRSUlrTUJWbV9kb3IwekU5N0IwSU42NUdFRWY4NEU4OVNDd1NObGlsaTVZb2pKZw?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-d8e4e6b714923c24ba56",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiywFBVV95cUxQaWEzdU5fb3VnQjdOZmN1NG1UM2xxZGdMVlhHQm90ZVFtYkFVTGtxNEdLMWstaEJFWTc0dVNuRFNCcm80eTFUTlZPMkdIZEZCUmxGMlAtUlR5UklCYUhaTElTbGFUR0N5eERlYkVjOG5rZ3d2Nk9xNGs5cU1CRktoRF9tUmNpalVGcGJ2N2dxTFpmQkZPdEpLWmpSZmVCWXZFd3VBSjNiZGc3WEZicXhIY3l4aTR4RUgxeHdxeG9QOVhib1pPVGhlMGdacw?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "CoreWeave analysis is not a new company disclosure."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-6d96e2c1fc4e735ec4f7",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMimAFBVV95cUxNbkZ2VWc0U3JGWm1aN09Tb2dMTEh4cnY1c0hsUzM2WmlNMHlPTkN6OUxsTkZSLWdaVGhJS0ltRVFVbWwxQU10dTRJMFp0WHdjUTVMUEsyUGxDcnFPblZRdXRjbm0tYjlPTmxUT1MyU3l3UFlweDc1Z25rU1hCUXlnMjRQYV9GdGRMRzVtWmluUVhQT0VOclRrNQ?oc=5",
+        "https://news.google.com/rss/articles/CBMimAFBVV95cUxOckhlRVlIMXdsWFNaYWpURmVFdDFtWkp6eTR1LUtraXN0a0FvWm13cmxyMjA3aDZEWm1tVzBkWlRIWTh1WEktMng4czNwRHl5VGQwbUhZRFRBQzBGbUZRSFJhY0NYSDFWLUIxZ19SaGk2YktGcklmamhzQTF0dlZ1bXhNUnEzeTQ1ZFV1dDM2cEE2ejdHUXVRaQ?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-89b8f1cac5800df29f60",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMinwNBVV95cUxOSnE4dUFsbXc4djY3eldYdHdGQS04ZVRiSXA0NU5rTzl0bXl2YjRUMGJCY2wtajVXckk4Mm91dDUtZW1wMzNESkRCcmJEem1MQTBTbFJjNmxJUnpPUjZmVW1pRkt3MkhMdWhoSlFLTU5mLWt0aG5hZV9NQmV2OEZ5RGJ4RTdfVTFWYTJfQ05qTk1NOXJ3Y2hoX0tJdmFIazI1VnhwVG5lb25BRkNfeTdMa20wbHpIOGlab0lhT3BpWU9ZRDlGeVBQVDNyYWdMUmFQQ2lKMlFFUkQtcmtGdGpUN2dON1h2WEo1VkY2elFndThHQVhyZDVKN0JDaEwyalNkRHNSQmNFakIzZEFTemJ0TDZBd0dEY0dLblU2a09EMFVKaW9tU19UMllEeWJsSHZnNzY4bFRnMHYyVkVWZzdqRU5KdkUtQVZDMlRBNm01QXpwVHJfZ2luaUZ3VHJTQ1ByWVV4a3BMOEQxMTFlSzByRXdRNHV4UzU2dFNuU01lUEdGeDBxV2hXUjhwYlMwUEM0dVREakRQYlZMVS03RFIw?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "duplicate"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Existing coverage or merged duplicate; no separately established new fact."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-18c34431384e5b911637",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.fierce-network.com/newswire/equinix-and-cpp-investments-close-4b-atnorth-acquisition"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "duplicate"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Existing coverage or merged duplicate; no separately established new fact."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-557d74d6f20f6d89e544",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.fierce-network.com/modernization/opinion-huawei-they-may-rip-out-our-networks-theyll-never-take-our-patents"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-e54736c14ff4467174f6",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZkR4emVXZGgzVGdCcjR5UlNqTV9YZWxlVFRzU0xsM3FJaFJTTTF0VnJ1dHF0WUQ1OGtETlFrMWI1aUNxd21senFVdDRjYmVkSkUxcmpGLTllakZ3bHZSSnE4bE5NS2pRQ3dJUjVGdmQ3QV9iUXoweFp1cS1OYThLSWdhRWVnZFNzU2tyVFFaaE83RVlxbVdXdllfcklhZ3U1S3V6YlJwci1FTjVzcHRxeg?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "VMware factory announcement date and original notice unresolved."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-79b2e339434cd43c3b71",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMipwJBVV95cUxNRzkteUtZUXVZcFBmS1licTdsOVVjMXJOSkJJUDdjemI3Q296VEk2eWtWZGNBVWktcENCYy01emNVWUVDQUtkd2hCMU1EZDZrTkhhSkd4QkJOREpZNl9kaHZmT093ZHpJb1JVYWtZNXRjX1VETkYxa2VtTVBXOTV0MndGVjB6QVFOZXdYYllSOF9qWEFIQmcyUVVwWkk0ajVjRno5R2tkWV9idHhaZWxzb0MzVnFXckdzbGZCWTFzU0hTU1RRZU9FcmRhXzFiSGFjT09EV1VqaklpVzJmVmpVMFNSQi1Rc3UybzkxSXdIQkVObU9MdDB3MWFZSXprMWFvNUJwWXdsVzhkbXZQWFZlZ2xWRHBIYmx1eDhSbnRocFprbW1nN2JZ?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "duplicate"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Existing coverage or merged duplicate; no separately established new fact."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-5e56a62b884143ab94f1",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://x.com/kimmonismus/status/2096701471232545206"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Thinking Machines financing: social lead not corroborated by an accessible publisher."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-7d6457d50625b158b616",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNMmE1QTJUUWxTUHFDVGFsX3NBaDRrRVpSY1BvT1NzSGpIbHZyQVlTQVhrcE1NbnZLX21falM2VWJVU19rYmdMR3RKSk9sMmoxQU8zcWdWSDhCSFNqc0JDUUhicWZCU253WXpKVjlMX2h0Wndud0pub0Y3bjZXTE42MHQtSXF6M1J6Q2dTZnJZUVlCX08wVm1lWjI5aEIwQndiSzlvRV9NUWV0WUMxQlNMNkFmOHZqTXRhaWx2ZHdzdDdRMWs?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-a98b37f812656118e3c3",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://x.com/rohanpaul_ai/status/2096644731371667965"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-b4d9df0ea78106eeb136",
+      "action": "publish",
+      "route": "rumor-watch",
+      "section": "rumors",
+      "sourceId": "the-register",
+      "entities": [],
+      "region": "全球",
+      "publishedAt": "2026-09-07T02:05:00Z",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.theregister.com/off-prem/2026/09/07/thailand-pauses-all-datacenter-builds-and-approvals/5294688"
+      ],
+      "reasonCodes": [
+        "single-source-report",
+        "original-media-body-read",
+        "agent-edited"
+      ],
+      "publicCopy": {
+        "titleZh": "The Register：泰国暂停数据中心建设与审批，拟统一监管框架",
+        "titleEn": "The Register: Thailand pauses data-center construction and approvals while developing a regulatory framework",
+        "summaryZh": "The Register 报道，泰国相关委员会暂停数据中心建设与审批，并要求运营商和投资者提交现有及规划项目资料。报道提及对超过 2MW 的设施按工业项目监管及资源收费的讨论；这些监管安排仍属拟议措施。",
+        "summaryEn": "The Register reports that a Thai committee paused data-center construction and approvals and requested information on existing and planned projects. Discussions include treating facilities above 2MW as industrial projects and introducing resource charges; those regulatory arrangements remain proposals."
+      },
+      "publicClaims": [
+        {
+          "claim": "The Register reports that a Thai committee paused data-center construction and approvals and requested information on existing and planned projects. Discussions include treating facilities above 2MW as industrial projects and introducing resource charges; those regulatory arrangements remain proposals.",
+          "sourceRefs": [
+            "https://www.theregister.com/off-prem/2026/09/07/thailand-pauses-all-datacenter-builds-and-approvals/5294688"
+          ],
+          "state": "reported"
+        }
+      ],
+      "internalNotes": [
+        "Media attribution retained; not promoted into formal transactions or policy."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-dcd3b865f6c285714526",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.theverge.com/column/990183/diy-plug-in-solar-us"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-a82273d447e92265abaa",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "T2",
+      "canonicalUrls": [
+        "https://www.marketwatch.com/story/will-a-data-center-hurt-your-homes-value-research-says-no-sellers-disagree-7017ace4?mod=mw_rss_topstories"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-a74d4dc7b13de386345e",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/999/141.htm"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-d3591910ea19bfe093db",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T2",
+      "canonicalUrls": [
+        "https://fortune.com/2026/09/06/congress-east-potomac-park-trump-golf-course/"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-7e4b50ce8cf7b6cf0e42",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.datacenterdynamics.com/en/opinions/the-role-of-manufacturing-in-tomorrows-data-center-buildouts/"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-fd535edde99186f655d1",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.fierce-network.com/newswire/hewlett-packard-enterprise-reports-3q-results"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "HPE earnings: complete primary results not reviewed in this bounded catch-up."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-3d365cd2337eb86bb950",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/999/085.htm"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-f9e7ff9da5bdb4c4cd44",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/999/176.htm"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-5c5059b0149039b14b0e",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/999/151.htm"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-5bbf027a8dccf8dd91b3",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/999/090.htm"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-41d81bc8c0d1c9591099",
+      "action": "publish",
+      "route": "rumor-watch",
+      "section": "rumors",
+      "sourceId": "ithome",
+      "entities": [
+        "Liyang",
+        "Guoxinwei"
+      ],
+      "region": "中国",
+      "publishedAt": "2026-09-07T09:14:25+08:00",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/999/086.htm"
+      ],
+      "reasonCodes": [
+        "single-source-report",
+        "original-media-body-read",
+        "agent-edited"
+      ],
+      "publicCopy": {
+        "titleZh": "IT之家：利扬芯片（Liyang）终止收购重庆国芯微（Guoxinwei）100% 股权意向",
+        "titleEn": "IT Home: Liyang terminates its proposed acquisition of 100% of Chongqing Guoxinwei",
+        "summaryZh": "IT之家援引利扬芯片（Liyang）公告报道，公司认为交易条件尚未成熟，与重庆国芯微（Guoxinwei）协商终止收购意向。双方于 9 月 4 日签署终止协议，并约定互不承担违约责任。",
+        "summaryEn": "IT Home, citing Liyang's announcement, reports that the company and Chongqing Guoxinwei agreed to end the proposed acquisition because transaction conditions were not sufficiently mature. They signed a termination agreement on September 4, with neither party assuming breach liability."
+      },
+      "publicClaims": [
+        {
+          "claim": "IT Home, citing Liyang's announcement, reports that the company and Chongqing Guoxinwei agreed to end the proposed acquisition because transaction conditions were not sufficiently mature. They signed a termination agreement on September 4, with neither party assuming breach liability.",
+          "sourceRefs": [
+            "https://www.ithome.com/0/999/086.htm"
+          ],
+          "state": "reported"
+        }
+      ],
+      "internalNotes": [
+        "Media attribution retained; not promoted into formal transactions or policy."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-74417a531a9372d72121",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.ithome.com/0/999/084.htm"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-fa5fa2d64820d8942cc7",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNbDgyMEdXTkYyTXgxbFNSeC0zRDJDbW4tTzBTaUJKUVh0YUp3eXdjbHV5NEJoSEFIR0owc3pDVVV4UWRNY1pDNkNPUjJONEx1WUJiYlI5N2tQbVNsbVVYeG5KbVJhZHd5UFotVXczS2p4YkVlckNITUVXVHBEM3FKVTkzd2VDemJHb19LUzB3N2VrMFlBS0NZRV80WTQ3bTJvQkwyVWxFb1dzT0EwMnZqdlVZTnJ4OF82?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-fcc6a40461331b6c43a5",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQMVRnNjJFUDFtWXA1aVJZdFg0RmJNeHlmWmJWRHo4WjZudERveFdnNkQzNWJHZGZTaEs4UllkOXlrd3djamVVajBWcHpkc2VEQTFxNUh4R05EcXFJb2dacDI5MEhfS1JDZVlHRGI5QmxEQUpmZkUtM3U3TE1IVDhQR294OGp5ZzMxZC1ZVFJPczI2V1MzYmxYeFA5SC1ZYUpEWWgtTDJFQmFMY2IxbTlMaTFHQ3RyVGdrUC00bEFXd0VHSUc4UnlnWXZBTGUtLVh5VjlhdzhUSEhwd3VfTU5vZDE0Qkc0UjRSUU1jQ0w1eUpTcEJEc21lSE45bw?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "EPA proposal: primary text and duplicate comparison unresolved; no formal policy update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-a6d47faf36da6fa361b3",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOajhLdkZsa2E2Wkk5VkNQZVBiUUQtTkxaQTRkdHUtVU1BZ0NnSUs4aVE3VDlnNW9hOFFYZ0pSbG5jNTd2QzJQZlN3MFhINUZuZmp1OG1VN2ZLY0xnWXdIdEFUUFQ1S0R3V2xjbUZEOFA5VG9mSlZCWFZzT0lZUXZNbzZvRERjdHczLURuM2dqaXNFM25fbXpQUzluOVZYLVA1eS1oUjJGWTJjX0dBT2RJdXk3NlRVRHBrLXNnZUJnazIzNWUyaDNlWWRLRFV6Rk10Snh5WWl2NHNTZnc5WUVlalE1OVVPUmxqLWfSAe4BQVVfeXFMTWpWX0dyTVk5N19pN2Z1S0FuaEQ4VFZTbkhFZ3cwT29aaEd5czVKVzZJSzVnQkFCcE5GNHU2N1BpOUFpS3Q0M3VqY3g5NDU2OGlFN3JjRV9pSVppZTZvX3NCYk9CR0pCOUFtMWxaaHdlSWUyRlk2S1NLNmx4VW9waVVoXzR6ODZHWm1pVFBvUnpFejdieDR6NjNVNllwZXQ5MnpEZmgteVRkTmFlQ1RMeTQ4dXZUWE4taXFEbzJtOUQwMC1LdVV5ZmNKYU9RUTFncnVFNkNyNy1JbEdpMTJ5cU10WXdmNTlvbTBmeld0dw?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "duplicate"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Existing coverage or merged duplicate; no separately established new fact."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-2c8f4b38adebedfc6df4",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOWE15U0wwdGNFQVlCZzBsTW5VSFhoWlYwMV84djNDMm9TSU45VFN5dzdHSlA1d3lHSERnQXlyWUlaLS1vUllycFJlMVVyUUQwdlltV1gzMVhWbGloR2xkSlVyUVNZaGdkMVplM0x5RDRYbVV0Mm8taEY4a3dDSmF3WEVfTHMyZEtHa3lyR2E1NlRJOWNFNjdtVDdHS3hySGpPM1RrN1lfWXhnMjFkRU5mQktBeEZEb1BfMmM5SHo0cFFkRnhXNkdLYml5TjhvdlhVMzd1UTg3NG5DVnU0U3lUZU1IMDlad9IB6gFBVV95cUxPeXU1eWJyX2MtakpGY2l6WmJoZDRKbFgyUFhoOUFyV1JBN1hsMkdlWnQ5MVdqazhfb2JUU2tndmE3N0YwbF9fUDhxRFBlbXdtT196WFVjRXVEc0diNHhra21aZ3lRV3dLajM4aDZSS0FQaW5DNWd4aWhPUFlIay01ZkpzMDMzOWp3bzdmbVgtMDVXd1lmRXVvc2JhUS1WcGlocTdqTndUSmZ4MFZnT3JqX3F6M1NzcXg2eFdhd05KLXdrMlU3ZTZrUkhuUTdWTDllOUE5MWJZNmhvMWoyTWgzWWI3RTQzWnRlN1E?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-dab0a848e191c3054a32",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T1",
+      "canonicalUrls": [
+        "https://developers.googleblog.com/driving-developer-excellence-inside-the-program-sprints/"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-d91dd95b130447bab68e",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T1",
+      "canonicalUrls": [
+        "https://developers.googleblog.com/agent-and-model-evaluations-in-gemini-enterprise-agent-platform-are-now-ga/"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "recirculated-old-announcement"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Original Google page: 2026-07-31; discovery timestamp is not publication."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-c694aa8dc6d0c3cac717",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.fierce-network.com/broadband/charters-cfo-departs-att-sues-charter-false-advertising"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-a20d64306d019ab538dc",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9IWWVRLXhZVHFwcEFzRWJfbUxkdU0zeEVMMXFuYmlJN19DQW1DSWxhM2xtNklGbDF0OVY1dDE4azczY0tWR0ZmZ2dTZk9RbUdPY1JfYUF3?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-f4de769a12d8672988d9",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://x.com/Yuchenj_UW/status/2096647646815654043"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-34314ad7f8e57f3ac1e7",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://x.com/AntLingAGI/status/2096633889427177674"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-eff2ae927639fe218583",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMirAFBVV95cUxQb0ZvZ0VVbUhMa19qem5iS21NOEJneXdVck9pTmNnVkJoTzFOU0FlNDhMVGFWbzFOckxtTGxsdmlFdjhZNDZxV2FUd1AzcHRNT2lTZjFwbHZLWTZhTlB0SXBqNm1Ec3pqVTVDWTU4OVN1SW41NEN1QXhIN1JwTFNFX0FDN1FNZ3ZHLTdnZmdhdzZLZ0tQY3M5ZnJndXZDVEREbWZabC13c3JoVFJw?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-c821ba6dbe319739e98a",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiSEFVX3lxTE11a3U3cFgxbDVMblZtRmE1MkVBSnN1QUR3TTRua1ZUVlMyMU0tVE1wSFVvRlhfSUhNSjFDeThJWXBuNUNlLVdiSg?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "duplicate"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Existing coverage or merged duplicate; no separately established new fact."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-8c6c87ebaf52b8715db9",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQd2NqbE1RUWo4eEEydEZBeUZGMEtHbXIxWkV1ZjhWZEJkUTBZcHhZZmVSSkFfdDM1UWFKLU5LNkZzdHNSbXJ4WC1JMk9ucEtfWm15bndzZmhGMVZ3WVBXaFBYeXB4MzZsemtMZ2JMbEI2LVZGMVUyVHAyTFhTNjhLWTZudmNLb2FodnpiS3hURFM3Rmdna1VGVTd1dGJVNnhlRHA4V3dsNlJXWVU4azNqM09hWnBRWTl6MmZSNnBQYjdRVjRacTRBSkxZQ2VSdGFpMTNrdFltQkUxZEt2SVJ1aDh0T1BaV3BnQnlYOHZINVNPZ2xLU2RIV3BkWQ?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Kentucky local restriction: original county action unresolved."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-b03ba9e50f584965ec3e",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMidkFVX3lxTE9oM19JVE84SmNUdEV5Q1ItNTRvaTNZTXRuY0xpc2VpN1ZGcGRRU2pJV19pMlEyUTg2XzRTM3dwZWpHcjd6Z2ZKN2ZHQjliWHppNndSUWZHSTFrVm9zbGV4ajNFWUluMHNydlhvTEJjRzZKT0NVZnc?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "LG Uplus/GS standard: original corporate notice unresolved."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-623d7adda0cbc94bbb08",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOVUszRUhjLVhSaWlFMDRkYlJxdFQ2eGNfOE1iRzh2c25ncldxeVlYalFxYkI3azl1aTVGakxudTVIbk0ta2xEUWk5Rk00bkdEZEJ2dHl5VlFDWF9zc1RTUUlKVXVoam5DZnhMaFFwdHptdzd2LUhVenVZVUF0MVh2ZHZQLTlNbzg2QU0xU3E5Tk1WazJxMjEtZDhoeDdaaTVtbmtkemlIMmZaUVl4REpscjdseE9ObHBmXzB6MDJXdkhKS1Y2TXMxc3RSY1RpWE11dFo3TlctZk1jbDU1eFZsZtIB5gFBVV95cUxNc1JsaGtMZTZYTUNCZzNpckNHSlY5MTVYd2JTVjlKeEFUVDFNbnJ5Sm9xMnMwM1VSc1RlR1BqWjMxeW5WWm1lTFhBR19kWkVPckNsYXVaVlBoYzJjbE5BTFhEdVp0dWNWTkJOMU9xcEhGN1U0QUEyY0JjRkx0MVpKRTZMOTJXYjkwek9ObHVxUnVnVkttVW9GSElDWElydi1RZW9QNEFLSlp0a05OZXFPZVgzcjBQSXRqQ0JRTWlGTnZMaWNRSUVHeTBnNDBFeHltOTNxbFdBWmlvUTdDNUg4TGU1R0E4QQ?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-b3f05be9d475b764a826",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMifkFVX3lxTE9UWkdjUHd6U3Nzam9OeG0zSHUyVkVLVWNtdkVKakJVZXdrTXREeVhhUEpPem8zbm8zYTNJU2k2Y3M4NjllWHp6ZExNcWZzUGpYbzEwWmkzdDJEX1prOVhaSEt6ZU1mWkFaOVlYNkIxaDhpQkl3N3ViT2VTUS1QUQ?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "duplicate"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Existing coverage or merged duplicate; no separately established new fact."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-69cd2d046189dd77c06a",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.fierce-network.com/broadband/light-source-says-central-us-hot-area-ai-data-centers"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-526f2b93a54139d3e8d1",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiekFVX3lxTE5iaXJfeEVNVVVZbURLVHhpaHA1T0dpVDlsczNKQmRpWUxiOGFIU3d3RU5GLVh2U3pleXlPZHhmV2pkbDRiUjlUck1HdF9hQnNyRl9EbUVJazJJbm1rQnNyeFQ3TUtVc2k4MnJSQzRKdGw5dFR1Q1BVMi13?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "duplicate"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Existing coverage or merged duplicate; no separately established new fact."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-242668e4931d3c92777e",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5fbFZndWpOOUI5dFlpREZEZlFZU2JqOTdVNWFtcWJEZ01KVC0xYWNVbGhueFJnaGtXeTlIS1JLU2lZRklLR0gwNVJ1Z2Y5QThNVW1vOQ?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-6576d4e6093e2e3e532c",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBGZXppS0hlaTFLMUtDOWFTS0RzV0VnSmdwNTU5ZmlIb1VEeWJQajJXZUtaUnlFbGdEY2M2d1dxS3JTcUFuaDVyWnc1dVJ5M1VoWjNZ?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "AI pharma funding: original announcement not established."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-7f5b23118873db21ddea",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://www.marktechpost.com/2026/09/06/h-company-releases-neomme-a-family-of-260m-and-800m-single-tower-multimodal-encoders-that-drop-the-vision-tower-and-causal-decoder"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Neo-MME source retrieval failed."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-a8bf2e7015458a2000d3",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://x.com/OpenAIDevs/status/2096683221308362942"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Social distribution post, no distinct confirmed publication event."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-58e2d3e1dce91605b867",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQTnFtY2JjUkJOUGhZdHFSRUZvSEUxLUs1dmlOMG5IX2RTbzdWQ3gwMXljYlBxMFhQX1Q3UXpTVmFOMnJRZnJvd3d4VmhIRmxVd2NjcUhjcGw5SGhZeHpTRWlQMXBJVExjZmpxM0J5ZjZjbmszRWZzWUFBOFdUQWxFaHUzQnFkY2JV?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-7c1a2e22e73f5a690a0d",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://x.com/emollick/status/2096605475794014536"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-67d9fa3805443fa41dae",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://www.ben-evans.com/benedictevans/2026/9/3/ai-tools-and-transformation"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-6746151169484ae157d3",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiR0FVX3lxTE45M2p2TzhlRkc2djlRbENjUmVxQnJzSkc2ZFZ3aFBEdFF4RDF4YXJJbmVKbXNldWRvOTluVTlyREpMQ3NZc05F?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-22e28cb5921d800d737a",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBYTGJiTHdCb3kzeXFWallyRjVLU19pdVJwVEpqQWplQzFrQ0d3blRZSWNXOW5iMUhvTlFZUk5IRzNYNFNYdDlyNjRlXzdmeGNEZHAtajZQYXZtUQ?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "duplicate"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Existing coverage or merged duplicate; no separately established new fact."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-3a8faf7feea6cfb774e0",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://techcrunch.com/2026/09/06/travis-kalanicks-atoms-might-be-getting-into-the-robotaxi-business"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Robotaxi acquisition lead: original reporting unresolved."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-548a58614a559448627e",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9sSXctaWJSd3lkeXQ0OWMxVDVYZ1hFaDdZS3lkVk5wRlZ2c1docDJXVFc4aXNiZm5Fb3lGUlpOWFJnTmlsMHhzWEdkcGM5UQ?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-c346e1ebd6d7aec4be3b",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOZExtZDZxMHgzYmJ3WjdTZjRfZE1YUHpWNGVlcUsxQ2h2ODBlMldQY1d6REZMZmR0UHh3MjlTOF9zTmRQejduMXVkQTZOWmwxeWFOM05BMlppNXZQQUFHNWJNSlZES0JwSDVKU3hKS3BtVXZSR2xvNUdXOEZwQ3ZIcGJLR05ja1NVek9KQmd6SXRiUFNhbXFJOVVjYUI2M3cwNG1KeHlGWmJSVW5tUVp5cl9yUVVTM3MwcE5jdjJNNDVtU1pNc1dmejN6TFBoNXh4?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-f5addb0dffce76f1cb8c",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQU2pESTJlaXJreFZNYWpOcmF4TC1vZjVTTndHaDBtLVl2a2FCY3UzRFlycmJic19SY25EYTJONTlxQ1pIbFdxYklYVl9jMXMzMlB0UVcxMm9FYmJEc0t6SXpMQmtVelB4VjZvUzdhbmUyeTVycjBmaVVWNU5Xd1h0eXd1TWhRT003dFEzc3dXclROeGxwM0wwSktDUnBiT0lDUFVDYUczeWlFY2ZFTmVhRmUxM2tDNmFOY2FIckFVMU9CaGc3U2NDX1BZT3B1ZXp1MWsxZGk5cETSAdgBQVVfeXFMUFNqREkyZWlya3hWTWFqTnJheEwtb2Y1U053R2gwbS1ZdmthQmN1M0RZcnJiYnNfUmNuRGEyTjU5cUNaSGxXcWJJWFZfYzFzMzJQdFFXMTJvRWJiRHNLekl6TEJrVXpQeFY2b1M3YW5lMnk1cnIwZmlVVjVOV3dYdHl3dU1oUU9NN3RRM3N3V3JUTnhscDNMMEpLQ1JwYk9JQ1BVQ2FHM3lpRWNmRU5lYUZlMTNrQzZhTmNhSHJBVTFPQmhnN1NjQ19QWU9wdWV6dTFrMWRpOXBE?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-bf8400091697fc45845a",
+      "action": "publish",
+      "route": "formal-section",
+      "section": "capacity",
+      "sourceId": "Tata Consultancy Services",
+      "entities": [
+        "TCS",
+        "HyperVault"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-09-05",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-hypervault-establish-large-scale-ai-data-center-campus-telangana"
+      ],
+      "reasonCodes": [
+        "primary-source-read",
+        "bounded-claim",
+        "agent-edited"
+      ],
+      "publicCopy": {
+        "titleZh": "TCS 为海得拉巴最高 1GW AI 园区取得 264 英亩土地",
+        "titleEn": "TCS secures 264 acres for an AI campus of up to 1GW in Hyderabad",
+        "summaryZh": "TCS 披露，HyperVault 已在 Telangana 取得 264 英亩土地，与合作伙伴预计投入最高 INR 700 billion（7000 亿印度卢比）建设和运营 AI 数据中心园区。最高 1GW 为分期规划，建设将随客户需求推进，并采用液冷设计。",
+        "summaryEn": "TCS says HyperVault has secured 264 acres in Telangana. With partners, it expects to invest up to INR 700 billion in building and operating an AI data-center campus. The capacity of up to 1GW is a phased plan tied to customer demand, with liquid cooling in the design."
+      },
+      "publicClaims": [
+        {
+          "claim": "TCS says HyperVault has secured 264 acres in Telangana. With partners, it expects to invest up to INR 700 billion in building and operating an AI data-center campus. The capacity of up to 1GW is a phased plan tied to customer demand, with liquid cooling in the design.",
+          "sourceRefs": [
+            "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-hypervault-establish-large-scale-ai-data-center-campus-telangana"
+          ],
+          "state": "source-stated"
+        }
+      ],
+      "internalNotes": [
+        "Primary page publication date; no intraday timestamp inferred."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-a759b73d68a13b505c15",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMimwFBVV95cUxPbkpTSVR5eDQycHlCWFpLNkk2MVc3LTJXQUowMFBvWlBQVkhRbEV1aW4yS1RKMjZNbElYcm10dk1rVTBqZWRlTzg3N1BpYlk5Z1N1U2N1QkZaMndtbXA5RmdhRU5iTmVLRm9QYkpCVFFIaWpDQ1lyV2VuM0VTc2Q1UzlyRmRNOTRlbW55QnFlR3h3Q1o2LVdGdW5oONIBoAFBVV95cUxOejBhUTRZR0pLNmtGaW5nNjFvSEJNa0NWM3BlUWJPRTdXaE1kVmVXTTl5SUtBQzRqaWFQRFM1NWR1YndjaXRxUHlrYXpNZWJCaHdCZ0NnUThUSms0Yk9mdm9DVGNaWGFwUzh4ZE5YcEg1VG8yT2d2S05XOGFYcjlsVWlIU01FcmxscUd5c0Y5YjN3cGFTZTh0TlpaejF1WGIz?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Punjab hub: original reporting unresolved."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-f08ffe6a88694ccfca42",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUjFiaUhOaEc4bldpVWtnck9RSUhZOEtDRjJHYUFkckdMTWZrN3NDWG14UW52VExPZUpQYVN1ME1kQ2pHTmVSTXJwRG1OaGVwZTE5OUJuaFZUcVFUTTgtX1ROWmVFaGhDcWtzTFBVWEJvWHRDbFh4NXAyNzJOc3drM0dVSVJrbVhpbE0tVDREbWx3MDhRU2MxVGVhMS1kQnp4RzNCZQ?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-d1c3a6b88042176245d8",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5IcW0zRU5LUXlyWlI3WjE2Z0J5Rk1yeWZGU3ExSkdWak5adE96LThYUkxRZEZUWjQyVmJaZnNaRHZiY1dBc3JHbWw4ZDZFRkxSTkRrMjgxQ0Jwb3RlcGc?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-35be469570b1471b1f2e",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiekFVX3lxTE5HZThrdkZVRVBnMThPMzkwYmNIU1hQVnA4SmlhbFhwRnJzdlNzQkhPREFXaDVpWV80c0ZkcGFvcU5QX1RUNE44OE5NTTVrTHgzd0pJTjZ3VVVENTE3aW1pQ3MyZGpheDQyX3JvaDVuR2JVa25UcTIyN0p3?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Adobe Rilo acquisition lead: original notice unresolved."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-2133350d30c05f03ad03",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQY2JKUHZuVkVueW9NaWJQWV9rVVAxTG9nRWVBTGFiWTVDV0NrdWdObmNTZ1pjNk5VMzlrN2FGMlhhSzBOREdPSVhQZkZrdS1XRXNlV28wb1NSYjZ3eHk3NjZ1Yy1XcUxsdDh2QnJWWEZfZHpSZy0xVC1VNEJNUW5kQVpJMFVtM1hFSlhOdWYzc0llbUZqTElwa2hkTW9RSVIzVTU0b0ltRDAzdV9wNFRJWlZrdnotSzM3WEx4ZExLRkdSc2R1MlVXOXpndDE0QUd5SkRrQ0d6MWpEV1Rhb1ZqcFRJR1g2bGJHZWc?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "reject"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "No distinct material AI news event: non-AI product, stock recommendation, index page or spam."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-bb3c0c1a913486101def",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiygFBVV95cUxNLWQ2RzNEYmlweUlFN1FKN1dpMEhxWnJhdmJwek1uWnNLbDJvOTVaYzJhNnlidFc4akNVUnNvNFhpVzdrZ2llTEtEM0lNM3Q5eU82M0xNbk1uN0xaWWNZMjE3NUZUbnJWYjZfelVEMmRBdDZ1ZlVZOC1XTDFBMzFVLW41RlBtVXljT0c2ZUpmdzFOc2FLUzRHQ2hMMDhOVDZRMHl2WnFEZE1SbVBaT0E4MVVWeWFmR1I4bkd0S0FEeExEZERZX3YxbjJn?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "duplicate"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Existing coverage or merged duplicate; no separately established new fact."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-7ca27ccac83f00656619",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMizgFBVV95cUxOWjBidkhFb0ZlZC11eWdCbGhveG8ySEdZUXgtOEtUQks3U19rVFh0a0x5aDVkeGFHY25obUcxYlowcGhQMlM5YVpld0p1ZEVNQmdpeEFna1o2cU5QbjI3MDVWcnpDNTJvR05wak9TOVB3MkxRRWZNV25Fdnk2bXpVMjFpSEhzSmd2VzVuWDFENGk2Y2JyU2NaczFiaTFGdUNpOWVDeU8xQ0ZKOXk5Q1VrQmFPbnhfSU1tdk42ZjlZZDVwZUlyOEYtS0tCek5SUQ?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "FluidStack financing: original reporting unresolved."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-c62ae93e66cb80d9ee0b",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMicEFVX3lxTE15eERTUGE1V1JXZ3JpSTFSNUdCVzFYRnRZQW5rbkZyYmY2UV9STmY0YmFrb1Rfck9XTzlmMXJ4NzBGWjh5bXJqR3BYbGlBZGYtUk9xUkxNN0pWQUpsZHlDVXk5cWhUNGxQRDN0aE4yOXM?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-2382b73e0941d4c1f40e",
+      "action": "hold",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMijwFBVV95cUxNemRmb0VkVTNqYzJkcXoyNkJRVWhWQy1MS2tMX1VSb0JOdjFwdWJwbGNWSTZPZUVOM3ptVHRCZW16bklzUXBlQ1FqSV9wOUJiMlVHRGZramlKYUtJRzNfM1A3VGxoZHJJTFRab21ZVEdZODExRGpkMXJtSktjSGo4RUVSbVAwSVoyczNxcVBCSQ?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "hold"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "SANDI award: original notice unresolved."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-4178db8d115a94410d3f",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.fierce-network.com/broadband/cienas-biggest-problem-keeping-demand-its-optical-products"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-af78c65c3c4504d16246",
+      "action": "watch",
+      "route": "research-queue",
+      "section": null,
+      "sourceTier": "T3",
+      "canonicalUrls": [
+        "https://www.fierce-network.com/fierce-network-tv/uk-drought-who-gets-drink"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "watch"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Research commentary retained for follow-up, not an incremental event update."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-7931395ee79c3fe0f913",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZVlmekdFTXE3ekFZV1p2ZHg1VUdzR3NOeVpGdlQzdkhBTUR2T3VkVFh0bWhmQkxmajRJWlU3bk1BVjNnQllGUXRDUnBvTjZKcGtLd2pfakVSSkxuUmhZN0gzTVNYaWx1T2VpdmRUMGdFMzBEaW91RTRXbm9aaGxxWHJLWEY3ZWxwWVJsQVB5aFVGY3FURkNRbWtDUk95YmpqSWdF?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "duplicate"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Existing coverage or merged duplicate; no separately established new fact."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-7f7d109c6ae3228893a3",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBaZUs1OFhvNEtIYXNFQU94WFJ3SmZ0SWNrZUpISHlZU2xMLXVSQjJtNXVLbU9kTzJ6REZ3SXFqdlNhc0llQ0RxSG5YVXI0dUNtQTBZQlUtLXo?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "duplicate"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Existing coverage or merged duplicate; no separately established new fact."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "evt-3bffdf19f0a94d9647c7",
+      "action": "reject",
+      "route": "internal",
+      "section": null,
+      "sourceTier": "D",
+      "canonicalUrls": [
+        "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPdm51VE0zejBpMDhTVXo1blVQRjJJVVRXUXlzQW51dnhZazJtZ2xjWVVENFlTN0ZpaGpvQ2xkRElOOWNsY29mcmFXTWtBWWt3Yl9tZ0hMaXNuSVlXRWI5c1BpbzhpazhYRmJidUthR2JiQ3ZEdXFYSUctV3ZfNjVTZ2w3YnJjUFhnX0pyY0luZEJMSldHZXkybDA5aWNSam9ZV3dVdm1zQkFibEVqYWdSUTk0Q1VKcC1fUEM5UHJvcTg1NEhTaURndkZGY04wMzVZdDNQaC00dE9BOXdiLXdRLUx3anN3RkZ1TFlrdmJvNTfSAfYBQVVfeXFMTTVoVG9xVGw5SXlSWFJOem91Vi1kU3RITTQ0dndFbjlCbFFXWXhwSmZ2cGdRbjNEX2xRWUdsWl9qQ2pmZ2tWWktXWnNWaVZzNVN6UjEzNXEzTnNJYm9pbWIzZ1dOYzRzYjBkdk9UcmFjQUF2bk9sWHZlOGQ1RG1GRUxJb2UzaFhSU1RRNXR3dlhZZzhyejRmeURwUEdoUU4tWS1SVU9XUjRaNFh4YzFKV0JfUGlZc1lCY0hBdkpJRTFuMHd6MWg2bF9tekhVLXpKUDRxZm80V1ItN0xocWJMYVdGTmMwa3NaYnhGRVNkTlJEdWNhSnRn?oc=5"
+      ],
+      "evidenceStatus": "reviewed-candidate",
+      "reasonCodes": [
+        "duplicate"
+      ],
+      "publicCopy": null,
+      "publicClaims": [],
+      "internalNotes": [
+        "Existing coverage or merged duplicate; no separately established new fact."
+      ],
+      "fallbackScored": false
+    },
+    {
+      "eventId": "google-ai-planet-apac-20260907",
+      "action": "publish",
+      "route": "formal-section",
+      "section": "power-model-demand",
+      "sourceId": "Google DeepMind",
+      "entities": [
+        "Google",
+        "DeepMind"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-09-07",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/ai-planet-accelerator-apac/"
+      ],
+      "reasonCodes": [
+        "primary-source-read",
+        "bounded-claim",
+        "agent-edited"
+      ],
+      "publicCopy": {
+        "titleZh": "Google 启动亚太 16 个环保 AI 项目的加速支持",
+        "titleEn": "Google begins accelerator support for 16 environmental AI projects in APAC",
+        "summaryZh": "Google DeepMind 公布 AI for the Planet 亚太加速器入选的 16 家组织，本周在新加坡开展集训，并提供为期 3 个月的 AI 技术与导师支持。项目涉及农业、生物多样性和碳排放等方向。",
+        "summaryEn": "Google DeepMind named 16 organizations for its AI for the Planet APAC accelerator, starting a Singapore bootcamp this week and three months of AI technology and mentoring support. Projects span agriculture, biodiversity and carbon emissions."
+      },
+      "publicClaims": [
+        {
+          "claim": "Google DeepMind named 16 organizations for its AI for the Planet APAC accelerator, starting a Singapore bootcamp this week and three months of AI technology and mentoring support. Projects span agriculture, biodiversity and carbon emissions.",
+          "sourceRefs": [
+            "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/ai-planet-accelerator-apac/"
+          ],
+          "state": "source-stated"
+        }
+      ],
+      "internalNotes": [
+        "Primary page publication date; no intraday timestamp inferred."
+      ],
+      "fallbackScored": false
+    }
+  ],
+  "summary": {
+    "publishFormal": 3,
+    "publishRumor": 3,
+    "research": 18,
+    "hold": 24,
+    "reject": 49,
+    "fallbackScored": 0
+  }
+}

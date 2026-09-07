@@ -674,11 +674,11 @@ function supernodeProducts(): SupernodeProduct[] {
 
 function capacityRadar(): SourceRecord[] {
   return [
-    ...FORMAL_PULSE_SUPPLEMENT.filter((item) => ["nscale-figure-barstow-compute-2026", "pure-dc-brent-cross-b2-piling-2026", "cerebras-compute-nordic-mikkeli-165mw-2026"].includes(item.id)).map((item) => ({
+    ...FORMAL_PULSE_SUPPLEMENT.filter((item) => ["tcs-hypervault-telangana-land-20260905", "nscale-figure-barstow-compute-2026", "pure-dc-brent-cross-b2-piling-2026", "cerebras-compute-nordic-mikkeli-165mw-2026"].includes(item.id)).map((item) => ({
       id: item.id, title: item.title, titleEn: item.titleEn,
       subject: item.sourceName, subjectEn: item.sourceName,
       metric: item.scale ?? "", metricEn: item.scale ?? "",
-      status: item.milestone ?? "", statusEn: item.id.startsWith("nscale") ? "Agreement signed · future deployment" : "Construction under way · phased delivery planned",
+      status: item.milestone ?? "", statusEn: item.id.startsWith("tcs-") ? "Land secured · phased campus planned" : item.id.startsWith("nscale") ? "Agreement signed · future deployment" : "Construction under way · phased delivery planned",
       publishedAt: item.publishedAt.slice(0, 10), sourceName: item.sourceName, sourceUrl: item.sourceUrl,
       note: item.summary, noteEn: item.summaryEn,
     })),
@@ -3571,7 +3571,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
       ...fallback.power,
     ], chainWindowDays, 6),
     campus: recentNews([...idcPulse, ...positiveNews, ...news], chainWindowDays, 6),
-    model: recentNews([...FORMAL_PULSE_SUPPLEMENT.filter((item) => item.id === "aws-bedrock-servicenow-connector-2026"), ...editorNewsItems(publicEditorDecision, ["power-model-demand"]), ...modelNews], chainWindowDays, 6),
+    model: recentNews([...FORMAL_PULSE_SUPPLEMENT.filter((item) => ["google-ai-planet-apac-20260907", "openai-research-acceleration-20260906", "aws-bedrock-servicenow-connector-2026"].includes(item.id)), ...editorNewsItems(publicEditorDecision, ["power-model-demand"]), ...modelNews], chainWindowDays, 6),
   };
 
   const latestSnapshot = await env.IDC_DAILY_SNAPSHOTS.get<DailySnapshotMeta>("latest-meta", "json");
