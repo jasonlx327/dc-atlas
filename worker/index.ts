@@ -4018,10 +4018,7 @@ function languagePreferenceResponse(request: Request, url: URL): Response | null
   if (url.pathname !== "/") return null;
   const preference = cookieValue(request, LANGUAGE_COOKIE);
   if (preference === "zh") return null;
-
-  type RequestWithCountry = Request & { cf?: IncomingRequestCfProperties };
-  const country = (request as RequestWithCountry).cf?.country;
-  if (preference !== "en" && (!country || country === "CN")) return null;
+  if (preference !== "en") return null;
 
   url.pathname = "/en";
   const headers = new Headers({

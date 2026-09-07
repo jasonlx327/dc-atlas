@@ -65,8 +65,8 @@
       "Thailand",
       "data centers"
     ],
-    "officialResponse": "当前状态为媒体报道；后续一手材料将用于升级状态，而不影响本条公开可见。",
-    "officialResponseEn": "The current state is media reporting; later primary material will upgrade the status without determining visibility.",
+    "officialResponse": "本条依据所引媒体报道；当前未见对应一手确认。",
+    "officialResponseEn": "Based on the cited media report; no corresponding primary confirmation was located.",
     "sourceNote": "The Register公开报道；主张按原始来源归属呈现。",
     "sourceNoteEn": "Public reporting by The Register; claims remain attributed to the original source."
   },
@@ -88,8 +88,8 @@
       "Liyang",
       "Chongqing Guoxinwei"
     ],
-    "officialResponse": "当前状态为媒体报道；后续一手材料将用于升级状态，而不影响本条公开可见。",
-    "officialResponseEn": "The current state is media reporting; later primary material will upgrade the status without determining visibility.",
+    "officialResponse": "本条依据所引媒体报道；当前未见对应一手确认。",
+    "officialResponseEn": "Based on the cited media report; no corresponding primary confirmation was located.",
     "sourceNote": "IT之家公开报道；主张按原始来源归属呈现。",
     "sourceNoteEn": "Public reporting by IT之家; claims remain attributed to the original source."
   },
@@ -110,8 +110,8 @@
     "entities": [
       "Anthropic"
     ],
-    "officialResponse": "当前状态为媒体报道；后续一手材料将用于升级状态，而不影响本条公开可见。",
-    "officialResponseEn": "The current state is media reporting; later primary material will upgrade the status without determining visibility.",
+    "officialResponse": "本条依据所引媒体报道；当前未见对应一手确认。",
+    "officialResponseEn": "Based on the cited media report; no corresponding primary confirmation was located.",
     "sourceNote": "IT之家公开报道；主张按原始来源归属呈现。",
     "sourceNoteEn": "Public reporting by IT之家; claims remain attributed to the original source."
   },
