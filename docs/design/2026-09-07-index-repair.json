@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-07",
+  "baseline": "7db90b346f6550368369b70a3ccd3e7bdfb5602b",
+  "gscReportDate": "2026-09-04",
+  "counts": {
+    "indexed": 236,
+    "excluded": 51,
+    "alternateCanonical": 13,
+    "notFound": 18,
+    "noindex": 12,
+    "redirect": 2,
+    "duplicateMissingCanonical": 1,
+    "crawledNotIndexed": 4,
+    "discoveredNotIndexed": 1
+  },
+  "restoredOriginalRecords": {
+    "equinix-flo-singapore-vppa-2026": "8b26027",
+    "vantage-data-centers-ipo-or-sale-2026": "1685308",
+    "sunrun-voltus-byoc-ai-data-centers-2026": "8b26027",
+    "relativity-networks-22m-40m-hyperscaler-contract-2026": "704b1df",
+    "cvc-dif-firstcolo-acquisition-2026": "dddb648",
+    "mubadala-bitgrit-s2-akita-considered-investment-2026": "7924d37",
+    "fundamental-data-ridgeline-site-control-2026": "8536a16",
+    "globalinx-cls-campus-land-virginia-beach-2026": "8536a16",
+    "west-london-50000sqm-data-center-approval-2026": "dddb648",
+    "groq-350m-financing-nvidia-participation-2026": "8b26027",
+    "goodman-tsukuba-50mw-hyperscaler-lease-2026": "7924d37"
+  },
+  "scope": "Historical permalink recovery only. Original text and dates preserved. No source reverification or latest-feed insertion.",
+  "promotedPermalink": {
+    "from": "/rumors/texas-data-center-interconnection-audit-2026",
+    "to": "/policy/us-texas-data-center-audit-2026",
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "evidence": "a8cd7ab promotes the same event to POLICY_BRIEFS; use permanent redirects, not the superseded rumor text."
+  },
+  "unrecovered": [
+    {
+      "path": "/en/rumors/model-evt-48cb8b4ef70f568d4997",
+      "reason": "No previously published bilingual detail payload recovered from versioned app data. Discovery candidates are not publication evidence. Preserve truthful 404; do not fabricate a page or redirect to unrelated content."
+    }
+  ],
+  "intentionalExclusions": {
+    "policyArchive": "12 GSC URLs are deliberately noindex; bd45603.",
+    "industryNetwork": "5 GSC URLs refer to the deliberately retired industry-network routes; 29e7892.",
+    "alternateCanonical": "All 13 GSC examples use tab/stage/signal/lang query parameters. Keep parent canonical."
+  },
+  "duplicateValidation": {
+    "path": "/pulse?signal=policy",
+    "historicalCrawl": "2026-08-24 05:44:40",
+    "historicalCanonical": null,
+    "liveTest": "2026-09-07 09:02:00 Asia/Shanghai",
+    "liveCanonical": "https://idc-index.com/pulse",
+    "gscValidation": "started 2026-09-07; final Google verdict pending"
+  },
+  "checks": {
+    "renderedTests": "57/57 pass",
+    "typecheck": "pass",
+    "lint": "0 errors; 27 existing warnings",
+    "cloudflareDryRun": "pass"
+  },
+  "release": "pending"
+}

@@ -1,0 +1,125 @@
+{
+  "mode": "built-in image_gen edit",
+  "date": "2026-09-06",
+  "scope": "Replace the same latest five published column covers with distinct palettes; no article text, alt text, source or schedule changes",
+  "assets": [
+    {
+      "slug": "nvidia-hugging-face-distribution",
+      "sixFieldBrief": {
+        "slug": "nvidia-hugging-face-distribution",
+        "topic": "A proposed NVIDIA purchase and the openness of model distribution; not a completed integration.",
+        "primary": "Branching open model-routing hub built of large cubic modules.",
+        "support": "A visibly distinct compute pod; an unfinished connecting bridge between pod and routing hub.",
+        "relationship": "PROPOSED connection: independent open routes continue outward from the hub, while bridge toward the distinct compute pod has a conspicuous physical gap. The systems remain visibly separate.",
+        "context": "Neutral conceptual infrastructure model, no actual company hardware or logos.",
+        "focal": "Branching junction and the incomplete bridge gap sit close together at the center; these two features survive crop."
+      },
+      "editInput": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/nvidia-hugging-face-distribution-bright-v2.png",
+      "generatedSource": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/exec-86eae75c-77c5-45af-94c4-ec9eeee7c412.png",
+      "paletteV3Path": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/nvidia-hugging-face-distribution-palette-v3.png",
+      "palette": "Dominant clear cobalt blue and lake blue on the routing hub and compute pod; secondary warm orange; routing paths and piers in porcelain white. Absolutely NO green anywhere. Coherent blue and white structural masses, warm orange at the proposed incomplete link, never random multicolor blocks.",
+      "prompt": "Edit ONLY colors/material palette of this exact existing IDC Atlas voxel industrial cover. Preserve exact camera, canvas, composition, objects, cubic geometry, voxel scale, structural details, spatial arrangement, physical gaps, bottlenecks and connections. Do not add or remove anything. Keep bright clean daytime lighting, high lightness, gentle shadows and text-free appearance. The goal is a richer more sophisticated editorial palette, NOT more green and NOT a rainbow: organize coherent large color regions by object/material/function, one main family + one secondary family + small accents, approximately 30 percent of structure in ivory/porcelain white/light silver neutrals. Completely replace the existing apple/grass green. Retain original matte tactile texture and clear block edges, no plastic toy gloss, no neon/glowing surfaces, no bloom, no muddy gray, no darkening, no text/logos/numbers. Background stays warm clean ivory. Keep exact landscape composition, requested final 1672x941 pixels. Specific palette: Dominant clear cobalt blue and lake blue on the routing hub and compute pod; secondary warm orange; routing paths and piers in porcelain white. Absolutely NO green anywhere. Coherent blue and white structural masses, warm orange at the proposed incomplete link, never random multicolor blocks. Specific invariant: preserve the independent branching routing hub and the separate compute pod; keep their connecting bridge conspicuously incomplete with the exact existing physical gap. Route geometry and independent open paths unchanged.",
+      "webAsset": "/column-nvidia-hugging-face-distribution-voxel-palette-v3.jpg",
+      "width": 1672,
+      "height": 941,
+      "bytes": 444169,
+      "sha256": "2a9c2087b5eb39a2ca5b09edbed50834faac8dbaf36e3b657d55106ef0528363"
+    },
+    {
+      "slug": "minimax-zhipu-h1-token-economics",
+      "sixFieldBrief": {
+        "slug": "minimax-zhipu-h1-token-economics",
+        "topic": "Two model firms convert API volume toward revenue while compute remains costly; no suggestion profits are resolved.",
+        "primary": "Paired cutaway voxel task-processing lines with small modular cubes passing toward an output channel.",
+        "support": "A shared thick rack-like compute foundation; distinct input and output lanes.",
+        "relationship": "Conceptual conversion bottleneck, not a financial chart: crowded processing cores with many small cube units and a visibly narrower output channel. Paired mechanisms visibly depend on the shared heavy compute foundation.",
+        "context": "Neutral software-economics mechanism, no flags or company logos.",
+        "focal": "The paired crowded mechanisms and their shared compute-cost foundation stay central, visually unlike a data-center campus."
+      },
+      "editInput": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/minimax-zhipu-h1-token-economics-bright-v2.png",
+      "generatedSource": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/exec-f7f3a53e-43f9-4bd9-8793-a4a9fd1146d8.png",
+      "paletteV3Path": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/minimax-zhipu-h1-token-economics-palette-v3.png",
+      "palette": "Dominant coral red and supporting bright violet/light lavender, with cream neutral foundations. Distinguish the TWO processing lines clearly: one coherent coral red line, one coherent violet/lavender line. Compute racks use cream with controlled coral/violet panels. Absolutely NO green anywhere. Keep each mechanism as large organized color masses, not rainbow scatter.",
+      "prompt": "Edit ONLY colors/material palette of this exact existing IDC Atlas voxel industrial cover. Preserve exact camera, canvas, composition, objects, cubic geometry, voxel scale, structural details, spatial arrangement, physical gaps, bottlenecks and connections. Do not add or remove anything. Keep bright clean daytime lighting, high lightness, gentle shadows and text-free appearance. The goal is a richer more sophisticated editorial palette, NOT more green and NOT a rainbow: organize coherent large color regions by object/material/function, one main family + one secondary family + small accents, approximately 30 percent of structure in ivory/porcelain white/light silver neutrals. Completely replace the existing apple/grass green. Retain original matte tactile texture and clear block edges, no plastic toy gloss, no neon/glowing surfaces, no bloom, no muddy gray, no darkening, no text/logos/numbers. Background stays warm clean ivory. Keep exact landscape composition, requested final 1672x941 pixels. Specific palette: Dominant coral red and supporting bright violet/light lavender, with cream neutral foundations. Distinguish the TWO processing lines clearly: one coherent coral red line, one coherent violet/lavender line. Compute racks use cream with controlled coral/violet panels. Absolutely NO green anywhere. Keep each mechanism as large organized color masses, not rainbow scatter. Specific invariant: preserve the exact two crowded voxel processing lanes, narrower output channel, distinct input lanes and heavy shared rack foundation. This is a conversion bottleneck metaphor; do not remove or rearrange cube units.",
+      "webAsset": "/column-minimax-zhipu-h1-token-economics-voxel-palette-v3.jpg",
+      "width": 1672,
+      "height": 941,
+      "bytes": 471339,
+      "sha256": "9ad1449f86999d13af50d09d5f753d1b635c12458e7b90563ff6dcf4027dc671"
+    },
+    {
+      "slug": "nebius-asset-light-factory",
+      "sixFieldBrief": {
+        "slug": "nebius-asset-light-factory",
+        "topic": "Cloud operations can be separated from partner-owned physical assets.",
+        "primary": "Modular compute rack cassette hovering just above a matching infrastructure cradle in a precise exploded-view model.",
+        "support": "Partner campus-shell platform foundation; a small external power module.",
+        "relationship": "Separate detachable rack layer and physical support layer remain operationally related. The short lifted separation is an exploded-view convention, not physical levitation and not a completed real project or sale.",
+        "context": "Conceptual asset-ownership separation; neutral presentation model.",
+        "focal": "Detachable rack cassette immediately above its matching support foundation, both centered and large."
+      },
+      "editInput": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/nebius-asset-light-factory-bright-v2.png",
+      "generatedSource": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/exec-515f12f5-fe43-477f-9ab1-d2edcfc918a8.png",
+      "paletteV3Path": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/nebius-asset-light-factory-palette-v3.png",
+      "palette": "Dominant ice blue and cyan blue on detachable compute cassette and cradle; silver-white physical foundation; small sunlight-yellow interface accents. Absolutely NO green anywhere. Airy blue and white exploded assembly with yellow confined to physical interfaces, no random colored pixels.",
+      "prompt": "Edit ONLY colors/material palette of this exact existing IDC Atlas voxel industrial cover. Preserve exact camera, canvas, composition, objects, cubic geometry, voxel scale, structural details, spatial arrangement, physical gaps, bottlenecks and connections. Do not add or remove anything. Keep bright clean daytime lighting, high lightness, gentle shadows and text-free appearance. The goal is a richer more sophisticated editorial palette, NOT more green and NOT a rainbow: organize coherent large color regions by object/material/function, one main family + one secondary family + small accents, approximately 30 percent of structure in ivory/porcelain white/light silver neutrals. Completely replace the existing apple/grass green. Retain original matte tactile texture and clear block edges, no plastic toy gloss, no neon/glowing surfaces, no bloom, no muddy gray, no darkening, no text/logos/numbers. Background stays warm clean ivory. Keep exact landscape composition, requested final 1672x941 pixels. Specific palette: Dominant ice blue and cyan blue on detachable compute cassette and cradle; silver-white physical foundation; small sunlight-yellow interface accents. Absolutely NO green anywhere. Airy blue and white exploded assembly with yellow confined to physical interfaces, no random colored pixels. Specific invariant: preserve the exact lifted compute rack cassette above its matching physical infrastructure cradle, the existing air gap of the exploded view, partner shell platform and external power module. Do not merge the layers.",
+      "webAsset": "/column-nebius-asset-light-factory-voxel-palette-v3.jpg",
+      "width": 1672,
+      "height": 941,
+      "bytes": 462271,
+      "sha256": "27996cd847d018874799873de2352e28bf9b410e39ad7f007104f4ef998af1e9"
+    },
+    {
+      "slug": "anthropic-compute-commitment-gap",
+      "sixFieldBrief": {
+        "slug": "anthropic-compute-commitment-gap",
+        "topic": "A model company's current service revenue run rate does not directly fund long-duration compute commitments.",
+        "primary": "A long terraced stepped voxel bridge between a modest current service-processing pod and larger staged rack foundations.",
+        "support": "A small service output channel by the modest pod; unfilled far-side rack bays and an incomplete bridge span.",
+        "relationship": "Conceptual cash-flow and delivery gap: central missing span interrupts the bridge to larger far-side foundations that visibly remain staged and not operational. No literal currency or capacity quantities.",
+        "context": "Neutral financial-infrastructure metaphor, no numbers or actual project specifications.",
+        "focal": "Missing central bridge span and staged larger load foundation; long terraced side-to-side profile distinct from the branching hub."
+      },
+      "editInput": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/anthropic-compute-commitment-gap-bright-v2.png",
+      "generatedSource": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/exec-f4ca0ef9-ca1b-4088-91a0-f31cf2b6bc36.png",
+      "paletteV3Path": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/anthropic-compute-commitment-gap-palette-v3.png",
+      "palette": "Dominant amber and warm ochre-orange on the modest current-service side; secondary clear indigo blue on the larger staged rack-foundation side. Stone-white steps and bridge piers. Strong organized warm-versus-cool contrast across the existing broken bridge. Absolutely NO green anywhere. Keep each side's functional color family coherent.",
+      "prompt": "Edit ONLY colors/material palette of this exact existing IDC Atlas voxel industrial cover. Preserve exact camera, canvas, composition, objects, cubic geometry, voxel scale, structural details, spatial arrangement, physical gaps, bottlenecks and connections. Do not add or remove anything. Keep bright clean daytime lighting, high lightness, gentle shadows and text-free appearance. The goal is a richer more sophisticated editorial palette, NOT more green and NOT a rainbow: organize coherent large color regions by object/material/function, one main family + one secondary family + small accents, approximately 30 percent of structure in ivory/porcelain white/light silver neutrals. Completely replace the existing apple/grass green. Retain original matte tactile texture and clear block edges, no plastic toy gloss, no neon/glowing surfaces, no bloom, no muddy gray, no darkening, no text/logos/numbers. Background stays warm clean ivory. Keep exact landscape composition, requested final 1672x941 pixels. Specific palette: Dominant amber and warm ochre-orange on the modest current-service side; secondary clear indigo blue on the larger staged rack-foundation side. Stone-white steps and bridge piers. Strong organized warm-versus-cool contrast across the existing broken bridge. Absolutely NO green anywhere. Keep each side's functional color family coherent. Specific invariant: preserve exact long terraced bridge profile and conspicuous missing central span; retain modest current service pod, small output channel and far-side empty staged rack foundations. Do not complete the bridge or fill the staged rack bays.",
+      "webAsset": "/column-anthropic-compute-commitment-gap-voxel-palette-v3.jpg",
+      "width": 1672,
+      "height": 941,
+      "bytes": 419322,
+      "sha256": "624b510c64a9bbf849175970a81b68aa5ec5a14340ca9e5b68dfdd3d77a507bd"
+    },
+    {
+      "slug": "nvidia-fy27-q2-five-tests",
+      "sixFieldBrief": {
+        "slug": "nvidia-fy27-q2-five-tests",
+        "topic": "Earnings expansion shifts GPU supplier risk toward power availability and credit support.",
+        "primary": "A close-up monumental block-built accelerator assembly atop a compact cutaway server hall.",
+        "support": "Compact substation; narrow rust-orange power-and-support neck and a small structural supporting pier.",
+        "relationship": "A large conceptual compute engine visibly relies on a limited power/support connection. This is an editorial dependence metaphor, not a technical schematic or real chip layout.",
+        "context": "Neutral industrial miniature, no chip labels or literal port count.",
+        "focal": "Large block-built accelerator and narrow central power/support neck survive a centered crop."
+      },
+      "editInput": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/nvidia-fy27-q2-five-tests-bright-v2.png",
+      "generatedSource": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/exec-1b0a7073-0d49-4b26-bb30-367f2e2abeb9.png",
+      "paletteV3Path": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/nvidia-fy27-q2-five-tests-palette-v3.png",
+      "palette": "Dominant luminous-in-color BUT NOT GLOWING blue-violet and violet on the large accelerator; copper-orange supporting neck and power supply connection; porcelain-white physical foundation and server-hall structure. No green. Coherent violet computational mass above white structure, orange reserved for power/support relationship; not random patchwork.",
+      "prompt": "Edit ONLY colors/material palette of this exact existing IDC Atlas voxel industrial cover. Preserve exact camera, canvas, composition, objects, cubic geometry, voxel scale, structural details, spatial arrangement, physical gaps, bottlenecks and connections. Do not add or remove anything. Keep bright clean daytime lighting, high lightness, gentle shadows and text-free appearance. The goal is a richer more sophisticated editorial palette, NOT more green and NOT a rainbow: organize coherent large color regions by object/material/function, one main family + one secondary family + small accents, approximately 30 percent of structure in ivory/porcelain white/light silver neutrals. Completely replace the existing apple/grass green. Retain original matte tactile texture and clear block edges, no plastic toy gloss, no neon/glowing surfaces, no bloom, no muddy gray, no darkening, no text/logos/numbers. Background stays warm clean ivory. Keep exact landscape composition, requested final 1672x941 pixels. Specific palette: Dominant luminous-in-color BUT NOT GLOWING blue-violet and violet on the large accelerator; copper-orange supporting neck and power supply connection; porcelain-white physical foundation and server-hall structure. No green. Coherent violet computational mass above white structure, orange reserved for power/support relationship; not random patchwork. Specific invariant: preserve exact large accelerator assembly atop the cutaway server hall, narrow central orange support/power neck, and substation with its narrow supply connection. Maintain the striking large-load / limited-support relationship.",
+      "webAsset": "/column-nvidia-fy27-q2-five-tests-voxel-palette-v3.jpg",
+      "width": 1672,
+      "height": 941,
+      "bytes": 510350,
+      "sha256": "a11aa6f71e6ef6e3135e1b783b59222849993acee690c5078d638e5703a98d4f"
+    }
+  ],
+  "validation": {
+    "tests": "55 passed",
+    "typecheck": "passed",
+    "lint": "0 errors; 27 existing warnings",
+    "build": "passed",
+    "cloudflareDryRun": "passed",
+    "visual": "All five full images and contact sheet inspected; bilingual desktop/mobile article, home and index checks passed"
+  }
+}

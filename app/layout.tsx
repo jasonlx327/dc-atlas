@@ -35,14 +35,10 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
-  const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
-  const origin = `${protocol}://${host}`;
   const title = "全球数据中心与 AI 基础设施情报｜IDC Atlas";
 
   return {
-    metadataBase: new URL(origin),
+    metadataBase: new URL(siteUrl),
     title,
     description: siteDescription,
     applicationName: "IDC Atlas",
@@ -55,7 +51,7 @@ export async function generateMetadata(): Promise<Metadata> {
       languages: { "zh-CN": `${siteUrl}/`, en: `${siteUrl}/en`, "x-default": `${siteUrl}/en` },
       types: { "application/rss+xml": `${siteUrl}/feed.xml` },
     },
-    robots: { index: true, follow: true },
+    robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
     other: { googlebot: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   };

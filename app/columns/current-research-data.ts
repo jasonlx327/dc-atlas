@@ -6,8 +6,8 @@ const reported = (url: string, zh: string, en: string) => ({ url, zh, en, level:
 export const currentResearchRecords: ScheduledResearchRecord[] = [
   {
     slug: "minimax-zhipu-h1-token-economics",
-    imageAltZh: "MiniMax 与智谱的 API 收入、Token 调用、推理集群和亏损结构对比",
-    imageAltEn: "Comparison of MiniMax and Z.ai API revenue, token usage, inference clusters and loss structure",
+    imageAltZh: "概念体素插画：两条 Token 处理线位于机架底座之上，表现模型收入转换与算力成本",
+    imageAltEn: "Conceptual voxel illustration of paired token-processing lines on a rack foundation, representing revenue conversion and compute costs",
     articleSectionZh: "中国基础模型财报与推理经济性",
     articleSectionEn: "China foundation-model earnings and inference economics",
     topics: ["MiniMax", "Z.ai", "Zhipu", "2026 interim results", "API revenue", "token economics", "domestic AI chips", "inference"],
@@ -173,8 +173,8 @@ export const currentResearchRecords: ScheduledResearchRecord[] = [
   },
   {
     slug: "nvidia-fy27-q2-five-tests",
-    imageAltZh: "NVIDIA AI 工厂从晶圆、HBM、机架和网络延伸到园区电力与信用支持的分析剖面",
-    imageAltEn: "Analyst cutaway of NVIDIA AI factories spanning wafers, HBM, racks, networking, campus power and credit support",
+    imageAltZh: "概念体素插画：加速器与机房构成大型计算装置，经狭窄供电连接依赖外部基础设施",
+    imageAltEn: "Conceptual voxel illustration of an accelerator and data hall linked to external infrastructure through a narrow power connection",
     articleSectionZh: "AI 芯片财报与基础设施金融",
     articleSectionEn: "AI semiconductor earnings and infrastructure finance",
     topics: ["NVIDIA", "FY2027 Q2", "Vera Rubin", "Blackwell Ultra", "AI infrastructure", "memory", "data-center finance"],
@@ -338,8 +338,8 @@ export const currentResearchRecords: ScheduledResearchRecord[] = [
   },
   {
     slug: "glm-5-3-flash-china-chips",
-    imageAltZh: "GLM-5.3-Flash 模型、国产 AI 加速器、高带宽互联与分离式推理集群的技术剖面",
-    imageAltEn: "Technical cutaway of GLM-5.3-Flash, Chinese AI accelerators, high-bandwidth interconnect and disaggregated inference",
+    imageAltZh: "概念体素插画：通过交换网络互联的加速器机架集群",
+    imageAltEn: "Conceptual voxel illustration of close-up interconnected accelerator rack cluster",
     articleSectionZh: "国产模型与推理基础设施",
     articleSectionEn: "Chinese models and inference infrastructure",
     topics: ["Ox Alpha", "GLM-5.3-Flash", "Z.ai", "Zhipu", "Chinese AI chips", "inference", "SGLang", "open weights"],

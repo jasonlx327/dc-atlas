@@ -16,11 +16,11 @@ function SourceLink({ href, children }: { href: string; children: React.ReactNod
 
 function ArticleHeader({ lang }: { lang: "zh" | "en" }) {
   const english = lang === "en";
-  return <><header className="column-article-nav"><a href={english ? "/en" : "/"}>IDC <b>ATLAS</b></a><div><a href={english ? "/columns/hyperscale-idc-leases" : "/en/columns/hyperscale-idc-leases"}>{english ? "中文" : "EN"}</a><a href={english ? "/en" : "/"}>{english ? "Back to intelligence" : "返回实时情报站"}</a></div></header><section className="column-article-hero"><div><span>IDC ATLAS COLUMN · LEASE WATCH</span><time dateTime="2026-08-01">{english ? "RECHECKED AUGUST 1, 2026" : "复核于 2026 年 8 月 1 日"}</time></div><h1>{english ? <>Gigawatt Leases Are <em>Reshaping the Data Center Market.</em></> : <>GW 级长租，<br /><em>改写 IDC 订单。</em></>}</h1><p>{english ? "The largest cloud and internet customers are reserving power years before delivery. Contracted megawatts offer visibility, while energization, financing and customer concentration decide how much of that backlog becomes billable." : "头部云与互联网客户正在提前数年锁定电力和园区。签约 MW 提升了收入可见度，真正决定订单价值的仍是送电、融资、交付与客户集中度。"}</p></section><figure className="column-article-cover"><img src="/column-hyperscale-leases-v2.jpg" alt={english ? "A hyperscale data center campus linked by long-term capacity contracts" : "由长期容量合同连接的超大规模数据中心园区"} /><figcaption>{english ? "IDC Atlas original editorial cover · Lease Watch" : "IDC Atlas 原创专栏封面 · Lease Watch"}</figcaption></figure></>;
+  return <><header className="column-article-nav"><a href={english ? "/en" : "/"}>IDC <b>ATLAS</b></a><div><a href={english ? "/columns/hyperscale-idc-leases" : "/en/columns/hyperscale-idc-leases"}>{english ? "中文" : "EN"}</a><a href={english ? "/en" : "/"}>{english ? "Back to intelligence" : "返回实时情报站"}</a></div></header><section className="column-article-hero"><div><span>IDC ATLAS COLUMN · LEASE WATCH</span><time dateTime="2026-08-01">{english ? "RECHECKED AUGUST 1, 2026" : "复核于 2026 年 8 月 1 日"}</time></div><h1>{english ? <>Gigawatt Leases Are <em>Reshaping the Data Center Market.</em></> : <>GW 级长租，<br /><em>改写 IDC 订单。</em></>}</h1><p>{english ? "The largest cloud and internet customers are reserving power years before delivery. Contracted megawatts offer visibility, while energization, financing and customer concentration decide how much of that backlog becomes billable." : "头部云与互联网客户正在提前数年锁定电力和园区。签约 MW 提升了收入可见度，真正决定订单价值的仍是送电、融资、交付与客户集中度。"}</p></section><figure className="column-article-cover"><img src="/column-hyperscale-idc-leases-voxel-palette-v1.jpg" alt={english ? "Conceptual voxel illustration of three staged campus modules along a delivery spine" : "概念体素插画：沿交付通道排列的分期机房与电力开关"} /><figcaption>{english ? "IDC Atlas original editorial cover · Lease Watch" : "IDC Atlas 原创专栏封面 · Lease Watch"}</figcaption></figure></>;
 }
 
 function ChineseArticle() {
-  return <ColumnArticleConsole lang="zh">
+  return <ColumnArticleConsole slug="hyperscale-idc-leases" lang="zh">
     <ArticleHeader lang="zh" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>核心判断</span><p>四笔公开合同合计接近 1.8GW，显示 IDC 租赁已经进入园区级交易阶段。长期合同提高收入可见度，同时把现金流押在三个节点上：开发商能否融资、园区能否按时送电、客户是否开始付费。</p></aside>
@@ -50,7 +50,7 @@ function ChineseArticle() {
 }
 
 function EnglishArticle() {
-  return <ColumnArticleConsole lang="en">
+  return <ColumnArticleConsole slug="hyperscale-idc-leases" lang="en">
     <ArticleHeader lang="en" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>THE TAKEAWAY</span><p>Four disclosed agreements approach 1.8GW, showing that data-center leasing has moved to campus-scale transactions. Long contracts improve visibility while putting cash flow behind three gates: financing, on-time energization and the start of customer billing.</p></aside>

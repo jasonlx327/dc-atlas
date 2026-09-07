@@ -1,42 +1,45 @@
+import { septemberWeekArticles } from "./september-week-articles";
+
 export const columnArticles = [
+  ...septemberWeekArticles,
   {
-    href: "/columns/minimax-zhipu-h1-token-economics", hrefEn: "/en/columns/minimax-zhipu-h1-token-economics", date: "2026-09-01", publishAt: "2026-09-01T08:45:00+08:00", series: "MODEL ECONOMICS · 32", title: "MiniMax 与智谱中报：Token 规模开始变成收入，算力账还没闭合", titleEn: "MiniMax and Z.ai H1: Token Scale Is Becoming Revenue, but the Compute Bill Is Still Open", summary: "两家公司都把增长核心切到 API 与开放平台。智谱披露十万卡国产推理和 API 毛利率转正，MiniMax 披露全球企业收入扩张；经调整亏损与融资需求仍然显著。", summaryEn: "Both companies shifted growth toward APIs and open platforms. Z.ai disclosed 100,000-plus domestic-chip inference and positive API margin; MiniMax showed global enterprise expansion. Adjusted losses and funding needs remain substantial.", image: "/column-agent-runtime-demand-v1.jpg",
+    href: "/columns/minimax-zhipu-h1-token-economics", hrefEn: "/en/columns/minimax-zhipu-h1-token-economics", date: "2026-09-01", publishAt: "2026-09-01T08:45:00+08:00", series: "MODEL ECONOMICS · 32", title: "MiniMax 与智谱中报：Token 规模开始变成收入，算力账还没闭合", titleEn: "MiniMax and Z.ai H1: Token Scale Is Becoming Revenue, but the Compute Bill Is Still Open", summary: "两家公司都把增长核心切到 API 与开放平台。智谱披露十万卡国产推理和 API 毛利率转正，MiniMax 披露全球企业收入扩张；经调整亏损与融资需求仍然显著。", summaryEn: "Both companies shifted growth toward APIs and open platforms. Z.ai disclosed 100,000-plus domestic-chip inference and positive API margin; MiniMax showed global enterprise expansion. Adjusted losses and funding needs remain substantial.", image: "/column-minimax-zhipu-h1-token-economics-voxel-palette-v3.jpg",
   },
   {
-    href: "/columns/singapore-200mw-allocation", hrefEn: "/en/columns/singapore-200mw-allocation", date: "2026-08-24", publishAt: "2026-08-24T09:30:00+08:00", series: "SOVEREIGN CAPACITY · 26", title: "新加坡只放出 200MW：稀缺电力如何重写数据中心竞争", titleEn: "Singapore Releases Just 200MW: How Scarce Power Rewrites Data-Center Competition", summary: "四家运营商各获暂定 50MW。真正的门槛不只是拿到容量，而是把绿色电力、IT 能效、AI 价值与项目兑现放进同一份许可。", summaryEn: "Four operators received provisional 50MW allocations. The real gate combines green power, IT efficiency, AI value and project execution.", image: "/column-singapore-200mw-allocation-v1.jpg",
+    href: "/columns/singapore-200mw-allocation", hrefEn: "/en/columns/singapore-200mw-allocation", date: "2026-08-24", publishAt: "2026-08-24T09:30:00+08:00", series: "SOVEREIGN CAPACITY · 26", title: "新加坡只放出 200MW：稀缺电力如何重写数据中心竞争", titleEn: "Singapore Releases Just 200MW: How Scarce Power Rewrites Data-Center Competition", summary: "四家运营商各获暂定 50MW。真正的门槛不只是拿到容量，而是把绿色电力、IT 能效、AI 价值与项目兑现放进同一份许可。", summaryEn: "Four operators received provisional 50MW allocations. The real gate combines green power, IT efficiency, AI value and project execution.", image: "/column-singapore-200mw-allocation-voxel-palette-v1.jpg",
   },
   {
-    href: "/columns/ports-pike-8gw-risk-stack", hrefEn: "/en/columns/ports-pike-8gw-risk-stack", date: "2026-08-25", publishAt: "2026-08-25T09:30:00+08:00", series: "PROJECT FINANCE · 27", title: "PORTS-Pike 的 8GW：NVIDIA 如何替 OpenAI 锁定土地、电力与信用", titleEn: "PORTS-Pike's 8GW: How NVIDIA Locks Land, Power and Credit for OpenAI", summary: "把 8 IT-GW 拆成 NVIDIA 的信用支持、SB Energy 的土地电力外壳、OpenAI 的需求承诺与仍待完成的送电工程。", summaryEn: "The 8 IT-GW plan separated into NVIDIA credit support, SB Energy land-power-shell, OpenAI demand and unfinished energization.", image: "/column-ports-pike-8gw-risk-stack-v1.jpg",
+    href: "/columns/ports-pike-8gw-risk-stack", hrefEn: "/en/columns/ports-pike-8gw-risk-stack", date: "2026-08-25", publishAt: "2026-08-25T09:30:00+08:00", series: "PROJECT FINANCE · 27", title: "PORTS-Pike 的 8GW：NVIDIA 如何替 OpenAI 锁定土地、电力与信用", titleEn: "PORTS-Pike's 8GW: How NVIDIA Locks Land, Power and Credit for OpenAI", summary: "把 8 IT-GW 拆成 NVIDIA 的信用支持、SB Energy 的土地电力外壳、OpenAI 的需求承诺与仍待完成的送电工程。", summaryEn: "The 8 IT-GW plan separated into NVIDIA credit support, SB Energy land-power-shell, OpenAI demand and unfinished energization.", image: "/column-ports-pike-8gw-risk-stack-voxel-palette-v1.jpg",
   },
   {
-    href: "/columns/nvidia-fy27-q2-five-tests", hrefEn: "/en/columns/nvidia-fy27-q2-five-tests", date: "2026-08-27", publishAt: "2026-08-27T09:10:00+08:00", series: "EARNINGS REVIEW · 28", title: "NVIDIA Q2：962 亿美元收入之后，风险表扩到了电力与信用", titleEn: "NVIDIA Q2: After $96.2B of Revenue, the Risk Perimeter Reaches Power and Credit", summary: "数据中心收入增至 890 亿美元，但更关键的是 3,660 亿美元承诺、1,085 亿美元担保上限、应收和库存如何把 NVIDIA 推向 AI 基础设施组织者。", summaryEn: "Data Center revenue reached $89.0B, while $366B of commitments, $108.5B of guarantee exposure, receivables and inventory move NVIDIA toward infrastructure orchestration.", image: "/column-nvidia-fy27-q2-five-tests-v1.jpg",
+    href: "/columns/nvidia-fy27-q2-five-tests", hrefEn: "/en/columns/nvidia-fy27-q2-five-tests", date: "2026-08-27", publishAt: "2026-08-27T09:10:00+08:00", series: "EARNINGS REVIEW · 28", title: "NVIDIA Q2：962 亿美元收入之后，风险表扩到了电力与信用", titleEn: "NVIDIA Q2: After $96.2B of Revenue, the Risk Perimeter Reaches Power and Credit", summary: "数据中心收入增至 890 亿美元，但更关键的是 3,660 亿美元承诺、1,085 亿美元担保上限、应收和库存如何把 NVIDIA 推向 AI 基础设施组织者。", summaryEn: "Data Center revenue reached $89.0B, while $366B of commitments, $108.5B of guarantee exposure, receivables and inventory move NVIDIA toward infrastructure orchestration.", image: "/column-nvidia-fy27-q2-five-tests-voxel-palette-v3.jpg",
   },
   {
-    href: "/columns/glm-5-3-flash-china-chips", hrefEn: "/en/columns/glm-5-3-flash-china-chips", date: "2026-08-27", publishAt: "2026-08-27T09:00:00+08:00", series: "MODEL INFRASTRUCTURE · 31", title: "Ox Alpha 之后：GLM-5.3-Flash 如何把国产卡推理推向规模化", titleEn: "After Ox Alpha: How GLM-5.3-Flash Pushes Chinese-Chip Inference Toward Scale", summary: "智谱在数万颗国产加速器上运行 GLM-5.3-Flash。真正的突破不是匿名榜单，而是模型架构、推理引擎、互联与调度共同把国产算力变成可服务集群。", summaryEn: "Z.ai served GLM-5.3-Flash across tens of thousands of Chinese accelerators. The important shift is model, engine, interconnect and scheduling co-design turning domestic compute into a serviceable cluster.", image: "/column-agent-runtime-demand-v1.jpg",
+    href: "/columns/glm-5-3-flash-china-chips", hrefEn: "/en/columns/glm-5-3-flash-china-chips", date: "2026-08-27", publishAt: "2026-08-27T09:00:00+08:00", series: "MODEL INFRASTRUCTURE · 31", title: "Ox Alpha 之后：GLM-5.3-Flash 如何把国产卡推理推向规模化", titleEn: "After Ox Alpha: How GLM-5.3-Flash Pushes Chinese-Chip Inference Toward Scale", summary: "智谱在数万颗国产加速器上运行 GLM-5.3-Flash。真正的突破不是匿名榜单，而是模型架构、推理引擎、互联与调度共同把国产算力变成可服务集群。", summaryEn: "Z.ai served GLM-5.3-Flash across tens of thousands of Chinese accelerators. The important shift is model, engine, interconnect and scheduling co-design turning domestic compute into a serviceable cluster.", image: "/column-glm-5-3-flash-china-chips-voxel-palette-v1.jpg",
   },
   {
-    href: "/columns/anthropic-compute-commitment-gap", hrefEn: "/en/columns/anthropic-compute-commitment-gap", date: "2026-08-27", publishAt: "2026-08-27T09:30:00+08:00", series: "MODEL ECONOMICS · 29", title: "Claude 收入与十余 GW 算力之间，还差一张现金流量表", titleEn: "Between Claude Revenue and 10+GW of Compute, a Cash-Flow Bridge Is Missing", summary: "把 Anthropic 的 470 亿美元运行率与 AWS、Google、Broadcom、SpaceX 算力安排放到同一条时间轴，区分需求、合同、上线与现金消耗。", summaryEn: "Anthropic's $47B run-rate and AWS, Google, Broadcom and SpaceX capacity are mapped across demand, contract, delivery and cash burn.", image: "/column-anthropic-compute-commitment-gap-v1.jpg",
+    href: "/columns/anthropic-compute-commitment-gap", hrefEn: "/en/columns/anthropic-compute-commitment-gap", date: "2026-08-27", publishAt: "2026-08-27T09:30:00+08:00", series: "MODEL ECONOMICS · 29", title: "Claude 收入与十余 GW 算力之间，还差一张现金流量表", titleEn: "Between Claude Revenue and 10+GW of Compute, a Cash-Flow Bridge Is Missing", summary: "把 Anthropic 的 470 亿美元运行率与 AWS、Google、Broadcom、SpaceX 算力安排放到同一条时间轴，区分需求、合同、上线与现金消耗。", summaryEn: "Anthropic's $47B run-rate and AWS, Google, Broadcom and SpaceX capacity are mapped across demand, contract, delivery and cash burn.", image: "/column-anthropic-compute-commitment-gap-voxel-palette-v3.jpg",
   },
   {
-    href: "/columns/nebius-asset-light-factory", hrefEn: "/en/columns/nebius-asset-light-factory", date: "2026-08-28", publishAt: "2026-08-28T09:30:00+08:00", series: "NEOCLOUD CAPITAL · 30", title: "Nebius 不再只建自己的云：新云公司的资本效率实验", titleEn: "Nebius Is No Longer Building Only Its Own Cloud: A Neocloud Capital-Efficiency Test", summary: "从自建园区、合作伙伴持有资产、GPU 抵押贷款到背表电源，拆解 Nebius 如何把容量增长与资产负担分开。", summaryEn: "Owned campuses, partner-owned assets, GPU-backed debt and behind-the-meter power show how Nebius separates capacity growth from balance-sheet burden.", image: "/column-nebius-asset-light-factory-v1.jpg",
+    href: "/columns/nebius-asset-light-factory", hrefEn: "/en/columns/nebius-asset-light-factory", date: "2026-08-28", publishAt: "2026-08-28T09:30:00+08:00", series: "NEOCLOUD CAPITAL · 30", title: "Nebius 不再只建自己的云：新云公司的资本效率实验", titleEn: "Nebius Is No Longer Building Only Its Own Cloud: A Neocloud Capital-Efficiency Test", summary: "从自建园区、合作伙伴持有资产、GPU 抵押贷款到背表电源，拆解 Nebius 如何把容量增长与资产负担分开。", summaryEn: "Owned campuses, partner-owned assets, GPU-backed debt and behind-the-meter power show how Nebius separates capacity growth from balance-sheet burden.", image: "/column-nebius-asset-light-factory-voxel-palette-v3.jpg",
   },
   {
-    href: "/columns/agent-runtime-demand", hrefEn: "/en/columns/agent-runtime-demand", date: "2026-08-17", publishAt: "2026-08-17T09:30:00+08:00", series: "AGENT ECONOMICS · 20", title: "从 GLM-5.3 到 Claude：长任务代理如何改变推理需求", titleEn: "From GLM-5.3 to Claude: How Long-Running Agents Change Inference Demand", summary: "拆解 GLM-5.3、DeepSeek Harness 与 Anthropic 商业化信号，区分能力、运行时和收入之间尚未被证实的因果链。", summaryEn: "GLM-5.3, DeepSeek Harness and Anthropic commercial signals separated into capability, runtime and an unproven causal chain.", image: "/column-agent-runtime-demand-v1.jpg",
+    href: "/columns/agent-runtime-demand", hrefEn: "/en/columns/agent-runtime-demand", date: "2026-08-17", publishAt: "2026-08-17T09:30:00+08:00", series: "AGENT ECONOMICS · 20", title: "从 GLM-5.3 到 Claude：长任务代理如何改变推理需求", titleEn: "From GLM-5.3 to Claude: How Long-Running Agents Change Inference Demand", summary: "拆解 GLM-5.3、DeepSeek Harness 与 Anthropic 商业化信号，区分能力、运行时和收入之间尚未被证实的因果链。", summaryEn: "GLM-5.3, DeepSeek Harness and Anthropic commercial signals separated into capability, runtime and an unproven causal chain.", image: "/column-agent-runtime-demand-voxel-palette-v1.jpg",
   },
   {
-    href: "/columns/ercot-batch-zero", hrefEn: "/en/columns/ercot-batch-zero", date: "2026-08-18", publishAt: "2026-08-18T09:30:00+08:00", series: "POWER POLICY · 21", title: "438GW 排队之后：德州数据中心真正的接电门槛", titleEn: "After 438GW of Requests: Texas' Real Data-Center Power Gate", summary: "ERCOT 的 Batch Zero 将资格、工程证明与系统可靠性写进大负荷接入。", summaryEn: "ERCOT's Batch Zero puts eligibility, project evidence and system reliability inside large-load interconnection.", image: "/column-ercot-batch-zero-v1.jpg",
+    href: "/columns/ercot-batch-zero", hrefEn: "/en/columns/ercot-batch-zero", date: "2026-08-18", publishAt: "2026-08-18T09:30:00+08:00", series: "POWER POLICY · 21", title: "438GW 排队之后：德州数据中心真正的接电门槛", titleEn: "After 438GW of Requests: Texas' Real Data-Center Power Gate", summary: "ERCOT 的 Batch Zero 将资格、工程证明与系统可靠性写进大负荷接入。", summaryEn: "ERCOT's Batch Zero puts eligibility, project evidence and system reliability inside large-load interconnection.", image: "/column-ercot-batch-zero-voxel-palette-v1.jpg",
   },
   {
-    href: "/columns/neocloud-conversion", hrefEn: "/en/columns/neocloud-conversion", date: "2026-08-19", publishAt: "2026-08-19T09:30:00+08:00", series: "CLOUD ECONOMICS · 22", title: "新云财报的转换链：从签约 MW 到已确认收入", titleEn: "The Neocloud Conversion Chain: From Contracted MW to Recognized Revenue", summary: "比较 CoreWeave、Nebius 与 Bitdeer，拆开收入、ARR、积压、服务就绪容量与现金转换。", summaryEn: "CoreWeave, Nebius and Bitdeer compared by revenue, ARR, backlog, service-ready capacity and cash conversion.", image: "/column-neocloud-conversion-v1.jpg",
+    href: "/columns/neocloud-conversion", hrefEn: "/en/columns/neocloud-conversion", date: "2026-08-19", publishAt: "2026-08-19T09:30:00+08:00", series: "CLOUD ECONOMICS · 22", title: "新云财报的转换链：从签约 MW 到已确认收入", titleEn: "The Neocloud Conversion Chain: From Contracted MW to Recognized Revenue", summary: "比较 CoreWeave、Nebius 与 Bitdeer，拆开收入、ARR、积压、服务就绪容量与现金转换。", summaryEn: "CoreWeave, Nebius and Bitdeer compared by revenue, ARR, backlog, service-ready capacity and cash conversion.", image: "/column-neocloud-conversion-voxel-palette-v1.jpg",
   },
   {
-    href: "/columns/hbm4-system-cadence", hrefEn: "/en/columns/hbm4-system-cadence", date: "2026-08-20", publishAt: "2026-08-20T09:30:00+08:00", series: "MEMORY WATCH · 23", title: "HBM4 的系统节奏：量产不是平台出货", titleEn: "HBM4's System Cadence: Production Is Not Platform Delivery", summary: "从供应商量产披露追踪到封装、服务器认证与客户配置，拆解下一代 AI 平台的同步交付。", summaryEn: "Tracing supplier ramps through packaging, server qualification and customer configuration to map synchronized delivery of next-generation AI platforms.", image: "/column-hbm4-system-cadence-v1.jpg",
+    href: "/columns/hbm4-system-cadence", hrefEn: "/en/columns/hbm4-system-cadence", date: "2026-08-20", publishAt: "2026-08-20T09:30:00+08:00", series: "MEMORY WATCH · 23", title: "HBM4 的系统节奏：量产不是平台出货", titleEn: "HBM4's System Cadence: Production Is Not Platform Delivery", summary: "从供应商量产披露追踪到封装、服务器认证与客户配置，拆解下一代 AI 平台的同步交付。", summaryEn: "Tracing supplier ramps through packaging, server qualification and customer configuration to map synchronized delivery of next-generation AI platforms.", image: "/column-hbm4-system-cadence-voxel-palette-v1.jpg",
   },
   {
-    href: "/columns/china-mobile-aidc", hrefEn: "/en/columns/china-mobile-aidc", date: "2026-08-21", publishAt: "2026-08-21T09:30:00+08:00", series: "CHINA COMPUTE · 24", title: "AIDC 增长 486% 之后：中国移动如何把算力做成服务", titleEn: "After 486% AIDC Growth: China Mobile's Compute-as-a-Service Test", summary: "以中国移动中报为样本，拆解 AIDC、算力服务、数据中心、资源利用率与收入质量。", summaryEn: "China Mobile's interim results unpacked across AIDC, compute services, data centers, utilization and revenue quality.", image: "/column-china-mobile-aidc-v1.jpg",
+    href: "/columns/china-mobile-aidc", hrefEn: "/en/columns/china-mobile-aidc", date: "2026-08-21", publishAt: "2026-08-21T09:30:00+08:00", series: "CHINA COMPUTE · 24", title: "AIDC 增长 486% 之后：中国移动如何把算力做成服务", titleEn: "After 486% AIDC Growth: China Mobile's Compute-as-a-Service Test", summary: "以中国移动中报为样本，拆解 AIDC、算力服务、数据中心、资源利用率与收入质量。", summaryEn: "China Mobile's interim results unpacked across AIDC, compute services, data centers, utilization and revenue quality.", image: "/column-china-mobile-aidc-voxel-palette-v1.jpg",
   },
   {
-    href: "/columns/ai-financing-platforms", hrefEn: "/en/columns/ai-financing-platforms", date: "2026-08-22", publishAt: "2026-08-22T09:30:00+08:00", series: "CAPITAL STACK · 25", title: "5000 亿美元不是一笔交易：AI 融资平台的五个缺口", titleEn: "$500 Billion Is Not a Transaction: Five Gaps in AI Financing Platforms", summary: "拆解 NVIDIA 的第三方资本动员目标与项目级融资、送电、抵押和客户现金流之间的缺口。", summaryEn: "Separating NVIDIA's third-party capital objective from project finance, energization, collateral and customer cash flow.", image: "/column-ai-financing-platforms-v1.jpg",
+    href: "/columns/ai-financing-platforms", hrefEn: "/en/columns/ai-financing-platforms", date: "2026-08-22", publishAt: "2026-08-22T09:30:00+08:00", series: "CAPITAL STACK · 25", title: "5000 亿美元不是一笔交易：AI 融资平台的五个缺口", titleEn: "$500 Billion Is Not a Transaction: Five Gaps in AI Financing Platforms", summary: "拆解 NVIDIA 的第三方资本动员目标与项目级融资、送电、抵押和客户现金流之间的缺口。", summaryEn: "Separating NVIDIA's third-party capital objective from project finance, energization, collateral and customer cash flow.", image: "/column-ai-financing-platforms-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/meta-blackrock-el-paso",
@@ -48,7 +51,7 @@ export const columnArticles = [
     titleEn: "Meta–BlackRock El Paso: How a 1GW AI Campus Allocates Construction Risk",
     summary: "Meta 与 BlackRock 将 El Paso 在建园区放入合资平台：外部资本持有资产，Meta 保留承租、管理与残值担保。1GW 是 2028 年起上线目标；送电、验收与实际使用仍待验证。",
     summaryEn: "Meta and BlackRock place the under-construction El Paso campus in a venture: outside capital owns most assets while Meta retains the lease, management and residual-value support. The 1GW target begins online in 2028; energization, acceptance and use remain to be verified.",
-    image: "/column-meta-blackrock-el-paso-v1.jpg",
+    image: "/column-meta-blackrock-el-paso-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/anthropic-volta-compute",
@@ -60,7 +63,7 @@ export const columnArticles = [
     titleEn: "$10 Billion, Six Years, 133MW: Volta's Compute Agreement with an Unnamed AI Lab",
     summary: "Volta 官方公告 100 亿美元算力协议，客户未具名；媒体报道为 Anthropic，官方未确认。拆解资本三层结构与交付验证边界。",
     summaryEn: "Volta's official $10B compute agreement names no customer; media report Anthropic, unconfirmed. The three-layer capital stack and delivery verification boundaries, separated.",
-    image: "/column-anthropic-volta-compute-v1.jpg",
+    image: "/column-anthropic-volta-compute-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/partners-group-avk-power",
@@ -72,7 +75,7 @@ export const columnArticles = [
     titleEn: "Partners Group Buys a Majority Stake in AVK: $1B+ for Data-Center Power as a Service",
     summary: "私人资本把发电、储能、配电与运维打包成 EaaS 平台。交易未完成，2GW 管线是意向，跨过四道门才能变成运营容量。",
     summaryEn: "Private capital packages generation, storage, distribution and operations into EaaS. The deal is open and the 2GW pipeline is intention until four gates close.",
-    image: "/column-partners-group-avk-power-v1.jpg",
+    image: "/column-partners-group-avk-power-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/ai-debt-refinancing",
@@ -84,7 +87,7 @@ export const columnArticles = [
     titleEn: "From $15B Loans to Bonds: Refinancing the Nexus Campus and Its Risk",
     summary: "摩根士丹利牵头把 Hubbard 园区约 150 亿美元贷款尽快转成投机级债券；Google 担保建成后才生效，建设期风险留给投资者。",
     summaryEn: "A Morgan Stanley-led group plans to turn ~$15B of Hubbard campus loans into speculative-grade bonds; Google support activates only after completion.",
-    image: "/column-ai-debt-refinancing-v1.jpg",
+    image: "/column-ai-debt-refinancing-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/memory-2027-allocation",
@@ -96,7 +99,7 @@ export const columnArticles = [
     titleEn: "2027 Memory Allocation: Sold Out Is a Report; HBM Configuration Is the Variable",
     summary: "TrendForce 官方口径是供不应求延续到 2027 年；NVIDIA 三种 HBM 配置未定案，CSP 在考虑下调 ASIC 配置。",
     summaryEn: "TrendForce confirms undersupply into 2027; NVIDIA's three HBM options remain undecided and CSPs weigh lower ASIC content.",
-    image: "/column-memory-2027-allocation-v1.jpg",
+    image: "/column-memory-2027-allocation-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/earnings-season-review-2026",
@@ -108,7 +111,7 @@ export const columnArticles = [
     titleEn: "Earnings Season: Capacity Absorption and the Cash-Conversion Divergence",
     summary: "Azure、Google Cloud、AWS 同步加速，供给缺口未关闭，Alphabet、Amazon、Meta 自由现金流分化；Vertiv 与 Arm 保留 not-determined。",
     summaryEn: "Cloud revenue absorbs capacity while the supply gap persists; hyperscaler free cash flow diverges. Vertiv and Arm stay not-determined.",
-    image: "/column-earnings-season-review-2026-v1.jpg",
+    image: "/column-earnings-season-review-2026-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/accelerator-platform-divergence",
@@ -120,7 +123,7 @@ export const columnArticles = [
     titleEn: "SpaceX Standardizes on NVIDIA While Anthropic Brings AMD to 2GW",
     summary: "同一家公司可以多元采购，但同一座大规模集群往往趋向单一平台。拆解 GPU、网络、软件与运维如何把芯片选择变成基础设施架构。",
     summaryEn: "A buyer can diversify at portfolio level while standardizing each large cluster. GPU, network, software and operations turn chip choice into infrastructure architecture.",
-    image: "/column-accelerator-platform-divergence-v1.jpg",
+    image: "/column-accelerator-platform-divergence-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/us-data-center-power-gate",
@@ -132,7 +135,7 @@ export const columnArticles = [
     titleEn: "The New Price of U.S. Data-Center Access: Bring Power and Pay the Grid",
     summary: "EPA、PJM 与地方监管正在把新增电源、输配电升级、容量付款和空气许可写进项目经济性，园区选址逻辑随之改变。",
     summaryEn: "EPA guidance, PJM capacity policy and state permitting are moving new generation, grid upgrades and air compliance onto data-center economics.",
-    image: "/column-us-data-center-power-gate-v1.jpg",
+    image: "/column-us-data-center-power-gate-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/ai-infrastructure-financing",
@@ -144,7 +147,7 @@ export const columnArticles = [
     titleEn: "How $35 Billion Becomes 1GW—and Where the Risk Sits",
     summary: "Broadcom、Apollo 与 Blackstone 的 AI XPV 平台把芯片、机房、长期使用承诺和私人信贷装进同一结构，关键不在资金规模，而在残值与利用率。",
     summaryEn: "The Broadcom-Apollo-Blackstone AI XPV platform links silicon, sites, long-term demand and private credit. Residual value and utilization matter more than headline size.",
-    image: "/column-ai-infrastructure-financing-v1.jpg",
+    image: "/column-ai-infrastructure-financing-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/eu-ai-gigafactories",
@@ -156,7 +159,7 @@ export const columnArticles = [
     titleEn: "Europe Mobilizes €20B for AI Compute, Leaving Utilization Risk to Operators",
     summary: "AI Gigafactory 不是简单补贴：欧盟最多承担 17% CAPEX 或预购等值算力时间，剩余投资、OPEX、芯片与客户利用率仍需项目方兑现。",
     summaryEn: "EU support can cover up to 17% of capex or pre-purchase equivalent access time. The consortium still carries the remaining capital, opex, silicon and utilization burden.",
-    image: "/column-eu-ai-gigafactories-v1.jpg",
+    image: "/column-eu-ai-gigafactories-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/caterpillar-ai-power",
@@ -168,7 +171,7 @@ export const columnArticles = [
     titleEn: "Caterpillar's Power-Generation Sales Rose 29%, Sending AI CapEx to Firm Power and Storage",
     summary: "Q2 发电业务销售增至 30.98 亿美元，增长主要来自数据中心用大型往复式发动机与燃机。订单开始从 GPU 外溢到持续电源、储能与运维。",
     summaryEn: "Q2 power-generation sales reached $3.098B, led by large reciprocating engines and turbines for data centers. AI spending is spilling into firm power, storage and service.",
-    image: "/column-caterpillar-ai-power-v1.jpg",
+    image: "/column-caterpillar-ai-power-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/palantir-sovereign-ai",
@@ -180,7 +183,7 @@ export const columnArticles = [
     titleEn: "Palantir Calls AI Sovereign, but the Infrastructure Thesis Still Needs Proof",
     summary: "从 Q2 业绩、电话会与主权 AI 架构出发，区分已披露合同、管理层命题与尚待验证的算力、网络、电力和液冷传导。",
     summaryEn: "Palantir Q2 and sovereign AI separated into reported contracts, management claims and the still-unproven compute, network, power and cooling read-through.",
-    image: "/column-palantir-sovereign-ai-v2.jpg",
+    image: "/column-palantir-sovereign-ai-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/alibaba-qwen-cloud",
@@ -192,7 +195,7 @@ export const columnArticles = [
     titleEn: "Qwen3.8 Is Live: Seven Tests for Alibaba Cloud's Next Earnings",
     summary: "从外部云收入、模型服务 ARR、三年 3800 亿元投入、自研芯片、利润率与现金流，检验阿里云 AI 商业化的转换效率。",
     summaryEn: "Seven tests across external cloud growth, model-service ARR, the RMB380B buildout, proprietary silicon, margin and cash conversion.",
-    image: "/column-alibaba-qwen-cloud-v2.jpg",
+    image: "/column-alibaba-qwen-cloud-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/microsoft-ai-capex",
@@ -204,7 +207,7 @@ export const columnArticles = [
     titleEn: "Azure at 43%: The Delivery Test for Its Next $50B",
     summary: "从新增 1GW、GPU 上线速度、租赁会计到自由现金流，追踪微软 AI 基础设施如何转化为云收入。",
     summaryEn: "One gigawatt, faster GPU activation and shifting lease accounting reveal how Microsoft must convert infrastructure into cloud revenue.",
-    image: "/column-microsoft-ai-capex-v2.jpg",
+    image: "/column-microsoft-ai-capex-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/frontier-model-economics",
@@ -216,7 +219,7 @@ export const columnArticles = [
     titleEn: "Model Prices Are Fragmenting, Reshaping AI Infrastructure Demand",
     summary: "GPT-5.6 与 Claude Sonnet 5、Opus 4.8、Fable 5 的共同信号不是单次跑分，而是能力、速度、价格与调用深度的分层。",
     summaryEn: "GPT-5.6 and Anthropic's Sonnet 5, Opus 4.8 and Fable 5 turn capability, speed, price and reasoning depth into separate infrastructure variables.",
-    image: "/column-frontier-model-economics-v2.jpg",
+    image: "/column-frontier-model-economics-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/sk-hynix-hbm-earnings",
@@ -228,7 +231,7 @@ export const columnArticles = [
     titleEn: "After SK hynix Earnings: Three Tests for AI Memory",
     summary: "创纪录业绩之外，长期客户协议、HBM4 性能与克制扩产，才是决定存储景气能否延续的三条线索。",
     summaryEn: "Beyond the record print, customer agreements, HBM4 execution and disciplined capacity are the three signals that matter for the memory cycle.",
-    image: "/column-sk-hynix-hbm-v2.jpg",
+    image: "/column-sk-hynix-hbm-earnings-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/cxmt-us-chip-impact",
@@ -240,7 +243,7 @@ export const columnArticles = [
     titleEn: "CXMT's Listing: The US Chip Exposure Map",
     summary: "从通用 DRAM、HBM、设备出口与中国收入四条链，判断 MU、AMAT、LRCX、KLAC、NVDA、AMD 与 RMBS 的影响顺序。",
     summaryEn: "A ranked read-through across MU, AMAT, LRCX, KLAC, NVDA, AMD and RMBS through conventional DRAM, HBM, equipment controls and China exposure.",
-    image: "/column-cxmt-us-chips-v2.jpg",
+    image: "/column-cxmt-us-chip-impact-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/ai-capex-power",
@@ -252,7 +255,7 @@ export const columnArticles = [
     titleEn: "Where Hyperscaler AI CapEx Actually Goes",
     summary: "Azure、Google Cloud 与 AWS 同时加速，供给缺口和自由现金流开始决定四大云厂商的 AI 基建回报。",
     summaryEn: "Azure, Google Cloud and AWS accelerated together; capacity gaps and free-cash-flow conversion now define the hyperscaler AI buildout.",
-    image: "/column-ai-capex-grid-v2.jpg",
+    image: "/column-ai-capex-power-voxel-palette-v1.jpg",
   },
   {
     href: "/columns/hyperscale-idc-leases",
@@ -264,7 +267,7 @@ export const columnArticles = [
     titleEn: "Gigawatt Leases Are Reshaping the Data Center Market",
     summary: "四笔公开合同合计接近 1.8GW。拆开签约、送电与计费三个节点，判断园区级订单怎样转化为现金流。",
     summaryEn: "Four disclosed agreements approach 1.8GW. Contract, energization and billing reveal how campus-scale orders convert into cash flow.",
-    image: "/column-hyperscale-leases-v2.jpg",
+    image: "/column-hyperscale-idc-leases-voxel-palette-v1.jpg",
   },
 ] as const;
 

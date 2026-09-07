@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import MicrosoftAiCapexArticle from "./article";
 
 const canonical = "https://idc-index.com/columns/microsoft-ai-capex";
-const image = "https://idc-index.com/column-microsoft-ai-capex-v2.jpg";
+const image = "https://idc-index.com/column-microsoft-ai-capex-voxel-palette-v1.jpg";
 
 export const metadata: Metadata = {
   title: "Azure 增长 43% 之后，500 亿美元 CAPEX 的兑现路径｜IDC Atlas",
   description: "深度拆解微软 FY2026 Q4：Azure 增长的容量、效率与交付周期，资本开支会计口径，以及超过 500 亿美元下一季度投入的产业链传导。",
   alternates: { canonical, languages: { "zh-CN": canonical, en: "https://idc-index.com/en/columns/microsoft-ai-capex", "x-default": "https://idc-index.com/en/columns/microsoft-ai-capex" } },
-  openGraph: { title: "Azure 增长 43% 之后，500 亿美元 CAPEX 的兑现路径", description: "从新增 1GW、GPU 上线速度、租赁会计到自由现金流，追踪微软 AI 基础设施的真实兑现路径。", url: canonical, type: "article", publishedTime: "2026-07-31T00:00:00+08:00", modifiedTime: "2026-08-01T23:00:00+08:00", images: [{ url: image, width: 1672, height: 941, alt: "连接服务器机房与电网设施的 AI 数据中心容量管线" }] },
+  openGraph: { title: "Azure 增长 43% 之后，500 亿美元 CAPEX 的兑现路径", description: "从新增 1GW、GPU 上线速度、租赁会计到自由现金流，追踪微软 AI 基础设施的真实兑现路径。", url: canonical, type: "article", publishedTime: "2026-07-31T00:00:00+08:00", modifiedTime: "2026-08-01T23:00:00+08:00", images: [{ url: image, width: 1672, height: 941, alt: "概念体素插画：分期安装的计算机架连接电力与云服务" }] },
   twitter: { card: "summary_large_image", title: "Azure 43% 之后：微软下一季 500 亿美元的部署路径", description: "容量、效率、上线速度，以及被会计口径遮住的建设强度。", images: [image] },
 };
 

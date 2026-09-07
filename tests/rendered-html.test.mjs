@@ -3,6 +3,21 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { gzipSync } from "node:zlib";
 import { stripTypeScriptTypes } from "node:module";
+import sitesMirror from "../worker/sites-mirror.mjs";
+
+test("lightweight Sites build preserves the full Worker's canonical redirect behavior", async () => {
+  for (const path of ["/", "/en", "/pulse?signal=policy", "/en/columns", "/rumors/equinix-flo-singapore-vppa-2026", "/sitemap.xml", "/robots.txt", "/assets/example.css", "/api/daily-snapshot?date=latest", "/admin/intelligence", "/?next=https%3A%2F%2Fexample.com"]) {
+    const host = "dc-atlas-cn-us.catknowspray.chatgpt.site";
+    const original = await render(path, host);
+    for (const method of ["GET", "HEAD", "POST"]) {
+      const response = sitesMirror.fetch(new Request(`https://${host}${path}`, { method }));
+      assert.equal(response.status, original.status);
+      assert.equal(response.headers.get("location"), original.headers.get("location"));
+      assert.equal(await response.text(), "");
+    }
+  }
+  assert.equal(sitesMirror.fetch(new Request("https://idc-index.com/")).status, 404);
+});
 
 test("cross-day bootstrap snapshots persist their new metadata inside both bodies", async () => {
   const source = await readFile(new URL("../worker/index.ts", import.meta.url), "utf8");
@@ -36,6 +51,76 @@ async function render(pathname = "/", host = "dc-atlas.example", country = null,
     { waitUntil() {}, passThroughOnException() {} },
   );
 }
+
+test("September 7 catch-up reporting has bilingual, indexable detail pages", async () => {
+  const records = JSON.parse(await readFile(new URL("../app/data/public-intelligence.json", import.meta.url), "utf8"));
+  for (const id of ["editor-evt-b102c3b0d5abb8dbb4e6", "editor-evt-b4d9df0ea78106eeb136", "editor-evt-41d81bc8c0d1c9591099"]) {
+    const record = records.find(item => item.id === id);
+    assert.ok(record, id);
+    for (const prefix of ["", "/en"]) {
+      const path = `${prefix}/rumors/${id}`;
+      const response = await render(path);
+      assert.equal(response.status, 200, path);
+      const html = await response.text();
+      assert.ok(html.includes(`rel="canonical" href="https://idc-index.com${path}"`), path);
+      assert.ok(html.includes(record.sourceUrl), path);
+      assert.ok(!html.includes("后续一手材料将用于升级状态"), path);
+      assert.ok(!/<meta name="robots" content="[^"]*noindex/.test(html), path);
+    }
+  }
+});
+
+test("retained rumor permalinks remain bilingual and do not re-enter the latest feed", async () => {
+  const archive = JSON.parse(await readFile(new URL("../app/data/rumor-archive.json", import.meta.url), "utf8"));
+  assert.equal(archive.length, 11);
+  const sitemap = await (await render("/sitemap.xml")).text();
+  for (const prefix of ["", "/en"]) {
+    const feed = await (await render(`${prefix}/rumors`)).text();
+    for (const item of archive) {
+      const path = `${prefix}/rumors/${item.id}`;
+      const response = await render(path);
+      assert.equal(response.status, 200, path);
+      const html = await response.text();
+      assert.ok(html.includes(`rel="canonical" href="https://idc-index.com${path}"`), path);
+      assert.ok(html.includes('data-rumor-archive="true"'), path);
+      assert.ok(html.includes(`"datePublished":"${item.publishedAt}"`), path);
+      assert.ok(!/<meta name="robots" content="[^"]*noindex/.test(html), path);
+      assert.ok(sitemap.includes(`<loc>https://idc-index.com${path}</loc>`), path);
+      assert.ok(!feed.includes(`href="${path}"`), "archive must not refresh the news feed");
+    }
+    const oldTexas = await render(`${prefix}/rumors/texas-data-center-interconnection-audit-2026`);
+    assert.equal(oldTexas.status, 308);
+    assert.equal(new URL(oldTexas.headers.get("location"), "https://dc-atlas.example").pathname, `${prefix}/policy/us-texas-data-center-audit-2026`);
+    const policy = await (await render(`${prefix}/policy/us-texas-data-center-audit-2026`)).text();
+    assert.match(policy, /noindex/);
+    assert.equal((await render(`${prefix}/industry-network`)).status, 404);
+    assert.equal((await render(`${prefix}/rumors/not-a-published-record`)).status, 404);
+    const filtered = await (await render(`${prefix}/pulse?signal=policy`)).text();
+    assert.ok(filtered.includes(`rel="canonical" href="https://idc-index.com${prefix}/pulse"`));
+  }
+});
+
+test("research context links are bilingual, crawlable and exclude scheduled articles", async (t) => {
+  t.mock.timers.enable({ apis: ["Date"], now: new Date("2026-09-06T14:00:00Z") });
+  for (const prefix of ["", "/en"]) {
+    const html = await (await render(`${prefix}/columns/glm-5-3-flash-china-chips`)).text();
+    assert.match(html, /column-reading-context/);
+    assert.ok(html.includes(`href="${prefix}/methodology"`));
+    assert.ok(html.includes(`href="${prefix}/companies/`));
+    assert.match(html, /href="#research-section-1"/);
+    assert.match(html, /id="research-section-1"/);
+    const graphs = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap((match) => {
+      const value = JSON.parse(match[1]); return value["@graph"] ?? [value];
+    });
+    const article = graphs.find((node) => node["@type"] === "AnalysisNewsArticle");
+    assert.ok(article.mentions.length > 0);
+    assert.ok(article[prefix ? "translationOfWork" : "workTranslation"]["@id"].endsWith("#article"));
+    assert.ok(!html.includes('href="' + prefix + '/columns/broadcom-custom-ai-profit-pool"'));
+  }
+  const legacy = await (await render("/en/columns/cxmt-us-chip-impact")).text();
+  assert.match(legacy, /"@id":"https:\/\/idc-index.com\/en\/columns\/cxmt-us-chip-impact#article"/);
+  assert.match(legacy, /column-reading-context/);
+});
 
 test("live API preserves the complete versioned intelligence archive during hydration", async (t) => {
   const published = JSON.parse(await readFile(new URL("../app/data/public-intelligence.json", import.meta.url), "utf8"));
@@ -91,7 +176,9 @@ test("live API preserves the complete versioned intelligence archive during hydr
   assert.match(englishPulse, /4\.4B value, subject to customary adjustments/);
 });
 
-test("server-renders the bilingual intelligence-console homepage", async () => {
+test("server-renders the bilingual intelligence-console homepage", async (t) => {
+  // Historical content fixture; current release boundaries have their own tests.
+  t.mock.timers.enable({ apis: ["Date"], now: Date.parse("2026-09-05T12:00:00+08:00") });
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
@@ -99,7 +186,7 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   const html = await response.text();
   assert.match(html, /<title>全球数据中心与 AI 基础设施情报｜IDC Atlas<\/title>/i);
   assert.match(html, /超大规模云厂商 CAPEX/);
-  assert.match(html, /hrefLang="x-default" href="https:\/\/dc-atlas\.example\/en"/);
+  assert.match(html, /hrefLang="x-default" href="https:\/\/idc-index\.com\/en"/);
   assert.match(html, /class="atlas-console-overview"/);
   assert.match(html, /全球科技财报日历/);
   assert.doesNotMatch(html, /数据中心政策索引/);
@@ -126,7 +213,7 @@ test("server-renders the bilingual intelligence-console homepage", async () => {
   assert.match(html, /尚未确认/);
   assert.match(html, /下一验证点/);
   assert.match(html, /为何今天读它/);
-  assert.match(html, /column-agent-runtime-demand-v1\.jpg/);
+  assert.match(html, /column-minimax-zhipu-h1-token-economics-voxel-palette-v3\.jpg/);
   assert.match(html, /href="\/columns"/);
   assert.match(html, /href="\/columns\/minimax-zhipu-h1-token-economics"/);
   assert.doesNotMatch(html, /情报摘要/);
@@ -290,11 +377,14 @@ test("publishes shareable bilingual policy and Global Intelligence brief pages",
   const sitemap = await readFile(new URL("../app/sitemap.ts", import.meta.url), "utf8");
   assert.match(sitemap, /publishedColumnArticles/);
   assert.doesNotMatch(sitemap, /POLICY_BRIEFS\.flatMap/);
-  assert.match(sitemap, /RUMOR_BRIEFS\.flatMap/);
+  const renderedSitemap = await (await render("/sitemap.xml")).text();
+  assert.ok(renderedSitemap.includes("<loc>https://idc-index.com/rumors/spacex-nvidia-ai-infrastructure-call-2026</loc>"));
+  assert.ok(renderedSitemap.includes("<loc>https://idc-index.com/en/rumors/spacex-nvidia-ai-infrastructure-call-2026</loc>"));
   assert.doesNotMatch(sitemap, /url: "https:\/\/idc-index\.com\/policy",/);
 });
 
-test("renders the English research console and focused content routes", async () => {
+test("renders the English research console and focused content routes", async (t) => {
+  t.mock.timers.enable({ apis: ["Date"], now: Date.parse("2026-09-05T12:00:00+08:00") });
   const response = await render("/en");
   assert.equal(response.status, 200);
   const html = await response.text();
@@ -662,7 +752,7 @@ test("publishes the bilingual Alibaba Cloud and Qwen3.8 earnings preview", async
   assert.match(chineseHtml, /阿里云财报的七项检验/);
   assert.match(chineseHtml, /三年 3,800 亿元如何变成可售容量/);
   assert.match(chineseHtml, /Qwen3\.8 在六月季度后发布/);
-  assert.match(chineseHtml, /column-alibaba-qwen-cloud-v2\.jpg/);
+  assert.match(chineseHtml, /column-alibaba-qwen-cloud-voxel-palette-v1\.jpg/);
   assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns\/alibaba-qwen-cloud"/i);
   assert.match(chineseHtml, /"@type":"AnalysisNewsArticle"/);
 
@@ -748,7 +838,7 @@ test("publishes the first scheduled research column and keeps later releases tim
   assert.match(chineseHtml, /SpaceX 1\.4GW 只押 NVIDIA，Anthropic 2GW 引入 AMD/);
   assert.match(chineseHtml, /铭牌功率为 1\.4GW/);
   assert.match(chineseHtml, /媒体对电话会的报道/);
-  assert.match(chineseHtml, /column-accelerator-platform-divergence-v1\.jpg/);
+  assert.match(chineseHtml, /column-accelerator-platform-divergence-voxel-palette-v1\.jpg/);
   assert.match(chineseHtml, /"@type":"AnalysisNewsArticle"/);
 
   const english = await render("/en/columns/accelerator-platform-divergence");
@@ -1036,11 +1126,11 @@ test("redirects the Sites fallback host to the canonical production domain", asy
   assert.equal(response.headers.get("location"), "https://idc-index.com/?source=sites");
 });
 
-test("defaults overseas readers to English and remembers explicit language choice", async () => {
+test("keeps both language URLs crawlable worldwide and remembers explicit language choice", async () => {
   const overseas = await render("/", "dc-atlas.example", "US");
-  assert.equal(overseas.status, 307);
-  assert.equal(overseas.headers.get("location"), "https://dc-atlas.example/en");
-  assert.match(overseas.headers.get("cache-control") ?? "", /no-store/);
+  assert.equal(overseas.status, 200);
+  assert.equal(overseas.headers.get("location"), null);
+  assert.match(await overseas.text(), /<html lang="zh-CN"/);
 
   const mainland = await render("/", "dc-atlas.example", "CN");
   assert.equal(mainland.status, 200);
@@ -1048,22 +1138,27 @@ test("defaults overseas readers to English and remembers explicit language choic
   const chinesePreference = await render("/", "dc-atlas.example", "US", "idc_lang=zh");
   assert.equal(chinesePreference.status, 200);
 
+  const englishPreference = await render("/", "dc-atlas.example", "CN", "idc_lang=en");
+  assert.equal(englishPreference.status, 307);
+  assert.equal(englishPreference.headers.get("location"), "https://dc-atlas.example/en");
+  assert.match(englishPreference.headers.get("cache-control") ?? "", /no-store/);
+
   const rememberEnglish = await render("/en?lang=en", "dc-atlas.example", "CN");
   assert.equal(rememberEnglish.status, 302);
   assert.equal(rememberEnglish.headers.get("location"), "https://dc-atlas.example/en");
   assert.match(rememberEnglish.headers.get("set-cookie") ?? "", /idc_lang=en/);
 });
 
-test("includes social sharing metadata for the request host", async () => {
+test("pins canonical and social metadata to the production origin, not the request host", async () => {
   const response = await render();
   const html = await response.text();
 
-  assert.match(html, /property="og:image" content="https:\/\/dc-atlas\.example\/og\.png"/i);
+  assert.match(html, /property="og:image" content="https:\/\/idc-index\.com\/og\.png"/i);
   assert.match(html, /name="twitter:card" content="summary_large_image"/i);
   assert.match(html, /name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/i);
   assert.match(html, /lang="zh-CN"/i);
-  assert.match(html, /rel="canonical" href="https:\/\/dc-atlas\.example\/"/i);
-  assert.match(html, /hrefLang="en" href="https:\/\/dc-atlas\.example\/en"/i);
+  assert.match(html, /rel="canonical" href="https:\/\/idc-index\.com\/"/i);
+  assert.match(html, /hrefLang="en" href="https:\/\/idc-index\.com\/en"/i);
   assert.match(html, /"@type":"WebSite"/i);
 });
 
@@ -1176,23 +1271,23 @@ test("publishes bilingual column indexes with crawl metadata", async () => {
   assert.match(chineseHtml, /rel="canonical" href="https:\/\/idc-index\.com\/columns"/i);
   assert.match(chineseHtml, /"@type":"ItemList"/);
   for (const cover of [
-    "column-anthropic-volta-compute-v1.jpg",
-    "column-partners-group-avk-power-v1.jpg",
-    "column-ai-debt-refinancing-v1.jpg",
-    "column-memory-2027-allocation-v1.jpg",
-    "column-earnings-season-review-2026-v1.jpg",
-    "column-cxmt-us-chips-v2.jpg",
-    "column-caterpillar-ai-power-v1.jpg",
-    "column-eu-ai-gigafactories-v1.jpg",
-    "column-us-data-center-power-gate-v1.jpg",
-    "column-accelerator-platform-divergence-v1.jpg",
-    "column-alibaba-qwen-cloud-v2.jpg",
-    "column-microsoft-ai-capex-v2.jpg",
-    "column-frontier-model-economics-v2.jpg",
-    "column-sk-hynix-hbm-v2.jpg",
-    "column-cxmt-us-chips-v2.jpg",
-    "column-ai-capex-grid-v2.jpg",
-    "column-hyperscale-leases-v2.jpg",
+    "column-anthropic-volta-compute-voxel-palette-v1.jpg",
+    "column-partners-group-avk-power-voxel-palette-v1.jpg",
+    "column-ai-debt-refinancing-voxel-palette-v1.jpg",
+    "column-memory-2027-allocation-voxel-palette-v1.jpg",
+    "column-earnings-season-review-2026-voxel-palette-v1.jpg",
+    "column-cxmt-us-chip-impact-voxel-palette-v1.jpg",
+    "column-caterpillar-ai-power-voxel-palette-v1.jpg",
+    "column-eu-ai-gigafactories-voxel-palette-v1.jpg",
+    "column-us-data-center-power-gate-voxel-palette-v1.jpg",
+    "column-accelerator-platform-divergence-voxel-palette-v1.jpg",
+    "column-alibaba-qwen-cloud-voxel-palette-v1.jpg",
+    "column-microsoft-ai-capex-voxel-palette-v1.jpg",
+    "column-frontier-model-economics-voxel-palette-v1.jpg",
+    "column-sk-hynix-hbm-earnings-voxel-palette-v1.jpg",
+    "column-cxmt-us-chip-impact-voxel-palette-v1.jpg",
+    "column-ai-capex-power-voxel-palette-v1.jpg",
+    "column-hyperscale-idc-leases-voxel-palette-v1.jpg",
   ]) assert.match(chineseHtml, new RegExp(cover.replace(".", "\\.")));
 
   const english = await render("/en/columns");

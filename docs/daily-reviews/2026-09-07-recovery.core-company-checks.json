@@ -1,0 +1,1153 @@
+{
+  "generatedAt": "2026-09-07T05:58:50.882Z",
+  "companies": [
+    {
+      "id": "xai",
+      "name": "xAI",
+      "urls": [
+        "https://x.ai/news"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://x.ai/news",
+          "resolvedUrl": "https://x.ai/news",
+          "checkedAt": "2026-09-07T05:58:24.218Z",
+          "httpStatus": 403,
+          "accessState": "unavailable",
+          "pageTitle": "Attention Required! | Cloudflare",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "urls": [
+        "https://openai.com/news/rss.xml"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://openai.com/news/rss.xml",
+          "resolvedUrl": "https://openai.com/news/rss.xml",
+          "checkedAt": "2026-09-07T05:58:24.236Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "<![CDATA[OpenAI News]]>",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "urls": [
+        "https://www.oracle.com/news/"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.oracle.com/news/",
+          "resolvedUrl": "https://www.oracle.com/news/",
+          "checkedAt": "2026-09-07T05:58:24.236Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "News and Press Releases | Oracle News",
+          "datesObserved": [
+            "2026-08-13",
+            "2026-08-12",
+            "2026-08-11",
+            "2026-09-03",
+            "2026-09-01",
+            "2026-08-27",
+            "2026-08-26",
+            "2026-08-24",
+            "2026-08-19"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "urls": [
+        "https://aws.amazon.com/about-aws/whats-new/recent/feed/"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
+          "resolvedUrl": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
+          "checkedAt": "2026-09-07T05:58:24.236Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Recent Announcements",
+          "datesObserved": [
+            "2026-08-12"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "urls": [
+        "https://www.anthropic.com/news"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.anthropic.com/news",
+          "resolvedUrl": "https://www.anthropic.com/news",
+          "checkedAt": "2026-09-07T05:58:24.237Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Newsroom \\ Anthropic",
+          "datesObserved": [
+            "2026-09-04",
+            "2026-08-04",
+            "2026-09-01",
+            "2026-08-27",
+            "2026-08-14",
+            "2026-08-31",
+            "2026-08-25",
+            "2026-08-07"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "urls": [
+        "https://www.apple.com/newsroom/rss-feed.rss"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.apple.com/newsroom/rss-feed.rss",
+          "resolvedUrl": "https://www.apple.com/newsroom/rss-feed.rss",
+          "checkedAt": "2026-09-07T05:58:24.237Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "<![CDATA[Apple Newsroom]]>",
+          "datesObserved": [
+            "2026-08-27",
+            "2026-08-25",
+            "2026-08-18",
+            "2026-08-13",
+            "2026-08-11",
+            "2026-08-10",
+            "2026-08-03"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "urls": [
+        "https://about.fb.com/news/feed/",
+        "https://engineering.fb.com/feed/"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://about.fb.com/news/feed/",
+          "resolvedUrl": "https://about.fb.com/news/feed/",
+          "checkedAt": "2026-09-07T05:58:24.685Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Newsroom | Meta Newsroom",
+          "datesObserved": [
+            "2026/08/01",
+            "2026/08/03",
+            "2026/08/02",
+            "2026-08-19"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        },
+        {
+          "url": "https://engineering.fb.com/feed/",
+          "resolvedUrl": "https://engineering.fb.com/feed/",
+          "checkedAt": "2026-09-07T05:58:24.786Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Engineering at Meta",
+          "datesObserved": [
+            "2026/09/03",
+            "2026/09/02",
+            "2026/08/24",
+            "2026/08/12",
+            "2026/08/05",
+            "2026/08/03"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "bytedance",
+      "name": "ByteDance",
+      "urls": [
+        "https://www.bytedance.com/en/news"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.bytedance.com/en/news",
+          "resolvedUrl": "https://www.bytedance.com/en/news",
+          "checkedAt": "2026-09-07T05:58:25.394Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "ByteDance",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "tesla",
+      "name": "Tesla",
+      "urls": [
+        "https://ir.tesla.com/"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://ir.tesla.com/",
+          "resolvedUrl": "https://ir.tesla.com/",
+          "checkedAt": "2026-09-07T05:58:26.093Z",
+          "httpStatus": 403,
+          "accessState": "unavailable",
+          "pageTitle": "Access Denied",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "urls": [
+        "https://news.microsoft.com/feed/",
+        "https://azure.microsoft.com/en-us/blog/feed/"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://news.microsoft.com/feed/",
+          "resolvedUrl": "https://news.microsoft.com/feed/",
+          "checkedAt": "2026-09-07T05:58:26.103Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Stories",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        },
+        {
+          "url": "https://azure.microsoft.com/en-us/blog/feed/",
+          "resolvedUrl": "https://azure.microsoft.com/en-us/blog/feed/",
+          "checkedAt": "2026-09-07T05:58:26.373Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Microsoft Azure Blog",
+          "datesObserved": [
+            "2026/08/11"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "palantir",
+      "name": "Palantir",
+      "urls": [
+        "https://investors.palantir.com/news-events/press-releases"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://investors.palantir.com/news-events/press-releases",
+          "resolvedUrl": "https://investors.palantir.com/news-events/press-releases",
+          "checkedAt": "2026-09-07T05:58:26.519Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Palantir IR",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "alibaba",
+      "name": "Alibaba",
+      "urls": [
+        "https://www.alibabagroup.com/en-US/pressreleases"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.alibabagroup.com/en-US/pressreleases",
+          "checkedAt": "2026-09-07T05:58:26.827Z",
+          "accessState": "unavailable",
+          "error": "ECONNRESET",
+          "status": "not-determined"
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "coreweave",
+      "name": "CoreWeave",
+      "urls": [
+        "https://www.coreweave.com/news"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.coreweave.com/news",
+          "resolvedUrl": "https://www.coreweave.com/newsroom",
+          "checkedAt": "2026-09-07T05:58:27.247Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "News and Press Releases | CoreWeave",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare",
+      "urls": [
+        "https://blog.cloudflare.com/rss/"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://blog.cloudflare.com/rss/",
+          "resolvedUrl": "https://blog.cloudflare.com/rss/",
+          "checkedAt": "2026-09-07T05:58:27.427Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Cloudflare Blog",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "tencent",
+      "name": "Tencent",
+      "urls": [
+        "https://www.tencent.com/en-us/articles.html"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.tencent.com/en-us/articles.html",
+          "checkedAt": "2026-09-07T05:58:27.516Z",
+          "accessState": "unavailable",
+          "error": "ECONNRESET",
+          "status": "not-determined"
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "servicenow",
+      "name": "ServiceNow",
+      "urls": [
+        "https://newsroom.servicenow.com/press-releases"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://newsroom.servicenow.com/press-releases",
+          "checkedAt": "2026-09-07T05:58:27.701Z",
+          "accessState": "unavailable",
+          "error": "ECONNRESET",
+          "status": "not-determined"
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "urls": [
+        "https://www.perplexity.ai/hub"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.perplexity.ai/hub",
+          "checkedAt": "2026-09-07T05:58:28.056Z",
+          "accessState": "unavailable",
+          "error": "ECONNRESET",
+          "status": "not-determined"
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "urls": [
+        "https://api-docs.deepseek.com/news/"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://api-docs.deepseek.com/news/",
+          "resolvedUrl": "https://api-docs.deepseek.com/news/",
+          "checkedAt": "2026-09-07T05:58:28.408Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Your First API Call | DeepSeek API Docs",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "lam-research",
+      "name": "Lam Research",
+      "urls": [
+        "https://newsroom.lamresearch.com/press-releases"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://newsroom.lamresearch.com/press-releases",
+          "resolvedUrl": "https://newsroom.lamresearch.com/press-releases",
+          "checkedAt": "2026-09-07T05:58:29.035Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Lam Research Newsroom - Press Releases",
+          "datesObserved": [
+            "2026-08-27",
+            "2026-08-26",
+            "2026-08-13"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "alphabet",
+      "name": "Alphabet",
+      "urls": [
+        "https://cloud.google.com/blog/rss",
+        "https://blog.google/technology/ai/rss/",
+        "https://developers.googleblog.com/feeds/posts/default"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://cloud.google.com/blog/rss",
+          "resolvedUrl": "https://cloud.google.com/blog/rss",
+          "checkedAt": "2026-09-07T05:58:29.530Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Google Cloud Blog",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        },
+        {
+          "url": "https://blog.google/technology/ai/rss/",
+          "resolvedUrl": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+          "checkedAt": "2026-09-07T05:58:29.937Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "AI",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        },
+        {
+          "url": "https://developers.googleblog.com/feeds/posts/default",
+          "resolvedUrl": "https://developers.googleblog.com/feeds/posts/default/",
+          "checkedAt": "2026-09-07T05:58:29.974Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Google Developers Blog",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "snowflake",
+      "name": "Snowflake",
+      "urls": [
+        "https://investors.snowflake.com/news"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://investors.snowflake.com/news",
+          "checkedAt": "2026-09-07T05:58:30.369Z",
+          "accessState": "unavailable",
+          "error": "ECONNRESET",
+          "status": "not-determined"
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "asml",
+      "name": "ASML",
+      "urls": [
+        "https://www.asml.com/en/news/press-releases"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.asml.com/en/news/press-releases",
+          "resolvedUrl": "https://www.asml.com/en/news/press-releases",
+          "checkedAt": "2026-09-07T05:58:30.380Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Press releases | ASML - Supplying the semiconductor industry",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "urls": [
+        "https://mistral.ai/news"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://mistral.ai/news",
+          "checkedAt": "2026-09-07T05:58:30.986Z",
+          "accessState": "unavailable",
+          "error": "ECONNRESET",
+          "status": "not-determined"
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "marvell",
+      "name": "Marvell",
+      "urls": [
+        "https://www.marvell.com/company/newsroom.html"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.marvell.com/company/newsroom.html",
+          "resolvedUrl": "https://www.marvell.com/company/newsroom.html",
+          "checkedAt": "2026-09-07T05:58:31.235Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Marvell Newsroom | Press Releases - Marvell",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "urls": [
+        "https://ir.amd.com/rss/news-releases.xml"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://ir.amd.com/rss/news-releases.xml",
+          "resolvedUrl": "https://ir.amd.com/news-events/press-releases/rss",
+          "checkedAt": "2026-09-07T05:58:31.927Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Advanced Micro Devices, Inc. (AMD) Press Releases",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "tsmc",
+      "name": "TSMC",
+      "urls": [
+        "https://pr.tsmc.com/english/news"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://pr.tsmc.com/english/news",
+          "resolvedUrl": "https://pr.tsmc.com/english/news",
+          "checkedAt": "2026-09-07T05:58:32.753Z",
+          "httpStatus": 403,
+          "accessState": "unavailable",
+          "pageTitle": "Just a moment...",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "urls": [
+        "https://nvidianews.nvidia.com/rss.xml",
+        "https://developer.nvidia.com/blog/feed/"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://nvidianews.nvidia.com/rss.xml",
+          "resolvedUrl": "https://nvidianews.nvidia.com/rss.xml",
+          "checkedAt": "2026-09-07T05:58:33.162Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "NVIDIA Newsroom",
+          "datesObserved": [
+            "2026/08/25"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        },
+        {
+          "url": "https://developer.nvidia.com/blog/feed/",
+          "resolvedUrl": "https://developer.nvidia.com/blog/feed/",
+          "checkedAt": "2026-09-07T05:58:33.259Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "NVIDIA Technical Blog",
+          "datesObserved": [
+            "2026-09-04",
+            "2026-09-03",
+            "2026-09-02",
+            "2026-09-01",
+            "2026-08-31",
+            "2026-08-28",
+            "2026-08-26",
+            "2026-08-25",
+            "2026-08-24",
+            "2026-08-27",
+            "2026-08-21",
+            "2026-08-20"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung Electronics",
+      "urls": [
+        "https://news.samsung.com/global/feed"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://news.samsung.com/global/feed",
+          "resolvedUrl": "https://news.samsung.com/global/feed",
+          "checkedAt": "2026-09-07T05:58:34.219Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Samsung Global Newsroom",
+          "datesObserved": [
+            "2026/09/07",
+            "2026/09/04",
+            "2026/09/03",
+            "2026/09/02",
+            "2026/09/28",
+            "2026/09/01",
+            "2026/09/31",
+            "2026/08/31",
+            "2026/08/27",
+            "2026/08/26",
+            "2026/08/25",
+            "2026/08/24"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "arista",
+      "name": "Arista Networks",
+      "urls": [
+        "https://www.arista.com/en/company/news/press-release"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.arista.com/en/company/news/press-release",
+          "resolvedUrl": "https://www.arista.com/en/company/news/press-release",
+          "checkedAt": "2026-09-07T05:58:34.755Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Press Releases - Arista",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "urls": [
+        "https://www.salesforce.com/news/press-releases/"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.salesforce.com/news/press-releases/",
+          "checkedAt": "2026-09-07T05:58:34.893Z",
+          "accessState": "unavailable",
+          "error": "UND_ERR_CONNECT_TIMEOUT",
+          "status": "not-determined"
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "dell",
+      "name": "Dell Technologies",
+      "urls": [
+        "https://www.dell.com/en-us/dt/corporate/newsroom.htm"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.dell.com/en-us/dt/corporate/newsroom.htm",
+          "resolvedUrl": "https://www.dell.com/en-us/dt/corporate/newsroom.htm",
+          "checkedAt": "2026-09-07T05:58:34.913Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Newsroom | Dell USA",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "sk-hynix",
+      "name": "SK hynix",
+      "urls": [
+        "https://news.skhynix.com/feed/"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://news.skhynix.com/feed/",
+          "resolvedUrl": "https://news.skhynix.com/en/feed/",
+          "checkedAt": "2026-09-07T05:58:35.158Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "SK hynix Newsroom",
+          "datesObserved": [
+            "2026/08/31",
+            "2026/08/01",
+            "2026/08/21",
+            "2026/08/19",
+            "2026/08/26"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "micron",
+      "name": "Micron",
+      "urls": [
+        "https://investors.micron.com/news-releases"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://investors.micron.com/news-releases",
+          "checkedAt": "2026-09-07T05:58:35.160Z",
+          "accessState": "unavailable",
+          "error": "ECONNRESET",
+          "status": "not-determined"
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "supermicro",
+      "name": "Supermicro",
+      "urls": [
+        "https://ir.supermicro.com/news/default.aspx"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://ir.supermicro.com/news/default.aspx",
+          "resolvedUrl": "https://ir.supermicro.com/news/default.aspx",
+          "checkedAt": "2026-09-07T05:58:36.476Z",
+          "httpStatus": 403,
+          "accessState": "unavailable",
+          "pageTitle": "Just a moment...",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "vertiv",
+      "name": "Vertiv",
+      "urls": [
+        "https://investors.vertiv.com/news/news-releases"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://investors.vertiv.com/news/news-releases",
+          "resolvedUrl": "https://investors.vertiv.com/news/news-releases",
+          "checkedAt": "2026-09-07T05:58:37.109Z",
+          "httpStatus": 403,
+          "accessState": "unavailable",
+          "pageTitle": "Just a moment...",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "equinix",
+      "name": "Equinix",
+      "urls": [
+        "https://investor.equinix.com/rss/news-releases.xml"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://investor.equinix.com/rss/news-releases.xml",
+          "checkedAt": "2026-09-07T05:58:37.490Z",
+          "accessState": "unavailable",
+          "error": "ECONNRESET",
+          "status": "not-determined"
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "ge-vernova",
+      "name": "GE Vernova",
+      "urls": [
+        "https://www.gevernova.com/news/press-releases"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.gevernova.com/news/press-releases",
+          "checkedAt": "2026-09-07T05:58:37.780Z",
+          "accessState": "unavailable",
+          "error": "ECONNRESET",
+          "status": "not-determined"
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "hut-8",
+      "name": "Hut 8",
+      "urls": [
+        "https://www.hut8.com/news-insights/press-releases"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.hut8.com/news-insights/press-releases",
+          "resolvedUrl": "https://www.hut8.com/news-insights/press-releases",
+          "checkedAt": "2026-09-07T05:58:37.855Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "News &amp; Insights | Hut 8",
+          "datesObserved": [
+            "2026-09-04"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "terawulf",
+      "name": "TeraWulf",
+      "urls": [
+        "https://investors.terawulf.com/news-events/press-releases"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://investors.terawulf.com/news-events/press-releases",
+          "checkedAt": "2026-09-07T05:58:38.710Z",
+          "accessState": "unavailable",
+          "error": "ECONNRESET",
+          "status": "not-determined"
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "galaxy-digital",
+      "name": "Galaxy Digital",
+      "urls": [
+        "https://www.galaxy.com/newsroom"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.galaxy.com/newsroom",
+          "resolvedUrl": "https://www.galaxy.com/newsroom",
+          "checkedAt": "2026-09-07T05:58:38.926Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Newsroom | Galaxy",
+          "datesObserved": [
+            "2026-09-07"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "huawei",
+      "name": "Huawei",
+      "urls": [
+        "https://www.huawei.com/en/news/"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.huawei.com/en/news/",
+          "resolvedUrl": "https://www.huawei.com/en/news/",
+          "checkedAt": "2026-09-07T05:58:39.341Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Newsroom - Huawei",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "applied-digital",
+      "name": "Applied Digital",
+      "urls": [
+        "https://ir.applieddigital.com/news-events/press-releases"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://ir.applieddigital.com/news-events/press-releases",
+          "resolvedUrl": "https://ir.applieddigital.com/news-events/press-releases",
+          "checkedAt": "2026-09-07T05:58:39.880Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Press Releases :: Applied Digital Corporation (APLD)",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "schneider-electric",
+      "name": "Schneider Electric",
+      "urls": [
+        "https://www.se.com/ww/en/about-us/newsroom/"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.se.com/ww/en/about-us/newsroom/",
+          "checkedAt": "2026-09-07T05:58:39.892Z",
+          "accessState": "unavailable",
+          "error": "UND_ERR_CONNECT_TIMEOUT",
+          "status": "not-determined"
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "riot-platforms",
+      "name": "Riot Platforms",
+      "urls": [
+        "https://www.riotplatforms.com/news-media/press-releases/"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.riotplatforms.com/news-media/press-releases/",
+          "resolvedUrl": "https://www.riotplatforms.com/investors/press-releases/",
+          "checkedAt": "2026-09-07T05:58:39.906Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Press Releases | Riot Platforms",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "baidu",
+      "name": "Baidu",
+      "urls": [
+        "https://ir.baidu.com/news-releases"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://ir.baidu.com/news-releases",
+          "resolvedUrl": "https://ir.baidu.com/news-releases",
+          "checkedAt": "2026-09-07T05:58:41.048Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Press Releases | Baidu Inc",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "applied-materials",
+      "name": "Applied Materials",
+      "urls": [
+        "https://ir.appliedmaterials.com/news-releases"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://ir.appliedmaterials.com/news-releases",
+          "resolvedUrl": "https://ir.appliedmaterials.com/news-releases",
+          "checkedAt": "2026-09-07T05:58:41.109Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "News | Applied Materials",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "broadcom",
+      "name": "Broadcom",
+      "urls": [
+        "https://investors.broadcom.com/news-releases"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://investors.broadcom.com/news-releases",
+          "resolvedUrl": "https://investors.broadcom.com/news-releases",
+          "checkedAt": "2026-09-07T05:58:42.921Z",
+          "httpStatus": 404,
+          "accessState": "unavailable",
+          "pageTitle": "Page Not Found | Broadcom Inc.",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "digital-realty",
+      "name": "Digital Realty",
+      "urls": [
+        "https://investor.digitalrealty.com/news/default.aspx"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://investor.digitalrealty.com/news/default.aspx",
+          "resolvedUrl": "https://investor.digitalrealty.com/news-events/news-releases",
+          "checkedAt": "2026-09-07T05:58:43.161Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "News Releases | Digital Realty Trust",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "eaton",
+      "name": "Eaton",
+      "urls": [
+        "https://www.eaton.com/us/en-us/company/news-insights/news-releases.html"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases.html",
+          "resolvedUrl": "https://www.eaton.com/us/en-us/company/news-insights/news-releases.html",
+          "checkedAt": "2026-09-07T05:58:43.806Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Eaton news releases",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    },
+    {
+      "id": "gds",
+      "name": "GDS Holdings",
+      "urls": [
+        "https://investors.gds-services.com/news-releases"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://investors.gds-services.com/news-releases",
+          "resolvedUrl": "https://investors.gds-services.com/news-releases",
+          "checkedAt": "2026-09-07T05:58:43.968Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "News Releases | GDS Holdings Ltd",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "status": "not-determined"
+    }
+  ],
+  "note": "Historical URLs reused as a catalog only; all results are fresh. This bounded catch-up is not a full 50-company editorial clearance."
+}

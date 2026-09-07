@@ -1,6 +1,20 @@
 import { columnArticleBySlug } from "./articles";
 import { scheduledResearchBySlug, type ResearchCopy, type ResearchSource } from "./scheduled-article-data";
 import { ColumnArticleConsole } from "./article-console";
+import { articleEntities } from "../intelligence-model";
+
+// Reader-facing source references support links only, never raw HTML.
+function ResearchText({ text, sources, lang }: { text: string; sources: ResearchSource[]; lang: "zh" | "en" }) {
+  const parts = text.split(/(\[[^\]]+\]\(https:\/\/[^\s)]+\)|\[\d+\])/g);
+  return <>{parts.map((part, index) => {
+    const link = /^\[([^\]]+)\]\((https:\/\/[^\s)]+)\)$/.exec(part);
+    if (link) return <a key={index} href={link[2]} target="_blank" rel="noreferrer">{link[1]}</a>;
+    const numbered = /^\[(\d+)\]$/.exec(part);
+    const source = numbered ? sources[Number(numbered[1]) - 1] : undefined;
+    if (source) return <a key={index} href={source.url} target="_blank" rel="noreferrer" aria-label={lang === "zh" ? source.zh : source.en}><sup>{part}</sup></a>;
+    return part;
+  })}</>;
+}
 
 function SourceLink({ source, lang }: { source: ResearchSource; lang: "zh" | "en" }) {
   return <a href={source.url} target="_blank" rel="noreferrer">
@@ -58,16 +72,20 @@ function ResearchBody({ slug, lang }: { slug: string; lang: "zh" | "en" }) {
   return <article className="column-article-body">
     <aside className="column-article-thesis"><span>{lang === "zh" ? "核心判断" : "THE TAKEAWAY"}</span><p>{copy.thesis}</p></aside>
     <section>
-      {copy.opening.map((paragraph, index) => <p className={index === 0 ? "column-dropcap" : undefined} key={paragraph}>{paragraph}</p>)}
+      {copy.opening.map((paragraph, index) => <p className={index === 0 ? "column-dropcap" : undefined} key={paragraph}><ResearchText text={paragraph} sources={record.sources} lang={lang} /></p>)}
       <nav className="column-source-links" aria-label={lang === "zh" ? "本文来源" : "Article sources"}>
         <span>{lang === "zh" ? "来源" : "SOURCES"}</span>
         <div>{record.sources.map((source) => <SourceLink key={source.url} source={source} lang={lang} />)}</div>
       </nav>
     </section>
-    {copy.sections.map((section) => <section key={section.label}>
+    <nav className="column-source-links" aria-label={lang === "zh" ? "本文目录" : "On this page"}>
+      <span>{lang === "zh" ? "本文目录" : "CONTENTS"}</span>
+      <div>{copy.sections.map((section, index) => <a key={section.label} href={`#research-section-${index + 1}`}>{section.heading}</a>)}</div>
+    </nav>
+    {copy.sections.map((section, index) => <section key={section.label} id={`research-section-${index + 1}`}>
       <div className="column-section-label">{section.label}</div>
       <h2>{section.heading}</h2>
-      {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+      {section.paragraphs.map((paragraph) => <p key={paragraph}><ResearchText text={paragraph} sources={record.sources} lang={lang} /></p>)}
       <MetricsTable copy={section.metrics} lang={lang} />
       {section.steps?.length ? <ol className="column-transmission">{section.steps.map((step, index) => <li key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><div><strong>{step.title}</strong><p>{step.body}</p></div></li>)}</ol> : null}
       {section.cards?.length ? <div className="column-question-grid">{section.cards.map((card) => <article key={`${card.label}-${card.title}`}><span>{card.label}</span><h3>{card.title}</h3><p>{card.body}</p></article>)}</div> : null}
@@ -78,7 +96,7 @@ function ResearchBody({ slug, lang }: { slug: string; lang: "zh" | "en" }) {
 }
 
 export function ScheduledResearchArticle({ slug, lang }: { slug: string; lang: "zh" | "en" }) {
-  return <ColumnArticleConsole lang={lang}><ArticleHeader slug={slug} lang={lang} /><ResearchBody slug={slug} lang={lang} /></ColumnArticleConsole>;
+  return <ColumnArticleConsole lang={lang} slug={slug}><ArticleHeader slug={slug} lang={lang} /><ResearchBody slug={slug} lang={lang} /></ColumnArticleConsole>;
 }
 
 export function researchStructuredData(slug: string, lang: "zh" | "en"): Record<string, unknown> | null {
@@ -105,6 +123,8 @@ export function researchStructuredData(slug: string, lang: "zh" | "en"): Record<
         articleSection: english ? record.articleSectionEn : record.articleSectionZh,
         isAccessibleForFree: true,
         about: record.topics,
+        mentions: articleEntities(article).map((entity) => ({ "@type": "Organization", "@id": `https://idc-index.com${english ? "/en" : ""}/companies/${entity.slug}#company`, name: english ? entity.nameEn : entity.name })),
+        ...(english ? { translationOfWork: { "@id": `https://idc-index.com${article.href}#article` } } : { workTranslation: { "@id": `https://idc-index.com${article.hrefEn}#article` } }),
         citation: record.sources.map((source) => source.url),
         author: { "@type": "Organization", "@id": "https://idc-index.com/#organization", name: "IDC Atlas" },
         publisher: { "@type": "Organization", "@id": "https://idc-index.com/#organization", name: "IDC Atlas" },

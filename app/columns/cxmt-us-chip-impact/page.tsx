@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   title: "长鑫上市：美股芯片的影响路径｜IDC Atlas",
   description: "从通用 DRAM、HBM、半导体设备与中国收入四条传导链，分析长鑫科技上市对 Micron、NVIDIA、AMD、AMAT、LRCX、KLAC 与 Rambus 的影响。",
   alternates: { canonical, languages: { "zh-CN": canonical, en: "https://idc-index.com/en/columns/cxmt-us-chip-impact", "x-default": "https://idc-index.com/en/columns/cxmt-us-chip-impact" } },
-  openGraph: { title: "长鑫上市：美股芯片的影响路径", description: "Micron 处在第一层，美国设备商面临双向影响，NVIDIA 与 AMD 仍取决于 HBM 量产和认证。", url: canonical, type: "article", publishedTime: "2026-07-28T00:00:00+08:00", modifiedTime: "2026-08-01T23:00:00+08:00", images: [{ url: "https://idc-index.com/column-cxmt-us-chips-v2.jpg", width: 1672, height: 941, alt: "DRAM 晶圆、存储供给与半导体周期的原创专栏插画" }] },
-  twitter: { card: "summary_large_image", title: "长鑫上市：美股芯片的影响路径", description: "拆解 MU、AMAT、LRCX、KLAC、NVDA、AMD 与 RMBS 的影响顺序。", images: ["https://idc-index.com/column-cxmt-us-chips-v2.jpg"] },
+  openGraph: { title: "长鑫上市：美股芯片的影响路径", description: "Micron 处在第一层，美国设备商面临双向影响，NVIDIA 与 AMD 仍取决于 HBM 量产和认证。", url: canonical, type: "article", publishedTime: "2026-07-28T00:00:00+08:00", modifiedTime: "2026-08-01T23:00:00+08:00", images: [{ url: "https://idc-index.com/column-cxmt-us-chip-impact-voxel-palette-v1.jpg", width: 1672, height: 941, alt: "概念体素插画：存储晶圆厂剖面与分叉的供应链通道" }] },
+  twitter: { card: "summary_large_image", title: "长鑫上市：美股芯片的影响路径", description: "拆解 MU、AMAT、LRCX、KLAC、NVDA、AMD 与 RMBS 的影响顺序。", images: ["https://idc-index.com/column-cxmt-us-chip-impact-voxel-palette-v1.jpg"] },
 };
 
 export default function Page() {
@@ -16,10 +16,10 @@ export default function Page() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Article",
+        "@type": "Article", "@id": `${canonical}#article`, url: canonical, workTranslation: { "@id": `${canonical.replace("/columns/", "/en/columns/")}#article` },
         headline: "长鑫上市：美股芯片的影响路径",
         description: metadata.description,
-        image: "https://idc-index.com/column-cxmt-us-chips-v2.jpg",
+        image: "https://idc-index.com/column-cxmt-us-chip-impact-voxel-palette-v1.jpg",
         datePublished: "2026-07-28T00:00:00+08:00",
         dateModified: "2026-08-01T23:00:00+08:00",
         inLanguage: "zh-CN",

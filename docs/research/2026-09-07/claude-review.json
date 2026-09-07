@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "title": "据报道Claude再签350亿美元算力大单：谁在替AI需求承担风险？",
+    "titleEn": "Behind Claude’s Reported $35 Billion Compute Deal: Who Actually Bears the Risk?",
+    "summary": "Reuters据一位知情来源报道Anthropic与Lambda的350亿美元云合同，期限、容量与地点未披露。以Hut 8 Beacon Point为独立对照，追踪需求、云服务、租约、项目债与抵押品之间的风险传导，解释为何长期合同和非追索结构不等于风险消失。",
+    "summaryEn": "Reuters attributes a $35 billion Anthropic–Lambda agreement to one source, without disclosing term, capacity or location. A separate Beacon Point financing case shows how cloud demand, leases, project debt and collateral allocate different risks across the infrastructure chain.",
+    "slug": "claude-compute-deal-risk-waterfall",
+    "publishAt": "2026-09-09T09:30:00+08:00",
+    "date": "2026-09-09",
+    "image": "/column-anthropic-compute-commitment-gap-v1.jpg",
+    "series": "AI基础设施风险重分配"
+  },
+  "ledger": [
+    {
+      "claim": "350亿美元Anthropic–Lambda云合同为Reuters援引一位知情来源的报道",
+      "status": "reported",
+      "sourceUrl": "https://www.investing.com/news/stock-market-news/anthropic-signs-35-billion-cloud-deal-with-nvidiabacked-lambda-source-says-4883414",
+      "locator": "Reuters Aug 31 short report paragraphs 1-3; media-attributed, not issuer-confirmed",
+      "sourceDate": "2026-08-31"
+    },
+    {
+      "claim": "该报道未披露期限/MW/地点，未确定Beacon Point关联",
+      "status": "not-determined",
+      "sourceUrl": "https://www.investing.com/news/stock-market-news/anthropic-signs-35-billion-cloud-deal-with-nvidiabacked-lambda-source-says-4883414",
+      "locator": "Entire short report; no unsupported project identity assigned",
+      "sourceDate": "2026-08-31"
+    },
+    {
+      "claim": "全园区签约704MW IT、196亿美元基础合同额；租户未具名",
+      "status": "management-said",
+      "sourceUrl": "https://www.hut8.com/news-insights/press-releases/hut-8-fully-commercializes-1-gw-beacon-point-ai-data-center-campus-with-second-352-mw-it-lease",
+      "locator": "Title and first bullet",
+      "sourceDate": "2026-07-20"
+    },
+    {
+      "claim": "二期15年98亿美元含3%递增，352MW IT/500MW utility，预计2028Q2开始交付",
+      "status": "management-said",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1964789/000110465926090025/hut-20260630x10q.htm",
+      "locator": "MD&A Recent Developments, Beacon Point Phase 2 Lease",
+      "sourceDate": "quarter ended 2026-06-30; accessed 2026-09-06"
+    },
+    {
+      "claim": "一期42.5亿美元6.129%债券、2042到期；租金偿债、项目担保、无母公司或租户债券保证",
+      "status": "reported",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1964789/000110465926090025/hut-20260630x10q.htm",
+      "locator": "Note 9 Beacon Point Notes",
+      "sourceDate": "quarter ended 2026-06-30; accessed 2026-09-06"
+    },
+    {
+      "claim": "债券为全额摊还结构",
+      "status": "reported",
+      "sourceUrl": "https://www.hut8.com/news-insights/press-releases/hut-8-closes-usd4-25-billion-of-investment-grade-senior-secured-notes-for-beacon-point-data",
+      "locator": "June 9 release first bullet",
+      "sourceDate": "2026-06-09"
+    },
+    {
+      "claim": "收入账户费用→债务服务→准备金；2030年5月开始半年本金摊还",
+      "status": "reported",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1964789/000110465926071952/tm2617190d1_ex4-1.htm",
+      "locator": "Section 4.23(f); Article 14; Amortization Commencement Date",
+      "sourceDate": "2026-06-09"
+    },
+    {
+      "claim": "年度名义票息260.4825M；假设新增1B融资利率+1pct对应10M年度增量",
+      "status": "atlas-view",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1964789/000110465926090025/hut-20260630x10q.htm",
+      "locator": "Atlas math: 4.25B*0.06129; hypothetical 1B*0.01. Not DSCR, not actual new financing forecast",
+      "sourceDate": "2026-09-06"
+    },
+    {
+      "claim": "非追索的经济影响、延期与需求传导均为有条件机制，不声称已违约",
+      "status": "atlas-view",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1964789/000110465926071952/tm2617190d1_ex4-1.htm",
+      "locator": "Original Atlas scenario analysis grounded in separate contractual cash priorities; no legal opinion",
+      "sourceDate": "2026-09-06"
+    }
+  ],
+  "review": {
+    "counts": {
+      "zhHanBody": 4133,
+      "enWordsBody": 2459,
+      "method": "Body = opening + section paragraphs + conclusion; excludes headings, hero, thesis, sources, links, tables, ledger and disclosure. Han script characters; English alphanumeric words."
+    },
+    "scopeGate": "pass",
+    "sourceGate": "pass-with-explicit-media-status",
+    "numericGate": "pass",
+    "analysisGate": "pass",
+    "editorialGate": "pass",
+    "safetyGate": "pass",
+    "publicationStatus": "draft-pending-main-agent-validation",
+    "cutoff": "2026-09-06 Asia/Shanghai",
+    "sourceSummaryBudget": "Five sources summarized briefly; long-form body consists primarily of original conditional cash-flow, construction and counterparty analysis. No repeated media story expanded into asserted deal terms.",
+    "openGaps": [
+      "Anthropic–Lambda contract not issuer-confirmed in reviewed sources",
+      "No term, capacity, location or guarantee terms for reported cloud agreement",
+      "No primary-source link between reported deal and Beacon Point",
+      "Beacon Point tenant unnamed; do not identify NVIDIA",
+      "No project-specific DSCR derived or claim of actual default"
+    ],
+    "corrections": [
+      "Reported cloud contract status maintained in headline and body",
+      "Beacon Point is separate comparison, not confirmed same project",
+      "No 350MW assignment to Lambda deal",
+      "Fixed coupon does not reset automatically with market spread",
+      "Fully amortizing debt is not a 2042 full-principal refinancing cliff",
+      "704MW IT/1GW utility is not measured PUE",
+      "Phase-two income must not be divided by phase-one debt"
+    ],
+    "prepublicationCheck": [
+      "Check material new issuer confirmation or transaction amendments before publication if available",
+      "Main agent validates schema, bilingual rendering, schedule and no duplicate treatment of old compute-commitment article"
+    ]
+  }
+}

@@ -18,11 +18,11 @@ function SourceLink({ href, children }: { href: string; children: React.ReactNod
 
 function ArticleHeader({ lang }: { lang: "zh" | "en" }) {
   const english = lang === "en";
-  return <><header className="column-article-nav"><a href={english ? "/en" : "/"}>IDC <b>ATLAS</b></a><div><a href={english ? "/columns/cxmt-us-chip-impact" : "/en/columns/cxmt-us-chip-impact"}>{english ? "中文" : "EN"}</a><a href={english ? "/en" : "/"}>{english ? "Back to intelligence" : "返回实时情报站"}</a></div></header><section className="column-article-hero"><div><span>IDC ATLAS COLUMN · MEMORY WATCH</span><time dateTime="2026-08-01">{english ? "RECHECKED AUGUST 1, 2026" : "复核于 2026 年 8 月 1 日"}</time></div><h1>{english ? <>CXMT&apos;s listing:<br /><em>the US chip exposure map.</em></> : <>长鑫上市：<br /><em>美股芯片的影响路径。</em></>}</h1><p>{english ? "The immediate read-through runs through conventional DRAM pricing and China exposure. Micron sits closest to that channel; US equipment vendors face a policy-constrained opportunity; NVIDIA and AMD remain a longer-dated HBM question." : "最直接的传导链来自通用 DRAM 价格与中国市场份额。Micron 离这条链最近；美国设备商面对受出口管制约束的订单机会；NVIDIA 与 AMD 的影响仍取决于更长期的 HBM 进展。"}</p></section><figure className="column-article-cover"><img src="/column-cxmt-us-chips-v2.jpg" alt={english ? "Editorial illustration of a DRAM wafer, memory supply and the semiconductor cycle" : "DRAM 晶圆、存储供给与半导体周期的原创专栏插画"} /><figcaption>{english ? "IDC Atlas original editorial cover · Memory Watch" : "IDC Atlas 原创专栏封面 · Memory Watch"}</figcaption></figure></>;
+  return <><header className="column-article-nav"><a href={english ? "/en" : "/"}>IDC <b>ATLAS</b></a><div><a href={english ? "/columns/cxmt-us-chip-impact" : "/en/columns/cxmt-us-chip-impact"}>{english ? "中文" : "EN"}</a><a href={english ? "/en" : "/"}>{english ? "Back to intelligence" : "返回实时情报站"}</a></div></header><section className="column-article-hero"><div><span>IDC ATLAS COLUMN · MEMORY WATCH</span><time dateTime="2026-08-01">{english ? "RECHECKED AUGUST 1, 2026" : "复核于 2026 年 8 月 1 日"}</time></div><h1>{english ? <>CXMT&apos;s listing:<br /><em>the US chip exposure map.</em></> : <>长鑫上市：<br /><em>美股芯片的影响路径。</em></>}</h1><p>{english ? "The immediate read-through runs through conventional DRAM pricing and China exposure. Micron sits closest to that channel; US equipment vendors face a policy-constrained opportunity; NVIDIA and AMD remain a longer-dated HBM question." : "最直接的传导链来自通用 DRAM 价格与中国市场份额。Micron 离这条链最近；美国设备商面对受出口管制约束的订单机会；NVIDIA 与 AMD 的影响仍取决于更长期的 HBM 进展。"}</p></section><figure className="column-article-cover"><img src="/column-cxmt-us-chip-impact-voxel-palette-v1.jpg" alt={english ? "Conceptual voxel illustration of memory fab cutaway feeding a forked supply route" : "概念体素插画：存储晶圆厂剖面与分叉的供应链通道"} /><figcaption>{english ? "IDC Atlas original editorial cover · Memory Watch" : "IDC Atlas 原创专栏封面 · Memory Watch"}</figcaption></figure></>;
 }
 
 function ChineseArticle() {
-  return <ColumnArticleConsole lang="zh">
+  return <ColumnArticleConsole slug="cxmt-us-chip-impact" lang="zh">
     <ArticleHeader lang="zh" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>核心判断</span><p>长鑫科技登陆科创板，提升了融资能力和经营透明度，新增晶圆供给仍需要厂房、设备、良率和客户认证逐步兑现。美股芯片公司的近端影响高度分化：Micron 的通用 DRAM 业务最敏感；美国设备商同时面对中国扩产需求与出口限制；NVIDIA、AMD 当前的直接影响较低。</p></aside>
@@ -55,7 +55,7 @@ function ChineseArticle() {
 }
 
 function EnglishArticle() {
-  return <ColumnArticleConsole lang="en">
+  return <ColumnArticleConsole slug="cxmt-us-chip-impact" lang="en">
     <ArticleHeader lang="en" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>THE TAKEAWAY</span><p>CXMT&apos;s STAR Market listing improves financing access and disclosure. New wafer supply still has to pass through construction, tool installation, yield ramp and customer qualification. Micron has the highest near-term exposure through conventional DRAM and China. US equipment vendors face demand constrained by export rules. The direct read-through to NVIDIA and AMD remains limited.</p></aside>

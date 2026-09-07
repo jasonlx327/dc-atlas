@@ -17,11 +17,11 @@ function SourceLink({ href, children }: { href: string; children: React.ReactNod
 
 function ArticleHeader({ lang }: { lang: "zh" | "en" }) {
   const english = lang === "en";
-  return <><header className="column-article-nav"><a href={english ? "/en" : "/"}>IDC <b>ATLAS</b></a><div><a href={english ? "/columns/ai-capex-power" : "/en/columns/ai-capex-power"}>{english ? "中文" : "EN"}</a><a href={english ? "/en" : "/"}>{english ? "Back to intelligence" : "返回实时情报站"}</a></div></header><section className="column-article-hero"><div><span>IDC ATLAS COLUMN · CAPEX WATCH</span><time dateTime="2026-08-01">{english ? "UPDATED AUGUST 1, 2026" : "更新于 2026 年 8 月 1 日"}</time></div><h1>{english ? <>Hyperscaler AI CapEx<br /><em>is flowing into supply gaps.</em></> : <>四大云厂商的 AI CAPEX，<br /><em>正流向供给缺口。</em></>}</h1><p>{english ? "The latest calls moved the story from budgets to conversion: cloud growth is accelerating, capacity remains tight, and cash generation now bears the weight of the buildout." : "最新一轮电话会把问题从预算规模推进到兑现效率：云收入正在加速，容量仍然紧张，而自由现金流已经开始承受建设高峰。"}</p></section><figure className="column-article-cover"><img src="/column-ai-capex-grid-v2.jpg" alt={english ? "AI data centers connected to a constrained electric grid" : "AI 数据中心与受限电网连接的专栏封面"} /><figcaption>{english ? "IDC Atlas original editorial cover · CAPEX Watch" : "IDC Atlas 原创专栏封面 · CAPEX Watch"}</figcaption></figure></>;
+  return <><header className="column-article-nav"><a href={english ? "/en" : "/"}>IDC <b>ATLAS</b></a><div><a href={english ? "/columns/ai-capex-power" : "/en/columns/ai-capex-power"}>{english ? "中文" : "EN"}</a><a href={english ? "/en" : "/"}>{english ? "Back to intelligence" : "返回实时情报站"}</a></div></header><section className="column-article-hero"><div><span>IDC ATLAS COLUMN · CAPEX WATCH</span><time dateTime="2026-08-01">{english ? "UPDATED AUGUST 1, 2026" : "更新于 2026 年 8 月 1 日"}</time></div><h1>{english ? <>Hyperscaler AI CapEx<br /><em>is flowing into supply gaps.</em></> : <>四大云厂商的 AI CAPEX，<br /><em>正流向供给缺口。</em></>}</h1><p>{english ? "The latest calls moved the story from budgets to conversion: cloud growth is accelerating, capacity remains tight, and cash generation now bears the weight of the buildout." : "最新一轮电话会把问题从预算规模推进到兑现效率：云收入正在加速，容量仍然紧张，而自由现金流已经开始承受建设高峰。"}</p></section><figure className="column-article-cover"><img src="/column-ai-capex-power-voxel-palette-v1.jpg" alt={english ? "Conceptual voxel illustration of a large compute demand hub meeting a narrow power connector" : "概念体素插画：多路云计算需求汇入受限的供电连接"} /><figcaption>{english ? "IDC Atlas original editorial cover · CAPEX Watch" : "IDC Atlas 原创专栏封面 · CAPEX Watch"}</figcaption></figure></>;
 }
 
 function ChineseArticle() {
-  return <ColumnArticleConsole lang="zh">
+  return <ColumnArticleConsole slug="ai-capex-power" lang="zh">
     <ArticleHeader lang="zh" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>核心判断</span><p>财报季给出了更清楚的双重信号：Azure、Google Cloud 与 AWS 同时加速，说明需求正在吸收新增供给；但四家公司仍在提高或维持历史级投入，说明供给缺口尚未闭合。接下来不能只比 CAPEX 总额，要比较“每一美元投入转成可计费容量”的速度。</p></aside>
@@ -165,7 +165,7 @@ function ChineseArticle() {
 }
 
 function EnglishArticle() {
-  return <ColumnArticleConsole lang="en">
+  return <ColumnArticleConsole slug="ai-capex-power" lang="en">
     <ArticleHeader lang="en" />
     <article className="column-article-body">
       <aside className="column-article-thesis"><span>THE TAKEAWAY</span><p>The latest calls produced a clearer two-sided signal: Azure, Google Cloud and AWS accelerated as demand absorbed new supply, while spending remains at historic levels because the capacity gap has not closed. The next comparison is not total CapEx, but how quickly each dollar becomes billable capacity.</p></aside>

@@ -1,0 +1,105 @@
+{
+  "date": "2026-09-06",
+  "scope": "Latest five already-published columns; image and bilingual alt text only; article bodies, schedules and old production assets unchanged",
+  "style": "Minecraft-inspired voxel industrial dioramas; bright grass green, sky blue, warm orange, ivory; conceptual imagery",
+  "generation": "Built-in image_gen, followed by one user-requested color and lighting edit per image",
+  "validation": {
+    "tests": "55 passed",
+    "typecheck": "passed",
+    "lint": "0 errors, 27 existing warnings",
+    "cloudflareDryRun": "passed",
+    "visual": "all five originals, 320px and square crops inspected; desktop/mobile bilingual page checks passed"
+  },
+  "assets": [
+    {
+      "slug": "nvidia-hugging-face-distribution",
+      "brief": {
+        "topic": "A proposed NVIDIA purchase and the openness of model distribution; not a completed integration.",
+        "primary": "Branching open model-routing hub built of large cubic modules.",
+        "support": "A visibly distinct compute pod; an unfinished connecting bridge between pod and routing hub.",
+        "relationship": "PROPOSED connection: independent open routes continue outward from the hub, while bridge toward the distinct compute pod has a conspicuous physical gap. The systems remain visibly separate.",
+        "context": "Neutral conceptual infrastructure model, no actual company hardware or logos.",
+        "focal": "Branching junction and the incomplete bridge gap sit close together at the center; these two features survive crop."
+      },
+      "generatedSource": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/exec-b79c5f6f-dbd3-49f5-aaf4-759dbd9a3976.png",
+      "webAsset": "/column-nvidia-hugging-face-distribution-voxel-bright-v2.jpg",
+      "width": 1672,
+      "height": 941,
+      "bytes": 431376,
+      "sha256": "c69b015754889630cf77767e0f10e040b3a2ba4ba35b3a3a780696f82f87f188",
+      "editPrompt": "Edit this exact existing IDC Atlas voxel industrial illustration. Change ONLY its color palette, material brightness and lighting; do not redesign, relocate, add or remove any object. Preserve exact composition, camera, geometry, cubic modules, silhouettes, spatial gaps, relationships, cropping and all fine structural details. Recolor the dominant dark forest-green/charcoal blocks to bright fresh grass green and apple green, integrate clear cheerful sky-blue blocks, warm orange accents, and light cream structural blocks. Retain subtle material variation but remove muddy gray, murky dark forest green, gray haze and sooty gloom. High-key clean daytime lighting with soft light shadows and crisp readable cube faces; warm clean ivory background. Cheerful, vivid, elevated brightness, not faded pastels. Still original matte tactile block materials: no neon, glow, excessive saturation, plastic gloss, bloom or photorealism. Keep it text-free, no logos or numbers. Exact same landscape canvas, 1672×941. Specific invariant: preserve the independent branching routing hub and the separate compute pod; keep their connecting bridge conspicuously incomplete with the exact existing physical gap. Route geometry and independent open paths unchanged."
+    },
+    {
+      "slug": "minimax-zhipu-h1-token-economics",
+      "brief": {
+        "topic": "Two model firms convert API volume toward revenue while compute remains costly; no suggestion profits are resolved.",
+        "primary": "Paired cutaway voxel task-processing lines with small modular cubes passing toward an output channel.",
+        "support": "A shared thick rack-like compute foundation; distinct input and output lanes.",
+        "relationship": "Conceptual conversion bottleneck, not a financial chart: crowded processing cores with many small cube units and a visibly narrower output channel. Paired mechanisms visibly depend on the shared heavy compute foundation.",
+        "context": "Neutral software-economics mechanism, no flags or company logos.",
+        "focal": "The paired crowded mechanisms and their shared compute-cost foundation stay central, visually unlike a data-center campus."
+      },
+      "generatedSource": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/exec-0eb6af7d-e2e5-4dc1-88cd-eee07bd16fd0.png",
+      "webAsset": "/column-minimax-zhipu-h1-token-economics-voxel-bright-v2.jpg",
+      "width": 1672,
+      "height": 941,
+      "bytes": 508619,
+      "sha256": "c3b27ca1569db43a9ed47f09e68b4cd3848bdfa3c2fbd211ee9429b007149416",
+      "editPrompt": "Edit this exact existing IDC Atlas voxel industrial illustration. Change ONLY its color palette, material brightness and lighting; do not redesign, relocate, add or remove any object. Preserve exact composition, camera, geometry, cubic modules, silhouettes, spatial gaps, relationships, cropping and all fine structural details. Recolor the dominant dark forest-green/charcoal blocks to bright fresh grass green and apple green, integrate clear cheerful sky-blue blocks, warm orange accents, and light cream structural blocks. Retain subtle material variation but remove muddy gray, murky dark forest green, gray haze and sooty gloom. High-key clean daytime lighting with soft light shadows and crisp readable cube faces; warm clean ivory background. Cheerful, vivid, elevated brightness, not faded pastels. Still original matte tactile block materials: no neon, glow, excessive saturation, plastic gloss, bloom or photorealism. Keep it text-free, no logos or numbers. Exact same landscape canvas, 1672×941. Specific invariant: preserve the exact two crowded voxel processing lanes, narrower output channel, distinct input lanes and heavy shared rack foundation. This is a conversion bottleneck metaphor; do not remove or rearrange cube units."
+    },
+    {
+      "slug": "nebius-asset-light-factory",
+      "brief": {
+        "topic": "Cloud operations can be separated from partner-owned physical assets.",
+        "primary": "Modular compute rack cassette hovering just above a matching infrastructure cradle in a precise exploded-view model.",
+        "support": "Partner campus-shell platform foundation; a small external power module.",
+        "relationship": "Separate detachable rack layer and physical support layer remain operationally related. The short lifted separation is an exploded-view convention, not physical levitation and not a completed real project or sale.",
+        "context": "Conceptual asset-ownership separation; neutral presentation model.",
+        "focal": "Detachable rack cassette immediately above its matching support foundation, both centered and large."
+      },
+      "generatedSource": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/exec-cb46bcca-9f1e-48ca-83c2-6ad4e4fc6a56.png",
+      "webAsset": "/column-nebius-asset-light-factory-voxel-bright-v2.jpg",
+      "width": 1672,
+      "height": 941,
+      "bytes": 470366,
+      "sha256": "0d415c05b0b424cedb588fdbe54f770c038fd46192bd3b195b2fc8d898ac2236",
+      "editPrompt": "Edit this exact existing IDC Atlas voxel industrial illustration. Change ONLY its color palette, material brightness and lighting; do not redesign, relocate, add or remove any object. Preserve exact composition, camera, geometry, cubic modules, silhouettes, spatial gaps, relationships, cropping and all fine structural details. Recolor the dominant dark forest-green/charcoal blocks to bright fresh grass green and apple green, integrate clear cheerful sky-blue blocks, warm orange accents, and light cream structural blocks. Retain subtle material variation but remove muddy gray, murky dark forest green, gray haze and sooty gloom. High-key clean daytime lighting with soft light shadows and crisp readable cube faces; warm clean ivory background. Cheerful, vivid, elevated brightness, not faded pastels. Still original matte tactile block materials: no neon, glow, excessive saturation, plastic gloss, bloom or photorealism. Keep it text-free, no logos or numbers. Exact same landscape canvas, 1672×941. Specific invariant: preserve the exact lifted compute rack cassette above its matching physical infrastructure cradle, the existing air gap of the exploded view, partner shell platform and external power module. Do not merge the layers."
+    },
+    {
+      "slug": "anthropic-compute-commitment-gap",
+      "brief": {
+        "topic": "A model company's current service revenue run rate does not directly fund long-duration compute commitments.",
+        "primary": "A long terraced stepped voxel bridge between a modest current service-processing pod and larger staged rack foundations.",
+        "support": "A small service output channel by the modest pod; unfilled far-side rack bays and an incomplete bridge span.",
+        "relationship": "Conceptual cash-flow and delivery gap: central missing span interrupts the bridge to larger far-side foundations that visibly remain staged and not operational. No literal currency or capacity quantities.",
+        "context": "Neutral financial-infrastructure metaphor, no numbers or actual project specifications.",
+        "focal": "Missing central bridge span and staged larger load foundation; long terraced side-to-side profile distinct from the branching hub."
+      },
+      "generatedSource": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/exec-b6768de1-c5de-493b-9036-7d08d89b076c.png",
+      "webAsset": "/column-anthropic-compute-commitment-gap-voxel-bright-v2.jpg",
+      "width": 1672,
+      "height": 941,
+      "bytes": 381478,
+      "sha256": "025d26cc8410d90b9295d2423917bd043e23530f648285696b3ce0414298949a",
+      "editPrompt": "Edit this exact existing IDC Atlas voxel industrial illustration. Change ONLY its color palette, material brightness and lighting; do not redesign, relocate, add or remove any object. Preserve exact composition, camera, geometry, cubic modules, silhouettes, spatial gaps, relationships, cropping and all fine structural details. Recolor the dominant dark forest-green/charcoal blocks to bright fresh grass green and apple green, integrate clear cheerful sky-blue blocks, warm orange accents, and light cream structural blocks. Retain subtle material variation but remove muddy gray, murky dark forest green, gray haze and sooty gloom. High-key clean daytime lighting with soft light shadows and crisp readable cube faces; warm clean ivory background. Cheerful, vivid, elevated brightness, not faded pastels. Still original matte tactile block materials: no neon, glow, excessive saturation, plastic gloss, bloom or photorealism. Keep it text-free, no logos or numbers. Exact same landscape canvas, 1672×941. Specific invariant: preserve exact long terraced bridge profile and conspicuous missing central span; retain modest current service pod, small output channel and far-side empty staged rack foundations. Do not complete the bridge or fill the staged rack bays."
+    },
+    {
+      "slug": "nvidia-fy27-q2-five-tests",
+      "brief": {
+        "topic": "Earnings expansion shifts GPU supplier risk toward power availability and credit support.",
+        "primary": "A close-up monumental block-built accelerator assembly atop a compact cutaway server hall.",
+        "support": "Compact substation; narrow rust-orange power-and-support neck and a small structural supporting pier.",
+        "relationship": "A large conceptual compute engine visibly relies on a limited power/support connection. This is an editorial dependence metaphor, not a technical schematic or real chip layout.",
+        "context": "Neutral industrial miniature, no chip labels or literal port count.",
+        "focal": "Large block-built accelerator and narrow central power/support neck survive a centered crop."
+      },
+      "generatedSource": "/Users/xlarge/.codex/generated_images/01a074b5-aa95-7713-8847-f58cb7550a0f/exec-e60a384f-7a81-4982-9dc3-7a9bfe331803.png",
+      "webAsset": "/column-nvidia-fy27-q2-five-tests-voxel-bright-v2.jpg",
+      "width": 1672,
+      "height": 941,
+      "bytes": 534117,
+      "sha256": "eff5942db0aa0d078cc8387b4ee9f5630757dead2e2e60ec5d52c1db98d4f5a5",
+      "editPrompt": "Edit this exact existing IDC Atlas voxel industrial illustration. Change ONLY its color palette, material brightness and lighting; do not redesign, relocate, add or remove any object. Preserve exact composition, camera, geometry, cubic modules, silhouettes, spatial gaps, relationships, cropping and all fine structural details. Recolor the dominant dark forest-green/charcoal blocks to bright fresh grass green and apple green, integrate clear cheerful sky-blue blocks, warm orange accents, and light cream structural blocks. Retain subtle material variation but remove muddy gray, murky dark forest green, gray haze and sooty gloom. High-key clean daytime lighting with soft light shadows and crisp readable cube faces; warm clean ivory background. Cheerful, vivid, elevated brightness, not faded pastels. Still original matte tactile block materials: no neon, glow, excessive saturation, plastic gloss, bloom or photorealism. Keep it text-free, no logos or numbers. Exact same landscape canvas, 1672×941. Specific invariant: preserve exact large accelerator assembly atop the cutaway server hall, narrow central orange support/power neck, and substation with its narrow supply connection. Maintain the striking large-load / limited-support relationship."
+    }
+  ]
+}
