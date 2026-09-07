@@ -3,6 +3,21 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { gzipSync } from "node:zlib";
 import { stripTypeScriptTypes } from "node:module";
+import sitesMirror from "../worker/sites-mirror.mjs";
+
+test("lightweight Sites build preserves the full Worker's canonical redirect behavior", async () => {
+  for (const path of ["/", "/en", "/pulse?signal=policy", "/en/columns", "/rumors/equinix-flo-singapore-vppa-2026", "/sitemap.xml", "/robots.txt", "/assets/example.css", "/api/daily-snapshot?date=latest", "/admin/intelligence", "/?next=https%3A%2F%2Fexample.com"]) {
+    const host = "dc-atlas-cn-us.catknowspray.chatgpt.site";
+    const original = await render(path, host);
+    for (const method of ["GET", "HEAD", "POST"]) {
+      const response = sitesMirror.fetch(new Request(`https://${host}${path}`, { method }));
+      assert.equal(response.status, original.status);
+      assert.equal(response.headers.get("location"), original.headers.get("location"));
+      assert.equal(await response.text(), "");
+    }
+  }
+  assert.equal(sitesMirror.fetch(new Request("https://idc-index.com/")).status, 404);
+});
 
 test("cross-day bootstrap snapshots persist their new metadata inside both bodies", async () => {
   const source = await readFile(new URL("../worker/index.ts", import.meta.url), "utf8");
