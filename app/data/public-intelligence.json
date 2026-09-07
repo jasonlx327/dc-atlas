@@ -1,5 +1,121 @@
 [
   {
+    "id": "editor-evt-5bada877f28b9fc1a2dc",
+    "title": "IT之家援引韩媒：三星 4 纳米产能过半据报用于 HBM4 基础裸片",
+    "titleEn": "IT Home, citing Korean media: More than half of Samsung's 4nm capacity reportedly serves HBM4 base dies",
+    "summary": "IT之家援引韩国媒体报道，三星晶圆代工 4 纳米产能中据报已有过半投入 HBM4 基础裸片生产。该报道描述的是行业渠道信息；三星尚未在本条来源中确认具体产能分配，不能据此推导实际出货或客户订单。",
+    "summaryEn": "IT Home, citing Korean media, reports that more than half of Samsung Foundry's 4nm capacity is being allocated to HBM4 base-die production. The figure comes from industry sources; Samsung has not confirmed the allocation in the reviewed item, so it does not establish shipments or customer orders.",
+    "publishedAt": "2026-09-07T08:33:39Z",
+    "sourceName": "IT之家",
+    "sourceUrl": "https://www.ithome.com/0/999/346.htm",
+    "region": "全球",
+    "status": "reported",
+    "statusLabel": "媒体 · 单一来源",
+    "statusLabelEn": "Media · single source",
+    "sourceCount": 1,
+    "entities": [
+      "Samsung",
+      "Samsung Foundry",
+      "HBM4"
+    ],
+    "officialResponse": "当前状态为媒体报道；后续一手材料将用于升级状态，而不影响本条公开可见。",
+    "officialResponseEn": "The current state is media reporting; later primary material will upgrade the status without determining visibility.",
+    "sourceNote": "IT之家公开报道；主张按原始来源归属呈现。",
+    "sourceNoteEn": "Public reporting by IT之家; claims remain attributed to the original source."
+  },
+  {
+    "id": "editor-evt-7507b6bfda3856fbc654",
+    "title": "EE Times：铠侠探索以闪存扩展 AI 工作负载内存",
+    "titleEn": "EE Times: Kioxia explores flash-based memory expansion for AI workloads",
+    "summary": "EE Times 报道，铠侠正在探索面向 AI 工作负载的 Flash-for-DRAM 方案，以 CXL 连接的闪存承担内存扩展角色。报道未证明该方案已形成大规模部署、客户订单或对 DRAM 的直接替代。",
+    "summaryEn": "EE Times reports that Kioxia is exploring a Flash-for-DRAM approach for AI workloads, using CXL-attached flash as a memory-expansion layer. The report does not establish broad deployment, customer orders or a direct replacement for DRAM.",
+    "publishedAt": "2026-09-07T08:01:30Z",
+    "sourceName": "EE Times",
+    "sourceUrl": "https://www.eetimes.com/kioxias-flash-for-dram-initiative-eyes-ai-workloads/",
+    "region": "全球",
+    "status": "reported",
+    "statusLabel": "媒体 · 单一来源",
+    "statusLabelEn": "Media · single source",
+    "sourceCount": 1,
+    "entities": [
+      "Kioxia",
+      "CXL",
+      "AI workloads"
+    ],
+    "officialResponse": "当前状态为媒体报道；后续一手材料将用于升级状态，而不影响本条公开可见。",
+    "officialResponseEn": "The current state is media reporting; later primary material will upgrade the status without determining visibility.",
+    "sourceNote": "EE Times公开报道；主张按原始来源归属呈现。",
+    "sourceNoteEn": "Public reporting by EE Times; claims remain attributed to the original source."
+  },
+  {
+    "id": "editor-evt-b4d9df0ea78106eeb136",
+    "title": "The Register：泰国暂停数据中心建设与审批，拟统一监管框架",
+    "titleEn": "The Register: Thailand pauses data-center construction and approvals while developing a regulatory framework",
+    "summary": "The Register 报道，泰国相关委员会暂停数据中心建设与审批，并要求运营商和投资者提交现有及规划项目资料。报道提及对超过 2MW 的设施按工业项目监管及资源收费的讨论；这些监管安排仍属拟议措施。",
+    "summaryEn": "The Register reports that a Thai committee paused data-center construction and approvals and requested information on existing and planned projects. Discussions include treating facilities above 2MW as industrial projects and introducing resource charges; those regulatory arrangements remain proposals.",
+    "publishedAt": "2026-09-07T02:05:00Z",
+    "sourceName": "The Register",
+    "sourceUrl": "https://www.theregister.com/off-prem/2026/09/07/thailand-pauses-all-datacenter-builds-and-approvals/5294688",
+    "region": "全球",
+    "status": "reported",
+    "statusLabel": "媒体 · 单一来源",
+    "statusLabelEn": "Media · single source",
+    "sourceCount": 1,
+    "entities": [
+      "Thailand",
+      "data centers"
+    ],
+    "officialResponse": "当前状态为媒体报道；后续一手材料将用于升级状态，而不影响本条公开可见。",
+    "officialResponseEn": "The current state is media reporting; later primary material will upgrade the status without determining visibility.",
+    "sourceNote": "The Register公开报道；主张按原始来源归属呈现。",
+    "sourceNoteEn": "Public reporting by The Register; claims remain attributed to the original source."
+  },
+  {
+    "id": "editor-evt-41d81bc8c0d1c9591099",
+    "title": "IT之家：利扬芯片终止收购重庆国芯微 100% 股权意向",
+    "titleEn": "IT Home: Liyang terminates its proposed acquisition of 100% of Chongqing Guoxinwei",
+    "summary": "IT之家援引利扬芯片公告报道，公司认为交易条件尚未成熟，与重庆国芯微协商终止收购意向。双方于 9 月 4 日签署终止协议，并约定互不承担违约责任。",
+    "summaryEn": "IT Home, citing Liyang's announcement, reports that the company and Chongqing Guoxinwei agreed to end the proposed acquisition because transaction conditions were not sufficiently mature. They signed a termination agreement on September 4, with neither party assuming breach liability.",
+    "publishedAt": "2026-09-07T09:14:25+08:00",
+    "sourceName": "IT之家",
+    "sourceUrl": "https://www.ithome.com/0/999/086.htm",
+    "region": "中国",
+    "status": "reported",
+    "statusLabel": "媒体 · 单一来源",
+    "statusLabelEn": "Media · single source",
+    "sourceCount": 1,
+    "entities": [
+      "Liyang",
+      "Chongqing Guoxinwei"
+    ],
+    "officialResponse": "当前状态为媒体报道；后续一手材料将用于升级状态，而不影响本条公开可见。",
+    "officialResponseEn": "The current state is media reporting; later primary material will upgrade the status without determining visibility.",
+    "sourceNote": "IT之家公开报道；主张按原始来源归属呈现。",
+    "sourceNoteEn": "Public reporting by IT之家; claims remain attributed to the original source."
+  },
+  {
+    "id": "editor-evt-b102c3b0d5abb8dbb4e6",
+    "title": "IT之家：Anthropic 版权和解金发放引发作者与出版方分配争议",
+    "titleEn": "IT Home: Anthropic settlement payments spark disputes between authors and publishers",
+    "summary": "IT之家报道，Anthropic 版权和解金进入发放阶段，部分作者对出版方申领资格和分成比例提出异议。争议涉及权利已回归作者的作品及申领记录；这是和解款分配问题，并非新的模型采购或融资公告。",
+    "summaryEn": "IT Home reports disputes over allocation as Anthropic's copyright settlement enters distribution. Some authors question publishers' eligibility and revenue shares, including claims for works whose rights have reverted. This concerns settlement proceeds, not a new model procurement or financing announcement.",
+    "publishedAt": "2026-09-07T06:43:34+08:00",
+    "sourceName": "IT之家",
+    "sourceUrl": "https://www.ithome.com/0/999/049.htm",
+    "region": "全球",
+    "status": "reported",
+    "statusLabel": "媒体 · 单一来源",
+    "statusLabelEn": "Media · single source",
+    "sourceCount": 1,
+    "entities": [
+      "Anthropic"
+    ],
+    "officialResponse": "当前状态为媒体报道；后续一手材料将用于升级状态，而不影响本条公开可见。",
+    "officialResponseEn": "The current state is media reporting; later primary material will upgrade the status without determining visibility.",
+    "sourceNote": "IT之家公开报道；主张按原始来源归属呈现。",
+    "sourceNoteEn": "Public reporting by IT之家; claims remain attributed to the original source."
+  },
+  {
     "id": "editor-tcs-hypervault-hyderabad-1gw-20260905",
     "title": "IT之家：TCS 旗下 HyperVault 规划海得拉巴 1GW 园区",
     "titleEn": "IT Home: TCS unit HyperVault plans a 1GW campus in Hyderabad",
@@ -132,6 +248,29 @@
     "officialResponseEn": "This reports an administrative transition, not a change in data-center efficiency thresholds. The agencies' original plan and implementation arrangements are the next checks.",
     "sourceNote": "Utility Dive / Facilities Dive；独立来源组：industry-dive。原始发布时间见本条时间，2026-09-05 原文复核。",
     "sourceNoteEn": "Utility Dive / Facilities Dive; independence group: industry-dive. Original publication time is retained; source reviewed September 5, 2026."
+  },
+  {
+    "id": "editor-evt-a50991ec0f1c75f0701b",
+    "title": "CNBC 与 Fierce Network：NVIDIA 据报拟以 $12.9B 收购 Hugging Face",
+    "titleEn": "CNBC and Fierce Network: NVIDIA reportedly targets a $12.9B Hugging Face acquisition",
+    "summary": "CNBC 与 Fierce Network 报道，NVIDIA 据报正推进以约 $12.9B 收购 Hugging Face 的交易，报道将其与开发者生态和 AI 基础设施战略联系起来。NVIDIA、Hugging Face 尚未在本轮来源中确认交易，金额和交割状态仍按媒体报道保留。",
+    "summaryEn": "CNBC and Fierce Network report that NVIDIA is pursuing a roughly $12.9B acquisition of Hugging Face, linking the reported move to developer ecosystems and AI infrastructure strategy. Neither company confirmed the deal in the reviewed sources, so the value and closing status remain reported rather than official.",
+    "publishedAt": "2026-09-04T11:31:30Z",
+    "sourceName": "CNBC Technology",
+    "sourceUrl": "https://www.cnbc.com/2026/09/04/nvidia-hugging-face-deal-chips.html",
+    "region": "全球",
+    "status": "reported",
+    "statusLabel": "媒体 · 多源",
+    "statusLabelEn": "Media · multi-source",
+    "sourceCount": 2,
+    "entities": [
+      "NVIDIA",
+      "Hugging Face"
+    ],
+    "officialResponse": "当前状态为媒体报道；后续一手材料将用于升级状态，而不影响本条公开可见。",
+    "officialResponseEn": "The current state is media reporting; later primary material will upgrade the status without determining visibility.",
+    "sourceNote": "CNBC Technology公开报道；主张按原始来源归属呈现。",
+    "sourceNoteEn": "Public reporting by CNBC Technology; claims remain attributed to the original source."
   },
   {
     "id": "editor-crusoe-funding-20260903",

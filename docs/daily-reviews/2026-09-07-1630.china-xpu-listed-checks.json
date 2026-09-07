@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "atlas-china-xpu-listed-checks.v1",
+  "runId": "atlas-2026-09-07-full",
+  "generatedAt": "2026-09-07T08:51:00.000Z",
+  "cutoff": "2026-09-06T12:11:01Z",
+  "sourceCoverage": {
+    "sse": {"status": "ok", "httpStatus": 200, "note": "Exchange index reachable; issuer-specific cutoff reconciliation not completed."},
+    "szse": {"status": "ok", "httpStatus": 200, "note": "Exchange index reachable; issuer-specific cutoff reconciliation not completed."},
+    "hkex": {"status": "ok", "httpStatus": 200, "note": "Exchange index reachable; issuer-specific cutoff reconciliation not completed."},
+    "cninfo": {"status": "failed", "httpStatus": 502, "note": "Current connector failure; no issuer-specific no-change inference."}
+  },
+  "issuers": [
+    {"id":"cambricon","name":"寒武纪","ticker":"688256","exchange":"SSE","lastCheckedAt":"2026-09-07T08:50:30.000Z","result":"not-determined","sourceIds":["sse","cninfo"],"note":"Exchange index checked; CNINFO failed and issuer-specific disclosure reconciliation is incomplete."},
+    {"id":"hygon","name":"海光信息","ticker":"688041","exchange":"SSE","lastCheckedAt":"2026-09-07T08:50:30.000Z","result":"not-determined","sourceIds":["sse","cninfo"],"note":"Exchange index checked; CNINFO failed and issuer-specific disclosure reconciliation is incomplete."},
+    {"id":"loongson","name":"龙芯中科","ticker":"688047","exchange":"SSE","lastCheckedAt":"2026-09-07T08:50:30.000Z","result":"not-determined","sourceIds":["sse","cninfo"],"note":"Exchange index checked; CNINFO failed and issuer-specific disclosure reconciliation is incomplete."},
+    {"id":"jingjia-micro","name":"景嘉微","ticker":"300474","exchange":"SZSE","lastCheckedAt":"2026-09-07T08:50:30.000Z","result":"not-determined","sourceIds":["szse","cninfo"],"note":"Exchange index checked; CNINFO failed and issuer-specific disclosure reconciliation is incomplete."},
+    {"id":"moore-threads","name":"摩尔线程","ticker":"688795","exchange":"SSE","lastCheckedAt":"2026-09-07T08:50:30.000Z","result":"not-determined","sourceIds":["sse","cninfo"],"note":"Exchange index checked; CNINFO failed and issuer-specific disclosure reconciliation is incomplete."},
+    {"id":"metax","name":"沐曦股份","ticker":"688802","exchange":"SSE","lastCheckedAt":"2026-09-07T08:50:30.000Z","result":"not-determined","sourceIds":["sse","cninfo"],"note":"Exchange index checked; CNINFO failed and issuer-specific disclosure reconciliation is incomplete."},
+    {"id":"biren","name":"壁仞科技","ticker":"6082","exchange":"HKEX","lastCheckedAt":"2026-09-07T08:50:30.000Z","result":"not-determined","sourceIds":["hkex"],"note":"HKEX index reachable; issuer-specific cutoff-window reconciliation is incomplete."}
+  ],
+  "summary": {"checked": 7, "changed": 0, "noChange": 0, "notDetermined": 7, "newMaterialEvents": 0}
+}
