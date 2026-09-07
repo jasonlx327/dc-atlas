@@ -7,6 +7,7 @@ type Props = {
   lang: "zh" | "en";
   kind: WatchKind;
   item: PolicyIndexRecord | RumorWatchItem;
+  archived?: boolean;
 };
 
 function formatDate(value: string, lang: "zh" | "en") {
@@ -18,7 +19,7 @@ function formatDate(value: string, lang: "zh" | "en") {
   }).format(new Date(value));
 }
 
-export default function WatchDetail({ lang, kind, item }: Props) {
+export default function WatchDetail({ lang, kind, item, archived = false }: Props) {
   const isZh = lang === "zh";
   const isPolicy = kind === "policy";
   const canonical = `https://idc-index.com${isZh ? "" : "/en"}/${kind}/${item.id}`;
@@ -81,6 +82,10 @@ export default function WatchDetail({ lang, kind, item }: Props) {
           <a className="watch-detail-back" href={isPolicy ? (isZh ? "/pulse" : "/en/pulse") : indexHref}>← {isPolicy ? (isZh ? "返回事实脉冲" : "Back to Verified Pulse") : (isZh ? "返回全球情报台" : "Back to Global Intelligence")}</a>
           <div className="watch-detail-kicker"><span>{label}</span><time dateTime={item.publishedAt}>{formatDate(item.publishedAt, lang)}</time></div>
           <h1>{title}</h1>
+          {archived && <aside className="watch-detail-boundary" data-rumor-archive="true">
+            <strong>{isZh ? "历史报道" : "ARCHIVED REPORT"}</strong>
+            <p>{isZh ? "以下内容保留原报道日期与当时的进展，不代表项目或交易的最新状态。" : "This report retains its original date and the developments recorded at that time. It does not describe the latest project or transaction status."}</p>
+          </aside>}
           <p>{summary}</p>
           <div className="watch-detail-source"><span>{isZh ? "原始出处" : "PRIMARY SOURCE"}</span><a href={item.sourceUrl} target="_blank" rel="noreferrer">{item.sourceName} ↗</a></div>
         </header>

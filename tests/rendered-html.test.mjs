@@ -37,6 +37,36 @@ async function render(pathname = "/", host = "dc-atlas.example", country = null,
   );
 }
 
+test("retained rumor permalinks remain bilingual and do not re-enter the latest feed", async () => {
+  const archive = JSON.parse(await readFile(new URL("../app/data/rumor-archive.json", import.meta.url), "utf8"));
+  assert.equal(archive.length, 11);
+  const sitemap = await (await render("/sitemap.xml")).text();
+  for (const prefix of ["", "/en"]) {
+    const feed = await (await render(`${prefix}/rumors`)).text();
+    for (const item of archive) {
+      const path = `${prefix}/rumors/${item.id}`;
+      const response = await render(path);
+      assert.equal(response.status, 200, path);
+      const html = await response.text();
+      assert.ok(html.includes(`rel="canonical" href="https://idc-index.com${path}"`), path);
+      assert.ok(html.includes('data-rumor-archive="true"'), path);
+      assert.ok(html.includes(`"datePublished":"${item.publishedAt}"`), path);
+      assert.ok(!/<meta name="robots" content="[^"]*noindex/.test(html), path);
+      assert.ok(sitemap.includes(`<loc>https://idc-index.com${path}</loc>`), path);
+      assert.ok(!feed.includes(`href="${path}"`), "archive must not refresh the news feed");
+    }
+    const oldTexas = await render(`${prefix}/rumors/texas-data-center-interconnection-audit-2026`);
+    assert.equal(oldTexas.status, 308);
+    assert.equal(new URL(oldTexas.headers.get("location"), "https://dc-atlas.example").pathname, `${prefix}/policy/us-texas-data-center-audit-2026`);
+    const policy = await (await render(`${prefix}/policy/us-texas-data-center-audit-2026`)).text();
+    assert.match(policy, /noindex/);
+    assert.equal((await render(`${prefix}/industry-network`)).status, 404);
+    assert.equal((await render(`${prefix}/rumors/not-a-published-record`)).status, 404);
+    const filtered = await (await render(`${prefix}/pulse?signal=policy`)).text();
+    assert.ok(filtered.includes(`rel="canonical" href="https://idc-index.com${prefix}/pulse"`));
+  }
+});
+
 test("research context links are bilingual, crawlable and exclude scheduled articles", async (t) => {
   t.mock.timers.enable({ apis: ["Date"], now: new Date("2026-09-06T14:00:00Z") });
   for (const prefix of ["", "/en"]) {
@@ -314,7 +344,9 @@ test("publishes shareable bilingual policy and Global Intelligence brief pages",
   const sitemap = await readFile(new URL("../app/sitemap.ts", import.meta.url), "utf8");
   assert.match(sitemap, /publishedColumnArticles/);
   assert.doesNotMatch(sitemap, /POLICY_BRIEFS\.flatMap/);
-  assert.match(sitemap, /RUMOR_BRIEFS\.flatMap/);
+  const renderedSitemap = await (await render("/sitemap.xml")).text();
+  assert.ok(renderedSitemap.includes("<loc>https://idc-index.com/rumors/spacex-nvidia-ai-infrastructure-call-2026</loc>"));
+  assert.ok(renderedSitemap.includes("<loc>https://idc-index.com/en/rumors/spacex-nvidia-ai-infrastructure-call-2026</loc>"));
   assert.doesNotMatch(sitemap, /url: "https:\/\/idc-index\.com\/policy",/);
 });
 

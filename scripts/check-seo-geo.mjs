@@ -84,7 +84,7 @@ await Promise.all(Array.from({ length: 4 }, async () => {
 }));
 
 // Filter URLs stay usable but consolidate to their parent, not thin search pages.
-for (const pathname of ["/industry?tab=chain&stage=compute", "/en/industry?tab=china", "/columns?company=nvidia", "/en/columns?topic=MEMORY%20WATCH"]) {
+for (const pathname of ["/pulse?signal=policy", "/en/pulse?signal=policy", "/industry?tab=chain&stage=compute", "/en/industry?tab=china", "/columns?company=nvidia", "/en/columns?topic=MEMORY%20WATCH"]) {
   await checkPage(pathname, pathname.split("?")[0]);
 }
 const robots = await (await request("/robots.txt")).text();
