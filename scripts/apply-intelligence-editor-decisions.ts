@@ -37,10 +37,10 @@ function toPublicItem(decision: AtlasEditorDecisionPacket["decisions"][number]):
     entities: decision.entities,
     officialResponse: decision.evidenceStatus === "official_response"
       ? "相关主体已公开回应；报道中的其余主张继续按来源归属追踪。"
-      : "当前状态为媒体报道；后续一手材料将用于升级状态，而不影响本条公开可见。",
+      : "本条依据所引媒体报道；当前未见对应一手确认。",
     officialResponseEn: decision.evidenceStatus === "official_response"
       ? "A relevant party has responded publicly; remaining claims continue to be tracked with attribution."
-      : "The current state is media reporting; later primary material will upgrade the status without determining visibility.",
+      : "Based on the cited media report; no corresponding primary confirmation was located.",
     sourceNote: `${name}公开报道；主张按原始来源归属呈现。`,
     sourceNoteEn: `Public reporting by ${name}; claims remain attributed to the original source.`,
   };
