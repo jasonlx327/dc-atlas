@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { headers } from "next/headers";
 import Script from "next/script";
 import "./globals.css";
+import "./desk.css";
 
 const googleAnalyticsId = "G-XRKL96W42Q";
 const siteUrl = "https://idc-index.com";
@@ -72,7 +73,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${googleAnalyticsId}');`}
+if (location.hostname === 'idc-index.com') gtag('config', '${googleAnalyticsId}');`}
       </Script>
     </html>
   );

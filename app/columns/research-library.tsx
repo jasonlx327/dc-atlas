@@ -1,7 +1,10 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { articleEntities, buildDailyBrief } from "../intelligence-model";
+import { AtlasReadingPanel } from "../atlas-reading-panel";
+import { researchRecord, type DeskRecord } from "../desk-model";
+import { trackAtlasEvent } from "../atlas-analytics";
 import type { ColumnArticle } from "./articles";
 
 function columnDate(publishAt: string, lang: "zh" | "en") {
@@ -15,6 +18,8 @@ function columnDate(publishAt: string, lang: "zh" | "en") {
 
 export default function ResearchLibrary({ articles, lang }: { articles: ColumnArticle[]; lang: "zh" | "en" }) {
   const english = lang === "en";
+  const [reading, setReading] = useState<DeskRecord | null>(null);
+  const closeReading = useCallback(() => setReading(null), []);
   const [query, setQuery] = useState("");
   const [series, setSeries] = useState("all");
   const [entity, setEntity] = useState("all");
@@ -68,6 +73,7 @@ export default function ResearchLibrary({ articles, lang }: { articles: ColumnAr
   }, [entity, hydrated, lifecycle, query, relation, series]);
 
   return <>
+    <AtlasReadingPanel record={reading} lang={lang} onClose={closeReading} />
     <section className="columns-index-tools" aria-label={english ? "Research filters" : "研究筛选"}>
       <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={english ? "Search thesis, company or topic" : "搜索判断、公司或主题"} aria-label={english ? "Search research" : "搜索研究"} />
       <select value={series} onChange={(event) => setSeries(event.target.value)} aria-label={english ? "Filter by topic" : "按主题筛选"}><option value="all">{english ? "All topics" : "全部主题"}</option>{seriesOptions.map((item) => <option value={item} key={item}>{item}</option>)}</select>
@@ -83,7 +89,7 @@ export default function ResearchLibrary({ articles, lang }: { articles: ColumnAr
         const active = latestResearchAt - new Date(article.publishAt).getTime() <= 7 * 86_400_000;
         return <article className={index === 0 ? "featured" : ""} key={article.href}>
           <a className="columns-index-image" href={english ? article.hrefEn : article.href}><img src={article.image} alt={english ? article.titleEn : article.title} loading={index === 0 ? "eager" : "lazy"} /></a>
-          <div><div className="columns-index-meta"><span>{article.series}</span><time dateTime={article.publishAt}>{columnDate(article.publishAt, lang)}</time></div><div className="columns-index-relations">{isDaily && <b>{english ? "TODAY'S BRIEF" : "今日重点"}</b>}<span>{active ? (english ? "Active monitoring" : "持续跟踪") : (english ? "Published archive" : "已发布归档")}</span>{entities.slice(0, 4).map((record) => <a href={`${english ? "/en/companies" : "/companies"}/${record.slug}`} key={record.slug}>{english ? record.nameEn : record.name}</a>)}</div><h2><a href={english ? article.hrefEn : article.href}>{english ? article.titleEn : article.title}</a></h2><p>{english ? article.summaryEn : article.summary}</p><a className="columns-index-read" href={english ? article.hrefEn : article.href}>{english ? "Read the column →" : "阅读全文 →"}</a></div>
+          <div><div className="columns-index-meta"><span>{article.series}</span><time dateTime={article.publishAt}>{columnDate(article.publishAt, lang)}</time></div><div className="columns-index-relations">{isDaily && <b>{english ? "TODAY'S BRIEF" : "今日重点"}</b>}<span>{active ? (english ? "Active monitoring" : "持续跟踪") : (english ? "Published archive" : "已发布归档")}</span>{entities.slice(0, 4).map((record) => <a href={`${english ? "/en/companies" : "/companies"}/${record.slug}`} key={record.slug}>{english ? record.nameEn : record.name}</a>)}</div><h2><a href={english ? article.hrefEn : article.href}>{english ? article.titleEn : article.title}</a></h2><p>{english ? article.summaryEn : article.summary}</p><button className="desk-preview-button" onClick={() => { setReading(researchRecord(article, lang)); trackAtlasEvent("atlas_research_preview", { article_path: article.href, language: lang }); }}>{english ? "Quick read ↗" : "侧栏速读 ↗"}</button> <a className="columns-index-read" href={english ? article.hrefEn : article.href}>{english ? "Read the column →" : "阅读全文 →"}</a></div>
         </article>;
       })}
       {!visible.length && <p className="columns-index-empty">{english ? "No published research matches these filters." : "没有符合当前筛选的已发布研究。"}</p>}
