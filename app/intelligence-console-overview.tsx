@@ -13,6 +13,8 @@ export type ConsoleStory = {
   titleEn?: string;
   summary?: string;
   summaryEn?: string;
+  details?: Array<{ heading: string; body: string }>;
+  detailsEn?: Array<{ heading: string; body: string }>;
   publishedAt?: string | null;
   sourceUrl?: string | null;
   permalink?: string;

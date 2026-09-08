@@ -5,6 +5,7 @@ export type DeskRecord = {
   id: string; kind: "fact" | "research" | "media"; title: string; summary: string;
   date: string; source: string; href: string; sourceHref?: string; image?: string;
   region?: string; category?: string; response?: string; evidence?: string;
+  details?: Array<{ heading: string; body: string }>;
 };
 export function researchRecord(article: ColumnArticle, lang: "zh" | "en"): DeskRecord {
   return { id: article.href, kind: "research", title: lang === "zh" ? article.title : article.titleEn,
@@ -21,7 +22,7 @@ export function buildDeskRecords(data: ConsoleOverviewData, articles: ColumnArti
     const identity = `${href}#${story.id}`;
     // Only merge exact duplicate records; sharing a company or source is not the same event.
     if (facts.has(identity)) continue;
-    facts.set(identity, {id:`fact:${story.id}`,kind:"fact", title: translated.displayTitle || (lang === "en" ? story.titleEn : story.title) || story.title,
+    facts.set(identity, {id:`fact:${story.id}`,kind:"fact", details: lang === "en" ? story.detailsEn : story.details, title: translated.displayTitle || (lang === "en" ? story.titleEn : story.title) || story.title,
       summary: translated.displaySummary || (lang === "en" ? story.summaryEn : story.summary) || "", date:story.publishedAt || "",source:story.sourceName || (lang === "zh" ? "公开披露" : "Public disclosure"),href,sourceHref:href,region:story.region,category:story.category || undefined});
   }
   const media: DeskRecord[] = (data.rumors || []).map(item => ({id:`media:${item.id}`,kind:"media", title:lang === "zh" ? item.title : item.titleEn,summary:lang === "zh" ? item.summary : item.summaryEn,date:item.publishedAt,source:item.sourceName,href:item.sourceUrl || (lang === "zh" ? "/rumors" : "/en/rumors"),sourceHref:item.sourceUrl,region:item.region,response:lang === "zh" ? item.officialResponse : item.officialResponseEn,evidence:lang === "zh" ? (item.sourceCount >= 2 ? "媒体 · 多源" : "媒体 · 单一来源") : (item.sourceCount >= 2 ? "Media · multiple sources" : "Media · single source")}));
