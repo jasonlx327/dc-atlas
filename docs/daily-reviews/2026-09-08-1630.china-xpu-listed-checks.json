@@ -1,0 +1,610 @@
+{
+  "schemaVersion": "atlas-china-xpu-listed-checks.v1",
+  "runId": "atlas-2026-09-08-1630",
+  "generatedAt": "2026-09-08T08:41:37.820Z",
+  "cutoff": "2026-09-08T02:22:54.347Z",
+  "cutoffEnd": "2026-09-08T08:41:37.820Z",
+  "cutoffBasis": "09:30 independent scan cutoff",
+  "issuerCount": 7,
+  "attemptedCount": 7,
+  "completedEvidenceChecks": 0,
+  "results": {
+    "new/changed": 0,
+    "no-change": 0,
+    "not-determined": 7
+  },
+  "accessStatus": "issuer-and-exchange-entrypoint-check",
+  "accessGaps": [
+    "https://www.hygon.cn/: The operation was aborted due to timeout",
+    "https://www.jingjia.com/: fetch failed"
+  ],
+  "checks": [
+    {
+      "id": "cambricon",
+      "name": "寒武纪",
+      "ticker": "688256",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-09-08T08:40:48.476Z",
+      "result": "not-determined",
+      "resultReason": "Issuer and exchange entrypoints were attempted, but an issuer-specific announcement search/readback was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "exchange announcements and issuer IR/newsroom",
+          "results, preliminary results, guidance and earnings-call materials",
+          "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+          "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+          "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+          "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+        ],
+        "accessStatus": "public-entrypoints",
+        "issuerIr": {
+          "url": "https://www.cambricon.com/",
+          "checkedAt": "2026-09-08T08:40:46.742Z",
+          "httpStatus": 200,
+          "resolvedUrl": "https://www.cambricon.com/",
+          "accessStatus": "public",
+          "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+        },
+        "exchange": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-08T08:40:37.695Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-08T08:40:45.534Z",
+            "httpStatus": 200,
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "https://www.cambricon.com/",
+            "checkedAt": "2026-09-08T08:40:46.742Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.cambricon.com/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          }
+        ],
+        "accessGaps": [],
+        "coverageLevel": "entrypoint-read; issuer-specific announcement completeness not proven",
+        "probes": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-08T08:40:37.695Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-08T08:40:45.534Z",
+            "httpStatus": 200,
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "https://www.cambricon.com/",
+            "checkedAt": "2026-09-08T08:40:46.742Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.cambricon.com/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          }
+        ]
+      },
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results, preliminary results, guidance and earnings-call materials",
+        "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+        "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+        "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+        "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+      ]
+    },
+    {
+      "id": "hygon",
+      "name": "海光信息",
+      "ticker": "688041",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-09-08T08:41:04.716Z",
+      "result": "not-determined",
+      "resultReason": "Issuer and exchange entrypoints were attempted, but an issuer-specific announcement search/readback was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "exchange announcements and issuer IR/newsroom",
+          "results, preliminary results, guidance and earnings-call materials",
+          "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+          "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+          "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+          "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+        ],
+        "accessStatus": "partial-or-unavailable",
+        "issuerIr": {
+          "url": "https://www.hygon.cn/",
+          "checkedAt": "2026-09-08T08:40:49.713Z",
+          "accessStatus": "unavailable",
+          "error": "The operation was aborted due to timeout"
+        },
+        "exchange": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-08T08:40:48.477Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-08T08:40:49.295Z",
+            "httpStatus": 200,
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "https://www.hygon.cn/",
+            "checkedAt": "2026-09-08T08:40:49.713Z",
+            "accessStatus": "unavailable",
+            "error": "The operation was aborted due to timeout"
+          }
+        ],
+        "accessGaps": [
+          "https://www.hygon.cn/: The operation was aborted due to timeout"
+        ],
+        "coverageLevel": "entrypoint-read; issuer-specific announcement completeness not proven",
+        "probes": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-08T08:40:48.477Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-08T08:40:49.295Z",
+            "httpStatus": 200,
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "https://www.hygon.cn/",
+            "checkedAt": "2026-09-08T08:40:49.713Z",
+            "accessStatus": "unavailable",
+            "error": "The operation was aborted due to timeout"
+          }
+        ]
+      },
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results, preliminary results, guidance and earnings-call materials",
+        "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+        "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+        "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+        "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+      ]
+    },
+    {
+      "id": "loongson",
+      "name": "龙芯中科",
+      "ticker": "688047",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-09-08T08:41:14.133Z",
+      "result": "not-determined",
+      "resultReason": "Issuer and exchange entrypoints were attempted, but an issuer-specific announcement search/readback was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "exchange announcements and issuer IR/newsroom",
+          "results, preliminary results, guidance and earnings-call materials",
+          "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+          "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+          "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+          "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+        ],
+        "accessStatus": "public-entrypoints",
+        "issuerIr": {
+          "url": "https://www.loongson.cn/",
+          "checkedAt": "2026-09-08T08:41:10.798Z",
+          "httpStatus": 200,
+          "resolvedUrl": "https://www.loongson.cn/",
+          "accessStatus": "public",
+          "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+        },
+        "exchange": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-08T08:41:04.716Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-08T08:41:09.913Z",
+            "httpStatus": 200,
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "https://www.loongson.cn/",
+            "checkedAt": "2026-09-08T08:41:10.798Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.loongson.cn/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          }
+        ],
+        "accessGaps": [],
+        "coverageLevel": "entrypoint-read; issuer-specific announcement completeness not proven",
+        "probes": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-08T08:41:04.716Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-08T08:41:09.913Z",
+            "httpStatus": 200,
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "https://www.loongson.cn/",
+            "checkedAt": "2026-09-08T08:41:10.798Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.loongson.cn/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          }
+        ]
+      },
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results, preliminary results, guidance and earnings-call materials",
+        "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+        "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+        "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+        "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+      ]
+    },
+    {
+      "id": "jingjia-micro",
+      "name": "景嘉微",
+      "ticker": "300474",
+      "exchange": "SZSE",
+      "lastCheckedAt": "2026-09-08T08:41:26.195Z",
+      "result": "not-determined",
+      "resultReason": "Issuer and exchange entrypoints were attempted, but an issuer-specific announcement search/readback was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "exchange announcements and issuer IR/newsroom",
+          "results, preliminary results, guidance and earnings-call materials",
+          "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+          "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+          "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+          "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+        ],
+        "accessStatus": "partial-or-unavailable",
+        "issuerIr": {
+          "url": "https://www.jingjia.com/",
+          "checkedAt": "2026-09-08T08:41:15.908Z",
+          "accessStatus": "unavailable",
+          "error": "fetch failed"
+        },
+        "exchange": [],
+        "accessGaps": [
+          "https://www.jingjia.com/: fetch failed"
+        ],
+        "coverageLevel": "entrypoint-read; issuer-specific announcement completeness not proven",
+        "probes": [
+          {
+            "url": "https://www.szse.cn/disclosure/listed/notice/",
+            "checkedAt": "2026-09-08T08:41:14.133Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.szse.cn/disclosure/listed/notice/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-08T08:41:14.998Z",
+            "httpStatus": 200,
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "https://www.jingjia.com/",
+            "checkedAt": "2026-09-08T08:41:15.908Z",
+            "accessStatus": "unavailable",
+            "error": "fetch failed"
+          }
+        ]
+      },
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results, preliminary results, guidance and earnings-call materials",
+        "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+        "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+        "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+        "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+      ]
+    },
+    {
+      "id": "moore-threads",
+      "name": "摩尔线程",
+      "ticker": "688795",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-09-08T08:41:29.852Z",
+      "result": "not-determined",
+      "resultReason": "Issuer and exchange entrypoints were attempted, but an issuer-specific announcement search/readback was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "exchange announcements and issuer IR/newsroom",
+          "results, preliminary results, guidance and earnings-call materials",
+          "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+          "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+          "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+          "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+        ],
+        "accessStatus": "public-entrypoints",
+        "issuerIr": {
+          "url": "https://www.mthreads.com/",
+          "checkedAt": "2026-09-08T08:41:28.715Z",
+          "httpStatus": 200,
+          "resolvedUrl": "https://www.mthreads.com/",
+          "accessStatus": "public",
+          "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+        },
+        "exchange": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-08T08:41:26.195Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-08T08:41:28.086Z",
+            "httpStatus": 200,
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "https://www.mthreads.com/",
+            "checkedAt": "2026-09-08T08:41:28.715Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.mthreads.com/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          }
+        ],
+        "accessGaps": [],
+        "coverageLevel": "entrypoint-read; issuer-specific announcement completeness not proven",
+        "probes": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-08T08:41:26.195Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-08T08:41:28.086Z",
+            "httpStatus": 200,
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "https://www.mthreads.com/",
+            "checkedAt": "2026-09-08T08:41:28.715Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.mthreads.com/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          }
+        ]
+      },
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results, preliminary results, guidance and earnings-call materials",
+        "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+        "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+        "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+        "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+      ]
+    },
+    {
+      "id": "metax",
+      "name": "沐曦股份",
+      "ticker": "688802",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-09-08T08:41:32.536Z",
+      "result": "not-determined",
+      "resultReason": "Issuer and exchange entrypoints were attempted, but an issuer-specific announcement search/readback was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "exchange announcements and issuer IR/newsroom",
+          "results, preliminary results, guidance and earnings-call materials",
+          "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+          "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+          "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+          "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+        ],
+        "accessStatus": "public-entrypoints",
+        "issuerIr": {
+          "url": "https://www.metax-tech.com/",
+          "checkedAt": "2026-09-08T08:41:31.139Z",
+          "httpStatus": 200,
+          "resolvedUrl": "https://www.metax-tech.com/",
+          "accessStatus": "public",
+          "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+        },
+        "exchange": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-08T08:41:29.852Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-08T08:41:30.490Z",
+            "httpStatus": 200,
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "https://www.metax-tech.com/",
+            "checkedAt": "2026-09-08T08:41:31.139Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.metax-tech.com/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          }
+        ],
+        "accessGaps": [],
+        "coverageLevel": "entrypoint-read; issuer-specific announcement completeness not proven",
+        "probes": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-08T08:41:29.852Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-08T08:41:30.490Z",
+            "httpStatus": 200,
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "https://www.metax-tech.com/",
+            "checkedAt": "2026-09-08T08:41:31.139Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.metax-tech.com/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          }
+        ]
+      },
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results, preliminary results, guidance and earnings-call materials",
+        "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+        "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+        "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+        "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+      ]
+    },
+    {
+      "id": "biren",
+      "name": "壁仞科技",
+      "ticker": "6082",
+      "exchange": "HKEX",
+      "lastCheckedAt": "2026-09-08T08:41:37.819Z",
+      "result": "not-determined",
+      "resultReason": "Issuer and exchange entrypoints were attempted, but an issuer-specific announcement search/readback was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "exchange announcements and issuer IR/newsroom",
+          "results, preliminary results, guidance and earnings-call materials",
+          "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+          "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+          "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+          "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+        ],
+        "accessStatus": "public-entrypoints",
+        "issuerIr": {
+          "url": "https://www.birentech.com/",
+          "checkedAt": "2026-09-08T08:41:36.024Z",
+          "httpStatus": 200,
+          "resolvedUrl": "https://www.birentech.com/",
+          "accessStatus": "public",
+          "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+        },
+        "exchange": [],
+        "accessGaps": [],
+        "coverageLevel": "entrypoint-read; issuer-specific announcement completeness not proven",
+        "probes": [
+          {
+            "url": "https://www.hkexnews.hk/index.htm",
+            "checkedAt": "2026-09-08T08:41:32.536Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.hkexnews.hk/index.htm",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          },
+          {
+            "url": "https://www.birentech.com/",
+            "checkedAt": "2026-09-08T08:41:36.024Z",
+            "httpStatus": 200,
+            "resolvedUrl": "https://www.birentech.com/",
+            "accessStatus": "public",
+            "note": "Entrypoint probe only; issuer-specific announcement completeness and field reconciliation remain unresolved."
+          }
+        ]
+      },
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results, preliminary results, guidance and earnings-call materials",
+        "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+        "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+        "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+        "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+      ]
+    }
+  ]
+}

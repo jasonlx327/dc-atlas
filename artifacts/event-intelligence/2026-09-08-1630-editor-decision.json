@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "atlas-editor-decision.v1",
+  "generatedAt": "2026-09-08T08:40:00.000Z",
+  "cutoffAt": "2026-09-08T08:38:00.000Z",
+  "timezone": "Asia/Shanghai",
+  "day": "2026-09-08",
+  "status": "completed",
+  "sourcePacketGeneratedAt": "2026-09-08T08:36:44.028Z",
+  "decisions": [
+    {
+      "eventId": "evt-3383766bfd9fb49739e3",
+      "section": "rumors",
+      "sourceId": "cnbc-technology",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": ["https://www.cnbc.com/2026/09/08/mistral-ai-funding-valuation-samsung.html", "https://www.ft.com/content/adbf5262-c4d5-4312-a9b8-4d3cf30c9e00?syn-25a6b1a6=1"],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": ["Mistral AI", "Samsung"],
+      "region": "全球",
+      "publishedAt": "2026-09-08T07:27:06.000Z",
+      "action": "publish",
+      "route": "rumor-watch",
+      "reasonCodes": ["model-scoring-fallback", "attributable-media-report", "multi-source-report", "bilingual-copy-valid", "public-adapter-ready", "deduplicated-cross-source"],
+      "publicCopy": {
+        "titleZh": "Mistral据报道获三星领投的€3 billion融资，估值达$24 billion",
+        "titleEn": "Mistral reportedly raises €3 billion at a $24 billion valuation in a Samsung-led round",
+        "summaryZh": "据CNBC和《金融时报》报道，法国人工智能公司Mistral在三星领投的融资中筹得€3 billion，估值达到$24 billion。融资金额与估值尚待公司或监管文件进一步确认。",
+        "summaryEn": "CNBC and the Financial Times report that French AI company Mistral raised €3 billion in a Samsung-led round at a $24 billion valuation. The funding amount and valuation still await confirmation from the company or regulatory filings."
+      },
+      "publicClaims": [
+        {"claim": "Reported €3 billion funding round", "sourceRefs": ["https://www.ft.com/content/adbf5262-c4d5-4312-a9b8-4d3cf30c9e00?syn-25a6b1a6=1"], "state": "reported", "qualifier": "reported"},
+        {"claim": "Reported $24 billion valuation", "sourceRefs": ["https://www.cnbc.com/2026/09/08/mistral-ai-funding-valuation-samsung.html"], "state": "reported", "qualifier": "reported"}
+      ],
+      "internalNotes": ["CNBC and Financial Times are treated as independent source groups for this event; no primary company filing or announcement was located in the scan."]
+    },
+    {
+      "eventId": "evt-3a8b109e97e6bd13895d",
+      "section": "rumors",
+      "sourceId": "ithome",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": ["https://www.ithome.com/0/999/797.htm"],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": ["Microsoft", "Project Opal", "Microsoft 365 Copilot"],
+      "region": "全球",
+      "publishedAt": "2026-09-08T08:10:48.000Z",
+      "action": "publish",
+      "route": "rumor-watch",
+      "reasonCodes": ["model-scoring-fallback", "attributable-media-report", "single-source-report", "bilingual-copy-valid", "public-adapter-ready"],
+      "publicCopy": {
+        "titleZh": "Microsoft（微软）的Project Opal据报道将让Copilot执行长周期任务",
+        "titleEn": "Microsoft's Project Opal reportedly lets Copilot handle longer-running tasks",
+        "summaryZh": "据IT之家报道，Microsoft（微软）CEO萨提亚·纳德拉宣布Project Opal，定位为在可控、可追踪环境中规划和执行复杂、长周期任务的AI智能体功能。相关产品范围和可用性仍应以微软原始发布为准。",
+        "summaryEn": "IT Home reports that Microsoft CEO Satya Nadella announced Project Opal as an AI-agent capability for planning and executing complex, longer-running tasks in a controlled, traceable environment. Its product scope and availability should still be checked against Microsoft's original release."
+      },
+      "publicClaims": [{"claim": "IT Home reported Nadella's Project Opal announcement and its stated task-execution positioning", "sourceRefs": ["https://www.ithome.com/0/999/797.htm"], "state": "reported"}],
+      "internalNotes": ["No corresponding Microsoft newsroom or product-page confirmation was located in the current scan."]
+    },
+    {
+      "eventId": "evt-c4354b8f2d961825b858",
+      "section": "rumors",
+      "sourceId": "ithome",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": ["https://www.ithome.com/0/999/791.htm"],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": ["NVIDIA", "GeForce RTX 5070", "GB203"],
+      "region": "全球",
+      "publishedAt": "2026-09-08T08:02:56.000Z",
+      "action": "publish",
+      "route": "rumor-watch",
+      "reasonCodes": ["model-scoring-fallback", "attributable-media-report", "single-source-report", "bilingual-copy-valid", "public-adapter-ready"],
+      "publicCopy": {
+        "titleZh": "NVIDIA（英伟达）据报道将推出采用GB203 GPU的GeForce RTX 5070版本",
+        "titleEn": "NVIDIA reportedly plans a GeForce RTX 5070 variant using the GB203 GPU",
+        "summaryZh": "据IT之家报道，消息人士称NVIDIA（英伟达）可能推出采用GB203 GPU的GeForce RTX 5070版本；报道同时提到现有RTX 5070采用GB205。该产品规划、规格和上市时间尚未获NVIDIA官方确认。",
+        "summaryEn": "IT Home reports that an industry source said NVIDIA may introduce a GeForce RTX 5070 variant based on the GB203 GPU, while the existing RTX 5070 uses GB205. The product plan, specifications and launch timing have not been confirmed by NVIDIA."
+      },
+      "publicClaims": [{"claim": "IT Home reported a source claim about a GB203-based GeForce RTX 5070 variant", "sourceRefs": ["https://www.ithome.com/0/999/791.htm"], "state": "reported"}],
+      "internalNotes": ["This is an attributed product rumor; it is not routed as a confirmed NVIDIA product record."]
+    },
+    {
+      "eventId": "evt-74417a531a9372d72121",
+      "section": "rumors",
+      "sourceId": "ithome",
+      "sourceTier": "T3",
+      "evidenceStatus": "reported",
+      "canonicalUrls": ["https://www.ithome.com/0/999/713.htm"],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": ["Apple", "Kioxia", "NAND"],
+      "region": "全球",
+      "publishedAt": "2026-09-08T06:57:30.000Z",
+      "action": "publish",
+      "route": "rumor-watch",
+      "reasonCodes": ["model-scoring-fallback", "attributable-media-report", "single-source-report", "bilingual-copy-valid", "public-adapter-ready"],
+      "publicCopy": {
+        "titleZh": "苹果据报道与铠侠签署3至5年NAND长期供应协议",
+        "titleEn": "Apple reportedly signs a three-to-five-year NAND supply agreement with Kioxia",
+        "summaryZh": "据IT之家报道，苹果近期被指与一家厂商签署3至5年的NAND长期供应协议，市场普遍猜测合作方为日本铠侠；报道未披露协议对象、供应规模或价格条件。苹果与铠侠尚未公开确认这一说法。",
+        "summaryEn": "IT Home reports that Apple is said to have signed a three-to-five-year NAND long-term supply agreement, with market observers widely speculating that Japan's Kioxia is the counterparty. The report did not disclose the supplier, volume or pricing, and neither Apple nor Kioxia has publicly confirmed it."
+      },
+      "publicClaims": [{"claim": "IT Home reported an alleged three-to-five-year NAND supply agreement and market speculation about Kioxia", "sourceRefs": ["https://www.ithome.com/0/999/713.htm"], "state": "reported"}],
+      "internalNotes": ["Supplier identity and contract terms remain unverified; AI data-center demand is treated as reported context, not a confirmed procurement driver."]
+    },
+    {
+      "eventId": "evt-1d2153cc78bff166c0a5",
+      "section": "rumors",
+      "sourceId": "financial-times-tech",
+      "sourceTier": "T2",
+      "evidenceStatus": "reported",
+      "canonicalUrls": ["https://www.ft.com/content/f6a26a17-985f-4283-99c4-ba5d54e94e7f?syn-25a6b1a6=1"],
+      "fallbackScored": true,
+      "holdClass": null,
+      "entities": ["Palantir", "NESO", "United Kingdom"],
+      "region": "英国",
+      "publishedAt": "2026-09-08T04:00:17.000Z",
+      "action": "publish",
+      "route": "rumor-watch",
+      "reasonCodes": ["model-scoring-fallback", "attributable-media-report", "single-source-report", "bilingual-copy-valid", "public-adapter-ready"],
+      "publicCopy": {
+        "titleZh": "英国电网运营商据报道未邀请竞标便将合同授予Palantir",
+        "titleEn": "UK grid operator reportedly awarded Palantir a contract without inviting rival bids",
+        "summaryZh": "据《金融时报》报道，英国国家能源系统运营商NESO在一项Palantir合同中援引法律豁免，称相关依赖使其没有替代供应商，因而无需邀请竞争性报价。合同范围和采购依据仍应以NESO原始文件为准。",
+        "summaryEn": "The Financial Times reports that Britain's National Energy System Operator cited a legal exemption in a Palantir contract, saying dependencies left no alternative supplier and removed the need to seek rival bids. The contract scope and procurement basis should still be checked against NESO's original records."
+      },
+      "publicClaims": [{"claim": "The Financial Times reported NESO's stated legal-exemption rationale for awarding a Palantir contract without rival bids", "sourceRefs": ["https://www.ft.com/content/f6a26a17-985f-4283-99c4-ba5d54e94e7f?syn-25a6b1a6=1"], "state": "reported"}],
+      "internalNotes": ["No primary NESO procurement record was located in the current scan; the item remains attributed media reporting."]
+    }
+  ],
+  "summary": {"publishFormal": 0, "publishRumor": 5, "research": 0, "hold": 0, "reject": 0, "fallbackScored": 5}
+}

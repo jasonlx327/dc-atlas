@@ -15,6 +15,12 @@ function sourceName(sourceId: string | null): string {
   return sourceId ? sourceRegistryById.get(sourceId)?.name ?? sourceId : "公开媒体";
 }
 
+function sourceKey(url: string): string {
+  let hash = 0;
+  for (const character of url) hash = (hash * 31 + character.charCodeAt(0)) >>> 0;
+  return hash.toString(36);
+}
+
 function toPublicItem(decision: AtlasEditorDecisionPacket["decisions"][number]): RumorWatchItem | null {
   if (decision.action !== "publish" || decision.route !== "rumor-watch" || !decision.publicCopy || !decision.canonicalUrls[0]) return null;
   if (validateBilingualPair({ ...decision.publicCopy, entities: decision.entities }).status !== "pass") return null;
@@ -55,7 +61,11 @@ export function mergeIntelligenceItems(
     return item ? [item] : [];
   });
   const byId = new Map(existing.map((item) => [item.id, item]));
-  additions.forEach((item) => byId.set(item.id, item));
+  additions.forEach((item) => {
+    const prior = byId.get(item.id);
+    if (prior && prior.sourceUrl !== item.sourceUrl) item.id = `${item.id}-${sourceKey(item.sourceUrl)}`;
+    byId.set(item.id, item);
+  });
   return {
     items: [...byId.values()].sort((left, right) => Date.parse(right.publishedAt) - Date.parse(left.publishedAt)),
     applied: additions.length,

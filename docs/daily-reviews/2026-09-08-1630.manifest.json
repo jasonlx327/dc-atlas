@@ -1,0 +1,397 @@
+{
+  "schemaVersion": "1.1",
+  "runId": "atlas-2026-09-08-1630",
+  "runDate": "2026-09-08",
+  "cutoff": "2026-09-08T10:22:54.347+08:00",
+  "displayTimezones": {
+    "zh": "Asia/Shanghai",
+    "en": "America/New_York"
+  },
+  "status": "ready-for-partial-release",
+  "projectPath": "/Users/xlarge/Desktop/数据中心/data-center-site-work",
+  "sourceLedgerPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-16-30-20260908/docs/daily-reviews/2026-09-08-1630.sources.json",
+  "host": "bogon",
+  "headBefore": "d7c223305d006baf69f57d3c37b805559fdfa533",
+  "baselineDecision": {
+    "atlasProductionRef": "d7c223305d006baf69f57d3c37b805559fdfa533",
+    "latestVerifiedApplicationHead": "d7c223305d006baf69f57d3c37b805559fdfa533",
+    "trusted": true,
+    "reason": "atlas-production matches the 2026-09-08 09:30 Worker/Sites same-HEAD release proof."
+  },
+  "actualStart": "2026-09-08T16:34:13.783+08:00",
+  "sourceWindow": {
+    "mode": "same-day-0930-cutoff",
+    "start": "2026-09-08T10:22:54.347+08:00",
+    "end": "2026-09-08T08:49:39.676Z",
+    "timeZone": "Asia/Shanghai",
+    "wideWindowSections": [
+      "mna",
+      "capacity",
+      "policy",
+      "power-model-demand"
+    ]
+  },
+  "candidateHandoff": {
+    "day": "2026-09-03",
+    "generatedAt": "2026-09-03T08:50:03.044Z",
+    "model": "deterministic-atlas-fallback-v1",
+    "candidateCount": 174,
+    "selectedCount": 144,
+    "watchCount": 30,
+    "ruleEligibleCount": 77,
+    "copyReadyCount": 8,
+    "publicationReadyCount": 0,
+    "status": "stale-discovery-only"
+  },
+  "closureHandoff": {
+    "day": "2026-09-08",
+    "generatedAt": "2026-09-07T22:30:31.000Z",
+    "status": "blocked",
+    "retryRequired": true
+  },
+  "scan": {
+    "generatedAt": "2026-09-08T08:36:44.028Z",
+    "status": "partial",
+    "freshness": "partial",
+    "stats": {
+      "fetched": 2563,
+      "normalized": 2527,
+      "duplicates": 36,
+      "relevant": 1671,
+      "uncertain": 14,
+      "deepScored": 1671,
+      "clusters": 592,
+      "publicEligible": 0,
+      "rejected": 0,
+      "held": 109,
+      "errors": 7,
+      "routeCounts": {
+        "rumor-watch": 101,
+        "pulse": 382,
+        "policy-index": 0,
+        "research-queue": 0,
+        "hold": 109,
+        "rejected": 0
+      }
+    },
+    "failures": [
+      "cninfo/cninfo-endpoint: HTTP 502",
+      "ndrc/ndrc-endpoint: fetch failed",
+      "miit/miit-endpoint: fetch failed",
+      "mep-china/mep-china-endpoint: fetch failed",
+      "beijing-gov/beijing-gov-endpoint: fetch failed",
+      "shanghai-gov/shanghai-gov-endpoint: fetch failed",
+      "xai-news/xai-news-endpoint: HTTP 403"
+    ],
+    "sourceHealthStatus": {
+      "passing": 70,
+      "total": 77
+    }
+  },
+  "overlays": {
+    "coreCompanies": {
+      "path": "docs/daily-reviews/2026-09-08-1630.core-company-checks.json",
+      "companyCount": 50,
+      "checkedCount": 50,
+      "hitCount": 16,
+      "results": {
+        "new/changed": 16,
+        "no-change": 18,
+        "not-determined": 16
+      },
+      "accessStatus": "mixed-source-and-official-entrypoint-check"
+    },
+    "chinaXpuListed": {
+      "path": "docs/daily-reviews/2026-09-08-1630.china-xpu-listed-checks.json",
+      "issuerCount": 7,
+      "attemptedCount": 7,
+      "results": {
+        "new/changed": 0,
+        "no-change": 0,
+        "not-determined": 7
+      },
+      "accessStatus": "issuer-and-exchange-entrypoint-check"
+    },
+    "interconnectCpo": {
+      "path": "docs/daily-reviews/2026-09-08-0930.interconnect-cpo-checks.json",
+      "status": "carried-forward-handoff",
+      "note": "09:30 overlay had 13 no-change and 7 not-determined; not used as new 16:30 evidence."
+    }
+  },
+  "sections": {
+    "idc-pulse": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-08T08:49:39.676Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260908-event-night"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "The three fresh T1 Google records were already versioned in the 09:30 scoped release; no distinct post-09:30 formal pulse change was found."
+    },
+    "listed-companies": {
+      "status": "blocked",
+      "checkedAt": "2026-09-08T08:49:39.676Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "core-company-overlay-20260908-1630"
+      ],
+      "accessGaps": [
+        "16 of 50 company checks remain not-determined",
+        "CNINFO returned HTTP 502",
+        "xAI official news returned HTTP 403"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Every core company was attempted; inaccessible or incomplete issuer coverage is not treated as no-change."
+    },
+    "mna": {
+      "status": "blocked",
+      "checkedAt": "2026-09-08T08:49:39.676Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260908-event-night"
+      ],
+      "accessGaps": [
+        "No current section-specific T0/T1 transaction adapter completed"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Media leads remain attributed intelligence and were not promoted to formal M&A facts."
+    },
+    "capacity": {
+      "status": "blocked",
+      "checkedAt": "2026-09-08T08:49:39.676Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260908-event-night",
+        "core-company-overlay-20260908-1630"
+      ],
+      "accessGaps": [
+        "No current section-specific T0/T1 capacity adapter completed",
+        "Issuer and project-owner coverage remains incomplete for some capacity-power companies"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Planned, contracted and operating capacity were not conflated."
+    },
+    "cooling": {
+      "status": "blocked",
+      "checkedAt": "2026-09-08T08:49:39.676Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260908-event-night"
+      ],
+      "accessGaps": [
+        "MEE China endpoint failed",
+        "No current section-specific T0/T1 cooling adapter completed"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "No formal cooling change was written."
+    },
+    "compute-products": {
+      "status": "blocked",
+      "checkedAt": "2026-09-08T08:49:39.676Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260908-event-night"
+      ],
+      "accessGaps": [
+        "NVIDIA product item is T3 media-only and remains in Global Intelligence",
+        "No current section-specific T0/T1 product adapter completed"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "The GB203 RTX 5070 item is attributed reporting, not a confirmed product record."
+    },
+    "china-gpu": {
+      "status": "blocked",
+      "checkedAt": "2026-09-08T08:49:39.676Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "china-xpu-overlay-20260908-1630"
+      ],
+      "accessGaps": [
+        "All 7 direct listed China XPU issuer checks remain not-determined",
+        "https://www.hygon.cn/: The operation was aborted due to timeout",
+        "https://www.jingjia.com/: fetch failed"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Issuer and exchange entrypoints were attempted; no issuer-specific announcement completeness was established."
+    },
+    "supply-chain": {
+      "status": "blocked",
+      "checkedAt": "2026-09-08T08:49:39.676Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260908-event-night"
+      ],
+      "accessGaps": [
+        "Apple-Kioxia NAND item is media-only and remains in Global Intelligence",
+        "Interconnect/CPO overlay still has unresolved access gaps"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "No formal supply-chain fact was promoted from media reporting."
+    },
+    "power-model-demand": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-08T08:49:39.676Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260908-event-night"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "No distinct post-09:30 power, grid, hyperscaler CAPEX or model-demand formal change was verified; Mistral financing remains media intelligence."
+    },
+    "earnings-calendar": {
+      "status": "blocked",
+      "checkedAt": "2026-09-08T08:49:39.676Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "core-company-overlay-20260908-1630",
+        "china-xpu-overlay-20260908-1630"
+      ],
+      "accessGaps": [
+        "XPU issuer disclosure completeness remains unresolved",
+        "No current section-specific earnings adapter completed"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "No earnings or call record was added without complete primary coverage."
+    },
+    "rumors": {
+      "status": "updated",
+      "checkedAt": "2026-09-08T08:49:39.676Z",
+      "newIds": [
+        "editor-evt-3383766bfd9fb49739e3",
+        "editor-evt-3a8b109e97e6bd13895d-1mubjev",
+        "editor-evt-c4354b8f2d961825b858",
+        "editor-evt-74417a531a9372d72121-1izrdvv",
+        "editor-evt-1d2153cc78bff166c0a5"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 6,
+      "sourceRefs": [
+        "rumor-evt-3383766bfd9fb49739e3-1",
+        "rumor-evt-3383766bfd9fb49739e3-2",
+        "rumor-evt-3a8b109e97e6bd13895d-1",
+        "rumor-evt-c4354b8f2d961825b858-1",
+        "rumor-evt-74417a531a9372d72121-1",
+        "rumor-evt-1d2153cc78bff166c0a5-1"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Five current, attributable T2/T3 events were added to versioned Global Intelligence with bilingual copy; one Mistral event was deduplicated across CNBC and Financial Times."
+    },
+    "policy": {
+      "status": "blocked",
+      "checkedAt": "2026-09-08T08:49:39.676Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260908-event-night"
+      ],
+      "accessGaps": [
+        "NDRC, MIIT, MEE, Beijing and Shanghai official endpoints failed",
+        "No current section-specific policy adapter completed"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Policy media leads remain discovery-only until official records are opened."
+    },
+    "columns": {
+      "status": "blocked",
+      "checkedAt": "2026-09-08T08:49:39.676Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260908-event-night",
+        "candidate-handoff-20260908"
+      ],
+      "accessGaps": [
+        "No new research column passed primary-source and bilingual parity gates",
+        "Worker candidate handoff is stale"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "No column was manufactured from AI HOT or stale candidate rankings."
+    }
+  },
+  "release": {
+    "mode": "partial",
+    "tests": "passed",
+    "build": "passed",
+    "cloudflare": "pending",
+    "formalReadback": "pending",
+    "dailySnapshot": "pending",
+    "sites": "pending",
+    "sitesReadback": "pending",
+    "commit": null,
+    "workerCommit": null,
+    "sitesCommit": null,
+    "cloudflareVersion": null,
+    "sitesVersion": null,
+    "formalUrl": null,
+    "sitesUrl": null,
+    "includedSections": [
+      "rumors"
+    ],
+    "heldSections": [
+      "listed-companies",
+      "mna",
+      "capacity",
+      "cooling",
+      "compute-products",
+      "china-gpu",
+      "supply-chain",
+      "earnings-calendar",
+      "policy",
+      "columns"
+    ],
+    "testBaseline": null
+  },
+  "blockers": []
+}
