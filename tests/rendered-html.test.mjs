@@ -188,7 +188,7 @@ test("server-renders the D desk with crawlable reading links and preserved metad
     assert.match(html,/href="(?:\/en)?\/columns\/minimax-zhipu-h1-token-economics"/);
     assert.match(html,/column-minimax-zhipu-h1-token-economics-voxel-palette-v3\.jpg/);
     assert.match(html,/rel="canonical"/);assert.match(html,/hrefLang="x-default"/);
-    assert.match(html,/G-XRKL96W42Q/);assert.match(html,/location.hostname === 'idc-index.com'/);
+    assert.match(html,/assets\/atlas-analytics-[^" ]+\.js/);
     assert.match(html,/id="calendar"/);assert.match(html,/id="market"/);
     assert.doesNotMatch(html,/Your site is taking shape|react-loading-skeleton/i);
   }

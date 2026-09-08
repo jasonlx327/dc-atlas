@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { headers } from "next/headers";
-import Script from "next/script";
+import { AtlasAnalytics } from "./atlas-analytics";
 import "./globals.css";
 import "./desk.css";
 
-const googleAnalyticsId = "G-XRKL96W42Q";
 const siteUrl = "https://idc-index.com";
 const siteDescription = "每日追踪全球数据中心项目、超大规模云厂商 CAPEX、IDC 租赁、电力、液冷与算力硬件，保留公开来源和更新时间。";
 const siteStructuredData = {
@@ -66,15 +65,9 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
     <html lang={requestPath === "/en" || requestPath.startsWith("/en/") ? "en" : "zh-CN"}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteStructuredData) }} />
+        <AtlasAnalytics />
         {children}
       </body>
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} strategy="afterInteractive" />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-if (location.hostname === 'idc-index.com') gtag('config', '${googleAnalyticsId}');`}
-      </Script>
     </html>
   );
 }
