@@ -1,0 +1,1963 @@
+{
+  "schemaVersion": "atlas-codex-editorial-judgment.v1",
+  "day": "2026-09-09",
+  "generatedAt": "2026-09-09T14:07:13.437Z",
+  "sourceGeneratedAt": "2026-09-09T13:54:54.964Z",
+  "model": "deterministic-atlas-fallback-v1",
+  "status": "completed",
+  "verdicts": [
+    {
+      "eventId": "evt-3a836cd1eeccc65be09a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Verge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 The Verge 报道，Amazon Prime Video 测试 AI 对齐配音与口型",
+        "titleEn": "The Verge reports Amazon Prime Video is testing AI lip-sync for dubbed audio",
+        "summaryZh": "据 The Verge 报道，Amazon Prime Video 正在推出一项 AI 功能，将演员口型与人工配音对齐；该功能目前仅用于德剧《Maxton Hall》的英语配音，后续计划扩展到更多内容。",
+        "summaryEn": "According to The Verge, Amazon Prime Video is rolling out an AI feature that aligns an actor's mouth with human-dubbed audio; it is currently limited to the English dub of Maxton Hall, with more titles planned."
+      }
+    },
+    {
+      "eventId": "evt-c5e6ad3fe45b98ce59bc",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Light Reading。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 Light Reading 报道，Qualcomm 与 Amazon 合作定制 AI 芯片",
+        "titleEn": "Light Reading reports Qualcomm and Amazon are working on custom AI silicon",
+        "summaryZh": "据 Light Reading 报道，Qualcomm 与 Amazon 正合作开发面向 AWS AI 基础设施的定制芯片，并涉及最高 1.6Tbit/s 的光互联；相关主张目前未获一手来源确认。",
+        "summaryEn": "According to Light Reading, Qualcomm and Amazon are working on custom silicon for AWS AI infrastructure, including optical connectivity up to 1.6Tbit/s. The claim has not been confirmed by a primary source."
+      }
+    },
+    {
+      "eventId": "evt-37597d3a94a7628fe85e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-1d2153cc78bff166c0a5",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 Financial Times Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 Financial Times 报道，英国电网运营商未竞标即向 Palantir 授予合同",
+        "titleEn": "Financial Times reports a UK grid contract for Palantir was awarded without rival bids",
+        "summaryZh": "据 Financial Times 报道，英国电网运营商 NESO 以系统依赖为由援引法律豁免，未邀请竞争供应商参与 Palantir 合同；报道主张目前未获一手合同记录确认。",
+        "summaryEn": "According to the Financial Times, UK grid operator NESO cited system dependencies and a legal exemption when awarding a Palantir contract without inviting rival bids; the claim has not been confirmed by a primary contract record."
+      }
+    },
+    {
+      "eventId": "evt-1765ddcffaf1a90a49a7",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 IT之家报道，吉卜力制作人铃木敏夫谈生成式 AI 图像潮",
+        "titleEn": "IT Home reports Studio Ghibli producer Toshio Suzuki discussed the generative-AI image trend",
+        "summaryZh": "据 IT之家援引《朝日新闻》报道，吉卜力工作室制作人铃木敏夫谈及生成式 AI 图像潮，并认为宫崎骏的创作方式无法由 AI 或 CG 复现；这是对公开采访的转述。",
+        "summaryEn": "According to IT Home, citing Asahi Shimbun, Studio Ghibli producer Toshio Suzuki discussed the generative-AI image trend and said Hayao Miyazaki's creative approach cannot be reproduced by AI or CG; this is a report of the interview."
+      }
+    },
+    {
+      "eventId": "evt-4d6b1efcb5da27ceb992",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 TechCrunch 报道，Mistral 以 3B 欧元融资推进主权 AI",
+        "titleEn": "TechCrunch reports Mistral raised €3B to build a sovereign AI champion",
+        "summaryZh": "据 TechCrunch 报道，Mistral 在三星、Scaleup Europe 和 PSG Equity 领投的一轮 Series D 中融资 3B 欧元，估值达到 21B 欧元；相关主张目前未获一手融资文件确认。",
+        "summaryEn": "According to TechCrunch, Mistral raised €3B in a Series D led by Samsung, Scaleup Europe, and PSG Equity at a €21B valuation; the claim has not been confirmed by first-party financing documents."
+      }
+    },
+    {
+      "eventId": "evt-3383766bfd9fb49739e3",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 CNBC 报道，Mistral 估值达 24B 美元，三星领投融资",
+        "titleEn": "CNBC reports Mistral reached a $24B valuation in a Samsung-led round",
+        "summaryZh": "据 CNBC 报道，三星领投的一轮融资使 Mistral 估值达到 24B 美元；报道所述融资主张目前未获 Mistral 一手公告确认。",
+        "summaryEn": "According to CNBC, a Samsung-led funding round valued Mistral at $24B; the reported financing claim has not been confirmed by a first-party Mistral announcement."
+      }
+    },
+    {
+      "eventId": "evt-49baf869b09f7d283c64",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 Financial Times Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 Financial Times 报道，Mistral 完成 3B 欧元融资",
+        "titleEn": "Financial Times reports Mistral raised €3B",
+        "summaryZh": "据 Financial Times 报道，三星领投的新一轮融资规模为 3B 欧元，法国 AI 模型公司 Mistral 正继续参与全球竞争；报道目前未获一手融资文件确认。",
+        "summaryEn": "According to the Financial Times, a Samsung-led funding round raised €3B for French AI model maker Mistral as it continues to compete globally; the report has not been confirmed by first-party financing documents."
+      }
+    },
+    {
+      "eventId": "evt-265366fa6167e05f1a8a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 CNBC 报道，Meta 推出个人 AI agent Muse",
+        "titleEn": "CNBC reports Meta launched the personal AI agent Muse",
+        "summaryZh": "据 CNBC 报道，Meta 推出了个人 AI agent 应用 Muse，提供免费层级以及按使用量定价的 20 美元或 100 美元月度订阅；相关报道未获一手产品公告完整确认。",
+        "summaryEn": "According to CNBC, Meta launched the personal AI agent app Muse with a free tier and monthly subscriptions priced at $20 or $100 depending on usage; the report has not been fully confirmed by a primary product announcement."
+      }
+    },
+    {
+      "eventId": "evt-2e2cb999e182b60be9a5",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 IT之家报道，Anthropic AI 素养负责人称应判断何时不用 AI",
+        "titleEn": "IT Home reports an Anthropic AI-literacy lead says users must know when not to use AI",
+        "summaryZh": "据 IT之家援引《商业内幕》报道，Anthropic AI 素养研究与学习负责人克里斯滕·斯旺森认为，成熟的 AI 用户需要判断哪些任务适合交给 AI，并持续重新测试模型能力；报道还讨论了检查输出带来的“判断成本”。",
+        "summaryEn": "According to IT Home, citing Business Insider, Anthropic AI-literacy lead Kristen Swanson said mature AI users must judge which tasks to delegate and periodically retest model capabilities; the report also discusses the verification burden of AI output."
+      }
+    },
+    {
+      "eventId": "evt-f66422de5178f8f2425a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Verge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 The Verge 报道，Anthropic 研究人员警告先进 AI 的极端风险",
+        "titleEn": "The Verge reports Anthropic researchers warned about extreme risks from advanced AI",
+        "summaryZh": "据 The Verge 报道，Anthropic 安全研究人员公开讨论了本十年结束前先进 AI 造成极端伤害的可能性，报道同时提到公司内部对开发竞速和控制能力的担忧；相关判断属于研究人员观点。",
+        "summaryEn": "According to The Verge, Anthropic safety researchers publicly discussed the possibility of extreme harm from advanced AI by the end of the decade, alongside internal concerns about development races and controllability; these are researchers' views as reported."
+      }
+    },
+    {
+      "eventId": "evt-5dd9cf6b8d685155854e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 IT之家报道，腾讯《王者万象棋》开启多端预下载",
+        "titleEn": "IT Home reports Tencent's Honor of Kings Chess launched cross-platform preloading",
+        "summaryZh": "据 IT之家报道，腾讯新作《王者万象棋》开启移动端、PC 和鸿蒙端预下载，并公布了各平台最低设备要求；该报道属于消费级产品信息。",
+        "summaryEn": "According to IT Home, Tencent's new game Honor of Kings Chess opened preloading across mobile, PC, and HarmonyOS and published minimum device requirements; this is consumer-product information."
+      }
+    },
+    {
+      "eventId": "evt-586f4b9ee85b58215ab1",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 IT之家报道，OpenAI 与 Anthropic 研究人员围绕数学证明成果产生争议",
+        "titleEn": "IT Home reports a dispute involving OpenAI and Anthropic researchers over mathematical proof work",
+        "summaryZh": "据 IT之家报道，纽约大学数学教授 Tristan Buckmaster 与 Anthropic 数学家 Levent Alpöge 的研究使用了 Codex 和 Claude，随后 OpenAI 发布相关纳维–斯托克斯问题证明，引发对研究先后与贡献归属的争议；报道中的证明与优先权主张仍需独立核对。",
+        "summaryEn": "According to IT Home, a study by New York University mathematician Tristan Buckmaster and Anthropic mathematician Levent Alpöge used Codex and Claude before OpenAI published a related Navier–Stokes proof, prompting a dispute over timing and credit; the reported proof and priority claims require independent checking."
+      }
+    },
+    {
+      "eventId": "evt-e11cbe85d95ae026efa4",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 The Verge 报道，ChatGPT Sketch 可将涂鸦转成 AI 图像",
+        "titleEn": "The Verge reports ChatGPT Sketch turns doodles into AI images",
+        "summaryZh": "据 The Verge 报道，OpenAI 在 ChatGPT Images 2.5 中加入 Sketch 功能，用户可在 ChatGPT 内绘制草图并要求系统据此生成图像；相关细节目前未获独立一手资料完整核对。",
+        "summaryEn": "According to The Verge, OpenAI added Sketch to ChatGPT Images 2.5 so users can draw inside ChatGPT and ask it to generate an image from the doodle; the details have not been fully checked against an independent first-party source."
+      }
+    },
+    {
+      "eventId": "evt-98a336a31bd5a66b6f20",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 The Register 报道，瑞士军方测试从 Microsoft 365 转向开源软件",
+        "titleEn": "The Register reports the Swiss military is testing an open-source route away from Microsoft 365",
+        "summaryZh": "据 The Register 报道，瑞士军方正测试从 Microsoft 365 转向开源软件的路径；该举措仍处于测试阶段。",
+        "summaryEn": "According to The Register, the Swiss military is testing an open-source route away from Microsoft 365; the initiative remains in a testing phase."
+      }
+    },
+    {
+      "eventId": "evt-b11cc8fe228cd1954a18",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 The Register 报道，Mistral 融资 3B 欧元打造欧洲主权 AI",
+        "titleEn": "The Register reports Mistral raised €3B to build Europe's sovereign AI champion",
+        "summaryZh": "据 The Register 报道，三星领投的一轮融资使 Mistral 估值超过 21B 欧元；报道目前未获一手融资文件确认。",
+        "summaryEn": "According to The Register, a Samsung-led round valued Mistral at more than €21B; the report has not been confirmed by first-party financing documents."
+      }
+    },
+    {
+      "eventId": "evt-b644b9ef2abe20322e00",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 1.5,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Google Developers Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "Agent Plugins 1.0 将 skills 与工具打包为可移植单元",
+        "titleEn": "Agent Plugins 1.0 packages skills and tools into portable units",
+        "summaryZh": "Google Developers 表示，Agent Plugins 1.0 提供由多家厂商支持的目录规范，以统一通过 plugin.json 和固定目录布局打包 Agent Skills 与 MCP server。",
+        "summaryEn": "Google Developers says Agent Plugins 1.0 provides a multi-vendor-backed directory specification for packaging Agent Skills and MCP servers through plugin.json and a fixed directory layout."
+      }
+    },
+    {
+      "eventId": "evt-4e0260833b9d8d2f2910",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Blocks & Files。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 Blocks & Files 报道，SK hynix 称 Solidigm 上市传闻尚无定案",
+        "titleEn": "Blocks & Files reports SK hynix says no Solidigm pre-IPO matter has been decided",
+        "summaryZh": "据 Blocks & Files 报道，SK hynix 针对 Solidigm 上市传闻表示目前尚无事项确定；由于原文摘要有限，本条仅保留该公开回应边界。",
+        "summaryEn": "According to Blocks & Files, SK hynix said no matter concerning Solidigm's reported pre-IPO plans had been determined; because the source summary is limited, this item preserves only that response boundary."
+      }
+    },
+    {
+      "eventId": "evt-d3c69bdd225888a08884",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 Light Reading 报道，Nscale 与 Figure 签署 3.5B 美元 AI 算力合作",
+        "titleEn": "Light Reading reports Nscale and Figure signed a $3.5B AI-compute deal",
+        "summaryZh": "据 Light Reading 报道，Nscale 与人形机器人公司 Figure 达成涉及 NVIDIA GPU 的 3.5B 美元 AI 算力合作；商业范围和交付时间目前未获一手文件确认。",
+        "summaryEn": "According to Light Reading, Nscale and humanoid-robotics company Figure reached a $3.5B AI-compute partnership involving NVIDIA GPUs; the commercial scope and delivery schedule have not been confirmed by a primary document."
+      }
+    },
+    {
+      "eventId": "evt-f042f77504aab90a2c2d",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Verge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 The Verge 报道，苹果折叠屏 iPhone Duo 起售价或为 2,000 美元",
+        "titleEn": "The Verge reports Apple's foldable iPhone Duo may start at $2,000",
+        "summaryZh": "据 The Verge 援引 Bloomberg 记者 Mark Gurman 报道，苹果传闻中的折叠屏手机可能名为 iPhone Duo，起售价或约为 2,000 美元；该产品名称、价格和上市安排尚未由苹果正式确认。",
+        "summaryEn": "According to The Verge, citing Bloomberg reporter Mark Gurman, Apple's rumored foldable phone may be called the iPhone Duo and start at about $2,000; Apple has not officially confirmed the name, price, or launch plan."
+      }
+    },
+    {
+      "eventId": "evt-26785998c7abbe2076e4",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 CNBC 报道，Qualcomm 向 Amazon 授予 4B 美元股票认购权",
+        "titleEn": "CNBC reports Qualcomm granted Amazon warrants tied to $4B of stock",
+        "summaryZh": "据 CNBC 报道，Qualcomm 向 Amazon 授予可购买价值 4B 美元芯片公司股票的认购权，作为 AI 基础设施合作的一部分；条款目前未获完整一手文件确认。",
+        "summaryEn": "According to CNBC, Qualcomm issued Amazon warrants tied to $4B of a chipmaker's stock as part of an AI-infrastructure deal; the terms have not been fully confirmed by a primary document."
+      }
+    },
+    {
+      "eventId": "evt-fa5fa2d64820d8942cc7",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-19d1df7e88b0d2eab5ea",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-6778ac2bea11057a8c5b",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 CNBC 报道，Google 将在芬兰大规模投资建设 AI 基础设施",
+        "titleEn": "CNBC reports Google plans a major AI-infrastructure investment in Finland",
+        "summaryZh": "据公开页面和 CNBC 报道，Google 计划在芬兰推进大规模 AI 基础设施投资，并配套发展数据中心与清洁能源；公开报道中的金额表述并不一致，项目节奏和范围仍待进一步核对。",
+        "summaryEn": "Public Google material and CNBC reporting describe a major Google AI-infrastructure investment in Finland alongside data-center and clean-energy development; the reported amounts differ, so the project's timing and scope require further checking."
+      }
+    },
+    {
+      "eventId": "evt-325aa86ee8dfe8f3be4f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-335cbf4a52f0a8caa026",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-233a18dda0664c78c332",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-ee05aba7d6d1192b5bdd",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-9f46ac92e9a277ce48cc",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-5e3b862d9c90ee739aab",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c2b883b067fd02a3ead3",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-7a1e447743e35d23b423",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-902f47f0ae9ac6954967",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-d750bcd6065d1349c39e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Interconnect。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-2329ca3fe3ef73e7eeb2",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-da0deebb9ef78e4ac2e0",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国 AI 产业链。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-6746151169484ae157d3",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国 AI 产业链。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-7d6457d50625b158b616",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Neocloud。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-80cce8009fe981070676",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-5367f5b22c0bd9522fea",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T0；首个可访问来源 Federal Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-ca077dcb41786afbb62a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 POWER Magazine。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 POWER Magazine 报道，DOE 为重启 Duane Arnold 核电站提供 1.9B 美元贷款",
+        "titleEn": "POWER Magazine reports a $1.9B DOE loan to restart Duane Arnold",
+        "summaryZh": "据 POWER Magazine 报道，美国能源部已完成最高 1.9B 美元贷款，以支持 NextEra Energy 重启爱荷华州 Duane Arnold Energy Center；贷款不等于电站已恢复运行。",
+        "summaryEn": "According to POWER Magazine, the U.S. Department of Energy closed a loan of up to $1.9B to support NextEra Energy's restart of Iowa's Duane Arnold Energy Center; a loan does not mean the plant is operating again."
+      }
+    },
+    {
+      "eventId": "evt-849f1cb53a40734cefd5",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Light Reading。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 Light Reading 报道，泰国暂停数据中心项目并准备重写监管规则",
+        "titleEn": "Light Reading reports Thailand suspended data-center projects while rewriting rules",
+        "summaryZh": "据 Light Reading 报道，泰国暂时暂停数据中心建设并准备重写相关监管规定，此前曼谷一处尚未启用的设施发生漏油事件并引发环境担忧；报道未证明全国项目均已永久停止。",
+        "summaryEn": "According to Light Reading, Thailand temporarily suspended data-center construction while preparing to rewrite relevant regulations after an oil leak at an unopened Bangkok facility raised environmental concerns; the report does not establish a permanent nationwide halt."
+      }
+    },
+    {
+      "eventId": "evt-5bbf027a8dccf8dd91b3",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 IT之家报道，Windows 11 正测试按日出日落自动切换主题",
+        "titleEn": "IT Home reports Windows 11 is testing sunrise-and-sunset theme switching",
+        "summaryZh": "据 IT之家报道，Windows 11 Experimental 版本出现按日出日落或自定义时间自动切换深浅色模式的代码；该功能尚未正式发布。",
+        "summaryEn": "According to IT Home, Windows 11 Experimental builds contain code for switching between light and dark themes by sunrise, sunset, or a custom time; the feature has not been officially released."
+      }
+    },
+    {
+      "eventId": "evt-431aaafd2e41467e8f2b",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 IBM Newsroom。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "IBM、克利夫兰诊所与理研团队入围 2026 ACM Gordon Bell 奖决赛",
+        "titleEn": "IBM, Cleveland Clinic and RIKEN team advances to the 2026 ACM Gordon Bell Prize finals",
+        "summaryZh": "IBM 表示，克利夫兰诊所、理研与 IBM 联合团队入围 2026 ACM Gordon Bell 奖决赛，并模拟了一个包含 12,635 个原子的蛋白质模型；该结果仍处于奖项评选阶段。",
+        "summaryEn": "IBM said a joint team from Cleveland Clinic, RIKEN and IBM advanced to the 2026 ACM Gordon Bell Prize finals after modeling a 12,635-atom protein; the result remains part of the prize selection process."
+      }
+    },
+    {
+      "eventId": "evt-b849691f53d5cb2a2af9",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 4.4,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 OpenAI News。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "OpenAI 讨论更强、更低成本 AI 对工作与企业增长的影响",
+        "titleEn": "OpenAI discusses how more capable, lower-cost AI may affect work and growth",
+        "summaryZh": "OpenAI 表示，更强且更低成本的 AI 可以扩大个人和企业可完成的工作范围，并改善增长的经济性；这是公司观点，不构成采用规模披露。",
+        "summaryEn": "OpenAI says more capable and affordable AI can expand what people and businesses accomplish and make growth more economical; this is a company view, not a disclosed adoption scale."
+      }
+    },
+    {
+      "eventId": "evt-9efe57277172ab557c2d",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 The Register 报道，浮动核能初创公司 Bluecore 获 $50M 融资",
+        "titleEn": "The Register reports floating-nuclear startup Bluecore raised $50M",
+        "summaryZh": "据 The Register 报道，Bluecore 在推进将核能发电装上驳船、按需部署的计划前完成 $50M 融资；该计划仍属报道中的项目安排。",
+        "summaryEn": "According to The Register, floating-nuclear startup Bluecore raised $50M while pursuing a plan to place nuclear generation on barges and deploy it where needed; the plan remains a reported project arrangement."
+      }
+    },
+    {
+      "eventId": "evt-9dad1e9deb231336cdbe",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 CNBC Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 CNBC 报道，高通和康宁交易带动 AI 基础设施股上涨",
+        "titleEn": "CNBC reports Qualcomm and Corning deals lifted AI-infrastructure stocks",
+        "summaryZh": "据 CNBC 报道，高通、康宁等交易消息带动相关 AI 基础设施股票上涨；这是市场反应报道，不构成公司基本面或交易确认。",
+        "summaryEn": "According to CNBC, deal announcements involving Qualcomm and Corning lifted related AI-infrastructure stocks; this is a report on market reaction, not confirmation of company fundamentals or transactions."
+      }
+    },
+    {
+      "eventId": "evt-2734d3bcbb74b5fc7763",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 IT之家报道，Windows 11 预览版改进跨设备恢复",
+        "titleEn": "IT Home reports Windows 11 preview builds improve cross-device recovery",
+        "summaryZh": "据 IT之家报道，Windows 11 Beta 和 Experimental 预览版改进了跨设备恢复、辅助功能和多屏缩放等体验；这些仍是预览版变化。",
+        "summaryEn": "According to IT Home, Windows 11 Beta and Experimental builds improve cross-device recovery, accessibility, and multi-display scaling; these remain preview-build changes."
+      }
+    },
+    {
+      "eventId": "evt-0bc81fab5dabe76210c4",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 Light Reading。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 Light Reading 报道，FCC 评估卫星宽带和 AI 感知频谱安排",
+        "titleEn": "Light Reading reports the FCC is weighing spectrum for satellite broadband and AI sensing",
+        "summaryZh": "据 Light Reading 报道，FCC 拟评估 12GHz 和 42GHz 频段用于卫星连接，并推动面向 AI 感知等应用的超宽带频谱现代化；报道不等于已生效政策。",
+        "summaryEn": "According to Light Reading, the FCC is considering 12GHz and 42GHz spectrum for satellite connectivity and modernization of unlicensed ultra-wideband for AI sensing; the report is not an effective policy."
+      }
+    },
+    {
+      "eventId": "evt-9b6235df182ffb4760e2",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Interconnect。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-ebea48fb45b9db501c8e",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 3.8,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-e4e5333963565abed4ee",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 The Register 报道，菲律宾计划扩大数据中心以承接 AI 增长",
+        "titleEn": "The Register reports the Philippines plans a major data-center expansion for AI growth",
+        "summaryZh": "据 The Register 报道，菲律宾希望利用 AI 推动经济增长，同时规划大幅扩大数据中心规模；报道中的 GDP 影响、投资金额和扩张倍数属于计划或预测，不等于已建成容量。",
+        "summaryEn": "According to The Register, the Philippines wants to use AI to support economic growth while planning a major expansion of data-center capacity; the reported GDP impact, investment and expansion multiples are plans or forecasts, not built capacity."
+      }
+    },
+    {
+      "eventId": "evt-11a301fbf0eb06869e87",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-328451cc9c0c14402e5f",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T2；首个可访问来源 Financial Times Technology。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 Financial Times 报道，Silver Lake 计划以 100 亿欧元合并法国软件集团",
+        "titleEn": "Financial Times reports Silver Lake plans a €10B merger of French software groups",
+        "summaryZh": "据 Financial Times 报道，Silver Lake 正计划以约 100 亿欧元合并法国软件集团；该计划发生在收购基金重新评估 AI 对高估值软件公司的影响之际，交易仍应视为报道中的安排。",
+        "summaryEn": "According to the Financial Times, Silver Lake plans to merge French software groups in a deal valued at about €10B; the plan comes as buyout firms reassess AI's impact on highly valued software companies and remains a reported arrangement."
+      }
+    },
+    {
+      "eventId": "evt-74417a531a9372d72121",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 IT之家报道，英国拟将未成年人内容保护延伸至操作系统",
+        "titleEn": "IT Home reports the UK may extend child-safety rules to operating systems",
+        "summaryZh": "据 IT之家援引彭博报道，英国政府拟推动苹果、谷歌等公司在操作系统和设备层面加强未成年人敏感内容保护；法案与最终规则仍未确定。",
+        "summaryEn": "According to IT Home citing Bloomberg, the UK government is considering stronger child-safety protections at the operating-system and device level for Apple, Google, and others; legislation and final rules remain unsettled."
+      }
+    },
+    {
+      "eventId": "evt-5d6e4436eecce033ac64",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 IT之家报道，比亚迪称闪充车型订单饱满并将爬坡电池产能",
+        "titleEn": "IT Home reports BYD said fast-charging vehicle orders are strong and battery capacity will ramp",
+        "summaryZh": "据 IT之家援引比亚迪投资者关系活动记录表报道，第二代刀片电池是闪充车型的核心基础，2026 年下半年月产能将逐步爬坡；比亚迪同时否认此前关于约 25 万辆订单积压的网传消息。",
+        "summaryEn": "According to IT Home, citing BYD's investor-relations activity record, the second-generation Blade Battery is central to its fast-charging vehicles and monthly capacity will ramp in the second half of 2026; BYD also denied an earlier online claim of roughly 250,000 backlogged orders."
+      }
+    },
+    {
+      "eventId": "evt-3d365cd2337eb86bb950",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 IT之家报道，WhatsApp 正开发第三方 AI agent 原生支持",
+        "titleEn": "IT Home reports WhatsApp is developing native support for third-party AI agents",
+        "summaryZh": "据 IT之家援引 WABetaInfo 报道，WhatsApp 正开发通过 API key 接入第三方 AI agent 的功能，初步限制在私聊场景；相关功能尚未正式发布。",
+        "summaryEn": "According to IT Home citing WABetaInfo, WhatsApp is developing API-key connections for third-party AI agents, initially limited to private chats; the feature has not been officially released."
+      }
+    },
+    {
+      "eventId": "evt-dcd3b865f6c285714526",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Verge。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 The Verge 报道，Razer 游戏耳机促销接近 100 美元折扣",
+        "titleEn": "The Verge reports a Razer gaming headset is nearly $100 off",
+        "summaryZh": "据 The Verge 报道，Razer BlackShark V3 Pro 游戏耳机正在促销，折扣接近 100 美元；该消费电子促销与 Atlas 基础设施范围无关。",
+        "summaryEn": "According to The Verge, the Razer BlackShark V3 Pro gaming headset is on sale at a discount of nearly $100; this consumer-electronics promotion is outside Atlas infrastructure scope."
+      }
+    },
+    {
+      "eventId": "evt-984506914ed665fb8014",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 The Register。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "据 The Register 报道，Boston Scientific 网络攻击将影响业绩",
+        "titleEn": "The Register reports a cyberattack may affect Boston Scientific results",
+        "summaryZh": "据 The Register 报道，Boston Scientific 警告 8 月入侵事件可能影响第三季度和全年销售及盈利；该信息目前未以本轮完整公司原始披露核对。",
+        "summaryEn": "According to The Register, Boston Scientific warned that an August intrusion could affect third-quarter and full-year sales and earnings; the information was not checked against a complete first-party disclosure in this run."
+      }
+    },
+    {
+      "eventId": "evt-c821ba6dbe319739e98a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f6e75cc2d418eb1ef3ad",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-1f3af5c2fd941cb777cb",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-978d8aeb3eeec7bc4498",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a6d47faf36da6fa361b3",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-89b8f1cac5800df29f60",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-1e66e16089bd86cdcc6c",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-8c6c87ebaf52b8715db9",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-03e8f9f75dca07a21cad",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-178ee1f6ee0051a862dd",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-00107b06607e1fdb4559",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Neocloud。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a759b73d68a13b505c15",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-dab0a848e191c3054a32",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 0,
+        "researchValueScore": 4.4,
+        "readerValueScore": 2.5
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Google Developers Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "Google Gemini Enterprise 通过 DevEx sprint 优化 AI 治理部署",
+        "titleEn": "Google Gemini Enterprise uses DevEx sprints to improve AI-governance deployment",
+        "summaryZh": "Google Developers 表示，Gemini Enterprise Developer Experience 团队通过持续 sprint 测试端到端开发流程，改进 Agent Gateway 和 Semantic Governance 的配置、文档与策略执行。",
+        "summaryEn": "Google Developers says the Gemini Enterprise Developer Experience team uses ongoing sprint testing to improve Agent Gateway and Semantic Governance configuration, documentation, and policy enforcement."
+      }
+    },
+    {
+      "eventId": "evt-d91dd95b130447bab68e",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 0,
+        "researchValueScore": 4.4,
+        "readerValueScore": 2.5
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T1；首个可访问来源 Google Developers Blog。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "primary-source-path",
+        "codex-edited-bilingual-copy"
+      ],
+      "publicCopy": {
+        "titleZh": "Google Gemini Enterprise Agent Platform 的 agent 与模型评估服务 GA",
+        "titleEn": "Agent and model evaluations in Google Gemini Enterprise Agent Platform reach GA",
+        "summaryZh": "Google Developers 表示，Agent Platform 的评估服务现已 GA，支持 20 多项预置指标、可适配评分标准及自定义代码或 LLM-as-a-judge 指标，并可用于本地实验和生产流量。",
+        "summaryEn": "Google Developers says Agent Platform's evaluation service is now generally available with more than 20 pre-built metrics, adaptive rubrics, and custom code or LLM-as-a-judge metrics for local experiments and production traffic."
+      }
+    },
+    {
+      "eventId": "evt-6d76c8aee0f337090727",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 4.5,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-5dee2342708cb8754330",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 3.5,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 T3；首个可访问来源 IT之家。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-2c8f4b38adebedfc6df4",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-d8e4e6b714923c24ba56",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-02cb619b1a77a5819a08",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-bb3c0c1a913486101def",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-939339b9226a6ff9236d",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f08ffe6a88694ccfca42",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c891d79e88e35f29d818",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Power。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-ab1aa58bb18ed8b11a9a",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-eb28c31aba69eda763c1",
+      "band": "selected",
+      "scores": {
+        "topicRelevanceScore": 5,
+        "mechanismDepthScore": 2.5,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-d1c3a6b88042176245d8",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国 AI 产业链。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c62ae93e66cb80d9ee0b",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: Data Center。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-e54736c14ff4467174f6",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f5addb0dffce76f1cb8c",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-526f2b93a54139d3e8d1",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-beb88636cacd00ecfbb4",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国算力基础设施。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-22e28cb5921d800d737a",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-7b5a449eccbf37328f78",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国 AI 产业链。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-15ed8e96360061fc6c1f",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Interconnect。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-6576d4e6093e2e3e532c",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-548a58614a559448627e",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: 中国 AI 产业链。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-a16cbca3d8e3c1fdad04",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Interconnect。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-c346e1ebd6d7aec4be3b",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-2133350d30c05f03ad03",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Infrastructure。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-2382b73e0941d4c1f40e",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-dad091a3df1e2f668c3a",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.2,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Interconnect。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    },
+    {
+      "eventId": "evt-f09eb28555fe661d2b44",
+      "band": "watch",
+      "scores": {
+        "topicRelevanceScore": 4.3,
+        "mechanismDepthScore": 1.2,
+        "specificityScore": 3,
+        "researchValueScore": 2,
+        "readerValueScore": 4
+      },
+      "rationale": "确定性回退：沿用来源扫描的五维评分；最高来源层级 D；首个可访问来源 Google News: AI Business。",
+      "reasonCodes": [
+        "deterministic-editorial-fallback",
+        "attributed-reporting-path",
+        "copy-not-generated"
+      ]
+    }
+  ],
+  "errors": [],
+  "completionRequired": []
+}

@@ -1,0 +1,170 @@
+{
+  "schemaVersion": "atlas-daily-remediation.v1",
+  "runId": "atlas-2026-09-09-full",
+  "runDate": "2026-09-09",
+  "generatedAt": "2026-09-09T14:25:58.651Z",
+  "status": "review-incomplete",
+  "manifestStatus": "reviewing",
+  "recoverableRetry": true,
+  "cutoff": "2026-09-09T10:13:23+08:00",
+  "sourceFailures": [
+    "ndrc: fetch failed",
+    "miit: fetch failed",
+    "mep-china: fetch failed",
+    "beijing-gov: fetch failed",
+    "shanghai-gov: fetch failed",
+    "xai-news: HTTP 403",
+    "ap-technology: HTTP 403"
+  ],
+  "scan": {
+    "status": "partial",
+    "freshness": "partial",
+    "stats": {
+      "fetched": 2316,
+      "normalized": 2298,
+      "duplicates": 18,
+      "relevant": 1597,
+      "uncertain": 1,
+      "deepScored": 1597,
+      "clusters": 527,
+      "publicEligible": 0,
+      "rejected": 0,
+      "held": 76,
+      "errors": 7,
+      "routeCounts": {
+        "rumor-watch": 82,
+        "pulse": 369,
+        "policy-index": 0,
+        "research-queue": 0,
+        "hold": 76,
+        "rejected": 0
+      }
+    }
+  },
+  "overlays": {
+    "coreCompanies": {
+      "checked": 50,
+      "hit": 0,
+      "notDetermined": 50
+    },
+    "chinaXpuListed": {
+      "attempted": 7,
+      "completedEvidenceChecks": 0,
+      "notDetermined": 7
+    }
+  },
+  "editor": {
+    "path": "artifacts/event-intelligence/2026-09-09-1630-editor-decision.json",
+    "model": "deterministic-atlas-fallback-v1",
+    "candidateCount": 101,
+    "publishFormal": 5,
+    "publishRumor": 26,
+    "adapterReady": 31,
+    "hold": 70,
+    "completionRequired": 0,
+    "blockingHold": 0
+  },
+  "localGates": {
+    "pending": true
+  },
+  "sections": {
+    "idc-pulse": {
+      "status": "blocked",
+      "releaseDisposition": "hold",
+      "newCount": 0,
+      "heldCount": 2
+    },
+    "listed-companies": {
+      "status": "verified-no-change",
+      "releaseDisposition": "no-change",
+      "newCount": 0,
+      "heldCount": 0
+    },
+    "mna": {
+      "status": "verified-no-change",
+      "releaseDisposition": "no-change",
+      "newCount": 0,
+      "heldCount": 0
+    },
+    "capacity": {
+      "status": "verified-no-change",
+      "releaseDisposition": "no-change",
+      "newCount": 0,
+      "heldCount": 0
+    },
+    "cooling": {
+      "status": "verified-no-change",
+      "releaseDisposition": "no-change",
+      "newCount": 0,
+      "heldCount": 0
+    },
+    "compute-products": {
+      "status": "verified-no-change",
+      "releaseDisposition": "no-change",
+      "newCount": 0,
+      "heldCount": 0
+    },
+    "china-gpu": {
+      "status": "verified-no-change",
+      "releaseDisposition": "no-change",
+      "newCount": 0,
+      "heldCount": 0
+    },
+    "supply-chain": {
+      "status": "blocked",
+      "releaseDisposition": "hold",
+      "newCount": 0,
+      "heldCount": 1
+    },
+    "power-model-demand": {
+      "status": "blocked",
+      "releaseDisposition": "hold",
+      "newCount": 0,
+      "heldCount": 2
+    },
+    "earnings-calendar": {
+      "status": "verified-no-change",
+      "releaseDisposition": "no-change",
+      "newCount": 0,
+      "heldCount": 0
+    },
+    "rumors": {
+      "status": "updated",
+      "releaseDisposition": "publish",
+      "newCount": 26,
+      "heldCount": 0
+    },
+    "policy": {
+      "status": "verified-no-change",
+      "releaseDisposition": "no-change",
+      "newCount": 0,
+      "heldCount": 0
+    },
+    "columns": {
+      "status": "verified-no-change",
+      "releaseDisposition": "no-change",
+      "newCount": 0,
+      "heldCount": 0
+    }
+  },
+  "release": {
+    "includedSections": [
+      "rumors"
+    ],
+    "heldSections": [
+      "idc-pulse",
+      "supply-chain",
+      "power-model-demand"
+    ],
+    "formalAdapterApplied": false,
+    "cloudflareSitesDeployment": "pending",
+    "productionReadback": "pending"
+  },
+  "remoteAudit": {
+    "sourceIngest": "failed-uncertain",
+    "judgmentIngest": "not-attempted-after-source-failure",
+    "attemptedAt": "2026-09-09T14:25:58.650Z",
+    "failure": "Remote source KV put did not return completion and was terminated after bounded wait; no hash/readback proof. Editorial judgment remained local-validated."
+  },
+  "nextWindow": "2026-09-10T04:30:00+08:00"
+}
