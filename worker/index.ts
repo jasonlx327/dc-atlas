@@ -1,4 +1,5 @@
 /** Cloudflare Worker entry point for IDC Atlas. */
+import { liquidCoolingBriefs } from "../app/data/liquid-cooling-briefs";
 import handler from "vinext/server/app-router-entry";
 import { publishedColumnArticles } from "../app/columns/articles";
 import { currentDailyBriefRecord } from "../app/daily-briefs";
@@ -956,6 +957,7 @@ function capacityRadar(): SourceRecord[] {
 
 function coolingProgress(): SourceRecord[] {
   return [
+    ...liquidCoolingBriefs,
     {
       id: "cerebras-mikkeli-closed-loop-2026", title: "Cerebras 芬兰 Mikkeli 园区采用闭环冷却设计", titleEn: "Cerebras Mikkeli campus designed for closed-loop cooling",
       subject: "Cerebras / Compute Nordic", subjectEn: "Cerebras / Compute Nordic",
@@ -3661,7 +3663,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
     dailySnapshot: options.snapshotMeta ?? latestSnapshot,
     supernodes: supernodeProducts(),
     trackedSources: trackedSources(),
-    industryNews: recentNews([...FORMAL_PULSE_SUPPLEMENT, ...FORMAL_LISTED_SUPPLEMENT, ...Object.values(chainNews).flat(), ...networkNews, ...coolingNews, ...powerNews, ...modelNews, ...chinaChipNews], 90, 500),
+    industryNews: recentNews([...liquidCoolingBriefs.map((r): NewsItem => ({ id: r.id, title: r.title, titleEn: r.titleEn, summary: r.note, summaryEn: r.noteEn, publishedAt: r.publishedAt, category: "cooling", score: null, permalink: r.sourceUrl, sourceUrl: r.sourceUrl, sourceName: r.sourceName, signal: "cooling", curator: "官方来源" })),...FORMAL_PULSE_SUPPLEMENT, ...FORMAL_LISTED_SUPPLEMENT, ...Object.values(chainNews).flat(), ...networkNews, ...coolingNews, ...powerNews, ...modelNews, ...chinaChipNews], 90, 500),
     chainNews,
     aiDaily: dailyResult.status === "fulfilled" ? dailyResult.value : null,
     benchmarks: benchmark.benchmarks,
