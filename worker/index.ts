@@ -45,7 +45,7 @@ const AIHOT_USER_AGENT = "aihot-skill/0.3.6 (+https://aihot.virxact.com/aihot-sk
 const CWW_ENDPOINT = "https://cwwindex.today/data/latest.json";
 const OPENROUTER_MODELS_ENDPOINT = "https://openrouter.ai/api/v1/models?sort=top-weekly";
 const ARENA_CODE_ENDPOINT = "https://arena.ai/leaderboard/code/webdev";
-const CONTENT_REVIEWED_AT = "2026-09-03";
+const CONTENT_REVIEWED_AT = "2026-09-08";
 
 function containsEntityTerm(text: string, term: string): boolean {
   const needle = term.trim().toLocaleLowerCase();
@@ -153,7 +153,7 @@ function llmsResearchDirectory(lang: "zh" | "en"): string {
     const title = lang === "zh" ? article.title : article.titleEn;
     const summary = lang === "zh" ? article.summary : article.summaryEn;
     const href = lang === "zh" ? article.href : article.hrefEn;
-    return `- [${title}](https://idc-index.com${href}) (${lang === "zh" ? "发布" : "Published"}: ${article.publishAt}): ${summary}`;
+    return `- [${title}](https://idc-index.com${href}): ${summary}`;
   });
   return `\n## ${lang === "zh" ? "当前已发布研究" : "Current published research"}\n\n${rows.join("\n")}\n`;
 }
@@ -3571,7 +3571,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
       ...fallback.power,
     ], chainWindowDays, 6),
     campus: recentNews([...idcPulse, ...positiveNews, ...news], chainWindowDays, 6),
-    model: recentNews([...FORMAL_PULSE_SUPPLEMENT.filter((item) => ["google-ai-planet-apac-20260907", "openai-research-acceleration-20260906", "aws-bedrock-servicenow-connector-2026"].includes(item.id)), ...editorNewsItems(publicEditorDecision, ["power-model-demand"]), ...modelNews], chainWindowDays, 6),
+    model: recentNews([...FORMAL_PULSE_SUPPLEMENT.filter((item) => ["openai-gpt-image-25-20260908", "google-ai-planet-apac-20260907", "openai-research-acceleration-20260906", "aws-bedrock-servicenow-connector-2026"].includes(item.id)), ...editorNewsItems(publicEditorDecision, ["power-model-demand"]), ...modelNews], chainWindowDays, 6),
   };
 
   const latestSnapshot = await env.IDC_DAILY_SNAPSHOTS.get<DailySnapshotMeta>("latest-meta", "json");
@@ -4019,8 +4019,7 @@ function languagePreferenceResponse(request: Request, url: URL): Response | null
 
   if (url.pathname !== "/") return null;
   const preference = cookieValue(request, LANGUAGE_COOKIE);
-  // Keep language URLs crawlable from every country. Only an explicit reader
-  // preference may redirect the Chinese homepage; IP location is not consent.
+  if (preference === "zh") return null;
   if (preference !== "en") return null;
 
   url.pathname = "/en";

@@ -1,0 +1,662 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-09-08-full",
+  "sources": [
+    {
+      "ref": "global-scan-20260908-event-night",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "IDC Atlas live global event-night scan",
+      "observedAt": "2026-09-08T02:22:10.164Z",
+      "details": {
+        "fetched": 2669,
+        "normalized": 2638,
+        "clusters": 607,
+        "errors": 6,
+        "sourceCount": 77
+      },
+      "sections": [
+        "*"
+      ]
+    },
+    {
+      "ref": "core-company-overlay-20260908",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "IDC Atlas core-company overlay",
+      "observedAt": "2026-09-08T06:22:46.615Z",
+      "details": {
+        "companyCount": 50,
+        "results": {
+          "new/changed": 19,
+          "no-change": 18,
+          "not-determined": 13
+        },
+        "accessStatus": "mixed-source-and-official-entrypoint-check"
+      },
+      "sections": [
+        "listed-companies",
+        "idc-pulse",
+        "capacity",
+        "mna",
+        "power-model-demand"
+      ]
+    },
+    {
+      "ref": "china-xpu-overlay-20260908",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "IDC Atlas China XPU listed-company overlay",
+      "observedAt": "2026-09-08T06:22:46.615Z",
+      "details": {
+        "issuerCount": 7,
+        "attemptedCount": 7,
+        "results": {
+          "new/changed": 0,
+          "no-change": 0,
+          "not-determined": 7
+        },
+        "accessStatus": "issuer-and-exchange-entrypoint-check"
+      },
+      "sections": [
+        "china-gpu",
+        "listed-companies"
+      ]
+    },
+    {
+      "ref": "interconnect-cpo-overlay-20260908",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "IDC Atlas interconnect/CPO overlay",
+      "observedAt": "2026-09-08T06:22:46.615Z",
+      "details": {
+        "companyCount": 20,
+        "results": {
+          "new/changed": 0,
+          "no-change": 13,
+          "not-determined": 7
+        },
+        "accessStatus": "official-entrypoint-check"
+      },
+      "sections": [
+        "supply-chain",
+        "compute-products"
+      ]
+    },
+    {
+      "ref": "editorial-judgment-20260908",
+      "evidenceKind": "workflow-state",
+      "sourceName": "IDC Atlas Codex editorial decision packet",
+      "observedAt": "2026-09-08T02:22:54.347Z",
+      "details": {
+        "publishFormal": 4,
+        "publishRumor": 38,
+        "research": 0,
+        "hold": 82,
+        "reject": 0,
+        "fallbackScored": 124,
+        "adapterReady": 42,
+        "blockingHold": 0
+      },
+      "sections": [
+        "*"
+      ]
+    },
+    {
+      "ref": "core-watch-latest-unauthorized-20260908",
+      "evidenceKind": "runtime-state",
+      "sourceName": "Cloudflare KV core-company-watch latest read",
+      "observedAt": "2026-09-08T06:32:12.347Z",
+      "accessState": "unavailable",
+      "details": {
+        "error": "HTTP 401 Unauthorized from Cloudflare API; no remote write attempted"
+      },
+      "sections": [
+        "listed-companies"
+      ]
+    },
+    {
+      "ref": "formal-evt-272ddd90b483aa1fa1d2",
+      "evidenceKind": "public-source",
+      "sourceName": "dell-blog",
+      "tier": "T1",
+      "canonicalUrl": "https://www.dell.com/en-us/blog/dell-ai-factory-vs-hpe-built-for-day-2/",
+      "publishedAt": "2026-09-07T13:00:32.000Z",
+      "accessState": "public",
+      "independenceGroup": "dell-blog",
+      "sections": [
+        "idc-pulse"
+      ]
+    },
+    {
+      "ref": "formal-evt-b644b9ef2abe20322e00",
+      "evidenceKind": "public-source",
+      "sourceName": "google-developers",
+      "tier": "T1",
+      "canonicalUrl": "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/",
+      "publishedAt": "2026-09-08T02:21:51.549Z",
+      "accessState": "public",
+      "independenceGroup": "google-developers",
+      "sections": [
+        "idc-pulse"
+      ]
+    },
+    {
+      "ref": "formal-evt-dab0a848e191c3054a32",
+      "evidenceKind": "public-source",
+      "sourceName": "google-developers",
+      "tier": "T1",
+      "canonicalUrl": "https://developers.googleblog.com/driving-developer-excellence-inside-the-program-sprints/",
+      "publishedAt": "2026-09-08T02:21:51.549Z",
+      "accessState": "public",
+      "independenceGroup": "google-developers",
+      "sections": [
+        "idc-pulse"
+      ]
+    },
+    {
+      "ref": "formal-evt-d91dd95b130447bab68e",
+      "evidenceKind": "public-source",
+      "sourceName": "google-developers",
+      "tier": "T1",
+      "canonicalUrl": "https://developers.googleblog.com/agent-and-model-evaluations-in-gemini-enterprise-agent-platform-are-now-ga/",
+      "publishedAt": "2026-09-08T02:21:51.549Z",
+      "accessState": "public",
+      "independenceGroup": "google-developers",
+      "sections": [
+        "power-model-demand",
+        "idc-pulse"
+      ]
+    },
+    {
+      "ref": "rumor-evt-1765ddcffaf1a90a49a7",
+      "evidenceKind": "public-source",
+      "sourceName": "marketwatch-top",
+      "tier": "T2",
+      "canonicalUrl": "https://www.marketwatch.com/story/why-the-launch-of-openais-latest-astra-model-reignited-the-memory-chip-trade-809e2edb?mod=mw_rss_topstories",
+      "publishedAt": "2026-09-07T11:36:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "marketwatch-top",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-54bd1236da89a87f2d98",
+      "evidenceKind": "public-source",
+      "sourceName": "techcrunch",
+      "tier": "T3",
+      "canonicalUrl": "https://techcrunch.com/2026/09/07/eric-wus-newest-company-out-of-stealth-since-may-is-going-after-constructions-labor-crunch/",
+      "publishedAt": "2026-09-08T02:16:39.000Z",
+      "accessState": "public",
+      "independenceGroup": "techcrunch",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-3a8b109e97e6bd13895d",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/0/999/500.htm",
+      "publishedAt": "2026-09-07T23:12:53.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-4cc73231176f3032bd20",
+      "evidenceKind": "public-source",
+      "sourceName": "data-center-dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/anthropic-signed-517bn-in-compute-agreements-in-past-11-months/",
+      "publishedAt": "2026-09-07T11:38:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "data-center-dynamics",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-520aa1b5144d4ed4bde5",
+      "evidenceKind": "public-source",
+      "sourceName": "data-center-dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/thailand-pauses-construction-on-49-data-centers-as-it-plans-new-regulations/",
+      "publishedAt": "2026-09-07T10:19:41.000Z",
+      "accessState": "public",
+      "independenceGroup": "data-center-dynamics",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-5bada877f28b9fc1a2dc",
+      "evidenceKind": "public-source",
+      "sourceName": "the-verge",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theverge.com/tech/990958/huawei-mate-xt-2-trifold-launch-china-privacy-display",
+      "publishedAt": "2026-09-07T10:09:42.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-verge",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-4553b39b02db3ce12d5c",
+      "evidenceKind": "public-source",
+      "sourceName": "the-verge",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theverge.com/tech/990918/amazon-cargo-plane-crashed-miami",
+      "publishedAt": "2026-09-06T20:56:38.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-verge",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-d3591910ea19bfe093db",
+      "evidenceKind": "public-source",
+      "sourceName": "fortune",
+      "tier": "T2",
+      "canonicalUrl": "https://fortune.com/2026/09/07/germany-firewall-afd-saxony-anhalt-far-right/",
+      "publishedAt": "2026-09-07T17:39:35.000Z",
+      "accessState": "public",
+      "independenceGroup": "fortune",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-a82273d447e92265abaa",
+      "evidenceKind": "public-source",
+      "sourceName": "marketwatch-top",
+      "tier": "T2",
+      "canonicalUrl": "https://www.marketwatch.com/story/please-dont-let-this-happen-to-you-my-best-friend-died-without-a-will-her-neglectful-family-gets-everything-a4e6753e?mod=mw_rss_topstories",
+      "publishedAt": "2026-09-07T13:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "marketwatch-top",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-3583bc8620b483573be0",
+      "evidenceKind": "public-source",
+      "sourceName": "financial-times-tech",
+      "tier": "T2",
+      "canonicalUrl": "https://www.ft.com/content/9422805f-519c-4b22-839c-cbd7a6464f07?syn-25a6b1a6=1",
+      "publishedAt": "2026-09-06T12:00:02.000Z",
+      "accessState": "public",
+      "independenceGroup": "financial-times-tech",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-2734d3bcbb74b5fc7763",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/0/999/507.htm",
+      "publishedAt": "2026-09-07T23:42:57.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-f042f77504aab90a2c2d",
+      "evidenceKind": "public-source",
+      "sourceName": "the-verge",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theverge.com/tech/990687/sony-announces-xm4c-headphones",
+      "publishedAt": "2026-09-07T16:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-verge",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-16330b0e0ab1f3fce690",
+      "evidenceKind": "public-source",
+      "sourceName": "the-register",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theregister.com/software/2026/09/07/oracle-may-be-next-in-eu-software-licensing-hot-seat-following-sap-deal/5294805",
+      "publishedAt": "2026-09-07T13:56:51.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-register",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-5bbf027a8dccf8dd91b3",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/0/999/454.htm",
+      "publishedAt": "2026-09-07T12:18:31.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-dcd3b865f6c285714526",
+      "evidenceKind": "public-source",
+      "sourceName": "the-verge",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theverge.com/transportation/990319/bentley-torcal-ev-power-ride-sound-v8",
+      "publishedAt": "2026-09-07T11:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-verge",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-1863ee44d2e980c61346",
+      "evidenceKind": "public-source",
+      "sourceName": "data-center-dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/stulz-launches-new-air-cooling-systems-for-edge-data-centers/",
+      "publishedAt": "2026-09-07T10:52:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "data-center-dynamics",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-c888d59d6f52be266f94",
+      "evidenceKind": "public-source",
+      "sourceName": "data-center-dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/ireland-weighs-cut-price-gas-for-data-centers-in-exchange-for-curtailment-report/",
+      "publishedAt": "2026-09-07T10:41:59.000Z",
+      "accessState": "public",
+      "independenceGroup": "data-center-dynamics",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-b4d9df0ea78106eeb136",
+      "evidenceKind": "public-source",
+      "sourceName": "the-register",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theregister.com/off-prem/2026/09/07/thailand-pauses-all-datacenter-builds-and-approvals/5294688",
+      "publishedAt": "2026-09-07T01:05:51.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-register",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-5dd9cf6b8d685155854e",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/0/999/515.htm",
+      "publishedAt": "2026-09-08T00:16:42.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-a50991ec0f1c75f0701b",
+      "evidenceKind": "public-source",
+      "sourceName": "ee-times",
+      "tier": "T3",
+      "canonicalUrl": "https://www.eetimes.com/nvidia-acquires-huggingface-for-12-9b/",
+      "publishedAt": "2026-09-07T15:58:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "ee-times",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-e11cbe85d95ae026efa4",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/0/999/488.htm",
+      "publishedAt": "2026-09-07T14:40:44.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-2e2cb999e182b60be9a5",
+      "evidenceKind": "public-source",
+      "sourceName": "techcrunch",
+      "tier": "T3",
+      "canonicalUrl": "https://techcrunch.com/2026/09/06/authors-push-back-as-publishers-and-agents-seek-share-of-anthropic-settlement/",
+      "publishedAt": "2026-09-06T20:47:37.000Z",
+      "accessState": "public",
+      "independenceGroup": "techcrunch",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-fba4ff420a573fd55784",
+      "evidenceKind": "public-source",
+      "sourceName": "fortune",
+      "tier": "T2",
+      "canonicalUrl": "https://fortune.com/2026/09/07/esports-teams-physical-therapists-player-injuries/",
+      "publishedAt": "2026-09-07T19:34:05.000Z",
+      "accessState": "public",
+      "independenceGroup": "fortune",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-74417a531a9372d72121",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/0/999/502.htm",
+      "publishedAt": "2026-09-07T23:19:04.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-3d365cd2337eb86bb950",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/0/999/501.htm",
+      "publishedAt": "2026-09-07T23:18:56.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-7507b6bfda3856fbc654",
+      "evidenceKind": "public-source",
+      "sourceName": "ee-times",
+      "tier": "T3",
+      "canonicalUrl": "https://www.eetimes.com/kioxias-flash-for-dram-initiative-eyes-ai-workloads/",
+      "publishedAt": "2026-09-07T08:01:30.000Z",
+      "accessState": "public",
+      "independenceGroup": "ee-times",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-fd535edde99186f655d1",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/newswire/hewlett-packard-enterprise-reports-3q-results",
+      "publishedAt": "2026-09-08T02:21:58.521Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-29ce8977c1c7e31c68a6",
+      "evidenceKind": "public-source",
+      "sourceName": "fortune",
+      "tier": "T2",
+      "canonicalUrl": "https://fortune.com/2026/09/07/trump-kills-45-million-support-for-namibia-hiv-program/",
+      "publishedAt": "2026-09-07T17:43:30.000Z",
+      "accessState": "public",
+      "independenceGroup": "fortune",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-41d81bc8c0d1c9591099",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/0/999/508.htm",
+      "publishedAt": "2026-09-07T23:49:12.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-63170bea76681eb915b1",
+      "evidenceKind": "public-source",
+      "sourceName": "data-center-dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/deutsc/",
+      "publishedAt": "2026-09-07T12:04:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "data-center-dynamics",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-7e4b50ce8cf7b6cf0e42",
+      "evidenceKind": "public-source",
+      "sourceName": "data-center-dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/nscale-seeks-35bn-in-pre-ipo-funding-report/",
+      "publishedAt": "2026-09-07T10:15:41.000Z",
+      "accessState": "public",
+      "independenceGroup": "data-center-dynamics",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-2e0405b0f55921d18c54",
+      "evidenceKind": "public-source",
+      "sourceName": "techcrunch",
+      "tier": "T3",
+      "canonicalUrl": "https://techcrunch.com/2026/09/06/phil-schillers-app-store-exit-reportedly-driven-by-wariness-over-future-plans/",
+      "publishedAt": "2026-09-06T21:41:06.000Z",
+      "accessState": "public",
+      "independenceGroup": "techcrunch",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-18c34431384e5b911637",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/newswire/equinix-and-cpp-investments-close-4b-atnorth-acquisition",
+      "publishedAt": "2026-09-08T02:21:58.521Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-557d74d6f20f6d89e544",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/modernization/opinion-huawei-they-may-rip-out-our-networks-theyll-never-take-our-patents",
+      "publishedAt": "2026-09-08T02:21:58.521Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-69cd2d046189dd77c06a",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/broadband/light-source-says-central-us-hot-area-ai-data-centers",
+      "publishedAt": "2026-09-08T02:21:58.521Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-c694aa8dc6d0c3cac717",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/wireless/helium-pitches-its-playbook-carriers-mvnos-and-brands",
+      "publishedAt": "2026-09-08T02:21:58.521Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-4178db8d115a94410d3f",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/broadband/cienas-biggest-problem-keeping-demand-its-optical-products",
+      "publishedAt": "2026-09-08T02:21:58.521Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "rumor-evt-af78c65c3c4504d16246",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/fierce-network-tv/uk-drought-who-gets-drink",
+      "publishedAt": "2026-09-08T02:21:58.521Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    }
+  ]
+}

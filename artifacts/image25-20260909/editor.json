@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "atlas-editor-decision.v1",
+  "generatedAt": "2026-09-09T06:45:00+08:00",
+  "cutoffAt": "2026-09-09T06:45:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "decisions": [
+    {
+      "eventId": "openai-gpt-image-25-20260908",
+      "action": "publish",
+      "route": "formal-section",
+      "section": "compute-products",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially-confirmed",
+      "canonicalUrls": [
+        "https://openai.com/index/introducing-chatgpt-images-2-5/"
+      ],
+      "reasonCodes": [
+        "official-product-launch",
+        "ai-relevance",
+        "user-priority"
+      ],
+      "publicCopy": {
+        "titleZh": "OpenAI 发布 GPT Image 2.5",
+        "titleEn": "OpenAI launches GPT Image 2.5",
+        "summaryZh": "OpenAI 于 9 月 8 日发布 ChatGPT Images 2.5，并推出 Flare 与 Sunburst 两档 API 模型。",
+        "summaryEn": "OpenAI announced ChatGPT Images 2.5 on September 8, alongside Flare and Sunburst API models."
+      },
+      "publicClaims": [
+        {
+          "claim": "OpenAI announced Images 2.5 and Flare/Sunburst API models on September 8, 2026.",
+          "sourceRefs": [
+            "https://openai.com/index/introducing-chatgpt-images-2-5/"
+          ],
+          "state": "source-stated",
+          "qualifier": "Vendor release; latency claims are not independently benchmarked."
+        }
+      ],
+      "internalNotes": [
+        "Date-only precision; detailed enterprise and compute implications explicitly labeled Atlas analysis. Versioned source routes to pulse and model stage."
+      ],
+      "fallbackScored": false
+    }
+  ],
+  "summary": {
+    "publishFormal": 1,
+    "publishRumor": 0,
+    "research": 0,
+    "hold": 0,
+    "reject": 0,
+    "fallbackScored": 0
+  }
+}

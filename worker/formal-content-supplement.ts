@@ -1,4 +1,5 @@
 import { RECOVERY_NEWS } from "./formal-recovery-20260907";
+import { IMAGE25_NEWS } from "./image25-news";
 
 export type FormalNewsSupplement = {
   id: string;
@@ -21,10 +22,12 @@ export type FormalNewsSupplement = {
   whyItMatters: string;
   whyItMattersEn: string;
   verifiedAt?: string;
+  details?: Array<{ heading: string; body: string }>;
+  detailsEn?: Array<{ heading: string; body: string }>;
   lifecycle?: Array<{ label: string; state: "done" | "current" | "next" }>;
 };
 
-export const FORMAL_PULSE_SUPPLEMENT: FormalNewsSupplement[] = [...RECOVERY_NEWS, {
+export const FORMAL_PULSE_SUPPLEMENT: FormalNewsSupplement[] = [IMAGE25_NEWS, ...RECOVERY_NEWS, {
   id: "aws-bedrock-servicenow-connector-2026",
   title: "Amazon Bedrock 托管知识库新增 ServiceNow 原生连接器",
   titleEn: "Amazon Bedrock Managed Knowledge Base adds a native ServiceNow connector",
@@ -255,6 +258,50 @@ export const FORMAL_PULSE_SUPPLEMENT: FormalNewsSupplement[] = [...RECOVERY_NEWS
   whyItMattersEn: "The regional availability update expands hybrid deployment options between on-premises sites and AWS regions. It does not disclose incremental racks, servers or data-center MW, so it is not evidence of newly added physical capacity.",
   verifiedAt: "2026-09-03",
   lifecycle: [{ label: "GovCloud 东部与西部可订购", state: "done" }, { label: "本地混合工作负载部署", state: "current" }, { label: "客户规模与机架量验证", state: "next" }],
+}, {
+  id: "google-gemini-enterprise-developer-sprints-20260908",
+  title: "Google介绍 Gemini Enterprise 开发者体验项目的迭代冲刺",
+  titleEn: "Google details developer-experience sprints for Gemini Enterprise",
+  summary: "Google 的 Gemini Enterprise 开发者体验项目通过持续测试端到端开发流程，改进企业 AI 治理、扩展配置与政策执行，并更新文档和代码示例。",
+  summaryEn: "Google's Gemini Enterprise Developer Experience program uses recurring end-to-end workflow sprints to improve enterprise AI governance, extension configuration, policy enforcement, documentation, and code samples.",
+  publishedAt: "2026-09-08T02:21:51.549Z", category: "idc-software", score: null,
+  permalink: "https://developers.googleblog.com/driving-developer-excellence-inside-the-program-sprints/", sourceUrl: "https://developers.googleblog.com/driving-developer-excellence-inside-the-program-sprints/",
+  sourceName: "Google Developers Blog", signal: "network", curator: "官方来源", region: "全球", milestone: "Gemini Enterprise 开发者体验项目 / 端到端迭代冲刺", scale: "enterprise AI governance · extension configuration · policy enforcement",
+  whyItMatters: "这是一条企业 AI 软件治理与开发者体验信号；原文没有给出数据中心容量、算力采购或资本开支数字。",
+  whyItMattersEn: "This is an enterprise-AI software-governance and developer-experience signal; the source does not disclose data-center capacity, compute procurement or capital expenditure.", verifiedAt: "2026-09-08",
+}, {
+  id: "google-agent-plugins-100-20260908",
+  title: "Agent Plugins 将技能、工具等打包为可移植组件",
+  titleEn: "Agent Plugins package skills, tools, and more as portable units",
+  summary: "Google、Amazon、Microsoft 等支持的 Agent Plugins 1.0.0 采用统一的 plugin.json 清单和目录结构，将 Agent Skills 与 MCP 服务器打包到一个可移植组件中。",
+  summaryEn: "Agent Plugins 1.0.0, backed by Google, Amazon, Microsoft, and others, standardizes a plugin.json manifest and directory layout for packaging Agent Skills and MCP servers into one portable unit.",
+  publishedAt: "2026-09-08T02:21:51.549Z", category: "idc-software", score: null,
+  permalink: "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/", sourceUrl: "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/",
+  sourceName: "Google Developers Blog", signal: "network", curator: "官方来源", region: "全球", milestone: "Agent Plugins 1.0.0 / 可移植插件规范", scale: "plugin.json · Agent Skills · MCP servers · Google/Amazon/Microsoft backing",
+  whyItMatters: "统一清单和目录结构降低 Agent Skills 与 MCP 工具的封装和分发摩擦；这不是数据中心容量或供应商出货确认。",
+  whyItMattersEn: "A common manifest and directory structure lowers packaging and distribution friction for Agent Skills and MCP tools; this is not a data-center-capacity or vendor-shipment confirmation.", verifiedAt: "2026-09-08",
+}, {
+  id: "google-gemini-enterprise-evaluations-ga-20260908",
+  title: "Gemini Enterprise Agent Platform 的智能体与模型评测服务正式 GA",
+  titleEn: "Agent and model evaluations reach GA in Gemini Enterprise Agent Platform",
+  summary: "Gemini Enterprise Agent Platform 的评测服务现已正式可用，支持超过 20 项预置指标、自定义代码或模型评审指标，以及用于多轮测试的模拟器。",
+  summaryEn: "The Gemini Enterprise Agent Platform evaluation service is now generally available, with more than 20 built-in metrics, custom code or LLM-as-a-judge metrics, and simulators for multi-turn testing.",
+  publishedAt: "2026-09-08T02:21:51.549Z", category: "idc-software", score: null,
+  permalink: "https://developers.googleblog.com/agent-and-model-evaluations-in-gemini-enterprise-agent-platform-are-now-ga/", sourceUrl: "https://developers.googleblog.com/agent-and-model-evaluations-in-gemini-enterprise-agent-platform-are-now-ga/",
+  sourceName: "Google Developers Blog", signal: "hardware", curator: "官方来源", region: "全球", milestone: "评测服务 GA / 企业智能体测试工具可用", scale: ">20 built-in metrics · custom code or LLM-as-a-judge · multi-turn simulators",
+  whyItMatters: "评测服务把企业智能体质量、回归和治理纳入可重复测试流程；原文未把 GA 发布等同于新增算力或数据中心需求。",
+  whyItMattersEn: "The evaluation service puts enterprise-agent quality, regression and governance into a repeatable test workflow; the source does not equate GA availability with incremental compute or data-center demand.", verifiedAt: "2026-09-08",
+}, {
+  id: "dell-ai-factory-day-two-operations-20260908",
+  title: "戴尔 AI Factory 与 HPE：是否为第二天运营而建？",
+  titleEn: "Dell AI Factory vs. HPE: are they built for day-two operations?",
+  summary: "戴尔表示，今天作出的平台选择将决定企业明天所采用的 AI 运营模式。该文章讨论平台运营与管理模式，不构成已建成容量、交付规模或资本开支确认。",
+  summaryEn: "Dell says the platform choice made today will define the AI operating model an enterprise uses tomorrow. The article discusses operating and management models; it does not confirm built capacity, delivered scale or capital expenditure.",
+  publishedAt: "2026-09-07T13:00:32.000Z", category: "idc-software", score: null,
+  permalink: "https://www.dell.com/en-us/blog/dell-ai-factory-vs-hpe-built-for-day-2/", sourceUrl: "https://www.dell.com/en-us/blog/dell-ai-factory-vs-hpe-built-for-day-2/",
+  sourceName: "Dell Technologies Blog", signal: "hardware", curator: "官方来源", region: "全球", milestone: "AI 平台运营模式比较", scale: "Dell AI Factory · HPE · day-two operations",
+  whyItMatters: "平台选择正在从部署首日延伸到企业 AI 的持续运维、治理与扩展；文章不提供新的 MW、GPU 或项目交付证明。",
+  whyItMattersEn: "Platform selection is extending from day-one deployment into ongoing enterprise-AI operations, governance and scaling; the article provides no new MW, GPU or project-delivery proof.", verifiedAt: "2026-09-08",
 }];
 
 export const FORMAL_LISTED_SUPPLEMENT: FormalNewsSupplement[] = [

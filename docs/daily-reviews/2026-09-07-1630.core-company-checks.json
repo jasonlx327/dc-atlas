@@ -1,0 +1,1381 @@
+{
+  "schemaVersion": "atlas-core-company-checks.v1",
+  "runId": "atlas-2026-09-07-full",
+  "generatedAt": "2026-09-07T08:49:42.361Z",
+  "cutoff": "2026-09-06T20:11:01+08:00",
+  "cutoffEnd": "2026-09-07T08:49:42.361Z",
+  "companyCount": 50,
+  "companies": [
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "openai-news"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:08.344Z",
+      "sourceCoverage": [
+        {
+          "url": "https://openai.com/news/rss.xml",
+          "resolvedUrl": "https://openai.com/news/rss.xml",
+          "checkedAt": "2026-09-07T08:49:07.449Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "oracle"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:08.845Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.oracle.com/news/",
+          "resolvedUrl": "https://www.oracle.com/news/",
+          "checkedAt": "2026-09-07T08:49:07.449Z",
+          "httpStatus": 403,
+          "accessState": "unavailable",
+          "pageTitle": "fw_error_www",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:09.317Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.anthropic.com/news",
+          "resolvedUrl": "https://www.anthropic.com/news",
+          "checkedAt": "2026-09-07T08:49:07.449Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Newsroom \\ Anthropic",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "meta",
+        "meta-engineering"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:10.934Z",
+      "sourceCoverage": [
+        {
+          "url": "https://about.fb.com/news/feed/",
+          "resolvedUrl": "https://about.fb.com/news/feed/",
+          "checkedAt": "2026-09-07T08:49:07.449Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Newsroom | Meta Newsroom",
+          "datesObserved": [
+            "2026/08/03",
+            "2026/08/02",
+            "2026-08-19"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        },
+        {
+          "url": "https://engineering.fb.com/feed/",
+          "resolvedUrl": "https://engineering.fb.com/feed/",
+          "checkedAt": "2026-09-07T08:49:08.118Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Engineering at Meta",
+          "datesObserved": [
+            "2026/09/03",
+            "2026/09/02",
+            "2026/08/24",
+            "2026/08/12",
+            "2026/08/05",
+            "2026/08/03"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "alibaba",
+      "name": "Alibaba",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:10.942Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.alibabagroup.com/en-US/pressreleases",
+          "resolvedUrl": "https://www.alibabagroup.com/en-US/pressreleases",
+          "checkedAt": "2026-09-07T08:49:08.846Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "xai",
+      "name": "xAI",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "xai-news"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:10.951Z",
+      "sourceCoverage": [
+        {
+          "url": "https://x.ai/news",
+          "resolvedUrl": "https://x.ai/news",
+          "checkedAt": "2026-09-07T08:49:07.450Z",
+          "httpStatus": 403,
+          "accessState": "unavailable",
+          "pageTitle": "Attention Required! | Cloudflare",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "microsoft",
+        "azure-blog"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:11.005Z",
+      "sourceCoverage": [
+        {
+          "url": "https://news.microsoft.com/feed/",
+          "resolvedUrl": "https://news.microsoft.com/feed/",
+          "checkedAt": "2026-09-07T08:49:07.433Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Stories",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        },
+        {
+          "url": "https://azure.microsoft.com/en-us/blog/feed/",
+          "resolvedUrl": "https://azure.microsoft.com/en-us/blog/feed/",
+          "checkedAt": "2026-09-07T08:49:09.957Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Microsoft Azure Blog",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "coreweave",
+      "name": "CoreWeave",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "coreweave"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:11.067Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.coreweave.com/news",
+          "resolvedUrl": "https://www.coreweave.com/newsroom",
+          "checkedAt": "2026-09-07T08:49:08.344Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "News and Press Releases | CoreWeave",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "tesla",
+      "name": "Tesla",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:11.514Z",
+      "sourceCoverage": [
+        {
+          "url": "https://ir.tesla.com/",
+          "resolvedUrl": "https://ir.tesla.com/",
+          "checkedAt": "2026-09-07T08:49:10.951Z",
+          "httpStatus": 403,
+          "accessState": "unavailable",
+          "pageTitle": "Access Denied",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "apple-newsroom"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:11.570Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.apple.com/newsroom/rss-feed.rss",
+          "resolvedUrl": "https://www.apple.com/newsroom/rss-feed.rss",
+          "checkedAt": "2026-09-07T08:49:10.942Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "bytedance",
+      "name": "ByteDance",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:11.737Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.bytedance.com/en/news",
+          "resolvedUrl": "https://www.bytedance.com/en/news",
+          "checkedAt": "2026-09-07T08:49:10.934Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "ByteDance",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "cloudflare-blog"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:12.358Z",
+      "sourceCoverage": [
+        {
+          "url": "https://blog.cloudflare.com/rss/",
+          "resolvedUrl": "https://blog.cloudflare.com/rss/",
+          "checkedAt": "2026-09-07T08:49:11.737Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Cloudflare Blog",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "tencent",
+      "name": "Tencent",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:13.116Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.tencent.com/en-us/articles.html",
+          "resolvedUrl": "https://www.tencent.com/articles.html",
+          "checkedAt": "2026-09-07T08:49:09.317Z",
+          "httpStatus": 404,
+          "accessState": "unavailable",
+          "pageTitle": "Page not found - Tencent",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "servicenow",
+      "name": "ServiceNow",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:13.958Z",
+      "sourceCoverage": [
+        {
+          "url": "https://newsroom.servicenow.com/press-releases",
+          "resolvedUrl": "https://newsroom.servicenow.com/press-releases/",
+          "checkedAt": "2026-09-07T08:49:11.514Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Press Release Announcements - ServiceNow Newsroom",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "layer": "model-application",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:13.983Z",
+      "sourceCoverage": [
+        {
+          "url": "https://api-docs.deepseek.com/news/",
+          "resolvedUrl": "https://api-docs.deepseek.com/news/",
+          "checkedAt": "2026-09-07T08:49:13.116Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Your First API Call | DeepSeek API Docs",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "alphabet",
+      "name": "Alphabet",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "google-cloud",
+        "google-ai-blog",
+        "google-developers"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:14.201Z",
+      "sourceCoverage": [
+        {
+          "url": "https://cloud.google.com/blog/rss",
+          "resolvedUrl": "https://cloud.google.com/blog/rss",
+          "checkedAt": "2026-09-07T08:49:07.448Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Google Cloud Blog",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        },
+        {
+          "url": "https://blog.google/technology/ai/rss/",
+          "resolvedUrl": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+          "checkedAt": "2026-09-07T08:49:09.809Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "AI",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        },
+        {
+          "url": "https://developers.googleblog.com/feeds/posts/default",
+          "resolvedUrl": "https://developers.googleblog.com/feeds/posts/default/",
+          "checkedAt": "2026-09-07T08:49:11.833Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Google Developers Blog",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:14.321Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.perplexity.ai/hub",
+          "resolvedUrl": "https://www.perplexity.ai/hub",
+          "checkedAt": "2026-09-07T08:49:13.983Z",
+          "httpStatus": 403,
+          "accessState": "unavailable",
+          "pageTitle": "Just a moment...",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:14.602Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.salesforce.com/news/press-releases/",
+          "resolvedUrl": "https://www.salesforce.com/news/press-releases/?bc=DB",
+          "checkedAt": "2026-09-07T08:49:11.067Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Press Releases Archive - Salesforce",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "asml",
+      "name": "ASML",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:14.782Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.asml.com/en/news/press-releases",
+          "resolvedUrl": "https://www.asml.com/en/news/press-releases",
+          "checkedAt": "2026-09-07T08:49:14.201Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Press releases | ASML - Supplying the semiconductor industry",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "palantir",
+      "name": "Palantir",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:15.897Z",
+      "sourceCoverage": [
+        {
+          "url": "https://investors.palantir.com/news-events/press-releases",
+          "resolvedUrl": "https://investors.palantir.com/news-events/press-releases",
+          "checkedAt": "2026-09-07T08:49:11.006Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Palantir IR",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "lam-research",
+      "name": "Lam Research",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:15.908Z",
+      "sourceCoverage": [
+        {
+          "url": "https://newsroom.lamresearch.com/press-releases",
+          "resolvedUrl": "https://newsroom.lamresearch.com/press-releases",
+          "checkedAt": "2026-09-07T08:49:14.602Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Lam Research Newsroom - Press Releases",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "amd"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:17.405Z",
+      "sourceCoverage": [
+        {
+          "url": "https://ir.amd.com/rss/news-releases.xml",
+          "resolvedUrl": "https://ir.amd.com/news-events/press-releases/rss",
+          "checkedAt": "2026-09-07T08:49:15.897Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Advanced Micro Devices, Inc. (AMD) Press Releases",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "marvell",
+      "name": "Marvell",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:17.941Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.marvell.com/company/newsroom.html",
+          "resolvedUrl": "https://www.marvell.com/company/newsroom.html",
+          "checkedAt": "2026-09-07T08:49:17.405Z",
+          "httpStatus": 403,
+          "accessState": "unavailable",
+          "pageTitle": "Access Denied",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "aws-news"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:17.945Z",
+      "sourceCoverage": [
+        {
+          "url": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
+          "checkedAt": "2026-09-07T08:49:07.448Z",
+          "accessState": "unavailable",
+          "error": "fetch failed",
+          "status": "not-determined"
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "nvidia",
+        "nvidia-developer"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:18.128Z",
+      "sourceCoverage": [
+        {
+          "url": "https://nvidianews.nvidia.com/rss.xml",
+          "resolvedUrl": "https://nvidianews.nvidia.com/rss.xml",
+          "checkedAt": "2026-09-07T08:49:14.782Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "NVIDIA Newsroom",
+          "datesObserved": [
+            "2026/08/25"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        },
+        {
+          "url": "https://developer.nvidia.com/blog/feed/",
+          "resolvedUrl": "https://developer.nvidia.com/blog/feed/",
+          "checkedAt": "2026-09-07T08:49:16.496Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "NVIDIA Technical Blog",
+          "datesObserved": [
+            "2026-09-04",
+            "2026-09-03",
+            "2026-09-02",
+            "2026-09-01",
+            "2026-08-31",
+            "2026-08-28",
+            "2026-08-26",
+            "2026-08-25",
+            "2026-08-24",
+            "2026-08-27",
+            "2026-08-21",
+            "2026-08-20"
+          ],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "tsmc",
+      "name": "TSMC",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:19.287Z",
+      "sourceCoverage": [
+        {
+          "url": "https://pr.tsmc.com/english/news",
+          "resolvedUrl": "https://pr.tsmc.com/english/news",
+          "checkedAt": "2026-09-07T08:49:17.941Z",
+          "httpStatus": 403,
+          "accessState": "unavailable",
+          "pageTitle": "Just a moment...",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "sk-hynix",
+      "name": "SK hynix",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [
+        "sk-hynix-newsroom"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:19.307Z",
+      "sourceCoverage": [
+        {
+          "url": "https://news.skhynix.com/feed/",
+          "resolvedUrl": "https://news.skhynix.com/en/feed/",
+          "checkedAt": "2026-09-07T08:49:17.946Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "SK hynix Newsroom",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung Electronics",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [
+        "samsung-global-newsroom"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:20.244Z",
+      "sourceCoverage": [
+        {
+          "url": "https://news.samsung.com/global/feed",
+          "resolvedUrl": "https://news.samsung.com/global/feed",
+          "checkedAt": "2026-09-07T08:49:19.287Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Samsung Global Newsroom",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "layer": "model-application",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:20.251Z",
+      "sourceCoverage": [
+        {
+          "url": "https://mistral.ai/news",
+          "resolvedUrl": "https://mistral.ai/news/",
+          "checkedAt": "2026-09-07T08:49:13.958Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Latest news | Mistral",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "arista",
+      "name": "Arista Networks",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:20.428Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.arista.com/en/company/news/press-release",
+          "resolvedUrl": "https://www.arista.com/en/company/news/press-release",
+          "checkedAt": "2026-09-07T08:49:19.307Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Press Releases - Arista",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "micron",
+      "name": "Micron",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:20.912Z",
+      "sourceCoverage": [
+        {
+          "url": "https://investors.micron.com/news-releases",
+          "resolvedUrl": "https://investors.micron.com/news-releases/",
+          "checkedAt": "2026-09-07T08:49:18.128Z",
+          "httpStatus": 404,
+          "accessState": "unavailable",
+          "pageTitle": "Page Not Found",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "supermicro",
+      "name": "Supermicro",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:21.090Z",
+      "sourceCoverage": [
+        {
+          "url": "https://ir.supermicro.com/news/default.aspx",
+          "resolvedUrl": "https://ir.supermicro.com/news/default.aspx",
+          "checkedAt": "2026-09-07T08:49:20.251Z",
+          "httpStatus": 403,
+          "accessState": "unavailable",
+          "pageTitle": "Just a moment...",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "snowflake",
+      "name": "Snowflake",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:21.943Z",
+      "sourceCoverage": [
+        {
+          "url": "https://investors.snowflake.com/news",
+          "checkedAt": "2026-09-07T08:49:11.570Z",
+          "accessState": "unavailable",
+          "error": "fetch failed",
+          "status": "not-determined"
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "huawei",
+      "name": "Huawei",
+      "layer": "compute-silicon",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:22.291Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.huawei.com/en/news/",
+          "resolvedUrl": "https://www.huawei.com/en/news/",
+          "checkedAt": "2026-09-07T08:49:20.428Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Newsroom - Huawei",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "equinix",
+      "name": "Equinix",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "equinix-ir"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:23.648Z",
+      "sourceCoverage": [
+        {
+          "url": "https://investor.equinix.com/rss/news-releases.xml",
+          "resolvedUrl": "https://investor.equinix.com/news-events/press-releases/rss",
+          "checkedAt": "2026-09-07T08:49:20.912Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Equinix, Inc. (EQIX) Press Releases",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "schneider-electric",
+      "name": "Schneider Electric",
+      "layer": "capacity-power",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:25.574Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.se.com/ww/en/about-us/newsroom/",
+          "resolvedUrl": "https://www.se.com/ww/en/about-us/newsroom/",
+          "checkedAt": "2026-09-07T08:49:22.291Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Newsroom | Schneider Electric",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "vertiv",
+      "name": "Vertiv",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:25.711Z",
+      "sourceCoverage": [
+        {
+          "url": "https://investors.vertiv.com/news/news-releases",
+          "resolvedUrl": "https://investors.vertiv.com/news/news-releases",
+          "checkedAt": "2026-09-07T08:49:21.943Z",
+          "httpStatus": 403,
+          "accessState": "unavailable",
+          "pageTitle": "Just a moment...",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "ge-vernova",
+      "name": "GE Vernova",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:26.035Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.gevernova.com/news/press-releases",
+          "checkedAt": "2026-09-07T08:49:25.574Z",
+          "accessState": "unavailable",
+          "error": "fetch failed",
+          "status": "not-determined"
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "dell",
+      "name": "Dell Technologies",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "dell"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:26.252Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.dell.com/en-us/dt/corporate/newsroom.htm",
+          "resolvedUrl": "https://www.dell.com/en-us/dt/corporate/newsroom.htm",
+          "checkedAt": "2026-09-07T08:49:20.244Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Newsroom | Dell USA",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "hut-8",
+      "name": "Hut 8",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "hut8"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:26.664Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.hut8.com/news-insights/press-releases",
+          "checkedAt": "2026-09-07T08:49:25.711Z",
+          "accessState": "unavailable",
+          "error": "fetch failed",
+          "status": "not-determined"
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "galaxy-digital",
+      "name": "Galaxy Digital",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "galaxy"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:27.200Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.galaxy.com/newsroom",
+          "resolvedUrl": "https://www.galaxy.com/newsroom",
+          "checkedAt": "2026-09-07T08:49:26.252Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Newsroom | Galaxy",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "baidu",
+      "name": "Baidu",
+      "layer": "model-application",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:27.360Z",
+      "sourceCoverage": [
+        {
+          "url": "https://ir.baidu.com/news-releases",
+          "checkedAt": "2026-09-07T08:49:12.359Z",
+          "accessState": "unavailable",
+          "error": "The operation was aborted due to timeout",
+          "status": "not-determined"
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "terawulf",
+      "name": "TeraWulf",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "terawulf"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:29.061Z",
+      "sourceCoverage": [
+        {
+          "url": "https://investors.terawulf.com/news-events/press-releases",
+          "resolvedUrl": "https://investors.terawulf.com/news-events/press-releases",
+          "checkedAt": "2026-09-07T08:49:26.035Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Press Releases :: TeraWulf Inc. (WULF)",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "applied-materials",
+      "name": "Applied Materials",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:29.323Z",
+      "sourceCoverage": [
+        {
+          "url": "https://ir.appliedmaterials.com/news-releases",
+          "checkedAt": "2026-09-07T08:49:14.321Z",
+          "accessState": "unavailable",
+          "error": "The operation was aborted due to timeout",
+          "status": "not-determined"
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "broadcom",
+      "name": "Broadcom",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:30.908Z",
+      "sourceCoverage": [
+        {
+          "url": "https://investors.broadcom.com/news-releases",
+          "checkedAt": "2026-09-07T08:49:15.908Z",
+          "accessState": "unavailable",
+          "error": "The operation was aborted due to timeout",
+          "status": "not-determined"
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "applied-digital",
+      "name": "Applied Digital",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:32.389Z",
+      "sourceCoverage": [
+        {
+          "url": "https://ir.applieddigital.com/news-events/press-releases",
+          "checkedAt": "2026-09-07T08:49:27.200Z",
+          "accessState": "unavailable",
+          "error": "fetch failed",
+          "status": "not-determined"
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "digital-realty",
+      "name": "Digital Realty",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "digital-realty"
+      ],
+      "lastCheckedAt": "2026-09-07T08:49:36.092Z",
+      "sourceCoverage": [
+        {
+          "url": "https://investor.digitalrealty.com/news/default.aspx",
+          "checkedAt": "2026-09-07T08:49:21.090Z",
+          "accessState": "unavailable",
+          "error": "The operation was aborted due to timeout",
+          "status": "not-determined"
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "riot-platforms",
+      "name": "Riot Platforms",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:36.166Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.riotplatforms.com/news-media/press-releases/",
+          "resolvedUrl": "https://www.riotplatforms.com/investors/press-releases/",
+          "checkedAt": "2026-09-07T08:49:26.664Z",
+          "httpStatus": 200,
+          "accessState": "public",
+          "pageTitle": "Press Releases | Riot Platforms",
+          "datesObserved": [],
+          "status": "not-determined",
+          "note": "Current transport and index probe only; individual disclosures not fully reviewed."
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "eaton",
+      "name": "Eaton",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:38.650Z",
+      "sourceCoverage": [
+        {
+          "url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases.html",
+          "checkedAt": "2026-09-07T08:49:23.648Z",
+          "accessState": "unavailable",
+          "error": "The operation was aborted due to timeout",
+          "status": "not-determined"
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    },
+    {
+      "id": "gds",
+      "name": "GDS Holdings",
+      "layer": "capacity-power",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-07T08:49:42.360Z",
+      "sourceCoverage": [
+        {
+          "url": "https://investors.gds-services.com/news-releases",
+          "checkedAt": "2026-09-07T08:49:27.360Z",
+          "accessState": "unavailable",
+          "error": "The operation was aborted due to timeout",
+          "status": "not-determined"
+        }
+      ],
+      "result": "not-determined",
+      "resultReason": "Source requests completed; semantic editorial review and archive completeness remain unresolved."
+    }
+  ]
+}
