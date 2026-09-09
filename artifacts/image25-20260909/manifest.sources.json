@@ -1,0 +1,5 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-09-09-full",
+  "sources": [{"ref":"openai-image25","sourceName":"OpenAI","tier":"T1","canonicalUrl":"https://openai.com/index/introducing-chatgpt-images-2-5/","publishedAt":"2026-09-08","accessState":"public","independenceGroup":"openai","sections":["idc-pulse","supply-chain"],"notes":"Date only: no precise publication time assumed. Official product claims are attributed; no independent benchmark claimed."}]
+}

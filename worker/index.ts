@@ -3571,7 +3571,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
       ...fallback.power,
     ], chainWindowDays, 6),
     campus: recentNews([...idcPulse, ...positiveNews, ...news], chainWindowDays, 6),
-    model: recentNews([...FORMAL_PULSE_SUPPLEMENT.filter((item) => ["google-ai-planet-apac-20260907", "openai-research-acceleration-20260906", "aws-bedrock-servicenow-connector-2026"].includes(item.id)), ...editorNewsItems(publicEditorDecision, ["power-model-demand"]), ...modelNews], chainWindowDays, 6),
+    model: recentNews([...FORMAL_PULSE_SUPPLEMENT.filter((item) => ["openai-gpt-image-25-20260908", "google-ai-planet-apac-20260907", "openai-research-acceleration-20260906", "aws-bedrock-servicenow-connector-2026"].includes(item.id)), ...editorNewsItems(publicEditorDecision, ["power-model-demand"]), ...modelNews], chainWindowDays, 6),
   };
 
   const latestSnapshot = await env.IDC_DAILY_SNAPSHOTS.get<DailySnapshotMeta>("latest-meta", "json");

@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { AtlasReadingPanel } from "./atlas-reading-panel";
+import type { DeskRecord } from "./desk-model";
 import { IntelligenceConsoleShell } from "./intelligence-console-overview";
 import { shouldAdoptPayload, sortNewest } from "./intelligence-model";
 import {
@@ -49,6 +51,8 @@ function hasOfficialResponse(item: RumorWatchItem): boolean {
 
 function WatchIndex({ lang, kind, initialPayload = null }: Props) {
   const isZh = lang === "zh";
+  const [reading, setReading] = useState<DeskRecord | null>(null);
+  const closeReading = useCallback(() => setReading(null), []);
   const [payload, setPayload] = useState<Partial<WatchPayload> | null>(initialPayload);
   const [filter, setFilter] = useState<"all" | "US" | "中国" | "美国" | "全球">("all");
   const policy = payload?.policyStatus === "policy-briefs" && payload.policyIndex?.length
@@ -113,6 +117,7 @@ function WatchIndex({ lang, kind, initialPayload = null }: Props) {
     pageLabel={pageLabel}
     className={`atlas-watch-shell atlas-${kind}-shell`}
   >
+    <AtlasReadingPanel record={reading} lang={lang} onClose={closeReading} />
     <div className={`watch-page ${kind === "policy" ? "policy-page" : "rumor-page"}`}>
       <header className="watch-hero">
         <span>{kind === "policy" ? "POLICY WATCH · DIRECT IMPACT" : "GLOBAL INTELLIGENCE · SOURCE LINKED"}</span>
@@ -175,6 +180,7 @@ function WatchIndex({ lang, kind, initialPayload = null }: Props) {
             <span>{isZh ? "公开回应" : "PUBLIC RESPONSE"}</span>
             <p>{isZh ? item.officialResponse : item.officialResponseEn}</p>
           </div>
+          <button className="desk-preview-button" onClick={() => setReading({ id: `media:${item.id}`, kind: "media", title: isZh ? item.title : item.titleEn, summary: isZh ? item.summary : item.summaryEn, date: item.publishedAt, source: item.sourceName, sourceHref: item.sourceUrl, href: detailHref(item.id) || item.sourceUrl, response: isZh ? item.officialResponse : item.officialResponseEn, evidence: isZh ? item.statusLabel : item.statusLabelEn })}>{isZh ? "侧栏速读 ↗" : "Quick read ↗"}</button>
           <p className="watch-source-note">{isZh ? item.sourceNote : item.sourceNoteEn}</p>
           <ol className="watch-status-track" aria-label={isZh ? "情报状态" : "Intelligence status"}>
             <li className="active"><span>1</span>{isZh ? "公开报道" : "Reported"}</li>

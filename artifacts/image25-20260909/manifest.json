@@ -1,0 +1,252 @@
+{
+  "schemaVersion": "1.1",
+  "runId": "atlas-2026-09-09-full",
+  "runDate": "2026-09-09",
+  "cutoff": "2026-09-09T06:33:40+08:00",
+  "displayTimezones": {
+    "zh": "Asia/Shanghai",
+    "en": "America/New_York"
+  },
+  "status": "started",
+  "projectPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-image25-20260909",
+  "sourceLedgerPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-image25-20260909/artifacts/image25-20260909/manifest.sources.json",
+  "host": "XlargedeMacBook-Air.local",
+  "headBefore": "d0b49d0a94b88ac2c042cc7e1856ce96dfc561d0",
+  "sections": {
+    "idc-pulse": {
+      "status": "updated",
+      "checkedAt": "2026-09-09T06:33:40+08:00",
+      "newIds": [
+        "openai-gpt-image-25-20260908"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "openai-image25"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Official launch and bilingual reading details. Latency attributed; Atlas implications identified."
+    },
+    "listed-companies": {
+      "status": "blocked",
+      "checkedAt": "2026-09-09T06:33:40+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "section review not started"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Outside this urgent single-event update; existing content retained."
+    },
+    "mna": {
+      "status": "blocked",
+      "checkedAt": "2026-09-09T06:33:40+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "section review not started"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Outside this urgent single-event update; existing content retained."
+    },
+    "capacity": {
+      "status": "blocked",
+      "checkedAt": "2026-09-09T06:33:40+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "section review not started"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Outside this urgent single-event update; existing content retained."
+    },
+    "cooling": {
+      "status": "blocked",
+      "checkedAt": "2026-09-09T06:33:40+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "section review not started"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Outside this urgent single-event update; existing content retained."
+    },
+    "compute-products": {
+      "status": "blocked",
+      "checkedAt": "2026-09-09T06:33:40+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "section review not started"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Outside this urgent single-event update; existing content retained."
+    },
+    "china-gpu": {
+      "status": "blocked",
+      "checkedAt": "2026-09-09T06:33:40+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "section review not started"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Outside this urgent single-event update; existing content retained."
+    },
+    "supply-chain": {
+      "status": "updated",
+      "checkedAt": "2026-09-09T06:33:40+08:00",
+      "newIds": [
+        "openai-gpt-image-25-20260908"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "openai-image25"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Official launch and bilingual reading details. Latency attributed; Atlas implications identified."
+    },
+    "power-model-demand": {
+      "status": "blocked",
+      "checkedAt": "2026-09-09T06:33:40+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "section review not started"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Outside this urgent single-event update; existing content retained."
+    },
+    "earnings-calendar": {
+      "status": "blocked",
+      "checkedAt": "2026-09-09T06:33:40+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "section review not started"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Outside this urgent single-event update; existing content retained."
+    },
+    "rumors": {
+      "status": "blocked",
+      "checkedAt": "2026-09-09T06:33:40+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "section review not started"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Outside this urgent single-event update; existing content retained."
+    },
+    "policy": {
+      "status": "blocked",
+      "checkedAt": "2026-09-09T06:33:40+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "section review not started"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Outside this urgent single-event update; existing content retained."
+    },
+    "columns": {
+      "status": "blocked",
+      "checkedAt": "2026-09-09T06:33:40+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "section review not started"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Outside this urgent single-event update; existing content retained."
+    }
+  },
+  "release": {
+    "mode": "partial",
+    "tests": "passed",
+    "build": "passed",
+    "cloudflare": "pending",
+    "formalReadback": "pending",
+    "dailySnapshot": "pending",
+    "sites": "pending",
+    "sitesReadback": "pending",
+    "commit": null,
+    "workerCommit": null,
+    "sitesCommit": null,
+    "cloudflareVersion": null,
+    "sitesVersion": null,
+    "formalUrl": null,
+    "sitesUrl": null,
+    "includedSections": [
+      "idc-pulse",
+      "supply-chain"
+    ],
+    "heldSections": [
+      "listed-companies",
+      "mna",
+      "capacity",
+      "cooling",
+      "compute-products",
+      "china-gpu",
+      "power-model-demand",
+      "earnings-calendar",
+      "rumors",
+      "policy",
+      "columns"
+    ],
+    "testBaseline": null
+  },
+  "blockers": []
+}
