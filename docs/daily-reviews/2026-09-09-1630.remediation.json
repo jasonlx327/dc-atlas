@@ -3,8 +3,8 @@
   "runId": "atlas-2026-09-09-full",
   "runDate": "2026-09-09",
   "generatedAt": "2026-09-09T14:25:58.651Z",
-  "status": "review-incomplete",
-  "manifestStatus": "reviewing",
+  "status": "partially-published",
+  "manifestStatus": "ready-for-partial-release",
   "recoverableRetry": true,
   "cutoff": "2026-09-09T10:13:23+08:00",
   "sourceFailures": [
@@ -65,7 +65,12 @@
     "blockingHold": 0
   },
   "localGates": {
-    "pending": true
+    "lint": "passed-with-warnings",
+    "build": "passed",
+    "tests": "passed (67/67 after Sites baseline merge)",
+    "cloudflareDryRun": "passed",
+    "formalReadback": "passed",
+    "sitesArchive": "failed twice: 60s upload timeout"
   },
   "sections": {
     "idc-pulse": {
@@ -157,8 +162,8 @@
       "power-model-demand"
     ],
     "formalAdapterApplied": false,
-    "cloudflareSitesDeployment": "pending",
-    "productionReadback": "pending"
+    "cloudflareSitesDeployment": "Worker deployed; Sites blocked before version save",
+    "productionReadback": "Worker/API/columns passed; Sites new-version readback unavailable"
   },
   "remoteAudit": {
     "sourceIngest": "failed-uncertain",
