@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { IndustryBrowser } from "./industry-browser";
 import QRCode from "qrcode";
 import { ChainIcon, type ChainKey } from "./chain-icon";
 import { publishedColumnArticles } from "./columns/articles";
@@ -70,6 +71,7 @@ type DailySnapshotMeta = { date: string; generatedAt: string; source: "scheduled
 type CalendarEvent = { id: string; startsAt: string; company: string; ticker: string; sector: string; description: string; focus: string; sourceName: string; sourceUrl: string; conclusion?: { summary: string; sourceName: string; sourceUrl: string } };
 
 export type AtlasPayload = {
+  industryNews?: NewsItem[];
   generatedAt: string;
   contentReviewedAt: string;
   contentVersion?: string;
@@ -425,9 +427,9 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
     pageLabel="产业链地图"
     className="atlas-industry-shell"
   ><div id="top" className="content-hub industry-hub atlas-console-content-page atlas-industry-page">
-    <section className="hub-hero industry-hub-hero"><p>IDC ATLAS · INFRASTRUCTURE CENTER</p><h1>从芯片到电网，<br /><em>AI 正在变成基础设施。</em></h1><p>算力硬件、国产 GPU、模型需求、大型园区与液冷工程的最新公开进展。</p><div><span>6 个产业节点</span><span>{products.length} 个硬件产品</span><span>{includedCapacity.length} 个园区进展</span></div></section>
+    <section className="hub-hero industry-hub-hero"><p>IDC ATLAS · INFRASTRUCTURE CENTER</p><h1>AI 基础设施产业链</h1><p>算力硬件、国产 GPU、模型需求、大型园区与液冷工程的最新公开进展。</p><div><span>8 个产业板块</span><span>{products.length} 个硬件产品</span><span>{includedCapacity.length} 个园区进展</span></div></section>
     <nav className="hub-tabs industry-tabs" aria-label="产业中心内容分类">{([["chain", "产业链"], ["hardware", "NVIDIA / AMD"], ["china", "中国 GPU"], ["models", "模型需求"], ["campus", "园区容量"], ["cooling", "液冷"]] as const).map(([key, label]) => <button key={key} className={industryHubTab === key ? "active" : ""} aria-pressed={industryHubTab === key} onClick={() => setIndustryHubTab(key)}><span>{label}</span></button>)}</nav>
-    {industryHubTab === "chain" && <section className="section chain-section hub-content-section"><div className="hub-filter-row inverse"><div><span>SUPPLY CHAIN · 6 NODES</span><h2>产业链最新信号</h2></div><p>点击节点切换最近 {payload?.chainWindowDays ?? 30} 天动态。</p></div><div className="chain-stage-row">{chainStages.map((stage) => <button key={stage.key} className={`chain-stage ${stage.className} ${activeStage === stage.key ? "active" : ""}`} onClick={() => setActiveStage(stage.key)} aria-pressed={activeStage === stage.key}><span>{stage.no}</span><i className="chain-stage-icon"><ChainIcon type={stage.key} /></i><strong>{stage.title}</strong><small>{stage.caption}</small></button>)}</div><div className="chain-detail"><div className="chain-detail-head"><span>SELECTED NODE</span><h3>{currentStage.title}</h3><p>{currentStage.caption} · 最近公开动态</p></div><div className="chain-news">{activeNews.map((item) => <NewsCard key={item.id} item={item} compact />)}</div></div></section>}
+    {industryHubTab === "chain" && <IndustryBrowser items={payload?.industryNews ?? Object.values(payload?.chainNews ?? {}).flat()} loading={!payload} asOf={payload?.generatedAt} />}
     {industryHubTab === "hardware" && <section className="section hub-content-section"><div className="hub-filter-row"><div><span>NVIDIA &amp; AMD PRODUCT RADAR</span><h2>产品与发布节奏</h2></div></div><div className="product-stack hub-product-grid">{products.map((product, index) => <article className="product-card" key={product.id}><div className="product-art">{product.imageSrc && <img src={product.imageSrc} alt={product.imageAlt ?? `${product.vendor} 产品图`} loading="lazy" />}</div><div className="product-copy"><p>{product.vendor} · PRODUCT {String(index + 1).padStart(2, "0")}</p><h3>{product.model}</h3><strong>{product.form}</strong><span>{product.spec}</span><dl><div><dt>发布</dt><dd>{product.release}</dd></div><div><dt>价格</dt><dd>{product.price}</dd></div></dl><a href={product.sourceUrl} target="_blank" rel="noreferrer">{product.vendor} 官方资料<ExternalIcon /></a></div></article>)}</div></section>}
     {industryHubTab === "china" && <section className="section china-chip-section hub-content-section"><div className="hub-filter-row inverse"><div><span>CHINA GPU &amp; AI SILICON</span><h2>中国 GPU 与超节点</h2></div></div><div className="supernode-grid">{supernodes.map((product, index) => <SupernodeCard key={product.id} product={product} index={index} />)}</div><div className="china-chip-grid hub-secondary-grid">{chinaChipNews.map((item, index) => <ChinaChipCard key={item.id} item={item} index={index} />)}</div></section>}
     {industryHubTab === "models" && <section className="section model-section hub-content-section"><div className="hub-filter-row inverse"><div><span>MODEL DEMAND &amp; CAPABILITY</span><h2>模型需求与公开评测</h2></div></div><div className="model-grid">{modelNews.map((item, index) => <article className="model-card" key={item.id}><div className="model-card-top"><span>{String(index + 1).padStart(2, "0")}</span><time>{formatRelativeTime(item.publishedAt)}</time></div><h3><a href={item.permalink} target="_blank" rel="noreferrer">{item.title}</a></h3><p>{item.summary}</p>{benchmarkLine(item) && <div className="benchmark-line"><span>PUBLIC BENCHMARK</span><strong>{benchmarkLine(item)}</strong></div>}<SourceRow item={item} /></article>)}</div></section>}

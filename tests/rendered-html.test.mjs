@@ -286,7 +286,7 @@ test("publishes focused Pulse and Industry content hubs", async () => {
   const industry = await render("/industry");
   assert.equal(industry.status, 200);
   const industryHtml = await industry.text();
-  assert.match(industryHtml, /从芯片到电网，/);
+  assert.match(industryHtml, /AI 基础设施产业链/);
   assert.match(industryHtml, /hrefLang="en" href="https:\/\/idc-index\.com\/en\/industry"/);
   assert.match(industryHtml, /"@type":"CollectionPage"/);
   assert.match(industryHtml, /NVIDIA \/ AMD/);
@@ -417,12 +417,12 @@ test("renders the English research console and focused content routes", async (t
   const industry = await render("/en/industry");
   assert.equal(industry.status, 200);
   const industryHtml = await industry.text();
-  assert.match(industryHtml, /From silicon to grid,/);
+  assert.match(industryHtml, /AI infrastructure supply chain/);
   assert.match(industryHtml, /hrefLang="zh-CN" href="https:\/\/idc-index\.com\/industry"/);
   assert.match(industryHtml, /"@type":"CollectionPage"/);
   assert.match(industryHtml, /Industry/);
   assert.match(industryHtml, /China watch/);
-  assert.match(industryHtml, /Six infrastructure nodes/);
+  assert.match(industryHtml, /What changed across the stack/);
 });
 
 test("publishes searchable bilingual entity profiles", async () => {
@@ -590,8 +590,7 @@ test("keeps the English site fully translated across the live coverage stack", a
   assert.doesNotMatch(source, /lang="zh-CN"/);
   assert.match(overview, /publishedColumnArticles\(\)\.slice\(0, 5\)/);
   assert.match(overview, /hrefEn: "\/en\/columns"/);
-  assert.match(source, /className="english-chain-icon"/);
-  assert.match(source, /<ChainIcon type=/);
+  assert.match(source, /<IndustryBrowser en/);
   assert.match(overview, /article\.hrefEn/);
   assert.match(source, /view === "pulse"/);
 });
@@ -1052,7 +1051,7 @@ test("keeps formally released records in versioned content and cache identity", 
   assert.match(workerSource, /function recentNews[\s\S]*\.sort\(\(a, b\) => Date\.parse\(b\.publishedAt/);
   assert.match(workerSource, /relationSchemaVersion = "entity-brief-v3"/);
   assert.match(workerSource, /publicFeedVersion = "rumor-archive-v2"/);
-  assert.match(workerSource, /chainRoutingVersion = "formal-cross-route-v1"/);
+  assert.match(workerSource, /chainRoutingVersion = "industry-pool-v2"/);
   assert.match(workerSource, /&chain=\$\{chainRoutingVersion\}/);
 });
 

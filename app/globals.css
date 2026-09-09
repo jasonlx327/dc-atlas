@@ -3700,3 +3700,38 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
   .watch-status-track li { border-top: 1px solid var(--atlas-line); border-left: 0; }
   .watch-status-track li:first-child { border-top: 0; }
 }
+
+/* Industry reading surface: bounded measure, content before decoration. */
+.atlas-industry-page .hub-hero, .atlas-industry-page .console-page-hero { min-height: 0; padding: 28px max(24px, calc((100% - 1200px) / 2)); background: var(--atlas-paper); }
+.atlas-industry-page .hub-hero h1, .atlas-industry-page .console-page-hero h1 { font-size: clamp(28px, 3vw, 42px); line-height: 1.2; margin: 10px 0; }
+.atlas-industry-page .hub-hero > div, .atlas-industry-page .console-page-hero > div { margin-top: 14px; }
+.atlas-industry-page .hub-content-section, .atlas-industry-page .hub-tabs { max-width: 1280px; margin-inline: auto; }
+.industry-reader { max-width: 1248px; margin: 0 auto; padding: 24px; color: var(--atlas-ink); }
+.industry-reader > header { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 18px; }
+.industry-reader > header span { color: var(--atlas-terracotta); font: 700 10px var(--font-geist-mono); letter-spacing: .1em; }
+.industry-reader h2 { font-size: clamp(22px, 2vw, 30px); margin: 8px 0 0; }
+.industry-reader > header p, .industry-count { color: #626c65; font-size: 12px; line-height: 1.6; }
+.industry-reader-layout { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 28px; }
+.industry-reader nav { display: flex; flex-direction: column; gap: 4px; align-self: start; }
+.industry-reader button { padding: 10px 12px; background: transparent; border: 1px solid transparent; color: inherit; text-align: left; cursor: pointer; font: inherit; font-size: 13px; }
+.industry-reader button[aria-pressed=true] { background: #e5ebe4; border-color: #abb8ad; color: #183e31; }
+.industry-reader :is(button,input,select,a):focus-visible { outline: 2px solid #245b4c; outline-offset: 3px; }
+.industry-reader-main { min-width: 0; }
+.industry-controls { display: flex; gap: 12px; }
+.industry-controls label:first-child { flex: 1; }
+.industry-controls label { display: flex; flex-direction: column; gap: 5px; min-width: 0; font-size: 12px; }
+.industry-controls input, .industry-controls select { width: 100%; min-width: 0; padding: 10px; border: 1px solid #b9beb5; background: #faf8f2; color: #20352a; font: inherit; font-size: 14px; }
+.industry-subsegments { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
+.industry-story { padding: 18px 0; border-top: 1px solid #d5d8cf; }
+.industry-story-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 11px; color: #626c65; }
+.industry-story h3 { max-width: 42em; margin: 8px 0; font-size: 18px; line-height: 1.5; overflow-wrap: anywhere; }
+.industry-story a { color: inherit; text-decoration: none; }
+.industry-story a:hover { text-decoration: underline; }
+.industry-story > p { max-width: 48em; margin: 0; font-size: 14px; line-height: 1.8; color: #515e55; overflow-wrap: anywhere; }
+.industry-empty { padding: 24px 0; line-height: 1.8; color: #626c65; }
+@media(max-width: 760px) { .industry-reader { padding: 20px 16px; } .industry-reader-layout { grid-template-columns: 1fr; gap: 14px; } .industry-reader nav { flex-direction: row; overflow-x: auto; max-width: 100%; } .industry-reader nav button { white-space: nowrap; min-height: 44px; } .industry-reader > header { display: block; } .industry-story h3 { font-size: 17px; } }
+
+.industry-source-directory { margin-top: 24px; border-top: 1px solid #d5d8cf; padding-top: 18px; font-size: 13px; line-height: 1.7; } .industry-source-directory summary { cursor: pointer; font-weight: 650; } .industry-source-directory > p { color: #626c65; } .industry-source-directory a { display: block; color: #245b4c; margin: 12px 0; text-decoration: none; } .industry-source-directory a span { display: block; color: #626c65; }
+
+.atlas-industry-page .hub-hero, .atlas-industry-page .console-page-hero { padding-block: 20px; } .atlas-industry-page .hub-tabs { min-height: 52px; } .atlas-industry-page .hub-tabs button { min-height: 36px; padding-block: 8px; }
+@media (max-width: 760px) { .industry-reader nav button { flex: 0 0 auto; } }

@@ -1,8 +1,8 @@
 import type { ConnectorResult, ObservationEnvelope, SourceDefinition, SourceTier } from "../connectors/types.ts";
 import { recordedTranslationAdapter } from "./provider-contract.ts";
 
-export const STRATEGY_VERSION = "atlas-event-v2";
-export const CLASSIFIER_VERSION = "rules-v1";
+export const STRATEGY_VERSION = "atlas-event-v3-recall";
+export const CLASSIFIER_VERSION = "rules-v2-recall";
 
 export type TopicBucket =
   | "core-infrastructure"
@@ -133,6 +133,7 @@ export type ShadowObservationAnalysis = {
 };
 
 export type ShadowRunReport = {
+  ingestionAudit?: Array<{ url: string; title: string; sourceId: string; publishedAt: string | null; contentHash: string; outcome: string; reasons: string[] }>;
   schemaVersion: "atlas-event-shadow.v1";
   generatedAt: string;
   strategyVersion: string;
@@ -290,7 +291,7 @@ export async function normalizeObservation(
 
 const topicSignals: Array<[TopicBucket, string[]]> = [
   ["core-infrastructure", ["data center", "数据中心", "datacenter", "campus", "园区", "capacity", "容量", "lease", "租约", "commission", "投运", "power", "电力", "grid", "电网", "cooling", "液冷", "network", "网络"]],
-  ["upstream-compute-demand", ["artificial intelligence", "ai ", " AI", "人工智能", "大模型", "agent", "智能体", "gpu", "nvidia", "amd", "accelerator", "加速卡", "hbm", "memory", "内存", "server", "服务器", "model", "模型", "inference", "推理", "training", "训练", "token", "cloud", "云", "robotics", "具身智能"]],
+  ["upstream-compute-demand", ["artificial intelligence", "ai ", " AI", "人工智能", "大模型", "agent", "智能体", "gpu", "nvidia", "amd", "accelerator", "加速卡", "hbm", "cpo", "photonics", "optical", "inp substrate", "chiplet", "cowos", "光模块", "光互联", "磷化铟", "先进封装", "claude", "chatgpt", "gemini", "deepseek", "qwen", "memory", "内存", "server", "服务器", "model", "模型", "inference", "推理", "training", "训练", "token", "cloud", "云", "robotics", "具身智能"]],
   ["material-policy-capital", ["regulation", "policy", "permit", "approval", "law", "rule", "政策", "监管", "许可", "审批", "法规", "capex", "资本开支", "financing", "funding", "融资", "revenue", "营收", "earnings", "财报", "guidance", "指引", "contract", "合同", "partnership", "合作", "acquisition", "收购", "merger", "并购", "ipo", "上市"]],
 ];
 
@@ -317,8 +318,11 @@ export function classifyObservation(observation: NormalizedObservation): Classif
   if (genericHtmlLandingPage) return { topicBucket: "irrelevant", isRelevant: false, uncertain: false, reasonCodes: ["html-landing-page-change-only"] };
   if (observation.sourceTier === "T0" && !hasConcretePolicySignal(text)) return { topicBucket: "irrelevant", isRelevant: false, uncertain: false, reasonCodes: ["t0-out-of-scope"] };
   if (observation.sourceId === "sec-edgar" && /^8-k(?:\/a)?\b/i.test(observation.titleOriginal) && !/(?:data\s*cent(?:er|re)|datacenter|AI|GPU|accelerator|capacity|power|energy|grid|cloud|server|semiconductor|chip|acquisition|merger|capital expenditure|CAPEX|并购|收购|数据中心|电力|能源|云|服务器|芯片)/i.test(observation.summaryOriginal)) return { topicBucket: "irrelevant", isRelevant: false, uncertain: false, reasonCodes: ["sec-filing-out-of-scope"] };
+  if (bucket === "irrelevant" && ["semi-analysis", "serve-the-home", "blocks-and-files", "sk-hynix-newsroom", "coherent-ir", "nvidia-developer"].includes(observation.sourceId)) {
+    return { topicBucket: "keyword-only", isRelevant: false, uncertain: true, reasonCodes: ["specialist-source-review", "no-keyword-match-retained"] };
+  }
   if (bucket === "irrelevant") return { topicBucket: "irrelevant", isRelevant: false, uncertain: false, reasonCodes: ["no-atlas-topic"] };
-  if (observation.sourceId === "aws-news" && !materialAwsInfrastructure && !materialEvent) return { topicBucket: "keyword-only", isRelevant: false, uncertain: false, reasonCodes: ["routine-aws-product-update"] };
+  if (observation.sourceId === "aws-news" && !materialAwsInfrastructure && !materialEvent) return { topicBucket: "keyword-only", isRelevant: false, uncertain: true, reasonCodes: ["routine-aws-product-update", "retained-for-model-cloud-review"] };
   if (!entityFound && !measurable) return { topicBucket: "keyword-only", isRelevant: false, uncertain: false, reasonCodes: ["keyword-only", "missing-entity-or-measure"] };
   if (!hasAtlasSignal(text)) return { topicBucket: "keyword-only", isRelevant: false, uncertain: false, reasonCodes: ["keyword-only"] };
   return {
@@ -654,7 +658,13 @@ function buildObservationGroups(observations: AnalyzedObservation[]): Map<string
     autoGroups.push(...partitions);
   }
   const groups = new Map(explicit);
-  for (const group of autoGroups) groups.set(automaticClusterKey(group), group);
+  for (const group of autoGroups) {
+    const stableMember = group.map(item => item.id).sort()[0];
+    groups.set(`${automaticClusterKey(group)}|${stableMember}`, group);
+  }
+  if ([...groups.values()].reduce((count, group) => count + group.length, 0) !== observations.length) {
+    throw new Error("Clustering conservation failed: an observation was lost");
+  }
   return groups;
 }
 
@@ -855,13 +865,15 @@ export async function runShadowPipeline(
   let duplicates = 0;
   for (const observation of normalizedAll) {
     const sourceExternalId = observation.externalId?.trim()
-      ? `${observation.sourceId}\u0000${observation.externalId.trim()}`
+      ? `${observation.sourceId}\u0000${observation.externalId.trim()}:${observation.contentHash}`
       : null;
-    if (seenCanonicalUrls.has(observation.canonicalUrlHash) || (sourceExternalId !== null && seenSourceExternalIds.has(sourceExternalId))) {
+    if (seenCanonicalUrls.has(`${observation.canonicalUrlHash}:${observation.contentHash}`) || (sourceExternalId !== null && seenSourceExternalIds.has(sourceExternalId))) {
       duplicates += 1;
       continue;
     }
-    seenCanonicalUrls.add(observation.canonicalUrlHash);
+    seenCanonicalUrls.add(`${observation.canonicalUrlHash}:${observation.contentHash}`);
+    // Preserve updates to a URL as separate observations within this run.
+    if (deduped.some(item => item.id === observation.id)) observation.id += `-${observation.contentHash.slice(0, 12)}`;
     if (sourceExternalId !== null) seenSourceExternalIds.add(sourceExternalId);
     deduped.push(observation);
   }
@@ -943,6 +955,12 @@ export async function runShadowPipeline(
       errors: failures.length,
       routeCounts: routeCountsSummary,
     },
+    ingestionAudit: normalizedAll.map(observation => {
+      const classifiedItem = classified.find(item => item.observation === observation);
+      return { url: observation.canonicalUrl, title: observation.titleOriginal, sourceId: observation.sourceId, publishedAt: observation.publishedAt ?? null, contentHash: observation.contentHash,
+        outcome: !classifiedItem ? "exact-duplicate" : classifiedItem.classification.isRelevant || classifiedItem.classification.uncertain ? "clustered" : "filtered",
+        reasons: classifiedItem?.classification.reasonCodes ?? ["same-url-or-source-id-and-content"] };
+    }),
     sourceHealth: results.map((result) => {
       const source = sourceMap.get(result.sourceId);
       return { sourceId: result.sourceId, endpointId: result.endpointId, tier: source?.tier ?? "D", independenceGroup: source?.independenceGroup ?? result.sourceId, status: result.status, httpStatus: result.httpStatus, responseMs: result.responseMs, observations: result.observations.length, error: result.error };

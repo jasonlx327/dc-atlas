@@ -1,7 +1,9 @@
-import { fetchWithRetries, responseHeaders } from "./http.ts";
+import { fetchWithRetries, readTextLimited, responseHeaders } from "./http.ts";
 import type { ConnectorFetchOptions, ConnectorResult, ObservationEnvelope, SourceDefinition } from "./types.ts";
 
 type JsonApiMapping = {
+  maximumTextLength?: number;
+  urlFromItem?: (item: unknown) => string | null;
   itemsPath?: string;
   titlePath?: string;
   summaryPath?: string;
@@ -46,12 +48,15 @@ export async function fetchJsonApi(
       return { status: "blocked", sourceId: source.id, endpointId: source.endpoint.id, fetchedAt, httpStatus: response.status, responseMs, ...headers, observations: [], error: `HTTP ${response.status}` };
     }
     if (!response.ok) return { status: "failed", sourceId: source.id, endpointId: source.endpoint.id, fetchedAt, httpStatus: response.status, responseMs, ...headers, observations: [], error: `HTTP ${response.status}` };
-    const payload: unknown = await response.json();
+    const payload: unknown = source.id === "serenity-archive"
+      ? JSON.parse(await readTextLimited(response, 16_000_000))
+      : await response.json();
     const rawItems = valueAt(payload, mapping.itemsPath ?? "") ?? payload;
     if (!Array.isArray(rawItems)) return { status: "failed", sourceId: source.id, endpointId: source.endpoint.id, fetchedAt, httpStatus: response.status, responseMs, ...headers, observations: [], error: "JSON item array missing" };
     const observations = rawItems.flatMap((item): ObservationEnvelope[] => {
-      const title = stringAt(item, mapping.titlePath ?? "title") ?? stringAt(item, "title") ?? stringAt(item, "name");
-      const originalUrl = stringAt(item, mapping.urlPath ?? "html_url") ?? stringAt(item, "url") ?? stringAt(item, "links.html");
+      const originalTitle = stringAt(item, mapping.titlePath ?? "title") ?? stringAt(item, "title") ?? stringAt(item, "name");
+      const title = originalTitle?.slice(0, mapping.maximumTextLength);
+      const originalUrl = mapping.urlFromItem?.(item) ?? stringAt(item, mapping.urlPath ?? "html_url") ?? stringAt(item, "url") ?? stringAt(item, "links.html");
       if (!title || !originalUrl) return [];
       const summary = stringAt(item, mapping.summaryPath ?? "abstract") ?? stringAt(item, "summary") ?? stringAt(item, "description") ?? "";
       const published = stringAt(item, mapping.publishedAtPath ?? "publication_date") ?? stringAt(item, "published_at") ?? stringAt(item, "updated_at");
@@ -63,13 +68,13 @@ export async function fetchJsonApi(
         originalUrl,
         externalId: stringAt(item, mapping.idPath ?? "document_number") ?? stringAt(item, "id"),
         titleOriginal: title,
-        summaryOriginal: summary.slice(0, 800),
+        summaryOriginal: summary.slice(0, mapping.maximumTextLength ?? 800),
         language: mapping.language ?? source.language,
         author: stringAt(item, mapping.authorPath ?? "author"),
         publishedAt: published && Number.isFinite(Date.parse(published)) ? new Date(published).toISOString() : null,
         discoveredAt: fetchedAt,
         fetchedAt,
-        rawPayload: { title, summary: summary.slice(0, 800), originalUrl, publishedAt: published },
+        rawPayload: { title, summary: summary.slice(0, mapping.maximumTextLength ?? 800), originalUrl, publishedAt: published },
         accessStatus: mapping.accessStatus ?? "public-api",
         eventType: mapping.eventType ?? "json-api-update",
         entities: inferEntities(entityText),

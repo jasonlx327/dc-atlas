@@ -3449,7 +3449,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const staticContentVersion = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(JSON.stringify(staticAtlasContent()))).then((digest) => Array.from(new Uint8Array(digest)).slice(0, 8).map((byte) => byte.toString(16).padStart(2, "0")).join(""));
   const relationSchemaVersion = "entity-brief-v3";
   const publicFeedVersion = "rumor-archive-v2";
-  const chainRoutingVersion = "formal-cross-route-v1";
+  const chainRoutingVersion = "industry-pool-v2";
   const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}&relations=${relationSchemaVersion}&feed=${publicFeedVersion}&chain=${chainRoutingVersion}`, request.url), { method: "GET" });
   const edgeCache = (caches as unknown as { default: Cache }).default;
   if (!options.forceRefresh) {
@@ -3661,6 +3661,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
     dailySnapshot: options.snapshotMeta ?? latestSnapshot,
     supernodes: supernodeProducts(),
     trackedSources: trackedSources(),
+    industryNews: recentNews([...FORMAL_PULSE_SUPPLEMENT, ...FORMAL_LISTED_SUPPLEMENT, ...Object.values(chainNews).flat(), ...networkNews, ...coolingNews, ...powerNews, ...modelNews, ...chinaChipNews], 90, 500),
     chainNews,
     aiDaily: dailyResult.status === "fulfilled" ? dailyResult.value : null,
     benchmarks: benchmark.benchmarks,
@@ -3758,6 +3759,7 @@ function compactInitialAtlasPayload(payload: Record<string, unknown>): Record<st
     mnaDeals: firstItems(payload.mnaDeals, 7),
     benchmarks: firstItems(payload.benchmarks, 6),
     upcomingEvents: firstItems(payload.upcomingEvents, 6),
+    industryNews: payload.industryNews,
     chainNews: payload.chainNews,
     nvidiaProducts: firstItems(payload.nvidiaProducts, 4),
     supernodes: firstItems(payload.supernodes, 2),

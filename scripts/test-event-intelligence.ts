@@ -30,7 +30,7 @@ for (const sourceId of ["cninfo", "sse", "ndrc", "semi-analysis", "capacity-medi
 
 assert.equal(canonicalizeUrl("https://example.com/story?utm_source=x&b=2&a=1#fragment"), "https://example.com/story?a=1&b=2");
 assert.equal(report.stats.fetched, 12);
-assert.equal(report.stats.duplicates, 1);
+assert.equal(report.stats.duplicates, 0, "same URL with different content remains available for review");
 assert.equal(report.stats.clusters, 7);
 assert.equal(report.events.find((event) => event.eventKey.startsWith("cloud-company|"))?.route, "rumor-watch");
 assert.equal(report.events.find((event) => event.eventKey.startsWith("us-policy|"))?.route, "pulse");
@@ -151,8 +151,8 @@ assert.equal(totalPowerFacts[0]?.qualifier, "proposed");
 const repeatedLoadFacts = regression.events.flatMap((event) => event.facts).filter((fact) => fact.valueNumber === 49.8 && fact.unit?.toLocaleLowerCase() === "gw");
 assert.equal(repeatedLoadFacts.length, 1);
 assert.equal(repeatedLoadFacts[0]?.capacityType, "it_capacity");
-assert.equal(regression.events.some((event) => event.titleEn.includes("AWS Config")), false);
-assert.equal(regression.events.some((event) => event.titleEn.includes("Context Ontology")), false);
+assert.equal(regression.events.find((event) => event.titleEn.includes("AWS Config"))?.route, "hold");
+assert.equal(regression.events.find((event) => event.titleEn.includes("Context Ontology"))?.route, "hold");
 assert.equal(regression.events.some((event) => event.titleEn.includes("fractional GPU")), true);
 assert.equal(regression.events.some((event) => event.titleEn === "AMD Newsroom"), false);
 
@@ -232,6 +232,16 @@ try {
   globalThis.fetch = async () => new Response("<rss><channel><title>Empty feed</title></channel></rss>", { status: 200, headers: { "content-type": "application/rss+xml" } });
   const emptyFeed = await fetchRegisteredSource(sourceRegistryById.get("google-cloud")!);
   assert.equal(emptyFeed.status, "empty");
+  globalThis.fetch = async () => new Response("<html><title>Newsroom</title></html>", { status: 200 });
+  assert.equal((await fetchRegisteredSource(sourceRegistryById.get("coherent-ir")!)).status, "parse-error");
+  const largeFeed = `<rss><channel><item><title>HBM capacity update</title><link>https://example.com/hbm</link><pubDate>Tue, 08 Sep 2026 12:00:00 GMT</pubDate><description>Public metadata</description><content:encoded>${"x".repeat(2_100_000)}</content:encoded></item></channel></rss>`;
+  globalThis.fetch = async () => new Response(largeFeed, { status: 200 });
+  const semiFeed = await fetchRegisteredSource(sourceRegistryById.get("semi-analysis")!);
+  assert.equal(semiFeed.status, "ok");
+  assert.equal(semiFeed.observations.length, 1);
+  assert.ok(JSON.stringify(semiFeed.observations).length < 2000, "Do not persist embedded article content");
+  globalThis.fetch = async () => new Response(largeFeed, { status: 200 });
+  assert.equal((await fetchRegisteredSource(sourceRegistryById.get("google-cloud")!)).status, "failed", "Other sources retain the default size bound");
   let ifNoneMatch: string | null = null;
   let ifModifiedSince: string | null = null;
   globalThis.fetch = async (_input, init) => {
@@ -249,3 +259,20 @@ try {
 }
 
 console.log(JSON.stringify({ message: "Event intelligence tests passed", fixtureObservations: report.stats.fetched, clusters: report.stats.clusters, scheduleJobs: eventIntelligenceSchedule.map((item) => item.job) }));
+
+const replayItem = firstPersistenceResults[0].observations[0];
+const collisionRun = await runShadowPipeline([{...firstPersistenceResults[0], observations: [
+ {...replayItem, externalId:null, canonicalUrl:"https://example.com/first", publishedAt:"2026-08-01T00:00:00Z"},
+ {...replayItem, externalId:null, canonicalUrl:"https://example.com/second", publishedAt:"2026-08-20T00:00:00Z"}
+]}],sourceRegistry,{generatedAt:"2026-08-21T00:00:00Z"});
+assert.equal(collisionRun.stats.clusters,2,"Distinct events with the same entity/action/month must not overwrite");
+assert.equal(collisionRun.events.reduce((n,e)=>n+e.sourceChain.length,0),2);
+const revisionRun = await runShadowPipeline([{...firstPersistenceResults[0], observations: [
+ replayItem, {...replayItem,summaryOriginal:"NVIDIA GPU platform specifications updated with HBM capacity details."}, replayItem
+]}],sourceRegistry);
+assert.equal(revisionRun.stats.normalized,2);
+assert.equal(revisionRun.stats.duplicates,1);
+assert.equal(new Set(revisionRun.observationAnalysis.map(o=>o.id)).size,2);
+assert.equal(revisionRun.ingestionAudit?.length,3);
+assert.ok(revisionRun.observationAnalysis.some(o=>o.summaryOriginal.includes("specifications updated")));
+console.log("Lossless clustering and same-URL revision regression passed");

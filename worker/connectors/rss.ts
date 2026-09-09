@@ -77,7 +77,9 @@ export async function fetchRss(source: SourceDefinition, options: ConnectorFetch
       return { status: "blocked", sourceId: source.id, endpointId: source.endpoint.id, fetchedAt, httpStatus: response.status, responseMs, ...headers, observations: [], error: `HTTP ${response.status}` };
     }
     if (!response.ok) return { status: "failed", sourceId: source.id, endpointId: source.endpoint.id, fetchedAt, httpStatus: response.status, responseMs, ...headers, observations: [], error: `HTTP ${response.status}` };
-    const xml = await readTextLimited(response);
+    // This public feed includes embedded article HTML; retain only metadata below.
+    const xml = await readTextLimited(response, source.id === "semi-analysis" ? 8_000_000 : 2_000_000);
+    if (!/<(?:rss|feed|rdf:RDF)\b/i.test(xml)) return { status: "parse-error", sourceId: source.id, endpointId: source.endpoint.id, fetchedAt, httpStatus: response.status, responseMs, ...headers, observations: [], error: "Response is not an RSS/Atom feed" };
     const observations = parseItems(source, xml, fetchedAt);
     const hasEntries = /<(?:item|entry)\b/i.test(xml);
     if (!observations.length && hasEntries) return { status: "parse-error", sourceId: source.id, endpointId: source.endpoint.id, fetchedAt, httpStatus: response.status, responseMs, ...headers, observations, error: "RSS/Atom entries were present but none were parseable" };

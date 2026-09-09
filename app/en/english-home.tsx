@@ -1,7 +1,7 @@
 "use client";
 
+import { IndustryBrowser } from "../industry-browser";
 import { useEffect, useMemo, useState } from "react";
-import { ChainIcon, type ChainKey } from "../chain-icon";
 import { IntelligenceConsoleOverview, IntelligenceConsoleShell, type ConsoleStory } from "../intelligence-console-overview";
 import { shouldAdoptPayload } from "../intelligence-model";
 import type { RumorWatchItem } from "../watch-data";
@@ -32,6 +32,7 @@ export type AtlasPayload = {
   chinaChipNews?: Story[];
   modelNews?: Story[];
   chainNews?: Record<string, Story[]>;
+  industryNews?: Story[];
   capacityRadar?: CapacityRecord[];
   coolingProgress?: CapacityRecord[];
   nvidiaProducts?: Product[];
@@ -324,14 +325,6 @@ const storyFieldTranslations: Record<string, string> = {
   "宝之云数据中心": "Baoshan Cloud data centers",
 };
 
-const chainMeta: Record<ChainKey, { no: string; title: string; detail: string }> = {
-  compute: { no: "01", title: "Compute & servers", detail: "Accelerators, CPUs and complete systems" },
-  rack: { no: "02", title: "Racks & networking", detail: "Density, switching and optical links" },
-  cooling: { no: "03", title: "Liquid cooling", detail: "CDUs, cold plates and thermal systems" },
-  power: { no: "04", title: "Power & energy", detail: "Grid access, substations and generation" },
-  campus: { no: "05", title: "Data-center campuses", detail: "Land, construction and commissioned MW" },
-  model: { no: "06", title: "Models & cloud demand", detail: "The demand layer for infrastructure" },
-};
 
 function formatDate(value?: string | null) {
   if (!value) return "—";
@@ -526,8 +519,8 @@ export default function EnglishHome({ initialPayload = null, view = "home" }: { 
     pageLabel="Industry map"
     className="atlas-industry-shell"
   ><div className="english-console-workspace atlas-console-content-page atlas-english-content-page atlas-industry-page">
-      <section className="console-page-hero"><span>INFRASTRUCTURE CENTER</span><h1>From silicon to grid,{" "}<br /><em>AI turns physical.</em></h1><p>Compute, networking, power, cooling and campus capacity — with selective China coverage where it affects global competition.</p><div><b>6</b><span>supply-chain nodes</span><b>{capacity.length}</b><span>campus updates</span></div></section>
-      <section className="console-section console-section-dark"><ConsoleSectionHead label="01 · SUPPLY CHAIN" title="Six infrastructure nodes" copy="The latest source-linked signal at each point in the AI infrastructure stack." /><div className="english-chain-grid">{chainGroups.map(([stage, items]) => { const meta = chainMeta[stage as ChainKey] ?? { no: "—", title: stage, detail: "Source-linked infrastructure signals" }; return <article key={stage}><header><span className="english-chain-icon"><ChainIcon type={stage as ChainKey} /></span><div><small>{meta.no} · SUPPLY CHAIN NODE</small><h3>{meta.title}</h3><p>{meta.detail}</p></div></header><div>{items.map((item) => <a href={item.sourceUrl ?? item.permalink ?? "#"} target="_blank" rel="noreferrer" key={item.id}>{item.titleEn ?? englishTitle(item.title)} <small>↗</small></a>)}</div></article>; })}</div></section>
+      <section className="console-page-hero"><span>INFRASTRUCTURE CENTER</span><h1>AI infrastructure supply chain</h1><p>Compute, networking, power, cooling and campus capacity — with selective China coverage where it affects global competition.</p><div><b>8</b><span>industry sectors</span><b>{capacity.length}</b><span>campus updates</span></div></section>
+      <IndustryBrowser en items={(payload?.industryNews ?? Object.values(payload?.chainNews ?? {}).flat()).map(item => ({...item, titleEn: item.titleEn ?? englishTitle(item.title)}))} loading={!payload} asOf={payload?.generatedAt} />
       <section className="console-section"><ConsoleSectionHead label="02 · COMPUTE" title="NVIDIA product radar" copy="Current product form factors and infrastructure read-throughs." /><div className="english-product-grid">{nvidiaProducts.map((product) => <article key={product.id}>{product.imageSrc && <img src={product.imageSrc} alt={product.imageAlt ?? product.model ?? "NVIDIA product"} loading="lazy" />}<span>NVIDIA PRODUCT</span><h3>{product.model}</h3><strong>{product.form}</strong><p>{product.spec}</p><a href={product.sourceUrl} target="_blank" rel="noreferrer">{product.sourceName} ↗</a></article>)}</div><div className="english-story-grid english-compact-grid">{nvidiaNews.map((item) => <StoryCard key={item.id} item={item} eyebrow="NVIDIA NOW" />)}</div></section>
       <section className="console-section console-section-muted"><ConsoleSectionHead label="03 · SELECTIVE COVERAGE" title="China watch" copy="Only developments with a material global supply-chain or competitive read-through." /><div className="english-supernode-grid">{supernodes.map((node) => { const copy = supernodeCopy(node); return <article key={node.id}>{node.imageSrc && <img src={node.imageSrc} alt={node.imageAlt ?? node.name} loading="lazy" />}<span>CHINA SUPERNODE · {copy.status}</span><h3>{node.name}</h3><strong>{node.headlineMetric}</strong><p>{copy.summary}</p><a href={node.sourceUrl} target="_blank" rel="noreferrer">{node.sourceName} ↗</a></article>; })}</div><div className="english-story-grid">{silicon.map((item) => <StoryCard key={item.id} item={item} eyebrow="SELECTIVE CHINA WATCH" />)}</div></section>
       <section className="console-section console-section-dark"><ConsoleSectionHead label="04 · MODEL DEMAND" title="Usage and capability signals" /><div className="english-model-overview"><article><span>GLOBAL AI DIFFUSION</span><strong>{payload?.aiAdoption?.sharePct ?? "—"}%</strong><h3>Generative-AI adoption</h3><p>{payload?.aiAdoption?.note ?? "Quarterly public adoption indicator."}</p><a href={payload?.aiAdoption?.sourceUrl ?? "#"} target="_blank" rel="noreferrer">Source ↗</a></article><article><span>OPENROUTER · WEEKLY USAGE</span><h3>{payload?.openRouterUsage?.period ?? "Loading"}</h3><div className="english-rank-list">{(payload?.openRouterUsage?.models ?? []).slice(0, 6).map((model) => <a key={model.id} href={model.url} target="_blank" rel="noreferrer"><b>#{model.rank}</b><span>{model.name}</span><i style={{ width: `${model.heat}%` }} /></a>)}</div></article><article><span>ARENA · CODE / WEBDEV</span><h3>Public evaluation</h3><div className="english-rank-list">{(payload?.arenaCodeLeaderboard?.models ?? []).slice(0, 6).map((model) => <a key={`${model.rank}-${model.name}`} href={payload?.arenaCodeLeaderboard?.sourceUrl ?? "#"} target="_blank" rel="noreferrer"><b>#{model.rank}</b><span>{model.name}</span></a>)}</div></article></div><div className="english-story-grid">{models.slice(0, 6).map((item) => <StoryCard key={item.id} item={item} eyebrow="MODEL RELEASE" />)}</div></section>
