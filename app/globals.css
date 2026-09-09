@@ -3735,3 +3735,7 @@ footer p { margin: 0; color: #687486; text-align: center; font-size: 10px; }
 
 .atlas-industry-page .hub-hero, .atlas-industry-page .console-page-hero { padding-block: 20px; } .atlas-industry-page .hub-tabs { min-height: 52px; } .atlas-industry-page .hub-tabs button { min-height: 36px; padding-block: 8px; }
 @media (max-width: 760px) { .industry-reader nav button { flex: 0 0 auto; } }
+
+/* Keep the shared industry navigation readable as all sectors are exposed. */
+.atlas-industry-page .industry-tabs { flex-wrap: wrap; }
+.atlas-industry-page .industry-tabs button { min-width: 0; }

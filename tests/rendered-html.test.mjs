@@ -248,12 +248,12 @@ test("publishes focused Pulse and Industry content hubs", async () => {
   assert.match(industryHtml, /AI 基础设施产业链/);
   assert.match(industryHtml, /hrefLang="en" href="https:\/\/idc-index\.com\/en\/industry"/);
   assert.match(industryHtml, /"@type":"CollectionPage"/);
-  assert.match(industryHtml, /NVIDIA \/ AMD/);
-  assert.match(industryHtml, /中国 GPU/);
-  assert.match(industryHtml, /园区容量/);
+  assert.match(industryHtml, /芯片与制造/);
+  assert.match(industryHtml, /Model related/);
+  assert.match(industryHtml, /园区与运营/);
   const source = await readFile(new URL("../app/home-client.tsx", import.meta.url), "utf8");
   assert.match(source, /new URLSearchParams\(window\.location\.search\)/);
-  assert.match(source, /setIndustryHubTab\(tab as IndustryHubTab\)/);
+  assert.match(source, /setIndustrySegment\(legacyTabs\[tab\]\)/);
   assert.match(source, /setActiveStage\(stage as ChainKey\)/);
 });
 
