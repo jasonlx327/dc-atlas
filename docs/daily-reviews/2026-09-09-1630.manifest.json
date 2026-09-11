@@ -1,0 +1,462 @@
+{
+  "schemaVersion": "1.1",
+  "runId": "atlas-2026-09-09-full",
+  "runDate": "2026-09-09",
+  "cutoff": "2026-09-09T10:13:23+08:00",
+  "displayTimezones": {
+    "zh": "Asia/Shanghai",
+    "en": "America/New_York"
+  },
+  "status": "ready-for-partial-release",
+  "projectPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-16-30-20260909",
+  "sourceLedgerPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-16-30-20260909/docs/daily-reviews/2026-09-09-1630.sources.json",
+  "host": "XlargedeMacBook-Air.local",
+  "headBefore": "49d42b1b3bfd2164819b830ab7b3b19ecf8027e1",
+  "sections": {
+    "idc-pulse": {
+      "status": "blocked",
+      "checkedAt": "2026-09-09T13:54:54.964Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-b849691f53d5cb2a2af9",
+        "evt-dab0a848e191c3054a32"
+      ],
+      "primarySources": 2,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260909-event-night",
+        "editor-judgment-20260909-1630",
+        "closure-handoff-20260909-0930",
+        "source-openai-news-https://openai.com/index/the-work-now-within-reach",
+        "source-google-developers-https://developers.googleblog.com/driving-developer-excellence-inside-the-program-sprints/"
+      ],
+      "accessGaps": [
+        "Formal editor decisions are locally validated but no versioned formal adapter was applied; held from this release."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Section-level hold; source or adapter evidence is insufficient for formal publication."
+    },
+    "listed-companies": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-09T13:54:54.964Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260909-event-night",
+        "editor-judgment-20260909-1630",
+        "closure-handoff-20260909-0930"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "No independently releasable current change was retained for this section."
+    },
+    "mna": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-09T13:54:54.964Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260909-event-night",
+        "editor-judgment-20260909-1630",
+        "closure-handoff-20260909-0930"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "No independently releasable current change was retained for this section."
+    },
+    "capacity": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-09T13:54:54.964Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260909-event-night",
+        "editor-judgment-20260909-1630",
+        "closure-handoff-20260909-0930"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "No independently releasable current change was retained for this section."
+    },
+    "cooling": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-09T13:54:54.964Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260909-event-night",
+        "editor-judgment-20260909-1630",
+        "closure-handoff-20260909-0930"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "No independently releasable current change was retained for this section."
+    },
+    "compute-products": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-09T13:54:54.964Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260909-event-night",
+        "editor-judgment-20260909-1630",
+        "closure-handoff-20260909-0930"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "No independently releasable current change was retained for this section."
+    },
+    "china-gpu": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-09T13:54:54.964Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260909-event-night",
+        "editor-judgment-20260909-1630",
+        "closure-handoff-20260909-0930"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "No independently releasable current change was retained for this section."
+    },
+    "supply-chain": {
+      "status": "blocked",
+      "checkedAt": "2026-09-09T13:54:54.964Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-b644b9ef2abe20322e00"
+      ],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260909-event-night",
+        "editor-judgment-20260909-1630",
+        "closure-handoff-20260909-0930",
+        "source-google-developers-https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/"
+      ],
+      "accessGaps": [
+        "Formal editor decisions are locally validated but no versioned formal adapter was applied; held from this release."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Section-level hold; source or adapter evidence is insufficient for formal publication."
+    },
+    "power-model-demand": {
+      "status": "blocked",
+      "checkedAt": "2026-09-09T13:54:54.964Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-431aaafd2e41467e8f2b",
+        "evt-d91dd95b130447bab68e"
+      ],
+      "primarySources": 2,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260909-event-night",
+        "editor-judgment-20260909-1630",
+        "closure-handoff-20260909-0930",
+        "source-ibm-newsroom-https://newsroom.ibm.com/2026-09-09-cleveland-clinic,-riken-and-ibm-team-advance-to-finals-for-2026-acm-gordon-bell-prize",
+        "source-google-developers-https://developers.googleblog.com/agent-and-model-evaluations-in-gemini-enterprise-agent-platform-are-now-ga/"
+      ],
+      "accessGaps": [
+        "Formal editor decisions are locally validated but no versioned formal adapter was applied; held from this release."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Section-level hold; source or adapter evidence is insufficient for formal publication."
+    },
+    "earnings-calendar": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-09T13:54:54.964Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260909-event-night",
+        "editor-judgment-20260909-1630",
+        "closure-handoff-20260909-0930"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "No independently releasable current change was retained for this section."
+    },
+    "rumors": {
+      "status": "updated",
+      "checkedAt": "2026-09-09T13:54:54.964Z",
+      "newIds": [
+        "evt-3a836cd1eeccc65be09a",
+        "evt-c5e6ad3fe45b98ce59bc",
+        "evt-ca077dcb41786afbb62a",
+        "evt-1d2153cc78bff166c0a5",
+        "evt-849f1cb53a40734cefd5",
+        "evt-1765ddcffaf1a90a49a7",
+        "evt-9efe57277172ab557c2d",
+        "evt-9dad1e9deb231336cdbe",
+        "evt-3383766bfd9fb49739e3",
+        "evt-49baf869b09f7d283c64",
+        "evt-2e2cb999e182b60be9a5",
+        "evt-f66422de5178f8f2425a",
+        "evt-586f4b9ee85b58215ab1",
+        "evt-98a336a31bd5a66b6f20",
+        "evt-0bc81fab5dabe76210c4",
+        "evt-b11cc8fe228cd1954a18",
+        "evt-4e0260833b9d8d2f2910",
+        "evt-d3c69bdd225888a08884",
+        "evt-e4e5333963565abed4ee",
+        "evt-26785998c7abbe2076e4",
+        "evt-6778ac2bea11057a8c5b",
+        "evt-328451cc9c0c14402e5f",
+        "evt-f042f77504aab90a2c2d",
+        "evt-dcd3b865f6c285714526",
+        "evt-5d6e4436eecce033ac64",
+        "evt-984506914ed665fb8014"
+      ],
+      "updatedIds": [
+        "evt-3a836cd1eeccc65be09a",
+        "evt-c5e6ad3fe45b98ce59bc",
+        "evt-ca077dcb41786afbb62a",
+        "evt-1d2153cc78bff166c0a5",
+        "evt-849f1cb53a40734cefd5",
+        "evt-1765ddcffaf1a90a49a7",
+        "evt-9efe57277172ab557c2d",
+        "evt-9dad1e9deb231336cdbe",
+        "evt-3383766bfd9fb49739e3",
+        "evt-49baf869b09f7d283c64",
+        "evt-2e2cb999e182b60be9a5",
+        "evt-f66422de5178f8f2425a",
+        "evt-586f4b9ee85b58215ab1",
+        "evt-98a336a31bd5a66b6f20",
+        "evt-0bc81fab5dabe76210c4",
+        "evt-b11cc8fe228cd1954a18",
+        "evt-4e0260833b9d8d2f2910",
+        "evt-d3c69bdd225888a08884",
+        "evt-e4e5333963565abed4ee",
+        "evt-26785998c7abbe2076e4",
+        "evt-6778ac2bea11057a8c5b",
+        "evt-328451cc9c0c14402e5f",
+        "evt-f042f77504aab90a2c2d",
+        "evt-dcd3b865f6c285714526",
+        "evt-5d6e4436eecce033ac64",
+        "evt-984506914ed665fb8014"
+      ],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 26,
+      "sourceRefs": [
+        "global-scan-20260909-event-night",
+        "editor-judgment-20260909-1630",
+        "closure-handoff-20260909-0930",
+        "source-the-verge-https://www.theverge.com/tech/991809/amazon-prime-video-ai-lip-sync-dubbing",
+        "source-light-reading-https://www.lightreading.com/ai-machine-learning/qualcomm-and-amazon-connect-on-ai-silicon",
+        "source-power-magazine-https://www.powermag.com/doe-closes-1-9-billion-loan-to-restart-duane-arnold-nuclear-plant/",
+        "source-financial-times-tech-https://www.ft.com/content/f6a26a17-985f-4283-99c4-ba5d54e94e7f?syn-25a6b1a6=1",
+        "source-light-reading-https://www.lightreading.com/regulatory-politics/thailand-suspends-data-center-projects-as-oil-leak-sparks-environmental-concerns",
+        "source-ithome-https://www.ithome.com/1/000/360.htm",
+        "source-the-register-https://www.theregister.com/systems/2026/09/08/floating-nuclear-startup-bluecore-lands-50m-funding-before-setting-sail/5295032",
+        "source-cnbc-technology-https://www.cnbc.com/2026/09/08/ai-infrastructure-stocks-rally-on-deal-from-qualcomm-and-corning.html",
+        "source-cnbc-technology-https://www.cnbc.com/2026/09/08/mistral-ai-funding-valuation-samsung.html",
+        "source-financial-times-tech-https://www.ft.com/content/adbf5262-c4d5-4312-a9b8-4d3cf30c9e00?syn-25a6b1a6=1",
+        "source-ithome-https://www.ithome.com/1/000/397.htm",
+        "source-the-verge-https://www.theverge.com/ai-artificial-intelligence/991927/anthropic-ai-kill-all-humans",
+        "source-ithome-https://www.ithome.com/1/000/353.htm",
+        "source-the-register-https://www.theregister.com/os-platforms/2026/09/09/switzerland-tests-a-foss-escape-route-from-microsoft-365/5294878",
+        "source-light-reading-https://www.lightreading.com/satellite/fcc-sizes-up-spectrum-for-satellite-broadband-ai-sensing",
+        "source-the-register-https://www.theregister.com/ai-and-ml/2026/09/08/mistral-bags-3b-to-build-europes-sovereign-ai-champion/5294941",
+        "source-blocks-and-files-https://www.blocksandfiles.com/flash/2026/09/08/sk-hynix-on-solidigm-pre-ipo-rumors-no-matters-have-been-determined/5294842",
+        "source-light-reading-https://www.lightreading.com/ai-machine-learning/nscale-signs-multi-year-partnership-with-figure-a-humanoid-robotics-company",
+        "source-the-register-https://www.theregister.com/public-sector/2026/09/09/philippines-bets-ai-will-lift-gdp-by-12-percent-in-seven-years-without-hurting-outsourcing/5295178",
+        "source-cnbc-technology-https://www.cnbc.com/2026/09/08/qualcomm-amazon-data-center-infrastructure-deal.html",
+        "source-cnbc-technology-https://www.cnbc.com/2026/09/09/google-finland-ai-infrastructure-investment.html",
+        "source-financial-times-tech-https://www.ft.com/content/2cc88608-04b2-4dcb-8c89-698f251de170?syn-25a6b1a6=1",
+        "source-the-verge-https://www.theverge.com/tech/991884/apple-iphone-duo-rumor-foldable",
+        "source-the-verge-https://www.theverge.com/gadgets/991653/razer-blackshark-v3-pro-gaming-headset-anc-deal-sale",
+        "source-ithome-https://www.ithome.com/1/000/378.htm",
+        "source-the-register-https://www.theregister.com/security/2026/09/08/boston-scientific-left-nursing-its-bottom-line-after-cyberattack/5295026"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Versioned bilingual Rumor Watch records prepared locally; deployment and production readback remain pending."
+    },
+    "policy": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-09T13:54:54.964Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260909-event-night",
+        "editor-judgment-20260909-1630",
+        "closure-handoff-20260909-0930"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "No independently releasable current change was retained for this section."
+    },
+    "columns": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-09T13:54:54.964Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260909-event-night",
+        "editor-judgment-20260909-1630",
+        "closure-handoff-20260909-0930"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "No independently releasable current change was retained for this section."
+    }
+  },
+  "release": {
+    "mode": "partial",
+    "tests": "passed",
+    "build": "passed",
+    "cloudflare": "passed",
+    "formalReadback": "passed",
+    "dailySnapshot": "passed",
+    "sites": "failed",
+    "sitesReadback": "failed",
+    "commit": "16faea716e47ceead7ffec923b81120a622e1ac5",
+    "workerCommit": "16faea716e47ceead7ffec923b81120a622e1ac5",
+    "sitesCommit": null,
+    "cloudflareVersion": "c923a2f5-38bb-4959-80c7-3655c5c4f2f9",
+    "sitesVersion": null,
+    "formalUrl": "https://idc-index.com/",
+    "sitesUrl": "https://dc-atlas-cn-us.catknowspray.chatgpt.site",
+    "includedSections": [
+      "rumors"
+    ],
+    "heldSections": [
+      "idc-pulse",
+      "supply-chain",
+      "power-model-demand"
+    ],
+    "testBaseline": "49d42b1b3bfd2164819b830ab7b3b19ecf8027e1"
+  },
+  "blockers": [
+    "Remote source KV audit write and per-key hash readback are not proven; retry only in a later permitted window.",
+    "Three formal sections have locally publishable decisions but no versioned formal adapter was applied, so they remain held.",
+    "Sites archive upload timed out twice at 60 seconds; no Sites version was saved or deployed.",
+    "ndrc: fetch failed",
+    "miit: fetch failed",
+    "mep-china: fetch failed",
+    "beijing-gov: fetch failed",
+    "shanghai-gov: fetch failed",
+    "xai-news: HTTP 403",
+    "ap-technology: HTTP 403"
+  ],
+  "effectiveStatus": "partially-published",
+  "recoverableRetry": true,
+  "globalBlocker": null,
+  "nextWindow": "2026-09-10T04:30:00+08:00",
+  "scan": {
+    "generatedAt": "2026-09-09T13:54:54.964Z",
+    "status": "partial",
+    "freshness": "partial",
+    "stats": {
+      "fetched": 2316,
+      "normalized": 2298,
+      "duplicates": 18,
+      "relevant": 1597,
+      "uncertain": 1,
+      "deepScored": 1597,
+      "clusters": 527,
+      "publicEligible": 0,
+      "rejected": 0,
+      "held": 76,
+      "errors": 7,
+      "routeCounts": {
+        "rumor-watch": 82,
+        "pulse": 369,
+        "policy-index": 0,
+        "research-queue": 0,
+        "hold": 76,
+        "rejected": 0
+      }
+    },
+    "failures": [
+      "ndrc/ndrc-endpoint: fetch failed",
+      "miit/miit-endpoint: fetch failed",
+      "mep-china/mep-china-endpoint: fetch failed",
+      "beijing-gov/beijing-gov-endpoint: fetch failed",
+      "shanghai-gov/shanghai-gov-endpoint: fetch failed",
+      "xai-news/xai-news-endpoint: HTTP 403",
+      "ap-technology/ap-technology-endpoint: HTTP 403"
+    ],
+    "sourceHealthStatus": {
+      "passing": 70,
+      "total": 77
+    }
+  },
+  "overlays": {
+    "coreCompanies": {
+      "path": "docs/daily-reviews/2026-09-09-1630.core-company-checks.json",
+      "companyCount": 50,
+      "checkedCount": 50,
+      "hitCount": 0,
+      "results": {
+        "new/changed": 0,
+        "no-change": 0,
+        "not-determined": 50
+      },
+      "publicSources": 38,
+      "unavailableSources": 17
+    },
+    "chinaXpuListed": {
+      "path": "docs/daily-reviews/2026-09-09-1630.china-xpu-listed-checks.json",
+      "issuerCount": 7,
+      "attemptedCount": 7,
+      "completedEvidenceChecks": 0,
+      "results": {
+        "new/changed": 0,
+        "no-change": 0,
+        "not-determined": 7
+      },
+      "accessStatus": "fresh-issuer-and-exchange-entrypoint-check"
+    }
+  },
+  "editor": {
+    "path": "artifacts/event-intelligence/2026-09-09-1630-editor-decision.json",
+    "model": "deterministic-atlas-fallback-v1",
+    "candidateCount": 101,
+    "publishFormal": 5,
+    "publishRumor": 26,
+    "adapterReady": 31,
+    "hold": 70,
+    "completionRequired": 0,
+    "blockingHold": 0
+  },
+  "remoteAudit": {
+    "sourceIngest": "failed-uncertain",
+    "judgmentIngest": "not-attempted-after-source-failure",
+    "attemptedAt": "2026-09-09T14:25:58.650Z",
+    "failure": "Remote source KV put did not return completion and was terminated after bounded wait; no hash/readback proof. Editorial judgment remained local-validated."
+  }
+}

@@ -1,4 +1,5 @@
 /** Cloudflare Worker entry point for IDC Atlas. */
+import { liquidCoolingBriefs } from "../app/data/liquid-cooling-briefs";
 import handler from "vinext/server/app-router-entry";
 import { publishedColumnArticles } from "../app/columns/articles";
 import { currentDailyBriefRecord } from "../app/daily-briefs";
@@ -956,6 +957,7 @@ function capacityRadar(): SourceRecord[] {
 
 function coolingProgress(): SourceRecord[] {
   return [
+    ...liquidCoolingBriefs,
     {
       id: "cerebras-mikkeli-closed-loop-2026", title: "Cerebras 芬兰 Mikkeli 园区采用闭环冷却设计", titleEn: "Cerebras Mikkeli campus designed for closed-loop cooling",
       subject: "Cerebras / Compute Nordic", subjectEn: "Cerebras / Compute Nordic",
@@ -3449,7 +3451,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const staticContentVersion = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(JSON.stringify(staticAtlasContent()))).then((digest) => Array.from(new Uint8Array(digest)).slice(0, 8).map((byte) => byte.toString(16).padStart(2, "0")).join(""));
   const relationSchemaVersion = "entity-brief-v3";
   const publicFeedVersion = "rumor-archive-v2";
-  const chainRoutingVersion = "formal-cross-route-v1";
+  const chainRoutingVersion = "industry-pool-v2";
   const cacheKey = new Request(new URL(`/api/atlas-live-v5?schema=v1&content=${staticContentVersion}&relations=${relationSchemaVersion}&feed=${publicFeedVersion}&chain=${chainRoutingVersion}`, request.url), { method: "GET" });
   const edgeCache = (caches as unknown as { default: Cache }).default;
   if (!options.forceRefresh) {
@@ -3571,7 +3573,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
       ...fallback.power,
     ], chainWindowDays, 6),
     campus: recentNews([...idcPulse, ...positiveNews, ...news], chainWindowDays, 6),
-    model: recentNews([...FORMAL_PULSE_SUPPLEMENT.filter((item) => ["google-ai-planet-apac-20260907", "openai-research-acceleration-20260906", "aws-bedrock-servicenow-connector-2026"].includes(item.id)), ...editorNewsItems(publicEditorDecision, ["power-model-demand"]), ...modelNews], chainWindowDays, 6),
+    model: recentNews([...FORMAL_PULSE_SUPPLEMENT.filter((item) => ["openai-gpt-image-25-20260908", "google-ai-planet-apac-20260907", "openai-research-acceleration-20260906", "aws-bedrock-servicenow-connector-2026"].includes(item.id)), ...editorNewsItems(publicEditorDecision, ["power-model-demand"]), ...modelNews], chainWindowDays, 6),
   };
 
   const latestSnapshot = await env.IDC_DAILY_SNAPSHOTS.get<DailySnapshotMeta>("latest-meta", "json");
@@ -3661,6 +3663,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
     dailySnapshot: options.snapshotMeta ?? latestSnapshot,
     supernodes: supernodeProducts(),
     trackedSources: trackedSources(),
+    industryNews: recentNews([...liquidCoolingBriefs.map((r): NewsItem => ({ id: r.id, title: r.title, titleEn: r.titleEn, summary: r.note, summaryEn: r.noteEn, publishedAt: r.publishedAt, category: "cooling", score: null, permalink: r.sourceUrl, sourceUrl: r.sourceUrl, sourceName: r.sourceName, signal: "cooling", curator: "官方来源" })),...FORMAL_PULSE_SUPPLEMENT, ...FORMAL_LISTED_SUPPLEMENT, ...Object.values(chainNews).flat(), ...networkNews, ...coolingNews, ...powerNews, ...modelNews, ...chinaChipNews], 90, 500),
     chainNews,
     aiDaily: dailyResult.status === "fulfilled" ? dailyResult.value : null,
     benchmarks: benchmark.benchmarks,
@@ -3758,6 +3761,7 @@ function compactInitialAtlasPayload(payload: Record<string, unknown>): Record<st
     mnaDeals: firstItems(payload.mnaDeals, 7),
     benchmarks: firstItems(payload.benchmarks, 6),
     upcomingEvents: firstItems(payload.upcomingEvents, 6),
+    industryNews: payload.industryNews,
     chainNews: payload.chainNews,
     nvidiaProducts: firstItems(payload.nvidiaProducts, 4),
     supernodes: firstItems(payload.supernodes, 2),

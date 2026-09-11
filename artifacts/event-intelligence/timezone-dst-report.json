@@ -1,7 +1,7 @@
 {
   "schemaVersion": "atlas-event-timezone-dst.v1",
   "status": "passed",
-  "generatedAt": "2026-09-02T14:46:45.275Z",
+  "generatedAt": "2026-09-09T14:26:04.698Z",
   "timeZones": {
     "zh": "Asia/Shanghai",
     "en": "America/New_York"

@@ -1,0 +1,555 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-09-09-full",
+  "sources": [
+    {
+      "ref": "global-scan-20260909-event-night",
+      "sourceName": "IDC Atlas live global Codex shadow scan",
+      "evidenceKind": "discovery-artifact",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "workflowState": "partial",
+      "sections": [
+        "*"
+      ]
+    },
+    {
+      "ref": "candidate-handoff-20260909",
+      "sourceName": "Worker daily candidate packet",
+      "evidenceKind": "workflow-state",
+      "observedAt": "2026-09-03T08:50:03.044Z",
+      "workflowState": "stale-discovery-only",
+      "sections": [
+        "*"
+      ]
+    },
+    {
+      "ref": "closure-handoff-20260909-0930",
+      "sourceName": "09:30 section closure handoff",
+      "evidenceKind": "workflow-state",
+      "observedAt": "2026-09-09T10:13:23+08:00",
+      "workflowState": "handoff-only",
+      "sections": [
+        "*"
+      ]
+    },
+    {
+      "ref": "editor-judgment-20260909-1630",
+      "sourceName": "IDC Atlas 16:30 Codex editorial judgment",
+      "evidenceKind": "workflow-state",
+      "observedAt": "2026-09-09T14:07:13.437Z",
+      "workflowState": "local-validated",
+      "sections": [
+        "*"
+      ]
+    },
+    {
+      "ref": "core-company-overlay-20260909-1630",
+      "sourceName": "IDC Atlas 50-company official/source overlay",
+      "evidenceKind": "discovery-artifact",
+      "observedAt": "2026-09-09T14:14:37.558Z",
+      "sections": [
+        "listed-companies",
+        "china-gpu",
+        "earnings-calendar",
+        "capacity",
+        "power-model-demand"
+      ]
+    },
+    {
+      "ref": "china-xpu-overlay-20260909-1630",
+      "sourceName": "IDC Atlas seven listed China XPU issuer overlay",
+      "evidenceKind": "discovery-artifact",
+      "observedAt": "2026-09-09T14:15:30.390Z",
+      "overlayAccessStatus": "fresh-issuer-and-exchange-entrypoint-check",
+      "sections": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ]
+    },
+    {
+      "ref": "source-the-verge-https://www.theverge.com/tech/991809/amazon-prime-video-ai-lip-sync-dubbing",
+      "sourceName": "The Verge",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theverge.com/tech/991809/amazon-prime-video-ai-lip-sync-dubbing",
+      "publishedAt": "2026-09-09T13:00:00.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "the-verge",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-light-reading-https://www.lightreading.com/ai-machine-learning/qualcomm-and-amazon-connect-on-ai-silicon",
+      "sourceName": "Light Reading",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.lightreading.com/ai-machine-learning/qualcomm-and-amazon-connect-on-ai-silicon",
+      "publishedAt": "2026-09-08T20:59:18.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "light-reading",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-power-magazine-https://www.powermag.com/doe-closes-1-9-billion-loan-to-restart-duane-arnold-nuclear-plant/",
+      "sourceName": "POWER Magazine",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.powermag.com/doe-closes-1-9-billion-loan-to-restart-duane-arnold-nuclear-plant/",
+      "publishedAt": "2026-09-08T14:50:44.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "power-magazine",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-financial-times-tech-https://www.ft.com/content/f6a26a17-985f-4283-99c4-ba5d54e94e7f?syn-25a6b1a6=1",
+      "sourceName": "Financial Times Technology",
+      "evidenceKind": "public-source",
+      "tier": "T2",
+      "canonicalUrl": "https://www.ft.com/content/f6a26a17-985f-4283-99c4-ba5d54e94e7f?syn-25a6b1a6=1",
+      "publishedAt": "2026-09-08T04:00:17.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "ft",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-light-reading-https://www.lightreading.com/regulatory-politics/thailand-suspends-data-center-projects-as-oil-leak-sparks-environmental-concerns",
+      "sourceName": "Light Reading",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.lightreading.com/regulatory-politics/thailand-suspends-data-center-projects-as-oil-leak-sparks-environmental-concerns",
+      "publishedAt": "2026-09-09T13:45:21.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "light-reading",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-ithome-https://www.ithome.com/1/000/360.htm",
+      "sourceName": "IT之家",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/000/360.htm",
+      "publishedAt": "2026-09-09T09:47:16.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-the-register-https://www.theregister.com/systems/2026/09/08/floating-nuclear-startup-bluecore-lands-50m-funding-before-setting-sail/5295032",
+      "sourceName": "The Register",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theregister.com/systems/2026/09/08/floating-nuclear-startup-bluecore-lands-50m-funding-before-setting-sail/5295032",
+      "publishedAt": "2026-09-08T16:30:00.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "the-register",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-cnbc-technology-https://www.cnbc.com/2026/09/08/ai-infrastructure-stocks-rally-on-deal-from-qualcomm-and-corning.html",
+      "sourceName": "CNBC Technology",
+      "evidenceKind": "public-source",
+      "tier": "T2",
+      "canonicalUrl": "https://www.cnbc.com/2026/09/08/ai-infrastructure-stocks-rally-on-deal-from-qualcomm-and-corning.html",
+      "publishedAt": "2026-09-08T22:02:53.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "cnbc",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-cnbc-technology-https://www.cnbc.com/2026/09/08/mistral-ai-funding-valuation-samsung.html",
+      "sourceName": "CNBC Technology",
+      "evidenceKind": "public-source",
+      "tier": "T2",
+      "canonicalUrl": "https://www.cnbc.com/2026/09/08/mistral-ai-funding-valuation-samsung.html",
+      "publishedAt": "2026-09-08T07:27:06.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "cnbc",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-financial-times-tech-https://www.ft.com/content/adbf5262-c4d5-4312-a9b8-4d3cf30c9e00?syn-25a6b1a6=1",
+      "sourceName": "Financial Times Technology",
+      "evidenceKind": "public-source",
+      "tier": "T2",
+      "canonicalUrl": "https://www.ft.com/content/adbf5262-c4d5-4312-a9b8-4d3cf30c9e00?syn-25a6b1a6=1",
+      "publishedAt": "2026-09-08T05:00:07.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "ft",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-ithome-https://www.ithome.com/1/000/397.htm",
+      "sourceName": "IT之家",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/000/397.htm",
+      "publishedAt": "2026-09-09T11:00:21.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-the-verge-https://www.theverge.com/ai-artificial-intelligence/991927/anthropic-ai-kill-all-humans",
+      "sourceName": "The Verge",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/991927/anthropic-ai-kill-all-humans",
+      "publishedAt": "2026-09-09T09:56:28.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "the-verge",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-ithome-https://www.ithome.com/1/000/353.htm",
+      "sourceName": "IT之家",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/000/353.htm",
+      "publishedAt": "2026-09-09T09:34:47.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-the-register-https://www.theregister.com/os-platforms/2026/09/09/switzerland-tests-a-foss-escape-route-from-microsoft-365/5294878",
+      "sourceName": "The Register",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theregister.com/os-platforms/2026/09/09/switzerland-tests-a-foss-escape-route-from-microsoft-365/5294878",
+      "publishedAt": "2026-09-09T09:01:00.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "the-register",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-light-reading-https://www.lightreading.com/satellite/fcc-sizes-up-spectrum-for-satellite-broadband-ai-sensing",
+      "sourceName": "Light Reading",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.lightreading.com/satellite/fcc-sizes-up-spectrum-for-satellite-broadband-ai-sensing",
+      "publishedAt": "2026-09-08T20:45:00.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "light-reading",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-the-register-https://www.theregister.com/ai-and-ml/2026/09/08/mistral-bags-3b-to-build-europes-sovereign-ai-champion/5294941",
+      "sourceName": "The Register",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theregister.com/ai-and-ml/2026/09/08/mistral-bags-3b-to-build-europes-sovereign-ai-champion/5294941",
+      "publishedAt": "2026-09-08T12:45:00.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "the-register",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-blocks-and-files-https://www.blocksandfiles.com/flash/2026/09/08/sk-hynix-on-solidigm-pre-ipo-rumors-no-matters-have-been-determined/5294842",
+      "sourceName": "Blocks & Files",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.blocksandfiles.com/flash/2026/09/08/sk-hynix-on-solidigm-pre-ipo-rumors-no-matters-have-been-determined/5294842",
+      "publishedAt": "2026-09-08T11:22:38.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "blocks-and-files",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-light-reading-https://www.lightreading.com/ai-machine-learning/nscale-signs-multi-year-partnership-with-figure-a-humanoid-robotics-company",
+      "sourceName": "Light Reading",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.lightreading.com/ai-machine-learning/nscale-signs-multi-year-partnership-with-figure-a-humanoid-robotics-company",
+      "publishedAt": "2026-09-03T15:42:31.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "light-reading",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-the-register-https://www.theregister.com/public-sector/2026/09/09/philippines-bets-ai-will-lift-gdp-by-12-percent-in-seven-years-without-hurting-outsourcing/5295178",
+      "sourceName": "The Register",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theregister.com/public-sector/2026/09/09/philippines-bets-ai-will-lift-gdp-by-12-percent-in-seven-years-without-hurting-outsourcing/5295178",
+      "publishedAt": "2026-09-09T05:25:44.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "the-register",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-ibm-newsroom-https://newsroom.ibm.com/2026-09-09-cleveland-clinic,-riken-and-ibm-team-advance-to-finals-for-2026-acm-gordon-bell-prize",
+      "sourceName": "IBM Newsroom",
+      "evidenceKind": "public-source",
+      "tier": "T1",
+      "canonicalUrl": "https://newsroom.ibm.com/2026-09-09-cleveland-clinic,-riken-and-ibm-team-advance-to-finals-for-2026-acm-gordon-bell-prize",
+      "publishedAt": "2026-09-09T04:00:00.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "ibm",
+      "sections": [
+        "power-model-demand"
+      ]
+    },
+    {
+      "ref": "source-openai-news-https://openai.com/index/the-work-now-within-reach",
+      "sourceName": "OpenAI News",
+      "evidenceKind": "public-source",
+      "tier": "T1",
+      "canonicalUrl": "https://openai.com/index/the-work-now-within-reach",
+      "publishedAt": "2026-09-08T13:00:00.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "openai",
+      "sections": [
+        "idc-pulse"
+      ]
+    },
+    {
+      "ref": "source-cnbc-technology-https://www.cnbc.com/2026/09/08/qualcomm-amazon-data-center-infrastructure-deal.html",
+      "sourceName": "CNBC Technology",
+      "evidenceKind": "public-source",
+      "tier": "T2",
+      "canonicalUrl": "https://www.cnbc.com/2026/09/08/qualcomm-amazon-data-center-infrastructure-deal.html",
+      "publishedAt": "2026-09-08T20:12:25.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "cnbc",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-cnbc-technology-https://www.cnbc.com/2026/09/09/google-finland-ai-infrastructure-investment.html",
+      "sourceName": "CNBC Technology",
+      "evidenceKind": "public-source",
+      "tier": "T2",
+      "canonicalUrl": "https://www.cnbc.com/2026/09/09/google-finland-ai-infrastructure-investment.html",
+      "publishedAt": "2026-09-09T09:15:41.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "cnbc",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-financial-times-tech-https://www.ft.com/content/2cc88608-04b2-4dcb-8c89-698f251de170?syn-25a6b1a6=1",
+      "sourceName": "Financial Times Technology",
+      "evidenceKind": "public-source",
+      "tier": "T2",
+      "canonicalUrl": "https://www.ft.com/content/2cc88608-04b2-4dcb-8c89-698f251de170?syn-25a6b1a6=1",
+      "publishedAt": "2026-09-09T10:00:09.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "ft",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-the-verge-https://www.theverge.com/tech/991884/apple-iphone-duo-rumor-foldable",
+      "sourceName": "The Verge",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theverge.com/tech/991884/apple-iphone-duo-rumor-foldable",
+      "publishedAt": "2026-09-09T05:26:53.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "the-verge",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-the-verge-https://www.theverge.com/gadgets/991653/razer-blackshark-v3-pro-gaming-headset-anc-deal-sale",
+      "sourceName": "The Verge",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theverge.com/gadgets/991653/razer-blackshark-v3-pro-gaming-headset-anc-deal-sale",
+      "publishedAt": "2026-09-08T20:39:49.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "the-verge",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-ithome-https://www.ithome.com/1/000/378.htm",
+      "sourceName": "IT之家",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/000/378.htm",
+      "publishedAt": "2026-09-09T10:07:27.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-the-register-https://www.theregister.com/security/2026/09/08/boston-scientific-left-nursing-its-bottom-line-after-cyberattack/5295026",
+      "sourceName": "The Register",
+      "evidenceKind": "public-source",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theregister.com/security/2026/09/08/boston-scientific-left-nursing-its-bottom-line-after-cyberattack/5295026",
+      "publishedAt": "2026-09-08T15:45:00.000Z",
+      "publishedAtBasis": "source",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "the-register",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "source-google-developers-https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/",
+      "sourceName": "Google Developers Blog",
+      "evidenceKind": "public-source",
+      "tier": "T1",
+      "canonicalUrl": "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/",
+      "publishedAt": "2026-09-09T13:54:47.270Z",
+      "publishedAtBasis": "editorial-observation-fallback",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "google",
+      "sections": [
+        "supply-chain"
+      ]
+    },
+    {
+      "ref": "source-google-developers-https://developers.googleblog.com/driving-developer-excellence-inside-the-program-sprints/",
+      "sourceName": "Google Developers Blog",
+      "evidenceKind": "public-source",
+      "tier": "T1",
+      "canonicalUrl": "https://developers.googleblog.com/driving-developer-excellence-inside-the-program-sprints/",
+      "publishedAt": "2026-09-09T13:54:47.270Z",
+      "publishedAtBasis": "editorial-observation-fallback",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "google",
+      "sections": [
+        "idc-pulse"
+      ]
+    },
+    {
+      "ref": "source-google-developers-https://developers.googleblog.com/agent-and-model-evaluations-in-gemini-enterprise-agent-platform-are-now-ga/",
+      "sourceName": "Google Developers Blog",
+      "evidenceKind": "public-source",
+      "tier": "T1",
+      "canonicalUrl": "https://developers.googleblog.com/agent-and-model-evaluations-in-gemini-enterprise-agent-platform-are-now-ga/",
+      "publishedAt": "2026-09-09T13:54:47.270Z",
+      "publishedAtBasis": "editorial-observation-fallback",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "accessState": "public",
+      "independenceGroup": "google",
+      "sections": [
+        "power-model-demand"
+      ]
+    },
+    {
+      "ref": "source-failures-20260909-1630",
+      "sourceName": "IDC Atlas 16:30 scan source-health failures",
+      "evidenceKind": "workflow-state",
+      "observedAt": "2026-09-09T13:54:54.964Z",
+      "workflowState": "partial",
+      "sections": [
+        "*"
+      ],
+      "notes": [
+        "ndrc: fetch failed",
+        "miit: fetch failed",
+        "mep-china: fetch failed",
+        "beijing-gov: fetch failed",
+        "shanghai-gov: fetch failed",
+        "xai-news: HTTP 403",
+        "ap-technology: HTTP 403"
+      ]
+    }
+  ]
+}

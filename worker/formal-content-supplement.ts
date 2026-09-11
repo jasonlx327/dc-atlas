@@ -1,4 +1,5 @@
 import { RECOVERY_NEWS } from "./formal-recovery-20260907";
+import { IMAGE25_NEWS } from "./image25-news";
 
 export type FormalNewsSupplement = {
   id: string;
@@ -21,10 +22,12 @@ export type FormalNewsSupplement = {
   whyItMatters: string;
   whyItMattersEn: string;
   verifiedAt?: string;
+  details?: Array<{ heading: string; body: string }>;
+  detailsEn?: Array<{ heading: string; body: string }>;
   lifecycle?: Array<{ label: string; state: "done" | "current" | "next" }>;
 };
 
-export const FORMAL_PULSE_SUPPLEMENT: FormalNewsSupplement[] = [...RECOVERY_NEWS, {
+export const FORMAL_PULSE_SUPPLEMENT: FormalNewsSupplement[] = [IMAGE25_NEWS, ...RECOVERY_NEWS, {
   id: "aws-bedrock-servicenow-connector-2026",
   title: "Amazon Bedrock 托管知识库新增 ServiceNow 原生连接器",
   titleEn: "Amazon Bedrock Managed Knowledge Base adds a native ServiceNow connector",

@@ -11,8 +11,9 @@ export async function fetchWithRetries(
   options: ConnectorFetchOptions & { accept?: string } = {},
 ): Promise<{ response: Response; responseMs: number }> {
   let lastError: unknown;
+  const started = performance.now();
   for (let attempt = 0; attempt < 3; attempt += 1) {
-    const started = performance.now();
+    options.signal?.throwIfAborted();
     try {
       const headers = new Headers({
         Accept: options.accept ?? "application/json, application/atom+xml, application/rss+xml, text/xml",
@@ -22,16 +23,20 @@ export async function fetchWithRetries(
       if (options.requestState?.lastModified) headers.set("If-Modified-Since", options.requestState.lastModified);
       const response = await fetch(url, {
         headers,
-        signal: options.signal ?? AbortSignal.timeout(15_000),
+        signal: options.signal
+          ? AbortSignal.any([options.signal, AbortSignal.timeout(options.requestTimeoutMs ?? 8_000)])
+          : AbortSignal.timeout(options.requestTimeoutMs ?? 8_000),
       });
       const responseMs = Math.round(performance.now() - started);
       if (response.status >= 500 && attempt < 2) {
+        await response.body?.cancel();
         await delay(250 * (attempt + 1));
         continue;
       }
       return { response, responseMs };
     } catch (error) {
       lastError = error;
+      options.signal?.throwIfAborted();
       if (attempt < 2) {
         await delay(250 * (attempt + 1));
         continue;
@@ -50,7 +55,10 @@ export function responseHeaders(response: Response) {
 
 export async function readTextLimited(response: Response, maximumBytes = 2_000_000): Promise<string> {
   const contentLength = Number(response.headers.get("content-length"));
-  if (Number.isFinite(contentLength) && contentLength > maximumBytes) throw new Error(`Response exceeds ${maximumBytes} byte limit`);
+  if (Number.isFinite(contentLength) && contentLength > maximumBytes) {
+    await response.body?.cancel();
+    throw new Error(`Response exceeds ${maximumBytes} byte limit`);
+  }
   if (!response.body) return "";
   const reader = response.body.getReader();
   const decoder = new TextDecoder();
@@ -65,6 +73,9 @@ export async function readTextLimited(response: Response, maximumBytes = 2_000_0
       text += decoder.decode(value, { stream: true });
     }
     return text + decoder.decode();
+  } catch (error) {
+    await reader.cancel().catch(() => {});
+    throw error;
   } finally {
     reader.releaseLock();
   }

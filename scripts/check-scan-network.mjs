@@ -1,3 +1,4 @@
+import "./node-transport.mjs";
 import { pathToFileURL } from "node:url";
 
 export async function checkScanNetwork(request = fetch) {

@@ -107,6 +107,7 @@ export function connectorHealthRecord(result: ConnectorResult, source: SourceDef
 }
 
 export type ConnectorFetchOptions = {
+  requestTimeoutMs?: number;
   signal?: AbortSignal;
   userAgent?: string;
   requestState?: ConnectorRequestState;

@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {industryFeed} from '../app/industry-feed.ts';
+import {classifyIndustry} from '../app/industry-taxonomy.ts';
+const old={id:'reference',title:'单相与两相选型',publishedAt:'2026-05-05',sourceUrl:'https://example.com/cooling',sourceName:'Vendor',note:'冷板技术'};
+const rows=industryFeed({industryNews:[{...old,id:'news',summary:'Duplicate'}],coolingProgress:[old],capacityRadar:[{...old,id:'campus',title:'新项目',sourceUrl:'https://example.com/campus'}],modelNews:[{id:'model',title:'New Claude model',publishedAt:'2026-09-01'}]});
+assert.equal(rows.length,3,'union retains reference-only and model-only records without duplicating URLs');
+const reference=rows.find(r=>r.sourceUrl===old.sourceUrl)!;
+assert.equal(reference.publishedAt,'2026-05-05','old references retain original date');
+assert.equal(classifyIndustry(reference).primary?.parent,'cooling','curated source membership survives generic titles');
+assert.equal(classifyIndustry(rows.find(r=>r.id==='campus')!).primary?.parent,'campus');
+console.log('Shared industry feed: union, URL dedup, source dates and explicit routing passed');

@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { industryFeed } from "./industry-feed";
+import { industrySegments } from "./industry-taxonomy";
+import { IndustryBrowser } from "./industry-browser";
 import QRCode from "qrcode";
 import { ChainIcon, type ChainKey } from "./chain-icon";
 import { publishedColumnArticles } from "./columns/articles";
@@ -15,7 +18,6 @@ type PulseRegion = "all" | "中国" | "美国";
 type ListedMarket = "all" | "A 股" | "美股";
 type SiteView = "home" | "pulse" | "industry";
 type PulseHubTab = "projects" | "listed" | "daily";
-type IndustryHubTab = "chain" | "hardware" | "china" | "models" | "campus" | "cooling";
 type LifecycleStage = { label: string; state: "done" | "current" | "next" };
 
 function ChineseColumnsFeature() {
@@ -70,6 +72,7 @@ type DailySnapshotMeta = { date: string; generatedAt: string; source: "scheduled
 type CalendarEvent = { id: string; startsAt: string; company: string; ticker: string; sector: string; description: string; focus: string; sourceName: string; sourceUrl: string; conclusion?: { summary: string; sourceName: string; sourceUrl: string } };
 
 export type AtlasPayload = {
+  industryNews?: NewsItem[];
   generatedAt: string;
   contentReviewedAt: string;
   contentVersion?: string;
@@ -285,7 +288,7 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenuGroup, setActiveMenuGroup] = useState<NavGroupKey>("today");
   const [pulseHubTab, setPulseHubTab] = useState<PulseHubTab>("projects");
-  const [industryHubTab, setIndustryHubTab] = useState<IndustryHubTab>("chain");
+  const [industrySegment, setIndustrySegment] = useState("all");
 
   useEffect(() => {
     if (view !== "industry") return;
@@ -293,7 +296,8 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
     const tab = params.get("tab");
     const stage = params.get("stage");
     const frame = window.requestAnimationFrame(() => {
-      if (tab && ["chain", "hardware", "china", "models", "campus", "cooling"].includes(tab)) setIndustryHubTab(tab as IndustryHubTab);
+      const legacyTabs: Record<string, string> = {chain: "all", hardware: "silicon", china: "silicon", models: "model", campus: "campus", cooling: "cooling"};
+      if (tab && legacyTabs[tab]) setIndustrySegment(legacyTabs[tab]);
       if (stage && chainStages.some((item) => item.key === stage)) setActiveStage(stage as ChainKey);
     });
     return () => window.cancelAnimationFrame(frame);
@@ -425,14 +429,11 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
     pageLabel="产业链地图"
     className="atlas-industry-shell"
   ><div id="top" className="content-hub industry-hub atlas-console-content-page atlas-industry-page">
-    <section className="hub-hero industry-hub-hero"><p>IDC ATLAS · INFRASTRUCTURE CENTER</p><h1>从芯片到电网，<br /><em>AI 正在变成基础设施。</em></h1><p>算力硬件、国产 GPU、模型需求、大型园区与液冷工程的最新公开进展。</p><div><span>6 个产业节点</span><span>{products.length} 个硬件产品</span><span>{includedCapacity.length} 个园区进展</span></div></section>
-    <nav className="hub-tabs industry-tabs" aria-label="产业中心内容分类">{([["chain", "产业链"], ["hardware", "NVIDIA / AMD"], ["china", "中国 GPU"], ["models", "模型需求"], ["campus", "园区容量"], ["cooling", "液冷"]] as const).map(([key, label]) => <button key={key} className={industryHubTab === key ? "active" : ""} aria-pressed={industryHubTab === key} onClick={() => setIndustryHubTab(key)}><span>{label}</span></button>)}</nav>
-    {industryHubTab === "chain" && <section className="section chain-section hub-content-section"><div className="hub-filter-row inverse"><div><span>SUPPLY CHAIN · 6 NODES</span><h2>产业链最新信号</h2></div><p>点击节点切换最近 {payload?.chainWindowDays ?? 30} 天动态。</p></div><div className="chain-stage-row">{chainStages.map((stage) => <button key={stage.key} className={`chain-stage ${stage.className} ${activeStage === stage.key ? "active" : ""}`} onClick={() => setActiveStage(stage.key)} aria-pressed={activeStage === stage.key}><span>{stage.no}</span><i className="chain-stage-icon"><ChainIcon type={stage.key} /></i><strong>{stage.title}</strong><small>{stage.caption}</small></button>)}</div><div className="chain-detail"><div className="chain-detail-head"><span>SELECTED NODE</span><h3>{currentStage.title}</h3><p>{currentStage.caption} · 最近公开动态</p></div><div className="chain-news">{activeNews.map((item) => <NewsCard key={item.id} item={item} compact />)}</div></div></section>}
-    {industryHubTab === "hardware" && <section className="section hub-content-section"><div className="hub-filter-row"><div><span>NVIDIA &amp; AMD PRODUCT RADAR</span><h2>产品与发布节奏</h2></div></div><div className="product-stack hub-product-grid">{products.map((product, index) => <article className="product-card" key={product.id}><div className="product-art">{product.imageSrc && <img src={product.imageSrc} alt={product.imageAlt ?? `${product.vendor} 产品图`} loading="lazy" />}</div><div className="product-copy"><p>{product.vendor} · PRODUCT {String(index + 1).padStart(2, "0")}</p><h3>{product.model}</h3><strong>{product.form}</strong><span>{product.spec}</span><dl><div><dt>发布</dt><dd>{product.release}</dd></div><div><dt>价格</dt><dd>{product.price}</dd></div></dl><a href={product.sourceUrl} target="_blank" rel="noreferrer">{product.vendor} 官方资料<ExternalIcon /></a></div></article>)}</div></section>}
-    {industryHubTab === "china" && <section className="section china-chip-section hub-content-section"><div className="hub-filter-row inverse"><div><span>CHINA GPU &amp; AI SILICON</span><h2>中国 GPU 与超节点</h2></div></div><div className="supernode-grid">{supernodes.map((product, index) => <SupernodeCard key={product.id} product={product} index={index} />)}</div><div className="china-chip-grid hub-secondary-grid">{chinaChipNews.map((item, index) => <ChinaChipCard key={item.id} item={item} index={index} />)}</div></section>}
-    {industryHubTab === "models" && <section className="section model-section hub-content-section"><div className="hub-filter-row inverse"><div><span>MODEL DEMAND &amp; CAPABILITY</span><h2>模型需求与公开评测</h2></div></div><div className="model-grid">{modelNews.map((item, index) => <article className="model-card" key={item.id}><div className="model-card-top"><span>{String(index + 1).padStart(2, "0")}</span><time>{formatRelativeTime(item.publishedAt)}</time></div><h3><a href={item.permalink} target="_blank" rel="noreferrer">{item.title}</a></h3><p>{item.summary}</p>{benchmarkLine(item) && <div className="benchmark-line"><span>PUBLIC BENCHMARK</span><strong>{benchmarkLine(item)}</strong></div>}<SourceRow item={item} /></article>)}</div></section>}
-    {industryHubTab === "campus" && <section className="section project-section hub-content-section"><div className="hub-filter-row inverse"><div><span>LARGE-SCALE CAMPUS RADAR</span><h2>大型园区进度</h2></div></div><div className="capacity-grid">{includedCapacity.map((record) => <article className="capacity-card" key={record.id}><div><span>{record.status}</span><strong>{record.metric}</strong></div><p>{record.publishedAt}</p><h3>{record.title}</h3><h4>{record.subject}</h4><p className="capacity-note">{record.note}</p><RecordSource record={record} /></article>)}</div></section>}
-    {industryHubTab === "cooling" && <section className="section cooling-section hub-content-section"><div className="hub-filter-row"><div><span>LIQUID COOLING ADOPTION</span><h2>液冷部署进度</h2></div></div><div className="cooling-journey">{coolingRecords.map((record, index) => <article className="cooling-step" key={record.id}><span>{String(index + 1).padStart(2, "0")}</span><i /><p>{record.status}</p><h3>{record.metric}</h3><h4>{record.title}</h4><small>{record.subject} · {record.publishedAt}</small><p className="cooling-note">{record.note}</p><RecordSource record={record} /></article>)}</div></section>}
+    <section className="hub-hero industry-hub-hero"><p>IDC ATLAS · INFRASTRUCTURE CENTER</p><h1>AI 基础设施产业链</h1><p>算力硬件、国产 GPU、模型需求、大型园区与液冷工程的最新公开进展。</p><div><span>8 个产业板块</span><span>{products.length} 个硬件产品</span><span>{includedCapacity.length} 个园区进展</span></div></section>
+    <nav className="hub-tabs industry-tabs" aria-label="产业中心内容分类">{[{id: "all", zh: "全部板块"}, ...industrySegments, {id: "unclassified", zh: "其他"}].map(({id, zh}) => <button key={id} className={industrySegment === id ? "active" : ""} aria-pressed={industrySegment === id} onClick={() => setIndustrySegment(id)}><span>{zh}</span></button>)}</nav>
+    <IndustryBrowser items={industryFeed(payload)} segment={industrySegment} onSegmentChange={setIndustrySegment} loading={!payload} asOf={payload?.generatedAt} />
+    {industrySegment === "silicon" && <section className="section hub-content-section"><div className="hub-filter-row"><div><span>NVIDIA &amp; AMD PRODUCT RADAR</span><h2>硬件产品资料</h2></div></div><div className="product-stack hub-product-grid">{products.map((product, index) => <article className="product-card" key={product.id}><div className="product-art">{product.imageSrc && <img src={product.imageSrc} alt={product.imageAlt ?? `${product.vendor} 产品图`} loading="lazy" />}</div><div className="product-copy"><p>{product.vendor} · PRODUCT {String(index + 1).padStart(2, "0")}</p><h3>{product.model}</h3><strong>{product.form}</strong><span>{product.spec}</span><dl><div><dt>发布</dt><dd>{product.release}</dd></div><div><dt>价格</dt><dd>{product.price}</dd></div></dl><a href={product.sourceUrl} target="_blank" rel="noreferrer">{product.vendor} 官方资料<ExternalIcon /></a></div></article>)}</div></section>}
+    {industrySegment === "silicon" && <section className="section china-chip-section hub-content-section"><div className="hub-filter-row inverse"><div><span>CHINA GPU &amp; AI SILICON</span><h2>中国 GPU 与超节点</h2></div></div><div className="supernode-grid">{supernodes.map((product, index) => <SupernodeCard key={product.id} product={product} index={index} />)}</div></section>}
   </div></IntelligenceConsoleShell>;
 
   return <main id="top">
@@ -472,7 +473,7 @@ export default function Home({ initialPayload = null, view = "home" }: { initial
 
     <section className="section mna-section" id="mna"><div className="section-title"><div><span className="section-no">08</span><p>GLOBAL IDC M&amp;A INTELLIGENCE</p><h2>全球重大并购</h2></div><p>关注会改变区域容量、平台控制权或能源获取能力的重大交易，展示买方、标的、交易规模与资产体量。</p></div><div className="mna-grid">{deals.map((deal) => <article className="mna-card" key={deal.id}><div className="mna-card-head"><span>{deal.status}</span><time>公告 {deal.announcedAt}</time></div><p>{deal.region}</p><h3>{deal.buyer}<i><ArrowIcon /></i>{deal.target}</h3><div className="mna-metrics"><div><small>DEAL VALUE · {deal.valueBasis}</small><strong>{deal.value}</strong></div><div><small>ASSET SCALE · {deal.capacityBasis}</small><strong>{deal.capacity}</strong></div></div><p className="mna-rationale">{deal.rationale}</p><a href={deal.sourceUrl} target="_blank" rel="noreferrer"><span>SOURCE</span>{deal.sourceName}<ExternalIcon /></a><small className="mna-verified">状态核验至 {deal.statusAsOf}</small></article>)}</div></section>
 
-    <section className="section cooling-section" id="cooling"><div className="section-title"><div><span className="section-no">09</span><p>LIQUID COOLING ADOPTION</p><h2>液冷部署进度</h2></div><p>从标准与材料、产品化到工程落地，持续更新液冷产业从验证走向规模应用的关键节点。</p></div><div className="cooling-journey">{coolingRecords.map((record, index) => <article className="cooling-step" key={record.id}><span>{String(index + 1).padStart(2, "0")}</span><i aria-hidden="true" /><p>{record.status}</p><h3>{record.metric}</h3><h4>{record.title}</h4><small>{record.subject} · {record.publishedAt}</small><p className="cooling-note">{record.note}</p><RecordSource record={record} /></article>)}</div></section>
+    <section className="section cooling-section" id="cooling"><div className="section-title"><div><span className="section-no">09</span><p>LIQUID COOLING · SOLUTIONS & DELIVERY</p><h2>液冷技术与部署</h2></div><p>从标准与材料、产品化到工程落地，持续更新液冷产业从验证走向规模应用的关键节点。</p></div><div className="cooling-journey">{coolingRecords.map((record, index) => <article className="cooling-step" key={record.id}><span>{String(index + 1).padStart(2, "0")}</span><i aria-hidden="true" /><p>{record.status}</p><h3>{record.metric}</h3><h4>{record.title}</h4><small>{record.subject} · {record.publishedAt}</small><p className="cooling-note">{record.note}</p><RecordSource record={record} /></article>)}</div></section>
 
     <section className="benchmark-section section" id="benchmark"><div className="section-title"><div><span className="section-no">10</span><p>DAILY MARKET TEMPERATURE</p><h2>每日市场温度</h2></div><p>用 CWW 与 CWWCN 观察算力、存储和相关基础设施公司的当日整体表现。</p></div><div className="benchmark-layout"><div className="benchmark-cards">{(payload?.benchmarks ?? []).map((item) => <article className="benchmark-card" key={item.code}><div className="benchmark-head"><span>{item.code}</span><small>{item.count} 成分</small></div><p>{item.name}</p><strong>{item.level.toLocaleString("en-US", { maximumFractionDigits: 2 })}</strong><div className="benchmark-change"><span className={item.dayPct >= 0 ? "up" : "down"}>{item.dayPct >= 0 ? "+" : ""}{item.dayPct.toFixed(2)}%</span><small>较前收</small></div><div className="micro-bars" aria-hidden="true">{[34, 46, 40, 58, 52, 63, 49, 72, 67, 82, 75, 91].map((height, index) => <i key={index} style={{ height: `${height}%` }} />)}</div></article>)}{!payload?.benchmarks?.length && <div className="benchmark-placeholder">正在读取 CWW 官方收盘数据…</div>}</div><aside className="benchmark-note"><span>MARKET SNAPSHOT</span><h3>今天市场在交易什么？</h3><p>指数变化与产业新闻并列展示，帮助快速理解当日市场温度。</p><div className="data-source"><a href="https://cwwindex.today/" target="_blank" rel="noreferrer"><span>DATA FROM</span> CWW INDEX<ExternalIcon /></a><small>截至 {payload?.benchmarkDate ?? "—"} · Methodology v{payload?.benchmarkMethodology ?? "—"}</small></div></aside></div></section>
 
