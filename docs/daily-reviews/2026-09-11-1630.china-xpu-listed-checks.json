@@ -1,0 +1,653 @@
+{
+  "schemaVersion": "atlas-china-xpu-listed-checks.v1",
+  "runId": "atlas-2026-09-11-1630",
+  "generatedAt": "2026-09-11T08:51:09.280Z",
+  "cutoff": "2026-09-08T10:22:54.347+08:00",
+  "cutoffEnd": "2026-09-11T08:51:09.280Z",
+  "cutoffBasis": "16:30 fresh bounded re-probe",
+  "issuerCount": 7,
+  "attemptedCount": 7,
+  "completedEvidenceChecks": 0,
+  "results": {
+    "new/changed": 0,
+    "no-change": 0,
+    "not-determined": 7
+  },
+  "accessStatus": "fresh-issuer-and-exchange-entrypoint-reprobe",
+  "accessGaps": [
+    "https://www.jingjia.com/: fetch failed"
+  ],
+  "checks": [
+    {
+      "id": "cambricon",
+      "name": "寒武纪",
+      "ticker": "688256",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh issuer and exchange entrypoints were re-probed; issuer-specific announcement and field reconciliation remain incomplete.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "exchange announcements and issuer IR/newsroom",
+          "results, preliminary results, guidance and earnings-call materials",
+          "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+          "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+          "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+          "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+        ],
+        "issuerIr": {
+          "url": "https://www.cambricon.com/",
+          "resolvedUrl": "https://www.cambricon.com/",
+          "checkedAt": "2026-09-11T02:19:57.400Z",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1808,
+          "title": "寒武纪",
+          "observedDates": []
+        },
+        "exchange": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-11T02:19:59.208Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 271,
+            "title": "最新公告 | 上海证券交易所",
+            "observedDates": []
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-11T02:19:59.479Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 508,
+            "title": "巨潮资讯网",
+            "observedDates": []
+          }
+        ],
+        "accessStatus": "public-entrypoints",
+        "accessGaps": [],
+        "coverageLevel": "fresh entrypoint read; issuer-specific announcement completeness not proven",
+        "recheckedAt": "2026-09-11T08:51:09.280Z",
+        "probes": [
+          {
+            "url": "https://www.cambricon.com/",
+            "resolvedUrl": "https://www.cambricon.com/",
+            "checkedAt": "2026-09-11T08:51:20.496Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "寒武纪",
+            "observedDates": []
+          },
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-11T08:51:20.496Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "最新公告  | 上海证券交易所",
+            "observedDates": [
+              "2023-11-03"
+            ]
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-11T08:51:20.496Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "巨潮资讯网",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results, preliminary results, guidance and earnings-call materials",
+        "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+        "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+        "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+        "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+      ]
+    },
+    {
+      "id": "hygon",
+      "name": "海光信息",
+      "ticker": "688041",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh issuer and exchange entrypoints were re-probed; issuer-specific announcement and field reconciliation remain incomplete.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "exchange announcements and issuer IR/newsroom",
+          "results, preliminary results, guidance and earnings-call materials",
+          "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+          "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+          "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+          "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+        ],
+        "issuerIr": {
+          "url": "https://www.hygon.cn/",
+          "resolvedUrl": "https://www.hygon.cn/",
+          "checkedAt": "2026-09-11T02:19:57.401Z",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 873,
+          "title": "海光--用“芯”计算未来",
+          "observedDates": []
+        },
+        "exchange": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-11T02:19:58.274Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 841,
+            "title": "最新公告 | 上海证券交易所",
+            "observedDates": []
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-11T02:19:59.115Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 624,
+            "title": "巨潮资讯网",
+            "observedDates": []
+          }
+        ],
+        "accessStatus": "public-entrypoints",
+        "accessGaps": [],
+        "coverageLevel": "fresh entrypoint read; issuer-specific announcement completeness not proven",
+        "recheckedAt": "2026-09-11T08:51:09.280Z",
+        "probes": [
+          {
+            "url": "https://www.hygon.cn/",
+            "resolvedUrl": "https://www.hygon.cn/",
+            "checkedAt": "2026-09-11T08:51:20.496Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "海光--用“芯”计算未来",
+            "observedDates": []
+          },
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-11T08:51:20.496Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "最新公告  | 上海证券交易所",
+            "observedDates": [
+              "2023-11-03"
+            ]
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-11T08:51:20.496Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "巨潮资讯网",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results, preliminary results, guidance and earnings-call materials",
+        "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+        "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+        "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+        "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+      ]
+    },
+    {
+      "id": "loongson",
+      "name": "龙芯中科",
+      "ticker": "688047",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh issuer and exchange entrypoints were re-probed; issuer-specific announcement and field reconciliation remain incomplete.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "exchange announcements and issuer IR/newsroom",
+          "results, preliminary results, guidance and earnings-call materials",
+          "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+          "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+          "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+          "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+        ],
+        "issuerIr": {
+          "url": "https://www.loongson.cn/",
+          "resolvedUrl": "https://www.loongson.cn/",
+          "checkedAt": "2026-09-11T02:19:57.401Z",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 2533,
+          "title": "龙芯中科技术股份有限公司",
+          "observedDates": [
+            "2026-09-08",
+            "2026-09-01",
+            "2026-08-28"
+          ]
+        },
+        "exchange": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-11T02:19:59.934Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 231,
+            "title": "最新公告 | 上海证券交易所",
+            "observedDates": []
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-11T02:20:00.165Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 549,
+            "title": "巨潮资讯网",
+            "observedDates": []
+          }
+        ],
+        "accessStatus": "public-entrypoints",
+        "accessGaps": [],
+        "coverageLevel": "fresh entrypoint read; issuer-specific announcement completeness not proven",
+        "recheckedAt": "2026-09-11T08:51:09.280Z",
+        "probes": [
+          {
+            "url": "https://www.loongson.cn/",
+            "resolvedUrl": "https://www.loongson.cn/",
+            "checkedAt": "2026-09-11T08:51:20.497Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "龙芯中科技术股份有限公司",
+            "observedDates": [
+              "2025-03-11",
+              "2026-09-08",
+              "2026-09-01",
+              "2026-08-28"
+            ]
+          },
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-11T08:51:20.496Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "最新公告  | 上海证券交易所",
+            "observedDates": [
+              "2023-11-03"
+            ]
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-11T08:51:20.496Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "巨潮资讯网",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results, preliminary results, guidance and earnings-call materials",
+        "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+        "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+        "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+        "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+      ]
+    },
+    {
+      "id": "jingjia-micro",
+      "name": "景嘉微",
+      "ticker": "300474",
+      "exchange": "SZSE",
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh issuer and exchange entrypoints were re-probed; issuer-specific announcement and field reconciliation remain incomplete.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "exchange announcements and issuer IR/newsroom",
+          "results, preliminary results, guidance and earnings-call materials",
+          "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+          "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+          "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+          "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+        ],
+        "issuerIr": {
+          "url": "https://www.jingjia.com/",
+          "checkedAt": "2026-09-11T02:19:57.401Z",
+          "accessStatus": "unavailable",
+          "durationMs": 5465,
+          "error": "fetch failed"
+        },
+        "exchange": [],
+        "accessStatus": "partial-or-unavailable",
+        "accessGaps": [
+          "https://www.jingjia.com/: fetch failed"
+        ],
+        "coverageLevel": "fresh entrypoint read; issuer-specific announcement completeness not proven",
+        "recheckedAt": "2026-09-11T08:51:09.280Z",
+        "probes": [
+          {
+            "url": "https://www.jingjia.com/",
+            "checkedAt": "2026-09-11T08:51:20.497Z",
+            "accessStatus": "unavailable",
+            "httpStatus": null,
+            "error": "fetch failed"
+          }
+        ]
+      },
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results, preliminary results, guidance and earnings-call materials",
+        "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+        "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+        "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+        "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+      ]
+    },
+    {
+      "id": "moore-threads",
+      "name": "摩尔线程",
+      "ticker": "688795",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh issuer and exchange entrypoints were re-probed; issuer-specific announcement and field reconciliation remain incomplete.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "exchange announcements and issuer IR/newsroom",
+          "results, preliminary results, guidance and earnings-call materials",
+          "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+          "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+          "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+          "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+        ],
+        "issuerIr": {
+          "url": "https://www.mthreads.com/",
+          "resolvedUrl": "https://www.mthreads.com/",
+          "checkedAt": "2026-09-11T02:19:57.402Z",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1028,
+          "title": "摩尔线程官方网站 | 全栈AI 为美好世界加速",
+          "observedDates": []
+        },
+        "exchange": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-11T02:19:58.430Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 1561,
+            "title": "最新公告 | 上海证券交易所",
+            "observedDates": []
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-11T02:19:59.991Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 423,
+            "title": "巨潮资讯网",
+            "observedDates": []
+          }
+        ],
+        "accessStatus": "public-entrypoints",
+        "accessGaps": [],
+        "coverageLevel": "fresh entrypoint read; issuer-specific announcement completeness not proven",
+        "recheckedAt": "2026-09-11T08:51:09.280Z",
+        "probes": [
+          {
+            "url": "https://www.mthreads.com/",
+            "resolvedUrl": "https://www.mthreads.com/",
+            "checkedAt": "2026-09-11T08:51:20.497Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "摩尔线程官方网站 | 全栈AI 为美好世界加速",
+            "observedDates": [
+              "2026/09/09",
+              "2026/09/04",
+              "2026/09/02",
+              "2026/08/31",
+              "2026/08/28"
+            ]
+          },
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-11T08:51:20.496Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "最新公告  | 上海证券交易所",
+            "observedDates": [
+              "2023-11-03"
+            ]
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-11T08:51:20.496Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "巨潮资讯网",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results, preliminary results, guidance and earnings-call materials",
+        "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+        "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+        "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+        "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+      ]
+    },
+    {
+      "id": "metax",
+      "name": "沐曦股份",
+      "ticker": "688802",
+      "exchange": "SSE",
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh issuer and exchange entrypoints were re-probed; issuer-specific announcement and field reconciliation remain incomplete.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "exchange announcements and issuer IR/newsroom",
+          "results, preliminary results, guidance and earnings-call materials",
+          "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+          "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+          "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+          "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+        ],
+        "issuerIr": {
+          "url": "https://www.metax-tech.com/",
+          "resolvedUrl": "https://www.metax-tech.com/",
+          "checkedAt": "2026-09-11T02:19:57.402Z",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 777,
+          "title": "沐曦MetaX | 致力于成为全球一流的GPU企业",
+          "observedDates": [
+            "2026-09-08"
+          ]
+        },
+        "exchange": [
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-11T02:19:58.179Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 1840,
+            "title": "最新公告 | 上海证券交易所",
+            "observedDates": []
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-11T02:20:00.019Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 357,
+            "title": "巨潮资讯网",
+            "observedDates": []
+          }
+        ],
+        "accessStatus": "public-entrypoints",
+        "accessGaps": [],
+        "coverageLevel": "fresh entrypoint read; issuer-specific announcement completeness not proven",
+        "recheckedAt": "2026-09-11T08:51:09.280Z",
+        "probes": [
+          {
+            "url": "https://www.metax-tech.com/",
+            "resolvedUrl": "https://www.metax-tech.com/",
+            "checkedAt": "2026-09-11T08:51:20.497Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "沐曦MetaX | 致力于成为全球一流的GPU企业",
+            "observedDates": [
+              "2026-09-08",
+              "2025-12-26",
+              "2025-06-27"
+            ]
+          },
+          {
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+            "checkedAt": "2026-09-11T08:51:20.496Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "最新公告  | 上海证券交易所",
+            "observedDates": [
+              "2023-11-03"
+            ]
+          },
+          {
+            "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "resolvedUrl": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+            "checkedAt": "2026-09-11T08:51:20.496Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "巨潮资讯网",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results, preliminary results, guidance and earnings-call materials",
+        "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+        "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+        "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+        "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+      ]
+    },
+    {
+      "id": "biren",
+      "name": "壁仞科技",
+      "ticker": "6082",
+      "exchange": "HKEX",
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh issuer and exchange entrypoints were re-probed; issuer-specific announcement and field reconciliation remain incomplete.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "exchange announcements and issuer IR/newsroom",
+          "results, preliminary results, guidance and earnings-call materials",
+          "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+          "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+          "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+          "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+        ],
+        "issuerIr": {
+          "url": "https://www.birentech.com/",
+          "resolvedUrl": "https://www.birentech.com/",
+          "checkedAt": "2026-09-11T02:19:57.402Z",
+          "httpStatus": 200,
+          "accessStatus": "public",
+          "durationMs": 1412,
+          "title": "壁仞科技 智绘全球 | BIRENTECH",
+          "observedDates": []
+        },
+        "exchange": [],
+        "accessStatus": "public-entrypoints",
+        "accessGaps": [],
+        "coverageLevel": "fresh entrypoint read; issuer-specific announcement completeness not proven",
+        "recheckedAt": "2026-09-11T08:51:09.280Z",
+        "probes": [
+          {
+            "url": "https://www.birentech.com/",
+            "resolvedUrl": "https://www.birentech.com/",
+            "checkedAt": "2026-09-11T08:51:21.020Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "壁仞科技 智绘全球 | BIRENTECH",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "announcementUrls": [],
+      "disclosedFields": [],
+      "requiredChecks": [
+        "exchange announcements and issuer IR/newsroom",
+        "results, preliminary results, guidance and earnings-call materials",
+        "revenue, gross margin, operating cash flow, R&D, inventory and capital expenditure when disclosed",
+        "orders, backlog, shipments, customer concentration and delivery status when disclosed",
+        "product roadmap, tape-out, mass production, software ecosystem and supply constraints",
+        "IPO, refinancing, lock-up expiry, controlling-shareholder change, pledge, sanctions or regulatory inquiry when material to execution"
+      ]
+    }
+  ]
+}

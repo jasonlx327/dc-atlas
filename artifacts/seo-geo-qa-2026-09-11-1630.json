@@ -1,0 +1,109 @@
+{
+  "ok": true,
+  "checkedAt": "2026-09-11T08:56:16.306Z",
+  "base": "http://localhost:3107",
+  "checkedRoutes": 14,
+  "sitemapUrls": 547,
+  "fullCrawl": false,
+  "failures": [],
+  "results": [
+    {
+      "pathname": "/",
+      "status": 200,
+      "canonical": "https://idc-index.com/",
+      "language": "zh-CN",
+      "title": "全球数据中心与 AI 基础设施情报｜IDC Atlas"
+    },
+    {
+      "pathname": "/en",
+      "status": 200,
+      "canonical": "https://idc-index.com/en",
+      "language": "en",
+      "title": "Data Center Infrastructure Intelligence | IDC Atlas"
+    },
+    {
+      "pathname": "/columns",
+      "status": 200,
+      "canonical": "https://idc-index.com/columns",
+      "language": "zh-CN",
+      "title": "IDC Atlas 专栏｜数据中心与 AI 基础设施研究"
+    },
+    {
+      "pathname": "/en/columns",
+      "status": 200,
+      "canonical": "https://idc-index.com/en/columns",
+      "language": "en",
+      "title": "IDC Atlas Columns｜Data Center & AI Infrastructure Research"
+    },
+    {
+      "pathname": "/companies/nvidia",
+      "status": 200,
+      "canonical": "https://idc-index.com/companies/nvidia",
+      "language": "zh-CN",
+      "title": "英伟达｜IDC Atlas 实体档案"
+    },
+    {
+      "pathname": "/en/companies/nvidia",
+      "status": 200,
+      "canonical": "https://idc-index.com/en/companies/nvidia",
+      "language": "en",
+      "title": "NVIDIA | IDC Atlas Entity Profile"
+    },
+    {
+      "pathname": "/companies",
+      "status": 200,
+      "canonical": "https://idc-index.com/companies",
+      "language": "zh-CN",
+      "title": "AI 基础设施公司库｜IDC Atlas"
+    },
+    {
+      "pathname": "/en/companies",
+      "status": 200,
+      "canonical": "https://idc-index.com/en/companies",
+      "language": "en",
+      "title": "AI Infrastructure Company Library | IDC Atlas"
+    },
+    {
+      "pathname": "/pulse?signal=policy",
+      "status": 200,
+      "canonical": "https://idc-index.com/pulse",
+      "language": "zh-CN",
+      "title": "IDC 最新脉冲｜项目、上市公司与 AI 日报"
+    },
+    {
+      "pathname": "/en/pulse?signal=policy",
+      "status": 200,
+      "canonical": "https://idc-index.com/en/pulse",
+      "language": "en",
+      "title": "Data Center Project & Lease Tracker | IDC Atlas"
+    },
+    {
+      "pathname": "/industry?tab=chain&stage=compute",
+      "status": 200,
+      "canonical": "https://idc-index.com/industry",
+      "language": "zh-CN",
+      "title": "IDC 产业中心｜算力、园区、电力与液冷"
+    },
+    {
+      "pathname": "/en/industry?tab=china",
+      "status": 200,
+      "canonical": "https://idc-index.com/en/industry",
+      "language": "en",
+      "title": "AI Data Center Supply Chain: Power, Cooling & Compute | IDC Atlas"
+    },
+    {
+      "pathname": "/columns?company=nvidia",
+      "status": 200,
+      "canonical": "https://idc-index.com/columns",
+      "language": "zh-CN",
+      "title": "IDC Atlas 专栏｜数据中心与 AI 基础设施研究"
+    },
+    {
+      "pathname": "/en/columns?topic=MEMORY%20WATCH",
+      "status": 200,
+      "canonical": "https://idc-index.com/en/columns",
+      "language": "en",
+      "title": "IDC Atlas Columns｜Data Center & AI Infrastructure Research"
+    }
+  ]
+}

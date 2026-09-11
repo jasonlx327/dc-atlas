@@ -1,0 +1,283 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-09-11-1630",
+  "sources": [
+    {
+      "ref": "global-scan-20260911-1630-event-night",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "Fresh global event-night scan",
+      "observedAt": "2026-09-11T08:38:07.171Z",
+      "details": {
+        "status": "partial",
+        "freshness": "partial",
+        "stats": {
+          "fetched": 2792,
+          "normalized": 2738,
+          "duplicates": 54,
+          "relevant": 2036,
+          "uncertain": 122,
+          "deepScored": 2036,
+          "clusters": 1935,
+          "publicEligible": 0,
+          "rejected": 0,
+          "held": 572,
+          "errors": 11,
+          "routeCounts": {
+            "rumor-watch": 293,
+            "pulse": 1070,
+            "policy-index": 0,
+            "research-queue": 0,
+            "hold": 572,
+            "rejected": 0
+          }
+        },
+        "failures": [
+          "treasury-irs/treasury-irs-endpoint: The operation was aborted due to timeout",
+          "ndrc/ndrc-endpoint: fetch failed",
+          "miit/miit-endpoint: fetch failed",
+          "mep-china/mep-china-endpoint: fetch failed",
+          "beijing-gov/beijing-gov-endpoint: fetch failed",
+          "shanghai-gov/shanghai-gov-endpoint: fetch failed",
+          "google-cloud/google-cloud-endpoint: Response is not an RSS/Atom feed",
+          "intel-newsroom/intel-newsroom-endpoint: Response is not an RSS/Atom feed",
+          "xai-news/xai-news-endpoint: HTTP 403",
+          "ap-technology/ap-technology-endpoint: HTTP 403",
+          "36kr/36kr-endpoint: Response is not an RSS/Atom feed"
+        ]
+      },
+      "sections": [
+        "*"
+      ]
+    },
+    {
+      "ref": "core-company-overlay-20260911-1630",
+      "evidenceKind": "runtime-state",
+      "sourceName": "Fresh 50-company core watch overlay",
+      "observedAt": "2026-09-11T08:51:09.280Z",
+      "details": {
+        "companyCount": 50,
+        "results": {
+          "changed": 16,
+          "no-change": 8,
+          "not-determined": 26
+        },
+        "accessStatus": "fresh-bounded-entrypoint-reprobes"
+      },
+      "sections": [
+        "listed-companies",
+        "capacity",
+        "power-model-demand",
+        "earnings-calendar"
+      ]
+    },
+    {
+      "ref": "china-xpu-listed-overlay-20260911-1630",
+      "evidenceKind": "runtime-state",
+      "sourceName": "Fresh China XPU listed-issuer overlay",
+      "observedAt": "2026-09-11T08:51:09.280Z",
+      "details": {
+        "issuerCount": 7,
+        "results": {
+          "new/changed": 0,
+          "no-change": 0,
+          "not-determined": 7
+        },
+        "accessGaps": [
+          "https://www.jingjia.com/: fetch failed"
+        ]
+      },
+      "sections": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ]
+    },
+    {
+      "ref": "interconnect-cpo-overlay-20260911-1630",
+      "evidenceKind": "runtime-state",
+      "sourceName": "Fresh interconnect/CPO overlay",
+      "observedAt": "2026-09-11T08:51:09.280Z",
+      "details": {
+        "companyCount": 20,
+        "results": {
+          "new/changed": 0,
+          "no-change": 8,
+          "not-determined": 12
+        },
+        "accessGaps": [
+          "https://investors.broadcom.com/news-releases: The operation was aborted due to timeout",
+          "https://investors.credosemi.com/news-releases: 403",
+          "https://www.cerebras.ai/press-release: 404",
+          "https://www.celestica.com/news: The operation was aborted due to timeout",
+          "https://www.ciena.com/about/newsroom/: 403",
+          "https://www.tfc.com.cn/: fetch failed",
+          "https://www.yjphotonics.com/: fetch failed"
+        ]
+      },
+      "sections": [
+        "supply-chain",
+        "compute-products",
+        "power-model-demand"
+      ]
+    },
+    {
+      "ref": "handoff-20260911-0930",
+      "evidenceKind": "workflow-state",
+      "sourceName": "09:30 handoff consumed as baseline only",
+      "observedAt": "2026-09-11T08:55:34.000Z",
+      "details": {
+        "candidateCount": 176,
+        "selected": 142,
+        "watch": 34,
+        "closure": "completed",
+        "publicationProof": "not reused as current release proof"
+      },
+      "sections": [
+        "*"
+      ]
+    },
+    {
+      "ref": "event-evt-380ccbf82a95070230de-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "the-register",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theregister.com/ai-and-ml/2026/09/11/deepseeks-new-model-sets-a-template-for-powerful-llms-that-run-lean/5295715",
+      "publishedAt": "2026-09-11T07:15:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-register",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-098548d75b93b63894b8-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "fortune",
+      "tier": "T2",
+      "canonicalUrl": "https://fortune.com/2026/09/11/meta-muse-ai-shopping-agent-consumer-trust/",
+      "publishedAt": "2026-09-11T07:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "fortune",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-0079caf2d300ff81f408-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "data-center-dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/disa-launches-tender-for-216bn-jwcc-contracts/",
+      "publishedAt": "2026-09-11T08:19:15.000Z",
+      "accessState": "public",
+      "independenceGroup": "data-center-dynamics",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-84097aecdf2683b5a2c6-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/332.htm",
+      "publishedAt": "2026-09-11T08:05:20.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-cdcecad7bd9ad6d6baf5-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/326.htm",
+      "publishedAt": "2026-09-11T08:02:53.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-e405764a398791c8ebff-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/261.htm",
+      "publishedAt": "2026-09-11T06:51:45.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-a90b64fb1b1a020af42e-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/257.htm",
+      "publishedAt": "2026-09-11T06:41:45.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-5c96f7b0a2c00c1720d4-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/250.htm",
+      "publishedAt": "2026-09-11T06:19:29.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-4fc9d634d23e097bf2ae-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "the-register",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theregister.com/software/2026/09/11/oracle-says-ai-will-save-it-from-the-saaspocalypse-not-bring-it-on/5295736",
+      "publishedAt": "2026-09-11T02:43:10.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-register",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-8c1c77d31ab84747c948-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/284.htm",
+      "publishedAt": "2026-09-11T07:49:33.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-e8a774b788549258d6b9-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/259.htm",
+      "publishedAt": "2026-09-11T06:51:12.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    }
+  ]
+}

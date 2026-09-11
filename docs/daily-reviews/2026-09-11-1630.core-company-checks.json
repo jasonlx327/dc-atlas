@@ -1,0 +1,2613 @@
+{
+  "schemaVersion": "atlas-core-company-checks.v1",
+  "runId": "atlas-2026-09-11-1630",
+  "generatedAt": "2026-09-11T08:51:09.280Z",
+  "cutoff": "2026-09-11T02:28:15.775Z",
+  "cutoffEnd": "2026-09-11T08:51:09.280Z",
+  "companyCount": 50,
+  "checkedCount": 50,
+  "hitCount": 16,
+  "results": {
+    "changed": 16,
+    "no-change": 8,
+    "not-determined": 26
+  },
+  "accessStatus": "fresh-bounded-entrypoint-reprobes",
+  "companies": [
+    {
+      "id": "alibaba",
+      "name": "Alibaba",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "changed",
+      "resultReason": "Fresh current-window T0-T3 event matched this company; evidence remains source-tier scoped.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://www.alibabagroup.com/en-US/pressreleases",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.alibabagroup.com/en-US/pressreleases",
+            "resolvedUrl": "https://www.alibabagroup.com/en-US/pressreleases",
+            "checkedAt": "2026-09-11T08:51:09.311Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 2,
+      "latestEventId": "evt-75f317ec16aacba67ba7",
+      "latestEventTitle": "国内首个智能体可信身份工作组成立，阿里、华为、OPPO、联想、小米等加入",
+      "latestEventAt": "2026-09-11T08:30:10.000Z"
+    },
+    {
+      "id": "alphabet",
+      "name": "Alphabet",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "google-cloud",
+        "google-ai-blog",
+        "google-developers"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "changed",
+      "resultReason": "Fresh current-window T0-T3 event matched this company; evidence remains source-tier scoped.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "google-cloud",
+          "google-ai-blog",
+          "google-developers"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint",
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "google-cloud",
+          "google-ai-blog",
+          "google-developers"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": null,
+        "officialHttpStatus": null,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://cloud.google.com/blog/rss",
+            "resolvedUrl": "https://cloud.google.com/blog/rss",
+            "checkedAt": "2026-09-11T08:51:09.324Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Google Cloud Blog",
+            "observedDates": []
+          },
+          {
+            "url": "https://blog.google/technology/ai/rss/",
+            "resolvedUrl": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+            "checkedAt": "2026-09-11T08:51:09.325Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "AI",
+            "observedDates": []
+          },
+          {
+            "url": "https://developers.googleblog.com/feeds/posts/default",
+            "resolvedUrl": "https://developers.googleblog.com/feeds/posts/default/",
+            "checkedAt": "2026-09-11T08:51:09.325Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Google Developers Blog",
+            "observedDates": [
+              "2026-07-28"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 1,
+      "latestEventId": "evt-84097aecdf2683b5a2c6",
+      "latestEventTitle": "英伟达 CEO 黄仁勋重申：公司明年可以实现 70% 的同比增长",
+      "latestEventAt": "2026-09-11T08:05:20.000Z"
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "aws-news"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "changed",
+      "resultReason": "Fresh current-window T0-T3 event matched this company; evidence remains source-tier scoped.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "aws-news"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "aws-news"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": null,
+        "officialHttpStatus": null,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
+            "resolvedUrl": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
+            "checkedAt": "2026-09-11T08:51:09.325Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Recent Announcements",
+            "observedDates": [
+              "2026-08-12"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 1,
+      "latestEventId": "evt-8c1c77d31ab84747c948",
+      "latestEventTitle": "亚马逊 Amazon Ads 与 OpenAI 合作，支持在 ChatGPT 投放广告",
+      "latestEventAt": "2026-09-11T07:49:33.000Z"
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "amd"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "changed",
+      "resultReason": "Fresh current-window T0-T3 event matched this company; evidence remains source-tier scoped.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "amd"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "amd"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": null,
+        "officialHttpStatus": null,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://ir.amd.com/rss/news-releases.xml",
+            "resolvedUrl": "https://ir.amd.com/news-events/press-releases/rss",
+            "checkedAt": "2026-09-11T08:51:09.326Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Advanced Micro Devices, Inc. (AMD) Press Releases",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 3,
+      "latestEventId": "evt-cdcecad7bd9ad6d6baf5",
+      "latestEventTitle": "七彩虹灵创 Mini Pro 迷你主机亮相，搭载 192GB 统一内存、AMD 处理器",
+      "latestEventAt": "2026-09-11T08:02:53.000Z"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "changed",
+      "resultReason": "Fresh current-window T0-T3 event matched this company; evidence remains source-tier scoped.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://www.anthropic.com/news",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.anthropic.com/news",
+            "resolvedUrl": "https://www.anthropic.com/news",
+            "checkedAt": "2026-09-11T08:51:09.326Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Newsroom \\ Anthropic",
+            "observedDates": [
+              "2023-11-03",
+              "2026-09-09",
+              "2023-11-20",
+              "2026-04-09",
+              "2024-06-01",
+              "2026-08-04",
+              "2025-10-23",
+              "2026-09-10",
+              "2026-09-01",
+              "2025-07-17",
+              "2025-07-18",
+              "2026-08-31"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 5,
+      "latestEventId": "evt-84097aecdf2683b5a2c6",
+      "latestEventTitle": "英伟达 CEO 黄仁勋重申：公司明年可以实现 70% 的同比增长",
+      "latestEventAt": "2026-09-11T08:05:20.000Z"
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "apple-newsroom"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "changed",
+      "resultReason": "Fresh current-window T0-T3 event matched this company; evidence remains source-tier scoped.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "apple-newsroom"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "apple-newsroom"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": null,
+        "officialHttpStatus": null,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.apple.com/newsroom/rss-feed.rss",
+            "resolvedUrl": "https://www.apple.com/newsroom/rss-feed.rss",
+            "checkedAt": "2026-09-11T08:51:09.326Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "<![CDATA[Apple Newsroom]]>",
+            "observedDates": [
+              "2026-09-09",
+              "2026-09-08",
+              "2026-08-27",
+              "2026-08-25",
+              "2026-08-18",
+              "2026-08-13",
+              "2026-08-11",
+              "2026-08-10",
+              "2026-08-03",
+              "2026-07-30",
+              "2026-07-28",
+              "2026-07-23"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 2,
+      "latestEventId": "evt-b31dacde0386c5268919",
+      "latestEventTitle": "复刻苹果首款折叠 iPhone Duo 开合透视动画：安卓 / iOS / macOS 都有份",
+      "latestEventAt": "2026-09-11T07:53:59.000Z"
+    },
+    {
+      "id": "applied-digital",
+      "name": "Applied Digital",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://ir.applieddigital.com/news-events/press-releases",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://ir.applieddigital.com/news-events/press-releases",
+            "resolvedUrl": "https://ir.applieddigital.com/news-events/press-releases",
+            "checkedAt": "2026-09-11T08:51:09.719Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Press Releases :: Applied Digital Corporation (APLD)",
+            "observedDates": [
+              "2026-07-27",
+              "2026-07-15",
+              "2026-07-01",
+              "2026-06-09",
+              "2026-06-08",
+              "2026-05-20",
+              "2026-05-05",
+              "2026-05-04"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-9dddaed71af662f2000d",
+      "latestEventTitle": "Applied Digital Stock Faces A Big Buildout Before The AI Revenue Arrives - simplywall.st",
+      "latestEventAt": "2026-09-08T18:51:55.000Z"
+    },
+    {
+      "id": "applied-materials",
+      "name": "Applied Materials",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://ir.appliedmaterials.com/news-releases",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://ir.appliedmaterials.com/news-releases",
+            "resolvedUrl": "https://ir.appliedmaterials.com/news-releases",
+            "checkedAt": "2026-09-11T08:51:10.395Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "News | Applied Materials",
+            "observedDates": [
+              "2021-10-07",
+              "2021-09-27"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "arista",
+      "name": "Arista Networks",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "no-change",
+      "resultReason": "Fresh official entrypoint probes were reachable and no current-window event matched; issuer-specific completeness remains bounded.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://www.arista.com/en/company/news/press-release",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.arista.com/en/company/news/press-release",
+            "resolvedUrl": "https://www.arista.com/en/company/news/press-release",
+            "checkedAt": "2026-09-11T08:51:10.401Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Press Releases - Arista",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "asml",
+      "name": "ASML",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://www.asml.com/en/news/press-releases",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.asml.com/en/news/press-releases",
+            "resolvedUrl": "https://www.asml.com/en/news/press-releases",
+            "checkedAt": "2026-09-11T08:51:10.500Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Press releases | ASML - Supplying the semiconductor industry",
+            "observedDates": [
+              "2023-08-22",
+              "2026-05-16",
+              "2026-05-05",
+              "2026-01-28",
+              "2026-09-08"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-74417a531a9372d72121",
+      "latestEventTitle": "SK 海力士目标 2028 年将 High NA EUV 技术用于 DRAM 内存量产",
+      "latestEventAt": "2026-09-10T23:19:53.000Z"
+    },
+    {
+      "id": "baidu",
+      "name": "Baidu",
+      "layer": "model-application",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://ir.baidu.com/news-releases",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://ir.baidu.com/news-releases",
+            "resolvedUrl": "https://ir.baidu.com/news-releases",
+            "checkedAt": "2026-09-11T08:51:10.795Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Press Releases | Baidu Inc",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "broadcom",
+      "name": "Broadcom",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "changed",
+      "resultReason": "Fresh current-window T0-T3 event matched this company; evidence remains source-tier scoped.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "officialUrl": "https://investors.broadcom.com/news-releases",
+        "officialHttpStatus": 404,
+        "accessStatus": "partially-available",
+        "accessGaps": [
+          "https://investors.broadcom.com/news-releases: 404"
+        ],
+        "probes": [
+          {
+            "url": "https://investors.broadcom.com/news-releases",
+            "resolvedUrl": "https://investors.broadcom.com/news-releases",
+            "checkedAt": "2026-09-11T08:51:10.843Z",
+            "httpStatus": 404,
+            "accessStatus": "unavailable",
+            "durationMs": null,
+            "title": "Page Not Found | Broadcom Inc.",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 1,
+      "latestEventId": "evt-e405764a398791c8ebff",
+      "latestEventTitle": "TrendForce 数据：十大芯片设计企业营收 2026Q2 同比增长 73%，AMD 升至第三",
+      "latestEventAt": "2026-09-11T06:51:45.000Z"
+    },
+    {
+      "id": "bytedance",
+      "name": "ByteDance",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "no-change",
+      "resultReason": "Fresh official entrypoint probes were reachable and no current-window event matched; issuer-specific completeness remains bounded.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://www.bytedance.com/en/news",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.bytedance.com/en/news",
+            "resolvedUrl": "https://www.bytedance.com/en/news",
+            "checkedAt": "2026-09-11T08:51:10.896Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "ByteDance",
+            "observedDates": [
+              "2019-12-19"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "cloudflare-blog"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "cloudflare-blog"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "cloudflare-blog"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": null,
+        "officialHttpStatus": null,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://blog.cloudflare.com/rss/",
+            "resolvedUrl": "https://blog.cloudflare.com/rss/",
+            "checkedAt": "2026-09-11T08:51:11.167Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Cloudflare Blog",
+            "observedDates": [
+              "2026-08-04",
+              "2026-09-04",
+              "2026-05-29",
+              "2026-06-17",
+              "2018/12/19",
+              "2021/03/16",
+              "2023/10/24",
+              "2025-11-25",
+              "2026-07-28",
+              "2025-06-18",
+              "2026/03/14"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-23fcb485035e4abb8955",
+      "latestEventTitle": "Serving the most critical missions: Cloudflare for Government achieves FedRAMP Class D (High) Certified status",
+      "latestEventAt": "2026-08-10T13:00:00.000Z"
+    },
+    {
+      "id": "coreweave",
+      "name": "CoreWeave",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "coreweave"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "coreweave"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "coreweave"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": null,
+        "officialHttpStatus": null,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.coreweave.com/news",
+            "resolvedUrl": "https://www.coreweave.com/newsroom",
+            "checkedAt": "2026-09-11T08:51:11.285Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "News and Press Releases | CoreWeave",
+            "observedDates": [
+              "2026-06-12",
+              "2026-04-21"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-335cbf4a52f0a8caa026",
+      "latestEventTitle": "Conversations from Goldman Sachs&apos; Communacopia: AI blowback, broadband and Disney&apos;s free tier",
+      "latestEventAt": "2026-09-09T21:37:34.000Z"
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "layer": "model-application",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "changed",
+      "resultReason": "Fresh current-window T0-T3 event matched this company; evidence remains source-tier scoped.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://api-docs.deepseek.com/news/",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://api-docs.deepseek.com/news/",
+            "resolvedUrl": "https://api-docs.deepseek.com/news/",
+            "checkedAt": "2026-09-11T08:51:11.332Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Your First API Call | DeepSeek API Docs",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 1,
+      "latestEventId": "evt-380ccbf82a95070230de",
+      "latestEventTitle": "DeepSeek's new model sets a template for powerful LLMs that run lean",
+      "latestEventAt": "2026-09-11T07:15:00.000Z"
+    },
+    {
+      "id": "dell",
+      "name": "Dell Technologies",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "dell"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "dell"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "dell"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://www.dell.com/en-us/dt/corporate/newsroom.htm",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.dell.com/en-us/dt/corporate/newsroom.htm",
+            "resolvedUrl": "https://www.dell.com/en-us/dt/corporate/newsroom.htm",
+            "checkedAt": "2026-09-11T08:51:11.532Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Newsroom | Dell USA",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-c3e0fbaa4945bd5c9b74",
+      "latestEventTitle": "Dell's revenue bonanza benefits from killer AI workloads",
+      "latestEventAt": "2026-09-02T11:05:14.000Z"
+    },
+    {
+      "id": "digital-realty",
+      "name": "Digital Realty",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "digital-realty"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "digital-realty"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "digital-realty"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://investor.digitalrealty.com/news/default.aspx",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://investor.digitalrealty.com/news/default.aspx",
+            "resolvedUrl": "https://investor.digitalrealty.com/news-events/news-releases",
+            "checkedAt": "2026-09-11T08:51:11.639Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "News Releases | Digital Realty Trust",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-d6e9cd0367beb36d1d0d",
+      "latestEventTitle": "How Data Centers Are Using AI to Run Cooler and Smarter",
+      "latestEventAt": "2026-08-27T09:00:00.000Z"
+    },
+    {
+      "id": "eaton",
+      "name": "Eaton",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://www.eaton.com/us/en-us/company/news-insights/news-releases.html",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases.html",
+            "resolvedUrl": "https://www.eaton.com/us/en-us/company/news-insights/news-releases.html",
+            "checkedAt": "2026-09-11T08:51:11.688Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Eaton news releases",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "equinix",
+      "name": "Equinix",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "equinix-ir"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "equinix-ir"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "equinix-ir"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": null,
+        "officialHttpStatus": null,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://investor.equinix.com/rss/news-releases.xml",
+            "resolvedUrl": "https://investor.equinix.com/news-events/press-releases/rss",
+            "checkedAt": "2026-09-11T08:51:11.746Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Equinix, Inc. (EQIX) Press Releases",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-587ff22c4d9117a2146f",
+      "latestEventTitle": "Equinix Unveils Equinix Fabric One, Redefining How Enterprises Connect Across AI, Cloud and Networking Infrastructure",
+      "latestEventAt": "2026-09-02T12:01:00.000Z"
+    },
+    {
+      "id": "galaxy-digital",
+      "name": "Galaxy Digital",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "galaxy"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "changed",
+      "resultReason": "Fresh current-window T0-T3 event matched this company; evidence remains source-tier scoped.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "galaxy"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "galaxy"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": null,
+        "officialHttpStatus": null,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.galaxy.com/newsroom",
+            "resolvedUrl": "https://www.galaxy.com/newsroom",
+            "checkedAt": "2026-09-11T08:51:11.768Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Newsroom | Galaxy",
+            "observedDates": [
+              "2026-09-11"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 2,
+      "latestEventId": "evt-b31dacde0386c5268919",
+      "latestEventTitle": "复刻苹果首款折叠 iPhone Duo 开合透视动画：安卓 / iOS / macOS 都有份",
+      "latestEventAt": "2026-09-11T07:53:59.000Z"
+    },
+    {
+      "id": "gds",
+      "name": "GDS Holdings",
+      "layer": "capacity-power",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://investors.gds-services.com/news-releases",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://investors.gds-services.com/news-releases",
+            "resolvedUrl": "https://investors.gds-services.com/news-releases",
+            "checkedAt": "2026-09-11T08:51:11.854Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "News Releases | GDS Holdings Ltd",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "ge-vernova",
+      "name": "GE Vernova",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "no-change",
+      "resultReason": "Fresh official entrypoint probes were reachable and no current-window event matched; issuer-specific completeness remains bounded.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://www.gevernova.com/news/press-releases",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.gevernova.com/news/press-releases",
+            "resolvedUrl": "https://www.gevernova.com/news/media-hub?type%5Bpress_release%5D=press_release",
+            "checkedAt": "2026-09-11T08:51:12.035Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Media Hub | GE Vernova News",
+            "observedDates": [
+              "2026-09-11",
+              "2026-09-03",
+              "2026-09-01",
+              "2026-08-27",
+              "2026-08-26",
+              "2026-08-25",
+              "2026-08-24",
+              "2026-08-21"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "huawei",
+      "name": "Huawei",
+      "layer": "compute-silicon",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "changed",
+      "resultReason": "Fresh current-window T0-T3 event matched this company; evidence remains source-tier scoped.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://www.huawei.com/en/news/",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.huawei.com/en/news/",
+            "resolvedUrl": "https://www.huawei.com/en/news/",
+            "checkedAt": "2026-09-11T08:51:12.262Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Newsroom - Huawei",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 3,
+      "latestEventId": "evt-75f317ec16aacba67ba7",
+      "latestEventTitle": "国内首个智能体可信身份工作组成立，阿里、华为、OPPO、联想、小米等加入",
+      "latestEventAt": "2026-09-11T08:30:10.000Z"
+    },
+    {
+      "id": "hut-8",
+      "name": "Hut 8",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "hut8"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "hut8"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "hut8"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": null,
+        "officialHttpStatus": null,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.hut8.com/news-insights/press-releases",
+            "resolvedUrl": "https://www.hut8.com/news-insights/press-releases",
+            "checkedAt": "2026-09-11T08:51:12.277Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "News &amp; Insights | Hut 8",
+            "observedDates": [
+              "2023-05-03",
+              "2025-06-23",
+              "2026-07-28",
+              "2026-07-20",
+              "2026-05-06",
+              "2025-12-17",
+              "2026-09-10"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-42b091bda4b1c1c99382",
+      "latestEventTitle": "Learn Why The Bull Case For Hut 8 (HUT) Could Change Following AI Data Center Leases - simplywall.st",
+      "latestEventAt": "2026-09-09T23:22:34.000Z"
+    },
+    {
+      "id": "lam-research",
+      "name": "Lam Research",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "no-change",
+      "resultReason": "Fresh official entrypoint probes were reachable and no current-window event matched; issuer-specific completeness remains bounded.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://newsroom.lamresearch.com/press-releases",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://newsroom.lamresearch.com/press-releases",
+            "resolvedUrl": "https://newsroom.lamresearch.com/press-releases",
+            "checkedAt": "2026-09-11T08:51:12.439Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Lam Research Newsroom - Press Releases",
+            "observedDates": [
+              "2026-08-27",
+              "2026-08-26",
+              "2026-08-13"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "marvell",
+      "name": "Marvell",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://www.marvell.com/company/newsroom.html",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.marvell.com/company/newsroom.html",
+            "resolvedUrl": "https://www.marvell.com/company/newsroom.html",
+            "checkedAt": "2026-09-11T08:51:12.729Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Marvell Newsroom | Press Releases - Marvell",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-eff2ae927639fe218583",
+      "latestEventTitle": "Marvell Demonstrates Scalable CXL Memory Infrastructure with Intel - Marvell Technology",
+      "latestEventAt": "2026-09-10T17:19:41.000Z"
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "meta",
+        "meta-engineering"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "changed",
+      "resultReason": "Fresh current-window T0-T3 event matched this company; evidence remains source-tier scoped.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "meta",
+          "meta-engineering"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "meta",
+          "meta-engineering"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": null,
+        "officialHttpStatus": null,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://about.fb.com/news/feed/",
+            "resolvedUrl": "https://about.fb.com/news/feed/",
+            "checkedAt": "2026-09-11T08:51:12.974Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Newsroom | Meta Newsroom",
+            "observedDates": [
+              "2026/08/01",
+              "2026/08/03",
+              "2026/08/02",
+              "2026/08/1",
+              "2026/08/2",
+              "2026-08-19"
+            ]
+          },
+          {
+            "url": "https://engineering.fb.com/feed/",
+            "resolvedUrl": "https://engineering.fb.com/feed/",
+            "checkedAt": "2026-09-11T08:51:13.032Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Engineering at Meta",
+            "observedDates": [
+              "2026/09/03",
+              "2021/08/06",
+              "2026/09/02",
+              "2026/08/24",
+              "2024/08/05",
+              "2025/09/29",
+              "2025/10/13",
+              "2026/08/12",
+              "2025/04/29",
+              "2022/12/12",
+              "2026/08/05",
+              "2024/11/19"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 2,
+      "latestEventId": "evt-66ccac14030f4ce61b3c",
+      "latestEventTitle": "Meta 发起又一轮重组，应用 AI 部门部分员工被邀请重返管理岗",
+      "latestEventAt": "2026-09-11T07:45:55.000Z"
+    },
+    {
+      "id": "micron",
+      "name": "Micron",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "officialUrl": "https://investors.micron.com/news-releases",
+        "officialHttpStatus": 404,
+        "accessStatus": "partially-available",
+        "accessGaps": [
+          "https://investors.micron.com/news-releases: 404"
+        ],
+        "probes": [
+          {
+            "url": "https://investors.micron.com/news-releases",
+            "resolvedUrl": "https://investors.micron.com/news-releases/",
+            "checkedAt": "2026-09-11T08:51:13.068Z",
+            "httpStatus": 404,
+            "accessStatus": "unavailable",
+            "durationMs": null,
+            "title": "Page Not Found",
+            "observedDates": [
+              "2026-05-13",
+              "2026-05-18",
+              "2024-01-21",
+              "2026-05-16",
+              "2024-01-22",
+              "2025-04-18",
+              "2025-04-23",
+              "2025-04-22"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-e8ebb6f9d04d1791dd31",
+      "latestEventTitle": "Micron Puts $10B Behind US AI Memory Research",
+      "latestEventAt": "2026-08-20T14:11:06.000Z"
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "microsoft",
+        "azure-blog"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "changed",
+      "resultReason": "Fresh current-window T0-T3 event matched this company; evidence remains source-tier scoped.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "microsoft",
+          "azure-blog"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "microsoft",
+          "azure-blog"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": null,
+        "officialHttpStatus": null,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://news.microsoft.com/feed/",
+            "resolvedUrl": "https://news.microsoft.com/feed/",
+            "checkedAt": "2026-09-11T08:51:13.217Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Stories",
+            "observedDates": [
+              "2025/05/06",
+              "2025/04/30",
+              "2025/04/09",
+              "2025/03/17",
+              "2025/03/11",
+              "2025/03/03"
+            ]
+          },
+          {
+            "url": "https://azure.microsoft.com/en-us/blog/feed/",
+            "resolvedUrl": "https://azure.microsoft.com/en-us/blog/feed/",
+            "checkedAt": "2026-09-11T08:51:13.324Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Microsoft Azure Blog",
+            "observedDates": [
+              "2026/06/02",
+              "2026/08/11"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 2,
+      "latestEventId": "evt-39c04e922f6ecf3aba07",
+      "latestEventTitle": "Microsoft annoints Rust as a 'Tier 1' internal language",
+      "latestEventAt": "2026-09-11T06:26:00.000Z"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "layer": "model-application",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://mistral.ai/news",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://mistral.ai/news",
+            "resolvedUrl": "https://mistral.ai/news/",
+            "checkedAt": "2026-09-11T08:51:13.443Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Latest news | Mistral",
+            "observedDates": [
+              "2026-05-05",
+              "2026-07-08"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-2329ca3fe3ef73e7eeb2",
+      "latestEventTitle": "Samsung and Mistral AI Announce Partnership for Intelligence-Driven Semiconductor Infrastructure - TechPowerUp",
+      "latestEventAt": "2026-09-10T10:51:54.000Z"
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "nvidia",
+        "nvidia-developer"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "changed",
+      "resultReason": "Fresh current-window T0-T3 event matched this company; evidence remains source-tier scoped.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "nvidia",
+          "nvidia-developer"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "nvidia",
+          "nvidia-developer"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": null,
+        "officialHttpStatus": null,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://nvidianews.nvidia.com/rss.xml",
+            "resolvedUrl": "https://nvidianews.nvidia.com/rss.xml",
+            "checkedAt": "2026-09-11T08:51:13.562Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "NVIDIA Newsroom",
+            "observedDates": [
+              "2026/08/25"
+            ]
+          },
+          {
+            "url": "https://developer.nvidia.com/blog/feed/",
+            "resolvedUrl": "https://developer.nvidia.com/blog/feed/",
+            "checkedAt": "2026-09-11T08:51:13.655Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "NVIDIA Technical Blog",
+            "observedDates": [
+              "2026-09-10",
+              "2026-09-09",
+              "2026-09-04",
+              "2026-09-08",
+              "2026-09-03",
+              "2026-09-02",
+              "2026-09-01",
+              "2026-08-31",
+              "2026-08-28",
+              "2026-08-26",
+              "2026-08-25",
+              "2026-08-24"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 4,
+      "latestEventId": "evt-84097aecdf2683b5a2c6",
+      "latestEventTitle": "英伟达 CEO 黄仁勋重申：公司明年可以实现 70% 的同比增长",
+      "latestEventAt": "2026-09-11T08:05:20.000Z"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "openai-news"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "changed",
+      "resultReason": "Fresh current-window T0-T3 event matched this company; evidence remains source-tier scoped.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "openai-news"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "openai-news"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": null,
+        "officialHttpStatus": null,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://openai.com/news/rss.xml",
+            "resolvedUrl": "https://openai.com/news/rss.xml",
+            "checkedAt": "2026-09-11T08:51:13.985Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "<![CDATA[OpenAI News]]>",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 6,
+      "latestEventId": "evt-84097aecdf2683b5a2c6",
+      "latestEventTitle": "英伟达 CEO 黄仁勋重申：公司明年可以实现 70% 的同比增长",
+      "latestEventAt": "2026-09-11T08:05:20.000Z"
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "oracle"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "changed",
+      "resultReason": "Fresh current-window T0-T3 event matched this company; evidence remains source-tier scoped.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "oracle"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "oracle"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://www.oracle.com/news/",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.oracle.com/news/",
+            "resolvedUrl": "https://www.oracle.com/news/",
+            "checkedAt": "2026-09-11T08:51:14.256Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "News and Press Releases | Oracle News",
+            "observedDates": [
+              "2026-07-08",
+              "2026-08-13",
+              "2026-08-12",
+              "2026-08-11",
+              "2026-09-03",
+              "2026-09-01",
+              "2026-08-27",
+              "2026-08-26",
+              "2026-08-24",
+              "2026-08-19"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 1,
+      "latestEventId": "evt-4fc9d634d23e097bf2ae",
+      "latestEventTitle": "Oracle says AI will save it from the SaaSpocalypse, not bring it on",
+      "latestEventAt": "2026-09-11T02:43:10.000Z"
+    },
+    {
+      "id": "palantir",
+      "name": "Palantir",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "no-change",
+      "resultReason": "Fresh official entrypoint probes were reachable and no current-window event matched; issuer-specific completeness remains bounded.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://investors.palantir.com/news-events/press-releases",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://investors.palantir.com/news-events/press-releases",
+            "resolvedUrl": "https://investors.palantir.com/news-events/press-releases",
+            "checkedAt": "2026-09-11T08:51:14.544Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Palantir IR",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "officialUrl": "https://www.perplexity.ai/hub",
+        "officialHttpStatus": 403,
+        "accessStatus": "partially-available",
+        "accessGaps": [
+          "https://www.perplexity.ai/hub: 403"
+        ],
+        "probes": [
+          {
+            "url": "https://www.perplexity.ai/hub",
+            "resolvedUrl": "https://www.perplexity.ai/hub",
+            "checkedAt": "2026-09-11T08:51:14.584Z",
+            "httpStatus": 403,
+            "accessStatus": "unavailable",
+            "durationMs": null,
+            "title": "Just a moment...",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "riot-platforms",
+      "name": "Riot Platforms",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "no-change",
+      "resultReason": "Fresh official entrypoint probes were reachable and no current-window event matched; issuer-specific completeness remains bounded.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://www.riotplatforms.com/news-media/press-releases/",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.riotplatforms.com/news-media/press-releases/",
+            "resolvedUrl": "https://www.riotplatforms.com/investors/press-releases/",
+            "checkedAt": "2026-09-11T08:51:14.691Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Press Releases | Riot Platforms",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "no-change",
+      "resultReason": "Fresh official entrypoint probes were reachable and no current-window event matched; issuer-specific completeness remains bounded.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://www.salesforce.com/news/press-releases/",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.salesforce.com/news/press-releases/",
+            "resolvedUrl": "https://www.salesforce.com/news/news-explorer/?content-type=news",
+            "checkedAt": "2026-09-11T08:51:14.699Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "News Explorer - Salesforce",
+            "observedDates": [
+              "2025-02-20",
+              "2024-06-19",
+              "2026/09/10",
+              "2026-09-10",
+              "2026/09/78",
+              "2026/09/12",
+              "2026-09-03",
+              "2026-09-01",
+              "2026-08-31",
+              "2026/08/78",
+              "2026-08-26",
+              "2026/08/26"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung Electronics",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [
+        "samsung-global-newsroom"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "changed",
+      "resultReason": "Fresh current-window T0-T3 event matched this company; evidence remains source-tier scoped.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "samsung-global-newsroom"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "samsung-global-newsroom"
+        ],
+        "officialUrl": null,
+        "officialHttpStatus": null,
+        "accessStatus": "partially-available",
+        "accessGaps": [
+          "https://news.samsung.com/global/feed: fetch failed"
+        ],
+        "probes": [
+          {
+            "url": "https://news.samsung.com/global/feed",
+            "checkedAt": "2026-09-11T08:51:14.919Z",
+            "accessStatus": "unavailable",
+            "httpStatus": null,
+            "error": "fetch failed"
+          }
+        ]
+      },
+      "eventsInLatestRun": 2,
+      "latestEventId": "evt-b31dacde0386c5268919",
+      "latestEventTitle": "复刻苹果首款折叠 iPhone Duo 开合透视动画：安卓 / iOS / macOS 都有份",
+      "latestEventAt": "2026-09-11T07:53:59.000Z"
+    },
+    {
+      "id": "schneider-electric",
+      "name": "Schneider Electric",
+      "layer": "capacity-power",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "officialUrl": "https://www.se.com/ww/en/about-us/newsroom/",
+        "officialHttpStatus": null,
+        "accessStatus": "partially-available",
+        "accessGaps": [
+          "https://www.se.com/ww/en/about-us/newsroom/: fetch failed"
+        ],
+        "probes": [
+          {
+            "url": "https://www.se.com/ww/en/about-us/newsroom/",
+            "checkedAt": "2026-09-11T08:51:15.073Z",
+            "accessStatus": "unavailable",
+            "httpStatus": null,
+            "error": "fetch failed"
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-d6e9cd0367beb36d1d0d",
+      "latestEventTitle": "How Data Centers Are Using AI to Run Cooler and Smarter",
+      "latestEventAt": "2026-08-27T09:00:00.000Z"
+    },
+    {
+      "id": "servicenow",
+      "name": "ServiceNow",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://newsroom.servicenow.com/press-releases",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://newsroom.servicenow.com/press-releases",
+            "resolvedUrl": "https://newsroom.servicenow.com/press-releases/",
+            "checkedAt": "2026-09-11T08:51:15.104Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Press Release Announcements - ServiceNow Newsroom",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "sk-hynix",
+      "name": "SK hynix",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [
+        "sk-hynix-newsroom"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "sk-hynix-newsroom"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "sk-hynix-newsroom"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": null,
+        "officialHttpStatus": null,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://news.skhynix.com/feed/",
+            "resolvedUrl": "https://news.skhynix.com/en/feed/",
+            "checkedAt": "2026-09-11T08:51:15.257Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "SK hynix Newsroom",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-13bdf71dafc63cc26683",
+      "latestEventTitle": "SK Hynix chipping away at AI memory wall from several angles",
+      "latestEventAt": "2026-08-25T11:33:00.000Z"
+    },
+    {
+      "id": "snowflake",
+      "name": "Snowflake",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://investors.snowflake.com/news",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://investors.snowflake.com/news",
+            "resolvedUrl": "https://investors.snowflake.com/news/",
+            "checkedAt": "2026-09-11T08:51:15.786Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Snowflake - News",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-45a2a9e5c58539b95545",
+      "latestEventTitle": "Snowflake and OpenAI partner to bring frontier intelligence to enterprise data",
+      "latestEventAt": "2026-02-02T06:00:00.000Z"
+    },
+    {
+      "id": "supermicro",
+      "name": "Supermicro",
+      "layer": "compute-silicon",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "officialUrl": "https://ir.supermicro.com/news/default.aspx",
+        "officialHttpStatus": 403,
+        "accessStatus": "partially-available",
+        "accessGaps": [
+          "https://ir.supermicro.com/news/default.aspx: 403"
+        ],
+        "probes": [
+          {
+            "url": "https://ir.supermicro.com/news/default.aspx",
+            "resolvedUrl": "https://ir.supermicro.com/news/default.aspx",
+            "checkedAt": "2026-09-11T08:51:15.943Z",
+            "httpStatus": 403,
+            "accessStatus": "unavailable",
+            "durationMs": null,
+            "title": "Just a moment...",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "tencent",
+      "name": "Tencent",
+      "layer": "demand-platform",
+      "regions": [
+        "China",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "officialUrl": "https://www.tencent.com/en-us/articles.html",
+        "officialHttpStatus": 404,
+        "accessStatus": "partially-available",
+        "accessGaps": [
+          "https://www.tencent.com/en-us/articles.html: 404"
+        ],
+        "probes": [
+          {
+            "url": "https://www.tencent.com/en-us/articles.html",
+            "resolvedUrl": "https://www.tencent.com/articles.html",
+            "checkedAt": "2026-09-11T08:51:16.493Z",
+            "httpStatus": 404,
+            "accessStatus": "unavailable",
+            "durationMs": null,
+            "title": "Page not found - Tencent",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "terawulf",
+      "name": "TeraWulf",
+      "layer": "capacity-power",
+      "regions": [
+        "US"
+      ],
+      "sourceIds": [
+        "terawulf"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "no-change",
+      "resultReason": "Fresh official entrypoint probes were reachable and no current-window event matched; issuer-specific completeness remains bounded.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "terawulf"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [
+          "terawulf"
+        ],
+        "failedSourceIds": [],
+        "officialUrl": "https://investors.terawulf.com/news-events/press-releases",
+        "officialHttpStatus": 200,
+        "accessStatus": "public",
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://investors.terawulf.com/news-events/press-releases",
+            "resolvedUrl": "https://investors.terawulf.com/news-events/press-releases",
+            "checkedAt": "2026-09-11T08:51:16.563Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": null,
+            "title": "Press Releases :: TeraWulf Inc. (WULF)",
+            "observedDates": [
+              "2026-08-24",
+              "2026-08-05",
+              "2026-07-22",
+              "2026-07-06",
+              "2026-05-26",
+              "2026-05-08",
+              "2026-05-04",
+              "2026-04-30",
+              "2026-04-16",
+              "2026-04-14"
+            ]
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "tesla",
+      "name": "Tesla",
+      "layer": "model-application",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "officialUrl": "https://ir.tesla.com/",
+        "officialHttpStatus": 403,
+        "accessStatus": "partially-available",
+        "accessGaps": [
+          "https://ir.tesla.com/: 403"
+        ],
+        "probes": [
+          {
+            "url": "https://ir.tesla.com/",
+            "resolvedUrl": "https://ir.tesla.com/",
+            "checkedAt": "2026-09-11T08:51:16.928Z",
+            "httpStatus": 403,
+            "accessStatus": "unavailable",
+            "durationMs": null,
+            "title": "Access Denied",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "tsmc",
+      "name": "TSMC",
+      "layer": "compute-silicon",
+      "regions": [
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "officialUrl": "https://pr.tsmc.com/english/news",
+        "officialHttpStatus": 403,
+        "accessStatus": "partially-available",
+        "accessGaps": [
+          "https://pr.tsmc.com/english/news: 403"
+        ],
+        "probes": [
+          {
+            "url": "https://pr.tsmc.com/english/news",
+            "resolvedUrl": "https://pr.tsmc.com/english/news",
+            "checkedAt": "2026-09-11T08:51:17.266Z",
+            "httpStatus": 403,
+            "accessStatus": "unavailable",
+            "durationMs": null,
+            "title": "Just a moment...",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-33aeb645a52ea90f172e",
+      "latestEventTitle": "World’s largest contract chipmaker TSMC sees August revenue surge over 53% to record high",
+      "latestEventAt": "2026-09-10T06:45:55.000Z"
+    },
+    {
+      "id": "vertiv",
+      "name": "Vertiv",
+      "layer": "capacity-power",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "official-ir-entrypoint"
+        ],
+        "officialUrl": "https://investors.vertiv.com/news/news-releases",
+        "officialHttpStatus": 403,
+        "accessStatus": "partially-available",
+        "accessGaps": [
+          "https://investors.vertiv.com/news/news-releases: 403"
+        ],
+        "probes": [
+          {
+            "url": "https://investors.vertiv.com/news/news-releases",
+            "resolvedUrl": "https://investors.vertiv.com/news/news-releases",
+            "checkedAt": "2026-09-11T08:51:17.518Z",
+            "httpStatus": 403,
+            "accessStatus": "unavailable",
+            "durationMs": null,
+            "title": "Just a moment...",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": null,
+      "latestEventTitle": null,
+      "latestEventAt": null
+    },
+    {
+      "id": "xai",
+      "name": "xAI",
+      "layer": "demand-platform",
+      "regions": [
+        "US",
+        "Global"
+      ],
+      "sourceIds": [
+        "xai-news"
+      ],
+      "lastCheckedAt": "2026-09-11T08:51:09.280Z",
+      "result": "not-determined",
+      "resultReason": "Fresh entrypoint re-probes were attempted, but issuer-specific announcement completeness was not sufficient to establish no-change.",
+      "sourceCoverage": {
+        "expectedSourceIds": [
+          "xai-news"
+        ],
+        "checkedSourceIds": [
+          "official-ir-entrypoint",
+          "official-ir-entrypoint"
+        ],
+        "passingSourceIds": [],
+        "failedSourceIds": [
+          "xai-news"
+        ],
+        "officialUrl": null,
+        "officialHttpStatus": null,
+        "accessStatus": "partially-available",
+        "accessGaps": [
+          "https://x.ai/news: 403"
+        ],
+        "probes": [
+          {
+            "url": "https://x.ai/news",
+            "resolvedUrl": "https://x.ai/news",
+            "checkedAt": "2026-09-11T08:51:17.712Z",
+            "httpStatus": 403,
+            "accessStatus": "unavailable",
+            "durationMs": null,
+            "title": "Attention Required! | Cloudflare",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventsInLatestRun": 0,
+      "latestEventId": "evt-a4d4f4c6fff063740e77",
+      "latestEventTitle": "SpaceXAI 团队将直播用 Grok Bot 从零建立一家公司",
+      "latestEventAt": "2026-09-11T00:16:52.000Z"
+    }
+  ]
+}

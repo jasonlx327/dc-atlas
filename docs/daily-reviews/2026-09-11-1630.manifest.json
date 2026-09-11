@@ -1,0 +1,432 @@
+{
+  "schemaVersion": "1.1",
+  "runId": "atlas-2026-09-11-1630",
+  "runDate": "2026-09-11",
+  "cutoff": "2026-09-11T02:28:15.775Z",
+  "displayTimezones": {
+    "zh": "Asia/Shanghai",
+    "en": "America/New_York"
+  },
+  "status": "ready-for-partial-release",
+  "projectPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-16-30-20260911",
+  "sourceLedgerPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-16-30-20260911/docs/daily-reviews/2026-09-11-1630.sources.json",
+  "host": "bogon",
+  "headBefore": "ba2fbbb4bd33972276eb9e1415c74c4594f86859",
+  "sections": {
+    "idc-pulse": {
+      "status": "blocked",
+      "checkedAt": "2026-09-11T08:55:34.000Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-4a593dab4b55be1a4982",
+        "evt-cc587e07794a6303844b",
+        "evt-4986d27a432b90e47075",
+        "evt-be053a35d585844da75a",
+        "evt-addfde80159bda013faf",
+        "evt-a80fcba3af02c9cd5400",
+        "evt-c62ae93e66cb80d9ee0b",
+        "evt-7c1a2e22e73f5a690a0d",
+        "evt-bb3c0c1a913486101def",
+        "evt-7d6457d50625b158b616",
+        "evt-a759b73d68a13b505c15",
+        "evt-f5addb0dffce76f1cb8c",
+        "evt-e54736c14ff4467174f6",
+        "evt-bf8400091697fc45845a",
+        "evt-f08ffe6a88694ccfca42",
+        "evt-7b5a449eccbf37328f78",
+        "evt-6576d4e6093e2e3e532c",
+        "evt-dad091a3df1e2f668c3a",
+        "evt-c821ba6dbe319739e98a",
+        "evt-dab0a848e191c3054a32"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-1630-event-night"
+      ],
+      "accessGaps": [
+        "Formal candidates passed source routing but the current versioned publication adapter is rumor-only; formal records remain held."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Current scan completed, but unresolved overlay or adapter coverage is held and is not treated as no-change."
+    },
+    "listed-companies": {
+      "status": "blocked",
+      "checkedAt": "2026-09-11T08:55:34.000Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-a72359c5d6046c17f950",
+        "evt-163ebae9e2fe8bb5c138",
+        "evt-a4d4f4c6fff063740e77",
+        "evt-95bb360a97c6cd575877",
+        "evt-6d96e2c1fc4e735ec4f7",
+        "evt-2c8f4b38adebedfc6df4",
+        "evt-a77a0b00170e6fa8f4b9",
+        "evt-67d9fa3805443fa41dae",
+        "evt-2382b73e0941d4c1f40e",
+        "evt-623d7adda0cbc94bbb08",
+        "evt-d66d02f5ac76f9baa477",
+        "evt-a39c8f94b86cdf219d33",
+        "evt-c346e1ebd6d7aec4be3b",
+        "evt-7ca27ccac83f00656619",
+        "evt-89b8f1cac5800df29f60"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-1630-event-night"
+      ],
+      "accessGaps": [
+        "Formal candidates passed source routing but the current versioned publication adapter is rumor-only; formal records remain held.",
+        "10 of 50 core-company checks remain not-determined",
+        "26 of 50 core-company checks remain not-determined."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Current scan completed, but unresolved overlay or adapter coverage is held and is not treated as no-change."
+    },
+    "mna": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-11T08:55:34.000Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-1630-event-night"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "No material current-window change was established for this section."
+    },
+    "capacity": {
+      "status": "blocked",
+      "checkedAt": "2026-09-11T08:55:34.000Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-1d1effbfb8494ae8de5d",
+        "evt-76901cbdfd43687e229f",
+        "evt-d0a8611533f6df57b47d",
+        "evt-42b091bda4b1c1c99382",
+        "evt-9f46ac92e9a277ce48cc",
+        "evt-9b6235df182ffb4760e2",
+        "evt-228c8c4f11ab21bbf8d5",
+        "evt-650843b9febdebcdfe58",
+        "evt-32d0bb315ee3cb83ce8a",
+        "evt-90a3f5a5690e461a4be4",
+        "evt-fcc6a40461331b6c43a5",
+        "evt-ebea48fb45b9db501c8e",
+        "evt-939339b9226a6ff9236d",
+        "evt-6778ac2bea11057a8c5b",
+        "evt-178ee1f6ee0051a862dd",
+        "evt-aaf1e9ecd9dfe11b6966",
+        "evt-f4de66e9909671d85b9d",
+        "evt-1f5469830880e83bf2b1",
+        "evt-e27fb11d7360915aea36",
+        "evt-d135ffb502c8c4349416",
+        "evt-a55a4953c10a7e54256e",
+        "evt-441e1189aa1b1cbe76e8",
+        "evt-f7406b5c1c009e123fcf",
+        "evt-558dc8c0961fd3a57b9b",
+        "evt-1f3af5c2fd941cb777cb",
+        "evt-f6e75cc2d418eb1ef3ad",
+        "evt-2688b7f7995c8679b4e6",
+        "evt-5e77fd2b9311e3b8dfde",
+        "evt-d8e4e6b714923c24ba56",
+        "evt-03e8f9f75dca07a21cad",
+        "evt-80cce8009fe981070676",
+        "evt-ab1aa58bb18ed8b11a9a"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-1630-event-night"
+      ],
+      "accessGaps": [
+        "10 of 50 core-company checks remain not-determined",
+        "26 of 50 core-company checks remain not-determined."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Current scan completed, but unresolved overlay or adapter coverage is held and is not treated as no-change."
+    },
+    "cooling": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-11T08:55:34.000Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-1630-event-night"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "No material current-window change was established for this section."
+    },
+    "compute-products": {
+      "status": "blocked",
+      "checkedAt": "2026-09-11T08:55:34.000Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-c4354b8f2d961825b858",
+        "evt-de5795d0c3bc2b37174b",
+        "evt-7a1e447743e35d23b423",
+        "evt-d1c3a6b88042176245d8",
+        "evt-526f2b93a54139d3e8d1"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-1630-event-night"
+      ],
+      "accessGaps": [
+        "Formal candidates passed source routing but the current versioned publication adapter is rumor-only; formal records remain held.",
+        "12 of 20 interconnect/CPO checks remain not-determined."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Current scan completed, but unresolved overlay or adapter coverage is held and is not treated as no-change."
+    },
+    "china-gpu": {
+      "status": "blocked",
+      "checkedAt": "2026-09-11T08:55:34.000Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-2133350d30c05f03ad03"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-1630-event-night"
+      ],
+      "accessGaps": [
+        "7 of 7 China XPU listed-issuer checks remain not-determined",
+        "7 of 7 China XPU issuer checks remain not-determined."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Current scan completed, but unresolved overlay or adapter coverage is held and is not treated as no-change."
+    },
+    "supply-chain": {
+      "status": "blocked",
+      "checkedAt": "2026-09-11T08:55:34.000Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-50b2f604953e50f6f07a",
+        "evt-eff2ae927639fe218583",
+        "evt-586f4b9ee85b58215ab1",
+        "evt-109a5adf18b0555463bb",
+        "evt-b644b9ef2abe20322e00",
+        "evt-548a58614a559448627e"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-1630-event-night"
+      ],
+      "accessGaps": [
+        "Formal candidates passed source routing but the current versioned publication adapter is rumor-only; formal records remain held.",
+        "5 of 20 interconnect/CPO checks remain not-determined",
+        "12 of 20 interconnect/CPO checks remain not-determined."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Current scan completed, but unresolved overlay or adapter coverage is held and is not treated as no-change."
+    },
+    "power-model-demand": {
+      "status": "blocked",
+      "checkedAt": "2026-09-11T08:55:34.000Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-d8eaa1f28b84da6b5101",
+        "evt-0c48617b21315fc6c995",
+        "evt-ee91e9902fb0272187af",
+        "evt-09117b60e9926b5c6560",
+        "evt-2329ca3fe3ef73e7eeb2",
+        "evt-751da10e599d3657bd9e",
+        "evt-8c6c87ebaf52b8715db9",
+        "evt-77fc100c9867e38bdef7",
+        "evt-1b8aa477759af35e6995",
+        "evt-431aaafd2e41467e8f2b",
+        "evt-683662691694804a2abc",
+        "evt-ba2f70ba5465dc076664",
+        "evt-bc94912e7034c28287f6",
+        "evt-661f74fdf78a24083084",
+        "evt-a093eee14ca3b3673bd9",
+        "evt-96a925b362864f2e3511",
+        "evt-02cb619b1a77a5819a08",
+        "evt-5e56a62b884143ab94f1",
+        "evt-7f5b23118873db21ddea",
+        "evt-d4faa7ebb32509925df5",
+        "evt-d91dd95b130447bab68e"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-1630-event-night"
+      ],
+      "accessGaps": [
+        "Formal candidates passed source routing but the current versioned publication adapter is rumor-only; formal records remain held.",
+        "10 of 50 core-company checks remain not-determined",
+        "26 of 50 core-company checks remain not-determined.",
+        "12 of 20 interconnect/CPO checks remain not-determined."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Current scan completed, but unresolved overlay or adapter coverage is held and is not treated as no-change."
+    },
+    "earnings-calendar": {
+      "status": "blocked",
+      "checkedAt": "2026-09-11T08:55:34.000Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-1630-event-night"
+      ],
+      "accessGaps": [
+        "7 of 7 China XPU listed-issuer checks remain not-determined",
+        "26 of 50 core-company checks remain not-determined.",
+        "7 of 7 China XPU issuer checks remain not-determined."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Current scan completed, but unresolved overlay or adapter coverage is held and is not treated as no-change."
+    },
+    "rumors": {
+      "status": "updated",
+      "checkedAt": "2026-09-11T08:55:34.000Z",
+      "newIds": [
+        "evt-380ccbf82a95070230de",
+        "evt-098548d75b93b63894b8",
+        "evt-0079caf2d300ff81f408",
+        "evt-84097aecdf2683b5a2c6",
+        "evt-cdcecad7bd9ad6d6baf5",
+        "evt-e405764a398791c8ebff",
+        "evt-a90b64fb1b1a020af42e",
+        "evt-5c96f7b0a2c00c1720d4",
+        "evt-4fc9d634d23e097bf2ae",
+        "evt-8c1c77d31ab84747c948",
+        "evt-e8a774b788549258d6b9"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 11,
+      "sourceRefs": [
+        "global-scan-20260911-1630-event-night",
+        "handoff-20260911-0930",
+        "event-evt-380ccbf82a95070230de-source-0",
+        "event-evt-098548d75b93b63894b8-source-0",
+        "event-evt-0079caf2d300ff81f408-source-0",
+        "event-evt-84097aecdf2683b5a2c6-source-0",
+        "event-evt-cdcecad7bd9ad6d6baf5-source-0",
+        "event-evt-e405764a398791c8ebff-source-0",
+        "event-evt-a90b64fb1b1a020af42e-source-0",
+        "event-evt-5c96f7b0a2c00c1720d4-source-0",
+        "event-evt-4fc9d634d23e097bf2ae-source-0",
+        "event-evt-8c1c77d31ab84747c948-source-0",
+        "event-evt-e8a774b788549258d6b9-source-0"
+      ],
+      "accessGaps": [
+        "Formal-source candidates remain held; current versioned publication adapter writes rumor-watch only."
+      ],
+      "releaseDisposition": "publish",
+      "notes": "11 fresh T2/T3 media-only records passed bilingual validation and are the only included section; formal records remain held."
+    },
+    "policy": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-11T08:55:34.000Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-1630-event-night"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "No material current-window change was established for this section."
+    },
+    "columns": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-11T08:55:34.000Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-1630-event-night"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "No material current-window change was established for this section."
+    }
+  },
+  "release": {
+    "mode": "partial",
+    "tests": "passed",
+    "build": "passed",
+    "cloudflare": "pending",
+    "formalReadback": "pending",
+    "dailySnapshot": "pending",
+    "sites": "pending",
+    "sitesReadback": "pending",
+    "commit": null,
+    "workerCommit": null,
+    "sitesCommit": null,
+    "cloudflareVersion": null,
+    "sitesVersion": null,
+    "formalUrl": null,
+    "sitesUrl": null,
+    "includedSections": [
+      "rumors"
+    ],
+    "heldSections": [
+      "idc-pulse",
+      "listed-companies",
+      "capacity",
+      "compute-products",
+      "china-gpu",
+      "supply-chain",
+      "power-model-demand",
+      "earnings-calendar"
+    ]
+  },
+  "blockers": [
+    "Formal-source candidates remain held because the versioned adapter currently writes rumor-watch only.",
+    "26/50 core-company checks, 7/7 China XPU checks and 12/20 interconnect/CPO checks remain not-determined.",
+    "Cloudflare/Sites deployment and production readback are pending on this new application HEAD."
+  ],
+  "actualEnd": "2026-09-11T08:55:34.000Z",
+  "baselineDecision": {
+    "latestVerifiedApplicationHead": "ba2fbbb4bd33972276eb9e1415c74c4594f86859",
+    "trusted": true,
+    "reason": "Started from the latest verified 09:30 Cloudflare/Sites same-head proof; stale atlas-production ref was not used."
+  },
+  "candidateHandoff": {
+    "day": "2026-09-11",
+    "status": "completed-discovery-only",
+    "generatedAt": "2026-09-11T02:28:15.775Z",
+    "candidateCount": 176,
+    "selected": 142,
+    "watch": 34,
+    "publicationReady": 0
+  },
+  "editorialHandoff": {
+    "model": "deterministic-atlas-fallback-v1",
+    "sourceGeneratedAt": "2026-09-11T08:38:07.171Z",
+    "fullFallbackCandidates": 663,
+    "fullFallbackCopyGaps": 227,
+    "selectedManualSubset": 11,
+    "publishRumor": 11,
+    "publishFormal": 0
+  }
+}
