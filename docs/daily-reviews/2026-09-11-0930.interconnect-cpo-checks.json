@@ -1,0 +1,732 @@
+{
+  "schemaVersion": "atlas-interconnect-cpo-checks.v1",
+  "runId": "atlas-2026-09-11-full",
+  "checkedAt": "2026-09-11T02:19:42.344Z",
+  "window": {
+    "from": "2026-09-08T10:22:54.347+08:00",
+    "to": "2026-09-11T02:19:42.344Z",
+    "timeZone": "Asia/Shanghai",
+    "cutoffBasis": "current 09:30 run cutoff"
+  },
+  "requiredKeywords": [
+    "CPO",
+    "silicon photonics",
+    "optical engine",
+    "ELS",
+    "OCS",
+    "NPO",
+    "LPO",
+    "pluggable",
+    "800G",
+    "1.6T",
+    "3.2T",
+    "AEC",
+    "ACC",
+    "retimer",
+    "switch ASIC",
+    "SuperNIC",
+    "DPU",
+    "scale-up",
+    "scale-out",
+    "scale-across",
+    "rack-scale"
+  ],
+  "companyCount": 20,
+  "checkedCount": 20,
+  "hitCount": 6,
+  "results": {
+    "new/changed": 6,
+    "no-change": 9,
+    "not-determined": 5
+  },
+  "accessStatus": "fresh-official-entrypoint-check",
+  "accessGaps": [
+    "https://investors.broadcom.com/news-releases: The operation was aborted due to timeout",
+    "https://investors.credosemi.com/news-releases: 403",
+    "https://www.cerebras.ai/press-release: 404",
+    "https://www.celestica.com/news: The operation was aborted due to timeout",
+    "https://www.ciena.com/about/newsroom/: 403",
+    "https://www.tfc.com.cn/: fetch failed",
+    "https://www.yjphotonics.com/: fetch failed"
+  ],
+  "companies": [
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "new/changed",
+      "resultReason": "Current-window scan event matched this company and the interconnect/CPO keyword set; source tier still controls publication.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "public",
+        "officialUrl": "https://nvidianews.nvidia.com/",
+        "officialHttpStatus": 200,
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://nvidianews.nvidia.com/",
+            "resolvedUrl": "https://nvidianews.nvidia.com/",
+            "checkedAt": "2026-09-11T02:20:02.871Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 1743,
+            "title": "Home | NVIDIA Newsroom",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [
+        "evt-a50991ec0f1c75f0701b",
+        "evt-701f303257ac06756fc6",
+        "evt-fc44a4c575be356fdbbf"
+      ],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "broadcom",
+      "name": "Broadcom",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "new/changed",
+      "resultReason": "Current-window scan event matched this company and the interconnect/CPO keyword set; source tier still controls publication.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "unavailable",
+        "officialUrl": "https://investors.broadcom.com/news-releases",
+        "officialHttpStatus": null,
+        "accessGaps": [
+          "https://investors.broadcom.com/news-releases: The operation was aborted due to timeout"
+        ],
+        "probes": [
+          {
+            "url": "https://investors.broadcom.com/news-releases",
+            "checkedAt": "2026-09-11T02:20:02.872Z",
+            "accessStatus": "unavailable",
+            "durationMs": 15001,
+            "error": "The operation was aborted due to timeout"
+          }
+        ]
+      },
+      "eventIds": [
+        "evt-4178db8d115a94410d3f",
+        "evt-722085b02dfaae2e8a2c"
+      ],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "marvell",
+      "name": "Marvell",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "no-change",
+      "resultReason": "Official entrypoint was reachable and no current-window interconnect/CPO event matched; detailed disclosure review remains bounded to the entrypoint.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "public",
+        "officialUrl": "https://investor.marvell.com/news-releases",
+        "officialHttpStatus": 200,
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://investor.marvell.com/news-releases",
+            "resolvedUrl": "https://investor.marvell.com/news-events/press-releases",
+            "checkedAt": "2026-09-11T02:20:02.872Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 1990,
+            "title": "Press Releases | Marvell Technology, Inc. (MRVL)",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "arista",
+      "name": "Arista Networks",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "no-change",
+      "resultReason": "Official entrypoint was reachable and no current-window interconnect/CPO event matched; detailed disclosure review remains bounded to the entrypoint.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "public",
+        "officialUrl": "https://www.arista.com/en/company/news",
+        "officialHttpStatus": 200,
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.arista.com/en/company/news",
+            "resolvedUrl": "https://www.arista.com/en/company/news",
+            "checkedAt": "2026-09-11T02:20:02.873Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 648,
+            "title": "Client Challenge",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "coherent",
+      "name": "Coherent",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "new/changed",
+      "resultReason": "Current-window scan event matched this company and the interconnect/CPO keyword set; source tier still controls publication.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "public",
+        "officialUrl": "https://investors.coherent.com/news-releases",
+        "officialHttpStatus": 200,
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://investors.coherent.com/news-releases",
+            "resolvedUrl": "https://www.coherent.com/",
+            "checkedAt": "2026-09-11T02:20:02.873Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 2368,
+            "title": "Global Leader in Materials, Networking, and Lasers | Coherent",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [
+        "evt-ce602ddd0993500f3388",
+        "evt-0c986669c7dfa1903ff7"
+      ],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "lumentum",
+      "name": "Lumentum",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "no-change",
+      "resultReason": "Official entrypoint was reachable and no current-window interconnect/CPO event matched; detailed disclosure review remains bounded to the entrypoint.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "public",
+        "officialUrl": "https://www.lumentum.com/en/newsroom",
+        "officialHttpStatus": 200,
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.lumentum.com/en/newsroom",
+            "resolvedUrl": "https://www.lumentum.com/en/newsroom",
+            "checkedAt": "2026-09-11T02:20:02.874Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 1220,
+            "title": "Newsroom | Lumentum",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "credo",
+      "name": "Credo",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "not-determined",
+      "resultReason": "Official entrypoint unavailable; no-change cannot be asserted.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "unavailable",
+        "officialUrl": "https://investors.credosemi.com/news-releases",
+        "officialHttpStatus": 403,
+        "accessGaps": [
+          "https://investors.credosemi.com/news-releases: 403"
+        ],
+        "probes": [
+          {
+            "url": "https://investors.credosemi.com/news-releases",
+            "resolvedUrl": "https://investors.credosemi.com/news-events/news/default.aspx",
+            "checkedAt": "2026-09-11T02:20:02.874Z",
+            "httpStatus": 403,
+            "accessStatus": "unavailable",
+            "durationMs": 2972,
+            "title": "Just a moment...",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "cerebras",
+      "name": "Cerebras",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "not-determined",
+      "resultReason": "Official entrypoint unavailable; no-change cannot be asserted.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "unavailable",
+        "officialUrl": "https://www.cerebras.ai/press-release",
+        "officialHttpStatus": 404,
+        "accessGaps": [
+          "https://www.cerebras.ai/press-release: 404"
+        ],
+        "probes": [
+          {
+            "url": "https://www.cerebras.ai/press-release",
+            "resolvedUrl": "https://www.cerebras.ai/press-release",
+            "checkedAt": "2026-09-11T02:20:02.875Z",
+            "httpStatus": 404,
+            "accessStatus": "unavailable",
+            "durationMs": 1678,
+            "title": "Cerebras",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "celestica",
+      "name": "Celestica",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "not-determined",
+      "resultReason": "Official entrypoint unavailable; no-change cannot be asserted.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "unavailable",
+        "officialUrl": "https://www.celestica.com/news",
+        "officialHttpStatus": null,
+        "accessGaps": [
+          "https://www.celestica.com/news: The operation was aborted due to timeout"
+        ],
+        "probes": [
+          {
+            "url": "https://www.celestica.com/news",
+            "checkedAt": "2026-09-11T02:20:02.875Z",
+            "accessStatus": "unavailable",
+            "durationMs": 15004,
+            "error": "The operation was aborted due to timeout"
+          }
+        ]
+      },
+      "eventIds": [],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "ciena",
+      "name": "Ciena",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "not-determined",
+      "resultReason": "Official entrypoint unavailable; no-change cannot be asserted.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "unavailable",
+        "officialUrl": "https://www.ciena.com/about/newsroom/",
+        "officialHttpStatus": 403,
+        "accessGaps": [
+          "https://www.ciena.com/about/newsroom/: 403"
+        ],
+        "probes": [
+          {
+            "url": "https://www.ciena.com/about/newsroom/",
+            "resolvedUrl": "https://www.ciena.com/about/newsroom/",
+            "checkedAt": "2026-09-11T02:20:02.876Z",
+            "httpStatus": 403,
+            "accessStatus": "unavailable",
+            "durationMs": 1395,
+            "title": "Just a moment...",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "innolight",
+      "name": "中际旭创",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "new/changed",
+      "resultReason": "Current-window scan event matched this company and the interconnect/CPO keyword set; source tier still controls publication.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "public",
+        "officialUrl": "https://www.inno-light.com/",
+        "officialHttpStatus": 200,
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.inno-light.com/",
+            "resolvedUrl": "https://www.inno-light.com/",
+            "checkedAt": "2026-09-11T02:20:02.876Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 1052,
+            "title": "",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [
+        "evt-6fee3ad30a2a13ec1447"
+      ],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "gigalight",
+      "name": "新易盛",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "new/changed",
+      "resultReason": "Current-window scan event matched this company and the interconnect/CPO keyword set; source tier still controls publication.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "public",
+        "officialUrl": "https://www.gigalight.com/",
+        "officialHttpStatus": 200,
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.gigalight.com/",
+            "resolvedUrl": "https://www.gigalight.com/",
+            "checkedAt": "2026-09-11T02:20:02.876Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 2164,
+            "title": "Home - GIGALIGHT",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [
+        "evt-6fee3ad30a2a13ec1447"
+      ],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "accelink",
+      "name": "光迅科技",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "no-change",
+      "resultReason": "Official entrypoint was reachable and no current-window interconnect/CPO event matched; detailed disclosure review remains bounded to the entrypoint.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "public",
+        "officialUrl": "https://www.accelink.com/",
+        "officialHttpStatus": 200,
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.accelink.com/",
+            "resolvedUrl": "https://www.accelink.com/",
+            "checkedAt": "2026-09-11T02:20:02.876Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 2530,
+            "title": "光迅科技 | 让光引领梦想",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "tfc",
+      "name": "天孚通信",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "new/changed",
+      "resultReason": "Current-window scan event matched this company and the interconnect/CPO keyword set; source tier still controls publication.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "unavailable",
+        "officialUrl": "https://www.tfc.com.cn/",
+        "officialHttpStatus": null,
+        "accessGaps": [
+          "https://www.tfc.com.cn/: fetch failed"
+        ],
+        "probes": [
+          {
+            "url": "https://www.tfc.com.cn/",
+            "checkedAt": "2026-09-11T02:20:02.877Z",
+            "accessStatus": "unavailable",
+            "durationMs": 1712,
+            "error": "fetch failed"
+          }
+        ]
+      },
+      "eventIds": [
+        "evt-6fee3ad30a2a13ec1447"
+      ],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "yjphotonics",
+      "name": "源杰科技",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "not-determined",
+      "resultReason": "Official entrypoint unavailable; no-change cannot be asserted.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "unavailable",
+        "officialUrl": "https://www.yjphotonics.com/",
+        "officialHttpStatus": null,
+        "accessGaps": [
+          "https://www.yjphotonics.com/: fetch failed"
+        ],
+        "probes": [
+          {
+            "url": "https://www.yjphotonics.com/",
+            "checkedAt": "2026-09-11T02:20:02.877Z",
+            "accessStatus": "unavailable",
+            "durationMs": 331,
+            "error": "fetch failed"
+          }
+        ]
+      },
+      "eventIds": [],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "sjphoton",
+      "name": "仕佳光子",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "no-change",
+      "resultReason": "Official entrypoint was reachable and no current-window interconnect/CPO event matched; detailed disclosure review remains bounded to the entrypoint.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "public",
+        "officialUrl": "https://www.sjphotons.com/",
+        "officialHttpStatus": 200,
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.sjphotons.com/",
+            "resolvedUrl": "https://sjphotons.com/",
+            "checkedAt": "2026-09-11T02:20:02.877Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 3135,
+            "title": "Shijia Photons &#8211; Empower the network , create the future with intelligence!",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "cigtech",
+      "name": "剑桥科技",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "no-change",
+      "resultReason": "Official entrypoint was reachable and no current-window interconnect/CPO event matched; detailed disclosure review remains bounded to the entrypoint.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "public",
+        "officialUrl": "https://www.cigtech.com/",
+        "officialHttpStatus": 200,
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.cigtech.com/",
+            "resolvedUrl": "https://www.cigtech.com/",
+            "checkedAt": "2026-09-11T02:20:02.878Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 2532,
+            "title": "Cambridge Industries Group Ltd",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "takfly",
+      "name": "太辰光",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "no-change",
+      "resultReason": "Official entrypoint was reachable and no current-window interconnect/CPO event matched; detailed disclosure review remains bounded to the entrypoint.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "public",
+        "officialUrl": "https://www.takfly.com/",
+        "officialHttpStatus": 200,
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.takfly.com/",
+            "resolvedUrl": "https://www.takfly.com/",
+            "checkedAt": "2026-09-11T02:20:02.878Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 2183,
+            "title": "Professional Fiber Optic Products Supplier for Quality Results | TAKFLY",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "bktel",
+      "name": "博创科技",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "no-change",
+      "resultReason": "Official entrypoint was reachable and no current-window interconnect/CPO event matched; detailed disclosure review remains bounded to the entrypoint.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "public",
+        "officialUrl": "https://www.bktel.com/",
+        "officialHttpStatus": 200,
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.bktel.com/",
+            "resolvedUrl": "https://www.bktel.com/",
+            "checkedAt": "2026-09-11T02:20:02.879Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 1733,
+            "title": "HUBER+SUHNER BKtel - your partner for high-speed data transmission",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "newDetails": [],
+      "sourceUrls": []
+    },
+    {
+      "id": "hgtech",
+      "name": "华工科技",
+      "lastCheckedAt": "2026-09-11T02:19:42.344Z",
+      "result": "no-change",
+      "resultReason": "Official entrypoint was reachable and no current-window interconnect/CPO event matched; detailed disclosure review remains bounded to the entrypoint.",
+      "sourceCoverage": {
+        "attemptedSourceClasses": [
+          "official newsroom/product pages",
+          "exchange/IR and complete earnings/call materials",
+          "SEC/exchange/standards or partner original"
+        ],
+        "accessStatus": "public",
+        "officialUrl": "https://www.hgtech.com.cn/",
+        "officialHttpStatus": 200,
+        "accessGaps": [],
+        "probes": [
+          {
+            "url": "https://www.hgtech.com.cn/",
+            "resolvedUrl": "https://www.hgtech.com.cn/",
+            "checkedAt": "2026-09-11T02:20:02.879Z",
+            "httpStatus": 200,
+            "accessStatus": "public",
+            "durationMs": 2662,
+            "title": "华工科技 - 创新联动美好世界",
+            "observedDates": []
+          }
+        ]
+      },
+      "eventIds": [],
+      "newDetails": [],
+      "sourceUrls": []
+    }
+  ]
+}

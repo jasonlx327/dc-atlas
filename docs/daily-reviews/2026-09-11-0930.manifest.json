@@ -1,0 +1,603 @@
+{
+  "schemaVersion": "1.1",
+  "runId": "atlas-2026-09-11-full",
+  "runDate": "2026-09-11",
+  "cutoff": "2026-09-08T10:22:54.347+08:00",
+  "displayTimezones": {
+    "zh": "Asia/Shanghai",
+    "en": "America/New_York"
+  },
+  "status": "ready-for-partial-release",
+  "projectPath": "/Users/xlarge/Desktop/数据中心/data-center-site-work",
+  "sourceLedgerPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-09-30-2026-09-11/docs/daily-reviews/2026-09-11-0930.manifest.sources.json",
+  "host": "bogon",
+  "headBefore": "49d42b1b3bfd2164819b830ab7b3b19ecf8027e1",
+  "baselineDecision": {
+    "atlasProductionRef": "87e0bf75e348cff4108b30f05e7214508108a8cd",
+    "latestVerifiedApplicationHead": "49d42b1b3bfd2164819b830ab7b3b19ecf8027e1",
+    "trusted": false,
+    "reason": "atlas-production is ahead of the latest durable Worker/Sites same-HEAD proof; this run starts from the latest verified application head.",
+    "evidence": "2026-09-08-1630 manifest records Cloudflare/Sites/production readback with all three commit fields equal to 49d42b1b3bfd2164819b830ab7b3b19ecf8027e1."
+  },
+  "actualStart": "2026-09-11T10:03:02+08:00",
+  "sourceWindow": {
+    "mode": "prior-successful-1630-cutoff",
+    "start": "2026-09-08T10:22:54.347+08:00",
+    "end": "2026-09-11T10:03:02+08:00",
+    "timeZone": "Asia/Shanghai",
+    "wideWindowSections": [
+      "mna",
+      "capacity",
+      "policy",
+      "power-model-demand"
+    ]
+  },
+  "handoffs": {
+    "2026-09-10-0930": "stale-incomplete-discovery-only; not reused as current evidence",
+    "2026-09-10-1630": "started-incomplete; not reused as current evidence",
+    "2026-09-10-2102-rumor-watch": "discovery-only input; candidates rechecked in current scan"
+  },
+  "sections": {
+    "idc-pulse": {
+      "status": "blocked",
+      "checkedAt": "2026-09-11T02:29:49.385Z",
+      "newIds": [],
+      "updatedIds": [
+        "evt-4a593dab4b55be1a4982",
+        "evt-cc587e07794a6303844b",
+        "evt-dab0a848e191c3054a32"
+      ],
+      "heldIds": [
+        "evt-4a593dab4b55be1a4982",
+        "evt-cc587e07794a6303844b",
+        "evt-4986d27a432b90e47075",
+        "evt-be053a35d585844da75a",
+        "evt-addfde80159bda013faf",
+        "evt-a80fcba3af02c9cd5400",
+        "evt-c62ae93e66cb80d9ee0b",
+        "evt-7c1a2e22e73f5a690a0d",
+        "evt-bb3c0c1a913486101def",
+        "evt-7d6457d50625b158b616",
+        "evt-a759b73d68a13b505c15",
+        "evt-f5addb0dffce76f1cb8c",
+        "evt-e54736c14ff4467174f6",
+        "evt-bf8400091697fc45845a",
+        "evt-f08ffe6a88694ccfca42",
+        "evt-7b5a449eccbf37328f78",
+        "evt-6576d4e6093e2e3e532c",
+        "evt-dad091a3df1e2f668c3a",
+        "evt-c821ba6dbe319739e98a",
+        "evt-dab0a848e191c3054a32"
+      ],
+      "primarySources": 3,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-event-night",
+        "event-evt-4a593dab4b55be1a4982-source-0",
+        "event-evt-cc587e07794a6303844b-source-0",
+        "event-evt-dab0a848e191c3054a32-source-0"
+      ],
+      "accessGaps": [
+        "Formal candidates passed source routing but the current versioned publication adapter is rumor-only; formal records remain held."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Review completed, but mandatory overlay coverage remains incomplete; unresolved company/issuer/interconnect claims are held and are not treated as no-change."
+    },
+    "listed-companies": {
+      "status": "blocked",
+      "checkedAt": "2026-09-11T02:29:49.385Z",
+      "newIds": [],
+      "updatedIds": [
+        "evt-a72359c5d6046c17f950",
+        "evt-a77a0b00170e6fa8f4b9"
+      ],
+      "heldIds": [
+        "evt-a72359c5d6046c17f950",
+        "evt-163ebae9e2fe8bb5c138",
+        "evt-a4d4f4c6fff063740e77",
+        "evt-95bb360a97c6cd575877",
+        "evt-6d96e2c1fc4e735ec4f7",
+        "evt-2c8f4b38adebedfc6df4",
+        "evt-a77a0b00170e6fa8f4b9",
+        "evt-67d9fa3805443fa41dae",
+        "evt-2382b73e0941d4c1f40e",
+        "evt-623d7adda0cbc94bbb08",
+        "evt-d66d02f5ac76f9baa477",
+        "evt-a39c8f94b86cdf219d33",
+        "evt-c346e1ebd6d7aec4be3b",
+        "evt-7ca27ccac83f00656619",
+        "evt-89b8f1cac5800df29f60"
+      ],
+      "primarySources": 2,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-event-night",
+        "event-evt-a72359c5d6046c17f950-source-0",
+        "event-evt-a77a0b00170e6fa8f4b9-source-0"
+      ],
+      "accessGaps": [
+        "Formal candidates passed source routing but the current versioned publication adapter is rumor-only; formal records remain held.",
+        "10 of 50 core-company checks remain not-determined"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Review completed, but mandatory overlay coverage remains incomplete; unresolved company/issuer/interconnect claims are held and are not treated as no-change."
+    },
+    "mna": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-11T02:29:49.385Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-861cfaf8903647e3f818",
+        "evt-a6d47faf36da6fa361b3",
+        "evt-79b2e339434cd43c3b71"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-event-night"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "已完成板块信源检查；3 个低优先级或待追踪候选保留在观察队列，不构成发布阻断。"
+    },
+    "capacity": {
+      "status": "blocked",
+      "checkedAt": "2026-09-11T02:29:49.385Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-1d1effbfb8494ae8de5d",
+        "evt-76901cbdfd43687e229f",
+        "evt-d0a8611533f6df57b47d",
+        "evt-42b091bda4b1c1c99382",
+        "evt-9f46ac92e9a277ce48cc",
+        "evt-9b6235df182ffb4760e2",
+        "evt-228c8c4f11ab21bbf8d5",
+        "evt-650843b9febdebcdfe58",
+        "evt-32d0bb315ee3cb83ce8a",
+        "evt-90a3f5a5690e461a4be4",
+        "evt-fcc6a40461331b6c43a5",
+        "evt-ebea48fb45b9db501c8e",
+        "evt-939339b9226a6ff9236d",
+        "evt-6778ac2bea11057a8c5b",
+        "evt-178ee1f6ee0051a862dd",
+        "evt-aaf1e9ecd9dfe11b6966",
+        "evt-f4de66e9909671d85b9d",
+        "evt-1f5469830880e83bf2b1",
+        "evt-e27fb11d7360915aea36",
+        "evt-d135ffb502c8c4349416",
+        "evt-a55a4953c10a7e54256e",
+        "evt-441e1189aa1b1cbe76e8",
+        "evt-f7406b5c1c009e123fcf",
+        "evt-558dc8c0961fd3a57b9b",
+        "evt-1f3af5c2fd941cb777cb",
+        "evt-f6e75cc2d418eb1ef3ad",
+        "evt-2688b7f7995c8679b4e6",
+        "evt-5e77fd2b9311e3b8dfde",
+        "evt-d8e4e6b714923c24ba56",
+        "evt-03e8f9f75dca07a21cad",
+        "evt-80cce8009fe981070676",
+        "evt-ab1aa58bb18ed8b11a9a"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-event-night"
+      ],
+      "accessGaps": [
+        "10 of 50 core-company checks remain not-determined"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Review completed, but mandatory overlay coverage remains incomplete; unresolved company/issuer/interconnect claims are held and are not treated as no-change."
+    },
+    "cooling": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-11T02:29:49.385Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-event-night"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "已完成板块必查信源覆盖，未发现满足新增或实质变化条件的公开条目。"
+    },
+    "compute-products": {
+      "status": "blocked",
+      "checkedAt": "2026-09-11T02:29:49.385Z",
+      "newIds": [],
+      "updatedIds": [
+        "evt-c4354b8f2d961825b858"
+      ],
+      "heldIds": [
+        "evt-c4354b8f2d961825b858",
+        "evt-de5795d0c3bc2b37174b",
+        "evt-7a1e447743e35d23b423",
+        "evt-d1c3a6b88042176245d8",
+        "evt-526f2b93a54139d3e8d1"
+      ],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-event-night",
+        "event-evt-c4354b8f2d961825b858-source-0"
+      ],
+      "accessGaps": [
+        "Formal candidates passed source routing but the current versioned publication adapter is rumor-only; formal records remain held."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Review completed, but mandatory overlay coverage remains incomplete; unresolved company/issuer/interconnect claims are held and are not treated as no-change."
+    },
+    "china-gpu": {
+      "status": "blocked",
+      "checkedAt": "2026-09-11T02:29:49.385Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [
+        "evt-2133350d30c05f03ad03"
+      ],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-event-night"
+      ],
+      "accessGaps": [
+        "7 of 7 China XPU listed-issuer checks remain not-determined"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Review completed, but mandatory overlay coverage remains incomplete; unresolved company/issuer/interconnect claims are held and are not treated as no-change."
+    },
+    "supply-chain": {
+      "status": "blocked",
+      "checkedAt": "2026-09-11T02:29:49.385Z",
+      "newIds": [],
+      "updatedIds": [
+        "evt-b644b9ef2abe20322e00"
+      ],
+      "heldIds": [
+        "evt-50b2f604953e50f6f07a",
+        "evt-eff2ae927639fe218583",
+        "evt-586f4b9ee85b58215ab1",
+        "evt-109a5adf18b0555463bb",
+        "evt-b644b9ef2abe20322e00",
+        "evt-548a58614a559448627e"
+      ],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-event-night",
+        "event-evt-b644b9ef2abe20322e00-source-0"
+      ],
+      "accessGaps": [
+        "Formal candidates passed source routing but the current versioned publication adapter is rumor-only; formal records remain held.",
+        "5 of 20 interconnect/CPO checks remain not-determined"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Review completed, but mandatory overlay coverage remains incomplete; unresolved company/issuer/interconnect claims are held and are not treated as no-change."
+    },
+    "power-model-demand": {
+      "status": "blocked",
+      "checkedAt": "2026-09-11T02:29:49.385Z",
+      "newIds": [],
+      "updatedIds": [
+        "evt-d8eaa1f28b84da6b5101",
+        "evt-0c48617b21315fc6c995",
+        "evt-ee91e9902fb0272187af",
+        "evt-77fc100c9867e38bdef7",
+        "evt-1b8aa477759af35e6995",
+        "evt-431aaafd2e41467e8f2b",
+        "evt-d4faa7ebb32509925df5",
+        "evt-d91dd95b130447bab68e"
+      ],
+      "heldIds": [
+        "evt-d8eaa1f28b84da6b5101",
+        "evt-0c48617b21315fc6c995",
+        "evt-ee91e9902fb0272187af",
+        "evt-09117b60e9926b5c6560",
+        "evt-2329ca3fe3ef73e7eeb2",
+        "evt-751da10e599d3657bd9e",
+        "evt-8c6c87ebaf52b8715db9",
+        "evt-77fc100c9867e38bdef7",
+        "evt-1b8aa477759af35e6995",
+        "evt-431aaafd2e41467e8f2b",
+        "evt-683662691694804a2abc",
+        "evt-ba2f70ba5465dc076664",
+        "evt-bc94912e7034c28287f6",
+        "evt-661f74fdf78a24083084",
+        "evt-a093eee14ca3b3673bd9",
+        "evt-96a925b362864f2e3511",
+        "evt-02cb619b1a77a5819a08",
+        "evt-5e56a62b884143ab94f1",
+        "evt-7f5b23118873db21ddea",
+        "evt-d4faa7ebb32509925df5",
+        "evt-d91dd95b130447bab68e"
+      ],
+      "primarySources": 8,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-event-night",
+        "event-evt-d8eaa1f28b84da6b5101-source-0",
+        "event-evt-0c48617b21315fc6c995-source-0",
+        "event-evt-ee91e9902fb0272187af-source-0",
+        "event-evt-77fc100c9867e38bdef7-source-0",
+        "event-evt-1b8aa477759af35e6995-source-0",
+        "event-evt-431aaafd2e41467e8f2b-source-0",
+        "event-evt-d4faa7ebb32509925df5-source-0",
+        "event-evt-d91dd95b130447bab68e-source-0"
+      ],
+      "accessGaps": [
+        "Formal candidates passed source routing but the current versioned publication adapter is rumor-only; formal records remain held.",
+        "10 of 50 core-company checks remain not-determined"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Review completed, but mandatory overlay coverage remains incomplete; unresolved company/issuer/interconnect claims are held and are not treated as no-change."
+    },
+    "earnings-calendar": {
+      "status": "blocked",
+      "checkedAt": "2026-09-11T02:29:49.385Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-event-night"
+      ],
+      "accessGaps": [
+        "7 of 7 China XPU listed-issuer checks remain not-determined"
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Review completed, but mandatory overlay coverage remains incomplete; unresolved company/issuer/interconnect claims are held and are not treated as no-change."
+    },
+    "rumors": {
+      "status": "updated",
+      "checkedAt": "2026-09-11T02:29:49.385Z",
+      "newIds": [
+        "evt-c9429ef3da0b7ea15019",
+        "evt-0e14a3313c8523eb053c",
+        "evt-f66422de5178f8f2425a",
+        "evt-3a8b109e97e6bd13895d",
+        "evt-5dd9cf6b8d685155854e",
+        "evt-3c0f42010c132200ea01",
+        "evt-15491fab099aff570e34",
+        "evt-3a836cd1eeccc65be09a",
+        "evt-265366fa6167e05f1a8a",
+        "evt-c17bb43be1b0767982f3",
+        "evt-6fee3ad30a2a13ec1447",
+        "evt-bde569c590ff1e456cff",
+        "evt-5bbf027a8dccf8dd91b3",
+        "evt-2e0405b0f55921d18c54",
+        "evt-5c06b68c6cebc0b8e455",
+        "evt-6eaf921b8495798cfc81",
+        "evt-2eaf61554c9f5f8d1141",
+        "evt-395b7e3064a5a6a1a2d1",
+        "evt-9e7e65b8c3eaf53d6912",
+        "evt-f31c47792c3a4922d03f",
+        "evt-849f1cb53a40734cefd5",
+        "evt-930b1f96a343bb90b3ec",
+        "evt-8fab3ef561c3891d0d4c",
+        "evt-1765ddcffaf1a90a49a7",
+        "evt-335cbf4a52f0a8caa026",
+        "evt-e11cbe85d95ae026efa4",
+        "evt-233a18dda0664c78c332",
+        "evt-2e2cb999e182b60be9a5",
+        "evt-c5e6ad3fe45b98ce59bc",
+        "evt-d3c69bdd225888a08884",
+        "evt-98a336a31bd5a66b6f20",
+        "evt-7aff33f272aaf7706b94",
+        "evt-33aeb645a52ea90f172e",
+        "evt-5d0c7a06c462265ebf12",
+        "evt-48cd1ceaa933f9df039a",
+        "evt-23fbe1dde85e7cef7a55",
+        "evt-520aa1b5144d4ed4bde5",
+        "evt-e85faec937b634312aa2",
+        "evt-c888d59d6f52be266f94",
+        "evt-e4e5333963565abed4ee",
+        "evt-02e29fbb2314d4b8cdef",
+        "evt-748b1d5c1b654e98b81a",
+        "evt-6364d957dd9031bc7285",
+        "evt-d3591910ea19bfe093db",
+        "evt-648efa49e10ec736ab64",
+        "evt-328451cc9c0c14402e5f",
+        "evt-a74d4dc7b13de386345e",
+        "evt-74417a531a9372d72121",
+        "evt-dcd3b865f6c285714526",
+        "evt-92d88c2a06286500c06c",
+        "evt-fc4912b64786a05b3bb2",
+        "evt-f9430462122320f10d67",
+        "evt-557d74d6f20f6d89e544",
+        "evt-a404aefb7722d28a56be",
+        "evt-a82273d447e92265abaa",
+        "evt-7f5a23f576913fae79c8",
+        "evt-79498b3a1178386f07eb",
+        "evt-3431c6ccec588825de44",
+        "evt-41d81bc8c0d1c9591099",
+        "evt-f9e7ff9da5bdb4c4cd44",
+        "evt-3d365cd2337eb86bb950",
+        "evt-c9d120763780177aa11d",
+        "evt-c0d422aea407d97f7821",
+        "evt-4a9670a4220a3ffaf747",
+        "evt-902f47f0ae9ac6954967",
+        "evt-4d6b1efcb5da27ceb992",
+        "evt-c694aa8dc6d0c3cac717",
+        "evt-fd535edde99186f655d1",
+        "evt-4178db8d115a94410d3f",
+        "evt-764d220a8c78b812adec",
+        "evt-69cd2d046189dd77c06a",
+        "evt-af78c65c3c4504d16246",
+        "evt-18c34431384e5b911637"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 73,
+      "sourceRefs": [
+        "global-scan-20260911-event-night",
+        "event-evt-c9429ef3da0b7ea15019-source-0",
+        "event-evt-0e14a3313c8523eb053c-source-0",
+        "event-evt-f66422de5178f8f2425a-source-0",
+        "event-evt-3a8b109e97e6bd13895d-source-0",
+        "event-evt-5dd9cf6b8d685155854e-source-0",
+        "event-evt-3c0f42010c132200ea01-source-0",
+        "event-evt-15491fab099aff570e34-source-0",
+        "event-evt-3a836cd1eeccc65be09a-source-0",
+        "event-evt-265366fa6167e05f1a8a-source-0",
+        "event-evt-c17bb43be1b0767982f3-source-0",
+        "event-evt-6fee3ad30a2a13ec1447-source-0",
+        "event-evt-bde569c590ff1e456cff-source-0",
+        "event-evt-5bbf027a8dccf8dd91b3-source-0",
+        "event-evt-2e0405b0f55921d18c54-source-0",
+        "event-evt-5c06b68c6cebc0b8e455-source-0",
+        "event-evt-6eaf921b8495798cfc81-source-0",
+        "event-evt-2eaf61554c9f5f8d1141-source-0",
+        "event-evt-395b7e3064a5a6a1a2d1-source-0",
+        "event-evt-9e7e65b8c3eaf53d6912-source-0",
+        "event-evt-f31c47792c3a4922d03f-source-0",
+        "event-evt-849f1cb53a40734cefd5-source-0",
+        "event-evt-930b1f96a343bb90b3ec-source-0",
+        "event-evt-8fab3ef561c3891d0d4c-source-0",
+        "event-evt-1765ddcffaf1a90a49a7-source-0",
+        "event-evt-335cbf4a52f0a8caa026-source-0",
+        "event-evt-e11cbe85d95ae026efa4-source-0",
+        "event-evt-233a18dda0664c78c332-source-0",
+        "event-evt-2e2cb999e182b60be9a5-source-0",
+        "event-evt-c5e6ad3fe45b98ce59bc-source-0",
+        "event-evt-d3c69bdd225888a08884-source-0",
+        "event-evt-98a336a31bd5a66b6f20-source-0",
+        "event-evt-7aff33f272aaf7706b94-source-0",
+        "event-evt-33aeb645a52ea90f172e-source-0",
+        "event-evt-5d0c7a06c462265ebf12-source-0",
+        "event-evt-48cd1ceaa933f9df039a-source-0",
+        "event-evt-23fbe1dde85e7cef7a55-source-0",
+        "event-evt-520aa1b5144d4ed4bde5-source-0",
+        "event-evt-e85faec937b634312aa2-source-0",
+        "event-evt-c888d59d6f52be266f94-source-0",
+        "event-evt-e4e5333963565abed4ee-source-0",
+        "event-evt-02e29fbb2314d4b8cdef-source-0",
+        "event-evt-748b1d5c1b654e98b81a-source-0",
+        "event-evt-6364d957dd9031bc7285-source-0",
+        "event-evt-d3591910ea19bfe093db-source-0",
+        "event-evt-648efa49e10ec736ab64-source-0",
+        "event-evt-328451cc9c0c14402e5f-source-0",
+        "event-evt-a74d4dc7b13de386345e-source-0",
+        "event-evt-74417a531a9372d72121-source-0",
+        "event-evt-dcd3b865f6c285714526-source-0",
+        "event-evt-92d88c2a06286500c06c-source-0",
+        "event-evt-fc4912b64786a05b3bb2-source-0",
+        "event-evt-f9430462122320f10d67-source-0",
+        "event-evt-557d74d6f20f6d89e544-source-0",
+        "event-evt-a404aefb7722d28a56be-source-0",
+        "event-evt-a82273d447e92265abaa-source-0",
+        "event-evt-7f5a23f576913fae79c8-source-0",
+        "event-evt-79498b3a1178386f07eb-source-0",
+        "event-evt-3431c6ccec588825de44-source-0",
+        "event-evt-41d81bc8c0d1c9591099-source-0",
+        "event-evt-f9e7ff9da5bdb4c4cd44-source-0",
+        "event-evt-3d365cd2337eb86bb950-source-0",
+        "event-evt-c9d120763780177aa11d-source-0",
+        "event-evt-c0d422aea407d97f7821-source-0",
+        "event-evt-4a9670a4220a3ffaf747-source-0",
+        "event-evt-902f47f0ae9ac6954967-source-0",
+        "event-evt-4d6b1efcb5da27ceb992-source-0",
+        "event-evt-c694aa8dc6d0c3cac717-source-0",
+        "event-evt-fd535edde99186f655d1-source-0",
+        "event-evt-4178db8d115a94410d3f-source-0",
+        "event-evt-764d220a8c78b812adec-source-0",
+        "event-evt-69cd2d046189dd77c06a-source-0",
+        "event-evt-af78c65c3c4504d16246-source-0",
+        "event-evt-18c34431384e5b911637-source-0"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "73 attributed media candidates passed bilingual/source-boundary validation and are the only section included in this partial release; formal and research candidates remain held."
+    },
+    "policy": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-11T02:29:49.385Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-event-night"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "已完成板块必查信源覆盖，未发现满足新增或实质变化条件的公开条目。"
+    },
+    "columns": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-11T02:29:49.385Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "global-scan-20260911-event-night"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "已完成板块必查信源覆盖，未发现满足新增或实质变化条件的公开条目。"
+    }
+  },
+  "release": {
+    "mode": "partial",
+    "tests": "passed",
+    "build": "passed",
+    "cloudflare": "passed",
+    "formalReadback": "pending",
+    "dailySnapshot": "pending",
+    "sites": "pending",
+    "sitesReadback": "pending",
+    "commit": null,
+    "workerCommit": null,
+    "sitesCommit": null,
+    "cloudflareVersion": null,
+    "sitesVersion": null,
+    "formalUrl": null,
+    "sitesUrl": null,
+    "includedSections": [
+      "rumors"
+    ],
+    "heldSections": [
+      "idc-pulse",
+      "listed-companies",
+      "capacity",
+      "compute-products",
+      "china-gpu",
+      "supply-chain",
+      "power-model-demand",
+      "earnings-calendar"
+    ],
+    "testBaseline": null
+  },
+  "blockers": [
+    "15 formal-source candidates remain in editorial hold because the current versioned publication adapter is rumor-only.",
+    "Core-company, China XPU and interconnect/CPO overlays retain unresolved not-determined coverage; affected sections are held.",
+    "Cloudflare/Sites deployment and production readback have not yet run on this new HEAD."
+  ],
+  "actualEnd": "2026-09-11T02:29:49.385Z",
+  "candidateHandoff": {
+    "day": "2026-09-03",
+    "status": "stale-discovery-only",
+    "currentCandidates": 176,
+    "currentSelected": 142,
+    "currentWatch": 34
+  },
+  "editorialHandoff": {
+    "judgmentPath": "artifacts/event-intelligence/codex-editorial-judgment.json",
+    "model": "deterministic-atlas-fallback-v1",
+    "candidates": 176,
+    "selected": 142,
+    "watch": 34,
+    "publishRumor": 73,
+    "publishFormal": 15,
+    "remoteKV": "written-and-hash-read-back"
+  }
+}

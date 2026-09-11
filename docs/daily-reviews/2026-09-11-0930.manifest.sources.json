@@ -1,0 +1,1275 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-09-11-full",
+  "sources": [
+    {
+      "ref": "global-scan-20260911-event-night",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "Fresh global event-night scan",
+      "observedAt": "2026-09-11T02:06:10.998Z",
+      "details": {
+        "status": "partial",
+        "stats": {
+          "fetched": 2912,
+          "normalized": 2858,
+          "duplicates": 54,
+          "relevant": 1919,
+          "uncertain": 13,
+          "deepScored": 1919,
+          "clusters": 647,
+          "publicEligible": 0,
+          "rejected": 0,
+          "held": 113,
+          "errors": 7,
+          "routeCounts": {
+            "rumor-watch": 117,
+            "pulse": 417,
+            "policy-index": 0,
+            "research-queue": 0,
+            "hold": 113,
+            "rejected": 0
+          }
+        },
+        "failures": [
+          "ndrc/ndrc-endpoint: fetch failed",
+          "miit/miit-endpoint: fetch failed",
+          "mep-china/mep-china-endpoint: fetch failed",
+          "beijing-gov/beijing-gov-endpoint: fetch failed",
+          "shanghai-gov/shanghai-gov-endpoint: fetch failed",
+          "xai-news/xai-news-endpoint: HTTP 403",
+          "ap-technology/ap-technology-endpoint: HTTP 403"
+        ]
+      },
+      "sections": [
+        "*"
+      ]
+    },
+    {
+      "ref": "core-company-overlay-20260911-0930",
+      "evidenceKind": "runtime-state",
+      "sourceName": "Fresh 50-company core watch overlay",
+      "observedAt": "2026-09-11T02:19:42.344Z",
+      "details": {
+        "companyCount": 50,
+        "results": {
+          "new/changed": 30,
+          "no-change": 10,
+          "not-determined": 10
+        }
+      },
+      "sections": [
+        "listed-companies",
+        "capacity",
+        "power-model-demand",
+        "earnings-calendar"
+      ]
+    },
+    {
+      "ref": "china-xpu-listed-overlay-20260911-0930",
+      "evidenceKind": "runtime-state",
+      "sourceName": "Fresh China XPU listed-issuer overlay",
+      "observedAt": "2026-09-11T02:19:42.344Z",
+      "details": {
+        "issuerCount": 7,
+        "results": {
+          "new/changed": 0,
+          "no-change": 0,
+          "not-determined": 7
+        },
+        "accessGaps": [
+          "https://www.jingjia.com/: fetch failed"
+        ]
+      },
+      "sections": [
+        "china-gpu",
+        "listed-companies",
+        "earnings-calendar"
+      ]
+    },
+    {
+      "ref": "interconnect-cpo-overlay-20260911-0930",
+      "evidenceKind": "runtime-state",
+      "sourceName": "Fresh interconnect/CPO overlay",
+      "observedAt": "2026-09-11T02:19:42.344Z",
+      "details": {
+        "companyCount": 20,
+        "results": {
+          "new/changed": 6,
+          "no-change": 9,
+          "not-determined": 5
+        },
+        "accessGaps": [
+          "https://investors.broadcom.com/news-releases: The operation was aborted due to timeout",
+          "https://investors.credosemi.com/news-releases: 403",
+          "https://www.cerebras.ai/press-release: 404",
+          "https://www.celestica.com/news: The operation was aborted due to timeout",
+          "https://www.ciena.com/about/newsroom/: 403",
+          "https://www.tfc.com.cn/: fetch failed",
+          "https://www.yjphotonics.com/: fetch failed"
+        ]
+      },
+      "sections": [
+        "supply-chain",
+        "compute-products",
+        "power-model-demand"
+      ]
+    },
+    {
+      "ref": "handoff-20260910-incomplete",
+      "evidenceKind": "workflow-state",
+      "sourceName": "Prior incomplete handoff",
+      "observedAt": "2026-09-11T02:29:49.385Z",
+      "details": {
+        "status": "stale-incomplete-discovery-only",
+        "reused": false
+      },
+      "sections": [
+        "*"
+      ]
+    },
+    {
+      "ref": "event-evt-4a593dab4b55be1a4982-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "federal-register",
+      "tier": "T0",
+      "canonicalUrl": "https://www.federalregister.gov/documents/2026/09/10/2026-18478/telecommunications-relay-service-ascii-format-requirement",
+      "publishedAt": "2026-09-10T00:00:00.000Z",
+      "accessState": "unavailable",
+      "independenceGroup": "federal-register",
+      "sections": [
+        "idc-pulse"
+      ]
+    },
+    {
+      "ref": "event-evt-cc587e07794a6303844b-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "openai-news",
+      "tier": "T1",
+      "canonicalUrl": "https://openai.com/index/ai-policy-window",
+      "publishedAt": "2026-09-09T13:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "openai",
+      "sections": [
+        "idc-pulse"
+      ]
+    },
+    {
+      "ref": "event-evt-dab0a848e191c3054a32-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "google-developers",
+      "tier": "T1",
+      "canonicalUrl": "https://developers.googleblog.com/driving-developer-excellence-inside-the-program-sprints/",
+      "publishedAt": "2026-09-11T02:05:59.750Z",
+      "accessState": "public",
+      "independenceGroup": "google",
+      "sections": [
+        "idc-pulse"
+      ]
+    },
+    {
+      "ref": "event-evt-a72359c5d6046c17f950-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "dell-blog",
+      "tier": "T1",
+      "canonicalUrl": "https://www.dell.com/en-us/blog/how-to-build-a-computer-a-beginner-s-guide/",
+      "publishedAt": "2026-09-10T14:00:07.000Z",
+      "accessState": "public",
+      "independenceGroup": "dell",
+      "sections": [
+        "listed-companies"
+      ]
+    },
+    {
+      "ref": "event-evt-a77a0b00170e6fa8f4b9-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "coreweave",
+      "tier": "T1",
+      "canonicalUrl": "https://www.coreweave.com/news",
+      "publishedAt": "2026-09-11T02:05:57.768Z",
+      "accessState": "public",
+      "independenceGroup": "coreweave",
+      "sections": [
+        "listed-companies"
+      ]
+    },
+    {
+      "ref": "event-evt-c4354b8f2d961825b858-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "nvidia-developer",
+      "tier": "T1",
+      "canonicalUrl": "https://developer.nvidia.com/blog/cuda-toolkit-13-4-adds-windows-on-arm-support-and-greater-control-over-shared-gpus/",
+      "publishedAt": "2026-09-09T20:24:12.000Z",
+      "accessState": "public",
+      "independenceGroup": "nvidia",
+      "sections": [
+        "compute-products"
+      ]
+    },
+    {
+      "ref": "event-evt-b644b9ef2abe20322e00-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "google-developers",
+      "tier": "T1",
+      "canonicalUrl": "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/",
+      "publishedAt": "2026-09-11T02:05:59.750Z",
+      "accessState": "public",
+      "independenceGroup": "google",
+      "sections": [
+        "supply-chain"
+      ]
+    },
+    {
+      "ref": "event-evt-d8eaa1f28b84da6b5101-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "sec-edgar",
+      "tier": "T0",
+      "canonicalUrl": "https://www.sec.gov/Archives/edgar/data/1844971/000119380526001214/0001193805-26-001214-index.htm",
+      "publishedAt": "2026-09-10T21:07:45.000Z",
+      "accessState": "public",
+      "independenceGroup": "sec",
+      "sections": [
+        "power-model-demand"
+      ]
+    },
+    {
+      "ref": "event-evt-0c48617b21315fc6c995-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "nist-news",
+      "tier": "T0",
+      "canonicalUrl": "https://www.nist.gov/news-events/news/2026/09/nist-developed-quantum-sensors-improve-nuclear-monitoring",
+      "publishedAt": "2026-09-10T12:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "nist",
+      "sections": [
+        "power-model-demand"
+      ]
+    },
+    {
+      "ref": "event-evt-ee91e9902fb0272187af-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "openai-news",
+      "tier": "T1",
+      "canonicalUrl": "https://openai.com/index/introducing-the-agents-api",
+      "publishedAt": "2026-09-10T00:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "openai",
+      "sections": [
+        "power-model-demand"
+      ]
+    },
+    {
+      "ref": "event-evt-77fc100c9867e38bdef7-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "aws-news",
+      "tier": "T1",
+      "canonicalUrl": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-lambda-durable-pydantic-ai/",
+      "publishedAt": "2026-09-10T18:45:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "amazon",
+      "sections": [
+        "power-model-demand"
+      ]
+    },
+    {
+      "ref": "event-evt-1b8aa477759af35e6995-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "google-ai-blog",
+      "tier": "T1",
+      "canonicalUrl": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
+      "publishedAt": "2026-09-10T16:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "google",
+      "sections": [
+        "power-model-demand"
+      ]
+    },
+    {
+      "ref": "event-evt-431aaafd2e41467e8f2b-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ibm-newsroom",
+      "tier": "T1",
+      "canonicalUrl": "https://newsroom.ibm.com/2026-09-09-cleveland-clinic,-riken-and-ibm-team-advance-to-finals-for-2026-acm-gordon-bell-prize",
+      "publishedAt": "2026-09-09T04:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "ibm",
+      "sections": [
+        "power-model-demand"
+      ]
+    },
+    {
+      "ref": "event-evt-d4faa7ebb32509925df5-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "google-developers",
+      "tier": "T1",
+      "canonicalUrl": "https://developers.googleblog.com/the-anatomy-of-harness-engineering-how-to-evaluate-iterate-and-guard-ai-coding-agents/",
+      "publishedAt": "2026-09-11T02:05:59.750Z",
+      "accessState": "public",
+      "independenceGroup": "google",
+      "sections": [
+        "power-model-demand"
+      ]
+    },
+    {
+      "ref": "event-evt-d91dd95b130447bab68e-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "google-developers",
+      "tier": "T1",
+      "canonicalUrl": "https://developers.googleblog.com/agent-and-model-evaluations-in-gemini-enterprise-agent-platform-are-now-ga/",
+      "publishedAt": "2026-09-11T02:05:59.750Z",
+      "accessState": "public",
+      "independenceGroup": "google",
+      "sections": [
+        "power-model-demand"
+      ]
+    },
+    {
+      "ref": "event-evt-c9429ef3da0b7ea15019-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "utility-dive",
+      "tier": "T3",
+      "canonicalUrl": "https://www.utilitydive.com/news/google-virtual-power-plant-vpp-pge/830036/",
+      "publishedAt": "2026-09-10T16:43:17.000Z",
+      "accessState": "public",
+      "independenceGroup": "utility-dive",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-0e14a3313c8523eb053c-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "the-register",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theregister.com/on-prem/2026/09/09/google-takes-the-nuclear-option-for-13b-finland-expansion/5295306",
+      "publishedAt": "2026-09-09T16:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-register",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-f66422de5178f8f2425a-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "financial-times-tech",
+      "tier": "T2",
+      "canonicalUrl": "https://www.ft.com/content/20c07191-8da6-440f-b04b-8ea0ebdd9153?syn-25a6b1a6=1",
+      "publishedAt": "2026-09-09T09:31:37.000Z",
+      "accessState": "public",
+      "independenceGroup": "ft",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-3a8b109e97e6bd13895d-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/114.htm",
+      "publishedAt": "2026-09-11T01:36:08.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-5dd9cf6b8d685155854e-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/087.htm",
+      "publishedAt": "2026-09-11T00:12:55.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-3c0f42010c132200ea01-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/057.htm",
+      "publishedAt": "2026-09-10T22:53:34.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-15491fab099aff570e34-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "techcrunch",
+      "tier": "T3",
+      "canonicalUrl": "https://techcrunch.com/2026/09/10/anthropic-details-distillation-campaigns-from-alibaba-moonshot-ai-and-deepseek/",
+      "publishedAt": "2026-09-10T20:57:30.000Z",
+      "accessState": "public",
+      "independenceGroup": "techcrunch",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-3a836cd1eeccc65be09a-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "techcrunch",
+      "tier": "T3",
+      "canonicalUrl": "https://techcrunch.com/2026/09/10/amazon-makes-it-easier-to-buy-what-you-see-on-prime-video/",
+      "publishedAt": "2026-09-10T18:10:36.000Z",
+      "accessState": "public",
+      "independenceGroup": "techcrunch",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-265366fa6167e05f1a8a-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "the-verge",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theverge.com/tech/993391/meta-muse-ai-hands-on",
+      "publishedAt": "2026-09-10T15:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-verge",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-c17bb43be1b0767982f3-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "marketwatch-top",
+      "tier": "T2",
+      "canonicalUrl": "https://www.marketwatch.com/story/spacex-is-inching-closer-to-this-lofty-100-billion-milestone-11536cfc?mod=mw_rss_topstories",
+      "publishedAt": "2026-09-10T22:19:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "marketwatch",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-6fee3ad30a2a13ec1447-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/118.htm",
+      "publishedAt": "2026-09-11T01:59:21.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-bde569c590ff1e456cff-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/105.htm",
+      "publishedAt": "2026-09-11T00:54:57.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-5bbf027a8dccf8dd91b3-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/056.htm",
+      "publishedAt": "2026-09-10T22:50:29.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-2e0405b0f55921d18c54-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "techcrunch",
+      "tier": "T3",
+      "canonicalUrl": "https://techcrunch.com/2026/09/10/indias-pocket-fm-doubles-revenue-run-rate-to-500m-as-ai-powers-93-of-audio-content/",
+      "publishedAt": "2026-09-10T17:45:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "techcrunch",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-5c06b68c6cebc0b8e455-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "power-magazine",
+      "tier": "T3",
+      "canonicalUrl": "https://www.powermag.com/hexagon-weyerhaeuser-ink-geothermal-development-deal-for-pacific-northwest/",
+      "publishedAt": "2026-09-10T16:29:57.000Z",
+      "accessState": "public",
+      "independenceGroup": "power-magazine",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-6eaf921b8495798cfc81-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "the-verge",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/993465/universal-music-elevenlabs-ai",
+      "publishedAt": "2026-09-10T15:38:19.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-verge",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-2eaf61554c9f5f8d1141-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "data-center-dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/film-studio-turned-data-center-project-gets-approval-in-high-wycombe-uk/",
+      "publishedAt": "2026-09-10T14:30:42.000Z",
+      "accessState": "public",
+      "independenceGroup": "dcd",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-395b7e3064a5a6a1a2d1-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ee-times",
+      "tier": "T3",
+      "canonicalUrl": "https://www.eetimes.com/adi-snaps-alif-semiconductor-to-push-ai-into-physical-systems/",
+      "publishedAt": "2026-09-10T11:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "ee-times",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-9e7e65b8c3eaf53d6912-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "serve-the-home",
+      "tier": "T3",
+      "canonicalUrl": "https://www.servethehome.com/arm-neoverse-css-n4-launched-for-next-gen-cpus-and-dpus/",
+      "publishedAt": "2026-09-09T17:10:12.000Z",
+      "accessState": "public",
+      "independenceGroup": "serve-the-home",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-f31c47792c3a4922d03f-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "utility-dive",
+      "tier": "T3",
+      "canonicalUrl": "https://www.utilitydive.com/news/front-of-meter-solar-storage-could-serve-32-of-californias-2032-peak-loa/829935/",
+      "publishedAt": "2026-09-09T16:10:20.000Z",
+      "accessState": "public",
+      "independenceGroup": "utility-dive",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-849f1cb53a40734cefd5-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "light-reading",
+      "tier": "T3",
+      "canonicalUrl": "https://www.lightreading.com/regulatory-politics/thailand-suspends-data-center-projects-as-oil-leak-sparks-environmental-concerns",
+      "publishedAt": "2026-09-09T13:45:21.000Z",
+      "accessState": "public",
+      "independenceGroup": "light-reading",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-930b1f96a343bb90b3ec-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "light-reading",
+      "tier": "T3",
+      "canonicalUrl": "https://www.lightreading.com/data-centers/eurobites-google-tips-13b-into-finnish-data-center-plan",
+      "publishedAt": "2026-09-09T13:44:44.000Z",
+      "accessState": "public",
+      "independenceGroup": "light-reading",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-8fab3ef561c3891d0d4c-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "cnbc-technology",
+      "tier": "T2",
+      "canonicalUrl": "https://www.cnbc.com/2026/09/10/goldman-sachs-communacopia-technology-conference-ai-tech.html",
+      "publishedAt": "2026-09-10T21:22:39.000Z",
+      "accessState": "public",
+      "independenceGroup": "cnbc",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-1765ddcffaf1a90a49a7-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "cnbc-technology",
+      "tier": "T2",
+      "canonicalUrl": "https://www.cnbc.com/2026/09/10/openai-chatgpt-for-financial-services-targets-work-of-junior-bankers.html",
+      "publishedAt": "2026-09-10T19:02:58.000Z",
+      "accessState": "public",
+      "independenceGroup": "cnbc",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-335cbf4a52f0a8caa026-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "cnbc-technology",
+      "tier": "T2",
+      "canonicalUrl": "https://www.cnbc.com/2026/09/09/goldman-sachs-communcacopia-technology-conference-ai.html",
+      "publishedAt": "2026-09-09T21:37:34.000Z",
+      "accessState": "public",
+      "independenceGroup": "cnbc",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-e11cbe85d95ae026efa4-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "cnbc-technology",
+      "tier": "T2",
+      "canonicalUrl": "https://www.cnbc.com/2026/09/09/anthropic-researcher-quits-ai-safety.html",
+      "publishedAt": "2026-09-09T17:43:45.000Z",
+      "accessState": "public",
+      "independenceGroup": "cnbc",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-233a18dda0664c78c332-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "techcrunch",
+      "tier": "T3",
+      "canonicalUrl": "https://techcrunch.com/2026/09/10/metas-ai-agent-muse-is-now-the-no-2-app-in-the-us/",
+      "publishedAt": "2026-09-10T19:50:04.000Z",
+      "accessState": "public",
+      "independenceGroup": "techcrunch",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-2e2cb999e182b60be9a5-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "techcrunch",
+      "tier": "T3",
+      "canonicalUrl": "https://techcrunch.com/2026/09/10/anthropic-reveals-rogue-ai-agents-hate-captchas-just-like-you/",
+      "publishedAt": "2026-09-10T17:54:44.000Z",
+      "accessState": "public",
+      "independenceGroup": "techcrunch",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-c5e6ad3fe45b98ce59bc-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "the-verge",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theverge.com/gadgets/993455/fire-tv-stick-4k-resident-evil-requiem-deal-sale",
+      "publishedAt": "2026-09-10T16:58:44.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-verge",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-d3c69bdd225888a08884-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "data-center-dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/nvidias-groq-deal-facing-doj-probe-amid-regulator-scrutiny-into-acqui-hires-report/",
+      "publishedAt": "2026-09-10T16:23:58.000Z",
+      "accessState": "public",
+      "independenceGroup": "dcd",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-98a336a31bd5a66b6f20-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "the-register",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theregister.com/os-platforms/2026/09/09/switzerland-tests-a-foss-escape-route-from-microsoft-365/5294878",
+      "publishedAt": "2026-09-09T09:01:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-register",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-7aff33f272aaf7706b94-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "cnbc-technology",
+      "tier": "T2",
+      "canonicalUrl": "https://www.cnbc.com/2026/09/10/coinbase-ceo-brian-armstrongto-us-regulatory-clarity-regardless-of-clarity-act-vote-crypto.html",
+      "publishedAt": "2026-09-10T09:25:34.000Z",
+      "accessState": "public",
+      "independenceGroup": "cnbc",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-33aeb645a52ea90f172e-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "cnbc-technology",
+      "tier": "T2",
+      "canonicalUrl": "https://www.cnbc.com/2026/09/10/tsmc-august-revenue-chip-ai.html",
+      "publishedAt": "2026-09-10T06:45:55.000Z",
+      "accessState": "public",
+      "independenceGroup": "cnbc",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-5d0c7a06c462265ebf12-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/061.htm",
+      "publishedAt": "2026-09-10T23:07:34.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-48cd1ceaa933f9df039a-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "data-center-dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/blue-origin-to-become-first-telco-on-mars-with-700m-nasa-contract/",
+      "publishedAt": "2026-09-10T11:01:26.000Z",
+      "accessState": "public",
+      "independenceGroup": "dcd",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-23fbe1dde85e7cef7a55-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "techcrunch",
+      "tier": "T3",
+      "canonicalUrl": "https://techcrunch.com/2026/09/10/instagrams-latest-feature-lets-you-add-tagged-posts-to-your-profile-grid/",
+      "publishedAt": "2026-09-10T16:31:25.000Z",
+      "accessState": "public",
+      "independenceGroup": "techcrunch",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-520aa1b5144d4ed4bde5-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "data-center-dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/news/cryptominer-btc-digital-could-build-ai-data-center-in-vietnam/",
+      "publishedAt": "2026-09-10T14:33:51.000Z",
+      "accessState": "public",
+      "independenceGroup": "dcd",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-e85faec937b634312aa2-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "utility-dive",
+      "tier": "T3",
+      "canonicalUrl": "https://www.utilitydive.com/news/data-centers-manufacturing-us-electricity-use-eia/830038/",
+      "publishedAt": "2026-09-10T14:18:06.000Z",
+      "accessState": "public",
+      "independenceGroup": "utility-dive",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-c888d59d6f52be266f94-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "data-center-dynamics",
+      "tier": "T3",
+      "canonicalUrl": "https://www.datacenterdynamics.com/en/whitepapers/the-data-center-thermal-chain/",
+      "publishedAt": "2026-09-10T09:25:34.000Z",
+      "accessState": "public",
+      "independenceGroup": "dcd",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-e4e5333963565abed4ee-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "the-register",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theregister.com/public-sector/2026/09/09/philippines-bets-ai-will-lift-gdp-by-12-percent-in-seven-years-without-hurting-outsourcing/5295178",
+      "publishedAt": "2026-09-09T05:25:44.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-register",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-02e29fbb2314d4b8cdef-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "financial-times-tech",
+      "tier": "T2",
+      "canonicalUrl": "https://www.ft.com/content/9df99d0b-6ef6-4530-8771-8b220f740e74?syn-25a6b1a6=1",
+      "publishedAt": "2026-09-10T22:47:12.000Z",
+      "accessState": "public",
+      "independenceGroup": "ft",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-748b1d5c1b654e98b81a-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "cnbc-technology",
+      "tier": "T2",
+      "canonicalUrl": "https://www.cnbc.com/2026/09/10/nasdaq-invests-100-million-in-crypto-firm-eyes-2027-launch-of-tokenized-stocks.html",
+      "publishedAt": "2026-09-10T12:48:02.000Z",
+      "accessState": "public",
+      "independenceGroup": "cnbc",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-6364d957dd9031bc7285-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "financial-times-tech",
+      "tier": "T2",
+      "canonicalUrl": "https://www.ft.com/content/bb42e8fa-aa7e-4410-9f7b-42cd6115d8fb",
+      "publishedAt": "2026-09-10T12:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "ft",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-d3591910ea19bfe093db-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "fortune",
+      "tier": "T2",
+      "canonicalUrl": "https://fortune.com/2026/09/10/ai-writing-debate-ancient-greece-euripides-aristotle-nietzsche/",
+      "publishedAt": "2026-09-10T10:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "fortune",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-648efa49e10ec736ab64-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "cnbc-technology",
+      "tier": "T2",
+      "canonicalUrl": "https://www.cnbc.com/2026/09/09/silver-lake-merges-cegid-silae-ai-software-deal.html",
+      "publishedAt": "2026-09-09T17:36:02.000Z",
+      "accessState": "public",
+      "independenceGroup": "cnbc",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-328451cc9c0c14402e5f-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "financial-times-tech",
+      "tier": "T2",
+      "canonicalUrl": "https://www.ft.com/content/2cc88608-04b2-4dcb-8c89-698f251de170?syn-25a6b1a6=1",
+      "publishedAt": "2026-09-09T10:00:09.000Z",
+      "accessState": "public",
+      "independenceGroup": "ft",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-a74d4dc7b13de386345e-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/085.htm",
+      "publishedAt": "2026-09-11T00:08:58.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-74417a531a9372d72121-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/068.htm",
+      "publishedAt": "2026-09-10T23:19:53.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-dcd3b865f6c285714526-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "the-verge",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theverge.com/gadgets/988579/apple-watch-series-12-5g-ultra-4-preorder-buy",
+      "publishedAt": "2026-09-10T15:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-verge",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-92d88c2a06286500c06c-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "techcrunch",
+      "tier": "T3",
+      "canonicalUrl": "https://techcrunch.com/2026/09/10/maven-robotics-wants-to-steal-your-robot-deployment-deal/",
+      "publishedAt": "2026-09-10T14:17:37.000Z",
+      "accessState": "public",
+      "independenceGroup": "techcrunch",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-fc4912b64786a05b3bb2-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ee-times",
+      "tier": "T3",
+      "canonicalUrl": "https://www.eetimes.com/biwin-brings-storage-solutions-for-ai-era-at-embedded-world-na-2026/",
+      "publishedAt": "2026-09-09T12:00:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "ee-times",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-f9430462122320f10d67-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "the-register",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theregister.com/ai-and-ml/2026/09/09/us-claims-chinese-ai-companies-core-ai-strategy-is-distilling-american-models/5295171",
+      "publishedAt": "2026-09-09T02:59:20.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-register",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-557d74d6f20f6d89e544-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/broadband/verizon-signs-2-billion-plus-deal-corning-supply-fiber-fttp-and-ai",
+      "publishedAt": "2026-09-11T02:06:04.245Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-a404aefb7722d28a56be-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "marketwatch-top",
+      "tier": "T2",
+      "canonicalUrl": "https://www.marketwatch.com/story/adobes-latest-earnings-leave-wall-street-wanting-more-137ea782?mod=mw_rss_topstories",
+      "publishedAt": "2026-09-11T00:17:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "marketwatch",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-a82273d447e92265abaa-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "marketwatch-top",
+      "tier": "T2",
+      "canonicalUrl": "https://www.marketwatch.com/story/why-500-checks-wont-help-americans-facing-15-increases-in-obamacare-premiums-next-year-b8801cc4?mod=mw_rss_topstories",
+      "publishedAt": "2026-09-10T20:26:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "marketwatch",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-7f5a23f576913fae79c8-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "cnbc-technology",
+      "tier": "T2",
+      "canonicalUrl": "https://www.cnbc.com/2026/09/10/elon-musk-boring-co-uae-valuation.html",
+      "publishedAt": "2026-09-10T18:15:59.000Z",
+      "accessState": "public",
+      "independenceGroup": "cnbc",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-79498b3a1178386f07eb-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "cnbc-technology",
+      "tier": "T2",
+      "canonicalUrl": "https://www.cnbc.com/2026/09/10/5-things-to-know-before-the-stock-market-opens.html",
+      "publishedAt": "2026-09-10T12:51:36.000Z",
+      "accessState": "public",
+      "independenceGroup": "cnbc",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-3431c6ccec588825de44-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "financial-times-tech",
+      "tier": "T2",
+      "canonicalUrl": "https://www.ft.com/content/efa63c8b-bd31-4c32-afab-00096281e692?syn-25a6b1a6=1",
+      "publishedAt": "2026-09-10T04:00:10.000Z",
+      "accessState": "public",
+      "independenceGroup": "ft",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-41d81bc8c0d1c9591099-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/116.htm",
+      "publishedAt": "2026-09-11T01:54:40.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-f9e7ff9da5bdb4c4cd44-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/075.htm",
+      "publishedAt": "2026-09-10T23:43:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-3d365cd2337eb86bb950-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "ithome",
+      "tier": "T3",
+      "canonicalUrl": "https://www.ithome.com/1/001/060.htm",
+      "publishedAt": "2026-09-10T22:57:33.000Z",
+      "accessState": "public",
+      "independenceGroup": "ithome",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-c9d120763780177aa11d-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "techcrunch",
+      "tier": "T3",
+      "canonicalUrl": "https://techcrunch.com/2026/09/10/furos-founders-left-silicon-valley-and-its-paying-off/",
+      "publishedAt": "2026-09-10T20:48:00.000Z",
+      "accessState": "public",
+      "independenceGroup": "techcrunch",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-c0d422aea407d97f7821-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "the-register",
+      "tier": "T3",
+      "canonicalUrl": "https://www.theregister.com/devops/2026/09/10/shopify-extends-lifeline-to-tailwind-as-vibe-coding-erodes-web-dev-platforms-bottom-line/5295672",
+      "publishedAt": "2026-09-10T19:43:55.000Z",
+      "accessState": "public",
+      "independenceGroup": "the-register",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-4a9670a4220a3ffaf747-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "light-reading",
+      "tier": "T3",
+      "canonicalUrl": "https://www.lightreading.com/fttx/blocking-netomnia-deal-would-harm-uk-fiber-investment-vmo2-ceo",
+      "publishedAt": "2026-09-10T15:37:02.000Z",
+      "accessState": "public",
+      "independenceGroup": "light-reading",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-902f47f0ae9ac6954967-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/broadband/qualcomm-pivots-toward-data-centers-amazon-custom-silicon-deal",
+      "publishedAt": "2026-09-11T02:06:04.245Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-4d6b1efcb5da27ceb992-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/cloud/ai-agents-raise-new-control-questions-telecom-networks",
+      "publishedAt": "2026-09-11T02:06:04.245Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-c694aa8dc6d0c3cac717-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/newswire/masorange-ericsson-test-6-ghz-spectrum-early-step-toward-6g-future",
+      "publishedAt": "2026-09-11T02:06:04.245Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-fd535edde99186f655d1-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/wireless/nokias-ai-ran-pitch-gets-reality-check-new-study",
+      "publishedAt": "2026-09-11T02:06:04.245Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-4178db8d115a94410d3f-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/broadband/broadcom-predicts-ai-chip-revenue-double-2027",
+      "publishedAt": "2026-09-11T02:06:04.245Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-764d220a8c78b812adec-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/wireless/alianza-launches-crux-platform-help-telcos-monetize-ai-voice",
+      "publishedAt": "2026-09-11T02:06:04.245Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-69cd2d046189dd77c06a-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/wireless/rallying-telcos-around-ai-voice-will-be-uphill-battle-alianza",
+      "publishedAt": "2026-09-11T02:06:04.245Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-af78c65c3c4504d16246-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/broadband/opinion-doj-vs-huawei-rico-or-bust-baby",
+      "publishedAt": "2026-09-11T02:06:04.245Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    },
+    {
+      "ref": "event-evt-18c34431384e5b911637-source-0",
+      "evidenceKind": "public-source",
+      "sourceName": "fierce-network",
+      "tier": "T3",
+      "canonicalUrl": "https://www.fierce-network.com/wireless/dt-gets-pushback-elliott-over-t-mobile-merger-plans-reports",
+      "publishedAt": "2026-09-11T02:06:04.245Z",
+      "accessState": "public",
+      "independenceGroup": "fierce-network",
+      "sections": [
+        "rumors"
+      ]
+    }
+  ]
+}
