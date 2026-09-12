@@ -6,7 +6,6 @@ import { matchCoreCompanies } from "../worker/event-intelligence/core-company-wa
 import { modelMaterialBand, semanticScore, type ModelDimensionScores } from "../worker/event-intelligence/model-scoring.ts";
 import { requiresEditorialPublicCopy } from "../worker/event-intelligence/codex-editorial-judgment.ts";
 import type { ShadowRunReport } from "../worker/event-intelligence/pipeline.ts";
-import { validateBilingualPair } from "../worker/event-intelligence/provider-contract.ts";
 
 function arg(name: string): string | null {
   const prefix = `--${name}=`;
@@ -37,25 +36,6 @@ function scoresOf(event: ShadowRunReport["events"][number]): ModelDimensionScore
   };
 }
 
-function publicCopy(event: ShadowRunReport["events"][number]) {
-  const source = event.sourceChain.find((item) => accessible(item) && ["T0", "T1", "T2", "T3"].includes(item.tier));
-  if (!source || !event.summaryZh.trim() || !event.summaryEn.trim()) return undefined;
-  const copy = source.tier === "T0" || source.tier === "T1"
-    ? {
-      titleZh: event.titleZh,
-      titleEn: event.titleEn,
-      summaryZh: event.summaryZh,
-      summaryEn: event.summaryEn,
-    }
-    : {
-      titleZh: event.titleZh,
-      titleEn: event.titleEn,
-      summaryZh: `据${sourceName(source.sourceId)}报道，${event.summaryZh}该信息目前未获一手来源确认。`,
-      summaryEn: `According to ${sourceName(source.sourceId)}, ${event.summaryEn} The claim has not been confirmed by a primary source.`,
-    };
-  return validateBilingualPair({ ...copy, entities: event.entities }).status === "pass" ? copy : undefined;
-}
-
 async function run() {
   const input = resolve(arg("input") ?? "artifacts/event-intelligence/2026-08-25-1630-event.json");
   const output = resolve(arg("output") ?? "artifacts/event-intelligence/2026-08-25-1630-editorial-fallback.json");
@@ -72,7 +52,7 @@ async function run() {
       independentSourceCount: event.independentSourceCount,
       coreCompanyCount: matchCoreCompanies([event.titleZh, event.titleEn, ...event.entities]).length,
     });
-    const copy = publicCopy(event);
+    const copy = undefined; // Deterministic scoring never creates reviewed public copy.
     const source = event.sourceChain.find((item) => accessible(item));
     return {
       eventId: event.id,

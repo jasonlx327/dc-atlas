@@ -32,7 +32,7 @@ export type RumorWatchItem = {
   sourceName: string;
   sourceUrl: string;
   region: "中国" | "美国" | "全球";
-  status: "reported";
+  status: "reported" | "withdrawn";
   statusLabel: string;
   statusLabelEn: string;
   sourceCount: number;

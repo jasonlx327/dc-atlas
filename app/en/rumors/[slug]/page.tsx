@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import WatchDetail from "../../../watch-detail";
-import { RUMOR_DETAIL_BRIEFS, isArchivedRumor } from "../../../rumor-detail-data";
+import { RUMOR_DETAIL_BRIEFS, isArchivedRumor, isWithdrawnRumor } from "../../../rumor-detail-data";
 
 export const dynamicParams = false;
 
@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${item.titleEn} | IDC Atlas Global Intelligence`,
     description: item.summaryEn,
     keywords: item.entities,
+    ...(isWithdrawnRumor(item.id) ? { robots: { index: false, follow: true } } : {}),
     alternates: { canonical, languages: { "zh-CN": `https://idc-index.com/rumors/${item.id}`, en: canonical, "x-default": canonical } },
     openGraph: { title: item.titleEn, description: item.summaryEn, url: canonical, type: "article", publishedTime: item.publishedAt, modifiedTime: item.publishedAt },
     twitter: { card: "summary", title: item.titleEn, description: item.summaryEn },

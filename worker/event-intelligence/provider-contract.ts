@@ -1,3 +1,5 @@
+import { publicCopyQualityErrors } from "./public-copy-quality.ts";
+
 export type TranslationLanguage = "zh-CN" | "en-US";
 
 export type TranslationRequest = {
@@ -92,7 +94,7 @@ export function validateBilingualPair(pair: BilingualPair): BilingualValidation 
   const expectedEntities = pair.entities ?? [];
   const entityTokensZh = entityTokens(zhText, expectedEntities);
   const entityTokensEn = entityTokens(enText, expectedEntities);
-  const errors: string[] = [];
+  const errors: string[] = publicCopyQualityErrors(pair);
   const containsHan = (value: string) => /[\u3400-\u9fff]/.test(value);
   const normalizedCopy = (value: string) => value.normalize("NFKC").replace(/\s+/g, " ").trim().toLocaleLowerCase();
   if (!containsHan(zhText)) errors.push("zh-copy-missing-han-text");

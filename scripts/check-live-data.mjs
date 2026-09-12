@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 
 const publishedIntelligence = JSON.parse(await readFile(new URL("../app/data/public-intelligence.json", import.meta.url), "utf8"));
+const withdrawn = JSON.parse(await readFile(new URL("../app/data/withdrawn-intelligence.json", import.meta.url), "utf8"));
 const endpoint = "https://idc-index.com/api/atlas-live-v5?schema=v1&deploy_check=";
 const pulsePage = "https://idc-index.com/pulse?deploy_check=";
 const expectedPulseMarkers = (process.env.ATLAS_EXPECTED_PULSE_CSS_MARKERS ?? "").split("|").map((value) => value.trim()).filter(Boolean);
@@ -17,6 +18,7 @@ for (let attempt = 0; attempt < 4; attempt += 1) {
     if (!payload.generatedAt || !Array.isArray(payload.news) || !Array.isArray(payload.benchmarks)) throw new Error("invalid payload shape");
     if (!payload.contentReviewedAt || !payload.sectionFreshness) throw new Error("content freshness metadata missing");
     if (!Array.isArray(payload.rumors)) throw new Error("intelligence archive missing");
+    if (payload.rumors.some(item => withdrawn.some(entry => entry.id === item.id))) throw new Error("withdrawn intelligence reappeared in public API");
     for (const expected of publishedIntelligence) {
       const actual = payload.rumors.find((item) => item.id === expected.id);
       if (!actual) throw new Error(`published intelligence missing: ${expected.id}`);

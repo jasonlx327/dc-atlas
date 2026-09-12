@@ -1,3 +1,4 @@
+import withdrawnIntelligence from "../app/data/withdrawn-intelligence.json";
 /** Cloudflare Worker entry point for IDC Atlas. */
 import { liquidCoolingBriefs } from "../app/data/liquid-cooling-briefs";
 import handler from "vinext/server/app-router-entry";
@@ -3248,7 +3249,14 @@ async function dailySnapshotApi(request: Request, env: Env): Promise<Response> {
 
   const snapshot = await env.IDC_DAILY_SNAPSHOTS.get(key);
   if (!snapshot) return Response.json({ error: "Daily snapshot not available yet" }, { status: 404 });
-  return new Response(snapshot, { headers: { "Cache-Control": "public, max-age=300, s-maxage=900", "Content-Type": "application/json; charset=utf-8", "Content-Language": "zh-CN", "X-Content-Type-Options": "nosniff" } });
+  const corrected = JSON.parse(snapshot);
+  const withdrawnIds = new Set(withdrawnIntelligence.map(item => item.id));
+  const removed = (corrected.rumors ?? []).filter((item: { id: string }) => withdrawnIds.has(item.id));
+  if (removed.length) {
+    corrected.rumors = corrected.rumors.filter((item: { id: string }) => !withdrawnIds.has(item.id));
+    corrected.editorialCorrection = { date: "2026-09-12", withdrawnIds: removed.map((item: { id: string }) => item.id) };
+  }
+  return new Response(JSON.stringify(corrected), { headers: { "Cache-Control": "public, max-age=300, s-maxage=900", "Content-Type": "application/json; charset=utf-8", "Content-Language": "zh-CN", "X-Content-Type-Options": "nosniff" } });
 }
 
 type AtlasApiOptions = {

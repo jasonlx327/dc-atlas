@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { publishedColumnArticles } from "./columns/articles";
 import { entityDirectory } from "./entity-directory";
-import { RUMOR_DETAIL_BRIEFS } from "./rumor-detail-data";
+import { RUMOR_DETAIL_BRIEFS, isWithdrawnRumor } from "./rumor-detail-data";
 
 export const dynamic = "force-dynamic";
 
@@ -140,7 +140,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { url: `https://idc-index.com${article.href}`, lastModified: article.publishAt, changeFrequency: "weekly" as const, priority: 0.9, alternates: bilingual(`https://idc-index.com${article.href}`, `https://idc-index.com${article.hrefEn}`) },
       { url: `https://idc-index.com${article.hrefEn}`, lastModified: article.publishAt, changeFrequency: "weekly" as const, priority: 0.9, alternates: bilingual(`https://idc-index.com${article.href}`, `https://idc-index.com${article.hrefEn}`) },
     ]),
-    ...RUMOR_DETAIL_BRIEFS.flatMap((item) => [
+    ...RUMOR_DETAIL_BRIEFS.filter(item => !isWithdrawnRumor(item.id)).flatMap((item) => [
       { url: `https://idc-index.com/rumors/${item.id}`, lastModified: item.publishedAt, changeFrequency: "daily" as const, priority: 0.8, alternates: bilingual(`https://idc-index.com/rumors/${item.id}`, `https://idc-index.com/en/rumors/${item.id}`) },
       { url: `https://idc-index.com/en/rumors/${item.id}`, lastModified: item.publishedAt, changeFrequency: "daily" as const, priority: 0.8, alternates: bilingual(`https://idc-index.com/rumors/${item.id}`, `https://idc-index.com/en/rumors/${item.id}`) },
     ]),

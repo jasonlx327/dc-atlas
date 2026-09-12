@@ -1326,3 +1326,21 @@ test("removes industry-network entry points from entity profiles", async () => {
   assert.doesNotMatch(englishHtml, /Industry network/);
   assert.doesNotMatch(englishHtml, /industry-network/);
 });
+
+
+test("withdrawn copy has bilingual correction permalinks but stays out of feeds and sitemap", async () => {
+  const withdrawn = JSON.parse(await readFile(new URL("../app/data/withdrawn-intelligence.json", import.meta.url), "utf8"));
+  const sitemap = await (await render("/sitemap.xml")).text();
+  for (const item of withdrawn) assert.ok(!sitemap.includes(`/rumors/${item.id}<`));
+  for (const prefix of ["", "/en"]) {
+    const item = withdrawn[0];
+    const response = await render(`${prefix}/rumors/${item.id}`);
+    assert.equal(response.status, 200);
+    const html = await response.text();
+    assert.match(html, /name="robots" content="[^"]*noindex/);
+    assert.ok(html.includes(item.sourceUrl));
+    assert.ok(!html.includes("source figures:"));
+    const feed = await (await render(`${prefix}/rumors`)).text();
+    for (const item of withdrawn) assert.ok(!feed.includes(`href="${prefix}/rumors/${item.id}"`));
+  }
+});
