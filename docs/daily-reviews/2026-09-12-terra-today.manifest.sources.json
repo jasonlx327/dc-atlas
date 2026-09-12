@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "terra-today-20260912",
+  "sources": [
+    {
+      "ref": "terra-edged-oma01-topping-out-20260911",
+      "evidenceKind": "public-source",
+      "sourceName": "edged-us-project-owner",
+      "tier": "T1",
+      "canonicalUrl": "https://edged.us/news/edged-us-celebrates-topping-out-of-oma01-1-and-oma01-2-in-council-bluffs",
+      "publishedAt": "2026-09-11",
+      "accessState": "public",
+      "independenceGroup": "edged-us-project-owner",
+      "sections": [
+        "idc-pulse",
+        "capacity"
+      ],
+      "readAt": "2026-09-12T22:16:13+08:00",
+      "finding": "The release says OMA01-1 and OMA01-2 completed structural framework/topping out, and that the campus will deliver up to 200MW upon completion."
+    },
+    {
+      "ref": "terra-aligned-project-phoenix-groundbreaking-20260910",
+      "evidenceKind": "public-source",
+      "sourceName": "aligned-data-centers-project-owner",
+      "tier": "T1",
+      "canonicalUrl": "https://aligneddc.com/press-release/project-phoenix-data-center-shippingport-pa/",
+      "publishedAt": "2026-09-10",
+      "accessState": "public",
+      "independenceGroup": "aligned-data-centers-project-owner",
+      "sections": [
+        "idc-pulse",
+        "capacity"
+      ],
+      "readAt": "2026-09-12T22:16:13+08:00",
+      "finding": "Aligned announced groundbreaking of the three-facility 2GW Project Phoenix in Shippingport, estimates $10B regional investment, and says the completed campus is intended to use dedicated onsite power and zero-water operational cooling."
+    },
+    {
+      "ref": "terra-weld-global-ai-usr-permit-20260910",
+      "evidenceKind": "public-source",
+      "sourceName": "weld-county-government",
+      "tier": "T0",
+      "canonicalUrl": "https://www.weld.gov/Newsroom/2026-News/Weld-County-Commissioners-approve-Global-AI-data-center-permit",
+      "publishedAt": "2026-09-10",
+      "accessState": "public",
+      "independenceGroup": "weld-county-government",
+      "sections": [
+        "idc-pulse",
+        "policy"
+      ],
+      "readAt": "2026-09-12T22:15:47+08:00",
+      "finding": "Weld County says its Board approved USR26-0019 5-0 on September 9 for Global AI (Colorado), LLC near Windsor; it is the county's first data-center USR case and does not approve future expansion or replace other permits."
+    },
+    {
+      "ref": "terra-ercot-batch-zero-rfi-20260909",
+      "evidenceKind": "public-source",
+      "sourceName": "ercot-grid-operator",
+      "tier": "T0",
+      "canonicalUrl": "https://www.ercot.com/services/comm/mkt_notices/M-A090926-01",
+      "publishedAt": "2026-09-09",
+      "accessState": "public",
+      "independenceGroup": "ercot-grid-operator",
+      "sections": [
+        "idc-pulse",
+        "policy"
+      ],
+      "readAt": "2026-09-12T22:16:13+08:00",
+      "finding": "ERCOT says it began Batch Zero verification RFIs for most conditionally included large loads; complete responses with supporting documents and notarized attestations are due within 10 business days, with an extension of up to five business days available on request. Failure to comply excludes the load from the Batch Zero interconnection process."
+    }
+  ]
+}

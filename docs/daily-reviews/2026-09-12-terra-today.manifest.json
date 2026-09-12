@@ -1,0 +1,264 @@
+{
+  "schemaVersion": "1.1",
+  "runId": "terra-today-20260912",
+  "runDate": "2026-09-12",
+  "cutoff": "2026-09-12T22:16:13+08:00",
+  "displayTimezones": {
+    "zh": "Asia/Shanghai",
+    "en": "America/New_York"
+  },
+  "status": "ready-for-partial-release",
+  "projectPath": "/Users/xlarge/Desktop/数据中心/.worktrees/idc-atlas-terra-today-20260912",
+  "sourceLedgerPath": "docs/daily-reviews/2026-09-12-terra-today.manifest.sources.json",
+  "host": "XlargedeMacBook-Air.local",
+  "headBefore": "0044ababe687862e8ba48fb8c6ec34aafc6f1a94",
+  "sections": {
+    "idc-pulse": {
+      "status": "updated",
+      "checkedAt": "2026-09-12T22:16:13+08:00",
+      "newIds": [
+        "edged-oma01-council-bluffs-topping-out-20260911",
+        "aligned-project-phoenix-shippingport-groundbreaking-20260910",
+        "weld-county-global-ai-usr-permit-20260910",
+        "ercot-batch-zero-verification-rfi-20260909"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 4,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "terra-edged-oma01-topping-out-20260911",
+        "terra-aligned-project-phoenix-groundbreaking-20260910",
+        "terra-weld-global-ai-usr-permit-20260910",
+        "terra-ercot-batch-zero-rfi-20260909"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Targeted primary-source update; original publication dates and future capacity qualifications retained. This does not certify exhaustive section coverage."
+    },
+    "listed-companies": {
+      "status": "blocked",
+      "checkedAt": "2026-09-12T22:16:13+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "Outside this targeted content release; comprehensive section review not performed."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Held without claiming verified-no-change."
+    },
+    "mna": {
+      "status": "blocked",
+      "checkedAt": "2026-09-12T22:16:13+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "Outside this targeted content release; comprehensive section review not performed."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Held without claiming verified-no-change."
+    },
+    "capacity": {
+      "status": "updated",
+      "checkedAt": "2026-09-12T22:16:13+08:00",
+      "newIds": [
+        "edged-oma01-council-bluffs-topping-out-20260911",
+        "aligned-project-phoenix-shippingport-groundbreaking-20260910"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 2,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "terra-edged-oma01-topping-out-20260911",
+        "terra-aligned-project-phoenix-groundbreaking-20260910"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Targeted primary-source update; original publication dates and future capacity qualifications retained. This does not certify exhaustive section coverage."
+    },
+    "cooling": {
+      "status": "blocked",
+      "checkedAt": "2026-09-12T22:16:13+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "Outside this targeted content release; comprehensive section review not performed."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Held without claiming verified-no-change."
+    },
+    "compute-products": {
+      "status": "blocked",
+      "checkedAt": "2026-09-12T22:16:13+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "Outside this targeted content release; comprehensive section review not performed."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Held without claiming verified-no-change."
+    },
+    "china-gpu": {
+      "status": "blocked",
+      "checkedAt": "2026-09-12T22:16:13+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "Outside this targeted content release; comprehensive section review not performed."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Held without claiming verified-no-change."
+    },
+    "supply-chain": {
+      "status": "blocked",
+      "checkedAt": "2026-09-12T22:16:13+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "Outside this targeted content release; comprehensive section review not performed."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Held without claiming verified-no-change."
+    },
+    "power-model-demand": {
+      "status": "blocked",
+      "checkedAt": "2026-09-12T22:16:13+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "Outside this targeted content release; comprehensive section review not performed."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Held without claiming verified-no-change."
+    },
+    "earnings-calendar": {
+      "status": "blocked",
+      "checkedAt": "2026-09-12T22:16:13+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "Outside this targeted content release; comprehensive section review not performed."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Held without claiming verified-no-change."
+    },
+    "rumors": {
+      "status": "blocked",
+      "checkedAt": "2026-09-12T22:16:13+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "Outside this targeted content release; comprehensive section review not performed."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Held without claiming verified-no-change."
+    },
+    "policy": {
+      "status": "updated",
+      "checkedAt": "2026-09-12T22:16:13+08:00",
+      "newIds": [
+        "us-ercot-batch-zero-verification-rfis-2026",
+        "us-weld-county-global-ai-usr-permit-2026"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 2,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "terra-weld-global-ai-usr-permit-20260910",
+        "terra-ercot-batch-zero-rfi-20260909"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Targeted primary-source update; original publication dates and future capacity qualifications retained. This does not certify exhaustive section coverage."
+    },
+    "columns": {
+      "status": "blocked",
+      "checkedAt": "2026-09-12T22:16:13+08:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "Outside this targeted content release; comprehensive section review not performed."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Held without claiming verified-no-change."
+    }
+  },
+  "release": {
+    "mode": "partial",
+    "tests": "passed",
+    "build": "passed",
+    "cloudflare": "pending",
+    "formalReadback": "pending",
+    "dailySnapshot": "pending",
+    "sites": "pending",
+    "sitesReadback": "pending",
+    "commit": null,
+    "workerCommit": null,
+    "sitesCommit": null,
+    "cloudflareVersion": null,
+    "sitesVersion": null,
+    "formalUrl": null,
+    "sitesUrl": null,
+    "includedSections": [
+      "idc-pulse",
+      "capacity",
+      "policy"
+    ],
+    "heldSections": [
+      "listed-companies",
+      "mna",
+      "cooling",
+      "compute-products",
+      "china-gpu",
+      "supply-chain",
+      "power-model-demand",
+      "earnings-calendar",
+      "rumors",
+      "columns"
+    ],
+    "testBaseline": null
+  },
+  "blockers": []
+}

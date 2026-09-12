@@ -676,11 +676,11 @@ function supernodeProducts(): SupernodeProduct[] {
 
 function capacityRadar(): SourceRecord[] {
   return [
-    ...FORMAL_PULSE_SUPPLEMENT.filter((item) => ["tcs-hypervault-telangana-land-20260905", "nscale-figure-barstow-compute-2026", "pure-dc-brent-cross-b2-piling-2026", "cerebras-compute-nordic-mikkeli-165mw-2026"].includes(item.id)).map((item) => ({
+    ...FORMAL_PULSE_SUPPLEMENT.filter((item) => ["edged-oma01-council-bluffs-topping-out-20260911", "aligned-project-phoenix-shippingport-groundbreaking-20260910", "tcs-hypervault-telangana-land-20260905", "nscale-figure-barstow-compute-2026", "pure-dc-brent-cross-b2-piling-2026", "cerebras-compute-nordic-mikkeli-165mw-2026"].includes(item.id)).map((item) => ({
       id: item.id, title: item.title, titleEn: item.titleEn,
       subject: item.sourceName, subjectEn: item.sourceName,
       metric: item.scale ?? "", metricEn: item.scale ?? "",
-      status: item.milestone ?? "", statusEn: item.id.startsWith("tcs-") ? "Land secured · phased campus planned" : item.id.startsWith("nscale") ? "Agreement signed · future deployment" : "Construction under way · phased delivery planned",
+      status: item.milestone ?? "", statusEn: item.id.startsWith("tcs-") ? "Land secured · phased campus planned" : item.id.startsWith("nscale") ? "Agreement signed · future deployment" : item.id.startsWith("edged-") ? "Structural topping out complete · later delivery remains pending" : item.id.startsWith("aligned-") ? "Groundbreaking complete · construction and delivery remain pending" : "Construction under way · phased delivery planned",
       publishedAt: item.publishedAt.slice(0, 10), sourceName: item.sourceName, sourceUrl: item.sourceUrl,
       note: item.summary, noteEn: item.summaryEn,
     })),
