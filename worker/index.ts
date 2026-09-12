@@ -3789,7 +3789,7 @@ function compactHomepageAtlasPayload(payload: Record<string, unknown>, language:
     const item = value as Record<string, unknown>;
     const localizedFields = language === "zh" ? ["title"] : ["titleEn"];
     return Object.fromEntries([
-      "id", ...localizedFields, "publishedAt", "category", "permalink", "sourceUrl", "sourceName",
+      "id", "eventKey", "impactLevel", ...localizedFields, "publishedAt", "category", "permalink", "sourceUrl", "sourceName",
       "region", "milestone", "scale", "listedTicker", "entityIds", "imageSrc", "imageAlt",
     ].map((key) => [key, item[key]]).filter(([, field]) => field != null));
   };
@@ -3798,7 +3798,7 @@ function compactHomepageAtlasPayload(payload: Record<string, unknown>, language:
     const localizedFields = language === "zh"
       ? ["title", "summary", "statusLabel"]
       : ["titleEn", "summaryEn", "statusLabelEn"];
-    return Object.fromEntries(["id", ...localizedFields, "publishedAt", "sourceName", "sourceUrl", "sourceCount", "region"].map((key) => [key, item[key]]).filter(([, field]) => field != null));
+    return Object.fromEntries(["id", "eventKey", "impactLevel", ...localizedFields, "publishedAt", "sourceName", "sourceUrl", "sourceCount", "region"].map((key) => [key, item[key]]).filter(([, field]) => field != null));
   };
   return {
     generatedAt: payload.generatedAt,

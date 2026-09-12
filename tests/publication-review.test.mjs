@@ -13,3 +13,11 @@ test('public writing rejects absent impact, unread citations and repeated event 
  const r=structuredClone(good);r.events.push({...r.events[0],eventId:'second'});
  assert.ok(publicationReviewErrors({...packet,decisions:[...packet.decisions,{...packet.decisions[0],eventId:'second'}]},r).some(e=>e.includes('duplicate')));
 });
+
+test('server homepage compaction preserves reviewed event identity and impact in both languages',async()=>{
+ const worker=await readFile(new URL('../worker/index.ts',import.meta.url),'utf8');
+ const source=worker.slice(worker.indexOf('function compactHomepageAtlasPayload('),worker.indexOf('function bytesToBase64('));
+ const compact=new Function('firstItems',stripTypeScriptTypes(source)+';return compactHomepageAtlasPayload;')((value,count)=>Array.isArray(value)?value.slice(0,count):[]);
+ const item={id:'event',eventKey:'project-action-period',impactLevel:'material',title:'许可',titleEn:'Permit',sourceName:'Issuer'};
+ for(const lang of ['zh','en']){const body=compact({idcPulse:[item],rumors:[item]},lang);assert.equal(body.rumors[0].impactLevel,'material');assert.equal(body.idcPulse[0].eventKey,item.eventKey);}
+});
