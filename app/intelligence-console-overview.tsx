@@ -8,6 +8,7 @@ import { deriveConsoleMeta, type ConsoleMeta } from "./console-meta";
 import { entityDirectory } from "./entity-directory";
 
 export type ConsoleStory = {
+  impactLevel?: "high" | "material";
   eventKey?: string;
   id: string;
   title: string;
@@ -65,6 +66,7 @@ export type ConsoleBenchmark = {
 };
 
 export type ConsoleRumor = {
+  impactLevel?: "high" | "material";
   eventKey?: string;
   id: string;
   title: string;

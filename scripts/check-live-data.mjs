@@ -22,7 +22,7 @@ for (let attempt = 0; attempt < 4; attempt += 1) {
     for (const expected of publishedIntelligence) {
       const actual = payload.rumors.find((item) => item.id === expected.id);
       if (!actual) throw new Error(`published intelligence missing: ${expected.id}`);
-      for (const field of ["title", "titleEn", "summary", "summaryEn", "sourceUrl", "publishedAt", "status"]) {
+      for (const field of ["title", "titleEn", "summary", "summaryEn", "sourceUrl", "publishedAt", "status", "eventKey", "impactLevel"]) {
         if (actual[field] !== expected[field]) throw new Error(`published intelligence mismatch: ${expected.id}.${field}`);
       }
     }

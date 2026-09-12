@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { publishedColumnArticles } from "./columns/articles";
-import { buildDeskRecords, researchRecord, type DeskRecord } from "./desk-model";
+import { buildDeskRecords, featuredDeskIds, researchRecord, type DeskRecord } from "./desk-model";
 import type { ConsoleOverviewData, ConsoleStory } from "./intelligence-console-overview";
 import { RUMOR_BRIEFS } from "./watch-data";
 import { AtlasReadingPanel } from "./atlas-reading-panel";
@@ -17,7 +17,7 @@ export default function IntelligenceDesk({lang,data,translateStory}:{lang:"zh"|"
    if(r.kind!=="media")return r;const id=r.id.slice(6);return RUMOR_BRIEFS.some(item=>item.id===id)?{...r,href:`${base}/rumors/${id}`}:r;
  }),[articles,base,data,lang,translateStory]);
  useEffect(()=>{try{const list=JSON.parse(localStorage.getItem("atlas-desk-saved")||"[]");if(Array.isArray(list))queueMicrotask(()=>setSaved(list.filter(x=>typeof x==="string")));}catch{}},[]);
- const featuredIds = new Set((["fact","research","media"] as const).flatMap(kind=>records.filter(r=>r.kind===kind).slice(0,6).map(r=>r.id)));
+ const featuredIds = featuredDeskIds(records);
  const visible=records.filter(r=>(filter==="featured"?featuredIds.has(r.id):filter==="all"||(filter==="saved"?saved.includes(r.id):r.kind===filter))&&(region==="all"||r.region===region)&&(!query.trim()||`${r.title} ${r.summary} ${r.source}`.toLowerCase().includes(query.trim().toLowerCase())));
  const shown=visible.slice(0,limit),dates=[...new Set(shown.map(r=>r.date?r.date.slice(0,10):""))];
  const featured=articles[0]?researchRecord(articles[0],lang):null;

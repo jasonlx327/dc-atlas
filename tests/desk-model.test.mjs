@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { stripTypeScriptTypes } from 'node:module';
 const source=await readFile(new URL('../app/desk-model.ts',import.meta.url),'utf8');
-const {buildDeskRecords,researchRecord}=await import(`data:text/javascript;base64,${Buffer.from(stripTypeScriptTypes(source)).toString('base64')}`);
+const {buildDeskRecords,researchRecord,featuredDeskIds}=await import(`data:text/javascript;base64,${Buffer.from(stripTypeScriptTypes(source)).toString('base64')}`);
 const article={href:'/columns/example',hrefEn:'/en/columns/example',title:'中文',titleEn:'English',summary:'摘要',summaryEn:'Summary',publishAt:'2026-09-08T08:00:00Z',image:'/cover.jpg',series:'TEST · 1'};
 test('official news retains localized detailed reading content',async()=>{
  const newsSource=await readFile(new URL('../worker/image25-news.ts',import.meta.url),'utf8');
@@ -39,4 +39,9 @@ test('one reviewed event shared by formal and media surfaces uses the formal rec
  assert.equal(records.length,1);assert.equal(records[0].kind,'fact');
  const separate=buildDeskRecords({pulse:[story,{...story,id:'different',eventKey:'other-project'}],companies:[]},[],'zh');
  assert.equal(separate.length,2);
+});
+
+test('highlights require reviewed impact, not a recent timestamp or publisher fame',()=>{
+ const records=[{id:'routine',kind:'fact',date:'2099-01-01'},{id:'material',kind:'media',impactLevel:'material'},{id:'high',kind:'fact',impactLevel:'high'},{id:'research',kind:'research'}];
+ assert.deepEqual([...featuredDeskIds(records)],['material','high','research']);
 });

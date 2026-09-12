@@ -38,3 +38,5 @@ npm run event:intelligence:apply -- --input=editor-decision.json --review=public
 正式内容同样需 review 校验，然后才写对应版本化适配入口。机器校验能拒绝缺字段、重复事件、未有阅读记录的公开引用和无影响依据，不能替代 Terra 的真实阅读和产业判断。不得为通过校验填模板或捏造阅读。两个任务的完整提示词包含这些约束。
 
 发布继续遵循 docs/luna-update-contract.md 与 docs/sites-mirror-release.md：共享锁、实际生产基线、来源/双语、测试、同 HEAD 保存部署、正式页面/API/快照/SEO 及受影响交互读回。报告独立事件数与真实来源阅读，不以抓取量冒充成效。
+
+首页精选不再每类机械取最新六条；事实与媒体须有审查确认的 impactLevel（high/material），研究保留既有编辑发布入口。历史未复核内容仍在全部及原板块，不能把缺少评级理解为事实有误。媒体适配器从 review 写入 impactLevel；正式内容同样填写已核验评级。本次对照 DCD 原文将 JWCC 招标列为 material：潜在云采购上限影响需求观察，但不是已授予金额或实际支出。其余历史条目不自动追授影响等级。

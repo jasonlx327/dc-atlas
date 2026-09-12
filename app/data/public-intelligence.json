@@ -17,7 +17,8 @@
     "officialResponse": "本条依据所引媒体报道；当前未见对应一手确认。",
     "officialResponseEn": "Based on the cited media report; no corresponding primary confirmation was located.",
     "sourceNote": "Data Center Dynamics公开报道；主张按原始来源归属呈现。",
-    "sourceNoteEn": "Public reporting by Data Center Dynamics; claims remain attributed to the original source."
+    "sourceNoteEn": "Public reporting by Data Center Dynamics; claims remain attributed to the original source.",
+    "impactLevel": "material"
   },
   {
     "id": "editor-evt-84097aecdf2683b5a2c6",

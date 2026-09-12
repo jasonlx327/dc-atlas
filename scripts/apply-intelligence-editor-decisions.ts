@@ -58,6 +58,7 @@ export function mergeIntelligenceItems(
     if (item && review) {
       const proof = review.events.find(entry => entry.eventId === decision.eventId)!;
       item.eventKey = proof.clusterKey;
+      item.impactLevel = proof.impact.level;
       item.sources = proof.sources.map(source => ({url:source.url, independenceGroup:source.independenceGroup}));
       const groups = new Set(proof.sources.filter(source => source.kind === 'original-media').map(source => source.independenceGroup));
       item.sourceCount = Math.max(1, groups.size);

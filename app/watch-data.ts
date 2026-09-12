@@ -23,6 +23,7 @@ export type PolicyIndexRecord = {
 };
 
 export type RumorWatchItem = {
+  impactLevel?: "high" | "material";
   eventKey?: string;
   sources?: Array<{url: string; independenceGroup: string}>;
   id: string;

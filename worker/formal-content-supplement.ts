@@ -2,6 +2,7 @@ import { RECOVERY_NEWS } from "./formal-recovery-20260907";
 import { IMAGE25_NEWS } from "./image25-news";
 
 export type FormalNewsSupplement = {
+  impactLevel?: "high" | "material";
   eventKey?: string;
   id: string;
   title: string;
