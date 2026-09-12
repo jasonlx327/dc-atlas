@@ -1,4 +1,4 @@
-export type IndustryStory = { id: string; title: string; titleEn?: string; summary?: string; summaryEn?: string; publishedAt?: string | null; sourceUrl?: string | null; permalink?: string; sourceName?: string | null; category?: string | null; industrySegment?: string };
+export type IndustryStory = { eventKey?: string; id: string; title: string; titleEn?: string; summary?: string; summaryEn?: string; publishedAt?: string | null; sourceUrl?: string | null; permalink?: string; sourceName?: string | null; category?: string | null; industrySegment?: string };
 // Rule matches are navigation aids, never evidence of a commercial relationship.
 export const industrySegments = [
   { id: "silicon", zh: "芯片与制造", en: "Silicon & manufacturing", children: [
@@ -43,7 +43,7 @@ export function classifyIndustry(item: IndustryStory) {
 export function industryItems(items: IndustryStory[]) {
   const seen = new Set<string>();
   return [...items].sort((a,b) => (Date.parse(b.publishedAt ?? "") || 0) - (Date.parse(a.publishedAt ?? "") || 0)).filter(item => {
-    let key = item.sourceUrl || item.permalink || item.id;
+    let key = item.eventKey ? `event:${item.eventKey}` : item.sourceUrl || item.permalink || item.id;
     try { const url = new URL(key); url.hash = ""; for (const k of [...url.searchParams.keys()]) if (/^utm_|^(fbclid|gclid)$/.test(k)) url.searchParams.delete(k); key = url.toString(); } catch { /* IDs remain valid deduplication keys. */ }
     if (seen.has(key)) return false; seen.add(key); return true;
   });

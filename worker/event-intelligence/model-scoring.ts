@@ -324,7 +324,7 @@ export async function scoreWithOpenAiCompatible(
     "Score the event cluster's editorial and research value, not each source article independently.",
     "Use a recall-oriented standard: keep directly relevant official announcements and widely discussed news in consideration even when the full infrastructure mechanism is not disclosed yet.",
     "Reward material changes, concrete disclosed facts, causal mechanisms, supply-chain implications, and usefulness to data-center infrastructure readers.",
-    "Reward first-party announcements, multiple independent reports, prominent Atlas companies, and events attracting broad industry attention.",
+    "Source authority, issuer prominence and article volume are not industry impact. Explain the new fact and its consequences for capacity delivery, demand, cost, supply chains, commercialization, capital allocation or policy constraints. Penalize unsupported impact claims and routine releases even from famous issuers.",
     "Penalize routine marketing, duplicated coverage, and generic commentary, but do not over-penalize a new attributable event merely because it still needs primary-source verification.",
     "Do not judge truth, override evidence status, choose a publication route, or give investment direction.",
     "Return exactly one JSON object and no markdown.",

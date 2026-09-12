@@ -72,7 +72,7 @@ export default function WatchDetail({ lang, kind, item, archived = false }: Prop
     <IntelligenceConsoleShell
       lang={lang}
       activeSection={kind}
-      sourceCount={1}
+      sourceCount={isPolicy ? 1 : (item as RumorWatchItem).sourceCount}
       verifiedCount={isPolicy ? 1 : 0}
       pageLabel={pageLabel}
       className={`atlas-watch-shell atlas-${kind}-shell`}
@@ -87,7 +87,8 @@ export default function WatchDetail({ lang, kind, item, archived = false }: Prop
             <p>{isZh ? "以下内容保留原报道日期与当时的进展，不代表项目或交易的最新状态。" : "This report retains its original date and the developments recorded at that time. It does not describe the latest project or transaction status."}</p>
           </aside>}
           <p>{summary}</p>
-          <div className="watch-detail-source"><span>{isZh ? "原始出处" : "PRIMARY SOURCE"}</span><a href={item.sourceUrl} target="_blank" rel="noreferrer">{item.sourceName} ↗</a></div>
+          <div className="watch-detail-source"><span>{isZh ? "原始出处" : "ORIGINAL SOURCE"}</span><a href={item.sourceUrl} target="_blank" rel="noreferrer">{item.sourceName} ↗</a></div>
+          {!isPolicy && (item as RumorWatchItem).sources?.filter(source => source.url !== item.sourceUrl).map(source => <div className="watch-detail-source" key={source.url}><span>{isZh ? "相关原文" : "RELATED SOURCE"}</span><a href={source.url} target="_blank" rel="noreferrer">{new URL(source.url).hostname} ↗</a></div>)}
         </header>
 
         {isPolicy ? <PolicyDetail lang={lang} item={item as PolicyIndexRecord} /> : <RumorDetail lang={lang} item={item as RumorWatchItem} />}

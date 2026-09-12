@@ -6,6 +6,8 @@ import { sourceRegistryById } from "../worker/connectors/index.ts";
 import type { AtlasEditorDecisionPacket } from "../worker/event-intelligence/atlas-auto-editor.ts";
 import { validateBilingualPair } from "../worker/event-intelligence/provider-contract.ts";
 
+import { publicationReviewErrors, type PublicationReview } from "../worker/event-intelligence/publication-review.ts";
+
 function arg(name: string): string | null {
   const prefix = `--${name}=`;
   return process.argv.find((value) => value.startsWith(prefix))?.slice(prefix.length) ?? null;
@@ -13,12 +15,6 @@ function arg(name: string): string | null {
 
 function sourceName(sourceId: string | null): string {
   return sourceId ? sourceRegistryById.get(sourceId)?.name ?? sourceId : "公开媒体";
-}
-
-function sourceKey(url: string): string {
-  let hash = 0;
-  for (const character of url) hash = (hash * 31 + character.charCodeAt(0)) >>> 0;
-  return hash.toString(36);
 }
 
 function toPublicItem(decision: AtlasEditorDecisionPacket["decisions"][number]): RumorWatchItem | null {
@@ -55,15 +51,28 @@ function toPublicItem(decision: AtlasEditorDecisionPacket["decisions"][number]):
 export function mergeIntelligenceItems(
   existing: RumorWatchItem[],
   packet: AtlasEditorDecisionPacket,
+  review?: PublicationReview,
 ): { items: RumorWatchItem[]; applied: number } {
   const additions = packet.decisions.flatMap((decision) => {
     const item = toPublicItem(decision);
+    if (item && review) {
+      const proof = review.events.find(entry => entry.eventId === decision.eventId)!;
+      item.eventKey = proof.clusterKey;
+      item.sources = proof.sources.map(source => ({url:source.url, independenceGroup:source.independenceGroup}));
+      const groups = new Set(proof.sources.filter(source => source.kind === 'original-media').map(source => source.independenceGroup));
+      item.sourceCount = Math.max(1, groups.size);
+      item.statusLabel = groups.size >= 2 ? '媒体 · 多源' : '媒体 · 单一来源';
+      item.statusLabelEn = groups.size >= 2 ? 'Media · multi-source' : 'Media · single source';
+      const prior = existing.find(entry => entry.eventKey === proof.clusterKey)
+        ?? existing.find(entry => proof.change.priorPublicIds.includes(entry.id));
+      if (prior) item.id = prior.id;
+    }
     return item ? [item] : [];
   });
   const byId = new Map(existing.map((item) => [item.id, item]));
   additions.forEach((item) => {
     const prior = byId.get(item.id);
-    if (prior && prior.sourceUrl !== item.sourceUrl) item.id = `${item.id}-${sourceKey(item.sourceUrl)}`;
+    if (prior?.sources && item.sources) item.sources = [...new Map([...prior.sources, ...item.sources].map(source => [source.url,source])).values()];
     byId.set(item.id, item);
   });
   return {
@@ -79,13 +88,18 @@ async function run() {
   if (packet.schemaVersion !== "atlas-editor-decision.v1" || packet.status !== "completed") {
     throw new Error("Atlas Editor 决策包缺失、无效或未完成，拒绝写入公开情报数据。");
   }
+  const reviewPath = arg("review");
+  if (!reviewPath) throw new Error("--review=<current publication review JSON> is required before public writes.");
+  const review = JSON.parse(await readFile(resolve(reviewPath), "utf8")) as PublicationReview;
+  const reviewErrors = publicationReviewErrors(packet, review);
+  if (reviewErrors.length) throw new Error(reviewErrors.join("\n"));
   let existing: RumorWatchItem[] = [];
   try {
     existing = JSON.parse(await readFile(output, "utf8")) as RumorWatchItem[];
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
   }
-  const merged = mergeIntelligenceItems(existing, packet);
+  const merged = mergeIntelligenceItems(existing, packet, review);
   await mkdir(dirname(output), { recursive: true });
   const temporary = `${output}.tmp`;
   await writeFile(temporary, `${JSON.stringify(merged.items, null, 2)}\n`);

@@ -8,6 +8,7 @@ import { deriveConsoleMeta, type ConsoleMeta } from "./console-meta";
 import { entityDirectory } from "./entity-directory";
 
 export type ConsoleStory = {
+  eventKey?: string;
   id: string;
   title: string;
   titleEn?: string;
@@ -64,6 +65,7 @@ export type ConsoleBenchmark = {
 };
 
 export type ConsoleRumor = {
+  eventKey?: string;
   id: string;
   title: string;
   titleEn: string;

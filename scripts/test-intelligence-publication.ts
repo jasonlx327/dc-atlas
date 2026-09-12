@@ -48,3 +48,9 @@ assert.equal(updated.items.length, 1, "repeated runs must update the same event 
 assert.notEqual(updated.items[0]?.summary, "旧摘要");
 
 console.log(JSON.stringify({ message: "Intelligence publication adapter tests passed", items: updated.items.length }));
+
+const changedSource = structuredClone(packet);
+changedSource.decisions[0].canonicalUrls = ['https://second.example/report'];
+const sourceUpgrade = mergeIntelligenceItems(first.items, changedSource);
+assert.equal(sourceUpgrade.items.length, 1, 'a new source for the same event must not create a second card');
+assert.equal(sourceUpgrade.items[0].id, first.items[0].id, 'existing detail link must survive');

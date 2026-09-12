@@ -78,3 +78,5 @@ incident, not successful partially-published. Recover the matching Sites release
 or restore the prior verified deployment; record the actual state and blocker.
 After both readbacks pass, advance atlas-production to the deployed application
 HEAD and write a durable release receipt. Never overwrite shared main.
+
+工作日 Terra 任务的影响力筛选、跨板块事件身份与原文阅读门禁，另见 [weekday-publication.md](weekday-publication.md)。

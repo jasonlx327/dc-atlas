@@ -31,3 +31,12 @@ test('missing dates and summaries remain unknown and covers are unchanged',()=>{
  const r=buildDeskRecords({pulse:[{id:'x',title:'Unknown',sourceUrl:'https://example.org'}],companies:[]},[],'zh');
  assert.equal(r[0].date,'');assert.equal(r[0].summary,'');assert.equal(researchRecord(article,'en').image,article.image);
 });
+
+test('one reviewed event shared by formal and media surfaces uses the formal record',()=>{
+ const story={id:'official',eventKey:'company-project-period',title:'Permit granted',sourceUrl:'https://issuer.example/permit'};
+ const rumor={id:'media',eventKey:story.eventKey,title:'Reported permit',titleEn:'Reported permit',summary:'report',summaryEn:'report',publishedAt:'2026-09-12',sourceName:'Media',sourceUrl:'https://media.example/report',region:'全球',sourceCount:1};
+ const records=buildDeskRecords({pulse:[story],companies:[{...story,id:'other-section'}],rumors:[rumor]},[],'en');
+ assert.equal(records.length,1);assert.equal(records[0].kind,'fact');
+ const separate=buildDeskRecords({pulse:[story,{...story,id:'different',eventKey:'other-project'}],companies:[]},[],'zh');
+ assert.equal(separate.length,2);
+});
