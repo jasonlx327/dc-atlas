@@ -1,0 +1,54 @@
+[
+  {
+    "slug": "deepseek-cost-scissors",
+    "title": "芯片在涨价，DeepSeek 在降价：谁吞下了 AI 的成本？",
+    "titleEn": "Chips Cost More. DeepSeek Charges Less. Who Absorbs the Difference?",
+    "summary": "缓存变小怎样传到任务成本？拆开硬件报价、模型售价与返工费用。",
+    "summaryEn": "Separate hardware prices, API charges and retries to understand cost per accepted task.",
+    "image": "/column-deepseek-cost-scissors-v1.jpg",
+    "series": "MODEL ECONOMICS · 40",
+    "date": "2026-09-15",
+    "publishAt": "2026-09-15T18:05:00+08:00",
+    "href": "/columns/deepseek-cost-scissors",
+    "hrefEn": "/en/columns/deepseek-cost-scissors"
+  },
+  {
+    "slug": "amazon-qualcomm-warrants",
+    "title": "买芯片，还能获购股权利：Amazon 与 Qualcomm 的双重绑定",
+    "titleEn": "Amazon and Qualcomm: Buying Products, Earning Equity Rights",
+    "summary": "用简单账例读懂采购挂钩的权证，追踪产品验证、交付与客户采用。",
+    "summaryEn": "Explain procurement-linked warrants and the gates from qualification to customer adoption.",
+    "image": "/column-amazon-qualcomm-warrants-v1.jpg",
+    "series": "COMPUTE CONTRACTS · 41",
+    "date": "2026-09-15",
+    "publishAt": "2026-09-15T18:05:00+08:00",
+    "href": "/columns/amazon-qualcomm-warrants",
+    "hrefEn": "/en/columns/amazon-qualcomm-warrants"
+  },
+  {
+    "slug": "fluidstack-public-credit",
+    "title": "五角大楼也要当 AI 银行？先看清 Fluidstack 的贷款传闻",
+    "titleEn": "The Pentagon as an AI Lender? Start With the Terms, Not the Headline",
+    "summary": "从尚未确认的贷款谈判出发，解释公共信贷、资金用途与偿债风险。",
+    "summaryEn": "An attributed loan report opens a closer look at public credit, uses of funds and repayment risk.",
+    "image": "/column-fluidstack-public-credit-v1.jpg",
+    "series": "PUBLIC CREDIT · 42",
+    "date": "2026-09-15",
+    "publishAt": "2026-09-15T18:05:00+08:00",
+    "href": "/columns/fluidstack-public-credit",
+    "hrefEn": "/en/columns/fluidstack-public-credit"
+  },
+  {
+    "slug": "nvidia-huggingface-open-platform",
+    "title": "卖铲子的人，要买下开源广场：NVIDIA 与 Hugging Face",
+    "titleEn": "NVIDIA and Hugging Face: The Hardware Supplier Moves Toward the Model Gateway",
+    "summary": "拟收购将硬件商与模型入口连接起来；开放承诺需要由实际产品验证。",
+    "summaryEn": "The proposed deal links hardware with model discovery; product behavior must test openness commitments.",
+    "image": "/column-nvidia-huggingface-open-platform-v1.jpg",
+    "series": "OPEN PLATFORMS · 43",
+    "date": "2026-09-15",
+    "publishAt": "2026-09-15T18:05:00+08:00",
+    "href": "/columns/nvidia-huggingface-open-platform",
+    "hrefEn": "/en/columns/nvidia-huggingface-open-platform"
+  }
+]

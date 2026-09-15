@@ -9,10 +9,12 @@ export async function ColumnArticleConsole({
   lang,
   slug,
   children,
+  readingStyle,
 }: {
   lang: "zh" | "en";
   slug: string;
   children: ReactNode;
+  readingStyle?: "explainer";
 }) {
   const meta = deriveConsoleMeta(await loadInitialAtlasPayload());
   const english = lang === "en";
@@ -31,7 +33,7 @@ export async function ColumnArticleConsole({
     sourceCount={meta.sourceCount}
     verifiedCount={meta.verifiedCount}
     pageLabel={lang === "zh" ? "专栏研究" : "Columns"}
-    className="atlas-column-article-shell"
+    className={`atlas-column-article-shell${readingStyle === "explainer" ? " atlas-explainer" : ""}`}
   >
     <div className="column-article-page" lang={lang === "zh" ? "zh-CN" : "en"}>
       {children}

@@ -1,0 +1,305 @@
+{
+  "runId": "research-20260916-four-drafts",
+  "status": "ready-for-release",
+  "draftedAt": "2026-09-15",
+  "timezone": "Asia/Shanghai",
+  "baseHead": "4cfa2f960f24100bb8341df5959effee09e13332",
+  "scope": "four explainers; immediate publication authorized September 15",
+  "publication": {
+    "authorizedDate": "2026-09-15",
+    "automationId": "9-16",
+    "automationStatus": "PAUSED",
+    "supersedes": "September 16 scheduled publication",
+    "alreadyPublished": false
+  },
+  "articles": [
+    {
+      "slug": "deepseek-cost-scissors",
+      "zh": "deepseek-cost-scissors.zh.md",
+      "en": "deepseek-cost-scissors.en.md",
+      "sections": 6,
+      "zhHan": 3239,
+      "enWords": 1352,
+      "state": "edited-explainer",
+      "flagshipDepth": "not represented as flagship; readability-first explainer",
+      "publicationGate": "research gates passed; render checks passing"
+    },
+    {
+      "slug": "amazon-qualcomm-warrants",
+      "zh": "amazon-qualcomm-warrants.zh.md",
+      "en": "amazon-qualcomm-warrants.en.md",
+      "sections": 6,
+      "zhHan": 3171,
+      "enWords": 1318,
+      "state": "edited-explainer",
+      "flagshipDepth": "not represented as flagship; readability-first explainer",
+      "publicationGate": "research gates passed; render checks passing"
+    },
+    {
+      "slug": "fluidstack-public-credit",
+      "zh": "fluidstack-public-credit.zh.md",
+      "en": "fluidstack-public-credit.en.md",
+      "sections": 6,
+      "zhHan": 3187,
+      "enWords": 1343,
+      "state": "edited-explainer",
+      "flagshipDepth": "not represented as flagship; readability-first explainer",
+      "publicationGate": "research gates passed; render checks passing"
+    },
+    {
+      "slug": "nvidia-huggingface-open-platform",
+      "zh": "nvidia-huggingface-open-platform.zh.md",
+      "en": "nvidia-huggingface-open-platform.en.md",
+      "sections": 6,
+      "zhHan": 3255,
+      "enWords": 1322,
+      "state": "edited-explainer",
+      "flagshipDepth": "not represented as flagship; readability-first explainer",
+      "publicationGate": "research gates passed; render checks passing"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "DS1",
+      "claim": "V4.1 Flash release and cache ratios; API price reduction",
+      "url": "https://www.deepseek.com/en/news/deepseek-v4-1-flash/",
+      "date": "2026-09-10",
+      "locator": "Smaller KV cache; pricing",
+      "status": "management-said",
+      "readMethod": "web body",
+      "boundary": "cache only; no independent benchmark",
+      "lastVerifiedAt": "2026-09-15 10:08:56 UTC"
+    },
+    {
+      "id": "DS2",
+      "claim": "Reported China chip repricing attributed to HBM cost",
+      "url": "https://hk.marketscreener.com/news/china-s-ai-chipmakers-raise-prices-as-high-bandwidth-memory-shortage-bites-ce785bdedb8bf125",
+      "date": "2026-09-10",
+      "locator": "Reuters body and issuer-response paragraph",
+      "status": "reported",
+      "boundary": "unnamed-source report, no supplier purchase link to DeepSeek",
+      "lastVerifiedAt": "2026-09-15 10:08:56 UTC"
+    },
+    {
+      "id": "DS3",
+      "claim": "architecture and input-heavy workloads",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "date": null,
+      "readAt": "2026-09-15",
+      "locator": "official model card Introduction",
+      "status": "management-said",
+      "boundary": "no reproduction; no disputed parameter totals used",
+      "lastVerifiedAt": "2026-09-15 10:08:56 UTC"
+    },
+    {
+      "id": "Q1",
+      "claim": "25m max warrant shares, 161.26 USD exercise, 2036 expiry, 3.75m vested, up to 60bn USD payments linked to vesting",
+      "url": "https://www.sec.gov/Archives/edgar/data/804328/000110465926105718/tm2623289d1_8k.htm",
+      "date": "2026-09-08",
+      "eventDate": "2026-09-03",
+      "locator": "Item 3.02",
+      "status": "reported",
+      "readMethod": "full short filing",
+      "boundary": "not guaranteed orders; no current voting rights before exercise; no valuation",
+      "lastVerifiedAt": "2026-09-15 10:08:56 UTC"
+    },
+    {
+      "id": "Q2",
+      "claim": "multi-generation custom inference and optical collaboration",
+      "url": "https://www.qualcomm.com/news/releases/2026/09/qualcomm-announces-multi-generational-product-collaboration-with",
+      "date": "2026-09-08",
+      "locator": "Highlights and collaboration body",
+      "status": "management-said",
+      "boundary": "not completed deployment",
+      "lastVerifiedAt": "2026-09-15 10:08:56 UTC"
+    },
+    {
+      "id": "F1",
+      "claim": "potential 5bn USD OSC loan, component manufacturing, not finalized",
+      "url": "https://www.datacenterdynamics.com/en/news/pentagon-in-talks-to-loan-fluidstack-5bn-report/",
+      "date": "2026-09-11",
+      "locator": "body citing WSJ",
+      "status": "reported",
+      "boundary": "single underlying reporting chain; WSJ original not retrieved this run; no primary transaction agreement",
+      "lastVerifiedAt": "2026-09-15 10:08:56 UTC"
+    },
+    {
+      "id": "F2",
+      "claim": "Fluidstack Anthropic commercial project context",
+      "url": "https://fluidstack.io/news/fluidstack-selected-by-anthropic-to-deliver-custom-data-centers-in-the-us",
+      "date": "2025-11-12",
+      "locator": "announcement body",
+      "status": "management-said",
+      "boundary": "no government-loan confirmation; no completion asserted",
+      "lastVerifiedAt": "2026-09-15 10:08:56 UTC"
+    },
+    {
+      "id": "F3",
+      "claim": "OSC historical credit role and equipment financing",
+      "url": "https://www.cto.mil/wp-content/uploads/2024/10/OSC-Credit-Program-FAQs_Publication-Version.pdf",
+      "date": "2024-10",
+      "locator": "page 1",
+      "status": "reported",
+      "boundary": "historical background only, not 2026 applicable terms",
+      "lastVerifiedAt": "2026-09-15 10:08:56 UTC"
+    },
+    {
+      "id": "F4",
+      "claim": "credit volume differs from lifetime costs and risk methods",
+      "url": "https://www.cbo.gov/publication/59499",
+      "date": "2023-08",
+      "locator": "Summary; FCRA and Fair-Value Approaches",
+      "status": "reported",
+      "boundary": "no estimate for Fluidstack",
+      "lastVerifiedAt": "2026-09-15 10:08:56 UTC"
+    },
+    {
+      "id": "H1",
+      "claim": "NVIDIA agreed acquisition and openness commitments",
+      "url": "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/",
+      "date": "2026-09-03",
+      "locator": "announcement body",
+      "status": "management-said",
+      "boundary": "no completed closing asserted; approximate consideration 12.93bn USD",
+      "lastVerifiedAt": "2026-09-15 10:08:56 UTC"
+    },
+    {
+      "id": "H2",
+      "claim": "model-specific license metadata",
+      "url": "https://huggingface.co/docs/hub/model-cards",
+      "date": null,
+      "readAt": "2026-09-15",
+      "locator": "Specifying a license",
+      "status": "reported",
+      "boundary": "no legal conclusion for individual model",
+      "lastVerifiedAt": "2026-09-15 10:08:56 UTC"
+    },
+    {
+      "id": "H3",
+      "claim": "gated access author control",
+      "url": "https://huggingface.co/docs/hub/models-gated",
+      "date": null,
+      "readAt": "2026-09-15",
+      "locator": "Gated models; manual approval",
+      "status": "reported",
+      "boundary": "not evidence of post-acquisition exclusion",
+      "lastVerifiedAt": "2026-09-15 10:08:56 UTC"
+    }
+  ],
+  "calculations": [
+    {
+      "formula": "0.30*0.5+0.70",
+      "result": 0.85,
+      "basis": "teaching assumption only"
+    },
+    {
+      "formula": "85/70",
+      "result": 1.2142857142857142,
+      "rounded": "1.21",
+      "basis": "teaching assumption only"
+    },
+    {
+      "formula": "0.8*1.25",
+      "result": 1,
+      "basis": "break-even algebra, not forecast"
+    },
+    {
+      "formula": "300000/200000",
+      "result": 1.5,
+      "units": "years",
+      "basis": "hypothetical simple payback, ignoring discounting and risk"
+    }
+  ],
+  "review": {
+    "source": "pass; current primary documents refreshed; Fluidstack explicitly attributed unconfirmed report",
+    "numeric": "pass",
+    "analysis": "pass; six sections and five analytical layers",
+    "editorial": "pass; explainer edition, no padding",
+    "safety": "pass",
+    "bilingual": "pass; same material facts, mechanisms and boundaries",
+    "build": "passed; production build and 82 tests",
+    "published": false,
+    "lint": "passed; 0 errors, 30 existing-style warnings",
+    "typecheck": "passed",
+    "visual": "1440px and 390px article/home/index checks, no page overflow; 8 bilingual routes rendered; mobile table swipe hint added"
+  },
+  "cutoff": "2026-09-15 10:08:56 UTC",
+  "covers": [
+    {
+      "slug": "deepseek-cost-scissors",
+      "brief": [
+        "deepseek",
+        "AI service costs versus memory constraints",
+        "a monumental cobalt blue stepped memory stack beside a compact ivory processing gate",
+        "small compressed blue cubes leaving a coral narrow gate; one small compute pod",
+        "conceptual efficiency improvement, not literal chip design",
+        "neutral studio no geographic assertion",
+        "large chip stack and compressed outgoing blocks",
+        "cobalt blue, coral, tiny amber"
+      ],
+      "prompt": "Create one landscape 16:9 editorial illustration for IDC Atlas. Topic: AI service costs versus memory constraints. Primary object: a monumental cobalt blue stepped memory stack beside a compact ivory processing gate. Supporting infrastructure: small compressed blue cubes leaving a coral narrow gate; one small compute pod. Relationship and evidence state: conceptual efficiency improvement, not literal chip design. Context: neutral studio no geographic assertion. Focal emphasis: large chip stack and compressed outgoing blocks. Palette: cobalt blue, coral, tiny amber, anchored by porcelain structures and warm ivory ground. Minecraft-inspired voxel industrial diorama: crisp cubic construction, stepped silhouettes, restrained pixel-scale matte textures, bright daylight and readable faces, no grey haze or gloss. One strong visual argument, occupy 75% frame width, main silhouette in central 60% so square crop works. No text, numbers, logos, flags, faces, game UI, neon, watermarks or fake labels. Original conceptual art not documentary.",
+      "source": "/Users/xlarge/.codex/generated_images/01a0a3f8-a7aa-7f41-bf8a-023a1996f1a8/exec-68f9d8a8-7094-417b-93ae-899e6b210cb8.png",
+      "asset": "/column-deepseek-cost-scissors-v1.jpg",
+      "width": 1672,
+      "height": 941,
+      "generation": "built-in image_gen"
+    },
+    {
+      "slug": "amazon-qualcomm-warrants",
+      "brief": [
+        "amazon",
+        "procurement-linked warrants",
+        "two substantial amber and indigo block-built industrial stations joined by two parallel orthogonal tracks",
+        "one track carries chip blocks, the second carries blank ivory tokens",
+        "conceptual parallel procurement and conditional equity rights, not ownership or completed deployment",
+        "neutral industrial studio",
+        "two visibly distinct tracks between stations",
+        "amber, indigo, tiny cyan"
+      ],
+      "prompt": "Create one landscape 16:9 editorial illustration for IDC Atlas. Topic: procurement-linked warrants. Primary object: two substantial amber and indigo block-built industrial stations joined by two parallel orthogonal tracks. Supporting infrastructure: one track carries chip blocks, the second carries blank ivory tokens. Relationship and evidence state: conceptual parallel procurement and conditional equity rights, not ownership or completed deployment. Context: neutral industrial studio. Focal emphasis: two visibly distinct tracks between stations. Palette: amber, indigo, tiny cyan, anchored by porcelain structures and warm ivory ground. Minecraft-inspired voxel industrial diorama: crisp cubic construction, stepped silhouettes, restrained pixel-scale matte textures, bright daylight and readable faces, no grey haze or gloss. One strong visual argument, occupy 75% frame width, main silhouette in central 60% so square crop works. No text, numbers, logos, flags, faces, game UI, neon, watermarks or fake labels. Original conceptual art not documentary.",
+      "source": "/Users/xlarge/.codex/generated_images/01a0a3f8-a7aa-7f41-bf8a-023a1996f1a8/exec-e67ec484-472e-411f-a573-e22ca1919e94.png",
+      "asset": "/column-amazon-qualcomm-warrants-v1.jpg",
+      "width": 1672,
+      "height": 941,
+      "generation": "built-in image_gen"
+    },
+    {
+      "slug": "fluidstack-public-credit",
+      "brief": [
+        "fluidstack",
+        "proposed public loan for component manufacturing",
+        "a coral block-built manufacturing hall facing a separate ivory capital reservoir",
+        "unfinished short bridge with a visible gap and an idle component station",
+        "conceptual proposed financing, explicitly disconnected bridge, not approved funds or an operating actual factory",
+        "generic no flags no government buildings",
+        "bridge gap beside large factory silhouette",
+        "coral, muted violet, tiny yellow"
+      ],
+      "prompt": "Create one landscape 16:9 editorial illustration for IDC Atlas. Topic: proposed public loan for component manufacturing. Primary object: a coral block-built manufacturing hall facing a separate ivory capital reservoir. Supporting infrastructure: unfinished short bridge with a visible gap and an idle component station. Relationship and evidence state: conceptual proposed financing, explicitly disconnected bridge, not approved funds or an operating actual factory. Context: generic no flags no government buildings. Focal emphasis: bridge gap beside large factory silhouette. Palette: coral, muted violet, tiny yellow, anchored by porcelain structures and warm ivory ground. Minecraft-inspired voxel industrial diorama: crisp cubic construction, stepped silhouettes, restrained pixel-scale matte textures, bright daylight and readable faces, no grey haze or gloss. One strong visual argument, occupy 75% frame width, main silhouette in central 60% so square crop works. No text, numbers, logos, flags, faces, game UI, neon, watermarks or fake labels. Original conceptual art not documentary.",
+      "source": "/Users/xlarge/.codex/generated_images/01a0a3f8-a7aa-7f41-bf8a-023a1996f1a8/exec-f25ce756-4afe-44ec-b008-210e1c0d6df0.png",
+      "asset": "/column-fluidstack-public-credit-v1.jpg",
+      "width": 1672,
+      "height": 941,
+      "generation": "built-in image_gen"
+    },
+    {
+      "slug": "nvidia-huggingface-open-platform",
+      "brief": [
+        "huggingface",
+        "proposed acquisition and platform openness",
+        "a large violet branching routing hub with three open outward pathways",
+        "separate copper compute tower, unfinished connection to hub; two ivory compute pods",
+        "conceptual proposed acquisition and preserved multiple routes, not completed merger",
+        "neutral studio no actual site",
+        "open branching hub and separate tower",
+        "violet, copper, tiny cyan"
+      ],
+      "prompt": "Create one landscape 16:9 editorial illustration for IDC Atlas. Topic: proposed acquisition and platform openness. Primary object: a large violet branching routing hub with three open outward pathways. Supporting infrastructure: separate copper compute tower, unfinished connection to hub; two ivory compute pods. Relationship and evidence state: conceptual proposed acquisition and preserved multiple routes, not completed merger. Context: neutral studio no actual site. Focal emphasis: open branching hub and separate tower. Palette: violet, copper, tiny cyan, anchored by porcelain structures and warm ivory ground. Minecraft-inspired voxel industrial diorama: crisp cubic construction, stepped silhouettes, restrained pixel-scale matte textures, bright daylight and readable faces, no grey haze or gloss. One strong visual argument, occupy 75% frame width, main silhouette in central 60% so square crop works. No text, numbers, logos, flags, faces, game UI, neon, watermarks or fake labels. Original conceptual art not documentary. Correction: absolutely no luminous strips, no lit portals, no emissive surfaces anywhere. All pathways are solid matte violet blocks with ivory paved upper faces, lit solely by natural daylight. No sci-fi gateway appearance. Central object is an ordinary block-built routing distribution hub with three unlit orthogonal branching corridors. Keep separate copper tower and incomplete joining bridge.",
+      "source": "/Users/xlarge/.codex/generated_images/01a0a3f8-a7aa-7f41-bf8a-023a1996f1a8/exec-bb1fc28b-9ad4-490b-8051-c8996b8cafaa.png",
+      "asset": "/column-nvidia-huggingface-open-platform-v1.jpg",
+      "width": 1672,
+      "height": 941,
+      "generation": "built-in image_gen"
+    }
+  ]
+}

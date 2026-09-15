@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { AtlasAnalytics } from "./atlas-analytics";
 import "./globals.css";
 import "./desk.css";
+import "./columns/explainer.css";
 
 const siteUrl = "https://idc-index.com";
 const siteDescription = "每日追踪全球数据中心项目、超大规模云厂商 CAPEX、IDC 租赁、电力、液冷与算力硬件，保留公开来源和更新时间。";

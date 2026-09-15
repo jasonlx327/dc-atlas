@@ -4,6 +4,7 @@ import { nextWeekResearchRecords } from "./next-week-research-data";
 import { nextCycleResearchRecords } from "./next-cycle-research-data";
 import { septemberWeekResearchRecords } from "./september-week-research-data";
 import { september15ResearchRecords } from "./september-15-research-data";
+import septemberFourRecords from "./september-four-data.json";
 
 export type ResearchMetric = {
   label: string;
@@ -26,6 +27,7 @@ export type ResearchSection = {
   label: string;
   heading: string;
   paragraphs: string[];
+  table?: { headers: string[]; rows: string[][]; afterParagraph: number };
   metrics?: ResearchMetric[];
   steps?: ResearchStep[];
   cards?: ResearchCard[];
@@ -48,6 +50,7 @@ export type ResearchSource = {
 };
 
 export type ScheduledResearchRecord = {
+  layout?: "explainer";
   slug: string;
   imageAltZh: string;
   imageAltEn: string;
@@ -60,6 +63,7 @@ export type ScheduledResearchRecord = {
 };
 
 export const scheduledResearchRecords: ScheduledResearchRecord[] = [
+  ...(septemberFourRecords as ScheduledResearchRecord[]),
   ...september15ResearchRecords,
   ...septemberWeekResearchRecords,
   ...currentResearchRecords,

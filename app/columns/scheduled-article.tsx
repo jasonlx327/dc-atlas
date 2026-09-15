@@ -2,6 +2,7 @@ import { columnArticleBySlug } from "./articles";
 import { scheduledResearchBySlug, type ResearchCopy, type ResearchSource } from "./scheduled-article-data";
 import { ColumnArticleConsole } from "./article-console";
 import { articleEntities } from "../intelligence-model";
+import { Fragment } from "react";
 
 // Reader-facing source references support links only, never raw HTML.
 function ResearchText({ text, sources, lang }: { text: string; sources: ResearchSource[]; lang: "zh" | "en" }) {
@@ -45,7 +46,7 @@ function ArticleHeader({ slug, lang }: { slug: string; lang: "zh" | "en" }) {
     </div>
   </header>
   <section className="column-article-hero">
-    <div><span>IDC ATLAS COLUMN · {article.series}</span><time dateTime={article.publishAt}>{dateLabel}</time></div>
+    <div><span>IDC ATLAS {record.layout === "explainer" ? "EXPLAINER" : "COLUMN"} · {article.series}</span><time dateTime={article.publishAt}>{dateLabel}</time></div>
     <h1>{title}</h1>
     <p>{copy.hero}</p>
   </section>
@@ -73,10 +74,10 @@ function ResearchBody({ slug, lang }: { slug: string; lang: "zh" | "en" }) {
     <aside className="column-article-thesis"><span>{lang === "zh" ? "核心判断" : "THE TAKEAWAY"}</span><p>{copy.thesis}</p></aside>
     <section>
       {copy.opening.map((paragraph, index) => <p className={index === 0 ? "column-dropcap" : undefined} key={paragraph}><ResearchText text={paragraph} sources={record.sources} lang={lang} /></p>)}
-      <nav className="column-source-links" aria-label={lang === "zh" ? "本文来源" : "Article sources"}>
+      {record.layout !== "explainer" && <nav className="column-source-links" aria-label={lang === "zh" ? "本文来源" : "Article sources"}>
         <span>{lang === "zh" ? "来源" : "SOURCES"}</span>
         <div>{record.sources.map((source) => <SourceLink key={source.url} source={source} lang={lang} />)}</div>
-      </nav>
+      </nav>}
     </section>
     <nav className="column-source-links" aria-label={lang === "zh" ? "本文目录" : "On this page"}>
       <span>{lang === "zh" ? "本文目录" : "CONTENTS"}</span>
@@ -85,18 +86,31 @@ function ResearchBody({ slug, lang }: { slug: string; lang: "zh" | "en" }) {
     {copy.sections.map((section, index) => <section key={section.label} id={`research-section-${index + 1}`}>
       <div className="column-section-label">{section.label}</div>
       <h2>{section.heading}</h2>
-      {section.paragraphs.map((paragraph) => <p key={paragraph}><ResearchText text={paragraph} sources={record.sources} lang={lang} /></p>)}
+      {Array.from({ length: section.paragraphs.length + 1 }, (_, position) => <Fragment key={position}>
+        {section.table?.afterParagraph === position && <div className="explainer-table-wrap"><span className="explainer-table-hint">{lang === "zh" ? "左右滑动，查看完整表格 →" : "Swipe to read the full table →"}</span><div className="explainer-table" role="region" tabIndex={0} aria-label={section.heading}>
+          <table>
+            <thead><tr>{section.table.headers.map((header) => <th scope="col" key={header}>{header}</th>)}</tr></thead>
+            <tbody>{section.table.rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, cellIndex) => cellIndex === 0 ? <th scope="row" key={cellIndex}>{cell}</th> : <td key={cellIndex}>{cell}</td>)}</tr>)}</tbody>
+          </table>
+        </div></div>}
+        {position < section.paragraphs.length && <p><ResearchText text={section.paragraphs[position]} sources={record.sources} lang={lang} /></p>}
+      </Fragment>)}
       <MetricsTable copy={section.metrics} lang={lang} />
       {section.steps?.length ? <ol className="column-transmission">{section.steps.map((step, index) => <li key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><div><strong>{step.title}</strong><p>{step.body}</p></div></li>)}</ol> : null}
       {section.cards?.length ? <div className="column-question-grid">{section.cards.map((card) => <article key={`${card.label}-${card.title}`}><span>{card.label}</span><h3>{card.title}</h3><p>{card.body}</p></article>)}</div> : null}
     </section>)}
     <blockquote><span>IDC ATLAS VIEW</span><p>{copy.conclusion}</p></blockquote>
+    {record.layout === "explainer" && <section className="explainer-sources" aria-label={lang === "zh" ? "本文来源" : "Article sources"}>
+      <div className="column-section-label">{lang === "zh" ? "证据与延伸阅读" : "EVIDENCE & FURTHER READING"}</div>
+      <h2>{lang === "zh" ? "来源" : "Sources"}</h2>
+      <ol>{record.sources.map((source) => <li key={source.url}><SourceLink source={source} lang={lang} /></li>)}</ol>
+    </section>}
     <footer className="column-article-disclosure"><p>{copy.disclosure}</p><p>{lang === "zh" ? "本网站内容仅用于信息展示与研究，不构成任何投资建议。" : "For information and research only. This is not investment advice."}</p></footer>
   </article>;
 }
 
 export function ScheduledResearchArticle({ slug, lang }: { slug: string; lang: "zh" | "en" }) {
-  return <ColumnArticleConsole lang={lang} slug={slug}><ArticleHeader slug={slug} lang={lang} /><ResearchBody slug={slug} lang={lang} /></ColumnArticleConsole>;
+  return <ColumnArticleConsole lang={lang} slug={slug} readingStyle={scheduledResearchBySlug(slug)?.layout}><ArticleHeader slug={slug} lang={lang} /><ResearchBody slug={slug} lang={lang} /></ColumnArticleConsole>;
 }
 
 export function researchStructuredData(slug: string, lang: "zh" | "en"): Record<string, unknown> | null {

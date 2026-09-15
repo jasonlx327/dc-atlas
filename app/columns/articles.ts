@@ -1,7 +1,9 @@
 import { septemberWeekArticles } from "./september-week-articles";
 import { september15Articles } from "./september-15-articles";
+import septemberFourArticles from "./september-four-articles.json";
 
 export const columnArticles = [
+  ...septemberFourArticles,
   ...september15Articles,
   ...septemberWeekArticles,
   {
