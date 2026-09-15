@@ -285,7 +285,30 @@ export function persistShadowReport(report: ShadowRunReport, results: ConnectorR
 }
 
 async function run() {
+  if (process.argv.includes("--help")) {
+    console.log("Usage: run-event-intelligence-shadow.ts [--mode=live|fixture|replay] [--review-since=ISO_TIMESTAMP] [--output=PATH] [--db=PATH]. Replay requires --input, --output and --review-since; it performs no fetch or database write.");
+    return;
+  }
   const mode = arg("mode") ?? "live";
+  if (!["live", "fixture", "replay"].includes(mode)) throw new Error(`Unsupported mode: ${mode}`);
+  const reviewSince = arg("review-since");
+  if (reviewSince !== null && (!Number.isFinite(Date.parse(reviewSince)) || Date.parse(reviewSince) > Date.now())) {
+    throw new Error("--review-since must be a valid timestamp in the past");
+  }
+  if (mode === "replay") {
+    if (!arg("input") || !arg("output") || !reviewSince) throw new Error("Replay requires --input, --output and --review-since");
+    const inputPath = resolve(arg("input")!);
+    const outputPath = resolve(arg("output")!);
+    if (inputPath === outputPath) throw new Error("Replay must not overwrite the source report");
+    const report = JSON.parse(await readFile(inputPath, "utf8")) as ShadowRunReport;
+    if (report.schemaVersion !== "atlas-event-shadow.v1" || !Number.isFinite(Date.parse(report.generatedAt)) || !Array.isArray(report.events)) throw new Error("Invalid source report");
+    if (Date.parse(reviewSince) > Date.parse(report.generatedAt)) throw new Error("Recovery cutoff cannot follow the source report");
+    report.reviewWindowStart = new Date(reviewSince).toISOString();
+    await mkdir(dirname(outputPath), { recursive: true });
+    await writeFile(outputPath, `${JSON.stringify(report, null, 2)}\n`);
+    console.log(JSON.stringify({ mode, output: outputPath, sourceGeneratedAt: report.generatedAt, reviewWindowStart: report.reviewWindowStart, freshScan: false }));
+    return;
+  }
   const dbPath = arg("db") ?? defaultDbPath;
   const trigger = arg("slot") ?? (mode === "fixture" ? "fixture" : "event-shadow");
   const outputName = arg("output") ?? "latest-run.json";
@@ -293,6 +316,7 @@ async function run() {
   initializeShadowDatabase(dbPath, migration, sourceRegistry);
   const results = mode === "fixture" ? await loadFixtureResults() : await loadLiveResults(dbPath);
   const report = await runShadowPipeline(results, sourceRegistry, { strategyVersion: arg("strategy") ?? undefined });
+  if (reviewSince !== null) report.reviewWindowStart = new Date(reviewSince).toISOString();
   persistShadowReport(report, results, sourceRegistry, dbPath, migration, trigger);
   await mkdir(artifactDir, { recursive: true });
   const projectRoot = fileURLToPath(new URL("../", import.meta.url));

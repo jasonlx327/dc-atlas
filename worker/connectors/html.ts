@@ -50,7 +50,7 @@ function dateNear(html: string, start: number, end: number): string | null {
   return Number.isFinite(parsed) ? new Date(parsed).toISOString() : null;
 }
 
-function listObservations(source: SourceDefinition, html: string, fetchedAt: string): ObservationEnvelope[] {
+export function listObservations(source: SourceDefinition, html: string, fetchedAt: string): ObservationEnvelope[] {
   const observations: ObservationEnvelope[] = [];
   const seen = new Set<string>();
   const anchors = html.matchAll(/<a\b[^>]*href=["']([^"'#]+)["'][^>]*>([\s\S]*?)<\/a>/gi);
@@ -64,6 +64,16 @@ function listObservations(source: SourceDefinition, html: string, fetchedAt: str
       continue;
     }
     if (!/^https?:/i.test(url) || seen.has(url)) continue;
+    if (source.endpoint.parserKey === "issuer-article-list") {
+      const parsed = new URL(url);
+      if (parsed.origin !== new URL(source.endpoint.url).origin) continue;
+      const articlePath = source.id === "google-cloud"
+        ? /^\/blog\/products\/[^/]+\/[^/]+\/?$/
+        : source.id === "intel-newsroom"
+          ? /^\/content\/www\/us\/en\/newsroom\/(?:news|opinion)\/.+\.html$/
+          : null;
+      if (!articlePath?.test(parsed.pathname) || /^(?:See the details|Read the story)$/i.test(title)) continue;
+    }
     seen.add(url);
     const start = match.index ?? 0;
     const end = start + match[0].length;
@@ -101,7 +111,7 @@ export async function fetchHtmlMetadata(source: SourceDefinition, options: Conne
     if (response.status === 401 || response.status === 403 || response.status === 429) return { status: "blocked", sourceId: source.id, endpointId: source.endpoint.id, fetchedAt, httpStatus: response.status, responseMs, ...headers, observations: [], error: `HTTP ${response.status}` };
     if (!response.ok) return { status: "failed", sourceId: source.id, endpointId: source.endpoint.id, fetchedAt, httpStatus: response.status, responseMs, ...headers, observations: [], error: `HTTP ${response.status}` };
     const html = await readTextLimited(response);
-    const observations = source.endpoint.parserKey === "official-list-html"
+    const observations = ["official-list-html", "issuer-article-list"].includes(source.endpoint.parserKey)
       ? listObservations(source, html, fetchedAt)
       : pageObservation(source, html, fetchedAt);
     return observations.length

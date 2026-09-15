@@ -217,6 +217,17 @@ assert.equal(packet.publicationReadyCount, 0, "candidate packets must never clai
 assert.deepEqual(packet.sourceSlots, ["event-night", "event-midday", "event-day"]);
 
 const limitedKv = new MemoryKv();
+const recoveryReport = report(new Date(scheduledTime).toISOString(), [old, verified]);
+recoveryReport.reviewWindowStart = old.lastUpdatedAt;
+assert.equal(dailySelectionCandidates([recoveryReport], scheduledTime).length, 2, "explicit recovery cutoff retains older backlog");
+assert.throws(() => dailySelectionCandidates([{ ...recoveryReport, reviewWindowStart: "invalid" }], scheduledTime), /Invalid reviewWindowStart/);
+const nextDayKv = new MemoryKv();
+nextDayKv.values.set("event-intelligence:model-selection:2026-08-12", JSON.stringify(day));
+nextDayKv.values.set("event-intelligence:run:event-night:2026-08-13", JSON.stringify(report("2026-08-13T09:30:00Z", [verified])));
+const nextDay = await runDailyModelSelection({ ...env, IDC_DAILY_SNAPSHOTS: nextDayKv } as unknown as Env, scheduledTime + 86_400_000, "event-night", { fetcher: mockFetch });
+assert.equal(nextDay.attemptedCount, 0);
+assert.equal(nextDay.items.length, 1, "previously scored candidates must not disappear across days");
+assert.equal(nextDay.items[0]?.eventId, verified.id);
 const limitedEvents = [
   event({ id: "limit-one", titleZh: "NVIDIA 发布新数据中心系统", lastUpdatedAt: updatedAt }),
   event({ id: "limit-two", titleZh: "AMD 公布新服务器平台", lastUpdatedAt: updatedAt, entities: ["AMD"] }),

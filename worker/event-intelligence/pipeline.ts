@@ -133,6 +133,8 @@ export type ShadowObservationAnalysis = {
 };
 
 export type ShadowRunReport = {
+  /** Explicit recovery cutoff; shared by brief, fallback and judgment validation. */
+  reviewWindowStart?: string;
   ingestionAudit?: Array<{ url: string; title: string; sourceId: string; publishedAt: string | null; contentHash: string; outcome: string; reasons: string[] }>;
   schemaVersion: "atlas-event-shadow.v1";
   generatedAt: string;

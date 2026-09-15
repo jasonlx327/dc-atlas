@@ -125,10 +125,14 @@ export function dailySelectionCandidates(
   const cutoff = scheduledTime - 48 * 60 * 60 * 1_000;
   const merged = new Map<string, EventRecord>();
   for (const report of reports) {
+    const reportCutoff = report.reviewWindowStart === undefined ? cutoff : Date.parse(report.reviewWindowStart);
+    if (!Number.isFinite(reportCutoff) || reportCutoff > scheduledTime) {
+      throw new Error("Invalid reviewWindowStart: must be a valid timestamp no later than the selection time");
+    }
     for (const event of report.events) {
       if (!isEditorialCandidate(event)) continue;
       const updatedAt = Date.parse(event.lastUpdatedAt);
-      if (!Number.isFinite(updatedAt) || updatedAt < cutoff || updatedAt > scheduledTime + 5 * 60 * 1_000) continue;
+      if (!Number.isFinite(updatedAt) || updatedAt < reportCutoff || updatedAt > scheduledTime + 5 * 60 * 1_000) continue;
       const prior = merged.get(event.id);
       if (!prior || Date.parse(prior.lastUpdatedAt) < updatedAt) merged.set(event.id, event);
     }
@@ -361,6 +365,8 @@ export async function runDailyModelSelection(
     }
     const prior = priorDayById.get(event.id);
     if (prior?.sourceLastUpdatedAt === event.lastUpdatedAt && prior.result.provider !== "deterministic-fallback") {
+      // Scoring yesterday is not publication or an editorial rejection.
+      unchangedSameDay.push(prior);
       alreadyScoredCount += 1;
       continue;
     }
