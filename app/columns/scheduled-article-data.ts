@@ -3,6 +3,7 @@ import { currentResearchRecords } from "./current-research-data";
 import { nextWeekResearchRecords } from "./next-week-research-data";
 import { nextCycleResearchRecords } from "./next-cycle-research-data";
 import { septemberWeekResearchRecords } from "./september-week-research-data";
+import { september15ResearchRecords } from "./september-15-research-data";
 
 export type ResearchMetric = {
   label: string;
@@ -59,6 +60,7 @@ export type ScheduledResearchRecord = {
 };
 
 export const scheduledResearchRecords: ScheduledResearchRecord[] = [
+  ...september15ResearchRecords,
   ...septemberWeekResearchRecords,
   ...currentResearchRecords,
   ...nextCycleResearchRecords.filter((record) => !currentResearchRecords.some((current) => current.slug === record.slug)),

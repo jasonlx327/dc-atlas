@@ -1,0 +1,135 @@
+{
+  "runId": "research-20260915-two-columns",
+  "scope": "research-only; not a full daily-update closure",
+  "cutoff": "2026-09-15T16:40:00+08:00",
+  "ranking": "editorial priority based on timeliness, independent coverage and infrastructure relevance; not measured traffic",
+  "sources": {
+    "pacing": [
+      {
+        "url": "https://darioamodei.com/post/we-must-pace-the-frontier",
+        "zh": "Dario Amodei｜We Must Pace the Frontier｜2026 年 9 月，页面仅标注月份",
+        "en": "Dario Amodei, We Must Pace the Frontier, September 2026 (month precision)",
+        "level": "primary"
+      },
+      {
+        "url": "https://truthsocial.com/@realDonaldTrump/posts/117269745153543631",
+        "zh": "Donald Trump｜Truth Social 原帖｜2026-09-14，已读取正文",
+        "en": "Donald Trump, original Truth Social post, September 14, 2026; body verified",
+        "level": "primary"
+      },
+      {
+        "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+        "zh": "METR｜OpenAI / Hugging Face 事件独立调查｜2026-08-26，摘要与调查边界",
+        "en": "METR, independent OpenAI / Hugging Face incident investigation, August 26, 2026; findings and scope",
+        "level": "primary"
+      },
+      {
+        "url": "https://www.whitehouse.gov/releases/2025/07/white-house-unveils-americas-ai-action-plan/",
+        "zh": "白宫｜America’s AI Action Plan 发布说明｜2025-07-23，政策背景",
+        "en": "White House, America’s AI Action Plan announcement, July 23, 2025; policy background",
+        "level": "primary"
+      },
+      {
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+        "zh": "NIST｜AI Risk Management Framework｜2023 年框架，2026-09-15 核查入口",
+        "en": "NIST, AI Risk Management Framework, 2023 framework; checked September 15, 2026",
+        "level": "primary"
+      },
+      {
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/google-ai-commitment-to-finland/",
+        "zh": "Google｜芬兰基础设施、能源与社区投资计划｜2026-09-09",
+        "en": "Google, Finland infrastructure, energy and community investment plan, September 9, 2026",
+        "level": "primary"
+      }
+    ],
+    "oracle": [
+      {
+        "url": "https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10/",
+        "zh": "Oracle｜FY27 Q1 财报发布稿｜2026-09-10",
+        "en": "Oracle FY27 Q1 earnings release, September 10, 2026",
+        "level": "primary"
+      },
+      {
+        "url": "https://s23.q4cdn.com/440135859/files/content_files/Q127_Form8K_Exhibit99-1_Earnings_Release_Tables_Final_V2.pdf",
+        "zh": "Oracle｜FY27 Q1 财务附表｜2026-09-10，第 4–5 页现金流与净现金支出",
+        "en": "Oracle FY27 Q1 financial tables, September 10, 2026, pp. 4–5: cash flow and net outlay",
+        "level": "primary"
+      },
+      {
+        "url": "https://s23.q4cdn.com/440135859/files/content_files/Q1-FY27-Oracle-Earnings-Slides.pdf",
+        "zh": "Oracle｜FY27 Q1 官方演示｜2026-09-10，第 8、10 页及脚注",
+        "en": "Oracle FY27 Q1 earnings slides, September 10, 2026, pp. 8 and 10 with footnotes",
+        "level": "primary"
+      },
+      {
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001341439/de3b80d7-00af-47b0-8fb5-9bbcc35d35e7.html",
+        "zh": "Oracle｜FY27 Q1 Form 10-Q｜2026-09-11，IR 官方申报镜像；RPO 与客户预付款注释",
+        "en": "Oracle FY27 Q1 Form 10-Q, September 11, 2026; official IR filing mirror, RPO and customer-prepayment notes",
+        "level": "primary"
+      },
+      {
+        "url": "https://www.fool.com/earnings/call-transcripts/2026/09/11/oracle-orcl-q1-2027-earnings-call-transcript/",
+        "zh": "The Motley Fool｜2026-09-10 Oracle 电话会文字记录，9 月 11 日发布；二手转录，非官方逐字稿",
+        "en": "The Motley Fool transcript of Oracle’s September 10 call, published September 11; secondary transcription, not an official transcript",
+        "level": "reported"
+      },
+      {
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/google-ai-commitment-to-finland/",
+        "zh": "Google｜芬兰基础设施与能源投资计划｜2026-09-09，独立机制对照",
+        "en": "Google Finland infrastructure and energy investment plan, September 9, 2026; independent mechanism comparison",
+        "level": "primary"
+      }
+    ]
+  },
+  "claims": [
+    {
+      "claim": "Amodei proposes pacing frontier progress, distinguished from stopping training",
+      "locator": "Author essay, September 2026 (month precision)",
+      "status": "primary-read"
+    },
+    {
+      "claim": "Trump opposes Amodei proposal and emphasizes presidential/existing regulatory authority",
+      "locator": "Truth Social 117269745153543631, original post body read in Chrome",
+      "status": "primary-read; opinion, not enacted policy"
+    },
+    {
+      "claim": "METR incident evidence has limited investigation scope",
+      "locator": "METR August 26 report summary and scope; no exploit details republished",
+      "status": "primary-read"
+    },
+    {
+      "claim": "Oracle company-wide RPO $664B; IaaS $7.4B; additional data-center capacity 850MW",
+      "locator": "September 10 official FY27 Q1 release; quarter ended August 31",
+      "status": "primary-read; RPO not all AI; MW not assumed IT load"
+    },
+    {
+      "claim": "OCF 23.103B minus capex 28.499B equals FCF -5.396B USD",
+      "locator": "Official earnings tables pages 4-5; original units USD million",
+      "status": "reconciled"
+    },
+    {
+      "claim": "Net cash outlay 17.966B = capex 28.499B + financing repayment .830B - qualifying customer advances 11.363B",
+      "locator": "Official earnings tables page 5 reconciliation and footnotes",
+      "status": "reconciled; do not subtract net outlay from OCF as FCF"
+    },
+    {
+      "claim": "RPO recognition expected 13% next 12 months and 37% months 13-36",
+      "locator": "September 11 10-Q, Remaining Performance Obligations from Contracts with Customers",
+      "status": "official IR linked HTML retrieved via curl; company estimate"
+    }
+  ],
+  "callEvidence": {
+    "event": "Oracle FY27 Q1, September 10, 2026 5PM ET",
+    "officialConfirmation": "Oracle earnings release",
+    "transcript": "https://www.fool.com/earnings/call-transcripts/2026/09/11/oracle-orcl-q1-2027-earnings-call-transcript/",
+    "method": "secondary transcription; not an official replay listened to",
+    "rights": "analysis-only",
+    "qa": [
+      "Clay Magouyrk response to Mark Moerdler: no incremental Oracle cash is not no capex",
+      "Hilary Maxson response to Brad Zelnick: no fixed positive FCF date"
+    ],
+    "conflicts": "GPU quantity in secondary transcript conflicts with primary release; omitted from article",
+    "financialFigures": "primary documents only"
+  },
+  "otherThemes": "See 2026-09-15-research-top-five.md. Three research briefs, not full published articles."
+}

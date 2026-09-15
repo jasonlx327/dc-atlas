@@ -1,6 +1,8 @@
 import { septemberWeekArticles } from "./september-week-articles";
+import { september15Articles } from "./september-15-articles";
 
 export const columnArticles = [
+  ...september15Articles,
   ...septemberWeekArticles,
   {
     href: "/columns/minimax-zhipu-h1-token-economics", hrefEn: "/en/columns/minimax-zhipu-h1-token-economics", date: "2026-09-01", publishAt: "2026-09-01T08:45:00+08:00", series: "MODEL ECONOMICS · 32", title: "MiniMax 与智谱中报：Token 规模开始变成收入，算力账还没闭合", titleEn: "MiniMax and Z.ai H1: Token Scale Is Becoming Revenue, but the Compute Bill Is Still Open", summary: "两家公司都把增长核心切到 API 与开放平台。智谱披露十万卡国产推理和 API 毛利率转正，MiniMax 披露全球企业收入扩张；经调整亏损与融资需求仍然显著。", summaryEn: "Both companies shifted growth toward APIs and open platforms. Z.ai disclosed 100,000-plus domestic-chip inference and positive API margin; MiniMax showed global enterprise expansion. Adjusted losses and funding needs remain substantial.", image: "/column-minimax-zhipu-h1-token-economics-voxel-palette-v3.jpg",
