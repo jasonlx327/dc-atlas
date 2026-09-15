@@ -100,7 +100,6 @@ export function buildDailySectionClosure(
     const published = decisions.filter((decision) => decision.action === "publish");
     const held = decisions.filter((decision) => decision.action === "hold");
     const blockingHeld = held.filter((decision) => decision.holdClass === "blocking");
-    const research = decisions.filter((decision) => decision.action === "watch" && decision.route === "research-queue");
     const candidateEventIds = decisions.map((decision) => decision.eventId);
     if (published.length) {
       return {
@@ -128,20 +127,18 @@ export function buildDailySectionClosure(
         reason: "存在相关候选，但来源、双语、结构化字段或公开适配器尚未通过确定性发布门槛。",
       };
     }
-    if (sectionCoverage.status === "blocked") return blockedOutcome(section, sectionCoverage, sectionCoverage.reason);
+    // Connector health is transport evidence, never a semantic disclosure review.
+    // A source-reviewed manifest owns no-change closure; this candidate pipeline
+    // must retain unresolved sections even when every feed returns successfully.
     return {
       section,
-      status: "verified-no-change",
-      publicationMode: research.length || held.length ? "internal-only" : "no-change",
+      status: "blocked",
+      publicationMode: "needs-review",
       candidateEventIds,
       eligibleEventIds: [],
       blockedEventIds: [],
       sourceCoverage: sectionCoverage,
-      reason: research.length
-        ? `已完成板块信源检查；${research.length} 个机制性选题进入研究队列，本次没有达到专栏发布条件的稿件。`
-        : held.length
-          ? `已完成板块信源检查；${held.length} 个低优先级或待追踪候选保留在观察队列，不构成发布阻断。`
-        : "已完成板块必查信源覆盖，未发现满足新增或实质变化条件的公开条目。",
+      reason: "候选和抓取状态不能证明无变化；需在日更 manifest 中完成有界原文审阅并记录来源、窗口与结论。",
     };
   });
 

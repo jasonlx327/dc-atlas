@@ -37,11 +37,17 @@ function scoresOf(event: ShadowRunReport["events"][number]): ModelDimensionScore
 }
 
 async function run() {
-  const input = resolve(arg("input") ?? "artifacts/event-intelligence/2026-08-25-1630-event.json");
-  const output = resolve(arg("output") ?? "artifacts/event-intelligence/2026-08-25-1630-editorial-fallback.json");
+  if (process.argv.includes("--help")) {
+    console.log("Usage: build-deterministic-editorial-fallback.ts --input=PATH --output=PATH (scoring only; source-reviewed copy still required)");
+    return;
+  }
+  if (!arg("input") || !arg("output")) throw new Error("Explicit --input=PATH and --output=PATH are required; no historical defaults.");
+  const input = resolve(arg("input")!);
+  const output = resolve(arg("output")!);
+  if (input === output) throw new Error("Input and output must differ.");
   const sourceReport = JSON.parse(await readFile(input, "utf8")) as ShadowRunReport;
   const generatedAt = new Date().toISOString();
-  const candidates = dailySelectionCandidates([sourceReport], Date.parse(generatedAt));
+  const candidates = dailySelectionCandidates([sourceReport], Date.parse(sourceReport.generatedAt));
   const verdicts = candidates.map((event) => {
     const scores = scoresOf(event);
     const strongestTier = (["T0", "T1", "T2", "T3", "T4", "T5", "D"] as const)

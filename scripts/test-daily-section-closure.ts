@@ -95,9 +95,10 @@ assert.equal(report.day, "2026-08-13");
 assert.equal(report.scheduledForBeijing, "06:30");
 assert.equal(report.sections.length, 13);
 assert.equal(report.sections.find((section) => section.section === "capacity")?.status, "updated");
-assert.equal(report.sections.find((section) => section.section === "columns")?.status, "verified-no-change");
-assert.equal(report.sections.find((section) => section.section === "cooling")?.status, "verified-no-change");
-assert.equal(report.retryRequired, false);
+assert.equal(report.sections.find((section) => section.section === "columns")?.status, "blocked");
+assert.equal(report.sections.find((section) => section.section === "cooling")?.status, "blocked");
+assert.equal(report.retryRequired, true);
+assert.equal(report.counts.verifiedNoChange, 0, "successful transport does not attest original-source reading");
 
 const mediaOnlyRumor: DailyEditorialCandidatePacket = {
   ...packet,
@@ -136,11 +137,11 @@ const mediaOnlyRumor: DailyEditorialCandidatePacket = {
 };
 const rumorEditor = buildAtlasEditorDecision(mediaOnlyRumor, scheduledTime);
 const rumorReport = buildDailySectionClosure(mediaOnlyRumor, scheduledTime, sources, rumorEditor);
-assert.equal(rumorReport.status, "completed");
+assert.equal(rumorReport.status, "partial");
 assert.equal(rumorReport.sections.find((section) => section.section === "rumors")?.status, "updated");
-assert.equal(rumorReport.sections.find((section) => section.section === "listed-companies")?.status, "verified-no-change");
-assert.equal(rumorReport.sections.find((section) => section.section === "capacity")?.status, "verified-no-change");
-assert.equal(rumorReport.retryRequired, false);
+assert.equal(rumorReport.sections.find((section) => section.section === "listed-companies")?.status, "blocked");
+assert.equal(rumorReport.sections.find((section) => section.section === "capacity")?.status, "blocked");
+assert.equal(rumorReport.retryRequired, true);
 
 const stale = buildDailySectionClosure({ ...packet, day: "2026-08-12" }, scheduledTime, sources, editor);
 assert.equal(stale.status, "blocked");
@@ -152,7 +153,7 @@ const incompleteSources: ShadowRunReport = {
 };
 const incompleteCoverage = buildDailySectionClosure(packet, scheduledTime, incompleteSources, editor);
 assert.equal(incompleteCoverage.sections.find((section) => section.section === "capacity")?.status, "updated", "a verified publishable item must not be blocked by unrelated source gaps");
-assert.equal(incompleteCoverage.sections.find((section) => section.section === "cooling")?.status, "verified-no-change");
+assert.equal(incompleteCoverage.sections.find((section) => section.section === "cooling")?.status, "blocked");
 
 const ordinaryHoldPacket: DailyEditorialCandidatePacket = {
   ...packet,
@@ -176,8 +177,8 @@ const ordinaryHoldPacket: DailyEditorialCandidatePacket = {
 const ordinaryHoldEditor = buildAtlasEditorDecision(ordinaryHoldPacket, scheduledTime);
 const ordinaryHoldClosure = buildDailySectionClosure(ordinaryHoldPacket, scheduledTime, sources, ordinaryHoldEditor);
 assert.equal(ordinaryHoldEditor.summary.blockingHold, 0);
-assert.equal(ordinaryHoldClosure.sections.find((section) => section.section === "capacity")?.status, "verified-no-change");
-assert.equal(ordinaryHoldClosure.retryRequired, false);
+assert.equal(ordinaryHoldClosure.sections.find((section) => section.section === "capacity")?.status, "blocked");
+assert.equal(ordinaryHoldClosure.retryRequired, true);
 
 const blockingCopyPacket: DailyEditorialCandidatePacket = {
   ...packet,
@@ -192,9 +193,9 @@ const blockingCopyClosure = buildDailySectionClosure(blockingCopyPacket, schedul
 assert.equal(blockingCopyEditor.decisions[0]?.action, "hold");
 assert.equal(blockingCopyEditor.decisions[0]?.holdClass, "blocking");
 assert.equal(blockingCopyEditor.status, "partial");
-assert.equal(blockingCopyClosure.status, "partial", "an item-level copy gap must not be reported as a global blocked run");
+assert.equal(blockingCopyClosure.status, "blocked", "all sections require review when no source-reviewed item is ready");
 assert.equal(blockingCopyClosure.sections.find((section) => section.section === "capacity")?.status, "blocked");
-assert.equal(blockingCopyClosure.counts.blocked, 1);
+assert.equal(blockingCopyClosure.counts.blocked, 13);
 assert.equal(blockingCopyClosure.retryRequired, true);
 
 console.log(JSON.stringify({ message: "Daily section closure tests passed", sections: report.sections.length, counts: report.counts }));

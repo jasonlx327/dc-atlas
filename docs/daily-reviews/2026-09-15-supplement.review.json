@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "atlas-publication-review.v1",
+  "day": "2026-09-15",
+  "sourceCoverage": [
+    {
+      "kind": "issuer-ir",
+      "result": "reviewed",
+      "urls": [
+        "https://medyamerkezi.vodafone.com.tr/basin-bultenleri/vodafone-damac-digital-is-birligiyle-izmir-veri-merkezinin-ilk-fazini-yaklasik-100-milyon-dolarlik-yatirimla-hizmete-acti"
+      ],
+      "note": "Vodafone September 4 original: first phase open, initial 4MW, planned 20MW."
+    },
+    {
+      "kind": "exchange-regulator",
+      "result": "not-determined",
+      "urls": [],
+      "note": "No comprehensive review of this source class in this targeted supplement; remains open."
+    },
+    {
+      "kind": "earnings-call",
+      "result": "not-determined",
+      "urls": [],
+      "note": "No comprehensive review of this source class in this targeted supplement; remains open."
+    },
+    {
+      "kind": "permit-grid",
+      "result": "not-determined",
+      "urls": [],
+      "note": "No comprehensive review of this source class in this targeted supplement; remains open."
+    },
+    {
+      "kind": "government-policy",
+      "result": "not-determined",
+      "urls": [],
+      "note": "No comprehensive review of this source class in this targeted supplement; remains open."
+    },
+    {
+      "kind": "technical-standard",
+      "result": "not-determined",
+      "urls": [],
+      "note": "No comprehensive review of this source class in this targeted supplement; remains open."
+    },
+    {
+      "kind": "partner-customer",
+      "result": "not-determined",
+      "urls": [],
+      "note": "No comprehensive review of this source class in this targeted supplement; remains open."
+    },
+    {
+      "kind": "original-media",
+      "result": "reviewed",
+      "urls": [
+        "https://www.datacenterdynamics.com/en/news/damac-and-vodafone-launch-turkish-data-center/"
+      ],
+      "note": "DCD September 14 report read; original announcement predates reporting."
+    }
+  ],
+  "events": [
+    {
+      "eventId": "evt-6219d788c73ea97cc2a9",
+      "clusterKey": "vodafone-damac|first-phase-open|izmir|2026-09-04",
+      "change": {
+        "type": "new-event",
+        "description": "Backfill of original September 4 first-phase opening, not a new September 15 announcement.",
+        "priorPublicIds": []
+      },
+      "impact": {
+        "level": "material",
+        "dimension": "capacity",
+        "affected": "Enterprise colocation and cloud customers in Izmir",
+        "consequence": "First-phase opening converts planned regional capacity into an available initial 4MW facility; 20MW expansion remains prospective.",
+        "evidenceUrls": [
+          "https://medyamerkezi.vodafone.com.tr/basin-bultenleri/vodafone-damac-digital-is-birligiyle-izmir-veri-merkezinin-ilk-fazini-yaklasik-100-milyon-dolarlik-yatirimla-hizmete-acti"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://medyamerkezi.vodafone.com.tr/basin-bultenleri/vodafone-damac-digital-is-birligiyle-izmir-veri-merkezinin-ilk-fazini-yaklasik-100-milyon-dolarlik-yatirimla-hizmete-acti",
+          "kind": "issuer-ir",
+          "independenceGroup": "vodafone",
+          "readAt": "2026-09-15T07:46:27.896Z",
+          "finding": "Original September 4 release: first phase opened, initial 4MW; 20MW is an expansion target. No capacity-type definition supplied."
+        }
+      ],
+      "primaryAttempts": [
+        {
+          "url": "https://medyamerkezi.vodafone.com.tr/basin-bultenleri/vodafone-damac-digital-is-birligiyle-izmir-veri-merkezinin-ilk-fazini-yaklasik-100-milyon-dolarlik-yatirimla-hizmete-acti",
+          "result": "reviewed",
+          "note": "Read original issuer release; confirmed disclosure date and operating/planned distinction."
+        }
+      ]
+    }
+  ]
+}

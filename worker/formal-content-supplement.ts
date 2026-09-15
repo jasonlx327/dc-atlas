@@ -30,6 +30,24 @@ export type FormalNewsSupplement = {
 };
 
 export const FORMAL_PULSE_SUPPLEMENT: FormalNewsSupplement[] = [IMAGE25_NEWS, ...RECOVERY_NEWS, {
+  id: "vodafone-damac-izmir-first-phase-20260904",
+  eventKey: "vodafone-damac|first-phase-open|izmir|2026-09-04",
+  impactLevel: "material",
+  title: "Vodafone 与 DAMAC 在伊兹密尔启用 4MW 数据中心首期",
+  titleEn: "Vodafone and DAMAC open first 4MW phase of Izmir data center",
+  summary: "Vodafone Türkiye 于 9 月 4 日宣布，与 DAMAC Digital 合作的伊兹密尔数据中心首期已启用，初始容量为 4MW。未来拟扩至 20MW；扩建目标不代表已投运容量。",
+  summaryEn: "Vodafone Türkiye announced on September 4 that the first phase of its Izmir data center with DAMAC Digital had opened with an initial capacity of 4MW. Expansion to 20MW is planned; that target is not capacity already in service.",
+  publishedAt: "2026-09-04",
+  category: "idc-capacity", score: null,
+  permalink: "https://medyamerkezi.vodafone.com.tr/basin-bultenleri/vodafone-damac-digital-is-birligiyle-izmir-veri-merkezinin-ilk-fazini-yaklasik-100-milyon-dolarlik-yatirimla-hizmete-acti",
+  sourceUrl: "https://medyamerkezi.vodafone.com.tr/basin-bultenleri/vodafone-damac-digital-is-birligiyle-izmir-veri-merkezinin-ilk-fazini-yaklasik-100-milyon-dolarlik-yatirimla-hizmete-acti",
+  sourceName: "Vodafone Türkiye", signal: "capacity", curator: "官方来源", region: "全球",
+  milestone: "首期启用",
+  scale: "4MW initial capacity; 20MW planned expansion",
+  whyItMatters: "首期启用使伊兹密尔企业客户获得新增托管与云基础设施；4MW 为初始规模，20MW 仍取决于后续扩建，原文未明确容量类型。",
+  whyItMattersEn: "The opening adds colocation and cloud infrastructure for enterprise customers in Izmir. The initial scale is 4MW; 20MW depends on future expansion, and the release does not define the capacity type.",
+  verifiedAt: "2026-09-15",
+}, {
   id: "google-finland-ai-infrastructure-clean-energy-2026",
   eventKey: "google|finland-ai-infrastructure-and-clean-energy-investment|finland|2026-09",
   impactLevel: "high",

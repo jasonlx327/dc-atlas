@@ -39,6 +39,7 @@ export type CodexEditorialVerdict = {
   };
   rationale: string;
   reasonCodes: string[];
+  editorialDisposition?: { action: "hold" | "watch" | "reject"; reason: string };
   publicCopy?: {
     titleZh: string;
     titleEn: string;
@@ -58,7 +59,8 @@ export type CodexEditorialJudgment = {
   errors: [];
 };
 
-export type CodexEditorialJudgmentModel = "gpt-5.6-luna" | "deterministic-atlas-fallback-v1";
+export const CODEX_EDITORIAL_MODELS = ["gpt-5.6-luna", "gpt-5.6-terra", "gpt-6-astra", "deterministic-atlas-fallback-v1"] as const;
+export type CodexEditorialJudgmentModel = typeof CODEX_EDITORIAL_MODELS[number];
 
 export type CodexEditorialPackets = {
   selection: DailyMaterialSelectionReport;
@@ -104,8 +106,8 @@ export function parseCodexEditorialJudgment(value: unknown): CodexEditorialJudgm
   if (!isRecord(value) || value.schemaVersion !== "atlas-codex-editorial-judgment.v1") {
     throw new Error("Codex editorial judgment schema 无效。");
   }
-  if (value.model !== "gpt-5.6-luna" && value.model !== "deterministic-atlas-fallback-v1") {
-    throw new Error("Codex editorial judgment 必须由 gpt-5.6-luna 或 deterministic-atlas-fallback-v1 生成。");
+  if (!CODEX_EDITORIAL_MODELS.includes(value.model as CodexEditorialJudgmentModel)) {
+    throw new Error(`Codex editorial judgment model 无效：${String(value.model)}`);
   }
   if (value.status !== "completed") throw new Error("Codex editorial judgment 未完成，拒绝写入。");
   if (!Array.isArray(value.errors) || value.errors.length !== 0) throw new Error("Codex editorial judgment 含错误，拒绝写入。");
@@ -113,10 +115,20 @@ export function parseCodexEditorialJudgment(value: unknown): CodexEditorialJudgm
   const verdicts = value.verdicts.map((raw) => {
     if (!isRecord(raw) || typeof raw.eventId !== "string" || !raw.eventId.trim()) throw new Error("Codex verdict eventId 无效。");
     const parsed = parseModelScorePayload(raw);
+    let editorialDisposition: CodexEditorialVerdict["editorialDisposition"];
+    if (raw.editorialDisposition !== undefined) {
+      const disposition = raw.editorialDisposition;
+      if (!isRecord(disposition) || !["hold", "watch", "reject"].includes(String(disposition.action))
+        || typeof disposition.reason !== "string" || !disposition.reason.trim()) {
+        throw new Error(`Codex verdict ${raw.eventId}: invalid non-public editorial disposition`);
+      }
+      editorialDisposition = { action: disposition.action as "hold" | "watch" | "reject", reason: disposition.reason.trim() };
+    }
     return {
       eventId: raw.eventId.trim(),
       band: parseBand(raw.band),
       ...parsed,
+      ...(editorialDisposition ? { editorialDisposition } : {}),
     } satisfies CodexEditorialVerdict;
   });
   const generatedAt = typeof value.generatedAt === "string" ? value.generatedAt : "";
@@ -130,7 +142,7 @@ export function parseCodexEditorialJudgment(value: unknown): CodexEditorialJudgm
     day: value.day,
     generatedAt,
     sourceGeneratedAt,
-    model: value.model,
+    model: value.model as CodexEditorialJudgmentModel,
     status: "completed",
     verdicts,
     errors: [],
@@ -149,7 +161,7 @@ export function buildCodexEditorialPackets(
   const generatedTime = Date.parse(judgment.generatedAt);
   const generatedDay = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Shanghai" }).format(new Date(generatedTime));
   if (generatedDay !== judgment.day) throw new Error("Codex judgment generatedAt 与 day 不一致。");
-  const candidates = dailySelectionCandidates([sourceReport], generatedTime);
+  const candidates = dailySelectionCandidates([sourceReport], Date.parse(sourceReport.generatedAt));
   const candidateIds = new Set(candidates.map((event) => event.id));
   const verdictById = new Map<string, CodexEditorialVerdict>();
   for (const verdict of judgment.verdicts) {
@@ -162,6 +174,7 @@ export function buildCodexEditorialPackets(
 
   const copyGaps = candidates.flatMap((event) => {
     const verdict = verdictById.get(event.id)!;
+    if (verdict.editorialDisposition) return [];
     if (!requiresEditorialPublicCopy(event, verdict.band)) return [];
     if (!verdict.publicCopy) return [`${event.id}:missing-publicCopy`];
     const validation = validateBilingualPair({ ...verdict.publicCopy, entities: event.entities });
@@ -221,6 +234,28 @@ export function buildCodexEditorialPackets(
   };
   const candidatePacket = dailyCandidatePacket(selection);
   const editor = buildAtlasEditorDecision(candidatePacket, generatedTime);
+  for (const decision of editor.decisions) {
+    const disposition = verdictById.get(decision.eventId)?.editorialDisposition;
+    if (!disposition) continue;
+    decision.action = disposition.action;
+    decision.route = disposition.action === "watch" ? "research-queue" : "internal";
+    decision.publicCopy = null;
+    decision.publicClaims = [];
+    decision.holdClass = disposition.action === "hold" ? "blocking" : null;
+    decision.reasonCodes.push("explicit-non-public-disposition");
+    decision.internalNotes.push(disposition.reason);
+  }
+  editor.summary = {
+    publishFormal: editor.decisions.filter(d => d.action === "publish" && d.route === "formal-section").length,
+    publishRumor: editor.decisions.filter(d => d.action === "publish" && d.route === "rumor-watch").length,
+    research: editor.decisions.filter(d => d.action === "watch").length,
+    hold: editor.decisions.filter(d => d.action === "hold").length,
+    reject: editor.decisions.filter(d => d.action === "reject").length,
+    fallbackScored: editor.decisions.filter(d => d.fallbackScored).length,
+    adapterReady: editor.decisions.filter(d => d.action === "publish").length,
+    blockingHold: editor.decisions.filter(d => d.action === "hold" && d.holdClass === "blocking").length,
+  };
+  editor.status = editor.summary.blockingHold ? "partial" : "completed";
   const closure = buildDailySectionClosure(candidatePacket, generatedTime, sourceReport, editor);
   return { selection, candidates: candidatePacket, editor, closure };
 }

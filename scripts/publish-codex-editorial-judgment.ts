@@ -72,6 +72,10 @@ function sha256(value: string): string {
 }
 
 async function run() {
+  if (hasFlag("help")) {
+    console.log("Usage: publish-codex-editorial-judgment.ts [--source=PATH] [--judgment=PATH] [--remote] (default: local validation only)");
+    return;
+  }
   const sourcePath = resolve(arg("source") ?? "artifacts/event-intelligence/codex-event-night.json");
   const sourceKey = arg("source-key");
   const judgmentPath = resolve(arg("judgment") ?? "artifacts/event-intelligence/codex-editorial-judgment.json");

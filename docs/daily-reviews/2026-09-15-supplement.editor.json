@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "atlas-editor-decision.v1",
+  "day": "2026-09-15",
+  "generatedAt": "2026-09-15T07:50:00Z",
+  "cutoffAt": "2026-09-15T07:24:18.022Z",
+  "timezone": "Asia/Shanghai",
+  "status": "partial",
+  "sourcePacketGeneratedAt": "2026-09-15T07:24:18.022Z",
+  "decisions": [
+    {
+      "eventId": "evt-6219d788c73ea97cc2a9",
+      "action": "publish",
+      "route": "formal-section",
+      "section": "capacity",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially_confirmed",
+      "canonicalUrls": [
+        "https://medyamerkezi.vodafone.com.tr/basin-bultenleri/vodafone-damac-digital-is-birligiyle-izmir-veri-merkezinin-ilk-fazini-yaklasik-100-milyon-dolarlik-yatirimla-hizmete-acti"
+      ],
+      "reasonCodes": [
+        "primary-source-read",
+        "historical-backfill",
+        "material-capacity-delivery"
+      ],
+      "publicCopy": {
+        "titleZh": "Vodafone 与 DAMAC 在伊兹密尔启用 4MW 数据中心首期",
+        "titleEn": "Vodafone and DAMAC open first 4MW phase of Izmir data center",
+        "summaryZh": "Vodafone Türkiye 于 9 月 4 日宣布，与 DAMAC Digital 合作的伊兹密尔数据中心首期已启用，初始容量为 4MW。未来拟扩至 20MW；扩建目标不代表已投运容量。",
+        "summaryEn": "Vodafone Türkiye announced on September 4 that the first phase of its Izmir data center with DAMAC Digital had opened with an initial capacity of 4MW. Expansion to 20MW is planned; that target is not capacity already in service."
+      },
+      "publicClaims": [
+        {
+          "claim": "The first phase opened with initial capacity of 4MW; 20MW remains planned.",
+          "sourceRefs": [
+            "https://medyamerkezi.vodafone.com.tr/basin-bultenleri/vodafone-damac-digital-is-birligiyle-izmir-veri-merkezinin-ilk-fazini-yaklasik-100-milyon-dolarlik-yatirimla-hizmete-acti"
+          ],
+          "state": "source-stated",
+          "qualifier": "4MW initial; 20MW planned"
+        }
+      ],
+      "internalNotes": [
+        "Backfill of September 4 disclosure discovered through September 14 reporting. Not a September 15 event."
+      ],
+      "fallbackScored": false,
+      "holdClass": null,
+      "entities": [
+        "Vodafone",
+        "DAMAC",
+        "Izmir"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-09-04",
+      "sourceId": null
+    }
+  ],
+  "summary": {
+    "publishFormal": 1,
+    "publishRumor": 0,
+    "research": 0,
+    "hold": 0,
+    "reject": 0,
+    "fallbackScored": 0,
+    "adapterReady": 1,
+    "blockingHold": 0
+  }
+}

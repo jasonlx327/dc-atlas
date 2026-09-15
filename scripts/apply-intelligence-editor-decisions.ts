@@ -86,7 +86,7 @@ async function run() {
   const input = resolve(arg("input") ?? "artifacts/event-intelligence/editor-decision.json");
   const output = resolve(arg("output") ?? "app/data/public-intelligence.json");
   const packet = JSON.parse(await readFile(input, "utf8")) as AtlasEditorDecisionPacket;
-  if (packet.schemaVersion !== "atlas-editor-decision.v1" || packet.status !== "completed") {
+  if (packet.schemaVersion !== "atlas-editor-decision.v1" || !["completed", "partial"].includes(packet.status)) {
     throw new Error("Atlas Editor 决策包缺失、无效或未完成，拒绝写入公开情报数据。");
   }
   const reviewPath = arg("review");

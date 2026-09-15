@@ -119,6 +119,20 @@ const verdict = {
 };
 
 const packets = buildCodexEditorialPackets(report, verdict);
+for (const action of ["hold", "watch", "reject"] as const) {
+  const held = buildCodexEditorialPackets(report, {
+    ...verdict,
+    verdicts: [{ ...verdict.verdicts[0], publicCopy: undefined,
+      editorialDisposition: { action, reason: "Original-source review pending or event outside publication scope." } }],
+  });
+  assert.equal(held.editor.decisions[0].action, action);
+  assert.equal(held.editor.decisions[0].publicCopy, null);
+  assert.equal(held.editor.summary.adapterReady, 0);
+  assert.equal(held.editor.decisions[0].canonicalUrls.length > 0, true);
+}
+assert.throws(() => buildCodexEditorialPackets(report, {
+  ...verdict, verdicts: [{ ...verdict.verdicts[0], editorialDisposition: { action: "publish", reason: "bypass" } }],
+}), /invalid non-public/);
 assert.equal(packets.selection.model, "gpt-5.6-luna");
 assert.equal(packets.selection.fallbackCount, 0);
 assert.equal(packets.candidates.selectedCount, 1);
@@ -126,7 +140,15 @@ assert.equal(packets.editor.summary.publishFormal, 1);
 assert.equal(packets.editor.decisions[0]?.fallbackScored, false);
 assert.equal(packets.closure.sections.length, 13);
 
-assert.throws(() => buildCodexEditorialPackets(report, { ...verdict, model: "deepseek-v4-flash" }), /gpt-5.6-luna/);
+for (const model of ["gpt-5.6-terra", "gpt-6-astra"]) {
+  const result = buildCodexEditorialPackets(report, { ...verdict, model });
+  assert.equal(result.selection.model, model);
+  assert.equal(result.selection.fallbackCount, 0);
+  assert.throws(() => buildCodexEditorialPackets(report, {
+    ...verdict, model, verdicts: [{ ...verdict.verdicts[0], publicCopy: undefined }],
+  }), /未完成.*missing-publicCopy/);
+}
+assert.throws(() => buildCodexEditorialPackets(report, { ...verdict, model: "deepseek-v4-flash" }), /model 无效/);
 assert.throws(() => buildCodexEditorialPackets(report, { ...verdict, verdicts: [] }), /缺少 1 个候选/);
 assert.throws(() => buildCodexEditorialPackets(report, {
   ...verdict,
