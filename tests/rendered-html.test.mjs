@@ -167,6 +167,8 @@ test("live API preserves the complete versioned intelligence archive during hydr
     assert.ok(item?.titleEn && item?.summaryEn && item?.sourceUrl, `${section} must retain reviewed content when discovery services fail: ${id}`);
   }
   assert.ok(payload.coolingProgress.some((item) => item.id === "airtrunk-emergence-cryogenic-mou-20260915"));
+  assert.equal(payload.idcPulse.find((item) => item.id === "nvidia-google-emerald-aema-20260916").signal, "power");
+  assert.equal(payload.idcPulse.find((item) => item.id === "airtrunk-emergence-cryogenic-mou-20260915").signal, "cooling");
   for (const id of formalIds) {
     const item = formal.find((item) => item.id === id);
     assert.ok(item?.titleEn && item?.summaryEn && item?.sourceUrl, `bilingual supplemental fact missing: ${id}`);

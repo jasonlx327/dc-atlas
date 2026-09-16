@@ -16,7 +16,7 @@ export type FormalNewsSupplement = {
   permalink: string;
   sourceUrl: string;
   sourceName: string;
-  signal: "capacity" | "hardware" | "network" | "policy";
+  signal: "capacity" | "hardware" | "network" | "policy" | "power" | "cooling";
   curator: "官方来源";
   region: "中国" | "美国" | "全球";
   milestone: string;
