@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "atlas-publication-review.v1",
+  "day": "2026-09-16",
+  "sourceCoverage": [
+    {"kind": "issuer-ir", "result": "not-applicable", "urls": [], "note": "No company disclosure is used for either grid-policy item."},
+    {"kind": "exchange-regulator", "result": "reviewed", "urls": ["https://www.ercot.com/about/legal/data-center-impact-rfi", "https://insidelines.pjm.com/reliability-standards-to-manage-large-load-disconnection-events-proposed-by-pjm/"], "note": "ERCOT and PJM original pages were read; both describe regulator or grid-operator actions, not individual project approval."},
+    {"kind": "earnings-call", "result": "not-applicable", "urls": [], "note": "No earnings release or call supports the selected policy items."},
+    {"kind": "permit-grid", "result": "reviewed", "urls": ["https://www.ercot.com/about/legal/data-center-impact-rfi", "https://insidelines.pjm.com/reliability-standards-to-manage-large-load-disconnection-events-proposed-by-pjm/"], "note": "The pages were read for interconnection and operating constraints. Neither grants a permit, a MW allocation, energization or commercial operation."},
+    {"kind": "government-policy", "result": "reviewed", "urls": ["https://www.ercot.com/about/legal/data-center-impact-rfi", "https://insidelines.pjm.com/reliability-standards-to-manage-large-load-disconnection-events-proposed-by-pjm/"], "note": "ERCOT identifies the Texas governor and PUCT process; PJM identifies the intended FERC filing. Their disclosed measures are RFI/proposal status, not effective new rules."},
+    {"kind": "technical-standard", "result": "not-determined", "urls": [], "note": "No binding final technical standard was read in this bounded review; PJM's ride-through measure remains proposed."},
+    {"kind": "partner-customer", "result": "not-applicable", "urls": [], "note": "Neither selected item identifies a customer contract or supplier partnership as evidence."},
+    {"kind": "original-media", "result": "not-applicable", "urls": [], "note": "The selected public items rely on grid-operator originals rather than media reporting."}
+  ],
+  "events": [
+    {
+      "eventId": "evt-ercot-data-center-impact-rfi-20260914",
+      "clusterKey": "ercot|state-community-impact-rfi|data-center-developers-over-25mw|texas|2026-09-14",
+      "change": {"type": "new-event", "description": "ERCOT publicly issued a separate RFI for developers of 25MW-plus data centers pursuing system interconnection, adding state and community impact data requirements beyond the existing Batch Zero verification notice.", "priorPublicIds": []},
+      "impact": {"level": "high", "dimension": "policy", "affected": "Texas data-center developers pursuing ERCOT interconnection at 25MW or above", "consequence": "The RFI can add information and regulatory-process dependencies around water, cooling, onsite generation, public support and ownership before developers' projects are evaluated; it does not approve any project.", "evidenceUrls": ["https://www.ercot.com/about/legal/data-center-impact-rfi"]},
+      "sources": [{"url": "https://www.ercot.com/about/legal/data-center-impact-rfi", "kind": "permit-grid", "independenceGroup": "ercot", "readAt": "2026-09-16T17:31:00+08:00", "finding": "ERCOT says the RFI applies to all data-center developers at 25MW or above pursuing ERCOT interconnection; it lists submission by October 12 and an ERCOT/PUCT analysis by December 10, without projects or MW."}],
+      "primaryAttempts": [{"url": "https://www.ercot.com/about/legal/data-center-impact-rfi", "result": "reviewed", "note": "Original ERCOT legal-policy page read directly."}]
+    },
+    {
+      "eventId": "evt-pjm-large-load-ride-through-20260910",
+      "clusterKey": "pjm|proposed-large-load-ride-through-requirements|data-centers-and-computational-loads|mid-atlantic|2026-09-10",
+      "change": {"type": "new-event", "description": "PJM's original post describes a new proposed reliability requirement for large computational loads to ride through normally cleared disturbances, addressing a constraint separate from prior project-specific interconnection records.", "priorPublicIds": []},
+      "impact": {"level": "high", "dimension": "policy", "affected": "PJM large computational loads, including data centers, and their interconnection design and operating plans", "consequence": "The proposal can impose reliability-design and transition requirements on large-load facilities if advanced; it does not allocate capacity, approve a project or establish a final standard.", "evidenceUrls": ["https://insidelines.pjm.com/reliability-standards-to-manage-large-load-disconnection-events-proposed-by-pjm/"]},
+      "sources": [{"url": "https://insidelines.pjm.com/reliability-standards-to-manage-large-load-disconnection-events-proposed-by-pjm/", "kind": "permit-grid", "independenceGroup": "pjm", "readAt": "2026-09-16T17:31:00+08:00", "finding": "PJM says it proposes ride-through requirements for large computational loads including data centers, will discuss transition planning for existing facilities and plans a November FERC filing; the source calls the measure a proposal."}],
+      "primaryAttempts": [{"url": "https://insidelines.pjm.com/reliability-standards-to-manage-large-load-disconnection-events-proposed-by-pjm/", "result": "reviewed", "note": "Original PJM publication read directly."}]
+    }
+  ]
+}

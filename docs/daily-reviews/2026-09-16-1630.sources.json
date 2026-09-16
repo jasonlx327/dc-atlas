@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "atlas-source-ledger.v1",
+  "runId": "atlas-2026-09-16-1630",
+  "windowStart": "2026-09-16T14:15:00+08:00",
+  "windowEnd": "2026-09-16T17:32:00+08:00",
+  "sources": [
+    {"ref": "ercot-data-center-impact-rfi", "sourceName": "ERCOT", "tier": "T0", "kind": "permit-grid", "canonicalUrl": "https://www.ercot.com/about/legal/data-center-impact-rfi", "publishedAt": "2026-09-14T00:00:00-05:00", "readAt": "2026-09-16T17:31:00+08:00", "accessState": "reviewed", "independenceGroup": "ercot", "finding": "ERCOT's RFI applies to all developers of 25MW-plus data centers pursuing ERCOT interconnection; the page gives an October 12 submission deadline and a December 10 ERCOT/PUCT report target, but names no projects or MW."},
+    {"ref": "pjm-large-load-ride-through", "sourceName": "PJM", "tier": "T0", "kind": "permit-grid", "canonicalUrl": "https://insidelines.pjm.com/reliability-standards-to-manage-large-load-disconnection-events-proposed-by-pjm/", "publishedAt": "2026-09-10T00:00:00-04:00", "readAt": "2026-09-16T17:31:00+08:00", "accessState": "reviewed", "independenceGroup": "pjm", "finding": "PJM describes a proposed, not effective, ride-through requirement for large computational loads and a planned November FERC filing; no project capacity allocation is disclosed."},
+    {"ref": "cac-digital-green-plan", "sourceName": "Cyberspace Administration of China", "tier": "T0", "kind": "government-policy", "canonicalUrl": "https://www.cac.gov.cn/2026-09/04/c_1790271981772781.htm", "publishedAt": "2026-09-04T18:00:00+08:00", "readAt": "2026-09-16T17:31:00+08:00", "accessState": "reviewed", "independenceGroup": "cac", "finding": "The 2026-2030 plan names liquid cooling, 800V DC architecture and racks above 100kW, but predates the present window and requires a prior-public-record and policy-route check before an incremental public event."},
+    {"ref": "nda-compute-network-summary", "sourceName": "National Data Administration", "tier": "T0", "kind": "government-policy", "canonicalUrl": "https://www.nda.gov.cn/sjj/swdt/xwfb/0912/20260912153754624614528_pc.html", "publishedAt": "2026-09-12T00:00:00+08:00", "readAt": "2026-09-16T17:31:00+08:00", "accessState": "reviewed", "independenceGroup": "national-data-administration", "finding": "The official policy-news summary calls for compute-power coordination and green-power-direct-connect projects, but is a summary; the underlying State Council record and binding status were not located in this scan."}
+  ],
+  "coverage": {
+    "issuer-ir": {"attempted": 0, "reviewed": 0, "result": "not-determined", "gap": "The 50-company full review was not completed; do not infer no change."},
+    "exchange-regulator": {"attempted": 2, "reviewed": 2, "result": "reviewed", "gap": "Limited to the two named grid-operator records."},
+    "earnings-call": {"attempted": 0, "reviewed": 0, "result": "not-determined", "gap": "No all-issuer earnings and call review was completed."},
+    "permit-grid": {"attempted": 2, "reviewed": 2, "result": "reviewed", "gap": "No general permits or project-by-project grid scan is claimed."},
+    "government-policy": {"attempted": 2, "reviewed": 2, "result": "reviewed", "gap": "The China policy items are held; full US/China policy coverage remains incomplete."},
+    "technical-standard": {"attempted": 0, "reviewed": 0, "result": "not-determined", "gap": "PJM's proposal is not a final standard and no complete standards scan was performed."},
+    "partner-customer": {"attempted": 0, "reviewed": 0, "result": "not-determined", "gap": "No customer or partnership source set was completed."},
+    "original-media": {"attempted": 0, "reviewed": 0, "result": "not-determined", "gap": "No complete attributable-media review was completed."}
+  }
+}
