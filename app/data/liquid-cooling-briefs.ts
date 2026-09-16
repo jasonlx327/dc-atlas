@@ -2,6 +2,17 @@
 // Publication dates belong to the sources, not this Atlas selection.
 export const liquidCoolingBriefs = [
   {
+    id: "airtrunk-emergence-cryogenic-mou-20260915", publishedAt: "2026-09-15",
+    title: "AirTrunk 与 Emergence Quantum 探索低温数据中心", titleEn: "AirTrunk and Emergence Quantum explore cryogenic data centers",
+    subject: "AirTrunk / Emergence Quantum", subjectEn: "AirTrunk / Emergence Quantum",
+    metric: "低温冷却 · 技术经济验证", metricEn: "Cryogenic cooling · Techno-economic evaluation",
+    status: "MOU · 研发探索", statusEn: "MoU · Exploratory R&D",
+    sourceName: "AirTrunk",
+    sourceUrl: "https://airtrunk.com/airtrunk-emergence-quantum-partner-to-advance-next-gen-cryogenic-data-centre/",
+    note: "双方将研究低温计算与面向量子计算的基础设施，并评估性能和经济性。合作尚处探索阶段，未披露投运设施或量产节能幅度。",
+    noteEn: "The partners will explore cryogenic computing and quantum-ready infrastructure, including performance and economics. The work is exploratory, with no operating facility or production energy-saving figure disclosed.",
+  },
+  {
     id: "motivair-ai-thermal-guide-20260824", publishedAt: "2026-08-24",
     title: "Motivair 说明液冷冷板、CDU 与背门换热的系统配合", titleEn: "Motivair explains cold-plate, CDU and rear-door cooling integration",
     subject: "Schneider Electric / Motivair", subjectEn: "Schneider Electric / Motivair",

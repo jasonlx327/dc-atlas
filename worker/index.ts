@@ -3562,10 +3562,12 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const coolingRecords = uniqueRecords([...editorSourceRecords(publicEditorDecision, "cooling"), ...coolingProgress()]);
   const news = newsResult.status === "fulfilled" ? newsResult.value : [];
   const nvidiaNews = uniqueNews([
+    ...FORMAL_PULSE_SUPPLEMENT.filter((item) => item.category === "idc-compute"),
     ...editorNewsItems(publicEditorDecision, ["compute-products"]),
     ...(nvidiaResult.status === "fulfilled" ? nvidiaResult.value : []),
   ], 8);
   const coolingNews = uniqueNews([
+    ...FORMAL_PULSE_SUPPLEMENT.filter((item) => item.category === "idc-cooling"),
     ...editorNewsItems(publicEditorDecision, ["cooling"]),
     ...(coolingResult.status === "fulfilled" ? coolingResult.value : []),
   ], 8);
@@ -3578,6 +3580,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
       : []),
   ], 6);
   const chinaChipNews = uniqueNews([
+    ...FORMAL_PULSE_SUPPLEMENT.filter((item) => item.category === "idc-china-chip"),
     ...editorNewsItems(publicEditorDecision, ["china-gpu"]),
     ...chinaChipPulse(chinaChipResult.status === "fulfilled" ? chinaChipResult.value : []),
   ], 10);

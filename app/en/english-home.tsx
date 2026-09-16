@@ -237,6 +237,12 @@ const storyImages: Record<string, { src: string; alt: string }> = {
 };
 
 const storyFieldTranslations: Record<string, string> = {
+  "MLPerf 6.1 预览测试": "MLPerf 6.1 preview results",
+  "产业联盟成立": "Industry alliance launched",
+  "公司正式回应": "Official company response",
+  "联合研发与端到端验证": "Joint R&D and end-to-end validation",
+  "MOU / 技术经济可行性探索": "MoU / techno-economic exploration",
+  "Blackwell 平台客户验证": "Customer validation on Blackwell",
   "美国": "United States",
   "全球": "Global",
   "中国": "China",

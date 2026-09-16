@@ -1,0 +1,310 @@
+{
+  "schemaVersion": "1.1",
+  "runId": "atlas-2026-09-16-evening",
+  "runDate": "2026-09-16",
+  "cutoff": "2026-09-16T15:24:17.502Z",
+  "displayTimezones": {
+    "zh": "Asia/Shanghai",
+    "en": "America/New_York"
+  },
+  "status": "ready-for-partial-release",
+  "projectPath": "/Users/xlarge/Desktop/数据中心/.worktrees/atlas-content-20260916-evening",
+  "sourceLedgerPath": "/Users/xlarge/Desktop/数据中心/.worktrees/atlas-content-20260916-evening/docs/daily-reviews/2026-09-16-evening.manifest.sources.json",
+  "host": "XlargedeMacBook-Air.local",
+  "headBefore": "77f87114a5cfabda0649af96346b454c00e9b613",
+  "sections": {
+    "idc-pulse": {
+      "status": "updated",
+      "checkedAt": "2026-09-16T15:24:17.502Z",
+      "newIds": [
+        "nvidia-rubin-mlperf61-preview-20260916",
+        "nvidia-google-emerald-aema-20260916",
+        "sk-hynix-intel-us-memory-response-20260916",
+        "mthreads-china-mobile-aitc-s5000-20260915",
+        "airtrunk-emergence-cryogenic-mou-20260915",
+        "lambda-blackwell-dsx-lps-test-20260915"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 6,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "nvidia-rubin-mlperf61-preview-20260916",
+        "nvidia-google-emerald-aema-20260916",
+        "sk-hynix-intel-us-memory-response-20260916",
+        "mthreads-china-mobile-aitc-s5000-20260915",
+        "airtrunk-emergence-cryogenic-mou-20260915",
+        "lambda-blackwell-dsx-lps-test-20260915"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Publish only source-read additions; this is not a complete no-change certification of all underlying issuers."
+    },
+    "listed-companies": {
+      "status": "updated",
+      "checkedAt": "2026-09-16T15:24:17.502Z",
+      "newIds": [
+        "nvidia-rubin-mlperf61-preview-20260916",
+        "nvidia-google-emerald-aema-20260916",
+        "sk-hynix-intel-us-memory-response-20260916",
+        "mthreads-china-mobile-aitc-s5000-20260915",
+        "lambda-blackwell-dsx-lps-test-20260915"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 5,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "nvidia-rubin-mlperf61-preview-20260916",
+        "nvidia-google-emerald-aema-20260916",
+        "sk-hynix-intel-us-memory-response-20260916",
+        "mthreads-china-mobile-aitc-s5000-20260915",
+        "lambda-blackwell-dsx-lps-test-20260915"
+      ],
+      "accessGaps": [
+        "Selected issuer news verified, not a complete 50-company filing sweep."
+      ],
+      "releaseDisposition": "publish",
+      "notes": "Publish only source-read additions; this is not a complete no-change certification of all underlying issuers."
+    },
+    "mna": {
+      "status": "blocked",
+      "checkedAt": "2026-09-16T15:24:17.502Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "coverage-gaps"
+      ],
+      "accessGaps": [
+        "No newly verified transaction in this bounded scan; SK hynix's response is not a finalized venture."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "No newly verified transaction in this bounded scan; SK hynix's response is not a finalized venture."
+    },
+    "capacity": {
+      "status": "blocked",
+      "checkedAt": "2026-09-16T15:24:17.502Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "coverage-gaps"
+      ],
+      "accessGaps": [
+        "Serverfarm and Goodman financing originals could not be read; neither is used as operating capacity."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Serverfarm and Goodman financing originals could not be read; neither is used as operating capacity."
+    },
+    "cooling": {
+      "status": "updated",
+      "checkedAt": "2026-09-16T15:24:17.502Z",
+      "newIds": [
+        "airtrunk-emergence-cryogenic-mou-20260915"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "airtrunk-emergence-cryogenic-mou-20260915"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Publish only source-read additions; this is not a complete no-change certification of all underlying issuers."
+    },
+    "compute-products": {
+      "status": "updated",
+      "checkedAt": "2026-09-16T15:24:17.502Z",
+      "newIds": [
+        "nvidia-rubin-mlperf61-preview-20260916",
+        "lambda-blackwell-dsx-lps-test-20260915"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 2,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "nvidia-rubin-mlperf61-preview-20260916",
+        "lambda-blackwell-dsx-lps-test-20260915"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Publish only source-read additions; this is not a complete no-change certification of all underlying issuers."
+    },
+    "china-gpu": {
+      "status": "updated",
+      "checkedAt": "2026-09-16T15:24:17.502Z",
+      "newIds": [
+        "mthreads-china-mobile-aitc-s5000-20260915"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "mthreads-china-mobile-aitc-s5000-20260915"
+      ],
+      "accessGaps": [
+        "One Moore Threads event verified; seven-issuer exchange completeness remains unresolved."
+      ],
+      "releaseDisposition": "publish",
+      "notes": "Publish only source-read additions; this is not a complete no-change certification of all underlying issuers."
+    },
+    "supply-chain": {
+      "status": "updated",
+      "checkedAt": "2026-09-16T15:24:17.502Z",
+      "newIds": [
+        "nvidia-rubin-mlperf61-preview-20260916",
+        "nvidia-google-emerald-aema-20260916",
+        "sk-hynix-intel-us-memory-response-20260916",
+        "mthreads-china-mobile-aitc-s5000-20260915",
+        "airtrunk-emergence-cryogenic-mou-20260915",
+        "lambda-blackwell-dsx-lps-test-20260915"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 6,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "nvidia-rubin-mlperf61-preview-20260916",
+        "nvidia-google-emerald-aema-20260916",
+        "sk-hynix-intel-us-memory-response-20260916",
+        "mthreads-china-mobile-aitc-s5000-20260915",
+        "airtrunk-emergence-cryogenic-mou-20260915",
+        "lambda-blackwell-dsx-lps-test-20260915"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Publish only source-read additions; this is not a complete no-change certification of all underlying issuers."
+    },
+    "power-model-demand": {
+      "status": "updated",
+      "checkedAt": "2026-09-16T15:24:17.502Z",
+      "newIds": [
+        "nvidia-google-emerald-aema-20260916"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "nvidia-google-emerald-aema-20260916"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Publish only source-read additions; this is not a complete no-change certification of all underlying issuers."
+    },
+    "earnings-calendar": {
+      "status": "blocked",
+      "checkedAt": "2026-09-16T15:24:17.502Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "coverage-gaps"
+      ],
+      "accessGaps": [
+        "Full issuer/exchange and upcoming-calendar revalidation incomplete; previous dates retained."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Full issuer/exchange and upcoming-calendar revalidation incomplete; previous dates retained."
+    },
+    "rumors": {
+      "status": "blocked",
+      "checkedAt": "2026-09-16T15:24:17.502Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "coverage-gaps"
+      ],
+      "accessGaps": [
+        "Three recent DCD discoveries had inaccessible original bodies. Existing archive retained, no headline-only publication."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Three recent DCD discoveries had inaccessible original bodies. Existing archive retained, no headline-only publication."
+    },
+    "policy": {
+      "status": "blocked",
+      "checkedAt": "2026-09-16T15:24:17.502Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "coverage-gaps"
+      ],
+      "accessGaps": [
+        "Afternoon policy updates preserved; additional current policy coverage remains incomplete."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Afternoon policy updates preserved; additional current policy coverage remains incomplete."
+    },
+    "columns": {
+      "status": "blocked",
+      "checkedAt": "2026-09-16T15:24:17.502Z",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "coverage-gaps"
+      ],
+      "accessGaps": [
+        "No new fully reviewed bilingual research article prepared in this news update; existing publication schedule unchanged."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "No new fully reviewed bilingual research article prepared in this news update; existing publication schedule unchanged."
+    }
+  },
+  "release": {
+    "mode": "partial",
+    "tests": "passed",
+    "build": "passed",
+    "cloudflare": "pending",
+    "formalReadback": "pending",
+    "dailySnapshot": "pending",
+    "sites": "pending",
+    "sitesReadback": "pending",
+    "commit": null,
+    "workerCommit": null,
+    "sitesCommit": null,
+    "cloudflareVersion": null,
+    "sitesVersion": null,
+    "formalUrl": null,
+    "sitesUrl": null,
+    "includedSections": [
+      "idc-pulse",
+      "listed-companies",
+      "cooling",
+      "compute-products",
+      "china-gpu",
+      "supply-chain",
+      "power-model-demand"
+    ],
+    "heldSections": [
+      "mna",
+      "capacity",
+      "earnings-calendar",
+      "rumors",
+      "policy",
+      "columns"
+    ],
+    "testBaseline": null
+  },
+  "blockers": [
+    "Coverage gaps are locally held; no selected public claim depends on the unavailable sources."
+  ]
+}

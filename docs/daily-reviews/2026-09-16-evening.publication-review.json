@@ -1,0 +1,272 @@
+{
+  "schemaVersion": "atlas-publication-review.v1",
+  "day": "2026-09-16",
+  "sourceCoverage": [
+    {
+      "kind": "issuer-ir",
+      "result": "reviewed",
+      "urls": [
+        "https://blogs.nvidia.com/blog/vera-rubin-nvl72-mlperf-inference/",
+        "https://blogs.nvidia.com/blog/ai-energy-management-alliance/",
+        "https://news.skhynix.com/en/fact-10/",
+        "https://www.mthreads.com/news/348",
+        "https://airtrunk.com/airtrunk-emergence-quantum-partner-to-advance-next-gen-cryogenic-data-centre/",
+        "https://blogs.nvidia.com/blog/ai-infra-summit-vera-rubin-dsx-energy-efficiencies-tokens-per-watt-ai-factories/"
+      ],
+      "note": "Six issuer originals read; vendor tests are attributed and exploratory statuses retained."
+    },
+    {
+      "kind": "exchange-regulator",
+      "result": "not-determined",
+      "urls": [],
+      "note": "Issuer-specific exchange completeness remains unresolved; fresh entrypoint probes are a separate evidence artifact, not a no-change verdict."
+    },
+    {
+      "kind": "earnings-call",
+      "result": "not-applicable",
+      "urls": [],
+      "note": "No new earnings or earnings-call figures are used in this release."
+    },
+    {
+      "kind": "permit-grid",
+      "result": "not-applicable",
+      "urls": [],
+      "note": "No permit, energization or capacity allocation is asserted. AEMA is an industry initiative."
+    },
+    {
+      "kind": "government-policy",
+      "result": "not-determined",
+      "urls": [],
+      "note": "The afternoon ERCOT/PJM content is preserved; no complete additional government review was achieved tonight."
+    },
+    {
+      "kind": "technical-standard",
+      "result": "not-determined",
+      "urls": [],
+      "note": "MLPerf data is reported as NVIDIA's preview submission; no independent reproduction or new binding standard is claimed."
+    },
+    {
+      "kind": "partner-customer",
+      "result": "reviewed",
+      "urls": [
+        "https://blogs.nvidia.com/blog/ai-energy-management-alliance/",
+        "https://www.mthreads.com/news/348",
+        "https://airtrunk.com/airtrunk-emergence-quantum-partner-to-advance-next-gen-cryogenic-data-centre/",
+        "https://blogs.nvidia.com/blog/ai-infra-summit-vera-rubin-dsx-energy-efficiencies-tokens-per-watt-ai-factories/"
+      ],
+      "note": "Read issuer descriptions of AEMA, China Mobile joint validation, AirTrunk's MoU and Lambda's test; independent counterpart confirmation is not implied."
+    },
+    {
+      "kind": "original-media",
+      "result": "not-determined",
+      "urls": [],
+      "note": "DCD original pages for Serverfarm, Schneider and Goodman returned access failures; headline-only discoveries are held, not republished."
+    }
+  ],
+  "events": [
+    {
+      "eventId": "nvidia-rubin-mlperf61-preview-20260916",
+      "clusterKey": "nvidia|vera-rubin-nvl72|mlperf-inference-6.1-preview|2026-09-16",
+      "change": {
+        "type": "new-event",
+        "description": "Read NVIDIA's MLPerf 6.1 preview article: Rubin NVL72 reports Qwen3-VL up to 3.7x and DeepSeek-R1 up to 2.5x GB300 NVL72. Preview category and software/scenario dependence retained; no availability or revenue claim inferred.",
+        "priorPublicIds": []
+      },
+      "impact": {
+        "level": "high",
+        "dimension": "technology",
+        "affected": "NVIDIA · NVDA",
+        "consequence": "The comparison shifts attention to rack-level throughput and software integration. Procurement still needs latency targets, power use, pricing and actual delivery availability.",
+        "evidenceUrls": [
+          "https://blogs.nvidia.com/blog/vera-rubin-nvl72-mlperf-inference/"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://blogs.nvidia.com/blog/vera-rubin-nvl72-mlperf-inference/",
+          "kind": "issuer-ir",
+          "independenceGroup": "nvidia",
+          "readAt": "2026-09-16T15:24:17.502Z",
+          "finding": "Read NVIDIA's MLPerf 6.1 preview article: Rubin NVL72 reports Qwen3-VL up to 3.7x and DeepSeek-R1 up to 2.5x GB300 NVL72. Preview category and software/scenario dependence retained; no availability or revenue claim inferred."
+        }
+      ],
+      "primaryAttempts": [
+        {
+          "url": "https://blogs.nvidia.com/blog/vera-rubin-nvl72-mlperf-inference/",
+          "result": "reviewed",
+          "note": "Original source body read; static fetch for text pages and rendered browser body for Moore Threads."
+        }
+      ]
+    },
+    {
+      "eventId": "nvidia-google-emerald-aema-20260916",
+      "clusterKey": "emerald-ai-google-nvidia|ai-energy-management-alliance|launch|2026-09-16",
+      "change": {
+        "type": "new-event",
+        "description": "Read NVIDIA's AEMA launch article. Emerald AI, Google and NVIDIA propose performance-based load flexibility, response metrics and interconnection pathways; this is industry advocacy, not enacted regulation or approved MW.",
+        "priorPublicIds": []
+      },
+      "impact": {
+        "level": "high",
+        "dimension": "policy",
+        "affected": "NVIDIA · NVDA / Alphabet · GOOGL",
+        "consequence": "Interconnection competition may increasingly depend on demonstrable load flexibility, not just requested power. Faster access remains a policy objective rather than an approved project outcome.",
+        "evidenceUrls": [
+          "https://blogs.nvidia.com/blog/ai-energy-management-alliance/"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://blogs.nvidia.com/blog/ai-energy-management-alliance/",
+          "kind": "issuer-ir",
+          "independenceGroup": "nvidia",
+          "readAt": "2026-09-16T15:24:17.502Z",
+          "finding": "Read NVIDIA's AEMA launch article. Emerald AI, Google and NVIDIA propose performance-based load flexibility, response metrics and interconnection pathways; this is industry advocacy, not enacted regulation or approved MW."
+        }
+      ],
+      "primaryAttempts": [
+        {
+          "url": "https://blogs.nvidia.com/blog/ai-energy-management-alliance/",
+          "result": "reviewed",
+          "note": "Original source body read; static fetch for text pages and rendered browser body for Moore Threads."
+        }
+      ]
+    },
+    {
+      "eventId": "sk-hynix-intel-us-memory-response-20260916",
+      "clusterKey": "sk-hynix|intel-us-memory-production|official-response|2026-09-16",
+      "change": {
+        "type": "new-event",
+        "description": "Read SK hynix's FACT response to September 16 reporting. The company says neither Ohio leasing nor an Intel/cloud-company venture is decided. Do not change 'not finalized' into a categorical denial of discussions.",
+        "priorPublicIds": []
+      },
+      "impact": {
+        "level": "material",
+        "dimension": "supply-chain",
+        "affected": "SK hynix · 000660.KS / Intel · INTC",
+        "consequence": "A potential arrangement would matter for US memory supply, but it cannot yet be counted as capacity or a completed venture. The response addresses decision status, not a denial of all talks.",
+        "evidenceUrls": [
+          "https://news.skhynix.com/en/fact-10/"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://news.skhynix.com/en/fact-10/",
+          "kind": "issuer-ir",
+          "independenceGroup": "sk-hynix",
+          "readAt": "2026-09-16T15:24:17.502Z",
+          "finding": "Read SK hynix's FACT response to September 16 reporting. The company says neither Ohio leasing nor an Intel/cloud-company venture is decided. Do not change 'not finalized' into a categorical denial of discussions."
+        }
+      ],
+      "primaryAttempts": [
+        {
+          "url": "https://news.skhynix.com/en/fact-10/",
+          "result": "reviewed",
+          "note": "Original source body read; static fetch for text pages and rendered browser body for Moore Threads."
+        }
+      ]
+    },
+    {
+      "eventId": "mthreads-china-mobile-aitc-s5000-20260915",
+      "clusterKey": "moore-threads-china-mobile|aitc-s5000|joint-validation|2026-09-15",
+      "change": {
+        "type": "new-event",
+        "description": "Read the September 15 Moore Threads announcement in the browser after its dynamic body loaded: MTT S5000 server joint R&D, end-to-end validation, pass-through, TEE isolation and secure CPU-GPU links. Mainstream-model validation continues; no order or installed scale stated.",
+        "priorPublicIds": []
+      },
+      "impact": {
+        "level": "material",
+        "dimension": "technology",
+        "affected": "摩尔线程 · 688795.SH / 中国移动 · 600941.SH / 0941.HK",
+        "consequence": "Domestic GPU adoption is extending beyond performance and model compatibility into confidential computing. Security integration across chips, execution environments and cloud platforms matters for sensitive-data workloads.",
+        "evidenceUrls": [
+          "https://www.mthreads.com/news/348"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.mthreads.com/news/348",
+          "kind": "issuer-ir",
+          "independenceGroup": "moore-threads",
+          "readAt": "2026-09-16T15:24:17.502Z",
+          "finding": "Read the September 15 Moore Threads announcement in the browser after its dynamic body loaded: MTT S5000 server joint R&D, end-to-end validation, pass-through, TEE isolation and secure CPU-GPU links. Mainstream-model validation continues; no order or installed scale stated."
+        }
+      ],
+      "primaryAttempts": [
+        {
+          "url": "https://www.mthreads.com/news/348",
+          "result": "reviewed",
+          "note": "Original source body read; static fetch for text pages and rendered browser body for Moore Threads."
+        }
+      ]
+    },
+    {
+      "eventId": "airtrunk-emergence-cryogenic-mou-20260915",
+      "clusterKey": "airtrunk-emergence-quantum|cryogenic-data-centers|mou|2026-09-15",
+      "change": {
+        "type": "new-event",
+        "description": "Read AirTrunk's September 15 MoU announcement. Cryogenic cooling and quantum-ready infrastructure are exploratory with techno-economic evaluation. The source does not establish a commercial facility or achieved savings.",
+        "priorPublicIds": []
+      },
+      "impact": {
+        "level": "material",
+        "dimension": "technology",
+        "affected": "AirTrunk and data-center cooling suppliers",
+        "consequence": "Cooling research is moving beyond conventional liquid cooling. Deployment economics depend on whether computing gains outweigh refrigeration power, equipment costs and operating complexity.",
+        "evidenceUrls": [
+          "https://airtrunk.com/airtrunk-emergence-quantum-partner-to-advance-next-gen-cryogenic-data-centre/"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://airtrunk.com/airtrunk-emergence-quantum-partner-to-advance-next-gen-cryogenic-data-centre/",
+          "kind": "issuer-ir",
+          "independenceGroup": "airtrunk",
+          "readAt": "2026-09-16T15:24:17.502Z",
+          "finding": "Read AirTrunk's September 15 MoU announcement. Cryogenic cooling and quantum-ready infrastructure are exploratory with techno-economic evaluation. The source does not establish a commercial facility or achieved savings."
+        }
+      ],
+      "primaryAttempts": [
+        {
+          "url": "https://airtrunk.com/airtrunk-emergence-quantum-partner-to-advance-next-gen-cryogenic-data-centre/",
+          "result": "reviewed",
+          "note": "Original source body read; static fetch for text pages and rendered browser body for Moore Threads."
+        }
+      ]
+    },
+    {
+      "eventId": "lambda-blackwell-dsx-lps-test-20260915",
+      "clusterKey": "lambda-nvidia|blackwell-dsx-max-lps|validation|2026-09-15",
+      "change": {
+        "type": "new-event",
+        "description": "Read NVIDIA's September 15 AI Infra Summit article. Lambda validation fits 19 Blackwell nodes into the budget normally serving 16 at full power, with about 24% higher token output and 23% performance-per-watt gain. Customer-specific test, not a universal fleet result.",
+        "priorPublicIds": []
+      },
+      "impact": {
+        "level": "material",
+        "dimension": "economics",
+        "affected": "NVIDIA · NVDA",
+        "consequence": "Power-constrained facilities may raise output through scheduling and power management, not only new electrical capacity. Workload type, performance targets and power variation remain critical trade-offs.",
+        "evidenceUrls": [
+          "https://blogs.nvidia.com/blog/ai-infra-summit-vera-rubin-dsx-energy-efficiencies-tokens-per-watt-ai-factories/"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://blogs.nvidia.com/blog/ai-infra-summit-vera-rubin-dsx-energy-efficiencies-tokens-per-watt-ai-factories/",
+          "kind": "issuer-ir",
+          "independenceGroup": "nvidia",
+          "readAt": "2026-09-16T15:24:17.502Z",
+          "finding": "Read NVIDIA's September 15 AI Infra Summit article. Lambda validation fits 19 Blackwell nodes into the budget normally serving 16 at full power, with about 24% higher token output and 23% performance-per-watt gain. Customer-specific test, not a universal fleet result."
+        }
+      ],
+      "primaryAttempts": [
+        {
+          "url": "https://blogs.nvidia.com/blog/ai-infra-summit-vera-rubin-dsx-energy-efficiencies-tokens-per-watt-ai-factories/",
+          "result": "reviewed",
+          "note": "Original source body read; static fetch for text pages and rendered browser body for Moore Threads."
+        }
+      ]
+    }
+  ]
+}

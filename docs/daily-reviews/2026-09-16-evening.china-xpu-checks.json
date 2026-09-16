@@ -1,0 +1,246 @@
+{
+  "schemaVersion": "atlas-china-xpu-listed-checks.v1",
+  "runId": "atlas-2026-09-16-evening",
+  "generatedAt": "2026-09-16T15:26:28.555Z",
+  "issuerCount": 7,
+  "attemptedCount": 7,
+  "completedEvidenceChecks": 1,
+  "coverageBasis": "One issuer event read in full; direct IR and exchange entrypoint probes do not establish announcement completeness.",
+  "checks": [
+    {
+      "id": "cambricon",
+      "name": "寒武纪",
+      "ticker": "688256",
+      "issuer": "https://www.cambricon.com/",
+      "exchange": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+      "lastCheckedAt": "2026-09-16T15:26:28.556Z",
+      "result": "not-determined",
+      "eventIds": [],
+      "sourceCoverage": [
+        {
+          "url": "https://www.cambricon.com/",
+          "resolvedUrl": "https://www.cambricon.com/",
+          "checkedAt": "2026-09-16T15:26:01.095Z",
+          "httpStatus": 200,
+          "title": "寒武纪",
+          "sha256": "3cc24101cbb59aa7aa0c869433fb386405bf2cc424d451b3e9d1858beff1ef5b",
+          "bodyBytes": 46468,
+          "accessStatus": "entrypoint-only"
+        },
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "checkedAt": "2026-09-16T15:26:01.110Z",
+          "httpStatus": 200,
+          "title": "最新公告  | 上海证券交易所",
+          "sha256": "712f202dc31d1c4d99f626a8d2f1449fe806ef9ab9ef51ec6c4d04bee080ba6a",
+          "bodyBytes": 28149,
+          "accessStatus": "entrypoint-only"
+        }
+      ],
+      "accessGaps": [
+        "Issuer-specific exchange announcements, financial fields and full reporting-window completeness not reconciled."
+      ]
+    },
+    {
+      "id": "hygon",
+      "name": "海光信息",
+      "ticker": "688041",
+      "issuer": "https://www.hygon.cn/",
+      "exchange": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+      "lastCheckedAt": "2026-09-16T15:26:28.556Z",
+      "result": "not-determined",
+      "eventIds": [],
+      "sourceCoverage": [
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "checkedAt": "2026-09-16T15:26:01.110Z",
+          "httpStatus": 200,
+          "title": "最新公告  | 上海证券交易所",
+          "sha256": "712f202dc31d1c4d99f626a8d2f1449fe806ef9ab9ef51ec6c4d04bee080ba6a",
+          "bodyBytes": 28149,
+          "accessStatus": "entrypoint-only"
+        },
+        {
+          "url": "https://www.hygon.cn/",
+          "resolvedUrl": "https://www.hygon.cn/",
+          "checkedAt": "2026-09-16T15:26:01.110Z",
+          "httpStatus": 200,
+          "title": "海光--用“芯”计算未来",
+          "sha256": "43ea067dd861fa0a1e5e121af1f96400abe3561c4f5c7a1f3b7c3ea0b31cb7a4",
+          "bodyBytes": 7437,
+          "accessStatus": "entrypoint-only"
+        }
+      ],
+      "accessGaps": [
+        "Issuer-specific exchange announcements, financial fields and full reporting-window completeness not reconciled."
+      ]
+    },
+    {
+      "id": "loongson",
+      "name": "龙芯中科",
+      "ticker": "688047",
+      "issuer": "https://www.loongson.cn/",
+      "exchange": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+      "lastCheckedAt": "2026-09-16T15:26:28.556Z",
+      "result": "not-determined",
+      "eventIds": [],
+      "sourceCoverage": [
+        {
+          "url": "https://www.loongson.cn/",
+          "resolvedUrl": "https://www.loongson.cn/",
+          "checkedAt": "2026-09-16T15:26:01.110Z",
+          "httpStatus": 200,
+          "title": "龙芯中科技术股份有限公司",
+          "sha256": "0d05a1ea7e31e793c622930a6ab7e5ad476035e9218fd21b9304b3bd259e0b81",
+          "bodyBytes": 149625,
+          "accessStatus": "entrypoint-only"
+        },
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "checkedAt": "2026-09-16T15:26:01.110Z",
+          "httpStatus": 200,
+          "title": "最新公告  | 上海证券交易所",
+          "sha256": "712f202dc31d1c4d99f626a8d2f1449fe806ef9ab9ef51ec6c4d04bee080ba6a",
+          "bodyBytes": 28149,
+          "accessStatus": "entrypoint-only"
+        }
+      ],
+      "accessGaps": [
+        "Issuer-specific exchange announcements, financial fields and full reporting-window completeness not reconciled."
+      ]
+    },
+    {
+      "id": "jingjia-micro",
+      "name": "景嘉微",
+      "ticker": "300474",
+      "issuer": "https://www.jingjia.com/",
+      "exchange": "https://www.szse.cn/disclosure/listed/notice/",
+      "lastCheckedAt": "2026-09-16T15:26:28.556Z",
+      "result": "not-determined",
+      "eventIds": [],
+      "sourceCoverage": [
+        {
+          "url": "https://www.szse.cn/disclosure/listed/notice/",
+          "checkedAt": "2026-09-16T15:26:03.378Z",
+          "accessStatus": "unavailable",
+          "error": "TypeError: fetch failed"
+        },
+        {
+          "url": "https://www.jingjia.com/",
+          "checkedAt": "2026-09-16T15:26:03.378Z",
+          "accessStatus": "unavailable",
+          "error": "TypeError: fetch failed"
+        }
+      ],
+      "accessGaps": [
+        "Issuer-specific exchange announcements, financial fields and full reporting-window completeness not reconciled."
+      ]
+    },
+    {
+      "id": "moore-threads",
+      "name": "摩尔线程",
+      "ticker": "688795",
+      "issuer": "https://www.mthreads.com/",
+      "exchange": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+      "lastCheckedAt": "2026-09-16T15:26:28.556Z",
+      "result": "new/changed",
+      "eventIds": [
+        "mthreads-china-mobile-aitc-s5000-20260915"
+      ],
+      "sourceCoverage": [
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "checkedAt": "2026-09-16T15:26:01.110Z",
+          "httpStatus": 200,
+          "title": "最新公告  | 上海证券交易所",
+          "sha256": "712f202dc31d1c4d99f626a8d2f1449fe806ef9ab9ef51ec6c4d04bee080ba6a",
+          "bodyBytes": 28149,
+          "accessStatus": "entrypoint-only"
+        },
+        {
+          "url": "https://www.mthreads.com/",
+          "resolvedUrl": "https://www.mthreads.com/",
+          "checkedAt": "2026-09-16T15:26:03.378Z",
+          "httpStatus": 200,
+          "title": "摩尔线程官方网站 | 全栈AI 为美好世界加速",
+          "sha256": "919ce2910b9806991853864c2099b5bf112110f0df90c7355ee4af4d86b89316",
+          "bodyBytes": 110958,
+          "accessStatus": "entrypoint-only"
+        }
+      ],
+      "accessGaps": [
+        "Issuer-specific exchange announcements, financial fields and full reporting-window completeness not reconciled."
+      ]
+    },
+    {
+      "id": "metax",
+      "name": "沐曦股份",
+      "ticker": "688802",
+      "issuer": "https://www.metax-tech.com/",
+      "exchange": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+      "lastCheckedAt": "2026-09-16T15:26:28.556Z",
+      "result": "not-determined",
+      "eventIds": [],
+      "sourceCoverage": [
+        {
+          "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "resolvedUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+          "checkedAt": "2026-09-16T15:26:01.110Z",
+          "httpStatus": 200,
+          "title": "最新公告  | 上海证券交易所",
+          "sha256": "712f202dc31d1c4d99f626a8d2f1449fe806ef9ab9ef51ec6c4d04bee080ba6a",
+          "bodyBytes": 28149,
+          "accessStatus": "entrypoint-only"
+        },
+        {
+          "url": "https://www.metax-tech.com/",
+          "resolvedUrl": "https://www.metax-tech.com/",
+          "checkedAt": "2026-09-16T15:26:03.379Z",
+          "httpStatus": 200,
+          "title": "沐曦MetaX | 致力于成为全球一流的GPU企业",
+          "sha256": "33f4ea0aa436a86103993e940ad39639e64bfa561ae2e298277e6646b09d1b03",
+          "bodyBytes": 61859,
+          "accessStatus": "entrypoint-only"
+        }
+      ],
+      "accessGaps": [
+        "Issuer-specific exchange announcements, financial fields and full reporting-window completeness not reconciled."
+      ]
+    },
+    {
+      "id": "biren",
+      "name": "壁仞科技",
+      "ticker": "6082",
+      "issuer": "https://www.birentech.com/",
+      "exchange": "https://www.hkexnews.hk/index.htm",
+      "lastCheckedAt": "2026-09-16T15:26:28.556Z",
+      "result": "not-determined",
+      "eventIds": [],
+      "sourceCoverage": [
+        {
+          "url": "https://www.hkexnews.hk/index.htm",
+          "resolvedUrl": "https://www.hkexnews.hk/index.htm",
+          "checkedAt": "2026-09-16T15:26:13.555Z",
+          "httpStatus": 200,
+          "title": "HKEXnews",
+          "sha256": "4874a663679f3e3a530c6521fe693f6fd2d61b8bf2cb719c6386a9ab73f2a5ed",
+          "bodyBytes": 9169,
+          "accessStatus": "entrypoint-only"
+        },
+        {
+          "url": "https://www.birentech.com/",
+          "checkedAt": "2026-09-16T15:26:13.553Z",
+          "accessStatus": "unavailable",
+          "error": "TimeoutError: The operation was aborted due to timeout"
+        }
+      ],
+      "accessGaps": [
+        "Issuer-specific exchange announcements, financial fields and full reporting-window completeness not reconciled."
+      ]
+    }
+  ]
+}

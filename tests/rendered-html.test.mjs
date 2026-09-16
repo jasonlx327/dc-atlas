@@ -155,6 +155,18 @@ test("live API preserves the complete versioned intelligence archive during hydr
   assert.equal(payload.dailyClosure, null, "internal editorial state must not be injected");
   const formalIds = ["aws-bedrock-servicenow-connector-2026", "nscale-figure-barstow-compute-2026", "pure-dc-brent-cross-b2-piling-2026", "cerebras-compute-nordic-mikkeli-165mw-2026", "t5-everon-salute-restructure-2026", "nvidia-hugging-face-acquisition-2026", "flex-epc-power-acquisition-2026"];
   const formal = [...payload.idcPulse, ...payload.listedCompanyNews];
+  for (const [section, id] of [
+    ["nvidiaNews", "nvidia-rubin-mlperf61-preview-20260916"],
+    ["chinaChipNews", "mthreads-china-mobile-aitc-s5000-20260915"],
+    ["coolingNews", "airtrunk-emergence-cryogenic-mou-20260915"],
+    ["listedCompanyNews", "sk-hynix-intel-us-memory-response-20260916"],
+    ["idcPulse", "nvidia-google-emerald-aema-20260916"],
+    ["nvidiaNews", "lambda-blackwell-dsx-lps-test-20260915"],
+  ]) {
+    const item = payload[section].find((record) => record.id === id);
+    assert.ok(item?.titleEn && item?.summaryEn && item?.sourceUrl, `${section} must retain reviewed content when discovery services fail: ${id}`);
+  }
+  assert.ok(payload.coolingProgress.some((item) => item.id === "airtrunk-emergence-cryogenic-mou-20260915"));
   for (const id of formalIds) {
     const item = formal.find((item) => item.id === id);
     assert.ok(item?.titleEn && item?.summaryEn && item?.sourceUrl, `bilingual supplemental fact missing: ${id}`);

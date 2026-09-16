@@ -1,5 +1,6 @@
 import { RECOVERY_NEWS } from "./formal-recovery-20260907";
 import { IMAGE25_NEWS } from "./image25-news";
+import { EVENING_NEWS_20260916 } from "./formal-evening-20260916";
 
 export type FormalNewsSupplement = {
   impactLevel?: "high" | "material";
@@ -29,7 +30,7 @@ export type FormalNewsSupplement = {
   lifecycle?: Array<{ label: string; state: "done" | "current" | "next" }>;
 };
 
-export const FORMAL_PULSE_SUPPLEMENT: FormalNewsSupplement[] = [IMAGE25_NEWS, ...RECOVERY_NEWS, {
+export const FORMAL_PULSE_SUPPLEMENT: FormalNewsSupplement[] = [...EVENING_NEWS_20260916, IMAGE25_NEWS, ...RECOVERY_NEWS, {
   id: "ercot-data-center-state-community-impact-rfi-20260914",
   eventKey: "ercot|state-community-impact-rfi|data-center-developers-over-25mw|texas|2026-09-14",
   impactLevel: "high",
@@ -479,6 +480,7 @@ export const FORMAL_PULSE_SUPPLEMENT: FormalNewsSupplement[] = [IMAGE25_NEWS, ..
 }];
 
 export const FORMAL_LISTED_SUPPLEMENT: FormalNewsSupplement[] = [
+  ...EVENING_NEWS_20260916.filter((item) => item.listedTicker),
   ...RECOVERY_NEWS.filter((item) => item.listedTicker),
   {
     id: "nvidia-hugging-face-acquisition-2026",

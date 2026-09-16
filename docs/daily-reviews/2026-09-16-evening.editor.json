@@ -1,0 +1,284 @@
+{
+  "schemaVersion": "atlas-editor-decision.v1",
+  "day": "2026-09-16",
+  "generatedAt": "2026-09-16T15:24:17.502Z",
+  "cutoffAt": "2026-09-16T15:24:17.502Z",
+  "timezone": "Asia/Shanghai",
+  "status": "partial",
+  "sourcePacketGeneratedAt": "2026-09-16T15:24:17.502Z",
+  "decisions": [
+    {
+      "eventId": "nvidia-rubin-mlperf61-preview-20260916",
+      "action": "publish",
+      "route": "formal-section",
+      "section": "compute-products",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially-confirmed",
+      "canonicalUrls": [
+        "https://blogs.nvidia.com/blog/vera-rubin-nvl72-mlperf-inference/"
+      ],
+      "reasonCodes": [
+        "primary-source-body-read",
+        "material-industry-change",
+        "current-day-disclosure"
+      ],
+      "publicCopy": {
+        "titleZh": "NVIDIA 公布 Rubin 推理测试：Qwen3-VL 最高达 GB300 的 3.7 倍",
+        "titleEn": "NVIDIA reports Rubin inference preview at up to 3.7x GB300 on Qwen3-VL",
+        "summaryZh": "NVIDIA 披露 MLPerf Inference 6.1 预览提交结果：Vera Rubin NVL72 在 Qwen3-VL 测试中最高达到 GB300 NVL72 的 3.7 倍性能，在 DeepSeek-R1 上最高为 2.5 倍。结果对应特定模型、软件栈和测试场景，不代表所有生产负载都能获得同等提升。",
+        "summaryEn": "NVIDIA reports that its MLPerf Inference 6.1 preview submission delivers up to 3.7x GB300 NVL72 performance on Qwen3-VL and up to 2.5x on DeepSeek-R1 using Vera Rubin NVL72. Results depend on the tested model, software and scenario; they are not a universal production-workload improvement."
+      },
+      "publicClaims": [
+        {
+          "claim": "NVIDIA reports that its MLPerf Inference 6.1 preview submission delivers up to 3.7x GB300 NVL72 performance on Qwen3-VL and up to 2.5x on DeepSeek-R1 using Vera Rubin NVL72. Results depend on the tested model, software and scenario; they are not a universal production-workload improvement.",
+          "sourceRefs": [
+            "https://blogs.nvidia.com/blog/vera-rubin-nvl72-mlperf-inference/"
+          ],
+          "state": "source-stated"
+        }
+      ],
+      "internalNotes": [
+        "Read NVIDIA's MLPerf 6.1 preview article: Rubin NVL72 reports Qwen3-VL up to 3.7x and DeepSeek-R1 up to 2.5x GB300 NVL72. Preview category and software/scenario dependence retained; no availability or revenue claim inferred."
+      ],
+      "fallbackScored": false,
+      "holdClass": null,
+      "entities": [
+        "NVIDIA · NVDA"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-09-16T15:00:48Z",
+      "sourceId": "nvidia"
+    },
+    {
+      "eventId": "nvidia-google-emerald-aema-20260916",
+      "action": "publish",
+      "route": "formal-section",
+      "section": "power-model-demand",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially-confirmed",
+      "canonicalUrls": [
+        "https://blogs.nvidia.com/blog/ai-energy-management-alliance/"
+      ],
+      "reasonCodes": [
+        "primary-source-body-read",
+        "material-industry-change",
+        "current-day-disclosure"
+      ],
+      "publicCopy": {
+        "titleZh": "Google、NVIDIA 与 Emerald AI 发起联盟，推动数据中心参与电网调度",
+        "titleEn": "Google, NVIDIA and Emerald AI launch alliance for grid-responsive data centers",
+        "summaryZh": "三家公司宣布成立 AI Energy Management Alliance，推动数据中心通过负载调整、储能及配套发电响应电网需求。联盟主张以响应速度、持续时间和可预测性衡量灵活性，并将穿越电网扰动、限载与应急能力纳入接入讨论；这不是已生效的并网规则。",
+        "summaryEn": "The companies launched the AI Energy Management Alliance to advance grid-responsive data centers through workload flexibility, storage and paired generation. It advocates measuring response speed, duration and predictability, and addressing ride-through, curtailment and contingency capabilities in interconnection discussions. These are proposals, not effective grid rules."
+      },
+      "publicClaims": [
+        {
+          "claim": "The companies launched the AI Energy Management Alliance to advance grid-responsive data centers through workload flexibility, storage and paired generation. It advocates measuring response speed, duration and predictability, and addressing ride-through, curtailment and contingency capabilities in interconnection discussions. These are proposals, not effective grid rules.",
+          "sourceRefs": [
+            "https://blogs.nvidia.com/blog/ai-energy-management-alliance/"
+          ],
+          "state": "source-stated"
+        }
+      ],
+      "internalNotes": [
+        "Read NVIDIA's AEMA launch article. Emerald AI, Google and NVIDIA propose performance-based load flexibility, response metrics and interconnection pathways; this is industry advocacy, not enacted regulation or approved MW."
+      ],
+      "fallbackScored": false,
+      "holdClass": null,
+      "entities": [
+        "NVIDIA · NVDA",
+        "Alphabet · GOOGL"
+      ],
+      "region": "美国",
+      "publishedAt": "2026-09-16T13:00:33Z",
+      "sourceId": "nvidia"
+    },
+    {
+      "eventId": "sk-hynix-intel-us-memory-response-20260916",
+      "action": "publish",
+      "route": "formal-section",
+      "section": "listed-companies",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially-confirmed",
+      "canonicalUrls": [
+        "https://news.skhynix.com/en/fact-10/"
+      ],
+      "reasonCodes": [
+        "primary-source-body-read",
+        "material-industry-change",
+        "current-day-disclosure"
+      ],
+      "publicCopy": {
+        "titleZh": "SK 海力士回应与 Intel 在美生产存储芯片传闻：具体安排尚未敲定",
+        "titleEn": "SK hynix says reported US memory-production arrangements with Intel are not finalized",
+        "summaryZh": "针对与 Intel 洽谈美国存储芯片生产的报道，SK 海力士表示正探索提升全球竞争力的多种方案，但尚未敲定具体计划或安排。报道涉及的俄亥俄厂房租赁及与 Intel、云厂商设合资企业两种情形，均未作出决定。",
+        "summaryEn": "Responding to reports of talks with Intel on US memory production, SK hynix says it is exploring options to strengthen global competitiveness but has finalized no specific plans or arrangements. It says no decisions have been made on either reported scenario: leasing Ohio fab space or forming a venture with Intel and cloud companies."
+      },
+      "publicClaims": [
+        {
+          "claim": "Responding to reports of talks with Intel on US memory production, SK hynix says it is exploring options to strengthen global competitiveness but has finalized no specific plans or arrangements. It says no decisions have been made on either reported scenario: leasing Ohio fab space or forming a venture with Intel and cloud companies.",
+          "sourceRefs": [
+            "https://news.skhynix.com/en/fact-10/"
+          ],
+          "state": "source-stated"
+        }
+      ],
+      "internalNotes": [
+        "Read SK hynix's FACT response to September 16 reporting. The company says neither Ohio leasing nor an Intel/cloud-company venture is decided. Do not change 'not finalized' into a categorical denial of discussions."
+      ],
+      "fallbackScored": false,
+      "holdClass": null,
+      "entities": [
+        "SK hynix · 000660.KS",
+        "Intel · INTC"
+      ],
+      "region": "美国",
+      "publishedAt": "2026-09-16",
+      "sourceId": "sk-hynix"
+    },
+    {
+      "eventId": "mthreads-china-mobile-aitc-s5000-20260915",
+      "action": "publish",
+      "route": "formal-section",
+      "section": "china-gpu",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially-confirmed",
+      "canonicalUrls": [
+        "https://www.mthreads.com/news/348"
+      ],
+      "reasonCodes": [
+        "primary-source-body-read",
+        "material-industry-change",
+        "dated-backfill"
+      ],
+      "publicCopy": {
+        "titleZh": "摩尔线程与中国移动基于 S5000 推进 AI 可信计算联合验证",
+        "titleEn": "Moore Threads and China Mobile advance S5000-based trusted AI computing validation",
+        "summaryZh": "摩尔线程披露参与中国移动 AITC 生态合作，双方基于 MTT S5000 服务器开展联合研发及端到端验证。整卡直通方案覆盖可信执行环境隔离、CPU-GPU 安全通信等能力，并计划进一步验证主流大模型；公告未披露采购金额或装机规模。",
+        "summaryEn": "Moore Threads says it joined China Mobile's AITC ecosystem and is conducting joint R&D and end-to-end validation on MTT S5000 servers. The pass-through approach covers trusted-execution isolation and secure CPU-GPU communication, with further validation on mainstream models planned. No procurement value or deployment volume is disclosed."
+      },
+      "publicClaims": [
+        {
+          "claim": "Moore Threads says it joined China Mobile's AITC ecosystem and is conducting joint R&D and end-to-end validation on MTT S5000 servers. The pass-through approach covers trusted-execution isolation and secure CPU-GPU communication, with further validation on mainstream models planned. No procurement value or deployment volume is disclosed.",
+          "sourceRefs": [
+            "https://www.mthreads.com/news/348"
+          ],
+          "state": "source-stated"
+        }
+      ],
+      "internalNotes": [
+        "Read the September 15 Moore Threads announcement in the browser after its dynamic body loaded: MTT S5000 server joint R&D, end-to-end validation, pass-through, TEE isolation and secure CPU-GPU links. Mainstream-model validation continues; no order or installed scale stated."
+      ],
+      "fallbackScored": false,
+      "holdClass": null,
+      "entities": [
+        "摩尔线程 · 688795.SH",
+        "中国移动 · 600941.SH",
+        "0941.HK"
+      ],
+      "region": "中国",
+      "publishedAt": "2026-09-15",
+      "sourceId": "moore-threads"
+    },
+    {
+      "eventId": "airtrunk-emergence-cryogenic-mou-20260915",
+      "action": "publish",
+      "route": "formal-section",
+      "section": "cooling",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially-confirmed",
+      "canonicalUrls": [
+        "https://airtrunk.com/airtrunk-emergence-quantum-partner-to-advance-next-gen-cryogenic-data-centre/"
+      ],
+      "reasonCodes": [
+        "primary-source-body-read",
+        "material-industry-change",
+        "dated-backfill"
+      ],
+      "publicCopy": {
+        "titleZh": "AirTrunk 与 Emergence Quantum 签署 MOU，探索低温数据中心",
+        "titleEn": "AirTrunk and Emergence Quantum sign MoU to explore cryogenic data centers",
+        "summaryZh": "AirTrunk 宣布与 Emergence Quantum 合作，研究低温冷却、计算效率及面向量子计算的数据中心基础设施。双方将结合热工程与技术经济模型评估可行性；目前是合作探索，未披露已投运设施、冷量或量产节能指标。",
+        "summaryEn": "AirTrunk announced a partnership with Emergence Quantum to explore cryogenic cooling, computing efficiency and quantum-ready data-center infrastructure, combining thermal engineering with techno-economic evaluation. This is exploratory cooperation; no operating facility, delivered cooling capacity or production energy-saving metric is disclosed."
+      },
+      "publicClaims": [
+        {
+          "claim": "AirTrunk announced a partnership with Emergence Quantum to explore cryogenic cooling, computing efficiency and quantum-ready data-center infrastructure, combining thermal engineering with techno-economic evaluation. This is exploratory cooperation; no operating facility, delivered cooling capacity or production energy-saving metric is disclosed.",
+          "sourceRefs": [
+            "https://airtrunk.com/airtrunk-emergence-quantum-partner-to-advance-next-gen-cryogenic-data-centre/"
+          ],
+          "state": "source-stated"
+        }
+      ],
+      "internalNotes": [
+        "Read AirTrunk's September 15 MoU announcement. Cryogenic cooling and quantum-ready infrastructure are exploratory with techno-economic evaluation. The source does not establish a commercial facility or achieved savings."
+      ],
+      "fallbackScored": false,
+      "holdClass": null,
+      "entities": [
+        "AirTrunk",
+        "Emergence Quantum"
+      ],
+      "region": "全球",
+      "publishedAt": "2026-09-15",
+      "sourceId": "airtrunk"
+    },
+    {
+      "eventId": "lambda-blackwell-dsx-lps-test-20260915",
+      "action": "publish",
+      "route": "formal-section",
+      "section": "compute-products",
+      "sourceTier": "T1",
+      "evidenceStatus": "officially-confirmed",
+      "canonicalUrls": [
+        "https://blogs.nvidia.com/blog/ai-infra-summit-vera-rubin-dsx-energy-efficiencies-tokens-per-watt-ai-factories/"
+      ],
+      "reasonCodes": [
+        "primary-source-body-read",
+        "material-industry-change",
+        "dated-backfill"
+      ],
+      "publicCopy": {
+        "titleZh": "NVIDIA 披露 Lambda 功率平滑验证：同一功率预算容纳 19 而非 16 个节点",
+        "titleEn": "NVIDIA reports Lambda power-smoothing test fitting 19 rather than 16 nodes within one budget",
+        "summaryZh": "NVIDIA 披露，Lambda 在 Blackwell 验证中使用 DSX Max 的大型语言模型功率平滑功能，在通常容纳 16 个满功率节点的预算内运行 19 个节点，token 产出提高约 24%、每瓦性能提高约 23%。这是特定部署的测试结果，不是所有集群的收益保证。",
+        "summaryEn": "NVIDIA reports that Lambda's Blackwell validation used DSX Max large-language-model power smoothing to run 19 nodes within a budget normally accommodating 16 at full power. Token output rose about 24% and performance per watt about 23%. These deployment-specific results are not guaranteed across all clusters."
+      },
+      "publicClaims": [
+        {
+          "claim": "NVIDIA reports that Lambda's Blackwell validation used DSX Max large-language-model power smoothing to run 19 nodes within a budget normally accommodating 16 at full power. Token output rose about 24% and performance per watt about 23%. These deployment-specific results are not guaranteed across all clusters.",
+          "sourceRefs": [
+            "https://blogs.nvidia.com/blog/ai-infra-summit-vera-rubin-dsx-energy-efficiencies-tokens-per-watt-ai-factories/"
+          ],
+          "state": "source-stated"
+        }
+      ],
+      "internalNotes": [
+        "Read NVIDIA's September 15 AI Infra Summit article. Lambda validation fits 19 Blackwell nodes into the budget normally serving 16 at full power, with about 24% higher token output and 23% performance-per-watt gain. Customer-specific test, not a universal fleet result."
+      ],
+      "fallbackScored": false,
+      "holdClass": null,
+      "entities": [
+        "NVIDIA · NVDA"
+      ],
+      "region": "美国",
+      "publishedAt": "2026-09-15",
+      "sourceId": "nvidia"
+    }
+  ],
+  "summary": {
+    "publishFormal": 6,
+    "publishRumor": 0,
+    "research": 0,
+    "hold": 0,
+    "reject": 0,
+    "fallbackScored": 0,
+    "adapterReady": 6,
+    "blockingHold": 0
+  },
+  "execution": {
+    "editor": "Codex source-led editorial review",
+    "paidModelApiCalls": 0,
+    "staleRemoteCandidateDay": "2026-09-11",
+    "usedStaleScores": false
+  }
+}
