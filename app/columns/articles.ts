@@ -3,6 +3,15 @@ import { september15Articles } from "./september-15-articles";
 import septemberFourArticles from "./september-four-articles.json";
 
 export const columnArticles = [
+  {
+    href: "/columns/b300-china-supply-chain", hrefEn: "/en/columns/b300-china-supply-chain",
+    date: "2026-09-17", publishAt: "2026-09-17T14:20:00+08:00", series: "COMPUTE SUPPLY CHAIN · 44",
+    title: "B300 是怎么进入中国的：74 台服务器背后的交易链条",
+    titleEn: "How B300 Servers Reached China: The Transaction Chain Behind 74 Machines",
+    summary: "台湾检方披露 130 台搭载 NVIDIA B300 的 Supermicro 服务器订单，指控其中 74 台流向中国。追踪采购、垫资与最终用途，分析设备到货与可持续算力之间的差距。",
+    summaryEn: "Taiwanese prosecutors describe an order for 130 Supermicro servers with NVIDIA B300 GPUs and allege that 74 reached China. Follow purchasing, financing and end use—and the gap between arrival and dependable compute.",
+    image: "/column-b300-china-supply-chain-v1.jpg",
+  },
   {"href":"/columns/us-listed-neoclouds","hrefEn":"/en/columns/us-listed-neoclouds","date":"2026-08-12","publishAt":"2026-08-12T16:00:00+08:00","series":"NEOCLOUD RESEARCH · 20","title":"美股 Neocloud：业绩分化来自产业链位置，而非单一需求强弱","titleEn":"U.S.-Listed Neoclouds: Earnings Divergence Reflects Stack Position, Not Demand Alone","summary":"CoreWeave 和 Nebius 已进入直接 GPU 云收入兑现；矿业转型和 AI/HPC 托管公司仍在把合同、MW 与项目融资转成计费收入。收入、ARR、TCV、已签 MW 与计费容量不能互换。","summaryEn":"CoreWeave and Nebius have reached direct GPU-cloud revenue at scale, while mining-transition and AI/HPC hosting peers still convert contracts, MW and project finance into billed revenue. Revenue, ARR, TCV, contracted MW and billed capacity are not interchangeable.","image":"/column-neocloud-conversion-voxel-palette-v1.jpg"},
   ...septemberFourArticles,
   ...september15Articles,

@@ -6,6 +6,7 @@ import { septemberWeekResearchRecords } from "./september-week-research-data";
 import { september15ResearchRecords } from "./september-15-research-data";
 import septemberFourRecords from "./september-four-data.json";
 import neocloudArchive from "./neocloud-archive.json";
+import b300ChinaSupplyChain from "./b300-china-supply-chain.json";
 
 export type ResearchMetric = {
   label: string;
@@ -64,6 +65,7 @@ export type ScheduledResearchRecord = {
 };
 
 export const scheduledResearchRecords: ScheduledResearchRecord[] = [
+  b300ChinaSupplyChain as ScheduledResearchRecord,
   neocloudArchive as ScheduledResearchRecord,
   ...(septemberFourRecords as ScheduledResearchRecord[]),
   ...september15ResearchRecords,

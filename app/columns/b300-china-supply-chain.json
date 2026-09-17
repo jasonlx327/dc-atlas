@@ -1,0 +1,329 @@
+{
+  "layout": "explainer",
+  "slug": "b300-china-supply-chain",
+  "imageAltZh": "概念体素插画：紫色服务器机柜、运输箱与审核关口，非真实现场照片",
+  "imageAltEn": "Conceptual voxel illustration of a violet server rack, shipping crate and inspection gate; not a site photograph",
+  "articleSectionZh": "先进计算供应链与出口管制",
+  "articleSectionEn": "Advanced-computing supply chains and export controls",
+  "topics": [
+    "NVIDIA",
+    "Supermicro",
+    "B300",
+    "Blackwell Ultra",
+    "China",
+    "export controls",
+    "AI infrastructure"
+  ],
+  "sources": [
+    {
+      "url": "https://www.klc.moj.gov.tw/media/450456/1150824基檢偵結不法出口高階伺服器案件新聞稿.pdf?mediaDL=true",
+      "zh": "基隆地检署案情说明｜2026-08-24，第 2–6 页",
+      "en": "Keelung prosecutors | August 24, 2026, pp. 2–6",
+      "level": "primary"
+    },
+    {
+      "url": "https://www.justice.gov/usao-sdny/pr/three-charged-conspiring-unlawfully-divert-us-artificial-intelligence-technology-china",
+      "zh": "美国司法部纽约南区公告｜2026-03-19",
+      "en": "U.S. Attorney, SDNY | March 19, 2026",
+      "level": "primary"
+    },
+    {
+      "url": "https://www.supermicro.com/en/pressreleases/supermicro-announces-completion-independent-investigation-and-continued-enhancement",
+      "zh": "Supermicro 调查结果公告｜2026-08-20",
+      "en": "Supermicro investigation announcement | August 20, 2026",
+      "level": "primary"
+    },
+    {
+      "url": "https://www.bis.gov/media/documents/bis-guidance-may-31-2026.pdf",
+      "zh": "BIS 先进计算物项指导｜2026-05-31",
+      "en": "BIS advanced-computing guidance | May 31, 2026",
+      "level": "primary"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+      "zh": "NVIDIA FY2027 Q2 10-Q｜2026-08-26，第 27、37–38 页",
+      "en": "NVIDIA FY2027 Q2 10-Q | August 26, 2026, pp. 27, 37–38",
+      "level": "primary"
+    },
+    {
+      "url": "https://docs.nvidia.com/dgx/dgxb300-user-guide/introduction-to-dgxb300.html",
+      "zh": "DGX B300 用户指南｜2026-09-08 更新",
+      "en": "DGX B300 user guide | Updated September 8, 2026",
+      "level": "primary"
+    },
+    {
+      "url": "https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Blackwell-Ultra-DGX-SuperPOD-Delivers-Out-of-the-Box-AI-Supercomputer-for-Enterprises-to-Build-AI-Factories/default.aspx",
+      "zh": "NVIDIA Blackwell Ultra 系统公告｜2025-03-18",
+      "en": "NVIDIA Blackwell Ultra systems | March 18, 2025",
+      "level": "primary"
+    },
+    {
+      "url": "https://developer.nvidia.com/blog/inside-nvidia-blackwell-ultra-the-chip-powering-the-ai-factory-era/",
+      "zh": "NVIDIA Blackwell Ultra 架构｜2025-08-22",
+      "en": "NVIDIA Blackwell Ultra architecture | August 22, 2025",
+      "level": "primary"
+    }
+  ],
+  "zh": {
+    "hero": "一宗台湾检方披露的案件，揭示了先进算力交易中“申报买家”与“实际客户”的分离。追踪这批服务器，还需要沿着货物、资金和最终用途三条线继续往下看。",
+    "thesis": "从这条交易链可以看到，出口限制、市场上出现设备、厂商没有正式大规模对华供货，三件事可以同时成立。限制规定哪些交易可以进行；实际执行还要依赖交易各方提供的信息。只要采购、付款、运输和使用没有对应到同一组真实主体，一张通过审核的订单就可能遮住最终去向。",
+    "opening": [
+      "2026 年 8 月 24 日，台湾基隆地方检察署公布了一宗涉及 B300 的案件：一笔 130 台高阶 AI 服务器订单中，检方指控有 74 台已经转售并运往中国，另有 56 台未完成出口。涉案设备由 Supermicro 制造，搭载 NVIDIA 的 B300 GPU。这里的计量单位是服务器，不是单颗芯片；相关案情属于检方指控，不能等同于法院已经认定的事实。[基隆地检署案情说明，8 月 24 日，第 2—6 页](https://www.klc.moj.gov.tw/media/450456/1150824基檢偵結不法出口高階伺服器案件新聞稿.pdf?mediaDL=true)",
+      "这份文件为“B300 如何进入中国”提供了一条具体线索。它描述的交易始于一份声称在台湾使用设备的订单，涉及服务器厂商、经销商、贸易企业和机房服务人员。检方指控，部分参与者隐瞒真实客户与用途，让订单通过厂商的销售审核，再将设备转向中国客户。"
+    ],
+    "sections": [
+      {
+        "label": "01 · THE ORDER",
+        "heading": "这批 B300，起点是一笔声称留在台湾的采购",
+        "paragraphs": [
+          "根据检方文件，采购主体是一家经营服务器买卖的科技公司。2025 年 9 月提交的文件将其列为最终用户，安装地点填为台湾，并声明不会向受限制对象出口或转出口。订单最终通过厂商审核，分三阶段交付，数量分别为 2 台、64 台和 64 台。",
+          "这一申报与后续流向之间存在直接冲突。检方列出的去向包括直接出口，以及经其他司法辖区转运后交给中国客户；这些是已经披露的历史案情，不代表市场上所有 B300 都沿同一路径流动。",
+          "来源：[基隆地检署案情说明，第 3—5 页](https://www.klc.moj.gov.tw/media/450456/1150824基檢偵結不法出口高階伺服器案件新聞稿.pdf?mediaDL=true)。表中均为检方指控，不是对全部中国市场的统计。",
+          "把这些设备统称为“海外云算力”会掩盖问题。这宗案件指向服务器实物跨境流动。中国团队从境内调用一台位于境外的机器，则属于另一类事实：服务被使用，硬件未必入境。两者需要不同证据，不能拿一份云服务报价证明设备已经进入中国。",
+          "这宗案件也无法回答中国现在究竟有多少 B300。被查获或被追溯的订单是执法样本，其余交易没有天然相同的规模、配置和成功率。74 台足以说明检方指控的流入行为具有具体数量，却不足以推算全国保有量。"
+        ],
+        "table": {
+          "headers": [
+            "检方披露的历史流向",
+            "服务器数量",
+            "检方披露的结果"
+          ],
+          "rows": [
+            [
+              "直接运往中国",
+              "16 台",
+              "已交付中国客户"
+            ],
+            [
+              "经印度尼西亚转运",
+              "50 台",
+              "已转运中国"
+            ],
+            [
+              "经日本、香港转运",
+              "8 台",
+              "已转运中国"
+            ],
+            [
+              "其余拟出口设备",
+              "56 台",
+              "未完成出口"
+            ],
+            [
+              "订单合计",
+              "130 台",
+              "74 台与 56 台分别统计"
+            ]
+          ],
+          "afterParagraph": 2
+        }
+      },
+      {
+        "label": "02 · CUSTOMER REVIEW",
+        "heading": "被突破的是一整套客户审核关系",
+        "paragraphs": [
+          "高阶服务器并非普通现货买卖。检方描述，买家需要经过资格、最终用户及最终用途审核，原厂还会核查设备拟安装的场所。这些环节原本用于确认：买家确实需要机器，也有能力在申报地点使用机器。",
+          "案情中的关键细节是，检方认为申报机房的机柜空间、供电和网络条件，明显无法满足 130 台高阶 AI 服务器的使用需求，但相关问题在查核过程中被隐瞒。原厂对现场情况的判断，依赖参与交易和查核的人员传递信息。[基隆地检署案情说明，第 2—3 页](https://www.klc.moj.gov.tw/media/450456/1150824基檢偵結不法出口高階伺服器案件新聞稿.pdf?mediaDL=true)",
+          "由此可以得出一个供应链判断：审核文件是否齐全，与申报用途是否真实，是两个不同问题。公司具有登记地址、能签署合同、现场确有机房，都不能单独证明设备将在那里长期运行。订单规模还必须与买家的业务、资金和设施相互吻合。",
+          "在正常交易中，厂商关注出货，经销商关注回款，机房运营商负责设施，物流企业处理运输。各方分别完成自己的工作，并不自动意味着有人掌握整条链。案件暴露的风险就在这些接口：前一环节认定的买家，可能已经不是后一环节实际服务的客户。",
+          "NVIDIA 在截至 2026 年 7 月 26 日的季度报告中披露，公司出售产品后不再具有实物控制，需要依赖客户与合作伙伴的合规体系。该披露解释了原厂控制能力的边界，但并不意味着原厂没有审查义务，也不能为任何具体交易作出免责结论。[NVIDIA FY2027 Q2 Form 10-Q，“Export Controls”风险因素，第 38 页](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm)"
+        ]
+      },
+      {
+        "label": "03 · TRANSACTION ECONOMICS",
+        "heading": "资金关系比转运地点更能解释交易动机",
+        "paragraphs": [
+          "追踪设备要看运输记录，理解这笔交易为什么能发生，则要看谁提供资金、谁获得收益。",
+          "检方指控，经销环节曾为采购主体垫付资金，掩盖实际资金来源；在完成 74 台服务器转售后，两名相关人员扣除支付给经销商的货款，获得合计 2,120 万 5,531 美元的违法所得。文件还分别披露了相关业务人员的奖金，以及另一组涉嫌侵占经销商资产的事项。这几类金额性质不同，不能相加后称为“芯片交易利润”。[基隆地检署案情说明，第 2、5—6 页](https://www.klc.moj.gov.tw/media/450456/1150824基檢偵結不法出口高階伺服器案件新聞稿.pdf?mediaDL=true)",
+          "按检方披露的总所得除以已经转售的服务器数量，Atlas 计算得到：",
+          "21,205,531 美元 ÷ 74 台 ≈ 每台 28.66 万美元。",
+          "这是该案扣除货款后所得的简单平均值，既非每台服务器售价，也不是按完整成本核算的净利润。公开文件没有提供足够的逐台售价及全部成本，因而不能进一步计算可靠的净利率，更不能把它当作整个中国市场的平均溢价。",
+          "不过，这个数字已经能说明交易激励：获得采购资格、组织资金和完成转售，可能产生足以吸引多个环节参与的收益。Atlas 的解释是，这类差价可能同时反映供货稀缺、交付风险和中介议价能力；仅凭案情无法拆分各部分的贡献。",
+          "对下游使用者，昂贵还不是风险的全部。预付款、交付时间、资产权属、售后支持和追加采购都会影响最终成本。若合同要求持续提供算力，而设备后续无法维修或补充，采购时的高性能优势就可能被停机和违约成本抵消。评价这种资产，应看它能否连续履约，不能只看它能否在某一天开机。",
+          "B300 对买家的吸引力有具体的技术基础。NVIDIA 的 Blackwell Ultra 架构说明列出最高 288 GB 的单 GPU HBM3e 容量及 8 TB/s 内存带宽。对长上下文和高并发推理，显存不仅要容纳模型参数，还要服务请求所需的中间状态；内存容量、数据搬运速度与计算能力共同约束吞吐。[NVIDIA Blackwell Ultra 架构说明](https://developer.nvidia.com/blog/inside-nvidia-blackwell-ultra-the-chip-powering-the-ai-factory-era/)",
+          "这使部分任务的采购动机超出“买更新一代芯片”：如果更大的显存能减少模型拆分或数据转移，应用方就可能用更少的协同节点完成同一任务。但能节省多少，要看模型精度、上下文和并发设置。脱离工作负载讨论统一的性能倍数，解释不了买家的真实支付意愿。",
+          "从经济上看，客户还可能为更早完成开发、验证模型或交付服务支付时间溢价。这个动机可以解释为什么短期需求愿意承受高价，却不能证明案中客户具体运行了什么模型。公开案情并未交代他们的实际工作负载。"
+        ]
+      },
+      {
+        "label": "04 · COMPARATIVE CASE",
+        "heading": "另一起美国案件，说明这类风险并不限于 B300",
+        "paragraphs": [
+          "2026 年 3 月，美国司法部公布另一起 AI 服务器涉嫌转运案件。检方称，一家东南亚企业在 2024—2025 年间采购了约 25 亿美元服务器，部分交易涉嫌隐瞒中国终端客户；其中，2025 年 4 月下旬至 5 月中旬，被指转运中国的服务器价值至少约 5.1 亿美元。美国检方同样强调，这些是指控，被告在被证明有罪前应被推定无罪。[美国司法部纽约南区公告，3 月 19 日](https://www.justice.gov/usao-sdny/pr/three-charged-conspiring-unlawfully-divert-us-artificial-intelligence-technology-china)",
+          "两宗案件可以比较交易结构，却不能合并统计。25 亿美元是美国案件所述的采购额，不是 B300 在中国的销售额；它也不能与台湾案的 74 台直接相加。公告没有提供足以把全部交易归为 B300 的产品明细。",
+          "相似之处在于，采购主体的身份与设备的实际受益者之间被指存在分离。这让风险从货运环节向前延伸：订单是否真实反映需求，客户能否承受采购规模，销售激励是否压过了独立审核，都会影响最终结果。",
+          "但员工涉案不等于公司层面指使。Supermicro 在 8 月 20 日就美国案件公布内部调查结果，表示没有发现现任高级管理人员知悉涉嫌转运的证据，公司未在该起诉书中被列为被告，并继续配合政府调查。公司同时披露采取了人员措施及合规改进。[Supermicro 调查结果公告，8 月 20 日](https://www.supermicro.com/en/pressreleases/supermicro-announces-completion-independent-investigation-and-continued-enhancement)",
+          "这是公司委托调查的结论，不是司法裁判；其对象也不是自动涵盖四天后台湾检方公布的全部案情。判断责任需要逐案、逐主体进行。把“个别人受到指控”扩大为“厂商有组织地对华供货”，会越过目前证据支持的范围。"
+        ]
+      },
+      {
+        "label": "05 · LICENSE BOUNDARIES",
+        "heading": "H200 获许可销售，不能替 B300 解释来源",
+        "paragraphs": [
+          "合法许可销售与涉嫌违规转运必须分开看。",
+          "本案中的采购资格和订单批准，首先属于厂商内部销售管理；它们不能代替政府出口许可，也不能覆盖后续未经批准的用途变化。检方文件记载，最后 56 台设备在出口环节被要求取得战略性高科技货品输出许可证，最终未完成出口。同一批设备能够通过商业销售审批，却未能完成出口程序，恰好显示了两层控制各自的作用。[基隆地检署案情说明，第 4 页](https://www.klc.moj.gov.tw/media/450456/1150824基檢偵結不法出口高階伺服器案件新聞稿.pdf?mediaDL=true)",
+          "NVIDIA 最新季度报告披露，在美国政府的许可框架下，公司已向特定中国客户完成少量 H200 出货，相关出货占该季度数据中心收入不足 1%。这是公司对特定产品、特定许可交易的披露，不能推广到 B300。[NVIDIA FY2027 Q2 Form 10-Q，第 27、37 页](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm)",
+          "同样，境外采购也不是天然不受限制。美国商务部工业与安全局在 2026 年 5 月 31 日说明，相关先进计算物项提供给总部或最终母公司位于受限地区的实体，即便该实体自身设在其他国家，既有许可要求仍适用；文件也为符合规定的真实数据中心运营商说明了持续运营边界。[BIS 5 月 31 日指导文件](https://www.bis.gov/media/documents/bis-guidance-may-31-2026.pdf)",
+          "对公众报道来说，至少应分清三个问题：机器在哪里、谁拥有或控制机器、谁使用计算服务。它们可以指向不同地区，也会触及不同的许可、合同和数据规则。只凭“客户是中国公司”无法证明实物进口；只凭“机房在境外”也无法确认整笔安排符合规定。",
+          "这一区分还影响对中国算力供给的判断。境内资产增加，需要设备到货、安装、验收等证据；境外服务增加，需要服务主体、部署地点及使用权证据。把两类供给揉进同一个“进口 GPU 数量”，会同时高估境内装机，并掩盖境外服务的合同风险。"
+        ]
+      },
+      {
+        "label": "06 · USABLE COMPUTE",
+        "heading": "从“运到了”到“用得好”，还差一套基础设施",
+        "paragraphs": [
+          "B300 是 GPU 产品名称，搭载它的服务器可以具有不同配置；DGX B300 是 NVIDIA 自有系统产品，GB300 NVL72 则是另一种机架级系统。不能看到“B300”三个字符，就默认它代表整架 GB300 或同一种整机。[NVIDIA Blackwell Ultra 系统发布说明，2025 年 3 月 18 日](https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Blackwell-Ultra-DGX-SuperPOD-Delivers-Out-of-the-Box-AI-Supercomputer-for-Enterprises-to-Build-AI-Factories/default.aspx)",
+          "以 NVIDIA 的 DGX B300 为技术参照，官方用户指南列出八颗 GPU，以及最高 15 千瓦的系统功率。这个数字说明它对供电和散热提出的要求，但它不是台湾案中 Supermicro 设备的实测功耗。不同整机型号、运行负载和冷却方案都可能改变结果，不能据此直接给那批设备换算机房容量。[NVIDIA DGX B300 用户指南，9 月 8 日更新](https://docs.nvidia.com/dgx/dgxb300-user-guide/introduction-to-dgxb300.html)",
+          "服务器到货后，还需要供电、散热、网络、存储、驱动与调度系统共同工作。对训练任务，跨节点通信和故障恢复会影响有效计算时间；对推理服务，响应时延、请求分布与利用率会影响每单位收入对应的成本。设备清单反映投入，作业完成情况才接近产出。",
+          "从经营分析角度，可以用一个简化框架理解两者的差距：有效产出取决于设备能力、可用时间，以及任务对这些能力的实际利用程度。这个框架没有统一折扣系数；不同模型、集群和运维体系必须分别测量。直接用芯片峰值算力推算营收，会跳过这些最容易损失效率的环节。",
+          "因此，一家运营商宣传拥有 B300，只能构成进一步调查的起点。更有解释力的材料包括连续运行记录、真实客户验收、售后责任、资产权属以及收入确认。缺少这些记录，既不能断言机器是假货，也不能将其作为稳定商业算力计入市场供给。"
+        ]
+      },
+      {
+        "label": "07 · FORWARD VIEW",
+        "heading": "下一阶段，竞争会落在供货与运营的可持续性上",
+        "paragraphs": [
+          "这宗案件最容易被写成“管制已经完全失效”，但 56 台未完成出口也属于同一份证据。它显示限制存在被突破的部分，也存在实际拦截效果。成功转运的设备与受阻设备必须同时进入判断。",
+          "对未来六到十二个月，Atlas 的判断是：即使零散硬件继续出现在市场，采购方也会面对更重要的约束——能否在相同法律与商业条件下重复采购，并持续获得服务。一次交付可以满足一项短期任务，长期算力合同却需要备件、扩容和稳定运维。供应不连续，会把风险传递到客户合同和现金流。",
+          "这一判断可以检验。如果后续公开披露出现持续获许可、可追溯的同型号供货，并有完整服务保障，那么供货不确定性应下降；若出现更多订单扣留、交期延长或服务受限，风险就会继续反映在预付款要求、合同期限和履约安排上。两种情况都需要实证，不能根据单起案件预定结论。",
+          "对国产加速器厂商，这也意味着竞争空间不能只按峰值性能衡量。持续供货、本地支持和软件迁移成本，会共同影响客户选择。但 B300 存在供应风险，并不自动证明国产方案已经具备相同任务效率；是否形成替代，仍要看实际工作负载、交付记录和客户复购。",
+          "对数据中心及算力运营商，资产来源、运行能力与客户合同之间的一致性，会越来越影响经营质量。一批高价买来的机器，如果无法支持长期承诺，未必比性能较低但供应稳定的设备创造更多现金流。这是本案对基础设施行业最直接的启示。",
+          "目前能够据公开文件回答的是：台湾检方指控，部分 B300 通过一笔申报在台湾使用的服务器采购进入交易链，随后被转售并运往中国。文件没有公开最终客户的完整身份，也未披露这些机器在中国的部署地点和运行情况。它揭示了一个具体入口，却没有给出中国 B300 市场的全貌。"
+        ]
+      }
+    ],
+    "conclusion": "下一份真正改变判断的材料，将是能够把货物、付款人、最终用户与持续运行记录连起来的证据。那时才可能进一步回答：这些流入的服务器，究竟带来了多少可用、可持续的算力。",
+    "disclosure": "资料截至 2026 年 9 月 17 日北京时间 14:10。本文根据公开司法文件、监管说明、公司披露及技术文档撰写，未开展现场采访；案件内容保留指控属性，分析及条件判断由 IDC Atlas 作出。"
+  },
+  "en": {
+    "hero": "A case disclosed by Taiwanese prosecutors exposes the separation between a declared buyer and the ultimate customer. Following the servers requires following the money and the end use as well.",
+    "thesis": "Export restrictions, the appearance of equipment in a restricted market, and the absence of an authorized large-scale supply channel can coexist. Rules determine which transactions are permitted; enforcement also depends on information supplied by the parties. When purchasing, payment, shipment and use refer to different entities, an approved order can obscure the ultimate destination. The commercial significance extends beyond the shipment itself: an operator needs equipment it can maintain and replenish throughout a customer contract.",
+    "opening": [
+      "On August 24, 2026, the Keelung District Prosecutors Office in Taiwan disclosed a case involving an order for 130 advanced AI servers. Prosecutors allege that 74 were resold and shipped to China, while the remaining 56 did not complete export. The machines were manufactured by Supermicro and equipped with NVIDIA B300 GPUs. The unit is a server, not an individual chip, and the account represents prosecutorial allegations rather than findings established by a court. [Keelung prosecutors, August 24, pp. 2–6](https://www.klc.moj.gov.tw/media/450456/1150824基檢偵結不法出口高階伺服器案件新聞稿.pdf?mediaDL=true)",
+      "The case provides a concrete answer to part of the question of how B300 equipment reached China. The transaction began with an order declaring that the servers would be used in Taiwan. It involved a server manufacturer, distribution and trading businesses, and people connected with data-center services. Prosecutors allege that participants concealed the actual customers and purpose, obtained the manufacturer's sales approval, and subsequently diverted the equipment to Chinese customers."
+    ],
+    "sections": [
+      {
+        "label": "01 · THE ORDER",
+        "heading": "An order declaring that the machines would stay in Taiwan",
+        "paragraphs": [
+          "According to the prosecutors' account, the purchaser was a technology business engaged in server trading. Documents submitted in September 2025 identified it as the end user, specified installation in Taiwan, and declared that the equipment would not be exported or re-exported to restricted parties. The manufacturer approved the order, which was delivered in three stages: two servers, followed by 64 and another 64.",
+          "That declared use conflicts with the subsequent destinations described by prosecutors. Their account includes direct exports and shipments through other jurisdictions before delivery to Chinese customers. These are historical routes disclosed in a specific case; they do not establish a universal pathway for B300 equipment.",
+          "Source: [Keelung prosecutors, pp. 3–5](https://www.klc.moj.gov.tw/media/450456/1150824基檢偵結不法出口高階伺服器案件新聞稿.pdf?mediaDL=true). These are allegations about this order, not a census of the Chinese market.",
+          "Calling all such supply “offshore cloud capacity” would blur the central fact. This case concerns the physical movement of servers across borders. A team in China accessing a machine located abroad is a different arrangement: the computing service is being consumed, but the hardware need not have entered China. Each proposition requires its own evidence. An overseas cloud quotation does not demonstrate a physical import.",
+          "Nor does the case establish how many B300 systems China currently possesses. Orders identified by enforcement agencies are a selected sample. Other transactions cannot be assumed to have the same size, configurations or completion rate. The figure of 74 makes the alleged movement specific and measurable; it is not a basis for extrapolating national installed capacity."
+        ],
+        "table": {
+          "headers": [
+            "Historical destination alleged by prosecutors",
+            "Servers",
+            "Reported outcome"
+          ],
+          "rows": [
+            [
+              "Direct shipment to China",
+              "16",
+              "Delivered to Chinese customers"
+            ],
+            [
+              "Transshipment through Indonesia",
+              "50",
+              "Subsequently shipped to China"
+            ],
+            [
+              "Transshipment through Japan and Hong Kong",
+              "8",
+              "Subsequently shipped to China"
+            ],
+            [
+              "Remaining equipment intended for export",
+              "56",
+              "Export not completed"
+            ],
+            [
+              "Total order",
+              "130",
+              "74 and 56 counted separately"
+            ]
+          ],
+          "afterParagraph": 2
+        }
+      },
+      {
+        "label": "02 · CUSTOMER REVIEW",
+        "heading": "The vulnerability spans the customer-review chain",
+        "paragraphs": [
+          "Advanced servers are not simply purchased from an unrestricted shelf. The prosecutors describe a process that included buyer qualification, end-user and end-use review, and checks of the proposed installation site. Those steps were intended to establish both that the buyer needed the equipment and that it could operate the machines where it said it would.",
+          "The physical mismatch is important. Prosecutors allege that the declared facility lacked the rack space, electricity and network conditions needed for 130 advanced AI servers, and that these shortcomings were concealed during the review. The manufacturer's understanding of the site depended on information passed through people involved in the transaction and inspection. [Keelung prosecutors, pp. 2–3](https://www.klc.moj.gov.tw/media/450456/1150824基檢偵結不法出口高階伺服器案件新聞稿.pdf?mediaDL=true)",
+          "The implication for supply-chain analysis is straightforward: complete paperwork and genuine end use are different tests. A registered address, an executed contract and the existence of a data center do not individually establish that equipment will run there over the long term. Order size must also be consistent with the customer's business, financing and facilities.",
+          "Responsibilities are divided in ordinary commerce. Manufacturers ship, distributors collect payment, operators provide facilities, and logistics businesses transport goods. Each party completing its assigned function does not ensure that anyone has reconciled the entire chain. The customer accepted at one stage may not be the beneficiary served at the next.",
+          "NVIDIA's quarterly filing for the period ended July 26, 2026 states that it lacks physical control over products after sale and relies on customers and partners' compliance processes. This describes a limit on direct control, not the absence of review responsibilities, and it does not exonerate any particular transaction. [NVIDIA FY2027 Q2 Form 10-Q, Export Controls, p. 38](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm)"
+        ]
+      },
+      {
+        "label": "03 · TRANSACTION ECONOMICS",
+        "heading": "Financing explains more than a list of transit points",
+        "paragraphs": [
+          "Shipping records help establish where equipment went. Financing and proceeds help explain why a transaction could attract participants in the first place.",
+          "Prosecutors allege that a distributor advanced money for the purchasing entity, concealing the actual funding source. They state that, after reselling the 74 servers and deducting payments for the goods to the distributor, two people obtained combined unlawful proceeds of $21,205,531. The release separately describes sales-related bonuses and allegations involving misappropriation of distributor assets. These amounts have different meanings and should not be aggregated into a single measure of chip-trading profit. [Keelung prosecutors, pp. 2 and 5–6](https://www.klc.moj.gov.tw/media/450456/1150824基檢偵結不法出口高階伺服器案件新聞稿.pdf?mediaDL=true)",
+          "Dividing the alleged proceeds by the number of resold servers gives an Atlas calculation:",
+          "$21,205,531 ÷ 74 servers ≈ $286,561 per server.",
+          "This is a simple average of proceeds after the stated goods payment. It is neither the selling price nor net profit calculated after every cost. The public record does not disclose sufficient per-unit prices and complete expenses to calculate a reliable net margin. The result also cannot stand in for an average premium across China.",
+          "It nevertheless identifies a substantial incentive to obtain purchasing access, organize financing and complete a resale. Atlas interprets the spread as potentially reflecting scarcity, delivery risk and intermediary bargaining power together. The case alone cannot isolate the contribution of each factor.",
+          "For a downstream operator, the purchase premium is only one component of risk. Advance payments, delivery dates, title to the asset, support and follow-on procurement all affect the eventual cost. A provider promising continuous compute services can lose the benefit of superior hardware if unavailable repairs or replacements create downtime and contractual liabilities. Its asset must support repeated delivery, not merely switch on once.",
+          "B300 has a specific technical appeal. NVIDIA's Blackwell Ultra architecture description lists up to 288 GB of HBM3e capacity per GPU and 8 TB/s of memory bandwidth. In long-context and concurrent inference, memory accommodates model parameters and the intermediate state associated with requests. Capacity, data movement and processing capability jointly constrain throughput. [NVIDIA Blackwell Ultra architecture](https://developer.nvidia.com/blog/inside-nvidia-blackwell-ultra-the-chip-powering-the-ai-factory-era/)",
+          "For some workloads, additional memory may reduce the need to split a model or move data, allowing fewer cooperating nodes to perform a task. The saving depends on numerical precision, context length and concurrency. A universal performance multiple divorced from those conditions cannot explain actual willingness to pay.",
+          "Customers may also value completing development, validating a model or delivering a service sooner. That possible time premium helps explain why short-term demand could tolerate high acquisition costs. It does not identify what the customers in this case actually ran: their workloads are not disclosed in the public account."
+        ]
+      },
+      {
+        "label": "04 · COMPARATIVE CASE",
+        "heading": "A separate U.S. case broadens the comparison",
+        "paragraphs": [
+          "In March 2026, the U.S. Department of Justice announced a separate case concerning alleged AI-server diversion. Prosecutors described approximately $2.5 billion in server purchases by a Southeast Asian business during 2024–2025 and alleged concealment of Chinese end customers in the scheme. For the specific period from late April to mid-May 2025, they alleged diversion to China of servers worth at least approximately $510 million. The announcement emphasizes that the accusations are charges and that defendants are presumed innocent unless proven guilty. [U.S. Attorney's Office, Southern District of New York, March 19](https://www.justice.gov/usao-sdny/pr/three-charged-conspiring-unlawfully-divert-us-artificial-intelligence-technology-china)",
+          "The cases are comparable in structure, not additive in size. The $2.5 billion is the procurement figure described in the U.S. case, not B300 sales into China. It cannot be combined with the Taiwanese case's 74 machines. The U.S. announcement does not provide a product breakdown establishing that all the equipment was B300.",
+          "The shared concern is an alleged separation between the purchasing entity and the ultimate beneficiary. It moves the analysis upstream from transportation: did the order represent real demand from the declared customer, could that customer support its size, and did sales incentives compromise independent review?",
+          "Individual allegations do not establish company-directed conduct. On August 20, Supermicro released the results of an internal investigation concerning the U.S. case. It said the review found no evidence that current senior management knew of the alleged diversion, noted that the company was not named as a defendant in that indictment, and described personnel measures and compliance improvements while continuing to cooperate with authorities. [Supermicro investigation announcement, August 20](https://www.supermicro.com/en/pressreleases/supermicro-announces-completion-independent-investigation-and-continued-enhancement)",
+          "That is the result of a company-commissioned investigation, not a judicial ruling. Its scope cannot automatically be extended to every allegation Taiwanese prosecutors disclosed four days later. Responsibility must be assessed separately for each case and party; the available evidence does not justify turning allegations against individuals into a claim of organized corporate supply to China."
+        ]
+      },
+      {
+        "label": "05 · LICENSE BOUNDARIES",
+        "heading": "H200 licenses do not explain B300 provenance",
+        "paragraphs": [
+          "Licensed sales and alleged unauthorized diversion must be analyzed separately. Even within one order, commercial approval and government export authorization are different controls.",
+          "Buyer qualification and order approval in the Taiwanese account concern the manufacturer's sales process. They do not replace a government export license or authorize subsequent changes in use. Prosecutors state that the final 56 machines were required to obtain a strategic high-technology commodities export license and did not complete export. Commercial approval was therefore insufficient to carry the remaining equipment through the export process. [Keelung prosecutors, p. 4](https://www.klc.moj.gov.tw/media/450456/1150824基檢偵結不法出口高階伺服器案件新聞稿.pdf?mediaDL=true)",
+          "NVIDIA's latest quarterly filing reports limited H200 shipments to specific Chinese customers under U.S. government licenses, accounting for less than 1% of quarterly Data Center revenue. That is a disclosure about a particular product and authorized transactions. It cannot be generalized to B300. [NVIDIA FY2027 Q2 Form 10-Q, pp. 27 and 37](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm)",
+          "An overseas purchase is not inherently outside the rules either. In guidance dated May 31, 2026, the Bureau of Industry and Security explained that existing licensing requirements for relevant advanced-computing items continue to apply to entities headquartered, or whose ultimate parent is headquartered, in specified restricted jurisdictions, even when the entity itself is elsewhere. The guidance also discusses continued operation by bona fide compliant data-center operators. [BIS guidance, May 31](https://www.bis.gov/media/documents/bis-guidance-may-31-2026.pdf)",
+          "Reporting must distinguish where a machine sits, who owns or controls it, and who consumes its computing services. Those answers can point to different places and different licensing, contractual and data obligations. A Chinese customer does not alone demonstrate a physical import; an overseas facility does not alone establish that the entire arrangement is compliant.",
+          "The distinction affects supply estimates. Additional domestic assets require evidence of delivery, installation and acceptance. Additional offshore services require evidence of the provider, deployment location and rights of access. Combining them into an imported-GPU total overstates the domestic fleet while obscuring service-contract risk abroad."
+        ]
+      },
+      {
+        "label": "06 · USABLE COMPUTE",
+        "heading": "Arrival is only one milestone toward usable compute",
+        "paragraphs": [
+          "B300 names a GPU product; servers built around it can have different configurations. DGX B300 is NVIDIA's own system, while GB300 NVL72 is a different rack-scale product. Seeing “B300” does not identify either a complete GB300 rack or a standardized server configuration. [NVIDIA Blackwell Ultra systems announcement, March 18, 2025](https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Blackwell-Ultra-DGX-SuperPOD-Delivers-Out-of-the-Box-AI-Supercomputer-for-Enterprises-to-Build-AI-Factories/default.aspx)",
+          "As a technical reference, NVIDIA's DGX B300 user guide specifies eight GPUs and maximum system power of 15 kW. That illustrates the demands on electricity and cooling; it is not measured consumption for the Supermicro machines in the Taiwanese case. Model, workload and cooling configuration matter, so the figure cannot simply be multiplied into a facility-capacity estimate for those shipments. [NVIDIA DGX B300 user guide, updated September 8](https://docs.nvidia.com/dgx/dgxb300-user-guide/introduction-to-dgxb300.html)",
+          "Delivered servers still need power, cooling, networking, storage, drivers and scheduling to work together. For training, communication between nodes and recovery from failures affect productive time. For inference, latency, request patterns and utilization influence cost per unit of revenue. The equipment list describes an input; completed work is closer to the output that customers buy.",
+          "A useful operating framework is to consider hardware capability, available running time and the degree to which a workload uses that capability. There is no universal efficiency discount: different models, clusters and operating teams must be measured separately. Multiplying theoretical peak processing power into revenue skips the interfaces where usable output can be lost.",
+          "An operator's claim to own B300 equipment is therefore a starting point for investigation. Continuous operating records, customer acceptance, support obligations, asset ownership and revenue recognition are more informative together. Missing records neither prove that a machine is counterfeit nor justify counting it as dependable commercial capacity."
+        ]
+      },
+      {
+        "label": "07 · FORWARD VIEW",
+        "heading": "The next contest is over repeatable supply and service",
+        "paragraphs": [
+          "The case could easily become a sweeping claim that controls have failed completely. Yet the 56 machines that did not complete export belong to the same evidence set as the 74 allegedly diverted. Both outcomes matter: the record describes alleged breaches and a practical limit on completion.",
+          "Over the next six to twelve months, Atlas expects buyers to face a question more consequential than whether isolated machines appear for sale: can they procure again on consistent legal and commercial terms and continue receiving support? One delivery may satisfy a short project. A multi-period compute commitment requires spares, expansion and sustained operations. Discontinuous supply can transmit risk into customer contracts and cash flow.",
+          "This view is testable. Repeated, licensed and traceable deliveries of the same equipment with complete support would reduce supply uncertainty. Further retained orders, delivery delays or support restrictions would strengthen the concern, potentially affecting prepayment requirements, contract duration and fulfillment terms. Either development requires evidence; a single case cannot determine the outcome in advance.",
+          "For domestic accelerator suppliers, the competitive opportunity consequently extends beyond theoretical peak performance. Reliable availability, local support and migration costs all affect customer choice. Supply risk around B300 does not establish equal task efficiency elsewhere. Substitution must be demonstrated through workloads, completed deliveries and repeat customers.",
+          "For data-center and compute-service operators, the alignment of asset provenance, operating capability and customer obligations is central to business quality. Expensive machines that cannot support a long-term commitment may generate less cash than less capable equipment with dependable supply. That is the case's most direct infrastructure implication.",
+          "The public record supports a bounded answer: Taiwanese prosecutors allege that B300 servers entered a commercial chain under declared Taiwanese end use and were subsequently resold and shipped to China. The final customers' full identities, deployment sites and operating results are not disclosed. The case reveals a specific channel, not the entire Chinese B300 market."
+        ]
+      }
+    ],
+    "conclusion": "The next evidence that would change the assessment must connect physical goods, payment, ultimate users and sustained operations. Only then can the inquiry move from how servers arrived to how much durable computing capacity they produced.",
+    "disclosure": "Sources current to September 17, 2026, 14:10 Beijing time. This report draws on public judicial documents, regulatory guidance, company disclosures and technical documentation; it does not include field interviews. Allegations retain their prosecutorial attribution. Analysis and conditional judgments are those of IDC Atlas."
+  }
+}
