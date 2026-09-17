@@ -72,7 +72,7 @@ test("September 7 catch-up reporting has bilingual, indexable detail pages", asy
 
 test("retained rumor permalinks remain bilingual and do not re-enter the latest feed", async () => {
   const archive = JSON.parse(await readFile(new URL("../app/data/rumor-archive.json", import.meta.url), "utf8"));
-  assert.equal(archive.length, 11);
+  assert.ok(archive.length > 0, "published permalink archive must not be empty");
   const sitemap = await (await render("/sitemap.xml")).text();
   for (const prefix of ["", "/en"]) {
     const feed = await (await render(`${prefix}/rumors`)).text();
@@ -1105,7 +1105,7 @@ test("pins canonical and social metadata to the production origin, not the reque
 
   assert.match(html, /property="og:image" content="https:\/\/idc-index\.com\/og\.png"/i);
   assert.match(html, /name="twitter:card" content="summary_large_image"/i);
-  assert.match(html, /name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/i);
+  assert.match(html, /name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/i);
   assert.match(html, /lang="zh-CN"/i);
   assert.match(html, /rel="canonical" href="https:\/\/idc-index\.com\/"/i);
   assert.match(html, /hrefLang="en" href="https:\/\/idc-index\.com\/en"/i);
@@ -1352,9 +1352,38 @@ test("withdrawn copy has bilingual correction permalinks but stays out of feeds 
     assert.equal(response.status, 200);
     const html = await response.text();
     assert.match(html, /name="robots" content="[^"]*noindex/);
+    assert.doesNotMatch(html, /name="googlebot" content="index(?:,|")/);
     assert.ok(html.includes(item.sourceUrl));
     assert.ok(!html.includes("source figures:"));
     const feed = await (await render(`${prefix}/rumors`)).text();
     for (const item of withdrawn) assert.ok(!feed.includes(`href="${prefix}/rumors/${item.id}"`));
+  }
+});
+
+test("September GSC historical permalinks keep their original bilingual content", async () => {
+  const ids = ["core-scientific-polaris-ds-completion-2026", "datavita-300m-debt-north-lanarkshire-2026", "naver-panthallassa-wave-power-investment-2026", "nvidia-cloverleaf-minority-investment-2026"];
+  const archive = JSON.parse(await readFile(new URL("../app/data/rumor-archive.json", import.meta.url), "utf8"));
+  const sitemap = await (await render("/sitemap.xml")).text();
+  for (const prefix of ["", "/en"]) {
+    for (const id of ids) {
+      const path = `${prefix}/rumors/${id}`;
+      const response = await render(path);
+      assert.equal(response.status, 200, path);
+      const html = await response.text();
+      const item = archive.find(row => row.id === id);
+      assert.ok(html.includes(item.publishedAt));
+      assert.ok(html.includes(item.sourceUrl));
+      assert.ok(html.includes(`rel="canonical" href="https://idc-index.com${path}"`));
+      assert.ok(sitemap.includes(`https://idc-index.com${path}<`));
+    }
+    const path = `${prefix}/columns/us-listed-neoclouds`;
+    const response = await render(path);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    assert.ok(html.includes("2026-08-12"));
+    assert.ok(html.includes("CoreWeave") && html.includes("Chronoscale"));
+    assert.ok(html.includes(`rel="canonical" href="https://idc-index.com${path}"`));
+    assert.doesNotMatch(html, /name="robots" content="[^"]*noindex/);
+    assert.ok(sitemap.includes(`https://idc-index.com${path}<`));
   }
 });

@@ -264,5 +264,101 @@
     "officialResponseEn": "Goodman's public project page confirms a 50 MW first phase and an up-to-1,000 MW campus under construction and for lease, but does not name a tenant or confirm a 20-year lease or early-2028 delivery.",
     "sourceNote": "客户身份、20 年期限和 2028 年初 RFS 仅来自 DCD 单一报道；不得将规划中的 1,000MW 写作已签约、已送电或已投运容量。",
     "sourceNoteEn": "The tenant identity, 20-year term and early-2028 RFS appear only in DCD's single report; the planned 1,000 MW must not be described as leased, energized or operational capacity."
+  },
+  {
+    "id": "core-scientific-polaris-ds-completion-2026",
+    "title": "Core Scientific 据报完成 Polaris DS 收购，拟扩建俄克拉何马州 Muskogee 园区",
+    "titleEn": "Core Scientific is reported to have completed its Polaris DS acquisition for a Muskogee expansion",
+    "summary": "Data Center Dynamics 8 月 18 日报道称，Core Scientific 已完成收购 Polaris DS，取得约 40 英亩土地及最多 440MW 的现有供电协议，报道给出的现金价值为 4.44 亿美元；公司据报计划把相邻的 Muskogee 园区扩至 1.5GW 总电力与 1GW 可租赁电力。Core Scientific 5 月的 8-K 确认过拟议收购及相应土地、供电协议，但截至本轮扫描截止时间，尚未找到对应的完成交割公告或最新监管文件。报道中的 1.5GW / 1GW 是扩建计划，不是已建成或已投运容量。",
+    "summaryEn": "Data Center Dynamics reported on August 18 that Core Scientific completed its acquisition of Polaris DS, obtaining about 40 acres and existing service agreements for up to 440 MW; the report gave a $444 million cash value and said the adjacent Muskogee campus is planned to reach 1.5 GW of gross power and 1 GW of leasable power. Core Scientific's May 8-K confirmed the proposed acquisition, land and service agreements, but no matching closing announcement or current filing was located by this scan's cutoff. The 1.5 GW / 1 GW figures are expansion plans, not built or operating capacity.",
+    "publishedAt": "2026-08-18T00:00:00-04:00",
+    "sourceName": "Data Center Dynamics",
+    "sourceUrl": "https://www.datacenterdynamics.com/en/news/core-scientific-completes-acquisition-of-polaris-ds/",
+    "region": "美国",
+    "status": "reported",
+    "statusLabel": "单一媒体报道 · 交割文件待核验",
+    "statusLabelEn": "Single-source report · closing documentation unverified",
+    "sourceCount": 1,
+    "entities": [
+      "Core Scientific",
+      "Polaris DS",
+      "Muskogee",
+      "Oklahoma Gas & Electric"
+    ],
+    "officialResponse": "Core Scientific 5 月的 8-K 确认过拟议收购、土地和最多 440MW 的供电协议；截至本轮扫描截止时间，未找到公司就交割完成的对应公告或最新监管文件。",
+    "officialResponseEn": "Core Scientific's May 8-K confirmed the proposed acquisition, land and service agreements for up to 440 MW; by this scan's cutoff, no matching company closing announcement or current regulatory filing had been located.",
+    "sourceNote": "DCD 页面仅显示 8 月 18 日，未显示发稿时刻或时区。收购完成、4.44 亿美元价值及扩建目标均来自单一报道；不得将计划容量计入已交付或投运。",
+    "sourceNoteEn": "The DCD page shows August 18 but no publication time or timezone. The reported closing, $444 million value and expansion targets come from one report and must not be counted as delivered or operating capacity."
+  },
+  {
+    "id": "datavita-300m-debt-north-lanarkshire-2026",
+    "title": "DataVita 据报获 3 亿英镑债务融资，用于扩建 North Lanarkshire 园区",
+    "titleEn": "DataVita is reported to have secured a £300M debt facility for its North Lanarkshire campus expansion",
+    "summary": "Data Center Dynamics 8 月 18 日报道称，DataVita 获得 3 亿英镑债务融资，用于扩建其位于苏格兰 North Lanarkshire 的数据中心园区，资金将用于两栋建筑。公开线索未披露贷款人、期限、提款条件、建筑规模、MW、客户或投运时间；融资额度不能换算为已交付容量或已支付建设资本开支。",
+    "summaryEn": "Data Center Dynamics reported on August 18 that DataVita secured a £300 million debt facility to expand its data-center campus in North Lanarkshire, Scotland, with the funds intended for two buildings. The public lead does not disclose lenders, tenor, draw conditions, building size, megawatts, customers or an operating date; a debt-facility amount cannot be converted into delivered capacity or paid construction capex.",
+    "publishedAt": "2026-08-18T15:57:58Z",
+    "sourceName": "Data Center Dynamics",
+    "sourceUrl": "https://www.datacenterdynamics.com/en/news/datavita-secures-300m-debt-facility-to-expand-north-lanarkshire-data-center-campus/",
+    "region": "全球",
+    "status": "reported",
+    "statusLabel": "单一媒体报道 · 融资条款与园区规模待披露",
+    "statusLabelEn": "Single-source report · financing terms and campus scale undisclosed",
+    "sourceCount": 1,
+    "entities": [
+      "DataVita",
+      "North Lanarkshire"
+    ],
+    "officialResponse": "截至本轮扫描截止时间，未找到 DataVita 或融资方对应的公开融资公告、条款或项目容量文件。",
+    "officialResponseEn": "By this scan's cutoff, no matching public financing announcement, terms or project-capacity document was located from DataVita or a financing party.",
+    "sourceNote": "DCD 的融资金额及两栋建筑用途为单一报道；未披露 MW、客户、提款或投运节点。",
+    "sourceNoteEn": "The debt amount and use for two buildings come from one DCD report; megawatts, customers, drawdowns and operating milestones are not disclosed."
+  },
+  {
+    "id": "naver-panthallassa-wave-power-investment-2026",
+    "title": "Naver 据报投资海上波浪能数据中心公司 Panthalassa",
+    "titleEn": "Naver is reported to have invested in offshore wave-powered data-center company Panthalassa",
+    "summary": "Data Center Dynamics 8 月 14 日报道称，Naver 投资美国海上波浪能数据中心公司 Panthalassa，后者目标是在 2027 年将其波浪能方案商业化。报道未披露投资金额、持股比例、项目地点、数据中心 MW、并网/海上许可或客户合同，也未找到 Naver 或 Panthalassa 对本轮交易的公开公告。本条不把“2027 年商业化目标”视为已获许可、已融资或已投运电力容量。",
+    "summaryEn": "Data Center Dynamics reported on August 14 that Naver invested in US offshore wave-powered data-center company Panthalassa, which targets commercialization of its wave-power solution in 2027. The report does not disclose investment size, ownership, project location, data-center megawatts, grid or offshore permits, or customer contracts, and no public announcement of this round was located from Naver or Panthalassa. The 2027 commercialization target is not treated as permitted, financed or operating power capacity.",
+    "publishedAt": "2026-08-14T13:28:56Z",
+    "sourceName": "Data Center Dynamics",
+    "sourceUrl": "https://www.datacenterdynamics.com/en/news/naver-invests-in-us-offshore-wave-powered-data-center-company-panthalassa/",
+    "region": "全球",
+    "status": "reported",
+    "statusLabel": "单一媒体报道 · 投资与项目参数待披露",
+    "statusLabelEn": "Single-source report · investment and project parameters undisclosed",
+    "sourceCount": 1,
+    "entities": [
+      "Naver",
+      "Panthalassa"
+    ],
+    "officialResponse": "截至本轮复核，未找到 Naver 或 Panthalassa 的本轮投资公告、许可文件或容量/客户披露。",
+    "officialResponseEn": "By this review, no investment announcement, permit filing, capacity disclosure or customer disclosure was located from Naver or Panthalassa.",
+    "sourceNote": "Naver 投资和 2027 年商业化目标来自 Data Center Dynamics 单一报道；该技术路线仍需以项目、许可和电力交付材料核验。",
+    "sourceNoteEn": "The Naver investment and 2027 commercialization target come from one Data Center Dynamics report; project, permitting and power-delivery records are still needed for verification."
+  },
+  {
+    "id": "nvidia-cloverleaf-minority-investment-2026",
+    "title": "NVIDIA 与 Cloverleaf 合作并进行少数股权投资，具体条款未披露",
+    "titleEn": "NVIDIA partners with Cloverleaf and makes a minority investment; terms remain undisclosed",
+    "summary": "Cloverleaf 通过 PR Newswire 8 月 21 日公司供稿称，NVIDIA 已与其建立战略合作并进行少数股权投资，以支持美国 AI 工厂基础设施建设；Reuters 同日援引双方称 NVIDIA 已完成少数投资。公告未披露投资金额、持股比例、项目清单、MW 或交付时间，NVIDIA 自有新闻室/IR 页面也未找到完整交易条款。",
+    "summaryEn": "A Cloverleaf company-supplied release carried by PR Newswire on August 21 said NVIDIA entered a strategic partnership and made a minority investment to support U.S. AI-factory infrastructure. Reuters reported the same day, citing the companies, that NVIDIA had made the minority investment. No amount, ownership percentage, project list, MW figure or delivery timing was disclosed, and no complete deal terms were located on NVIDIA’s own newsroom or IR pages.",
+    "publishedAt": "2026-08-21T09:30:00-04:00",
+    "sourceName": "Cloverleaf / PR Newswire; Reuters",
+    "sourceUrl": "https://www.prnewswire.com/news-releases/cloverleaf-infrastructure-forms-strategic-partnership-with-nvidia-to-accelerate-data-center-infrastructure-development-302857329.html",
+    "region": "美国",
+    "status": "reported",
+    "statusLabel": "公司供稿 + 媒体报道 · 条款未确认",
+    "statusLabelEn": "Company-supplied release + media report · terms unconfirmed",
+    "sourceCount": 2,
+    "entities": [
+      "NVIDIA",
+      "Cloverleaf Infrastructure",
+      "AI factories",
+      "美国数据中心基础设施"
+    ],
+    "officialResponse": "Cloverleaf 的公司供稿确认合作和少数投资这一说法，但未给出交易条款；截至本轮截止时间，未找到 NVIDIA 自有公告、SEC 文件或项目/公用事业记录确认金额、持股、具体站点、容量或交付安排。",
+    "officialResponseEn": "Cloverleaf’s company-supplied release supports the existence of a partnership and minority investment, but gives no deal terms. By this cutoff, no NVIDIA-owned announcement, SEC filing or project/utility record was located to confirm amount, ownership, sites, capacity or delivery arrangements.",
+    "sourceNote": "PR Newswire 是公司供稿分发渠道，Reuters 为独立媒体报道；两者不构成两个独立一手来源。条目保留在 Rumor Watch，不升级为已核验并购、融资或容量记录。",
+    "sourceNoteEn": "PR Newswire is a company-supplied distribution channel and Reuters is independent media; they are not two independent primary sources. The item remains in Rumor Watch rather than becoming a verified M&A, financing or capacity record."
   }
 ]

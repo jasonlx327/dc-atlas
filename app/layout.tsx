@@ -53,7 +53,6 @@ export async function generateMetadata(): Promise<Metadata> {
       types: { "application/rss+xml": `${siteUrl}/feed.xml` },
     },
     robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
-    other: { googlebot: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   };
 }

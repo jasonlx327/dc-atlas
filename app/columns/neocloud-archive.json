@@ -1,0 +1,419 @@
+{
+  "slug": "us-listed-neoclouds",
+  "imageAltZh": "模块化 AI 数据中心园区连接变电站、液冷 GPU 机柜与输电设施",
+  "imageAltEn": "A modular AI data-center campus connected to a substation, liquid-cooled GPU racks and transmission infrastructure",
+  "articleSectionZh": "Neocloud 财报、AI/HPC 托管与资本结构",
+  "articleSectionEn": "Neocloud earnings, AI/HPC hosting and capital structure",
+  "topics": [
+    "Neocloud",
+    "GPU cloud",
+    "AI infrastructure",
+    "CoreWeave",
+    "Nebius",
+    "AI/HPC hosting"
+  ],
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000362/coreweave2q26earningspress.htm",
+      "zh": "CoreWeave 2026 Q2 业绩材料",
+      "en": "CoreWeave Q2 2026 results",
+      "level": "primary"
+    },
+    {
+      "url": "https://assets.nebius.com/assets/dfe7a7f3-771e-4653-94e8-8f86bf126b1d/PR.pdf?cache-buster=2026-08-12T11%3A58%3A03.516Z",
+      "zh": "Nebius 2026 Q2 业绩公告",
+      "en": "Nebius Q2 2026 results release",
+      "level": "primary"
+    },
+    {
+      "url": "https://assets.nebius.com/assets/4462517b-ce83-41f2-96ed-f2ac1bc06a05/SHLQ226%20%281%29.pdf?cache-buster=2026-08-12T11%3A57%3A07.944Z",
+      "zh": "Nebius 2026 Q2 股东信",
+      "en": "Nebius Q2 2026 shareholder letter",
+      "level": "primary"
+    },
+    {
+      "url": "https://iren.gcs-web.com/news-releases/news-release-details/iren-business-update-and-q3-fy26-results",
+      "zh": "IREN FY2026 Q3 业务更新",
+      "en": "IREN FY2026 Q3 business update",
+      "level": "primary"
+    },
+    {
+      "url": "https://irisenergy.gcs-web.com/news-releases/news-release-details/iren-signs-28bn-new-customer-contracts-leading-ai-developers",
+      "zh": "IREN 新 AI 客户合同公告",
+      "en": "IREN new AI customer contracts",
+      "level": "primary"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1899123/000121390026086938/ea030131301ex99-1.htm",
+      "zh": "Bitdeer 2026 Q2 业绩材料",
+      "en": "Bitdeer Q2 2026 results",
+      "level": "primary"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1899123/000121390026085655/ea030075201ex99-1.htm",
+      "zh": "Bitdeer Tydal 合同公告",
+      "en": "Bitdeer Tydal contract announcement",
+      "level": "primary"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1964789/000110465926090041/tm2621890d1_ex99-1.htm",
+      "zh": "Hut 8 2026 Q2 业绩材料",
+      "en": "Hut 8 Q2 2026 results",
+      "level": "primary"
+    },
+    {
+      "url": "https://ir.chronoscale.com/press-releases/detail/789/applied-digital-completes-separation-of-cloud-business",
+      "zh": "Chronoscale 独立公告",
+      "en": "Chronoscale separation announcement",
+      "level": "primary"
+    },
+    {
+      "url": "https://ir.applieddigital.com/news-events/press-releases/detail/159/applied-digital-reports-fiscal-fourth-quarter-and-full-year",
+      "zh": "Applied Digital FY2026 Q4 业绩材料",
+      "en": "Applied Digital FY2026 Q4 results",
+      "level": "primary"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000162/a_wulfearningsreleaseq22026.htm",
+      "zh": "TeraWulf 2026 Q2 业绩材料",
+      "en": "TeraWulf Q2 2026 results",
+      "level": "primary"
+    },
+    {
+      "url": "https://investors.terawulf.com/sec-filings/all-sec-filings/content/0001104659-26-080583/tm2619468d1_ex99-1.htm",
+      "zh": "TeraWulf / Justified 交易公告",
+      "en": "TeraWulf / Justified transaction announcement",
+      "level": "primary"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1819989/000181998926000038/q226_earningsxprxdraftxvf.htm",
+      "zh": "Cipher Mining 2026 Q2 业绩材料",
+      "en": "Cipher Mining Q2 2026 results",
+      "level": "primary"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1839341/000183934126000013/q22026corescientificinc-ea.htm",
+      "zh": "Core Scientific 2026 Q2 业绩材料",
+      "en": "Core Scientific Q2 2026 results",
+      "level": "primary"
+    }
+  ],
+  "zh": {
+    "hero": "美股所谓 Neocloud 正在给出极不相同的业绩：CoreWeave 与 Nebius 已把 GPU 供给转成大规模云收入；矿业转型和 AI/HPC 托管商则更多在展示合同、土地、电力与融资。它们并不是同一张利润表上的十个版本。",
+    "thesis": "这组公司的分化首先来自产业链位置。直接 GPU 云承担服务器、利用率、定价和客户服务风险，收入可以更早出现；AI/HPC 托管把更长周期的园区、送电与资本结构嵌入合同，TCV、已签 MW 和在建项目并不等于当期收入。比较时，收入、ARR、合同价值、已签容量与实际计费容量必须拆开。",
+    "opening": [
+      "把它们统称为 Neocloud 很方便，却会遮蔽经济模型。CoreWeave 和 Nebius 面向终端工作负载出售 GPU 云；IREN 与 Bitdeer 正在用自营云和 AI 托管扩展原有基础设施；Applied Digital、TeraWulf、Cipher、Core Scientific 与 Hut 8 的核心变量更多是园区、IT 负荷、租约和交付。Chronoscale 刚从 Applied Digital 分离，尚没有可与成熟公司并列的独立财报历史。",
+      "因此，最容易误读的不是需求，而是转换路径。一份数十亿美元 TCV 可以锁定客户信用与建设方向，但还要经过项目融资、土建、送电、系统安装、验收、计费和利用率爬坡。反过来，已经进入直接 GPU 云收入的公司也不能仅凭收入增速证明全周期回报，GPU 折旧、供给更新、融资成本和客户集中度仍在利润表后面。",
+      "本文只使用公司公告、SEC 文件和官方投资者材料；截至 2026 年 8 月 12 日北京时点。正式比较仅覆盖原始文件可核验的客户、容量、合同期限与财务指标。"
+    ],
+    "sections": [
+      {
+        "label": "01 · THE PRINT",
+        "heading": "先把收入、ARR、合同价值与容量拆成四张表",
+        "paragraphs": [
+          "CoreWeave Q2 收入为 25.75 亿美元，高于去年同期的 12.12 亿美元，调整后 EBITDA 为 15.10 亿美元；公司披露的收入积压为 1,040 亿美元、活跃电力约 1.5GW、已签约电力约 3.7GW。这里的收入、backlog 和已签 MW 分别回答已交付、已签合同与未来供给三个不同问题。",
+          "Nebius Q2 集团收入 5.823 亿美元，同比增长 454%；其中 AI Cloud 为 5.75 亿美元，同比增长 514%。公司报告 AI Cloud 调整后 EBITDA 利润率 50%，并给出 30 亿美元 ARR。它是这组样本中最接近以已运行 GPU 云收入和年度化指标讲故事的公司之一，但 ARR 仍是年化运行率，而不是当期确认收入。",
+          "其余公司显示的是更早或不同的转换阶段。IREN 披露 FY2026 Q3 AI Cloud 收入 3,360 万美元，较上一季度的 1,730 万美元增长；Bitdeer Q2 AI Cloud 收入为 1,400 万美元、总收入 2.288 亿美元。Core Scientific 的 Q2 托管收入 1.367 亿美元，6 月末已计费 395MW、7 月中旬 437MW；这些读数比意向容量更接近真实服务交付，但仍不等于全部已签项目均可计费。"
+        ],
+        "metrics": [
+          {
+            "label": "CoreWeave Q2 收入",
+            "value": "25.75 亿美元",
+            "note": "调整后 EBITDA 15.10 亿美元；1,040 亿美元 backlog 与约 3.7GW 已签电力均非当期收入。"
+          },
+          {
+            "label": "Nebius Q2 AI Cloud",
+            "value": "5.75 亿美元",
+            "note": "同比 +514%；公司披露 30 亿美元 ARR 与 50% AI Cloud 调整后 EBITDA 利润率。"
+          },
+          {
+            "label": "IREN AI Cloud",
+            "value": "3,360 万美元",
+            "note": "FY2026 Q3；上一季度为 1,730 万美元，属于直接云业务的早期爬坡。"
+          },
+          {
+            "label": "Core Scientific 计费容量",
+            "value": "395MW",
+            "note": "2026 Q2 末；公司称 7 月中旬增至 437MW。计费 MW 比合同 MW 更接近当期托管服务。"
+          }
+        ]
+      },
+      {
+        "label": "02 · UNIT ECONOMICS",
+        "heading": "每 MW 的合同经济性，取决于谁拥有 GPU 和利用率风险",
+        "paragraphs": [
+          "直接 GPU 云的单位经济性包含设备所有权与工作负载风险。Nebius 在股东信中表示，新核心云合同的年化价值超过每 MW 2,000 万美元。这是公司对新合同的口径，不能等同于平均已确认收入、更不能直接推成长期毛利；它的含义是，GPU、网络、软件和容量利用都处在同一收入模型内。",
+          "托管合同的每 MW 数字通常更低，但风险位置也不同。Bitdeer 披露 Tydal 的 121 IT MW、16 年、47 亿美元合同；用 47 亿美元除以 16 年和 121 IT MW，得到约每 IT MW 每年 240 万美元的合同价值。这个公式只是把公司披露的总合同价值转换为年化单位口径，不包含折现、运维成本、融资成本或实际收入确认节奏。",
+          "TeraWulf / Justified 的公告披露 401MW、20 年和 190 亿美元。按同一算式约为每 IT MW 每年 237 万美元。它不能被误写成 TeraWulf 全部园区、全部收入或已投运容量；官方材料将其限定为 Justified Atlas 园区。单位合同价值告诉我们长期资本愿意为可交付 IT 负荷付出多少，却不证明机柜已交付、GPU 已安装或现金流已经产生。"
+        ],
+        "metrics": [
+          {
+            "label": "Nebius 新核心云合同",
+            "value": ">2,000 万美元 / MW / 年",
+            "note": "公司披露的年化合同价值口径；非平均收入、非利润率。"
+          },
+          {
+            "label": "Bitdeer Tydal",
+            "value": "约 240 万美元 / IT MW / 年",
+            "note": "47 亿美元 ÷ 16 年 ÷ 121 IT MW；Atlas 计算，未计折现、成本或确认进度。"
+          },
+          {
+            "label": "TeraWulf / Justified",
+            "value": "约 237 万美元 / IT MW / 年",
+            "note": "190 亿美元 ÷ 20 年 ÷ 401MW；Atlas 计算，仅对应 Justified Atlas 园区。"
+          }
+        ]
+      },
+      {
+        "label": "03 · CAPITAL AND DELIVERY",
+        "heading": "合同固定需求方向，不能跳过融资与交付",
+        "paragraphs": [
+          "CoreWeave 的 1,040 亿美元 backlog 说明已签需求的规模，却不能代替服务器采购、园区电力、融资与客户履约。Nebius 的 30 亿美元 ARR 也要通过加速器采购、数据中心上线与客户利用率维持。直接云的增长通常更快地穿过收入表，但它同时更直接地承担硬件更新、定价和容量闲置的风险。",
+          "IREN 7 月宣布新增 28 亿美元 TCV，并提出 40 亿美元 ARR 目标；这把可见度推向未来，也提高了对客户上线和资本投入的要求。Bitdeer 的 Tydal 合同、Hut 8 的 949MW 已签 IT 容量和 266 亿美元基础 TCV，都是未来托管经济性的输入，而非已确认收入。容量必须保持“已签约、建设中、已送电、已验收、计费中”的状态边界。",
+          "对投资者而言，融资并非附属变量。GPU 云需要快速配置服务器、网络和营运资本；园区托管需要在收入出现前先完成土地、电力、土建、变压器、冷却与网络。合同越大，前置资本与交付协调的考题往往越大。高质量的后续披露应把客户承诺、融资来源、送电节点和实际计费放到同一时间轴上。"
+        ],
+        "cards": [
+          {
+            "label": "DIRECT CLOUD",
+            "title": "收入更早出现，资产风险也更集中",
+            "body": "看 GPU 投入、利用率、单位价格、折旧与客户集中度，而不只看季度收入增速。"
+          },
+          {
+            "label": "HOSTING",
+            "title": "合同更长，交付链条也更长",
+            "body": "TCV 和已签 MW 先反映方向；送电、系统验收和账单才决定当期经济性。"
+          },
+          {
+            "label": "CAPITAL",
+            "title": "规模扩大前先确认资金闭环",
+            "body": "合同不能代替债务、股权、预付款、设备采购与施工现金流。"
+          },
+          {
+            "label": "BOUNDARY",
+            "title": "容量状态不能合并",
+            "body": "已签约、在建、已送电、系统就绪和计费中的 IT MW 是不同的经营状态。"
+          }
+        ]
+      },
+      {
+        "label": "04 · CAPACITY COHORT",
+        "heading": "矿业转型与园区托管：第一笔租金比总容量更重要",
+        "paragraphs": [
+          "Applied Digital FY2026 Q4 的 HPC 云租金收入为 4,410 万美元；服务收入为 2.082 亿美元，其中包含 1.524 亿美元建设与设备部署相关收入。公司披露 1,410MW、15 年、360 亿美元的已签租赁合同。这里最重要的不是把 360 亿美元直接当作年度收入，而是把经常性租金与一次性施工、设备部署收入分开。",
+          "TeraWulf Q2 HPC 租赁收入为 3,190 万美元；公司称 7 月初已有 102MW revenue-critical IT capacity。Cipher Q2 收入为 2,500 万美元、调整后 EBITDA 为负 3,000 万美元，首批 Black Pearl 容量在 8 月交付。两者提示同一个现实：进入 AI/HPC 业务不自动改变当前利润表，首批送电、安装和客户验收的时间会决定收入何时跨越。",
+          "Hut 8 的 Compute 收入为 7,250 万美元，混合了 ASIC、AI 与传统计算服务；把该科目视为纯 GPU 云会失真。Chronoscale 于 5 月独立，尚无足够的独立季度序列。对于这些公司，最有信息量的变化通常是已计费 IT MW、首批项目是否按计划上线、经常性租金占比和融资后稀释，而不是把总电力或远期 TCV 直接套进同一估值倍数。"
+        ],
+        "metrics": [
+          {
+            "label": "Applied Digital 基础 HPC 租金",
+            "value": "4,410 万美元",
+            "note": "FY2026 Q4；服务收入 2.082 亿美元包含 1.524 亿美元建设与部署相关收入，不能与租金混同。"
+          },
+          {
+            "label": "TeraWulf HPC 租赁",
+            "value": "3,190 万美元",
+            "note": "2026 Q2；102MW revenue-critical IT capacity 为 7 月初披露的状态。"
+          },
+          {
+            "label": "Cipher Q2",
+            "value": "2,500 万美元收入",
+            "note": "调整后 EBITDA 为负 3,000 万美元；首批 Black Pearl 容量于 8 月交付。"
+          },
+          {
+            "label": "Hut 8 Compute",
+            "value": "7,250 万美元",
+            "note": "混合 ASIC、AI 与传统计算服务，不是纯 GPU 云收入。"
+          }
+        ]
+      },
+      {
+        "label": "05 · VERIFICATION",
+        "heading": "未来 12–24 个月，四个问题决定谁能穿过估值叙事",
+        "paragraphs": [
+          "第一是需求与价格：直接云的使用率、每 GPU 或每 MW 的实际定价、续约和客户集中度能否支撑 ARR；托管商则要看已签客户是否进入实际工作负载与计费。第二是交付：变压器、并网、液冷、服务器、网络与现场调试任何一环延后，都会让 TCV 与当期收入之间出现时间差。",
+          "第三是资本：设备订金、项目债务、股权融资、租赁与预付款如何覆盖建设期现金消耗？第四是运营：上线后的可用率、能效、维护、客户扩容和再部署能力，决定已送电容量是否真的成为可持续的现金流。每个公司都需要在这四道门上给出自己的证据，而不是被单一的 AI 需求叙事覆盖。",
+          "结论不是某一家公司一定胜出。更准确的结论是，Neocloud 正从“谁能拿到 GPU 或电力”的供给叙事，进入“谁能把资本、容量和客户工作负载同步转成可计费服务”的经营叙事。收入最快的公司并不自动拥有最低的全周期资本成本；合同最大的公司也不自动拥有最早的利润表。"
+        ],
+        "steps": [
+          {
+            "title": "需求与价格",
+            "body": "跟踪实际利用率、单位定价、续约、客户集中度，以及合同是否进入生产负载。"
+          },
+          {
+            "title": "物理交付",
+            "body": "跟踪并网、送电、机柜、液冷、网络、验收和已计费 IT MW，不用总容量替代。"
+          },
+          {
+            "title": "资本闭环",
+            "body": "跟踪债务、股权、预付款、设备采购与建设现金消耗之间是否匹配。"
+          },
+          {
+            "title": "运营兑现",
+            "body": "跟踪可用率、能效、维护、扩容和再部署，确认容量是否持续转化为现金流。"
+          }
+        ]
+      }
+    ],
+    "conclusion": "美股 Neocloud 的“业绩爆发”是真实但不均质的：CoreWeave 与 Nebius 已展示直接云的收入兑现，AI/HPC 托管同业则在把长期合同和 MW 转为项目现金流。下一阶段的赢家不会由一个 headline 决定，而由收入质量、交付纪律、资本成本和运营执行共同决定。",
+    "disclosure": "资料截止：2026 年 8 月 12 日（北京时间）。本文仅使用列示的公司公告、SEC 文件和官方投资者材料。收入、ARR、TCV、合同价值、已签约容量、已送电容量、系统就绪容量与计费容量按原始披露分别处理；除明确标注为 Atlas 算术转换的每 MW 合同价值外，未对未披露的毛利、利用率、客户、GPU 型号、容量或融资条款作推断。本文不构成投资建议。"
+  },
+  "en": {
+    "hero": "U.S.-listed neoclouds are producing radically different earnings prints. CoreWeave and Nebius have converted GPU supply into cloud revenue at scale; mining-transition and AI/HPC hosting peers are still demonstrating contracts, land, power and financing. They are not ten versions of the same income statement.",
+    "thesis": "The divergence begins with stack position. Direct GPU clouds carry server ownership, utilization, pricing and customer-service risk, so revenue can arrive sooner. AI/HPC hosts embed longer-cycle campus delivery, energization and capital structure in their contracts; TCV, contracted MW and projects under construction are not current revenue. Revenue, ARR, contract value, contracted capacity and billed capacity must be separated.",
+    "opening": [
+      "Calling all of these companies neoclouds is convenient but economically imprecise. CoreWeave and Nebius sell GPU cloud capacity to workloads. IREN and Bitdeer are extending existing infrastructure into owned cloud and AI hosting. Applied Digital, TeraWulf, Cipher, Core Scientific and Hut 8 are principally exposed to campuses, IT load, leases and delivery. Chronoscale only separated from Applied Digital in May and does not yet offer a comparable independent reporting history.",
+      "The common analytical error is not missing demand; it is skipping the conversion chain. A multibillion-dollar TCV can establish customer credit and a build direction, but it must still pass financing, construction, energization, systems installation, acceptance, billing and utilization ramp. Direct clouds, meanwhile, do not prove full-cycle returns solely with top-line growth: GPU depreciation, technology refresh, financing cost and customer concentration remain behind the income statement.",
+      "This column uses company releases, SEC filings and official investor materials only, with an August 12, 2026 Beijing-time cutoff. Formal comparisons cover only customers, capacity, contract duration and financial metrics verifiable in the underlying records."
+    ],
+    "sections": [
+      {
+        "label": "01 · THE PRINT",
+        "heading": "Separate revenue, ARR, contract value and capacity before comparing the print",
+        "paragraphs": [
+          "CoreWeave reported Q2 revenue of $2.575 billion, up from $1.212 billion a year earlier, and adjusted EBITDA of $1.510 billion. It also disclosed $104 billion of revenue backlog, about 1.5GW of active power and about 3.7GW of contracted power. Revenue, backlog and contracted MW answer different questions: delivered service, signed demand and prospective supply.",
+          "Nebius reported Q2 group revenue of $582.3 million, up 454% year over year; AI Cloud was $575 million, up 514%. The company reported 50% adjusted EBITDA margin for AI Cloud and $3 billion of ARR. This is among the closest comparisons to an operating GPU-cloud revenue model, but ARR remains an annualized run-rate rather than recognized quarterly revenue.",
+          "The remaining companies occupy earlier or different conversion stages. IREN reported FY2026 Q3 AI Cloud revenue of $33.6 million, up from $17.3 million in the prior quarter. Bitdeer reported Q2 AI Cloud revenue of $14 million and total revenue of $228.8 million. Core Scientific reported $136.7 million of Q2 colocation revenue, with 395MW billing at quarter-end and 437MW by mid-July; billed MW is closer to delivered service than contracted capacity, but it still does not make every signed project current revenue."
+        ],
+        "metrics": [
+          {
+            "label": "CoreWeave Q2 revenue",
+            "value": "$2.575B",
+            "note": "$1.510B adjusted EBITDA; $104B backlog and about 3.7GW contracted power are not current revenue."
+          },
+          {
+            "label": "Nebius Q2 AI Cloud",
+            "value": "$575M",
+            "note": "+514% year over year; the company reported $3B ARR and 50% adjusted EBITDA margin for AI Cloud."
+          },
+          {
+            "label": "IREN AI Cloud",
+            "value": "$33.6M",
+            "note": "FY2026 Q3; $17.3M in the prior quarter, an early owned-cloud ramp."
+          },
+          {
+            "label": "Core Scientific billed capacity",
+            "value": "395MW",
+            "note": "At 2026 Q2 end; the company said 437MW by mid-July. Billed MW is closer to current colocation service than contracted MW."
+          }
+        ]
+      },
+      {
+        "label": "02 · UNIT ECONOMICS",
+        "heading": "Per-MW contract economics depend on who owns the GPU and utilization risk",
+        "paragraphs": [
+          "Direct GPU-cloud unit economics combine equipment ownership with workload risk. Nebius said in its shareholder letter that new core-cloud contracts carried annualized value above $20 million per MW. That is the company's new-contract metric, not average recognized revenue and not a long-term margin; it reflects a model in which GPUs, networking, software and utilization sit in the same revenue engine.",
+          "Hosting contracts can show lower per-MW values while assigning risk differently. Bitdeer disclosed a 121 IT MW, 16-year, $4.7 billion Tydal contract. Dividing $4.7 billion by 16 years and 121 IT MW produces roughly $2.4 million per IT MW per year. This is only a conversion of disclosed total contract value; it excludes discounting, operating cost, financing cost and revenue-recognition timing.",
+          "TeraWulf / Justified disclosed 401MW, 20 years and $19 billion. The same arithmetic yields roughly $2.37 million per IT MW per year. It must not be represented as all TeraWulf campuses, all company revenue or operating capacity; the official release confines it to the Justified Atlas campus. Contract value indicates what long-duration capital will pay for deliverable IT load, not that racks, GPUs or cash flow already exist."
+        ],
+        "metrics": [
+          {
+            "label": "Nebius new core-cloud contracts",
+            "value": ">$20M / MW / year",
+            "note": "Company-reported annualized contract-value metric; not average revenue or a margin."
+          },
+          {
+            "label": "Bitdeer Tydal",
+            "value": "~$2.4M / IT MW / year",
+            "note": "$4.7B ÷ 16 years ÷ 121 IT MW; IDC Atlas calculation, before discounting, costs or recognition timing."
+          },
+          {
+            "label": "TeraWulf / Justified",
+            "value": "~$2.37M / IT MW / year",
+            "note": "$19B ÷ 20 years ÷ 401MW; IDC Atlas calculation, for the Justified Atlas campus only."
+          }
+        ]
+      },
+      {
+        "label": "03 · CAPITAL AND DELIVERY",
+        "heading": "Contracts fix the demand direction; they do not eliminate financing or delivery",
+        "paragraphs": [
+          "CoreWeave's $104 billion backlog establishes the scale of signed demand, not a substitute for server procurement, campus power, financing or customer performance. Nebius's $3 billion ARR likewise depends on accelerator procurement, data-center activation and sustained utilization. Direct cloud reaches the income statement faster but also bears hardware refresh, pricing and idle-capacity risk more directly.",
+          "IREN announced $2.8 billion of new TCV in July and a $4 billion ARR target, improving forward visibility while increasing the burden of customer activation and capital deployment. Bitdeer's Tydal contract, Hut 8's 949MW of contracted IT capacity and $26.6 billion of base TCV are inputs to future hosting economics, not recognized revenue. Capacity must retain its state boundary: contracted, under construction, energized, accepted and billing.",
+          "Financing is not a side variable. GPU clouds need rapid deployment of servers, networks and working capital. Campus hosts must complete land, power, civil works, transformers, cooling and networking before service revenue. Larger contracts often increase the coordination and front-loaded-capital problem. The best subsequent disclosure puts customer commitment, funding source, energization milestone and actual billing on one timeline."
+        ],
+        "cards": [
+          {
+            "label": "DIRECT CLOUD",
+            "title": "Revenue arrives sooner; asset risk is more concentrated",
+            "body": "Track GPU additions, utilization, unit pricing, depreciation and customer concentration, not revenue growth alone."
+          },
+          {
+            "label": "HOSTING",
+            "title": "Longer contracts create a longer delivery chain",
+            "body": "TCV and contracted MW show direction first; energization, acceptance and invoices determine current economics."
+          },
+          {
+            "label": "CAPITAL",
+            "title": "Confirm the funding loop before scaling the headline",
+            "body": "Contracts do not replace debt, equity, prepayments, equipment procurement or construction cash flow."
+          },
+          {
+            "label": "BOUNDARY",
+            "title": "Capacity states cannot be collapsed",
+            "body": "Contracted, under-construction, energized, system-ready and billed IT MW are distinct operating states."
+          }
+        ]
+      },
+      {
+        "label": "04 · CAPACITY COHORT",
+        "heading": "For mining transitions and campus hosts, the first rent matters more than total capacity",
+        "paragraphs": [
+          "Applied Digital reported $44.1 million of base HPC cloud rent in FY2026 Q4 and $208.2 million of services revenue, including $152.4 million tied to construction and equipment deployment. It disclosed 1,410MW of contracted leases over 15 years and $36 billion of contract value. The analytical task is to separate recurring rent from one-time construction and deployment revenue rather than annualizing $36 billion as current revenue.",
+          "TeraWulf reported $31.9 million of Q2 HPC lease revenue and said it had 102MW of revenue-critical IT capacity in early July. Cipher reported $25 million of Q2 revenue and negative $30 million of adjusted EBITDA, with first Black Pearl capacity delivered in August. Both make the same point: entering AI/HPC does not instantly transform the current income statement; initial energization, installation and customer acceptance decide when revenue crosses over.",
+          "Hut 8's $72.5 million of Compute revenue combines ASIC, AI and traditional computing services, so it is not a pure GPU-cloud measure. Chronoscale has only been independent since May. For these companies, the most revealing changes are billed IT MW, first-project timing, recurring-rent mix and post-financing dilution—not total power or distant TCV forced into a common valuation multiple."
+        ],
+        "metrics": [
+          {
+            "label": "Applied Digital base HPC rent",
+            "value": "$44.1M",
+            "note": "FY2026 Q4; $208.2M services revenue includes $152.4M associated with construction and deployment."
+          },
+          {
+            "label": "TeraWulf HPC lease revenue",
+            "value": "$31.9M",
+            "note": "2026 Q2; 102MW of revenue-critical IT capacity was disclosed for early July."
+          },
+          {
+            "label": "Cipher Q2",
+            "value": "$25M revenue",
+            "note": "Negative $30M adjusted EBITDA; first Black Pearl capacity was delivered in August."
+          },
+          {
+            "label": "Hut 8 Compute",
+            "value": "$72.5M",
+            "note": "A mix of ASIC, AI and traditional compute services, not pure GPU-cloud revenue."
+          }
+        ]
+      },
+      {
+        "label": "05 · VERIFICATION",
+        "heading": "Over the next 12–24 months, four tests decide who crosses the valuation narrative",
+        "paragraphs": [
+          "First is demand and price: can direct clouds sustain utilization, realized GPU or MW pricing, renewals and customer diversity; can hosts move contracted customers into actual workloads and bills? Second is delivery: a delay in transformers, interconnection, liquid cooling, servers, networking or field commissioning creates a gap between TCV and current revenue.",
+          "Third is capital: do equipment deposits, project debt, equity, leases and prepayments cover construction-period cash consumption? Fourth is operations: availability, efficiency, maintenance, customer expansion and redeployment determine whether energized capacity becomes durable cash flow. Each company must produce evidence through these four gates rather than be carried by a single AI-demand narrative.",
+          "The conclusion is not that one company must win. Neoclouds are moving from a supply story—who can obtain GPUs or power—to an operating story: who can convert capital, capacity and customer workloads into billed service at the same time. The fastest revenue company does not automatically carry the lowest full-cycle capital cost; the largest contract does not automatically produce the earliest income statement."
+        ],
+        "steps": [
+          {
+            "title": "Demand and price",
+            "body": "Track utilization, realized unit pricing, renewals, customer concentration and whether a contract enters production workloads."
+          },
+          {
+            "title": "Physical delivery",
+            "body": "Track interconnection, energization, racks, liquid cooling, networking, acceptance and billed IT MW; do not substitute total capacity."
+          },
+          {
+            "title": "Capital closure",
+            "body": "Track whether debt, equity, prepayments, equipment procurement and construction cash use remain matched."
+          },
+          {
+            "title": "Operating conversion",
+            "body": "Track availability, efficiency, maintenance, expansion and redeployment to confirm capacity becomes durable cash flow."
+          }
+        ]
+      }
+    ],
+    "conclusion": "The U.S.-listed neocloud earnings boom is real but heterogeneous. CoreWeave and Nebius demonstrate direct-cloud revenue conversion, while AI/HPC hosts are converting long-term contracts and MW into project cash flow. The next winners will be determined not by a single headline but by revenue quality, delivery discipline, cost of capital and operating execution.",
+    "disclosure": "Information cut-off: August 12, 2026, Beijing time. This column uses only the listed company releases, SEC filings and official investor materials. Revenue, ARR, TCV, contract value, contracted capacity, energized capacity, system-ready capacity and billed capacity are treated as separately disclosed measures. Except for the explicitly labeled IDC Atlas arithmetic conversions of contract value per MW, the analysis does not infer undisclosed margins, utilization, customers, GPU SKUs, capacity or financing terms. Not investment advice."
+  }
+}
