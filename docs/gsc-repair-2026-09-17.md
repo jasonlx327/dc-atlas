@@ -40,4 +40,10 @@ These restore ten language-specific routes, nine of which appear in the current 
 
 Production deployment IDs, source parity, actual public readback and GSC submission outcomes are recorded separately in the release receipt. No Google recrawl or indexing completion is implied by local tests.
 
+## Runtime follow-up
+
+The first production crawl encountered four HTTP 503 responses; a repeat encountered 36. Direct response inspection identified Cloudflare error 1102, `Worker exceeded resource limits`, rather than missing application metadata. The initial indexing repairs remain valid, but intermittent resource failures must not be reported as a clean production crawl.
+
+Entity/research matching rebuilt alias regexes and matched every company for each requested company's research list. It now compiles only the versioned public directory once and checks a single target company for `relatedResearch`. No request state, credentials, responses or live payloads are retained globally. Equivalence checks across 31 companies and 89 published records passed. A five-iteration local benchmark of the matching operation fell from 815.88 ms to 16.49 ms; this is not a whole-page speed or Cloudflare CPU guarantee. Added word-boundary, explicit-ID/ticker precedence and deterministic matching tests. No account plan, billing, quotas or resource limits changed.
+
 References: [Google index report](https://support.google.com/webmasters/answer/7440203?hl=en), [canonical troubleshooting](https://developers.google.com/search/docs/crawling-indexing/canonicalization-troubleshooting).

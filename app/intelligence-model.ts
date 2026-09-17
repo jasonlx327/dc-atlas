@@ -88,30 +88,40 @@ function normalized(value: string | null | undefined): string {
   return (value ?? "").trim().toLocaleLowerCase();
 }
 
-function includesTerm(text: string, term: string): boolean {
+function compileTerm(term: string): string | RegExp {
   const needle = normalized(term);
-  if (!needle) return false;
   if (/^[a-z0-9.]{2,12}$/.test(needle)) {
     const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    return new RegExp(`(?:^|[^a-z0-9])${escaped}(?:$|[^a-z0-9])`).test(text);
+    return new RegExp(`(?:^|[^a-z0-9])${escaped}(?:$|[^a-z0-9])`);
   }
-  return text.includes(needle);
+  return needle;
+}
+
+// Versioned public directory only: no per-request data or I/O is retained.
+const entityMatchers = entityDirectory.map((entity) => ({
+  entity,
+  ticker: normalized(entity.ticker),
+  terms: [...new Set([entity.name, entity.nameEn, entity.ticker, ...entity.aliases]
+    .filter((value): value is string => Boolean(value)).map(normalized))].map(compileTerm),
+}));
+const entityBySlug = new Map(entityDirectory.map((entity) => [entity.slug, entity]));
+
+function matchesTerms(text: string, terms: readonly (string | RegExp)[]): boolean {
+  return terms.some((term) => typeof term === "string" ? Boolean(term) && text.includes(term) : term.test(text));
 }
 
 export function storyEntities(story: IntelligenceStory): EntityRecord[] {
   if (story.entityIds?.length) {
-    const explicit = story.entityIds.map((slug) => entityDirectory.find((entity) => entity.slug === slug)).filter((entity): entity is EntityRecord => Boolean(entity));
+    const explicit = story.entityIds.map((slug) => entityBySlug.get(slug)).filter((entity): entity is EntityRecord => Boolean(entity));
     if (explicit.length) return explicit;
   }
   const ticker = normalized(story.listedTicker);
   if (ticker) {
-    const exactTicker = entityDirectory.find((entity) => entity.ticker && (ticker === normalized(entity.ticker) || ticker.includes(normalized(entity.ticker))));
-    if (exactTicker) return [exactTicker];
+    const exactTicker = entityMatchers.find((matcher) => matcher.ticker && (ticker === matcher.ticker || ticker.includes(matcher.ticker)));
+    if (exactTicker) return [exactTicker.entity];
   }
   const haystack = normalized(`${story.title} ${story.titleEn ?? ""} ${story.summary ?? ""} ${story.summaryEn ?? ""} ${story.sourceName ?? ""} ${story.listedTicker ?? ""}`);
-  return entityDirectory.filter((entity) => [entity.name, entity.nameEn, entity.ticker, ...entity.aliases]
-    .filter((value): value is string => Boolean(value))
-    .some((term) => includesTerm(haystack, term)));
+  return entityMatchers.filter((matcher) => matchesTerms(haystack, matcher.terms)).map((matcher) => matcher.entity);
 }
 
 export function entityStories<T extends IntelligenceStory>(entity: EntityRecord, stories: readonly T[]): T[] {
@@ -120,13 +130,14 @@ export function entityStories<T extends IntelligenceStory>(entity: EntityRecord,
 
 export function articleEntities(article: ColumnArticle): EntityRecord[] {
   const haystack = normalized(`${article.title} ${article.titleEn} ${article.summary} ${article.summaryEn}`);
-  return entityDirectory.filter((entity) => entity.columnSlugs.some((slug) => article.href.endsWith(`/${slug}`)) || [entity.name, entity.nameEn, entity.ticker, ...entity.aliases]
-    .filter((value): value is string => Boolean(value))
-    .some((term) => includesTerm(haystack, term)));
+  return entityMatchers.filter(({ entity, terms }) => entity.columnSlugs.some((slug) => article.href.endsWith(`/${slug}`)) || matchesTerms(haystack, terms)).map(({ entity }) => entity);
 }
 
 export function relatedResearch(entity: EntityRecord, articles: readonly ColumnArticle[]): ColumnArticle[] {
-  return articles.filter((article) => articleEntities(article).some((candidate) => candidate.slug === entity.slug));
+  const matcher = entityMatchers.find((candidate) => candidate.entity.slug === entity.slug);
+  if (!matcher) return [];
+  return articles.filter((article) => matcher.entity.columnSlugs.some((slug) => article.href.endsWith(`/${slug}`))
+    || matchesTerms(normalized(`${article.title} ${article.titleEn} ${article.summary} ${article.summaryEn}`), matcher.terms));
 }
 
 export function researchStateForStory(story: IntelligenceStory, articles: readonly ColumnArticle[]): ResearchState {
