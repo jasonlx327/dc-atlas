@@ -62,6 +62,18 @@
       "zh": "NVIDIA Blackwell Ultra 架构｜2025-08-22",
       "en": "NVIDIA Blackwell Ultra architecture | August 22, 2025",
       "level": "primary"
+    },
+    {
+      "url": "https://www.cna.com.tw/news/aopl/202604300273.aspx",
+      "zh": "路透社价格采访，中央社转述｜2026-04-30",
+      "en": "Reuters price reporting via CNA | April 30, 2026",
+      "level": "reported"
+    },
+    {
+      "url": "https://caifuhao.eastmoney.com/news/20260702194710082198040",
+      "zh": "张兆业／财富号社区文章｜2026-07-02，价格说法未经成交凭证佐证",
+      "en": "Zhang Zhaoye / Caifuhao community post | July 2, 2026; undocumented price claim",
+      "level": "reported"
     }
   ],
   "zh": {
@@ -131,9 +143,14 @@
       },
       {
         "label": "03 · TRANSACTION ECONOMICS",
-        "heading": "资金关系比转运地点更能解释交易动机",
+        "heading": "千万元价格背后，谁承担资本回收压力？",
         "paragraphs": [
           "追踪设备要看运输记录，理解这笔交易为什么能发生，则要看谁提供资金、谁获得收益。",
+          "市场价格提供了另一条观察线。中央社转述路透社 2026 年 4 月 30 日的报道，四名业内消息人士称，中国市场 B300 服务器价格约为人民币 700 万元一台。报道另引两名消息人士称，搭载八颗 B300 GPU 的服务器在美国约售 55 万美元。这是当时的采访价格，不能直接作为 9 月的行情，也不能与案中每台服务器逐一对应。[路透社报道，中央社转述，4 月 30 日](https://www.cna.com.tw/news/aopl/202604300273.aspx)",
+          "随后出现了更高的公开说法。7 月 2 日，张兆业在东方财富财富号发文称，大陆市场 B300 服务器成交价达到人民币 1,200 万元一台。该文属于社区作者内容，未给出具体整机配置和成交凭证；这一数字应理解为有出处的市场说法，尚不能代表可核实的普遍成交价。两组数字也不是同一配置、同一交易条件下的连续价格样本。[财富号原文，7 月 2 日](https://caifuhao.eastmoney.com/news/20260702194710082198040)",
+          "高价对运营商意味着什么，可以用一个明确的压力情景衡量：假设一台八卡服务器采购支出为 1,200 万元，按五年、零残值回收硬件本金，则每年需要回收 240 万元。再假设全年 8,760 小时中只有 70% 能够计费，每个可计费 GPU 小时仅硬件本金就需要约 48.9 元：12,000,000 ÷（5 × 8 × 8,760 × 70%）。这不是市场租价、会计折旧政策或实际回本预测；它尚未覆盖融资、电力、机房、网络、运维、税费和利润，也未计入故障及代际淘汰风险。",
+          "在其余假设不变时，若把采购支出设为 700 万元，这一硬件回收要求约为每 GPU 小时 28.5 元。两个情景相差约 20.4 元，说明采购溢价必须由更高的收费、更高的可计费利用率，或更低的其他成本承接。把设备报价上涨直接解释成租赁业务利润扩张，跳过了最关键的客户支付能力。",
+          "未来六至十二个月，更有解释力的信号是同配置设备的实际交付价格、续租价格、回款与可计费利用率能否相互匹配。如果设备仍贵、续租价格却下降，存量高价资产的现金回收会承压；如果客户愿意持续付费且利用率稳定，高价设备才可能获得商业支撑。单一报价无法判定哪一种情景正在发生。",
           "检方指控，经销环节曾为采购主体垫付资金，掩盖实际资金来源；在完成 74 台服务器转售后，两名相关人员扣除支付给经销商的货款，获得合计 2,120 万 5,531 美元的违法所得。文件还分别披露了相关业务人员的奖金，以及另一组涉嫌侵占经销商资产的事项。这几类金额性质不同，不能相加后称为“芯片交易利润”。[基隆地检署案情说明，第 2、5—6 页](https://www.klc.moj.gov.tw/media/450456/1150824基檢偵結不法出口高階伺服器案件新聞稿.pdf?mediaDL=true)",
           "按检方披露的总所得除以已经转售的服务器数量，Atlas 计算得到：",
           "21,205,531 美元 ÷ 74 台 ≈ 每台 28.66 万美元。",
@@ -193,7 +210,7 @@
       }
     ],
     "conclusion": "下一份真正改变判断的材料，将是能够把货物、付款人、最终用户与持续运行记录连起来的证据。那时才可能进一步回答：这些流入的服务器，究竟带来了多少可用、可持续的算力。",
-    "disclosure": "资料截至 2026 年 9 月 17 日北京时间 14:10。本文根据公开司法文件、监管说明、公司披露及技术文档撰写，未开展现场采访；案件内容保留指控属性，分析及条件判断由 IDC Atlas 作出。"
+    "disclosure": "资料截至 2026 年 9 月 17 日北京时间 14:47。本文根据公开司法文件、监管说明、公司披露、技术文档及注明出处的市场报道与评论撰写，未开展现场采访；案件内容保留指控属性。价格情景属于 IDC Atlas 假设测算，不代表实时行情或实际回本预测。"
   },
   "en": {
     "hero": "A case disclosed by Taiwanese prosecutors exposes the separation between a declared buyer and the ultimate customer. Following the servers requires following the money and the end use as well.",
@@ -262,9 +279,14 @@
       },
       {
         "label": "03 · TRANSACTION ECONOMICS",
-        "heading": "Financing explains more than a list of transit points",
+        "heading": "Who bears the capital-recovery burden of a RMB12 million server?",
         "paragraphs": [
           "Shipping records help establish where equipment went. Financing and proceeds help explain why a transaction could attract participants in the first place.",
+          "Market reporting adds a separate reference point. CNA's account of an April 30, 2026 Reuters report cited four industry sources putting B300 servers in China at about RMB7 million each. Two sources separately put a server with eight B300 GPUs at roughly $550,000 in the United States. Those are dated interview-based prices, not September quotations or matched prices for the machines in the Taiwanese case. [Reuters reporting via CNA, April 30](https://www.cna.com.tw/news/aopl/202604300273.aspx)",
+          "A higher figure subsequently appeared in public commentary. On July 2, Zhang Zhaoye wrote on Eastmoney's user-contributed Caifuhao platform that mainland B300 server transactions had reached RMB12 million per machine. The post did not supply a specific system configuration or transaction documentation. It establishes a published market claim, not a verified prevailing transaction price. The two figures do not form a like-for-like price series. [Caifuhao post, July 2](https://caifuhao.eastmoney.com/news/20260702194710082198040)",
+          "An explicit stress scenario makes the operating implications clearer. Assume an eight-GPU server costs RMB12 million, with its hardware purchase recovered over five years and no residual value. Annual hardware capital recovery would be RMB2.4 million. If 70% of the year's 8,760 hours are billable, the hardware alone requires approximately RMB48.9 per billable GPU-hour: 12,000,000 / (5 × 8 × 8,760 × 70%). This is not a rental quote, an accounting depreciation policy or an observed payback forecast. It excludes financing, electricity, facilities, networking, maintenance, taxes and profit, as well as failure and obsolescence risk.",
+          "At an assumed RMB7 million purchase cost, with everything else unchanged, the equivalent requirement is approximately RMB28.5 per GPU-hour. The RMB20.4 difference must be absorbed through higher customer pricing, higher billable utilization or lower other costs. An increase in equipment prices therefore does not automatically expand a compute lessor's profit. Customer willingness to pay is the missing bridge.",
+          "Over the next six to twelve months, the useful test is whether delivered prices for comparable systems align with renewal rates, cash collection and billable utilization. Persistent equipment premiums alongside falling renewal rates would pressure capital recovery on expensive installed assets. Sustained customer payments and stable utilization could support the economics instead. An isolated equipment quotation cannot establish which scenario is unfolding.",
           "Prosecutors allege that a distributor advanced money for the purchasing entity, concealing the actual funding source. They state that, after reselling the 74 servers and deducting payments for the goods to the distributor, two people obtained combined unlawful proceeds of $21,205,531. The release separately describes sales-related bonuses and allegations involving misappropriation of distributor assets. These amounts have different meanings and should not be aggregated into a single measure of chip-trading profit. [Keelung prosecutors, pp. 2 and 5–6](https://www.klc.moj.gov.tw/media/450456/1150824基檢偵結不法出口高階伺服器案件新聞稿.pdf?mediaDL=true)",
           "Dividing the alleged proceeds by the number of resold servers gives an Atlas calculation:",
           "$21,205,531 ÷ 74 servers ≈ $286,561 per server.",
@@ -324,6 +346,6 @@
       }
     ],
     "conclusion": "The next evidence that would change the assessment must connect physical goods, payment, ultimate users and sustained operations. Only then can the inquiry move from how servers arrived to how much durable computing capacity they produced.",
-    "disclosure": "Sources current to September 17, 2026, 14:10 Beijing time. This report draws on public judicial documents, regulatory guidance, company disclosures and technical documentation; it does not include field interviews. Allegations retain their prosecutorial attribution. Analysis and conditional judgments are those of IDC Atlas."
+    "disclosure": "Sources current to September 17, 2026, 14:47 Beijing time. This report draws on public judicial documents, regulatory guidance, company disclosures, technical documentation and attributed market reporting and commentary; it does not include field interviews. Allegations retain their prosecutorial attribution. Price scenarios are Atlas assumptions, not live quotations or observed payback forecasts."
   }
 }

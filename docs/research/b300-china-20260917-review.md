@@ -1,5 +1,16 @@
 # B300 China feature: bilingual publication review
 
+## Price-context revision — September 17, 14:47 Beijing
+
+Local revision requested after discussion of the RMB12m claim. Both languages updated in the site JSON; the earlier standalone Markdown drafts and converter remain historical and must not overwrite this revision.
+
+- Reuters via CNA, April 30: four industry sources, approximately RMB7m/server. Media-reported context, not a current quote or case-specific price. https://www.cna.com.tw/news/aopl/202604300273.aspx
+- Zhang Zhaoye, Caifuhao, July 2: published RMB12m claim; original community post inspected, no configuration or transaction documentation. Not an independent confirmed transaction. https://caifuhao.eastmoney.com/news/20260702194710082198040
+- No continuous price index or cross-market premium calculated from unmatched equipment.
+- Explicit scenario: eight GPUs, five years, zero residual, 8,760 hours/year, 70% billable utilization. RMB12m / (5 × 8 × 8760 × 0.7) = RMB48.923679 per billable GPU-hour; RMB7m equivalent = RMB28.538813; difference RMB20.384866. Capital recovery only, not rent, accounting policy or forecast; other costs excluded.
+- Both language versions preserve claim attribution, dates, scenario assumptions and forward tests. Existing prosecution proceeds remain distinct from prices.
+- This revision's deployment status must be reported separately; earlier release proof below applies to the earlier version only.
+
 Date: 2026-09-17. Cutoff: 14:10 Asia/Shanghai.
 User requested publication of the complete Chinese and English feature.
 Scope: one research article, not a daily-content closure or a factual import inventory.
