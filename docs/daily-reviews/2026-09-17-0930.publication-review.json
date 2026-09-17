@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "atlas-publication-review.v1",
+  "day": "2026-09-17",
+  "sourceCoverage": [
+    {"kind":"issuer-ir","result":"not-applicable","urls":[],"note":"Government planning direction; no issuer disclosure is needed for this policy record."},
+    {"kind":"exchange-regulator","result":"not-applicable","urls":[],"note":"No exchange or market regulator filing is part of this Scottish planning direction."},
+    {"kind":"earnings-call","result":"not-applicable","urls":[],"note":"No earnings release or call is relevant to this policy record."},
+    {"kind":"permit-grid","result":"reviewed","urls":["https://www.gov.scot/publications/chief-planner-letter-eia-direction-on-data-centres/"],"note":"The Direction defines power capacity as total proposed electrical power and sets the planning EIA threshold; it does not grant site, grid or construction approval."},
+    {"kind":"government-policy","result":"reviewed","urls":["https://www.gov.scot/publications/chief-planner-letter-eia-direction-on-data-centres/"],"note":"Read the published Direction and Chief Planner letter: qualifying new data-centre projects over 50MW are EIA development from 17 September 2026."},
+    {"kind":"technical-standard","result":"not-applicable","urls":[],"note":"This is a statutory planning direction, not a technical standard."},
+    {"kind":"partner-customer","result":"not-applicable","urls":[],"note":"No project developer, customer or supplier statement is needed to establish the Direction."},
+    {"kind":"original-media","result":"not-applicable","urls":[],"note":"The official Scottish Government publication is the public primary record; no media claim is used."}
+  ],
+  "events": [
+    {
+      "eventId": "scotland-eia-over-50mw-direction-20260916",
+      "clusterKey": "scottish-government|eia-direction|data-centres-over-50mw|scotland|2026-09-17",
+      "change": {"type":"new-event","description":"The Scottish Government published a new Direction that takes effect on 17 September 2026 and makes qualifying new data-centre developments above 50MW EIA development.","priorPublicIds":[]},
+      "impact": {"level":"high","dimension":"policy","affected":"New Scottish data-centre proposals with more than 50MW of total proposed electrical power.","consequence":"Environmental assessment becomes an explicit planning-path requirement, affecting siting, design and approval timing without creating a moratorium or project approval.","evidenceUrls":["https://www.gov.scot/publications/chief-planner-letter-eia-direction-on-data-centres/"]},
+      "sources": [
+        {"url":"https://www.gov.scot/publications/chief-planner-letter-eia-direction-on-data-centres/","kind":"government-policy","independenceGroup":"scottish-government","readAt":"2026-09-17T02:07:00.000Z","finding":"The Direction takes effect on 17 September 2026; it covers new data-centre developments with total proposed electrical power exceeding 50MW and specifies that qualifying development is EIA development."}
+      ],
+      "primaryAttempts": [
+        {"url":"https://www.gov.scot/publications/chief-planner-letter-eia-direction-on-data-centres/","result":"reviewed","note":"Official publication and Direction read directly; the record supports the threshold, commencement date and planning scope used in public copy."}
+      ]
+    }
+  ]
+}

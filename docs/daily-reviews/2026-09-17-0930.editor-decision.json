@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "atlas-editor-decision.v1",
+  "day": "2026-09-17",
+  "generatedAt": "2026-09-17T02:08:00.000Z",
+  "status": "completed",
+  "decisions": [
+    {
+      "eventId": "scotland-eia-over-50mw-direction-20260916",
+      "action": "publish",
+      "route": "formal-section",
+      "section": "policy",
+      "sourceTier": "T0",
+      "evidenceStatus": "officially-confirmed",
+      "canonicalUrls": ["https://www.gov.scot/publications/chief-planner-letter-eia-direction-on-data-centres/"],
+      "reasonCodes": ["government-policy", "new-effective-requirement", "material-datacenter-planning-impact"],
+      "publicCopy": {
+        "titleZh": "苏格兰要求新建超过 50MW 的数据中心申请纳入环境影响评估",
+        "titleEn": "Scotland requires environmental impact assessment for new data-centre applications above 50MW",
+        "summaryZh": "新指令自 9 月 17 日起适用于总拟用电容量超过 50MW 的新建数据中心；它不是暂停令或项目批准。",
+        "summaryEn": "The Direction applies from September 17 to new data centres with more than 50MW of total proposed electrical power; it is not a moratorium or project approval."
+      },
+      "publicClaims": [
+        {
+          "claim": "The Direction requires EIA treatment for qualifying new data-centre developments above 50MW of total proposed electrical power from September 17, 2026.",
+          "sourceRefs": ["https://www.gov.scot/publications/chief-planner-letter-eia-direction-on-data-centres/"],
+          "state": "source-stated",
+          "qualifier": "new development above 50MW total proposed electrical power",
+          "capacityType": "total_power"
+        }
+      ],
+      "internalNotes": []
+    }
+  ]
+}

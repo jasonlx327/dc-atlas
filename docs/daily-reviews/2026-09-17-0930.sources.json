@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-2026-09-17-full",
+  "sources": [
+    {
+      "ref": "scotland-eia-direction-20260916",
+      "evidenceKind": "public-source",
+      "sourceName": "Scottish Government",
+      "tier": "T0",
+      "canonicalUrl": "https://www.gov.scot/publications/chief-planner-letter-eia-direction-on-data-centres/",
+      "publishedAt": "2026-09-16T00:00:00+01:00",
+      "accessState": "public",
+      "independenceGroup": "scottish-government",
+      "sections": ["policy"],
+      "readAt": "2026-09-17T02:07:00.000Z",
+      "finding": "The 2026 Direction takes effect on 17 September and makes a new data-centre development with total proposed electrical power exceeding 50MW EIA development; projects below that threshold remain case-by-case."
+    },
+    {
+      "ref": "codex-source-run-20260917-020322",
+      "evidenceKind": "discovery-artifact",
+      "sourceName": "Current Codex source run",
+      "observedAt": "2026-09-17T02:03:22.627Z",
+      "sections": ["*"],
+      "details": {
+        "artifact": "artifacts/event-intelligence/codex-event-night.json",
+        "fetched": 9628,
+        "clusters": 4744,
+        "editorialCandidates": 731,
+        "passingSources": 70,
+        "totalSources": 79,
+        "failedOrBlockedSources": ["treasury-irs", "ndrc", "miit", "mep-china", "beijing-gov", "shanghai-gov", "xai-news", "ap-technology", "36kr"],
+        "note": "Discovery and routing evidence only; it does not establish a reviewed public fact or no-change conclusion."
+      }
+    },
+    {
+      "ref": "remote-candidate-packet-20260911-stale",
+      "evidenceKind": "runtime-state",
+      "sourceName": "Cloudflare daily-candidates latest readback",
+      "observedAt": "2026-09-17T02:04:00.000Z",
+      "details": {
+        "day": "2026-09-11",
+        "model": "deterministic-atlas-fallback-v1",
+        "note": "The remote packet predates this run and was not used as current evidence or a publication input."
+      }
+    }
+  ]
+}

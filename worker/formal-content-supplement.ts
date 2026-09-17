@@ -31,6 +31,25 @@ export type FormalNewsSupplement = {
 };
 
 export const FORMAL_PULSE_SUPPLEMENT: FormalNewsSupplement[] = [...EVENING_NEWS_20260916, IMAGE25_NEWS, ...RECOVERY_NEWS, {
+  id: "scotland-eia-over-50mw-direction-20260916",
+  eventKey: "scottish-government|eia-direction|data-centres-over-50mw|scotland|2026-09-17",
+  impactLevel: "high",
+  title: "苏格兰要求新建超过 50MW 的数据中心申请纳入环境影响评估",
+  titleEn: "Scotland requires environmental impact assessment for new data-centre applications above 50MW",
+  summary: "苏格兰政府发布《2026 年（超过 50MW 电力容量的数据中心）环境影响评估指令》：自 9 月 17 日起，新建且总拟用电容量超过 50MW 的数据中心项目属于环境影响评估开发项目。低于该阈值的项目仍按现行法规逐案审查；该指令不构成暂停令，也不授予任何项目规划、建设或送电批准。",
+  summaryEn: "The Scottish Government's 2026 EIA Direction takes effect on September 17: a new data-centre development with more than 50MW of total proposed electrical power is EIA development. Projects at or below the threshold remain subject to case-by-case review under existing regulations; the Direction is neither a moratorium nor an approval for planning, construction or energization.",
+  publishedAt: "2026-09-16",
+  category: "idc-policy", score: null,
+  permalink: "https://www.gov.scot/publications/chief-planner-letter-eia-direction-on-data-centres/",
+  sourceUrl: "https://www.gov.scot/publications/chief-planner-letter-eia-direction-on-data-centres/",
+  sourceName: "Scottish Government", signal: "policy", curator: "官方来源", region: "全球",
+  milestone: "超过 50MW 数据中心 EIA 指令生效",
+  scale: "new data centres with total proposed electrical power >50MW · effective 17 September 2026",
+  whyItMatters: "该指令把大型数据中心项目的环境评估要求前置到规划流程，直接影响选址、设计、用水、排放与审批节奏。50MW 是总拟用电容量的门槛，不是已投运容量，也未替代其他规划或并网审批。",
+  whyItMattersEn: "The Direction brings environmental assessment into the planning path for large data-centre proposals, affecting siting, design, water, emissions and approval timing. The 50MW threshold is total proposed electrical power, not operating capacity, and it does not replace other planning or grid approvals.",
+  verifiedAt: "2026-09-17",
+  lifecycle: [{ label: "EIA 指令发布", state: "done" }, { label: "超过 50MW 项目按指令接受 EIA", state: "current" }, { label: "个案规划及其他审批", state: "next" }],
+}, {
   id: "ercot-data-center-state-community-impact-rfi-20260914",
   eventKey: "ercot|state-community-impact-rfi|data-center-developers-over-25mw|texas|2026-09-14",
   impactLevel: "high",
