@@ -1,0 +1,398 @@
+{
+  "schemaVersion": "1.1",
+  "runId": "atlas-20260919-codex-release",
+  "runDate": "2026-09-19",
+  "cutoff": "2026-09-19T16:16:52+08:00",
+  "displayTimezones": {
+    "zh": "Asia/Shanghai",
+    "en": "America/New_York"
+  },
+  "status": "ready-for-partial-release",
+  "projectPath": "/Users/xlarge/Desktop/数据中心/.worktrees/grok-publish-20260919",
+  "sourceLedgerPath": "/Users/xlarge/Desktop/数据中心/.worktrees/grok-publish-20260919/docs/daily-reviews/2026-09-19-codex.manifest.sources.json",
+  "host": "XlargedeMacBook-Air.local",
+  "headBefore": "d3107e9ee197da5ba28523c14869b0d50eabd4ab",
+  "sections": {
+    "idc-pulse": {
+      "status": "updated",
+      "checkedAt": "2026-09-19T10:52:30.981498+00:00",
+      "newIds": [
+        "huawei-ascend960-atlas960e-npo-20260917",
+        "ercot-community-impact-rfi-20260918",
+        "dexus-anthropic-western-downs-lease-20260916",
+        "cleanspark-notes-priced-2276m-20260918",
+        "aib-texas-parcel-close-20260914",
+        "hygon-board-egm-buyback-20260912",
+        "metax-ipo-lockup-float-20260910",
+        "biren-h-share-incentive-20260917",
+        "loongson-sponsor-rep-change-20260909",
+        "micron-512gb-ddr5-rdimm-20260915",
+        "dell-ai-server-orders-8k-20260901",
+        "ciena-fyq3-optical-ai-20260903",
+        "coherent-pluggable-ols-20260917",
+        "skhynix-ai-infra-summit-20260917",
+        "samsung-semi-zhbm-video-20260915",
+        "hpe-q3-cloud-ai-backlog-20260902"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 20,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "huawei-ascend960-atlas960e-npo-20260917",
+        "ercot-community-impact-rfi-20260918",
+        "dexus-anthropic-western-downs-lease-20260916",
+        "cleanspark-notes-priced-2276m-20260918",
+        "aib-texas-parcel-close-20260914",
+        "hygon-board-egm-buyback-20260912",
+        "metax-ipo-lockup-float-20260910",
+        "biren-h-share-incentive-20260917",
+        "loongson-sponsor-rep-change-20260909",
+        "micron-512gb-ddr5-rdimm-20260915",
+        "dell-ai-server-orders-8k-20260901",
+        "ciena-fyq3-optical-ai-20260903",
+        "coherent-pluggable-ols-20260917",
+        "skhynix-ai-infra-summit-20260917",
+        "samsung-semi-zhbm-video-20260915",
+        "hpe-q3-cloud-ai-backlog-20260902",
+        "huawei-ascend960-atlas960e-npo-20260917-specs",
+        "huawei-ascend960-atlas960e-npo-20260917-testing",
+        "huawei-ascend960-atlas960e-npo-20260917-roadmap-photo",
+        "huawei-ascend960-atlas960e-npo-20260917-performance-photo"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Only the authorized content pack was reviewed; this is not an exhaustive daily discovery scan."
+    },
+    "listed-companies": {
+      "status": "updated",
+      "checkedAt": "2026-09-19T10:52:30.981498+00:00",
+      "newIds": [
+        "cleanspark-notes-priced-2276m-20260918",
+        "hygon-board-egm-buyback-20260912",
+        "metax-ipo-lockup-float-20260910",
+        "biren-h-share-incentive-20260917",
+        "loongson-sponsor-rep-change-20260909",
+        "micron-512gb-ddr5-rdimm-20260915",
+        "dell-ai-server-orders-8k-20260901",
+        "ciena-fyq3-optical-ai-20260903",
+        "hpe-q3-cloud-ai-backlog-20260902"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 9,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "cleanspark-notes-priced-2276m-20260918",
+        "hygon-board-egm-buyback-20260912",
+        "metax-ipo-lockup-float-20260910",
+        "biren-h-share-incentive-20260917",
+        "loongson-sponsor-rep-change-20260909",
+        "micron-512gb-ddr5-rdimm-20260915",
+        "dell-ai-server-orders-8k-20260901",
+        "ciena-fyq3-optical-ai-20260903",
+        "hpe-q3-cloud-ai-backlog-20260902"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Only the authorized content pack was reviewed; this is not an exhaustive daily discovery scan."
+    },
+    "mna": {
+      "status": "updated",
+      "checkedAt": "2026-09-19T10:52:30.981498+00:00",
+      "newIds": [
+        "cleanspark-notes-priced-2276m-20260918",
+        "aib-texas-parcel-close-20260914"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 2,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "cleanspark-notes-priced-2276m-20260918",
+        "aib-texas-parcel-close-20260914"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Only the authorized content pack was reviewed; this is not an exhaustive daily discovery scan."
+    },
+    "capacity": {
+      "status": "updated",
+      "checkedAt": "2026-09-19T10:52:30.981498+00:00",
+      "newIds": [
+        "dexus-anthropic-western-downs-lease-20260916",
+        "cleanspark-notes-priced-2276m-20260918",
+        "aib-texas-parcel-close-20260914"
+      ],
+      "updatedIds": [],
+      "heldIds": [
+        "hut8",
+        "western-downs-2160mw-unconfirmed"
+      ],
+      "primarySources": 3,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "dexus-anthropic-western-downs-lease-20260916",
+        "cleanspark-notes-priced-2276m-20260918",
+        "aib-texas-parcel-close-20260914"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Only the authorized content pack was reviewed; this is not an exhaustive daily discovery scan."
+    },
+    "cooling": {
+      "status": "blocked",
+      "checkedAt": "2026-09-19T10:52:30.981498+00:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "No complete source-review packet for this section in the authorized release."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Retain existing content; do not claim verified-no-change or advance section review date."
+    },
+    "compute-products": {
+      "status": "verified-no-change",
+      "checkedAt": "2026-09-19T10:52:30.981498+00:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "nvidia-dsx-existing-event"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "no-change",
+      "notes": "The supplied NVIDIA DSX event duplicates production lambda-blackwell-dsx-lps-test-20260915; primary source rechecked, existing record retained. This disposition covers this packet only."
+    },
+    "china-gpu": {
+      "status": "updated",
+      "checkedAt": "2026-09-19T10:52:30.981498+00:00",
+      "newIds": [
+        "huawei-ascend960-atlas960e-npo-20260917",
+        "hygon-board-egm-buyback-20260912",
+        "metax-ipo-lockup-float-20260910",
+        "biren-h-share-incentive-20260917",
+        "loongson-sponsor-rep-change-20260909"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 9,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "huawei-ascend960-atlas960e-npo-20260917",
+        "hygon-board-egm-buyback-20260912",
+        "metax-ipo-lockup-float-20260910",
+        "biren-h-share-incentive-20260917",
+        "loongson-sponsor-rep-change-20260909",
+        "huawei-ascend960-atlas960e-npo-20260917-specs",
+        "huawei-ascend960-atlas960e-npo-20260917-testing",
+        "huawei-ascend960-atlas960e-npo-20260917-roadmap-photo",
+        "huawei-ascend960-atlas960e-npo-20260917-performance-photo"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Only the authorized content pack was reviewed; this is not an exhaustive daily discovery scan."
+    },
+    "supply-chain": {
+      "status": "updated",
+      "checkedAt": "2026-09-19T10:52:30.981498+00:00",
+      "newIds": [
+        "micron-512gb-ddr5-rdimm-20260915",
+        "dell-ai-server-orders-8k-20260901",
+        "ciena-fyq3-optical-ai-20260903",
+        "coherent-pluggable-ols-20260917",
+        "skhynix-ai-infra-summit-20260917",
+        "samsung-semi-zhbm-video-20260915",
+        "hpe-q3-cloud-ai-backlog-20260902",
+        "huawei-ascend960-atlas960e-npo-20260917"
+      ],
+      "updatedIds": [],
+      "heldIds": [
+        "inspur-foxconn-unverified"
+      ],
+      "primarySources": 12,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "huawei-ascend960-atlas960e-npo-20260917",
+        "micron-512gb-ddr5-rdimm-20260915",
+        "dell-ai-server-orders-8k-20260901",
+        "ciena-fyq3-optical-ai-20260903",
+        "coherent-pluggable-ols-20260917",
+        "skhynix-ai-infra-summit-20260917",
+        "samsung-semi-zhbm-video-20260915",
+        "hpe-q3-cloud-ai-backlog-20260902",
+        "huawei-ascend960-atlas960e-npo-20260917-specs",
+        "huawei-ascend960-atlas960e-npo-20260917-testing",
+        "huawei-ascend960-atlas960e-npo-20260917-roadmap-photo",
+        "huawei-ascend960-atlas960e-npo-20260917-performance-photo"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Only the authorized content pack was reviewed; this is not an exhaustive daily discovery scan."
+    },
+    "power-model-demand": {
+      "status": "updated",
+      "checkedAt": "2026-09-19T10:52:30.981498+00:00",
+      "newIds": [
+        "ercot-community-impact-rfi-20260918"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "ercot-community-impact-rfi-20260918"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Only the authorized content pack was reviewed; this is not an exhaustive daily discovery scan."
+    },
+    "earnings-calendar": {
+      "status": "updated",
+      "checkedAt": "2026-09-19T10:52:30.981498+00:00",
+      "newIds": [
+        "micron-fy-q4-2026"
+      ],
+      "updatedIds": [],
+      "heldIds": [
+        "mag7-undated"
+      ],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "micron-calendar-20260930"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Only the authorized content pack was reviewed; this is not an exhaustive daily discovery scan."
+    },
+    "rumors": {
+      "status": "blocked",
+      "checkedAt": "2026-09-19T10:52:30.981498+00:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "No complete source-review packet for this section in the authorized release."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Retain existing content; do not claim verified-no-change or advance section review date."
+    },
+    "policy": {
+      "status": "updated",
+      "checkedAt": "2026-09-19T10:52:30.981498+00:00",
+      "newIds": [
+        "ercot-community-impact-rfi-20260918"
+      ],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 1,
+      "mediaSources": 0,
+      "sourceRefs": [
+        "ercot-community-impact-rfi-20260918"
+      ],
+      "accessGaps": [],
+      "releaseDisposition": "publish",
+      "notes": "Only the authorized content pack was reviewed; this is not an exhaustive daily discovery scan."
+    },
+    "columns": {
+      "status": "blocked",
+      "checkedAt": "2026-09-19T10:52:30.981498+00:00",
+      "newIds": [],
+      "updatedIds": [],
+      "heldIds": [],
+      "primarySources": 0,
+      "mediaSources": 0,
+      "sourceRefs": [],
+      "accessGaps": [
+        "No complete source-review packet for this section in the authorized release."
+      ],
+      "releaseDisposition": "hold",
+      "notes": "Retain existing content; do not claim verified-no-change or advance section review date."
+    }
+  },
+  "release": {
+    "mode": "partial",
+    "tests": "passed",
+    "build": "passed",
+    "cloudflare": "pending",
+    "formalReadback": "pending",
+    "dailySnapshot": "pending",
+    "sites": "pending",
+    "sitesReadback": "pending",
+    "commit": null,
+    "workerCommit": null,
+    "sitesCommit": null,
+    "cloudflareVersion": null,
+    "sitesVersion": null,
+    "formalUrl": null,
+    "sitesUrl": null,
+    "includedSections": [
+      "idc-pulse",
+      "listed-companies",
+      "mna",
+      "capacity",
+      "china-gpu",
+      "supply-chain",
+      "power-model-demand",
+      "earnings-calendar",
+      "policy"
+    ],
+    "heldSections": [
+      "cooling",
+      "rumors",
+      "columns"
+    ],
+    "testBaseline": null
+  },
+  "blockers": [],
+  "ownership": {
+    "operator": "Codex",
+    "grokHandoff": "cancelled by user 2026-09-19",
+    "inputBranch": "grok/publish-20260919",
+    "inputCommit": "f44c1692e188257b5d25da6b0942f179c2df7b04"
+  },
+  "corrections": [
+    "CleanSpark proposed $2.227B superseded before cutoff by priced $2.276B; not closed.",
+    "Dexus customary approvals, no unsupported FIRB claim or confirmed 2.16GW capacity.",
+    "AIB 120MW portfolio contracted; incremental 15MW energized + 40MW contracted under development.",
+    "Hygon narrowed to evidenced cancellation proposal; issuer PDFs substituted for generic homepages.",
+    "NVIDIA duplicate reconciled with existing production event.",
+    "Held sections are not verified-no-change.",
+    "User added Ascend 960: official chip roadmap, 4096-NPU Atlas 960E specification and under-testing status cross-checked; no 610C claim."
+  ],
+  "sourceArtifacts": [
+    {
+      "file": "artifacts/release-20260919/sources/biren.pdf",
+      "sha256": "798be5c6d9f0f6606c7d0e39abf7c65bb5b76f9695757974d677dbb62b9a5830"
+    },
+    {
+      "file": "artifacts/release-20260919/sources/12589833.pdf",
+      "sha256": "1f09da4ed228774cf9551d96df355b585dc234e486e52760221d6c882a19119c"
+    },
+    {
+      "file": "artifacts/release-20260919/sources/12597950.pdf",
+      "sha256": "ab890987bff763b73c0eb75cf8f850158fc006e356b77ea4706989eb3faab32f"
+    },
+    {
+      "file": "artifacts/release-20260919/sources/12592212.pdf",
+      "sha256": "59975b0a52e19675393be472c39baec2f8b429594ef61c0157cc87826dc28a67"
+    }
+  ],
+  "validation": {
+    "existingSuite": "86 passed in tests-final.log",
+    "focused": "1 passed in focused-final.log after correcting test expectation to the public industryNews field",
+    "lint": "0 errors, 30 pre-existing warnings",
+    "typescript": "passed",
+    "cloudflareDryRun": "passed"
+  }
+}

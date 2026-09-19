@@ -226,6 +226,7 @@ const recordTranslations: Record<string, { title: string; status: string; metric
 };
 
 const supernodeTranslations: Record<string, { status: string; summary: string }> = {
+  "huawei-ascend960-atlas960e-npo-20260917": { status: "Unveiled / under testing · chip roadmap targets 2027", summary: "Huawei specifies up to 4,096 NPUs for the fully liquid-cooled 960E system using UnifiedBus and Hi-ONE. Ascend 960DT and 960PR target Q1 and Q3 2027 respectively; the official architecture update still describes the system as under testing, without confirming volume deliveries." },
   "huawei-atlas-superpod-roadmap": { status: "Existing deployment → 2026 system debut", summary: "Huawei is advancing from the 384-accelerator liquid-cooled Atlas 900 A3 supernode to the 1,024-accelerator Atlas 950 system, shifting the competitive focus to interconnect, unified memory and system-scale expansion." },
   "sugon-scalex640": { status: "Launched · core building block for 10,000-accelerator clusters", summary: "scaleX640 combines immersion phase-change cooling with dense interconnect and can scale from 16 nodes to a 10,000-accelerator cluster. Its proposition is multi-vendor accelerator compatibility and lower deployment friction for large-model clusters." },
   "alibaba-panjiu-al128": { status: "Launched at Alibaba Cloud Summit 2026", summary: "The Zhenwu M890 with ICN Switch 1.0 forms the Panjiu AL128 supernode. Alibaba has also said its T-Head in-house GPUs are in scaled production for training, fine-tuning and inference." },
@@ -345,6 +346,7 @@ function englishField(value: string | null | undefined, fallback: string) {
   return storyFieldTranslations[value] ?? (/[一-鿿]/.test(value) ? fallback : value);
 }
 function englishEvent(event: CalendarEvent): CalendarEvent {
+  if (event.id === "micron-fy-q4-2026") return { ...event, sector: "Memory / AI infrastructure", focus: "HBM and DRAM supply-demand, data-center outlook and capital spending" };
   return {
     ...event,
     sector: englishField(event.sector, "Infrastructure"),
@@ -352,6 +354,8 @@ function englishEvent(event: CalendarEvent): CalendarEvent {
   };
 }
 function englishDeal(deal: Deal): Deal {
+  if (deal.id === "cleanspark-notes-priced-2276m-20260918") return { ...deal, target: "Sandersville construction financing", value: "$2.276B · 7.875% · due 2031", capacity: "No new operating capacity disclosed", region: "United States", status: "Priced · closing expected September 25, subject to conditions", rationale: "Proceeds are intended for construction, prior investment reimbursements and reserves; pricing does not establish receipt of proceeds or energization." };
+  if (deal.id === "aib-texas-parcel-close-20260914") return { ...deal, target: "Approximately 29.4 acres in Texas", value: "Not quantified in this record", capacity: "Added 15 MW energized + 40 MW contracted under development", region: "United States", status: "Land acquisition closed · development continues", rationale: "Portfolio contracted power rises to 120 MW; this is not operating data-center capacity." };
   if (deal.id === "nvidia-hugging-face-2026") return {
     ...deal, value: "$12,930,300,000 agreed consideration", capacity: "Not disclosed", region: "United States / Global",
     status: "Agreement announced · closing timetable and regulatory conditions not disclosed",

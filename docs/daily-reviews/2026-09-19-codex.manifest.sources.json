@@ -1,0 +1,371 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "atlas-20260919-codex-release",
+  "sources": [
+    {
+      "ref": "huawei-ascend960-atlas960e-npo-20260917",
+      "evidenceKind": "public-source",
+      "sourceName": "Huawei · HUAWEI CONNECT 2026",
+      "tier": "T1",
+      "canonicalUrl": "https://www.huawei.com/en/news/2026/9/hc-wang-keynote",
+      "publishedAt": "2026-09-17",
+      "accessState": "public",
+      "independenceGroup": "huawei",
+      "sections": [
+        "idc-pulse",
+        "china-gpu",
+        "supply-chain"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "Huawei unveiled the Atlas 960E SuperPoD on September 17, called the Ascend 960 supernode in Chinese. It uses UnifiedBus, Hi-ONE NPO optical engines and full liquid cooling. Vendor-stated limits are 4,096 NPUs, 8 EFLOPS FP8 and 16 EFLOPS FP4—system specifications, not single-chip performance. Huawei targets Ascend 960DT readiness in Q1 2027 and 960PR in Q3. Its separate architecture announcement still describes the 960 system as under testing. The launch and roadmap do not establish volume deliveries."
+    },
+    {
+      "ref": "ercot-community-impact-rfi-20260918",
+      "evidenceKind": "public-source",
+      "sourceName": "ERCOT",
+      "tier": "T0",
+      "canonicalUrl": "https://www.ercot.com/about/legal/data-center-impact-rfi",
+      "publishedAt": "2026-09-18",
+      "accessState": "public",
+      "independenceGroup": "ercot",
+      "sections": [
+        "idc-pulse",
+        "policy",
+        "power-model-demand"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "ERCOT is requesting state and community-impact information from developers seeking interconnection for data centers of at least 25 MW. The September 18 questionnaire covers public assistance, power, water, cooling and community effects, with water questions coordinated with PUCT and TWDB. Responses are due October 12; a joint report with PUCT is planned by December 10. This information request is not an energization approval."
+    },
+    {
+      "ref": "dexus-anthropic-western-downs-lease-20260916",
+      "evidenceKind": "public-source",
+      "sourceName": "Dexus / EQS regulatory release",
+      "tier": "T1",
+      "canonicalUrl": "https://webdisclosure.fr/press-release/dexus-finance-pty-limited-etr-eqs-adhoc-dexus-finance-pty-limited-australian-data-centres-western-downs-digital-park-SplXHByyFly",
+      "publishedAt": "2026-09-16",
+      "accessState": "public",
+      "independenceGroup": "dexus",
+      "sections": [
+        "idc-pulse",
+        "capacity"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "Dexus disclosed that the ADC, Zerra DC and Macquarie Capital consortium signed stage-one lease documentation with Anthropic’s Australian subsidiary, subject to customary approvals. ADC is raising capital; Dexus has not decided whether to participate, and further ADC funding requires approvals including its board. No operating capacity is confirmed; the media-reported roughly 2.16 GW plan is excluded from confirmed capacity."
+    },
+    {
+      "ref": "cleanspark-notes-priced-2276m-20260918",
+      "evidenceKind": "public-source",
+      "sourceName": "CleanSpark / PR Newswire",
+      "tier": "T1",
+      "canonicalUrl": "https://www.prnewswire.com/news-releases/cleanspark-inc-announces-pricing-of-2-276-billion-of-senior-secured-notes-302883634.html",
+      "publishedAt": "2026-09-18T17:18:00-04:00",
+      "accessState": "public",
+      "independenceGroup": "cleanspark",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "capacity",
+        "mna"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "At 5:18 p.m. ET on September 18, CleanSpark announced pricing of CSDC Finance I’s $2.276 billion of 7.875% senior secured notes due 2031 at 98.5% of principal. Proceeds are intended for remaining Sandersville construction costs, reimbursement of prior investments and reserves. Closing is expected September 25, subject to customary conditions. This supersedes the proposed $2.227 billion offering; it is not confirmation of received proceeds or operating capacity."
+    },
+    {
+      "ref": "aib-texas-parcel-close-20260914",
+      "evidenceKind": "public-source",
+      "sourceName": "AIB Data Centers / GlobeNewswire",
+      "tier": "T1",
+      "canonicalUrl": "https://www.globenewswire.com/news-release/2026/09/14/3361106/0/en/aib-data-centers-nearly-doubles-contracted-power-capacity-to-120-mw-through-strategic-acquisition.html",
+      "publishedAt": "2026-09-14",
+      "accessState": "public",
+      "independenceGroup": "aib",
+      "sections": [
+        "idc-pulse",
+        "capacity",
+        "mna"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "AIB announced the acquisition of about 29.4 acres in Texas. The added 55 MW comprises 15 MW energized and 40 MW contracted but under development, taking portfolio contracted power from 65 MW to 120 MW. The 120 MW is a portfolio contract figure, not energized power at this parcel or operating data-center capacity."
+    },
+    {
+      "ref": "hygon-board-egm-buyback-20260912",
+      "evidenceKind": "public-source",
+      "sourceName": "海光信息 issuer filing / Sina PDF mirror",
+      "tier": "T1",
+      "canonicalUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-9/2026-09-12/12597950.PDF",
+      "publishedAt": "2026-09-12",
+      "accessState": "public",
+      "independenceGroup": "hygon",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "china-gpu"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "Hygon’s September 12 filing says its board approved a proposal to cancel 520,125 repurchased shares and reduce registered capital, subject to shareholder approval. This is a capital-structure matter, not a DCU production or shipment announcement."
+    },
+    {
+      "ref": "metax-ipo-lockup-float-20260910",
+      "evidenceKind": "public-source",
+      "sourceName": "沐曦股份 issuer filing / Sina PDF mirror",
+      "tier": "T1",
+      "canonicalUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-9/2026-09-10/12592212.PDF",
+      "publishedAt": "2026-09-10",
+      "accessState": "public",
+      "independenceGroup": "metax",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "china-gpu"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "MetaX’s September 10 filing scheduled 13,965,986 IPO offline-placement restricted shares, or 3.4906% of share capital, for circulation on September 17. This is the announced float schedule, not confirmation of product shipments or cluster delivery."
+    },
+    {
+      "ref": "biren-h-share-incentive-20260917",
+      "evidenceKind": "public-source",
+      "sourceName": "Biren issuer filing / etnet PDF mirror",
+      "tier": "T1",
+      "canonicalUrl": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_announcement_doc.php?newsid=5682359&code=6082",
+      "publishedAt": "2026-09-17",
+      "accessState": "public",
+      "independenceGroup": "biren",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "china-gpu"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "Biren’s September 17 issuer filing announced 8,237,894 awards to employees under its H-share incentive plan, subject to acceptance by grantees. This is an equity-incentive matter, not confirmation of training-chip shipments or supernode energization."
+    },
+    {
+      "ref": "loongson-sponsor-rep-change-20260909",
+      "evidenceKind": "public-source",
+      "sourceName": "龙芯中科 issuer filing / Sina PDF mirror",
+      "tier": "T1",
+      "canonicalUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-9/2026-09-09/12589833.PDF",
+      "publishedAt": "2026-09-09",
+      "accessState": "public",
+      "independenceGroup": "loongson",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "china-gpu"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "Loongson’s September 9 filing says CITIC Securities appointed Lin Kai to replace He Yang as a continuing-supervision sponsor representative, alongside Chen Xiying, following a change in He’s duties. The personnel change is not a CPU product or shipment milestone."
+    },
+    {
+      "ref": "micron-512gb-ddr5-rdimm-20260915",
+      "evidenceKind": "public-source",
+      "sourceName": "Micron IR",
+      "tier": "T1",
+      "canonicalUrl": "https://investors.micron.com/news/press-release/2026/Micron-Advances-Memory-Innovation-With-the-Worlds-First-Ultra-Dense-Module-for-Next-Generation-Servers/default.aspx",
+      "publishedAt": "2026-09-15T08:01:00Z",
+      "accessState": "public",
+      "independenceGroup": "micron",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "supply-chain"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "Micron's investor release says it demonstrated the world's first 512GB DDR5 RDIMM at up to about 9,200 MT/s, validating with AMD and Intel platforms, with volume production expected in the second half of 2027. Demo and validation are not current shipment volume."
+    },
+    {
+      "ref": "dell-ai-server-orders-8k-20260901",
+      "evidenceKind": "public-source",
+      "sourceName": "Dell / SEC EDGAR",
+      "tier": "T1",
+      "canonicalUrl": "https://www.sec.gov/Archives/edgar/data/1571996/000157199626000039/exhibit991earnings8kq2fy27.htm",
+      "publishedAt": "2026-09-01T20:10:14Z",
+      "accessState": "public",
+      "independenceGroup": "dell",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "supply-chain"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "Dell's SEC 8-K / Ex.99.1 reports record AI-optimized server orders, revenue and backlog, and raises FY27 AI-server and total-revenue guidance. Figures are company-reported and do not prove synchronized delivery across the full supply chain."
+    },
+    {
+      "ref": "ciena-fyq3-optical-ai-20260903",
+      "evidenceKind": "public-source",
+      "sourceName": "Ciena / SEC EDGAR",
+      "tier": "T1",
+      "canonicalUrl": "https://www.sec.gov/Archives/edgar/data/936395/000162828026060245/ex9912026q3earningspressre.htm",
+      "publishedAt": "2026-09-03T11:07:42Z",
+      "accessState": "public",
+      "independenceGroup": "ciena",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "supply-chain"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "Ciena reported approximately $1.67 billion in FY2026 third-quarter revenue and guided fourth-quarter revenue to $1.75 billion, plus or minus $50 million. Management highlighted AI-related network demand; guidance is forward-looking, not realized revenue."
+    },
+    {
+      "ref": "coherent-pluggable-ols-20260917",
+      "evidenceKind": "public-source",
+      "sourceName": "Coherent",
+      "tier": "T1",
+      "canonicalUrl": "https://www.coherent.com/news/press-releases/coherent-expands-pluggable-optical-line-systems-full-c-band-amplification",
+      "publishedAt": "2026-09-17",
+      "accessState": "public",
+      "independenceGroup": "coherent",
+      "sections": [
+        "idc-pulse",
+        "supply-chain"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "Coherent said it expanded its pluggable optical line systems portfolio with full C-band amplification for AI datacenter networks. A product launch is not proof of scaled deployment."
+    },
+    {
+      "ref": "skhynix-ai-infra-summit-20260917",
+      "evidenceKind": "public-source",
+      "sourceName": "SK hynix Newsroom",
+      "tier": "T1",
+      "canonicalUrl": "https://news.skhynix.com/en/ai-infra-summit-2026/",
+      "publishedAt": "2026-09-17",
+      "accessState": "public",
+      "independenceGroup": "skhynix",
+      "sections": [
+        "idc-pulse",
+        "supply-chain"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "SK hynix's English newsroom says it presented HBF, PIM and SALT-KV AI-infrastructure concepts at AI Infra Summit 2026. Showcases are not current HBM shipment commitments."
+    },
+    {
+      "ref": "samsung-semi-zhbm-video-20260915",
+      "evidenceKind": "public-source",
+      "sourceName": "Samsung Semiconductor",
+      "tier": "T1",
+      "canonicalUrl": "https://news.samsungsemiconductor.com/global/video-the-world-of-nano-from-hbm-to-zhbm-rethinking-architecture-innovation/",
+      "publishedAt": "2026-09-15",
+      "accessState": "public",
+      "independenceGroup": "samsung",
+      "sections": [
+        "idc-pulse",
+        "supply-chain"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "Samsung Semiconductor's newsroom published a video on the architectural path from HBM to zHBM. It is technical communications, not a capacity or customer-order announcement."
+    },
+    {
+      "ref": "hpe-q3-cloud-ai-backlog-20260902",
+      "evidenceKind": "public-source",
+      "sourceName": "HPE / SEC EDGAR",
+      "tier": "T1",
+      "canonicalUrl": "https://www.sec.gov/Archives/edgar/data/1645590/000164559026000078/ex-991x922026x8k.htm",
+      "publishedAt": "2026-09-02T20:06:52Z",
+      "accessState": "public",
+      "independenceGroup": "hpe",
+      "sections": [
+        "idc-pulse",
+        "listed-companies",
+        "supply-chain"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "HPE's SEC 8-K reports about $12.2B of Q3 revenue with strong Cloud & AI and server growth, a record order backlog, and raised outlook. Record backlog does not mean near-term full delivery."
+    },
+    {
+      "ref": "micron-calendar-20260930",
+      "evidenceKind": "public-source",
+      "sourceName": "Micron IR",
+      "tier": "T1",
+      "canonicalUrl": "https://investors.micron.com/news/press-release/2026/Micron-Technology-to-Report-Fiscal-Fourth-Quarter-Results-on-September-30-2026/default.aspx",
+      "publishedAt": "2026-08-26",
+      "accessState": "public",
+      "independenceGroup": "micron",
+      "sections": [
+        "earnings-calendar"
+      ]
+    },
+    {
+      "ref": "nvidia-dsx-existing-event",
+      "evidenceKind": "public-source",
+      "sourceName": "NVIDIA Blog",
+      "tier": "T1",
+      "canonicalUrl": "https://blogs.nvidia.com/blog/ai-infra-summit-vera-rubin-dsx-energy-efficiencies-tokens-per-watt-ai-factories/",
+      "publishedAt": "2026-09-15",
+      "accessState": "public",
+      "independenceGroup": "nvidia",
+      "sections": [
+        "compute-products"
+      ]
+    },
+    {
+      "ref": "huawei-ascend960-atlas960e-npo-20260917-specs",
+      "evidenceKind": "public-source",
+      "sourceName": "Huawei · HUAWEI CONNECT 2026",
+      "tier": "T1",
+      "canonicalUrl": "https://www.huawei.com/en/news/2026/9/hc-ascend960-supernode",
+      "publishedAt": "2026-09-17",
+      "accessState": "public",
+      "independenceGroup": "huawei",
+      "sections": [
+        "idc-pulse",
+        "china-gpu",
+        "supply-chain"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "System specifications"
+    },
+    {
+      "ref": "huawei-ascend960-atlas960e-npo-20260917-testing",
+      "evidenceKind": "public-source",
+      "sourceName": "Huawei · HUAWEI CONNECT 2026",
+      "tier": "T1",
+      "canonicalUrl": "https://www.huawei.com/en/news/2026/9/new-computing-architecture-peerium",
+      "publishedAt": "2026-09-17",
+      "accessState": "public",
+      "independenceGroup": "huawei",
+      "sections": [
+        "idc-pulse",
+        "china-gpu",
+        "supply-chain"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "Atlas 960 system under testing; no delivered capacity claim"
+    },
+    {
+      "ref": "huawei-ascend960-atlas960e-npo-20260917-roadmap-photo",
+      "evidenceKind": "public-source",
+      "sourceName": "Huawei CONNECT 2026 presentation / photograph mirrored by Wccftech",
+      "tier": "T1",
+      "canonicalUrl": "https://cdn.wccftech.com/wp-content/uploads/2026/09/Huawei-Ascend-960DT-960PR-970-980-Chips-and-Atlas-SuperPods-_2-1.jpg",
+      "publishedAt": "2026-09-17",
+      "accessState": "public",
+      "independenceGroup": "huawei",
+      "sections": [
+        "idc-pulse",
+        "china-gpu",
+        "supply-chain"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "Vendor slide inspected visually: DT/PR compute, memory, bandwidth, formats and launch plans.",
+      "provenance": "Primary presentation visually inspected; distribution host is a media mirror."
+    },
+    {
+      "ref": "huawei-ascend960-atlas960e-npo-20260917-performance-photo",
+      "evidenceKind": "public-source",
+      "sourceName": "Huawei CONNECT 2026 presentation / photograph mirrored by Wccftech",
+      "tier": "T1",
+      "canonicalUrl": "https://cdn.wccftech.com/wp-content/uploads/2026/09/Huawei-Ascend-960DT-960PR-970-980-Chips-and-Atlas-SuperPods-_1.jpg",
+      "publishedAt": "2026-09-17",
+      "accessState": "public",
+      "independenceGroup": "huawei",
+      "sections": [
+        "idc-pulse",
+        "china-gpu",
+        "supply-chain"
+      ],
+      "observedAt": "2026-09-19T10:52:30.981498+00:00",
+      "claimScope": "Vendor slide inspected visually: Q3 2027 system plan; 10T/16K training and 10T/256K inference comparison versus Atlas 950, not independent test.",
+      "provenance": "Primary presentation visually inspected; distribution host is a media mirror."
+    }
+  ]
+}

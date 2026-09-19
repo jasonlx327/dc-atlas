@@ -500,6 +500,7 @@ export const FORMAL_PULSE_SUPPLEMENT: FormalNewsSupplement[] = [...FORMAL_PUBLIS
 }];
 
 export const FORMAL_LISTED_SUPPLEMENT: FormalNewsSupplement[] = [
+  ...FORMAL_PUBLISH_20260919.filter((item) => Boolean(item.listedTicker)),
   ...EVENING_NEWS_20260916.filter((item) => item.listedTicker),
   ...RECOVERY_NEWS.filter((item) => item.listedTicker),
   {

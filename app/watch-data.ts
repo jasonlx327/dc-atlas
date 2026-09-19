@@ -47,6 +47,27 @@ export type RumorWatchItem = {
 };
 
 export const POLICY_BRIEFS: PolicyIndexRecord[] = [
+{
+  "id": "ercot-community-impact-rfi-20260918",
+  "jurisdiction": "US",
+  "title": "德州 ERCOT 发布数据中心社区影响 RFI：≥25 MW 须在 10 月 12 日前应答",
+  "titleEn": "ERCOT issues Data Center State & Community Impact RFI: ≥25 MW developers due Oct 12",
+  "scope": "ERCOT 拟并网且不低于 25 MW 的数据中心",
+  "scopeEn": "Data centers of at least 25 MW seeking ERCOT interconnection",
+  "status": "信息征询中 · 不是项目批准",
+  "statusEn": "Information request open · not project approval",
+  "publishedAt": "2026-09-18",
+  "effectiveLabel": "10 月 12 日应答截止；计划 12 月 10 日前出报告",
+  "effectiveLabelEn": "Responses due October 12; report planned by December 10",
+  "sourceName": "ERCOT",
+  "sourceUrl": "https://www.ercot.com/about/legal/data-center-impact-rfi",
+  "summary": "ERCOT 要求拟接入其电网、规模不低于 25 MW 的数据中心开发商提交州与社区影响信息。9 月 18 日问题清单涵盖税收补助、电力、水资源、冷却及社区影响；水资源问题与 PUCT、TWDB 协调。应答截止 10 月 12 日，计划于 12 月 10 日前与 PUCT 发布分析报告。这是信息征询，不是项目投运批准。",
+  "summaryEn": "ERCOT is requesting state and community-impact information from developers seeking interconnection for data centers of at least 25 MW. The September 18 questionnaire covers public assistance, power, water, cooling and community effects, with water questions coordinated with PUCT and TWDB. Responses are due October 12; a joint report with PUCT is planned by December 10. This information request is not an energization approval.",
+  "impact": "开发商需要补充项目用水及社区影响证据；RFI 与工程并网核验应分别跟踪。",
+  "impactEn": "Developers must substantiate water use and community effects; track this RFI separately from engineering interconnection checks.",
+  "affected": "德州数据中心开发商、公用事业与社区",
+  "affectedEn": "Texas data-center developers, utilities and communities"
+},
   {
     id: "us-bulk-power-supply-chain-emergency-2026",
     jurisdiction: "US",

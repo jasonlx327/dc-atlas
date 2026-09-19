@@ -39,6 +39,7 @@ import {
   type EditorialFeedbackRecord,
 } from "./event-intelligence/editorial-feedback.ts";
 import { sourceRegistryById } from "./connectors/index.ts";
+import { FORMAL_PUBLISH_20260919 } from "./formal-publish-20260919.ts";
 import { FORMAL_LISTED_SUPPLEMENT, FORMAL_PULSE_SUPPLEMENT } from "./formal-content-supplement.ts";
 
 const AIHOT_ENDPOINT = "https://aihot.virxact.com/api/public/items";
@@ -48,6 +49,7 @@ const CWW_ENDPOINT = "https://cwwindex.today/data/latest.json";
 const OPENROUTER_MODELS_ENDPOINT = "https://openrouter.ai/api/v1/models?sort=top-weekly";
 const ARENA_CODE_ENDPOINT = "https://arena.ai/leaderboard/code/webdev";
 const CONTENT_REVIEWED_AT = "2026-09-19";
+const PREVIOUS_CONTENT_REVIEWED_AT = "2026-09-08";
 
 function containsEntityTerm(text: string, term: string): boolean {
   const needle = term.trim().toLocaleLowerCase();
@@ -160,6 +162,7 @@ function llmsResearchDirectory(lang: "zh" | "en"): string {
   return `\n## ${lang === "zh" ? "当前已发布研究" : "Current published research"}\n\n${rows.join("\n")}\n`;
 }
 const PRODUCT_IMAGE_SOURCES: Record<string, string> = {
+  "/media/china/huawei-atlas-960e-launch.jpg": "https://www-file.huawei.com/dam/asset/view/260917-05.jpg",
   "/media/china/huawei-atlas-950.jpg": "https://www-file.huawei.com/dam/asset/view/260717-01.png",
   "/media/china/sugon-scalex640.png": "https://img1.mydrivers.com/img/20251223/0dc36481138640e19718364ea19e1254.png",
   "/media/china/moore-longcat.png": "https://mt-website-prod.mthreads.com/uploaded/news/cover/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260710101818_141_329.png",
@@ -614,6 +617,35 @@ function aiAdoption(): AiAdoption {
 
 function supernodeProducts(): SupernodeProduct[] {
   return [
+{
+  "id": "huawei-ascend960-atlas960e-npo-20260917",
+  "vendor": "华为昇腾",
+  "name": "Atlas 960E SuperPoD",
+  "status": "已发布 · 系统测试中 · 芯片按 2027 年规划推进",
+  "imageSrc": "/media/china/huawei-atlas-960e-launch.jpg",
+  "imageAlt": "Huawei CONNECT 2026 发布会现场 / launch keynote",
+  "imageCredit": "Huawei",
+  "headlineMetric": "4096 NPU · NPO",
+  "specs": [
+    {
+      "label": "系统 FP8 / FP4",
+      "value": "8 / 16 EFLOPS"
+    },
+    {
+      "label": "芯片就绪规划",
+      "value": "960DT 2027 Q1 · 960PR 2027 Q3"
+    },
+    {
+      "label": "交付边界",
+      "value": "系统测试中 · 未确认规模交付"
+    }
+  ],
+  "summary": "华为披露基于 UnifiedBus 与 Hi-ONE 的全液冷 960E 系统规格，最多 4096 卡。960DT / PR 仍按 2027 年芯片路线图推进；官方另文将系统标为测试中，不能视为已规模交付。",
+  "sourceName": "Huawei",
+  "sourceUrl": "https://www.huawei.com/en/news/2026/9/hc-ascend960-supernode",
+  "secondarySourceName": "Huawei · testing status",
+  "secondarySourceUrl": "https://www.huawei.com/en/news/2026/9/new-computing-architecture-peerium"
+},
     {
       id: "huawei-atlas-superpod-roadmap",
       vendor: "华为昇腾",
@@ -676,6 +708,54 @@ function supernodeProducts(): SupernodeProduct[] {
 
 function capacityRadar(): SourceRecord[] {
   return [
+{
+  "id": "dexus-anthropic-western-downs-lease-20260916",
+  "title": "Dexus：Anthropic Western Downs 一期租约文件已签署，仍有附带条件",
+  "titleEn": "Dexus: Anthropic Western Downs stage-one lease signed, subject to conditions",
+  "subject": "ADC / Anthropic · Western Downs",
+  "subjectEn": "ADC / Anthropic · Western Downs",
+  "metric": "Western Downs · stage-1 lease (capacity not confirmed as operating)",
+  "metricEn": "Western Downs · stage-1 lease (capacity not confirmed as operating)",
+  "status": "Stage-one lease documentation signed · customary approvals pending",
+  "statusEn": "Stage-one lease documentation signed · customary approvals pending",
+  "publishedAt": "2026-09-16",
+  "sourceName": "Dexus / EQS regulatory release",
+  "sourceUrl": "https://webdisclosure.fr/press-release/dexus-finance-pty-limited-etr-eqs-adhoc-dexus-finance-pty-limited-australian-data-centres-western-downs-digital-park-SplXHByyFly",
+  "note": "Dexus 披露，ADC、Zerra DC 与 Macquarie Capital 的联合体已与 Anthropic 澳大利亚子公司签署 Western Downs 一期租约文件，仍须满足惯常审批条件。ADC 正筹资；Dexus 尚未决定是否参投，ADC 后续出资仍需包括 Dexus 董事会在内的批准。公告未确认投运容量，本条不将约 2.16 GW 媒体规划计入已确认容量。",
+  "noteEn": "Dexus disclosed that the ADC, Zerra DC and Macquarie Capital consortium signed stage-one lease documentation with Anthropic’s Australian subsidiary, subject to customary approvals. ADC is raising capital; Dexus has not decided whether to participate, and further ADC funding requires approvals including its board. No operating capacity is confirmed; the media-reported roughly 2.16 GW plan is excluded from confirmed capacity."
+},
+{
+  "id": "cleanspark-notes-priced-2276m-20260918",
+  "title": "CleanSpark 将担保票据定价为 22.76 亿美元，预计 9 月 25 日交割",
+  "titleEn": "CleanSpark prices $2.276B secured notes, with closing expected September 25",
+  "subject": "CleanSpark · Sandersville",
+  "subjectEn": "CleanSpark · Sandersville",
+  "metric": "$2.276B · 7.875% coupon · due 2031",
+  "metricEn": "$2.276B · 7.875% coupon · due 2031",
+  "status": "Notes priced · expected closing September 25",
+  "statusEn": "Notes priced · expected closing September 25",
+  "publishedAt": "2026-09-18T17:18:00-04:00",
+  "sourceName": "CleanSpark / PR Newswire",
+  "sourceUrl": "https://www.prnewswire.com/news-releases/cleanspark-inc-announces-pricing-of-2-276-billion-of-senior-secured-notes-302883634.html",
+  "note": "CleanSpark 于美东 9 月 18 日 17:18 公布：CSDC Finance I 已为 2031 年到期、票息 7.875% 的 22.76 亿美元优先担保票据定价，发行价为本金的 98.5%。拟用于 Sandersville 剩余建设成本、偿付此前投入及储备。预计 9 月 25 日交割，仍有惯常条件；本次定价取代此前拟发行 22.27 亿美元的方案，不代表资金已到账或园区已投运。",
+  "noteEn": "At 5:18 p.m. ET on September 18, CleanSpark announced pricing of CSDC Finance I’s $2.276 billion of 7.875% senior secured notes due 2031 at 98.5% of principal. Proceeds are intended for remaining Sandersville construction costs, reimbursement of prior investments and reserves. Closing is expected September 25, subject to customary conditions. This supersedes the proposed $2.227 billion offering; it is not confirmation of received proceeds or operating capacity."
+},
+{
+  "id": "aib-texas-parcel-close-20260914",
+  "title": "AIB Data Centers 完成德州约 29.4 英亩地块交割，签约电力升至 120 MW",
+  "titleEn": "AIB Data Centers closes ~29.4-acre Texas parcel; contracted power rises to 120 MW",
+  "subject": "AIB Data Centers · Texas",
+  "subjectEn": "AIB Data Centers · Texas",
+  "metric": "29.4 acres · +15 MW energized / +40 MW contracted under development",
+  "metricEn": "29.4 acres · +15 MW energized / +40 MW contracted under development",
+  "status": "Parcel close · contracted power 65→120 MW",
+  "statusEn": "Parcel close · contracted power 65→120 MW",
+  "publishedAt": "2026-09-14",
+  "sourceName": "AIB Data Centers / GlobeNewswire",
+  "sourceUrl": "https://www.globenewswire.com/news-release/2026/09/14/3361106/0/en/aib-data-centers-nearly-doubles-contracted-power-capacity-to-120-mw-through-strategic-acquisition.html",
+  "note": "AIB 公告完成德州约 29.4 英亩地块收购，新增 55 MW 电力组合中有 15 MW 已送电、40 MW 已签约但仍待开发；公司组合签约电力由 65 MW 升至 120 MW。120 MW 是组合合同口径，不是该地块全部已送电，也不是已投运机房容量。",
+  "noteEn": "AIB announced the acquisition of about 29.4 acres in Texas. The added 55 MW comprises 15 MW energized and 40 MW contracted but under development, taking portfolio contracted power from 65 MW to 120 MW. The 120 MW is a portfolio contract figure, not energized power at this parcel or operating data-center capacity."
+},
     ...FORMAL_PULSE_SUPPLEMENT.filter((item) => ["edged-oma01-council-bluffs-topping-out-20260911", "aligned-project-phoenix-shippingport-groundbreaking-20260910", "tcs-hypervault-telangana-land-20260905", "nscale-figure-barstow-compute-2026", "pure-dc-brent-cross-b2-piling-2026", "cerebras-compute-nordic-mikkeli-165mw-2026"].includes(item.id)).map((item) => ({
       id: item.id, title: item.title, titleEn: item.titleEn,
       subject: item.sourceName, subjectEn: item.sourceName,
@@ -1266,6 +1346,38 @@ function chinaChipPulse(liveNews: NewsItem[], days = 30): NewsItem[] {
 
 function mnaDeals(): MnaDeal[] {
   return [
+{
+  "id": "cleanspark-notes-priced-2276m-20260918",
+  "announcedAt": "2026-09-18T17:18:00-04:00",
+  "buyer": "CSDC Finance I / CleanSpark",
+  "target": "Sandersville 建设融资",
+  "value": "$2.276B · 7.875% · 2031",
+  "capacity": "不披露新增投运容量",
+  "region": "美国",
+  "status": "已定价 · 预计 9 月 25 日交割",
+  "statusAsOf": "2026-09-19",
+  "valueBasis": "发行人公告",
+  "capacityBasis": "按公告区分合同电力、送电和投运",
+  "rationale": "CleanSpark 于美东 9 月 18 日 17:18 公布：CSDC Finance I 已为 2031 年到期、票息 7.875% 的 22.76 亿美元优先担保票据定价，发行价为本金的 98.5%。拟用于 Sandersville 剩余建设成本、偿付此前投入及储备。预计 9 月 25 日交割，仍有惯常条件；本次定价取代此前拟发行 22.27 亿美元的方案，不代表资金已到账或园区已投运。",
+  "sourceName": "CleanSpark / PR Newswire",
+  "sourceUrl": "https://www.prnewswire.com/news-releases/cleanspark-inc-announces-pricing-of-2-276-billion-of-senior-secured-notes-302883634.html"
+},
+{
+  "id": "aib-texas-parcel-close-20260914",
+  "announcedAt": "2026-09-14",
+  "buyer": "AIB Data Centers",
+  "target": "德州约 29.4 英亩地块",
+  "value": "未在本条量化",
+  "capacity": "新增 15 MW 已送电 + 40 MW 已签约待开发",
+  "region": "美国",
+  "status": "土地交割完成 · 开发中",
+  "statusAsOf": "2026-09-19",
+  "valueBasis": "发行人公告",
+  "capacityBasis": "按公告区分合同电力、送电和投运",
+  "rationale": "AIB 公告完成德州约 29.4 英亩地块收购，新增 55 MW 电力组合中有 15 MW 已送电、40 MW 已签约但仍待开发；公司组合签约电力由 65 MW 升至 120 MW。120 MW 是组合合同口径，不是该地块全部已送电，也不是已投运机房容量。",
+  "sourceName": "AIB Data Centers / GlobeNewswire",
+  "sourceUrl": "https://www.globenewswire.com/news-release/2026/09/14/3361106/0/en/aib-data-centers-nearly-doubles-contracted-power-capacity-to-120-mw-through-strategic-acquisition.html"
+},
     {
       id: "nvidia-hugging-face-2026",
       announcedAt: "2026-09-03",
@@ -1275,7 +1387,7 @@ function mnaDeals(): MnaDeal[] {
       capacity: "未披露",
       region: "美国 / 全球",
       status: "已签署 · 交割时间与监管条件未披露",
-      statusAsOf: CONTENT_REVIEWED_AT,
+      statusAsOf: PREVIOUS_CONTENT_REVIEWED_AT,
       valueBasis: "NVIDIA 官方公告的协议收购价",
       capacityBasis: "公告未披露 GPU、机柜、MW 或数据中心资产规模",
       rationale: "交易拟把开放模型、数据集和应用社区平台纳入 NVIDIA 生态；NVIDIA 表示 Hugging Face 将继续支持多云、多加速器及非 NVIDIA 算力。",
@@ -1291,7 +1403,7 @@ function mnaDeals(): MnaDeal[] {
       capacity: "已部署 >15GW · 美国年产能 2027 年预计 >30GW",
       region: "美国 / 全球",
       status: "已签署 · 预计 2026 年 Q4 交割",
-      statusAsOf: CONTENT_REVIEWED_AT,
+      statusAsOf: PREVIOUS_CONTENT_REVIEWED_AT,
       valueBasis: "Flex 公告的交易估值，仍可能按惯例调整",
       capacityBasis: "15GW 为 EPC Power 历史部署规模；30GW 为未来美国制造能力预期",
       rationale: "收购拟把整流、DC-DC 转换与 800V 数据中心电力架构能力纳入 Flex 的 Cloud and Power Infrastructure 部门。",
@@ -1307,7 +1419,7 @@ function mnaDeals(): MnaDeal[] {
       capacity: "未披露",
       region: "美国 / 全球",
       status: "确定性协议已签 · 交割时间未披露",
-      statusAsOf: CONTENT_REVIEWED_AT,
+      statusAsOf: PREVIOUS_CONTENT_REVIEWED_AT,
       valueBasis: "交易条款未披露",
       capacityBasis: "公告未披露纳入交易的数据中心或 MW 规模",
       rationale: "T5 的运营业务拟加入 Salute；同期 T5 Construction 已独立成为 EverOn Data Center Services，原有建设项目与合同继续履行。",
@@ -1323,7 +1435,7 @@ function mnaDeals(): MnaDeal[] {
       capacity: "未披露",
       region: "全球",
       status: "谅解备忘录已签 · 最终协议待签署",
-      statusAsOf: CONTENT_REVIEWED_AT,
+      statusAsOf: PREVIOUS_CONTENT_REVIEWED_AT,
       valueBasis: "NVIDIA 公告的长期第三方资本动员目标，不是已承诺或已到位资本",
       capacityBasis: "公告未披露对应 GPU、机柜、MW 或具体项目容量",
       rationale: "六家大型另类资产管理与投行平台拟分别建立独立融资载体，把外部基础设施资本连接到 NVIDIA 算力生态；最终结构、时点和条款仍取决于正式协议。",
@@ -1339,7 +1451,7 @@ function mnaDeals(): MnaDeal[] {
       capacity: "606MW 燃气发电容量",
       region: "美国德州 ERCOT",
       status: "已签署 · 待 DOJ 批准及惯常交割条件",
-      statusAsOf: CONTENT_REVIEWED_AT,
+      statusAsOf: PREVIOUS_CONTENT_REVIEWED_AT,
       valueBasis: "Constellation SEC 文件披露的交割调整前对价",
       capacityBasis: "Brazos Valley 现有燃气发电机组铭牌容量",
       rationale: "该出售是 Constellation 完成 Calpine 收购相关监管承诺的最后一项资产处置；公司预计 2026 年底前交割，但尚未完成。",
@@ -1355,7 +1467,7 @@ function mnaDeals(): MnaDeal[] {
       capacity: "约 700MW + 900MW 潜在容量",
       region: "美国德州",
       status: "已完成站点收购 · 电力审批推进",
-      statusAsOf: CONTENT_REVIEWED_AT,
+      statusAsOf: PREVIOUS_CONTENT_REVIEWED_AT,
       valueBasis: "交易金额未披露",
       capacityBasis: "Galaxy Q2 文件披露的潜在电力容量",
       rationale: "两处站点把 Galaxy 在 Helios 与 McGregor 之外的德州开发管线扩展至多园区，但容量仍取决于 ERCOT 并网流程。",
@@ -1371,7 +1483,7 @@ function mnaDeals(): MnaDeal[] {
       capacity: "首期 74MW · 远期数百 MW",
       region: "美国德州",
       status: "已完成土地收购 · 开发推进",
-      statusAsOf: CONTENT_REVIEWED_AT,
+      statusAsOf: PREVIOUS_CONTENT_REVIEWED_AT,
       valueBasis: "项目所在地披露的土地出售收入",
       capacityBasis: "Galaxy 公告的首期与远期规划",
       rationale: "Galaxy 在 Helios 之外增加第二个德州大型园区，以已取得的土地和电力开发路径扩展 AI 数据中心容量。",
@@ -1387,7 +1499,7 @@ function mnaDeals(): MnaDeal[] {
       capacity: "9GW+ 并网数据中心开发管线",
       region: "美国",
       status: "已签署 · 预计 2026 年底交割",
-      statusAsOf: CONTENT_REVIEWED_AT,
+      statusAsOf: PREVIOUS_CONTENT_REVIEWED_AT,
       valueBasis: "交易金额未披露",
       capacityBasis: "Copia 公告的数据中心开发管线",
       rationale: "EQT 通过收购把电源项目与已并网的数据中心开发管线纳入同一平台，直接增强 AI 基础设施的电力与选址能力。",
@@ -3120,7 +3232,7 @@ function listedCompanyPulse(): NewsItem[] {
   ];
 
   return items
-    .map((item) => ({ ...item, verifiedAt: CONTENT_REVIEWED_AT }))
+    .map((item) => ({ ...item, verifiedAt: PREVIOUS_CONTENT_REVIEWED_AT }))
     .sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime());
 }
 
@@ -3573,7 +3685,10 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
     ...(coolingResult.status === "fulfilled" ? coolingResult.value : []),
   ], 8);
   const networkNews = networkResult.status === "fulfilled" ? networkResult.value : [];
-  const powerNews = powerResult.status === "fulfilled" ? powerResult.value : [];
+  const powerNews = uniqueNews([
+    ...FORMAL_PUBLISH_20260919.filter((item) => item.category === "idc-power"),
+    ...(powerResult.status === "fulfilled" ? powerResult.value : []),
+  ], 8);
   const modelNews = uniqueNews([
     ...trackedSourceNews(),
     ...(modelResult.status === "fulfilled"
@@ -3644,7 +3759,7 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
     listedCompanyNews: sectionFreshness(listedCompanyNews, (item) => item.publishedAt, 14, CONTENT_REVIEWED_AT),
     mnaDeals: sectionFreshness(deals, (item) => item.announcedAt, 45, CONTENT_REVIEWED_AT),
     capacityRadar: sectionFreshness(records, (item) => item.publishedAt, 30, CONTENT_REVIEWED_AT),
-    coolingProgress: sectionFreshness(coolingRecords, (item) => item.publishedAt, 45, CONTENT_REVIEWED_AT),
+    coolingProgress: sectionFreshness(coolingRecords, (item) => item.publishedAt, 45, PREVIOUS_CONTENT_REVIEWED_AT),
   };
   const factChangedAt = [
     ...idcPulse.map((item) => item.publishedAt),
@@ -3655,13 +3770,23 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
   const researchPublishedAt = publishedColumnArticles()[0]?.publishAt ?? null;
   const dailyBrief = currentDailyBriefRecord();
   const briefPublishedAt = dailyBrief?.publishedAt ?? null;
-  const latestContentChangedAt = [factChangedAt, researchPublishedAt, briefPublishedAt]
+  const releasePublishedAt = (env as Env & { ATLAS_CONTENT_PUBLISHED_AT?: string }).ATLAS_CONTENT_PUBLISHED_AT ?? null;
+  const latestContentChangedAt = [factChangedAt, researchPublishedAt, briefPublishedAt, releasePublishedAt]
     .filter((value): value is string => Boolean(value))
     .sort((a, b) => Date.parse(b) - Date.parse(a))[0] ?? factChangedAt;
   const contentVersion = `${latestContentChangedAt}::${idcPulse.length}-${listedCompanyNews.length}-${deals.length}-${rumors.length}-${publishedColumnArticles().length}-${dailyBrief?.id ?? "no-brief"}`;
   const response = Response.json({
     generatedAt: new Date().toISOString(),
     contentReviewedAt,
+    contentRelease: {
+      id: "formal-publish-20260919",
+      mode: "partial",
+      sourceCutoff: "2026-09-19T16:16:52+08:00",
+      publishedAt: releasePublishedAt,
+      includedIds: FORMAL_PUBLISH_20260919.map((item) => item.id),
+      heldSections: ["cooling", "rumors", "columns"],
+      notes: "Reviewed content pack only; not a full-site daily closure.",
+    },
     contentVersion,
     lastContentChangedAt: latestContentChangedAt,
     factChangedAt,
