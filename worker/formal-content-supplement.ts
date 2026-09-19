@@ -1,6 +1,7 @@
 import { RECOVERY_NEWS } from "./formal-recovery-20260907";
 import { IMAGE25_NEWS } from "./image25-news";
 import { EVENING_NEWS_20260916 } from "./formal-evening-20260916";
+import { FORMAL_PUBLISH_20260919 } from "./formal-publish-20260919";
 
 export type FormalNewsSupplement = {
   impactLevel?: "high" | "material";
@@ -30,7 +31,7 @@ export type FormalNewsSupplement = {
   lifecycle?: Array<{ label: string; state: "done" | "current" | "next" }>;
 };
 
-export const FORMAL_PULSE_SUPPLEMENT: FormalNewsSupplement[] = [...EVENING_NEWS_20260916, IMAGE25_NEWS, ...RECOVERY_NEWS, {
+export const FORMAL_PULSE_SUPPLEMENT: FormalNewsSupplement[] = [...FORMAL_PUBLISH_20260919, ...EVENING_NEWS_20260916, IMAGE25_NEWS, ...RECOVERY_NEWS, {
   id: "scotland-eia-over-50mw-direction-20260916",
   eventKey: "scottish-government|eia-direction|data-centres-over-50mw|scotland|2026-09-17",
   impactLevel: "high",
