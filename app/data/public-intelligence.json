@@ -1634,25 +1634,25 @@
   },
   {
     "id": "editor-crusoe-funding-20260903",
-    "title": "彭博：Crusoe 完成新一轮融资",
-    "titleEn": "Bloomberg: Crusoe completes a new financing round",
-    "summary": "彭博援引知情人士称，Crusoe 融资超过 $3 billion、估值约 $30 billion，由 Atreides Management 和 Valor Equity Partners 联合领投。这是媒体所述的已完成融资，不是公司公告。",
-    "summaryEn": "Bloomberg, citing people familiar with the matter, reports that Crusoe raised over $3 billion at roughly a $30 billion valuation, co-led by Atreides Management and Valor Equity Partners. Completion is reported by the outlet, not announced by the company.",
-    "publishedAt": "2026-09-03T22:38:00Z",
-    "sourceName": "Bloomberg News",
-    "sourceUrl": "https://news.bloomberglaw.com/business-and-practice/crusoe-raises-over-3-billion-in-round-at-30-billion-valuation",
+    "title": "Crusoe 披露预计 39 亿美元 Series F 的初次交割",
+    "titleEn": "Crusoe discloses initial closing of anticipated $3.9B Series F",
+    "summary": "Crusoe 9 月 17 日公司分发稿披露预计 39 亿美元 Series F 的初次交割，投后估值 309 亿美元。本条接续 9 月 3 日媒体融资报道，确认范围限发行人披露；初次交割金额未单列，不代表 39 亿美元全部到账。",
+    "summaryEn": "Crusoe’s September 17 issuer release announces the initial closing of an anticipated $3.9B Series F at a $30.9B post-money valuation. This updates the September 3 media report, with confirmation limited to issuer disclosure. The initial closing amount is not separately stated; the full $3.9B is not established as received.",
+    "publishedAt": "2026-09-17T14:25:00-04:00",
+    "sourceName": "Crusoe / GlobeNewswire",
+    "sourceUrl": "https://www.globenewswire.com/news-release/2026/09/17/3364326/0/en/crusoe-raises-3-9-billion-series-f-for-its-vertically-integrated-ai-infrastructure-platform.html",
     "region": "全球",
     "status": "reported",
-    "statusLabel": "媒体 · 单一来源",
-    "statusLabelEn": "Media · single source",
+    "statusLabel": "官方确认 · 限发行人披露的初次交割",
+    "statusLabelEn": "Officially confirmed · issuer-disclosed initial closing",
     "sourceCount": 1,
     "entities": [
       "Crusoe"
     ],
-    "officialResponse": "公开可读段落支持融资金额、估值及领投方；付费正文未用于新增主张。下一验证点为公司或投资方正式披露。",
-    "officialResponseEn": "The publicly readable paragraphs support the amount, valuation and lead investors; no claims rely on gated text. Next check: disclosure by the company or investors.",
-    "sourceNote": "Bloomberg News；独立来源组：bloomberg。原始发布时间见本条时间，2026-09-05 原文复核。",
-    "sourceNoteEn": "Bloomberg News; independence group: bloomberg. Original publication time is retained; source reviewed September 5, 2026."
+    "officialResponse": "公司已披露初次交割；预计轮次总额与实际已交割金额须区分。",
+    "officialResponseEn": "The issuer disclosed an initial closing; anticipated round size remains distinct from the amount actually closed.",
+    "sourceNote": "2026-09-20 核对公司分发稿；保留原条目 ID 接续彭博报道，不计同源转载为独立确认。",
+    "sourceNoteEn": "Issuer release reviewed September 20, 2026. Original ID retained to update Bloomberg reporting; syndication is not independent confirmation."
   },
   {
     "id": "editor-evt-5d6e4436eecce033ac64",

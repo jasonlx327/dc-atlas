@@ -354,6 +354,7 @@ function englishEvent(event: CalendarEvent): CalendarEvent {
   };
 }
 function englishDeal(deal: Deal): Deal {
+  if (deal.id === "coreweave-convertible-priced-3700m-20260918") return { ...deal, target: "Convertible note financing", value: "$3.7B · 2.875% · due 2033", capacity: "No new operating capacity disclosed", region: "United States", status: "Priced · settlement expected September 22, subject to conditions", rationale: "About $498.8M of net proceeds is intended for capped calls, with the remainder for general corporate purposes. Pricing does not establish receipt of cash or operating capacity." };
   if (deal.id === "cleanspark-notes-priced-2276m-20260918") return { ...deal, target: "Sandersville construction financing", value: "$2.276B · 7.875% · due 2031", capacity: "No new operating capacity disclosed", region: "United States", status: "Priced · closing expected September 25, subject to conditions", rationale: "Proceeds are intended for construction, prior investment reimbursements and reserves; pricing does not establish receipt of proceeds or energization." };
   if (deal.id === "aib-texas-parcel-close-20260914") return { ...deal, target: "Approximately 29.4 acres in Texas", value: "Not quantified in this record", capacity: "Added 15 MW energized + 40 MW contracted under development", region: "United States", status: "Land acquisition closed · development continues", rationale: "Portfolio contracted power rises to 120 MW; this is not operating data-center capacity." };
   if (deal.id === "nvidia-hugging-face-2026") return {

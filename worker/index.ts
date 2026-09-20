@@ -1,3 +1,4 @@
+import { FORMAL_PUBLISH_20260920 } from "./formal-publish-20260920.ts";
 import withdrawnIntelligence from "../app/data/withdrawn-intelligence.json";
 /** Cloudflare Worker entry point for IDC Atlas. */
 import { liquidCoolingBriefs } from "../app/data/liquid-cooling-briefs";
@@ -48,7 +49,7 @@ const AIHOT_USER_AGENT = "aihot-skill/0.3.6 (+https://aihot.virxact.com/aihot-sk
 const CWW_ENDPOINT = "https://cwwindex.today/data/latest.json";
 const OPENROUTER_MODELS_ENDPOINT = "https://openrouter.ai/api/v1/models?sort=top-weekly";
 const ARENA_CODE_ENDPOINT = "https://arena.ai/leaderboard/code/webdev";
-const CONTENT_REVIEWED_AT = "2026-09-19";
+const CONTENT_REVIEWED_AT = "2026-09-20";
 const PREVIOUS_CONTENT_REVIEWED_AT = "2026-09-08";
 
 function containsEntityTerm(text: string, term: string): boolean {
@@ -1346,6 +1347,22 @@ function chinaChipPulse(liveNews: NewsItem[], days = 30): NewsItem[] {
 
 function mnaDeals(): MnaDeal[] {
   return [
+{
+  "id": "coreweave-convertible-priced-3700m-20260918",
+  "announcedAt": "2026-09-18",
+  "buyer": "CoreWeave",
+  "target": "可转债融资",
+  "value": "$3.7B · 2.875% · 2033",
+  "capacity": "未披露新增投运容量",
+  "region": "美国",
+  "status": "已定价 · 预计 9 月 22 日交割",
+  "statusAsOf": "2026-09-20",
+  "valueBasis": "发行人定价公告",
+  "capacityBasis": "融资不等于投运",
+  "rationale": "CoreWeave 9 月 18 日公告将发行规模由 30 亿美元提高至 37 亿美元，票息 2.875%，2033 年 4 月 1 日到期，另有最高 5 亿美元购买选择权。预计 9 月 22 日交割，仍有惯常条件；定价不等于资金到账。约 4.988 亿美元净额拟用于 capped call，其余为一般公司用途，不能全部视为建设 CAPEX。",
+  "sourceName": "CoreWeave IR",
+  "sourceUrl": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Prices-Upsized-3-7-Billion-Convertible-Senior-Notes-Offering/default.aspx"
+},
 {
   "id": "cleanspark-notes-priced-2276m-20260918",
   "announcedAt": "2026-09-18T17:18:00-04:00",
@@ -3779,12 +3796,12 @@ async function atlasApi(request: Request, env: Env, ctx: ExecutionContext, optio
     generatedAt: new Date().toISOString(),
     contentReviewedAt,
     contentRelease: {
-      id: "formal-publish-20260919",
+      id: "formal-publish-20260920",
       mode: "partial",
-      sourceCutoff: "2026-09-19T16:16:52+08:00",
+      sourceCutoff: "2026-09-20T14:47:21+08:00",
       publishedAt: releasePublishedAt,
-      includedIds: FORMAL_PUBLISH_20260919.map((item) => item.id),
-      heldSections: ["cooling", "rumors", "columns"],
+      includedIds: [...FORMAL_PUBLISH_20260919, ...FORMAL_PUBLISH_20260920].map((item) => item.id).concat("editor-crusoe-funding-20260903"),
+      heldSections: ["cooling", "columns"],
       notes: "Reviewed content pack only; not a full-site daily closure.",
     },
     contentVersion,
