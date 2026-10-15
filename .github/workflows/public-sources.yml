@@ -1,0 +1,41 @@
+name: Public issuer sources
+on:
+  schedule:
+    - cron: '17,47 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: public-issuer-sources
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - run: pip install edgartools==5.62.0
+      - name: Restore public data branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p output
+          if gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/atlas-source-data" >/dev/null 2>&1; then
+            gh api "repos/$GITHUB_REPOSITORY/contents/snapshot.json?ref=atlas-source-data" -H 'Accept: application/vnd.github.raw+json' > output/snapshot.json
+          fi
+      - name: Collect public disclosures
+        env:
+          ATLAS_EDGAR_IDENTITY: ${{ secrets.ATLAS_EDGAR_IDENTITY }}
+        run: python tools/public-sources/collect.py --issuers tools/public-sources/issuers.json --output output/snapshot.json
+      - name: Publish public snapshot only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python tools/public-sources/publish.py output/snapshot.json
+      - name: Check source health
+        run: |
+          python -c 'import json; s=json.load(open("output/snapshot.json")); failed=[k for k,v in s["sources"].items() if v["status"]!="ok"]; print("Unavailable sources:",failed); raise SystemExit(bool(failed))'

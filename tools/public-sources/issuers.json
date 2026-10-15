@@ -1,0 +1,414 @@
+[
+  {
+    "symbol": "NVDA",
+    "cik": "0001045810"
+  },
+  {
+    "symbol": "AMD",
+    "cik": "0000002488"
+  },
+  {
+    "symbol": "AVGO",
+    "cik": "0001730168"
+  },
+  {
+    "symbol": "MRVL",
+    "cik": "0001835632"
+  },
+  {
+    "symbol": "INTC",
+    "cik": "0000050863"
+  },
+  {
+    "symbol": "ARM",
+    "cik": "0001973239"
+  },
+  {
+    "symbol": "ALAB",
+    "cik": "0001736297"
+  },
+  {
+    "symbol": "CRDO",
+    "cik": "0001807794"
+  },
+  {
+    "symbol": "MU",
+    "cik": "0000723125"
+  },
+  {
+    "symbol": "SNDK",
+    "cik": "0002023554"
+  },
+  {
+    "symbol": "WDC",
+    "cik": "0000106040"
+  },
+  {
+    "symbol": "STX",
+    "cik": "0001137789"
+  },
+  {
+    "symbol": "P",
+    "cik": "0001474432"
+  },
+  {
+    "symbol": "NTAP",
+    "cik": "0001002047"
+  },
+  {
+    "symbol": "SIMO",
+    "cik": "0001329394"
+  },
+  {
+    "symbol": "RMBS",
+    "cik": "0000917273"
+  },
+  {
+    "symbol": "AMKR",
+    "cik": "0001047127"
+  },
+  {
+    "symbol": "ASX",
+    "cik": "0001122411"
+  },
+  {
+    "symbol": "TSM",
+    "cik": "0001046179"
+  },
+  {
+    "symbol": "ONTO",
+    "cik": "0000704532"
+  },
+  {
+    "symbol": "AMAT",
+    "cik": "0000006951"
+  },
+  {
+    "symbol": "LRCX",
+    "cik": "0000707549"
+  },
+  {
+    "symbol": "KLAC",
+    "cik": "0000319201"
+  },
+  {
+    "symbol": "KLIC",
+    "cik": "0000056978"
+  },
+  {
+    "symbol": "CAMT",
+    "cik": "0001109138"
+  },
+  {
+    "symbol": "TER",
+    "cik": "0000097210"
+  },
+  {
+    "symbol": "COHR",
+    "cik": "0000820318"
+  },
+  {
+    "symbol": "LITE",
+    "cik": "0001633978"
+  },
+  {
+    "symbol": "CIEN",
+    "cik": "0000936395"
+  },
+  {
+    "symbol": "AAOI",
+    "cik": "0001158114"
+  },
+  {
+    "symbol": "FN",
+    "cik": "0001408710"
+  },
+  {
+    "symbol": "VIAV",
+    "cik": "0000912093"
+  },
+  {
+    "symbol": "ADTN",
+    "cik": "0000926282"
+  },
+  {
+    "symbol": "NOK",
+    "cik": "0000924613"
+  },
+  {
+    "symbol": "ANET",
+    "cik": "0001596532"
+  },
+  {
+    "symbol": "CSCO",
+    "cik": "0000858877"
+  },
+  {
+    "symbol": "DELL",
+    "cik": "0001571996"
+  },
+  {
+    "symbol": "HPE",
+    "cik": "0001645590"
+  },
+  {
+    "symbol": "SMCI",
+    "cik": "0001375365"
+  },
+  {
+    "symbol": "FLEX",
+    "cik": "0000866374"
+  },
+  {
+    "symbol": "CLS",
+    "cik": "0001030894"
+  },
+  {
+    "symbol": "FFIV",
+    "cik": "0001048695"
+  },
+  {
+    "symbol": "VRT",
+    "cik": "0001674101"
+  },
+  {
+    "symbol": "MOD",
+    "cik": "0000067347"
+  },
+  {
+    "symbol": "TT",
+    "cik": "0001466258"
+  },
+  {
+    "symbol": "JCI",
+    "cik": "0000833444"
+  },
+  {
+    "symbol": "CARR",
+    "cik": "0001783180"
+  },
+  {
+    "symbol": "NVT",
+    "cik": "0001720635"
+  },
+  {
+    "symbol": "AAON",
+    "cik": "0000824142"
+  },
+  {
+    "symbol": "SPXC",
+    "cik": "0000088205"
+  },
+  {
+    "symbol": "ETN",
+    "cik": "0001551182"
+  },
+  {
+    "symbol": "HUBB",
+    "cik": "0000048898"
+  },
+  {
+    "symbol": "GEV",
+    "cik": "0001996810"
+  },
+  {
+    "symbol": "POWL",
+    "cik": "0000080420"
+  },
+  {
+    "symbol": "PWR",
+    "cik": "0001050915"
+  },
+  {
+    "symbol": "MYRG",
+    "cik": "0000700923"
+  },
+  {
+    "symbol": "EMR",
+    "cik": "0000032604"
+  },
+  {
+    "symbol": "ATKR",
+    "cik": "0001666138"
+  },
+  {
+    "symbol": "CEG",
+    "cik": "0001868275"
+  },
+  {
+    "symbol": "VST",
+    "cik": "0001692819"
+  },
+  {
+    "symbol": "BE",
+    "cik": "0001664703"
+  },
+  {
+    "symbol": "NRG",
+    "cik": "0001013871"
+  },
+  {
+    "symbol": "TLN",
+    "cik": "0001622536"
+  },
+  {
+    "symbol": "AES",
+    "cik": "0000874761"
+  },
+  {
+    "symbol": "NEE",
+    "cik": "0000753308"
+  },
+  {
+    "symbol": "DUK",
+    "cik": "0001326160"
+  },
+  {
+    "symbol": "SO",
+    "cik": "0000092122"
+  },
+  {
+    "symbol": "AEP",
+    "cik": "0000004904"
+  },
+  {
+    "symbol": "BWXT",
+    "cik": "0001486957"
+  },
+  {
+    "symbol": "EQIX",
+    "cik": "0001101239"
+  },
+  {
+    "symbol": "DLR",
+    "cik": "0001297996"
+  },
+  {
+    "symbol": "IRM",
+    "cik": "0001020569"
+  },
+  {
+    "symbol": "GDS",
+    "cik": "0001526125"
+  },
+  {
+    "symbol": "AMT",
+    "cik": "0001053507"
+  },
+  {
+    "symbol": "VNET",
+    "cik": "0001508475"
+  },
+  {
+    "symbol": "APLD",
+    "cik": "0001144879"
+  },
+  {
+    "symbol": "CORZ",
+    "cik": "0001839341"
+  },
+  {
+    "symbol": "CRWV",
+    "cik": "0001769628"
+  },
+  {
+    "symbol": "NBIS",
+    "cik": "0001513845"
+  },
+  {
+    "symbol": "IREN",
+    "cik": "0001878848"
+  },
+  {
+    "symbol": "WULF",
+    "cik": "0001083301"
+  },
+  {
+    "symbol": "HUT",
+    "cik": "0001964789"
+  },
+  {
+    "symbol": "DOCN",
+    "cik": "0001582961"
+  },
+  {
+    "symbol": "ORCL",
+    "cik": "0001341439"
+  },
+  {
+    "symbol": "MSFT",
+    "cik": "0000789019"
+  },
+  {
+    "symbol": "AMZN",
+    "cik": "0001018724"
+  },
+  {
+    "symbol": "GOOGL",
+    "cik": "0001652044"
+  },
+  {
+    "symbol": "IBM",
+    "cik": "0000051143"
+  },
+  {
+    "symbol": "BABA",
+    "cik": "0001577552"
+  },
+  {
+    "symbol": "BIDU",
+    "cik": "0001329099"
+  },
+  {
+    "symbol": "AKAM",
+    "cik": "0001086222"
+  },
+  {
+    "symbol": "NET",
+    "cik": "0001477333"
+  },
+  {
+    "symbol": "QCOM",
+    "cik": "0000804328"
+  },
+  {
+    "symbol": "NXPI",
+    "cik": "0001413447"
+  },
+  {
+    "symbol": "STM",
+    "cik": "0000932787"
+  },
+  {
+    "symbol": "MCHP",
+    "cik": "0000827054"
+  },
+  {
+    "symbol": "TXN",
+    "cik": "0000097476"
+  },
+  {
+    "symbol": "ADI",
+    "cik": "0000006281"
+  },
+  {
+    "symbol": "ON",
+    "cik": "0001097864"
+  },
+  {
+    "symbol": "SYNA",
+    "cik": "0000817720"
+  },
+  {
+    "symbol": "SLAB",
+    "cik": "0001038074"
+  },
+  {
+    "symbol": "LSCC",
+    "cik": "0000855658"
+  },
+  {
+    "symbol": "CEVA",
+    "cik": "0001173489"
+  }
+]
