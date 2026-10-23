@@ -3,6 +3,12 @@ on:
   schedule:
     - cron: '17,47 * * * *'
   workflow_dispatch:
+    inputs:
+      trigger_origin:
+        description: 'Trigger provenance (not a native schedule)'
+        type: choice
+        options: [manual, cloudflare-watchdog]
+        default: manual
 permissions:
   contents: write
 concurrency:
