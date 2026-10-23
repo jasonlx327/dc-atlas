@@ -14,6 +14,7 @@ from urllib.parse import urljoin
 
 ORACLE = "https://www.oracle.com/corporate/press/rss/rss-pr.xml"
 COHERENT = "https://ir.coherent.com/rss/news-releases.xml"
+CLOUDFLARE = "https://blog.cloudflare.com/rss/"
 COHERENT_WIRE = "https://rss.globenewswire.com/en/search/organization/Coherent%2520Corp%C2%A7?page=1"
 
 
@@ -146,7 +147,7 @@ def collect(issuers, previous):
                         sec_blocked = sec_blocked or status in (403, 429)
                         facts.update(status="failed", error="HTTP " + str(status) if status else type(error).__name__)
                 sources[facts_key] = facts
-    for key, url in (("rss:oracle", ORACLE), ("rss:coherent-ir", COHERENT)):
+    for key, url in (("rss:oracle", ORACLE), ("rss:coherent-ir", COHERENT), ("rss:cloudflare-blog", CLOUDFLARE)):
         sources[key] = collect_feed(url, previous.get("sources", {}).get(key, {}))
         if key == 'rss:coherent-ir' and sources[key]['status'] != 'ok':
             entry = sources[key]
