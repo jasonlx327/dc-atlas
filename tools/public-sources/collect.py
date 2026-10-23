@@ -12,6 +12,7 @@ from edgar import set_identity
 from edgar.httprequests import download_json
 
 ORACLE = "https://www.oracle.com/corporate/press/rss/rss-pr.xml"
+COHERENT = "https://ir.coherent.com/rss/news-releases.xml"
 FIELDS = ("accessionNumber", "filingDate", "reportDate", "acceptanceDateTime", "form", "items", "primaryDocument", "primaryDocDescription")
 FORMS = {"8-K", "10-K", "10-Q", "20-F", "40-F", "6-K"}
 TAGS = ("Revenues", "SalesRevenueNet", "RevenueFromContractWithCustomerExcludingAssessedTax", "OperatingIncomeLoss")
@@ -82,9 +83,15 @@ def collect(issuers, previous):
                         sec_blocked = sec_blocked or status in (403, 429)
                         facts.update(status="failed", error="HTTP " + str(status) if status else type(error).__name__)
                 sources[facts_key] = facts
-    entry = {**previous.get("sources", {}).get("rss:oracle", {}), "sourceUrl": ORACLE, "checkedAt": stamp(), "status": "failed"}
+    for key, url in (("rss:oracle", ORACLE), ("rss:coherent-ir", COHERENT)):
+        sources[key] = collect_feed(url, previous.get("sources", {}).get(key, {}))
+    return {"schemaVersion": 1, "generatedAt": stamp(), "provider": "EdgarTools 5.62.0 / issuer RSS", "sources": sources}
+
+
+def collect_feed(url, previous):
+    entry = {**previous, "sourceUrl": url, "checkedAt": stamp(), "status": "failed"}
     try:
-        response = subprocess.run(["curl", "--fail", "--silent", "--show-error", "--max-time", "30", "--max-filesize", "2000000", ORACLE], capture_output=True, check=True)
+        response = subprocess.run(["curl", "--fail", "--silent", "--show-error", "--max-time", "30", "--max-filesize", "2000000", url], capture_output=True, check=True, timeout=35)
         body = response.stdout
         if len(body) > 2_000_000 or b"<!DOCTYPE" in body.upper() or b"<!ENTITY" in body.upper():
             raise ValueError("unsafe-feed")
@@ -103,8 +110,7 @@ def collect(issuers, previous):
         entry.pop("error", None)
     except Exception as error:
         entry["error"] = type(error).__name__
-    sources["rss:oracle"] = entry
-    return {"schemaVersion": 1, "generatedAt": stamp(), "provider": "EdgarTools 5.62.0 / Oracle RSS", "sources": sources}
+    return entry
 
 
 if __name__ == "__main__":
