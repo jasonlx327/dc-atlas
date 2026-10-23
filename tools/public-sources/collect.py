@@ -15,6 +15,7 @@ from urllib.parse import urljoin
 ORACLE = "https://www.oracle.com/corporate/press/rss/rss-pr.xml"
 COHERENT = "https://ir.coherent.com/rss/news-releases.xml"
 CLOUDFLARE = "https://blog.cloudflare.com/rss/"
+NVIDIA = "https://developer.nvidia.com/blog/feed/"
 COHERENT_WIRE = "https://rss.globenewswire.com/en/search/organization/Coherent%2520Corp%C2%A7?page=1"
 
 
@@ -147,7 +148,7 @@ def collect(issuers, previous):
                         sec_blocked = sec_blocked or status in (403, 429)
                         facts.update(status="failed", error="HTTP " + str(status) if status else type(error).__name__)
                 sources[facts_key] = facts
-    for key, url in (("rss:oracle", ORACLE), ("rss:coherent-ir", COHERENT), ("rss:cloudflare-blog", CLOUDFLARE)):
+    for key, url in (("rss:oracle", ORACLE), ("rss:coherent-ir", COHERENT), ("rss:cloudflare-blog", CLOUDFLARE), ("rss:nvidia-developer", NVIDIA)):
         sources[key] = collect_feed(url, previous.get("sources", {}).get(key, {}))
         if key == 'rss:coherent-ir' and sources[key]['status'] != 'ok':
             entry = sources[key]
@@ -171,6 +172,20 @@ def collect_feed(url, previous):
         root = ET.fromstring(body)
         channel = ET.Element("channel")
         items = root.findall("./channel/item")
+        if root.tag == '{http://www.w3.org/2005/Atom}feed':
+            # Normalize official Atom metadata only; updated is not publication time.
+            ns = '{http://www.w3.org/2005/Atom}'
+            items = []
+            for atom in root.findall(ns+'entry')[:100]:
+                title = atom.findtext(ns+'title', '').strip()
+                link = next((node.get('href', '') for node in atom.findall(ns+'link') if node.get('rel', 'alternate') == 'alternate'), '')
+                published = datetime.fromisoformat(atom.findtext(ns+'published', '').replace('Z', '+00:00'))
+                if not title or not link.startswith('https://developer.nvidia.com/blog/') or published.tzinfo is None or url != NVIDIA:
+                    raise ValueError('invalid-official-atom')
+                item = ET.Element('item')
+                for key, value in {'title': title, 'link': link, 'guid': atom.findtext(ns+'id', link), 'pubDate': format_datetime(published)}.items():
+                    ET.SubElement(item, key).text = value
+                items.append(item)
         if not items:
             raise ValueError("invalid-feed")
         for item in items[:100]:
