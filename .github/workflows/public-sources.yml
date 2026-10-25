@@ -1,13 +1,12 @@
 name: Public issuer sources
 on:
-  schedule:
-    - cron: '17,47 * * * *'
+  # Started once daily by Cloudflare at 09:30 Asia/Shanghai.
   workflow_dispatch:
     inputs:
       trigger_origin:
         description: 'Trigger provenance (not a native schedule)'
         type: choice
-        options: [manual, cloudflare-watchdog]
+        options: [manual, cloudflare-watchdog, cloudflare-daily]
         default: manual
 permissions:
   contents: write
