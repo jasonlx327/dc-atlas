@@ -1,4 +1,4 @@
-"""Public issuer metadata only. No credentials, article bodies, or editorial drafts."""
+"""Public issuer metadata and bounded publisher teasers. No article bodies or drafts."""
 import argparse
 import json
 import os
@@ -17,6 +17,44 @@ COHERENT = "https://ir.coherent.com/rss/news-releases.xml"
 CLOUDFLARE = "https://blog.cloudflare.com/rss/"
 NVIDIA = "https://developer.nvidia.com/blog/feed/"
 COHERENT_WIRE = "https://rss.globenewswire.com/en/search/organization/Coherent%2520Corp%C2%A7?page=1"
+
+
+class FeedTeaserParser(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.parts, self.hidden = [], 0
+
+    def handle_starttag(self, tag, attrs):
+        tag = tag.split(':')[-1]
+        if tag in ('script', 'style', 'iframe', 'object'):
+            self.hidden += 1
+        elif not self.hidden and tag in ('p', 'div', 'br', 'li'):
+            self.parts.append(' ')
+
+    def handle_endtag(self, tag):
+        tag = tag.split(':')[-1]
+        if tag in ('script', 'style', 'iframe', 'object'):
+            self.hidden = max(0, self.hidden - 1)
+        elif not self.hidden:
+            self.parts.append(' ')
+
+    def handle_data(self, data):
+        if not self.hidden:
+            self.parts.append(data)
+
+
+def source_teaser(item):
+    # Prefer the publisher's explicit teaser. Never fall back to article content.
+    for name in ('description', 'summary', '{http://www.w3.org/2005/Atom}summary'):
+        node = item.find(name)
+        if node is None:
+            continue
+        parser = FeedTeaserParser()
+        parser.feed(ET.tostring(node, encoding='unicode') if len(node) else node.text or '')
+        text = ' '.join(''.join(parser.parts).split())
+        if text:
+            return text if len(text) <= 320 else text[:319].rsplit(' ', 1)[0] + '…'
+    return ''
 
 
 class CoherentWireParser(HTMLParser):
@@ -185,6 +223,9 @@ def collect_feed(url, previous):
                 item = ET.Element('item')
                 for key, value in {'title': title, 'link': link, 'guid': atom.findtext(ns+'id', link), 'pubDate': format_datetime(published)}.items():
                     ET.SubElement(item, key).text = value
+                teaser = source_teaser(atom)
+                if teaser:
+                    ET.SubElement(item, 'description').text = teaser
                 items.append(item)
         if not items:
             raise ValueError("invalid-feed")
@@ -192,6 +233,9 @@ def collect_feed(url, previous):
             output = ET.SubElement(channel, "item")
             for key in ("title", "link", "pubDate", "guid"):
                 ET.SubElement(output, key).text = item.findtext(key, "")
+            teaser = source_teaser(item)
+            if teaser:
+                ET.SubElement(output, 'description').text = teaser
         rss = ET.Element("rss", version="2.0")
         rss.append(channel)
         entry.update(status="ok", fetchedAt=stamp(), data=ET.tostring(rss, encoding="unicode"))
