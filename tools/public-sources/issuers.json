@@ -229,7 +229,10 @@
   },
   {
     "symbol": "ATKR",
-    "cik": "0001666138"
+    "cik": "0001666138",
+    "legalName": "Atkore Inc.",
+    "tradingCeasedAt": "2026-10-19",
+    "lifecycleSourceUrl": "https://www.sec.gov/Archives/edgar/data/1666138/000166613826000041/atkr-20261019.htm"
   },
   {
     "symbol": "CEG",

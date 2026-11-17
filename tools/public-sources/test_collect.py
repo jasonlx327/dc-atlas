@@ -1,5 +1,7 @@
 import unittest
-from collect import coherent_wire_rss, collect_feed, CLOUDFLARE, NVIDIA
+from collect import coherent_wire_rss, collect_feed, compact_submissions, CLOUDFLARE, NVIDIA
+import json
+from pathlib import Path
 from unittest.mock import patch
 from types import SimpleNamespace
 import subprocess
@@ -9,6 +11,17 @@ def fixture(source='Coherent Corp.', date='October 22, 2026 14:15 ET'):
     return f'''<ul><li class="row"><div class="newsLink pl-0"><div class="date-source"><span>{date}</span><span>|</span><span>Source: <a class="sourceLink">{source}</a></span></div><div class="mainLink"><a href="/news-release/2026/10/22/1/11543/en/test.html">Optics &amp; AI</a></div></div></li></ul>'''.encode()
 
 class WireTests(unittest.TestCase):
+    def test_delisted_issuer_keeps_cik_identity_and_real_empty_tickers(self):
+        issuer = next(i for i in json.loads(Path(__file__).with_name('issuers.json').read_text()) if i['symbol'] == 'ATKR')
+        raw = {'cik': '0001666138', 'name': 'Atkore Inc.', 'tickers': [], 'filings': {'recent': {'form': []}}}
+        self.assertEqual(compact_submissions(raw, issuer)['tickers'], [])
+        for invalid in ({**raw, 'cik': 1}, {**raw, 'name': 'Unrelated issuer'}, {**raw, 'tickers': ['OTHER']}):
+            with self.assertRaisesRegex(ValueError, 'identity-mismatch'):
+                compact_submissions(invalid, issuer)
+        with self.assertRaisesRegex(ValueError, 'identity-mismatch'):
+            compact_submissions(raw, {'symbol': 'ATKR', 'cik': '0001666138'})
+        with self.assertRaisesRegex(ValueError, 'identity-mismatch'):
+            compact_submissions(raw, {**issuer, 'tradingCeasedAt': '2999-01-01'})
     def test_nvidia_atom_keeps_publication_not_modified_date(self):
         body=b'''<feed xmlns="http://www.w3.org/2005/Atom"><entry><title>GPU &amp; networking</title><link rel="self" href="https://developer.nvidia.com/blog/api"/><link rel="alternate" href="https://developer.nvidia.com/blog/example/"/><id>official-id</id><published>2026-10-22T14:15:00-04:00</published><updated>2026-10-23T20:00:00Z</updated><content>PRIVATE BODY</content></entry></feed>'''
         with patch('collect.subprocess.run', return_value=SimpleNamespace(stdout=body)):

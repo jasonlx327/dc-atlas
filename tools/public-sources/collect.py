@@ -124,7 +124,14 @@ def stamp():
 
 
 def compact_submissions(raw, issuer):
-    if str(raw.get("cik")).zfill(10) != issuer["cik"] or issuer["symbol"] not in raw.get("tickers", []):
+    # A known acquired issuer can legitimately have no listed ticker. Retain
+    # the raw empty array; never manufacture its former symbol in SEC data.
+    known_delisted = (raw.get("tickers") == []
+                      and bool(issuer.get("legalName"))
+                      and raw.get("name") == issuer.get("legalName")
+                      and bool(issuer.get("tradingCeasedAt"))
+                      and issuer["tradingCeasedAt"] <= datetime.now(timezone.utc).date().isoformat())
+    if str(raw.get("cik")).zfill(10) != issuer["cik"] or not (issuer["symbol"] in raw.get("tickers", []) or known_delisted):
         raise ValueError("issuer-identity-mismatch")
     recent = raw["filings"]["recent"]
     cutoff = (datetime.now(timezone.utc) - timedelta(days=120)).date().isoformat()
